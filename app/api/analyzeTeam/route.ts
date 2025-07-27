@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
 import { users } from "@/app/utils/users";
 import xml2js from "xml2js";
+
+type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
 const TEAM_DATA_DIR = path.join(process.cwd(), "app/data/teams");
 const SEASON = 69;
@@ -112,7 +115,9 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "No future matches set for your team" });
   }
   const nextMatch = futureMatches.sort(
-    (a: any, b: any) => parseDate(a["$"].start) - parseDate(b["$"].start)
+    (a: any, b: any) =>
+      (parseDate(a["$"].start) as unknown as number) -
+      (parseDate(b["$"].start) as unknown as number)
   )[0];
 
   let opponentTeam;
@@ -149,14 +154,20 @@ export async function GET(req: NextRequest) {
       };
     }
 
-    let offenseStrategies: Record<string, number> = {};
-    let defenseStrategies: Record<string, number> = {};
-    let ratingsTotal: Record<string, number> = {};
+    const offenseStrategies: Record<string, number> = {};
+    const defenseStrategies: Record<string, number> = {};
+    const ratingsTotal: Record<string, number> = {};
     let ratingsCount = 0;
-    let effTotal = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 },
-      effCount = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 };
-    let playerSumStats: Record<string, any> = {};
-    let effortDeltaList: any[] = [];
+    const effTotal: Record<Position, number> = {
+        PG: 0,
+        SG: 0,
+        SF: 0,
+        PF: 0,
+        C: 0,
+      },
+      effCount: Record<Position, number> = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 };
+    const playerSumStats: Record<string, any> = {};
+    const effortDeltaList: any[] = [];
 
     for (const match of opponentMatches) {
       const matchId = match["$"].id;
@@ -202,7 +213,7 @@ export async function GET(req: NextRequest) {
       }
 
       if (teamNode.efficiency) {
-        for (const pos of ["PG", "SG", "SF", "PF", "C"]) {
+        for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
           if (teamNode.efficiency[pos] !== undefined) {
             effTotal[pos] += parseFloat(teamNode.efficiency[pos]);
             effCount[pos]++;
@@ -264,14 +275,18 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    effortDeltaList.sort((a, b) => parseDate(a.date) - parseDate(b.date));
+    effortDeltaList.sort(
+      (a, b) =>
+        (parseDate(a.date) as unknown as number) -
+        (parseDate(b.date) as unknown as number)
+    );
 
     const avgRatings: Record<string, number> = {};
     for (const [cat, sum] of Object.entries(ratingsTotal)) {
       avgRatings[cat] = ratingsCount ? sum / ratingsCount : 0;
     }
     const avgEfficiency: Record<string, number> = {};
-    for (const pos of ["PG", "SG", "SF", "PF", "C"]) {
+    for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
       avgEfficiency[pos] = effCount[pos] ? effTotal[pos] / effCount[pos] : 0;
     }
 
