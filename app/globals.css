@@ -1,42 +1,77 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  background-color: #f7fafc;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #222;
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.form-container {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(60, 84, 137, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #3c5489;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #3c5489;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f9fafb;
+  color: #222;
+  transition: border 0.2s;
+}
+.form-input:focus {
+  border: 1.5px solid #3c5489;
+  outline: none;
+}
+
+.form-error {
+  color: #e53e3e;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #3c5489 0%, #5f7bba 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.form-submit:hover {
+  background: linear-gradient(90deg, #5f7bba 0%, #3c5489 100%);
 }
