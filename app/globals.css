@@ -75,3 +75,41 @@ body {
 .form-submit:hover {
   background: linear-gradient(90deg, #5f7bba 0%, #3c5489 100%);
 }
+
+.table-analysis {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(60, 84, 137, 0.08);
+}
+.table-analysis th,
+.table-analysis td {
+  border: 1px solid #ccd6ee;
+  padding: 0.7em 1em;
+  text-align: center;
+}
+.table-analysis th {
+  background: #3c5489;
+  color: #fff;
+  font-weight: 600;
+}
+.table-analysis tr:nth-child(even) td {
+  background: #f7fafc;
+}
+.analysis-section {
+  margin-bottom: 2rem;
+}
+.analysis-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #3c5489;
+  margin-bottom: 0.7rem;
+}
+.analysis-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5f7bba;
+  margin: 0.7rem 0;
+}

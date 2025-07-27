@@ -5,7 +5,6 @@ import { baseApiUrl } from "@/app/utils/api/apiUtils";
 export async function POST(req: NextRequest) {
   const { login, password } = await req.json();
 
-  // 1. Check user existence AND that user is active
   const user = users.find((u) => u.login === login && u.active);
   if (!user) {
     return NextResponse.json(
@@ -22,10 +21,7 @@ export async function POST(req: NextRequest) {
     const setCookie = res.headers.get("set-cookie");
     const text = await res.text();
 
-    // Log the full XML response for debugging
-    console.log("BBAPI XML Response:", text);
-
-    // Check for either <loggedIn> or <loggedIn/>
+    // Check for <loggedIn>
     if (!text.includes("<loggedIn")) {
       return NextResponse.json(
         { error: "API login failed", bbapiXml: text },
@@ -37,13 +33,13 @@ export async function POST(req: NextRequest) {
       const response = NextResponse.json({ success: true });
       response.cookies.set("bbapi_session", setCookie, {
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === "production", // only secure if prod
         path: "/",
         sameSite: "lax",
       });
       response.cookies.set("authenticated_user", login, {
-        httpOnly: true,
-        secure: true,
+        httpOnly: false, // allow reading from JS if needed
+        secure: process.env.NODE_ENV === "production",
         path: "/",
         sameSite: "lax",
       });
