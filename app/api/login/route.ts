@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { users } from "@/app/utils/users";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
 
+// Utility to extract cookie pairs from Set-Cookie header(s)
+function extractCookiePairs(setCookieHeader: string): string {
+  // Handles multiple cookies separated by comma
+  return setCookieHeader
+    .split(",")
+    .map((s) => s.split(";")[0].trim())
+    .join("; ");
+}
+
 export async function POST(req: NextRequest) {
   const { login, password } = await req.json();
 
@@ -30,8 +39,11 @@ export async function POST(req: NextRequest) {
     }
 
     if (setCookie) {
+      // Only keep the cookie pairs, not the flags!
+      const bbapiCookiePairs = extractCookiePairs(setCookie);
+
       const response = NextResponse.json({ success: true });
-      response.cookies.set("bbapi_session", setCookie, {
+      response.cookies.set("bbapi_session", bbapiCookiePairs, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production", // only secure if prod
         path: "/",
