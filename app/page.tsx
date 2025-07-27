@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -57,7 +58,10 @@ export default function IndexPage() {
     analysis || {};
 
   // Build table data
-  function stratRows(stratsA = {}, stratsB = {}) {
+  function stratRows(
+    stratsA: Record<string, number> = {},
+    stratsB: Record<string, number> = {}
+  ): [string, number, number][] {
     const allKeys = Array.from(
       new Set([...Object.keys(stratsA), ...Object.keys(stratsB)])
     );
@@ -67,7 +71,11 @@ export default function IndexPage() {
       stratsB[strat] || 0,
     ]);
   }
-  function avgRows(avgA = {}, avgB = {}) {
+
+  function avgRows(
+    avgA: Record<string, number> = {},
+    avgB: Record<string, number> = {}
+  ): [string, string, string][] {
     const allCats = Array.from(
       new Set([...Object.keys(avgA), ...Object.keys(avgB)])
     );
@@ -77,11 +85,16 @@ export default function IndexPage() {
       avgB[cat] !== undefined ? avgB[cat].toFixed(2) : "",
     ]);
   }
-  function effRows(effA = {}, effB = {}) {
-    return ["PG", "SG", "SF", "PF", "C"].map((pos) => [
+  type Position = "PG" | "SG" | "SF" | "PF" | "C";
+
+  function effRows(
+    effA: Partial<Record<Position, number>> = {},
+    effB: Partial<Record<Position, number>> = {}
+  ): [Position, string, string][] {
+    return (["PG", "SG", "SF", "PF", "C"] as Position[]).map((pos) => [
       pos,
-      effA[pos] !== undefined ? effA[pos].toFixed(1) : "",
-      effB[pos] !== undefined ? effB[pos].toFixed(1) : "",
+      effA[pos] !== undefined ? effA[pos]!.toFixed(1) : "",
+      effB[pos] !== undefined ? effB[pos]!.toFixed(1) : "",
     ]);
   }
   function playerRows(stats = {}) {
@@ -100,7 +113,11 @@ export default function IndexPage() {
         s.games,
       ]);
   }
-  function effortRows(effortList = []) {
+  type Effort = { date: string; effortDelta: number; matchId: string | number };
+
+  function effortRows(
+    effortList: Effort[] = []
+  ): [string, string, string | number][] {
     return effortList.map((e) => [e.date, e.effortDelta.toFixed(2), e.matchId]);
   }
 
