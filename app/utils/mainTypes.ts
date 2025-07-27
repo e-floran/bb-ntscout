@@ -13,7 +13,7 @@ export interface Player {
 }
 
 export interface Team {
-  id: string;
+  id: string; // Senior NTs start from 1, junior NTs have the same ID than the Senior NT from the same country + 1000
   players: string[];
   isJunior: boolean;
   continent: Continents;

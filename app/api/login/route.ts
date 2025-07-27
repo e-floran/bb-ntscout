@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { users } from "@/app/utils/users";
-
-const BBAPI_LOGIN_URL = "http://bbapi.buzzerbeater.com/login.aspx";
+import { baseApiUrl } from "@/app/utils/api/apiUtils";
 
 export async function POST(req: NextRequest) {
   const { login, password } = await req.json();
@@ -16,7 +15,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const url = `${BBAPI_LOGIN_URL}?login=${encodeURIComponent(
+    const url = `${baseApiUrl}login.aspx?login=${encodeURIComponent(
       login
     )}&code=${encodeURIComponent(password)}`;
     const res = await fetch(url, { method: "GET" });
