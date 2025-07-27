@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bbapi version='1'>
+    <schedule teamid='1011' season='69' retrieved='2025-07-27T13:10:03Z'>
+        <match id='81013' start='2025-08-04T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1001'>
+                <teamName>United States U21</teamName>
+            </awayTeam>
+            <homeTeam id='1011'>
+                <teamName>France U21</teamName>
+            </homeTeam>
+        </match>
+        <match id='81005' start='2025-07-21T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1005'>
+                <teamName>China U21</teamName>
+                <score>119</score>
+            </awayTeam>
+            <homeTeam id='1011'>
+                <teamName>France U21</teamName>
+                <score>116</score>
+            </homeTeam>
+        </match>
+        <match id='80654' start='2025-07-14T10:30:00Z' type='nt.friendly'>
+            <awayTeam id='1011'>
+                <teamName>France U21</teamName>
+                <score>101</score>
+            </awayTeam>
+            <homeTeam id='1015'>
+                <teamName>Israel U21</teamName>
+                <score>115</score>
+            </homeTeam>
+        </match>
+        <match id='81009' start='2025-07-28T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1011'>
+                <teamName>France U21</teamName>
+            </awayTeam>
+            <homeTeam id='1073'>
+                <teamName>Uruguay U21</teamName>
+            </homeTeam>
+        </match>
+        <match id='81017' start='2025-08-11T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1011'>
+                <teamName>France U21</teamName>
+            </awayTeam>
+            <homeTeam id='1031'>
+                <teamName>Al Jazair U21</teamName>
+            </homeTeam>
+        </match>
+        <match id='81025' start='2025-08-25T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1011'>
+                <teamName>France U21</teamName>
+            </awayTeam>
+            <homeTeam id='1020'>
+                <teamName>Lietuva U21</teamName>
+            </homeTeam>
+        </match>
+        <match id='81029' start='2025-09-01T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1013'>
+                <teamName>Belgium U21</teamName>
+            </awayTeam>
+            <homeTeam id='1011'>
+                <teamName>France U21</teamName>
+            </homeTeam>
+        </match>
+        <match id='81021' start='2025-08-18T17:30:00Z' type='nt.roundrobin'>
+            <awayTeam id='1007'>
+                <teamName>España U21</teamName>
+            </awayTeam>
+            <homeTeam id='1011'>
+                <teamName>France U21</teamName>
+            </homeTeam>
+        </match>
+    </schedule>
+</bbapi>
