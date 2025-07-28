@@ -209,7 +209,7 @@ export default function IndexPage() {
           </button>
         </form>
 
-        {loading && <div>Analyse de l'équipe en cours...</div>}
+        {loading && <div>Analyse de l&apos;équipe en cours...</div>}
         {err && <div className="form-error">{err}</div>}
 
         {analysis && !loading && !err && (
@@ -236,7 +236,7 @@ export default function IndexPage() {
               {renderTable(
                 [
                   "Stratégie",
-                  ...seasonLabels.map((s) => `Occurrences (S${s})`),
+                  ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
                 ],
                 stratRows(
                   analysis.seasonsData?.map(
@@ -253,7 +253,7 @@ export default function IndexPage() {
               {renderTable(
                 [
                   "Stratégie",
-                  ...seasonLabels.map((s) => `Occurrences (S${s})`),
+                  ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
                 ],
                 stratRows(
                   analysis.seasonsData?.map(
@@ -270,7 +270,10 @@ export default function IndexPage() {
                 Notes moyennes de l&apos;équipe
               </div>
               {renderTable(
-                ["Catégorie", ...seasonLabels.map((s) => `Moyenne (S${s})`)],
+                [
+                  "Catégorie",
+                  ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
+                ],
                 avgRows(
                   analysis.seasonsData?.map((x: any) => x.avgRatings) ?? [
                     analysis.curr?.avgRatings,
@@ -284,7 +287,10 @@ export default function IndexPage() {
                 Points moyens par 100 tirs selon le poste
               </div>
               {renderTable(
-                ["Poste", ...seasonLabels.map((s) => `Moyenne (S${s})`)],
+                [
+                  "Poste",
+                  ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
+                ],
                 effRows(
                   analysis.seasonsData?.map((x: any) => x.avgEfficiency) ?? [
                     analysis.curr?.avgEfficiency,
