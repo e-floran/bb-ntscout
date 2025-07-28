@@ -3,30 +3,70 @@
 
 import { useEffect, useState } from "react";
 
+// Utility to humanize camelCase/PascalCase for display
+function humanize(str: string) {
+  if (!str) return "";
+  return str
+    .replace(/([A-Z])/g, " $1")
+    .replace(/^./, (s) => s.toUpperCase())
+    .trim();
+}
+
+type AnalysisResult = any;
+
 export default function IndexPage() {
-  const [analysis, setAnalysis] = useState<any>(null);
+  const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
+  // New: form state
+  const [teamId, setTeamId] = useState("");
+  const [numSeasons, setNumSeasons] = useState<number>(2);
 
+  // Load main data on mount
   useEffect(() => {
-    (async () => {
-      setLoading(true);
-      try {
-        const res = await fetch("/api/analyzeTeam", {
-          credentials: "include",
-        });
+    setLoading(true);
+    setErr("");
+    setAnalysis(null);
+    fetch("/api/analyzeTeam")
+      .then(async (res) => {
         const data = await res.json();
-        if (data.error) {
-          setErr(data.error);
-        } else {
-          setAnalysis(data);
-        }
-      } catch (e: any) {
-        setErr(e.message);
-      }
-      setLoading(false);
-    })();
+        if (data.error) setErr(data.error);
+        else setAnalysis(data);
+      })
+      .catch((e) => setErr(e.message))
+      .finally(() => setLoading(false));
   }, []);
+
+  // Form handler
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setErr("");
+    setAnalysis(null);
+    setLoading(true);
+
+    // Validate
+    if (!teamId.trim() || !numSeasons) {
+      setErr("Veuillez remplir les deux champs.");
+      setLoading(false);
+      return;
+    }
+    if (numSeasons < 1 || numSeasons > 10) {
+      setErr("Le nombre de saisons doit être entre 1 et 10.");
+      setLoading(false);
+      return;
+    }
+
+    const params = new URLSearchParams({
+      teamId: teamId.trim(),
+      numberOfSeasons: String(numSeasons),
+    }).toString();
+
+    const res = await fetch(`/api/analyzeTeam?${params}`);
+    const data = await res.json();
+    if (data.error) setErr(data.error);
+    else setAnalysis(data);
+    setLoading(false);
+  }
 
   function renderTable(headers: string[], rows: (string | number)[][]) {
     return (
@@ -51,52 +91,60 @@ export default function IndexPage() {
     );
   }
 
-  if (loading) return <div>Loading team analysis...</div>;
-  if (err) return <div className="form-error">{err}</div>;
+  const seasonLabels =
+    analysis && analysis.seasons
+      ? analysis.seasons
+      : analysis && analysis.season && analysis.prevSeason
+      ? [analysis.season, analysis.prevSeason]
+      : [];
 
-  const { opponentName, opponentId, curr, prev, season, prevSeason } =
-    analysis || {};
-
-  // Build table data
   function stratRows(
-    stratsA: Record<string, number> = {},
-    stratsB: Record<string, number> = {}
-  ): [string, number, number][] {
+    strats: Record<string, number>[] = []
+  ): [string, ...(number | "")[]][] {
+    // Get all unique strategy names from all seasons
     const allKeys = Array.from(
-      new Set([...Object.keys(stratsA), ...Object.keys(stratsB)])
+      new Set(
+        strats
+          .map((obj) => Object.keys(obj || {}))
+          .reduce((a, b) => a.concat(b), [])
+      )
     );
     return allKeys.map((strat) => [
-      strat,
-      stratsA[strat] || 0,
-      stratsB[strat] || 0,
+      humanize(strat),
+      ...strats.map((obj) => obj?.[strat] ?? ""),
     ]);
   }
 
   function avgRows(
-    avgA: Record<string, number> = {},
-    avgB: Record<string, number> = {}
-  ): [string, string, string][] {
+    avgs: Record<string, number>[] = []
+  ): [string, ...(string | "")[]][] {
     const allCats = Array.from(
-      new Set([...Object.keys(avgA), ...Object.keys(avgB)])
+      new Set(
+        avgs
+          .map((obj) => Object.keys(obj || {}))
+          .reduce((a, b) => a.concat(b), [])
+      )
     );
     return allCats.map((cat) => [
-      cat,
-      avgA[cat] !== undefined ? avgA[cat].toFixed(2) : "",
-      avgB[cat] !== undefined ? avgB[cat].toFixed(2) : "",
+      humanize(cat),
+      ...avgs.map((obj) =>
+        obj?.[cat] !== undefined ? obj[cat].toFixed(2) : ""
+      ),
     ]);
   }
-  type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
+  type Position = "PG" | "SG" | "SF" | "PF" | "C";
   function effRows(
-    effA: Partial<Record<Position, number>> = {},
-    effB: Partial<Record<Position, number>> = {}
-  ): [Position, string, string][] {
+    effs: Partial<Record<Position, number>>[] = []
+  ): [string, ...(string | "")[]][] {
     return (["PG", "SG", "SF", "PF", "C"] as Position[]).map((pos) => [
       pos,
-      effA[pos] !== undefined ? effA[pos]!.toFixed(1) : "",
-      effB[pos] !== undefined ? effB[pos]!.toFixed(1) : "",
+      ...effs.map((eff) =>
+        eff?.[pos] !== undefined ? eff[pos]!.toFixed(1) : ""
+      ),
     ]);
   }
+
   function playerRows(stats = {}) {
     return Object.values(stats)
       .filter((s: any) => s.games > 0)
@@ -113,8 +161,8 @@ export default function IndexPage() {
         s.games,
       ]);
   }
-  type Effort = { date: string; effortDelta: number; matchId: string | number };
 
+  type Effort = { date: string; effortDelta: number; matchId: string | number };
   function effortRows(
     effortList: Effort[] = []
   ): [string, string, string | number][] {
@@ -127,77 +175,161 @@ export default function IndexPage() {
         className="form-container"
         style={{ maxWidth: "1100px", width: "100%" }}
       >
-        <h2 className="form-title">Team Analysis for Next Opponent</h2>
-        <div className="analysis-section">
-          {opponentName ? (
-            <>
-              <div className="analysis-title">
-                Next Opponent: {opponentName} (ID: {opponentId})
-              </div>
-              <div className="analysis-subtitle">
-                Seasons analyzed: {season} (current), {prevSeason} (previous)
-              </div>
-            </>
-          ) : null}
-        </div>
+        <h2 className="form-title">
+          Analyse de l&apos;équipe adverse pour le prochain match
+        </h2>
 
-        <div className="analysis-section">
-          <div className="analysis-title">Offensive Strategies</div>
-          {renderTable(
-            [`Strategy`, `Count (S${season})`, `Count (S${prevSeason})`],
-            stratRows(curr?.offenseStrategies, prev?.offenseStrategies)
-          )}
-        </div>
-        <div className="analysis-section">
-          <div className="analysis-title">Defensive Strategies</div>
-          {renderTable(
-            [`Strategy`, `Count (S${season})`, `Count (S${prevSeason})`],
-            stratRows(curr?.defenseStrategies, prev?.defenseStrategies)
-          )}
-        </div>
-        <div className="analysis-section">
-          <div className="analysis-title">Average Team Ratings</div>
-          {renderTable(
-            [`Category`, `Average (S${season})`, `Average (S${prevSeason})`],
-            avgRows(curr?.avgRatings, prev?.avgRatings)
-          )}
-        </div>
-        <div className="analysis-section">
-          <div className="analysis-title">Average Points per 100 Shots</div>
-          {renderTable(
-            [`Position`, `Average (S${season})`, `Average (S${prevSeason})`],
-            effRows(curr?.avgEfficiency, prev?.avgEfficiency)
-          )}
-        </div>
-        <div className="analysis-section">
-          <div className="analysis-title">
-            Player Stats (Averages, Current Season)
-          </div>
-          {renderTable(
-            [
-              "Player",
-              "PTS",
-              "AST",
-              "REB",
-              "BLK",
-              "STL",
-              "TO",
-              "PF",
-              "MIN",
-              "Games",
-            ],
-            playerRows(curr?.playerSumStats)
-          )}
-        </div>
-        <div className="analysis-section">
-          <div className="analysis-title">
-            EffortDelta by Game (Current Season)
-          </div>
-          {renderTable(
-            ["Date", "EffortDelta", "MatchID"],
-            effortRows(curr?.effortDeltaList)
-          )}
-        </div>
+        {/* New: Dedicated analysis-form classes */}
+        <form className="analysis-form" onSubmit={handleSubmit}>
+          <label className="analysis-form-label">
+            Team Id&nbsp;
+            <input
+              className="analysis-form-input"
+              type="text"
+              value={teamId}
+              onChange={(e) => setTeamId(e.target.value)}
+              required
+              placeholder="ID"
+            />
+          </label>
+          <label className="analysis-form-label">
+            Nombre de saisons&nbsp;
+            <input
+              className="analysis-form-input"
+              type="number"
+              value={numSeasons}
+              min={1}
+              max={10}
+              onChange={(e) => setNumSeasons(Number(e.target.value))}
+              required
+            />
+          </label>
+          <button type="submit" className="analysis-form-submit">
+            Analyser
+          </button>
+        </form>
+
+        {loading && <div>Analyse de l'équipe en cours...</div>}
+        {err && <div className="form-error">{err}</div>}
+
+        {analysis && !loading && !err && (
+          <>
+            <div className="analysis-section">
+              <div className="analysis-title">
+                Équipe analysée : {analysis.opponentName} (ID :{" "}
+                {analysis.opponentId})
+              </div>
+              {seasonLabels.length > 0 && (
+                <div className="analysis-subtitle">
+                  Saisons analysées :
+                  {seasonLabels.map((s: number, i: number) => (
+                    <span key={s} style={{ marginLeft: 10 }}>
+                      {s}
+                      {i === 0 ? " (actuelle)" : ""}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="analysis-section">
+              <div className="analysis-title">Stratégies offensives</div>
+              {renderTable(
+                [
+                  "Stratégie",
+                  ...seasonLabels.map((s) => `Occurrences (S${s})`),
+                ],
+                stratRows(
+                  analysis.seasonsData?.map(
+                    (x: any) => x.offenseStrategies
+                  ) ?? [
+                    analysis.curr?.offenseStrategies,
+                    analysis.prev?.offenseStrategies,
+                  ]
+                )
+              )}
+            </div>
+            <div className="analysis-section">
+              <div className="analysis-title">Stratégies défensives</div>
+              {renderTable(
+                [
+                  "Stratégie",
+                  ...seasonLabels.map((s) => `Occurrences (S${s})`),
+                ],
+                stratRows(
+                  analysis.seasonsData?.map(
+                    (x: any) => x.defenseStrategies
+                  ) ?? [
+                    analysis.curr?.defenseStrategies,
+                    analysis.prev?.defenseStrategies,
+                  ]
+                )
+              )}
+            </div>
+            <div className="analysis-section">
+              <div className="analysis-title">
+                Notes moyennes de l&apos;équipe
+              </div>
+              {renderTable(
+                ["Catégorie", ...seasonLabels.map((s) => `Moyenne (S${s})`)],
+                avgRows(
+                  analysis.seasonsData?.map((x: any) => x.avgRatings) ?? [
+                    analysis.curr?.avgRatings,
+                    analysis.prev?.avgRatings,
+                  ]
+                )
+              )}
+            </div>
+            <div className="analysis-section">
+              <div className="analysis-title">
+                Points moyens par 100 tirs selon le poste
+              </div>
+              {renderTable(
+                ["Poste", ...seasonLabels.map((s) => `Moyenne (S${s})`)],
+                effRows(
+                  analysis.seasonsData?.map((x: any) => x.avgEfficiency) ?? [
+                    analysis.curr?.avgEfficiency,
+                    analysis.prev?.avgEfficiency,
+                  ]
+                )
+              )}
+            </div>
+            <div className="analysis-section">
+              <div className="analysis-title">
+                Statistiques des joueurs (moyennes, saison actuelle)
+              </div>
+              {renderTable(
+                [
+                  "Joueur",
+                  "PTS",
+                  "AST",
+                  "REB",
+                  "BLK",
+                  "STL",
+                  "BP",
+                  "FP",
+                  "MIN",
+                  "Matchs",
+                ],
+                playerRows(
+                  analysis.seasonsData?.[0]?.playerSumStats ??
+                    analysis.curr?.playerSumStats
+                )
+              )}
+            </div>
+            <div className="analysis-section">
+              <div className="analysis-title">
+                Variation d&apos;effort par match (saison actuelle)
+              </div>
+              {renderTable(
+                ["Date", "Variation d'effort", "MatchID"],
+                effortRows(
+                  analysis.seasonsData?.[0]?.effortDeltaList ??
+                    analysis.curr?.effortDeltaList
+                )
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

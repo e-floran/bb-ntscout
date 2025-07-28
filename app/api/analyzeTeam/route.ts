@@ -10,10 +10,18 @@ type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
 const TEAM_DATA_DIR = path.join(process.cwd(), "app/data/teams");
 const SEASON = 69;
-const PREV_SEASON = SEASON - 1;
 
 function parseDate(dateString: string) {
   return new Date(dateString);
+}
+
+// Utility to humanize camelCase/PascalCase for display
+function humanize(str: string) {
+  if (!str) return "";
+  return str
+    .replace(/([A-Z])/g, " $1")
+    .replace(/^./, (s) => s.toUpperCase())
+    .trim();
 }
 
 async function fetchXml(url: string, cookies: string) {
@@ -26,37 +34,69 @@ async function fetchXml(url: string, cookies: string) {
 }
 
 export async function GET(req: NextRequest) {
-  // Get user from cookie
+  // --- User authentication and verification ---
   const login = req.cookies.get("authenticated_user")?.value;
   if (!login) {
-    return NextResponse.json({ error: "Not logged in" }, { status: 401 });
+    // No login cookie, redirect to login
+    return NextResponse.redirect("/login");
   }
-  // Find user object
   const user = users.find((u) => u.login === login && u.active);
   if (!user) {
-    return NextResponse.json(
-      { error: "User not found or not active" },
-      { status: 401 }
-    );
+    // User not present or not active, redirect to login
+    return NextResponse.redirect("/login");
   }
-  const mainTeamId = user.mainTeamId;
 
-  // Ensure JSON file exists for team
+  // --- Read query params for advanced analysis ---
+  const url = new URL(req.url);
+  const teamIdParam = url.searchParams.get("teamId");
+  const numberOfSeasonsParam = url.searchParams.get("numberOfSeasons");
+  const bbSession = req.cookies.get("bbapi_session")?.value || "";
+
+  // If both params are present, bypass normal flow
+  if (teamIdParam && numberOfSeasonsParam) {
+    const teamId = teamIdParam;
+    let numSeasons = Math.max(1, Math.min(10, Number(numberOfSeasonsParam)));
+    if (isNaN(numSeasons)) numSeasons = 2;
+
+    // Analyze the requested team for numSeasons starting from SEASON
+    const seasons: number[] = [];
+    for (let i = 0; i < numSeasons; ++i) {
+      seasons.push(SEASON - i);
+    }
+
+    // Analyze all seasons in parallel
+    const seasonsData = await Promise.all(
+      seasons.map((season) => analyzeTeamForSeason(teamId, bbSession, season))
+    );
+
+    // Use the teamId and fetch team name from the most recent season
+    let opponentName = "";
+    if (seasonsData[0]?.teamName) {
+      opponentName = seasonsData[0].teamName;
+    } else {
+      // fallback: try to get from one of the other seasons
+      const found = seasonsData.find((s) => !!s.teamName);
+      if (found) opponentName = found.teamName;
+    }
+
+    return NextResponse.json({
+      opponentName,
+      opponentId: teamId,
+      seasons,
+      seasonsData,
+    });
+  }
+
+  // --- Default flow: analyze mainTeamId's next opponent for 2 seasons ---
+  const mainTeamId = user.mainTeamId;
   const jsonPath = path.join(TEAM_DATA_DIR, `${mainTeamId}.json`);
-  // Defensive: create directory if missing
   if (!fs.existsSync(TEAM_DATA_DIR)) {
     fs.mkdirSync(TEAM_DATA_DIR, { recursive: true });
   }
 
-  // Get BBAPI session cookie for requests
-  const bbSession = req.cookies.get("bbapi_session")?.value || "";
-
   // Fetch team schedule for this season
   const teamScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${mainTeamId}&season=${SEASON}`;
   const teamScheduleXml = await fetchXml(teamScheduleUrl, bbSession);
-
-  // Debug output: see what the BBAPI returns
-  // console.log(JSON.stringify(teamScheduleXml, null, 2));
 
   let matches = [];
   if (teamScheduleXml?.bbapi?.schedule?.match) {
@@ -65,7 +105,7 @@ export async function GET(req: NextRequest) {
   } else {
     // API error or empty schedule
     return NextResponse.json({
-      error: "Team schedule not found or API error",
+      error: "Calendrier de l'équipe non trouvé ou erreur API",
       details: teamScheduleXml,
     });
   }
@@ -112,7 +152,9 @@ export async function GET(req: NextRequest) {
   );
 
   if (futureMatches.length === 0) {
-    return NextResponse.json({ error: "No future matches set for your team" });
+    return NextResponse.json({
+      error: "Aucun match futur programmé pour votre équipe",
+    });
   }
   const nextMatch = futureMatches.sort(
     (a: any, b: any) =>
@@ -128,182 +170,12 @@ export async function GET(req: NextRequest) {
   }
   const opponentId = opponentTeam["$"].id;
   const opponentName = opponentTeam.teamName;
-
-  // Function to analyze opponent as in analyze.js
-  async function analyzeOpponentSeason(
-    opponentId: string,
-    cookies: string,
-    season: number
-  ) {
-    const opponentScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${opponentId}&season=${season}`;
-    const opponentScheduleXml = await fetchXml(opponentScheduleUrl, cookies);
-
-    let opponentMatches = [];
-    if (opponentScheduleXml?.bbapi?.schedule?.match) {
-      opponentMatches = opponentScheduleXml.bbapi.schedule.match;
-      if (!Array.isArray(opponentMatches)) opponentMatches = [opponentMatches];
-    } else {
-      // No matches for opponent, return empty analysis
-      return {
-        offenseStrategies: {},
-        defenseStrategies: {},
-        avgRatings: {},
-        avgEfficiency: {},
-        effortDeltaList: [],
-        playerSumStats: {},
-      };
-    }
-
-    const offenseStrategies: Record<string, number> = {};
-    const defenseStrategies: Record<string, number> = {};
-    const ratingsTotal: Record<string, number> = {};
-    let ratingsCount = 0;
-    const effTotal: Record<Position, number> = {
-        PG: 0,
-        SG: 0,
-        SF: 0,
-        PF: 0,
-        C: 0,
-      },
-      effCount: Record<Position, number> = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 };
-    const playerSumStats: Record<string, any> = {};
-    const effortDeltaList: any[] = [];
-
-    for (const match of opponentMatches) {
-      const matchId = match["$"].id;
-      const matchDateStr = match["$"].start;
-      const matchDate = parseDate(matchDateStr);
-      if (season === SEASON && matchDate >= now) continue;
-
-      const boxscoreUrl = `${baseApiUrl}boxscore.aspx?matchid=${matchId}`;
-      let boxXml;
-      try {
-        boxXml = await fetchXml(boxscoreUrl, cookies);
-      } catch (e) {
-        continue;
-      }
-
-      const matchNode = boxXml?.bbapi?.match;
-      let teamNode = null;
-      if (
-        matchNode?.awayTeam &&
-        matchNode.awayTeam.$ &&
-        matchNode.awayTeam.$.id == opponentId
-      )
-        teamNode = matchNode.awayTeam;
-      else if (
-        matchNode?.homeTeam &&
-        matchNode.homeTeam.$ &&
-        matchNode.homeTeam.$.id == opponentId
-      )
-        teamNode = matchNode.homeTeam;
-      else continue;
-
-      const offStrat = (teamNode.offStrategy || "").trim();
-      const defStrat = (teamNode.defStrategy || "").trim();
-      offenseStrategies[offStrat] = (offenseStrategies[offStrat] || 0) + 1;
-      defenseStrategies[defStrat] = (defenseStrategies[defStrat] || 0) + 1;
-
-      if (teamNode.ratings) {
-        for (const [cat, value] of Object.entries(teamNode.ratings)) {
-          ratingsTotal[cat] =
-            (ratingsTotal[cat] || 0) + parseFloat(value as string);
-        }
-        ratingsCount++;
-      }
-
-      if (teamNode.efficiency) {
-        for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
-          if (teamNode.efficiency[pos] !== undefined) {
-            effTotal[pos] += parseFloat(teamNode.efficiency[pos]);
-            effCount[pos]++;
-          }
-        }
-      }
-
-      if (
-        "effortDelta" in matchNode &&
-        !isNaN(parseFloat(matchNode.effortDelta))
-      ) {
-        effortDeltaList.push({
-          date: matchDateStr,
-          effortDelta: parseFloat(matchNode.effortDelta),
-          matchId: matchId,
-        });
-      }
-
-      if (teamNode.boxscore && teamNode.boxscore.player) {
-        let players = teamNode.boxscore.player;
-        if (!Array.isArray(players)) players = [players];
-        for (const p of players) {
-          const pid = p["$"].id;
-          const name = `${p.firstName} ${p.lastName}`;
-          if (!playerSumStats[pid]) {
-            playerSumStats[pid] = {
-              name,
-              pts: 0,
-              ast: 0,
-              reb: 0,
-              min: 0,
-              games: 0,
-              blk: 0,
-              stl: 0,
-              to: 0,
-              pf: 0,
-            };
-          }
-          if (
-            p.performance &&
-            p.performance.pts !== undefined &&
-            p.performance.pts !== "N/A"
-          ) {
-            playerSumStats[pid].pts += parseInt(p.performance.pts);
-            playerSumStats[pid].ast += parseInt(p.performance.ast);
-            playerSumStats[pid].reb += parseInt(p.performance.reb);
-            playerSumStats[pid].blk += parseInt(p.performance.blk);
-            playerSumStats[pid].stl += parseInt(p.performance.stl);
-            playerSumStats[pid].to += parseInt(p.performance.to);
-            playerSumStats[pid].pf += parseInt(p.performance.pf);
-            let min = 0;
-            for (const pos of ["PG", "SG", "SF", "PF", "C"]) {
-              if (p.minutes && p.minutes[pos]) min += parseInt(p.minutes[pos]);
-            }
-            playerSumStats[pid].min += min;
-            playerSumStats[pid].games += 1;
-          }
-        }
-      }
-    }
-
-    effortDeltaList.sort(
-      (a, b) =>
-        (parseDate(a.date) as unknown as number) -
-        (parseDate(b.date) as unknown as number)
-    );
-
-    const avgRatings: Record<string, number> = {};
-    for (const [cat, sum] of Object.entries(ratingsTotal)) {
-      avgRatings[cat] = ratingsCount ? sum / ratingsCount : 0;
-    }
-    const avgEfficiency: Record<string, number> = {};
-    for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
-      avgEfficiency[pos] = effCount[pos] ? effTotal[pos] / effCount[pos] : 0;
-    }
-
-    return {
-      offenseStrategies,
-      defenseStrategies,
-      avgRatings,
-      avgEfficiency,
-      effortDeltaList,
-      playerSumStats,
-    };
-  }
+  const PREV_SEASON = SEASON - 1;
 
   // Run analysis for opponent, current and previous season
   const [curr, prev] = await Promise.all([
-    analyzeOpponentSeason(opponentId, bbSession, SEASON),
-    analyzeOpponentSeason(opponentId, bbSession, PREV_SEASON),
+    analyzeTeamForSeason(opponentId, bbSession, SEASON),
+    analyzeTeamForSeason(opponentId, bbSession, PREV_SEASON),
   ]);
 
   return NextResponse.json({
@@ -314,4 +186,194 @@ export async function GET(req: NextRequest) {
     season: SEASON,
     prevSeason: PREV_SEASON,
   });
+}
+
+// --- Analysis logic for one season of a team ---
+async function analyzeTeamForSeason(
+  teamId: string,
+  cookies: string,
+  season: number
+) {
+  const opponentScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${teamId}&season=${season}`;
+  const opponentScheduleXml = await fetchXml(opponentScheduleUrl, cookies);
+
+  let opponentMatches = [];
+  if (opponentScheduleXml?.bbapi?.schedule?.match) {
+    opponentMatches = opponentScheduleXml.bbapi.schedule.match;
+    if (!Array.isArray(opponentMatches)) opponentMatches = [opponentMatches];
+  } else {
+    // No matches for team, return empty analysis
+    return {
+      teamName: "",
+      offenseStrategies: {},
+      defenseStrategies: {},
+      avgRatings: {},
+      avgEfficiency: {},
+      effortDeltaList: [],
+      playerSumStats: {},
+    };
+  }
+
+  let teamName = "";
+  const offenseStrategies: Record<string, number> = {};
+  const defenseStrategies: Record<string, number> = {};
+  const ratingsTotal: Record<string, number> = {};
+  let ratingsCount = 0;
+  const effTotal: Record<Position, number> = {
+      PG: 0,
+      SG: 0,
+      SF: 0,
+      PF: 0,
+      C: 0,
+    },
+    effCount: Record<Position, number> = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 };
+  const playerSumStats: Record<string, any> = {};
+  const effortDeltaList: any[] = [];
+
+  const now = new Date();
+  for (const match of opponentMatches) {
+    const matchId = match["$"].id;
+    const matchDateStr = match["$"].start;
+    const matchDate = parseDate(matchDateStr);
+    if (season === SEASON && matchDate >= now) continue;
+
+    const boxscoreUrl = `${baseApiUrl}boxscore.aspx?matchid=${matchId}`;
+    let boxXml;
+    try {
+      boxXml = await fetchXml(boxscoreUrl, cookies);
+    } catch (e) {
+      continue;
+    }
+
+    const matchNode = boxXml?.bbapi?.match;
+    let teamNode = null;
+    if (
+      matchNode?.awayTeam &&
+      matchNode.awayTeam.$ &&
+      matchNode.awayTeam.$.id == teamId
+    )
+      teamNode = matchNode.awayTeam;
+    else if (
+      matchNode?.homeTeam &&
+      matchNode.homeTeam.$ &&
+      matchNode.homeTeam.$.id == teamId
+    )
+      teamNode = matchNode.homeTeam;
+    else continue;
+
+    if (!teamName && teamNode && teamNode.teamName) {
+      teamName = teamNode.teamName;
+    }
+
+    const offStrat = (teamNode.offStrategy || "").trim();
+    const defStrat = (teamNode.defStrategy || "").trim();
+    offenseStrategies[offStrat] = (offenseStrategies[offStrat] || 0) + 1;
+    defenseStrategies[defStrat] = (defenseStrategies[defStrat] || 0) + 1;
+
+    if (teamNode.ratings) {
+      for (const [cat, value] of Object.entries(teamNode.ratings)) {
+        ratingsTotal[cat] =
+          (ratingsTotal[cat] || 0) + parseFloat(value as string);
+      }
+      ratingsCount++;
+    }
+
+    if (teamNode.efficiency) {
+      for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
+        if (teamNode.efficiency[pos] !== undefined) {
+          effTotal[pos] += parseFloat(teamNode.efficiency[pos]);
+          effCount[pos]++;
+        }
+      }
+    }
+
+    if (
+      "effortDelta" in matchNode &&
+      !isNaN(parseFloat(matchNode.effortDelta))
+    ) {
+      effortDeltaList.push({
+        date: matchDateStr,
+        effortDelta: parseFloat(matchNode.effortDelta),
+        matchId: matchId,
+      });
+    }
+
+    if (teamNode.boxscore && teamNode.boxscore.player) {
+      let players = teamNode.boxscore.player;
+      if (!Array.isArray(players)) players = [players];
+      for (const p of players) {
+        const pid = p["$"].id;
+        const name = `${p.firstName} ${p.lastName}`;
+        if (!playerSumStats[pid]) {
+          playerSumStats[pid] = {
+            name,
+            pts: 0,
+            ast: 0,
+            reb: 0,
+            min: 0,
+            games: 0,
+            blk: 0,
+            stl: 0,
+            to: 0,
+            pf: 0,
+          };
+        }
+        if (
+          p.performance &&
+          p.performance.pts !== undefined &&
+          p.performance.pts !== "N/A"
+        ) {
+          playerSumStats[pid].pts += parseInt(p.performance.pts);
+          playerSumStats[pid].ast += parseInt(p.performance.ast);
+          playerSumStats[pid].reb += parseInt(p.performance.reb);
+          playerSumStats[pid].blk += parseInt(p.performance.blk);
+          playerSumStats[pid].stl += parseInt(p.performance.stl);
+          playerSumStats[pid].to += parseInt(p.performance.to);
+          playerSumStats[pid].pf += parseInt(p.performance.pf);
+          let min = 0;
+          for (const pos of ["PG", "SG", "SF", "PF", "C"]) {
+            if (p.minutes && p.minutes[pos]) min += parseInt(p.minutes[pos]);
+          }
+          playerSumStats[pid].min += min;
+          playerSumStats[pid].games += 1;
+        }
+      }
+    }
+  }
+
+  effortDeltaList.sort(
+    (a, b) =>
+      (parseDate(a.date) as unknown as number) -
+      (parseDate(b.date) as unknown as number)
+  );
+
+  // Humanize keys for frontend display
+  const offenseStrategiesHumanized: Record<string, number> = {};
+  Object.entries(offenseStrategies).forEach(([k, v]) => {
+    offenseStrategiesHumanized[humanize(k)] = v;
+  });
+  const defenseStrategiesHumanized: Record<string, number> = {};
+  Object.entries(defenseStrategies).forEach(([k, v]) => {
+    defenseStrategiesHumanized[humanize(k)] = v;
+  });
+  const avgRatingsHumanized: Record<string, number> = {};
+  Object.entries(ratingsTotal).forEach(([k, sum]) => {
+    avgRatingsHumanized[humanize(k)] = ratingsCount ? sum / ratingsCount : 0;
+  });
+  const avgEfficiencyHumanized: Record<string, number> = {};
+  Object.entries(effTotal).forEach(([k, sum]) => {
+    avgEfficiencyHumanized[k] = effCount[k as Position]
+      ? sum / effCount[k as Position]
+      : 0;
+  });
+
+  return {
+    teamName,
+    offenseStrategies: offenseStrategiesHumanized,
+    defenseStrategies: defenseStrategiesHumanized,
+    avgRatings: avgRatingsHumanized,
+    avgEfficiency: avgEfficiencyHumanized,
+    effortDeltaList,
+    playerSumStats,
+  };
 }
