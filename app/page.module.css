@@ -67,10 +67,7 @@
   height: 48px;
   padding: 0 20px;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -164,4 +161,10 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+.logoutButton {
+  /* Extra style to ensure it matches your app's color and layout */
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }

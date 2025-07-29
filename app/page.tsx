@@ -2,6 +2,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useRouter } from "next/navigation";
+import styles from "./page.module.css"; // Assuming you use this for styling
 
 // Utility to humanize camelCase/PascalCase for display
 function humanize(str: string) {
@@ -21,6 +25,22 @@ export default function IndexPage() {
   // New: form state
   const [teamId, setTeamId] = useState("");
   const [numSeasons, setNumSeasons] = useState<number>(2);
+
+  const router = useRouter();
+
+  // Logout handler
+  async function handleLogout() {
+    try {
+      const res = await fetch("/api/logout", { method: "POST" });
+      if (res.ok) {
+        router.replace("/login");
+      } else {
+        alert("Déconnexion échouée.");
+      }
+    } catch (e) {
+      alert("Erreur lors de la déconnexion.");
+    }
+  }
 
   // Load main data on mount
   useEffect(() => {
@@ -170,7 +190,29 @@ export default function IndexPage() {
   }
 
   return (
-    <div className="main-container">
+    <div className="main-container" style={{ position: "relative" }}>
+      {/* Logout button in top right */}
+      <IconButton
+        aria-label="Déconnexion"
+        onClick={handleLogout}
+        className={styles.logoutButton}
+        sx={{
+          position: "absolute",
+          top: 16,
+          right: 16,
+          background: "#f5f7fa",
+          color: "#1976d2",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+          "&:hover": {
+            background: "#e3eaf7",
+            color: "#1565c0",
+          },
+          zIndex: 100,
+        }}
+      >
+        <LogoutIcon />
+      </IconButton>
+
       <div
         className="form-container"
         style={{ maxWidth: "1100px", width: "100%" }}
