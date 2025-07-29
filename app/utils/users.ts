@@ -21,4 +21,14 @@ export const users: User[] = [
     mainTeamId: "11",
     active: true,
   },
+  {
+    login: "Boulfe",
+    mainTeamId: "1011",
+    active: true,
+  },
+  {
+    login: "Smidge",
+    mainTeamId: "11",
+    active: true,
+  },
 ];
