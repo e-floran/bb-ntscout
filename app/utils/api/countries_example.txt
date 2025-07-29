@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bbapi version='1'>
+    <countries retrieved='2025-07-29T16:48:32Z'>
+        <country id='1' divisions='5' firstSeason='1' users='876'>USA</country>
+        <country id='2' divisions='4' firstSeason='1' users='273'>Argentina</country>
+        <country id='3' divisions='4' firstSeason='1' users='190'>Brasil</country>
+        <country id='4' divisions='4' firstSeason='1' users='141'>Canada</country>
+        <country id='5' divisions='5' firstSeason='1' users='553'>China</country>
+        <country id='6' divisions='4' firstSeason='1' users='361'>Türkiye</country>
+        <country id='7' divisions='5' firstSeason='1' users='1238'>España</country>
+        <country id='8' divisions='4' firstSeason='1' users='361'>Deutschland</country>
+        <country id='9' divisions='3' firstSeason='1' users='71'>Sverige</country>
+        <country id='10' divisions='5' firstSeason='1' users='1168'>Italia</country>
+        <country id='11' divisions='5' firstSeason='1' users='753'>France</country>
+        <country id='12' divisions='5' firstSeason='1' users='636'>Hellas</country>
+        <country id='13' divisions='4' firstSeason='2' users='160'>Belgium</country>
+        <country id='14' divisions='4' firstSeason='2' users='157'>England</country>
+        <country id='15' divisions='4' firstSeason='2' users='198'>Israel</country>
+        <country id='16' divisions='3' firstSeason='2' users='90'>Nederland</country>
+        <country id='17' divisions='4' firstSeason='2' users='188'>Australia</country>
+        <country id='18' divisions='4' firstSeason='2' users='231'>Portugal</country>
+        <country id='19' divisions='4' firstSeason='2' users='181'>Rossiya</country>
+        <country id='20' divisions='5' firstSeason='2' users='610'>Lietuva</country>
+        <country id='21' divisions='3' firstSeason='2' users='83'>Chile</country>
+        <country id='22' divisions='3' firstSeason='2' users='27'>Colombia</country>
+        <country id='23' divisions='' firstSeason='2' users='0'>Hanguk</country>
+        <country id='24' divisions='4' firstSeason='2' users='136'>Hrvatska</country>
+        <country id='25' divisions='' firstSeason='2' users='0'>Nigeria</country>
+        <country id='26' divisions='3' firstSeason='2' users='32'>Norge</country>
+        <country id='27' divisions='3' firstSeason='2' users='42'>Österreich</country>
+        <country id='28' divisions='3' firstSeason='2' users='128'>Schweiz</country>
+        <country id='29' divisions='4' firstSeason='2' users='262'>Srbija</country>
+        <country id='30' divisions='3' firstSeason='2' users='54'>México</country>
+        <country id='31' divisions='' firstSeason='3' users='0'>Al Jazair</country>
+        <country id='32' divisions='' firstSeason='3' users='0'>Al Maghrib</country>
+        <country id='33' divisions='3' firstSeason='3' users='112'>Ukraina</country>
+        <country id='34' divisions='' firstSeason='3' users='0'>Bolivia</country>
+        <country id='35' divisions='4' firstSeason='3' users='113'>Bosna i Hercegovina</country>
+        <country id='36' divisions='3' firstSeason='3' users='93'>Bulgaria</country>
+        <country id='37' divisions='4' firstSeason='3' users='134'>Česká Rep.</country>
+        <country id='38' divisions='' firstSeason='3' users='0'>Costa Rica</country>
+        <country id='39' divisions='3' firstSeason='3' users='30'>Danmark</country>
+        <country id='40' divisions='' firstSeason='3' users='0'>Ecuador</country>
+        <country id='41' divisions='4' firstSeason='3' users='298'>Eesti</country>
+        <country id='42' divisions='' firstSeason='3' users='0'>India</country>
+        <country id='43' divisions='3' firstSeason='3' users='65'>Indonesia</country>
+        <country id='44' divisions='3' firstSeason='3' users='37'>Ireland</country>
+        <country id='45' divisions='4' firstSeason='3' users='167'>Hong Kong</country>
+        <country id='46' divisions='4' firstSeason='3' users='165'>Latvija</country>
+        <country id='47' divisions='' firstSeason='3' users='0'>Lubnan</country>
+        <country id='48' divisions='4' firstSeason='3' users='261'>Magyarország</country>
+        <country id='49' divisions='3' firstSeason='3' users='37'>Makedonija</country>
+        <country id='50' divisions='3' firstSeason='3' users='15'>Malaysia</country>
+        <country id='51' divisions='' firstSeason='3' users='0'>Misr</country>
+        <country id='52' divisions='' firstSeason='3' users='0'>New Zealand</country>
+        <country id='53' divisions='' firstSeason='3' users='0'>Nippon</country>
+        <country id='54' divisions='' firstSeason='3' users='0'>Panama</country>
+        <country id='55' divisions='' firstSeason='3' users='0'>Paraguay</country>
+        <country id='56' divisions='3' firstSeason='3' users='42'>Perú</country>
+        <country id='57' divisions='4' firstSeason='3' users='288'>Pilipinas</country>
+        <country id='58' divisions='5' firstSeason='3' users='741'>Polska</country>
+        <country id='59' divisions='3' firstSeason='3' users='27'>Iran</country>
+        <country id='60' divisions='' firstSeason='3' users='0'>Rep. Dominicana</country>
+        <country id='61' divisions='3' firstSeason='3' users='92'>România</country>
+        <country id='62' divisions='3' firstSeason='3' users='48'>Sakartvelo</country>
+        <country id='63' divisions='' firstSeason='3' users='0'>Saudi Arabia</country>
+        <country id='64' divisions='' firstSeason='3' users='0'>Scotland</country>
+        <country id='65' divisions='3' firstSeason='3' users='26'>Singapore</country>
+        <country id='66' divisions='4' firstSeason='3' users='172'>Slovenija</country>
+        <country id='67' divisions='3' firstSeason='3' users='106'>Slovensko</country>
+        <country id='68' divisions='' firstSeason='3' users='0'>South Africa</country>
+        <country id='69' divisions='4' firstSeason='3' users='167'>Suomi</country>
+        <country id='70' divisions='4' firstSeason='3' users='123'>Taiwan</country>
+        <country id='71' divisions='' firstSeason='3' users='0'>Tounes</country>
+        <country id='72' divisions='' firstSeason='3' users='0'>Prathet Thai</country>
+        <country id='73' divisions='4' firstSeason='3' users='93'>Uruguay</country>
+        <country id='74' divisions='3' firstSeason='3' users='52'>Venezuela</country>
+        <country id='75' divisions='' firstSeason='4' users='0'>Andorra</country>
+        <country id='76' divisions='3' firstSeason='4' users='13'>Crna Gora</country>
+        <country id='77' divisions='3' firstSeason='4' users='22'>Cyprus</country>
+        <country id='78' divisions='' firstSeason='4' users='0'>Ísland</country>
+        <country id='79' divisions='' firstSeason='4' users='0'>Shqipëria</country>
+        <country id='80' divisions='' firstSeason='4' users='0'>Puerto Rico</country>
+        <country id='81' divisions='' firstSeason='5' users='0'>Cymru</country>
+        <country id='82' divisions='' firstSeason='5' users='0'>Guatemala</country>
+        <country id='83' divisions='' firstSeason='5' users='0'>Kazakhstan</country>
+        <country id='84' divisions='' firstSeason='5' users='0'>U.A.E.</country>
+        <country id='85' divisions='3' firstSeason='6' users='24'>Belarus</country>
+        <country id='86' divisions='' firstSeason='6' users='0'>Moldova</country>
+        <country id='87' divisions='' firstSeason='7' users='0'>Hayastan</country>
+        <country id='88' divisions='' firstSeason='7' users='0'>Azərbaycan</country>
+        <country id='89' divisions='' firstSeason='8' users='0'>Pakistan</country>
+        <country id='90' divisions='' firstSeason='8' users='0'>Malta</country>
+        <country id='91' divisions='' firstSeason='9' users='0'>Luxembourg</country>
+        <country id='92' divisions='' firstSeason='9' users='0'>Việt Nam</country>
+        <country id='93' divisions='' firstSeason='10' users='0'>Ghana</country>
+        <country id='94' divisions='' firstSeason='10' users='0'>Senegal</country>
+        <country id='95' divisions='' firstSeason='11' users='0'>Barbados</country>
+        <country id='96' divisions='' firstSeason='11' users='0'>Jamaica</country>
+        <country id='97' divisions='' firstSeason='12' users='0'>Macau</country>
+        <country id='98' divisions='' firstSeason='12' users='0'>Bahamas</country>
+    </countries>
+</bbapi>
