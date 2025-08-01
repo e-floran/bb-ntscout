@@ -26,7 +26,6 @@ export interface PlayerWeek {
   season: number;
   id: number;
   weekStart: Date;
-  minutesPlayed: number;
   gameShape: GameShapeRange;
   dmi: number;
 }
