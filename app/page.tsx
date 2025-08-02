@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { LinearProgress } from "@mui/material";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css"; // Assuming you use this for styling
 
@@ -16,6 +17,12 @@ function humanize(str: string) {
     .trim();
 }
 
+interface LoadingStep {
+  step: string;
+  completed: boolean;
+  current: boolean;
+}
+
 type AnalysisResult = any;
 
 export default function IndexPage() {
@@ -25,6 +32,10 @@ export default function IndexPage() {
   // New: form state
   const [teamId, setTeamId] = useState("");
   const [numSeasons, setNumSeasons] = useState<number>(2);
+
+  // Loading states
+  const [loadingSteps, setLoadingSteps] = useState<LoadingStep[]>([]);
+  const [showSkeletons, setShowSkeletons] = useState(false);
 
   // Sorting state
   const [sortConfig, setSortConfig] = useState<{
@@ -59,11 +70,49 @@ export default function IndexPage() {
     }
   }
 
+  // Simulate loading steps
+  const simulateLoadingSteps = () => {
+    const steps: LoadingStep[] = [
+      { step: "Connexion à l'API", completed: false, current: true },
+      {
+        step: "Récupération des données d'équipe",
+        completed: false,
+        current: false,
+      },
+      { step: "Analyse des saisons", completed: false, current: false },
+      { step: "Calcul des statistiques", completed: false, current: false },
+      { step: "Génération des rapports", completed: false, current: false },
+      { step: "Finalisation de l'analyse", completed: false, current: false },
+    ];
+
+    setLoadingSteps(steps);
+    setShowSkeletons(true);
+
+    steps.forEach((_, index) => {
+      setTimeout(() => {
+        setLoadingSteps((prev) =>
+          prev.map((step, i) => ({
+            ...step,
+            completed: i <= index,
+            current: i === index + 1,
+          }))
+        );
+      }, (index + 1) * 600);
+    });
+
+    // Hide skeletons after steps complete
+    setTimeout(() => {
+      setShowSkeletons(false);
+    }, steps.length * 600 + 300);
+  };
+
   // Load main data on mount
   useEffect(() => {
     setLoading(true);
     setErr("");
     setAnalysis(null);
+    simulateLoadingSteps();
+
     fetch("/api/analyzeTeam")
       .then(async (res) => {
         const data = await res.json();
@@ -71,7 +120,11 @@ export default function IndexPage() {
         else setAnalysis(data);
       })
       .catch((e) => setErr(e.message))
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        setLoadingSteps([]);
+        setShowSkeletons(false);
+      });
   }, []);
 
   // Form handler
@@ -93,6 +146,8 @@ export default function IndexPage() {
       return;
     }
 
+    simulateLoadingSteps();
+
     const params = new URLSearchParams({
       teamId: teamId.trim(),
       numberOfSeasons: String(numSeasons),
@@ -102,7 +157,10 @@ export default function IndexPage() {
     const data = await res.json();
     if (data.error) setErr(data.error);
     else setAnalysis(data);
+
     setLoading(false);
+    setLoadingSteps([]);
+    setShowSkeletons(false);
   }
 
   // Toggle section collapse
@@ -160,6 +218,197 @@ export default function IndexPage() {
     });
   };
 
+  // Loading Progress Component
+  const LoadingProgress = () => (
+    <div
+      style={{
+        margin: "2rem 0",
+        padding: "1.5rem",
+        backgroundColor: "#f8f9fa",
+        borderRadius: "8px",
+        border: "1px solid #e9ecef",
+      }}
+    >
+      <div style={{ marginBottom: "1.5rem" }}>
+        <h3
+          style={{ margin: "0 0 1rem 0", color: "#495057", fontSize: "1.1rem" }}
+        >
+          Analyse en cours...
+        </h3>
+        <LinearProgress
+          variant="determinate"
+          value={
+            (loadingSteps.filter((s) => s.completed).length /
+              loadingSteps.length) *
+            100
+          }
+          style={{
+            height: "8px",
+            borderRadius: "4px",
+            backgroundColor: "#e9ecef",
+          }}
+          sx={{
+            "& .MuiLinearProgress-bar": {
+              backgroundColor: "#28a745",
+            },
+          }}
+        />
+        <div
+          style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#6c757d" }}
+        >
+          {Math.round(
+            (loadingSteps.filter((s) => s.completed).length /
+              loadingSteps.length) *
+              100
+          )}
+          % terminé
+        </div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+        {loadingSteps.map((step, index) => (
+          <div
+            key={index}
+            style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
+          >
+            <div
+              style={{
+                width: 16,
+                height: 16,
+                borderRadius: "50%",
+                backgroundColor: step.completed
+                  ? "#28a745"
+                  : step.current
+                  ? "#007bff"
+                  : "#dee2e6",
+                border: step.current ? "2px solid #007bff" : "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "all 0.3s ease",
+              }}
+            >
+              {step.completed && (
+                <span
+                  style={{
+                    color: "white",
+                    fontSize: "10px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  ✓
+                </span>
+              )}
+              {step.current && !step.completed && (
+                <div
+                  style={{
+                    width: 8,
+                    height: 8,
+                    backgroundColor: "#007bff",
+                    borderRadius: "50%",
+                    animation: "pulse 1.5s ease-in-out infinite",
+                  }}
+                />
+              )}
+            </div>
+            <span
+              style={{
+                color: step.completed
+                  ? "#28a745"
+                  : step.current
+                  ? "#007bff"
+                  : "#6c757d",
+                fontWeight: step.current ? "600" : "normal",
+                fontSize: "0.95rem",
+              }}
+            >
+              {step.step}
+            </span>
+          </div>
+        ))}
+      </div>
+      <style jsx>{`
+        @keyframes pulse {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </div>
+  );
+
+  // Skeleton Loading Component
+  const SkeletonTable = ({ rows = 5, cols = 4 }) => (
+    <div style={{ margin: "1rem 0" }}>
+      <div
+        style={{
+          height: "20px",
+          backgroundColor: "#e9ecef",
+          borderRadius: "4px",
+          marginBottom: "1rem",
+          width: "60%",
+          animation: "skeleton-loading 1.5s ease-in-out infinite",
+        }}
+      />
+      <table className="table-analysis" style={{ opacity: 0.7 }}>
+        <thead>
+          <tr>
+            {Array.from({ length: cols }).map((_, i) => (
+              <th key={i}>
+                <div
+                  style={{
+                    height: "16px",
+                    backgroundColor: "#e9ecef",
+                    borderRadius: "3px",
+                    animation: "skeleton-loading 1.5s ease-in-out infinite",
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                />
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from({ length: rows }).map((_, rowIndex) => (
+            <tr key={rowIndex}>
+              {Array.from({ length: cols }).map((_, colIndex) => (
+                <td key={colIndex}>
+                  <div
+                    style={{
+                      height: "14px",
+                      backgroundColor: "#f8f9fa",
+                      borderRadius: "3px",
+                      animation: "skeleton-loading 1.5s ease-in-out infinite",
+                      animationDelay: `${(rowIndex * cols + colIndex) * 0.05}s`,
+                    }}
+                  />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <style jsx>{`
+        @keyframes skeleton-loading {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.4;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </div>
+  );
+
   function renderTable(
     headers: string[],
     rows: (string | number)[][],
@@ -214,6 +463,28 @@ export default function IndexPage() {
     content: React.ReactNode
   ) {
     const isCollapsed = collapsedSections[sectionId];
+
+    if (showSkeletons) {
+      return (
+        <div className="analysis-section">
+          <div
+            className="analysis-title"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "10px 0",
+              borderBottom: "1px solid #e0e0e0",
+              marginBottom: "15px",
+            }}
+          >
+            <span>{title}</span>
+            <span style={{ fontSize: "18px" }}>▼</span>
+          </div>
+          <SkeletonTable />
+        </div>
+      );
+    }
 
     return (
       <div className="analysis-section">
@@ -368,6 +639,7 @@ export default function IndexPage() {
               onChange={(e) => setTeamId(e.target.value)}
               required
               placeholder="ID"
+              disabled={loading}
             />
           </label>
           <label className="analysis-form-label">
@@ -380,14 +652,21 @@ export default function IndexPage() {
               max={10}
               onChange={(e) => setNumSeasons(Number(e.target.value))}
               required
+              disabled={loading}
             />
           </label>
-          <button type="submit" className="analysis-form-submit">
-            Analyser
+          <button
+            type="submit"
+            className="analysis-form-submit"
+            disabled={loading}
+            style={{ opacity: loading ? 0.6 : 1 }}
+          >
+            {loading ? "Analyse..." : "Analyser"}
           </button>
         </form>
 
-        {loading && <div>Analyse de l&apos;équipe en cours...</div>}
+        {loading && <LoadingProgress />}
+
         {err && <div className="form-error">{err}</div>}
 
         {analysis && !loading && !err && (
