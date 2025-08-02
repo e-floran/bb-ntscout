@@ -26,6 +26,23 @@ export default function IndexPage() {
   const [teamId, setTeamId] = useState("");
   const [numSeasons, setNumSeasons] = useState<number>(2);
 
+  // Sorting state
+  const [sortConfig, setSortConfig] = useState<{
+    table: string;
+    column: number;
+    direction: "asc" | "desc";
+  } | null>(null);
+
+  // Collapsed sections state - all collapsed by default
+  const [collapsedSections, setCollapsedSections] = useState({
+    "offense-strategies": true,
+    "defense-strategies": true,
+    "avg-ratings": true,
+    "avg-efficiency": true,
+    "player-stats": true,
+    "effort-variation": true,
+  });
+
   const router = useRouter();
 
   // Logout handler
@@ -88,18 +105,97 @@ export default function IndexPage() {
     setLoading(false);
   }
 
-  function renderTable(headers: string[], rows: (string | number)[][]) {
+  // Toggle section collapse
+  const toggleSection = (sectionId: string) => {
+    setCollapsedSections((prev) => ({
+      ...prev,
+      [sectionId]: !prev[sectionId],
+    }));
+  };
+
+  // Sorting function
+  const handleSort = (tableId: string, columnIndex: number) => {
+    let direction: "asc" | "desc" = "asc";
+
+    if (
+      sortConfig &&
+      sortConfig.table === tableId &&
+      sortConfig.column === columnIndex &&
+      sortConfig.direction === "asc"
+    ) {
+      direction = "desc";
+    }
+
+    setSortConfig({ table: tableId, column: columnIndex, direction });
+  };
+
+  // Generic sort function for table rows
+  const sortRows = (
+    rows: (string | number)[][],
+    tableId: string
+  ): (string | number)[][] => {
+    if (!sortConfig || sortConfig.table !== tableId) {
+      return rows;
+    }
+
+    return [...rows].sort((a, b) => {
+      const aVal = a[sortConfig.column];
+      const bVal = b[sortConfig.column];
+
+      // Handle numeric values
+      const aNum = parseFloat(String(aVal));
+      const bNum = parseFloat(String(bVal));
+
+      let comparison = 0;
+
+      if (!isNaN(aNum) && !isNaN(bNum)) {
+        // Both are numbers
+        comparison = aNum - bNum;
+      } else {
+        // String comparison
+        comparison = String(aVal).localeCompare(String(bVal));
+      }
+
+      return sortConfig.direction === "asc" ? comparison : -comparison;
+    });
+  };
+
+  function renderTable(
+    headers: string[],
+    rows: (string | number)[][],
+    tableId: string
+  ) {
+    const sortedRows = sortRows(rows, tableId);
+
     return (
       <table className="table-analysis">
         <thead>
           <tr>
             {headers.map((h, i) => (
-              <th key={i}>{h}</th>
+              <th
+                key={i}
+                onClick={() => handleSort(tableId, i)}
+                style={{
+                  cursor: "pointer",
+                  userSelect: "none",
+                  backgroundColor:
+                    sortConfig?.table === tableId && sortConfig?.column === i
+                      ? "#f0f0f0"
+                      : "transparent",
+                }}
+              >
+                {h}
+                {sortConfig?.table === tableId && sortConfig?.column === i && (
+                  <span style={{ marginLeft: "4px" }}>
+                    {sortConfig.direction === "asc" ? "↑" : "↓"}
+                  </span>
+                )}
+              </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, i) => (
+          {sortedRows.map((row, i) => (
             <tr key={i}>
               {row.map((val, j) => (
                 <td key={j}>{val}</td>
@@ -108,6 +204,46 @@ export default function IndexPage() {
           ))}
         </tbody>
       </table>
+    );
+  }
+
+  // Render collapsible section
+  function renderCollapsibleSection(
+    sectionId: string,
+    title: string,
+    content: React.ReactNode
+  ) {
+    const isCollapsed = collapsedSections[sectionId];
+
+    return (
+      <div className="analysis-section">
+        <div
+          className="analysis-title"
+          onClick={() => toggleSection(sectionId)}
+          style={{
+            cursor: "pointer",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "10px 0",
+            borderBottom: "1px solid #e0e0e0",
+            marginBottom: isCollapsed ? 0 : "15px",
+          }}
+        >
+          <span>{title}</span>
+          <span
+            style={{
+              fontSize: "18px",
+              fontWeight: "normal",
+              transition: "transform 0.2s ease",
+            }}
+          >
+            {isCollapsed ? "▶" : "▼"}
+          </span>
+        </div>
+        {!isCollapsed && <div style={{ paddingTop: "15px" }}>{content}</div>}
+      </div>
     );
   }
 
@@ -273,9 +409,11 @@ export default function IndexPage() {
                 </div>
               )}
             </div>
-            <div className="analysis-section">
-              <div className="analysis-title">Stratégies offensives</div>
-              {renderTable(
+
+            {renderCollapsibleSection(
+              "offense-strategies",
+              "Stratégies offensives",
+              renderTable(
                 [
                   "Stratégie",
                   ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
@@ -287,12 +425,15 @@ export default function IndexPage() {
                     analysis.curr?.offenseStrategies,
                     analysis.prev?.offenseStrategies,
                   ]
-                )
-              )}
-            </div>
-            <div className="analysis-section">
-              <div className="analysis-title">Stratégies défensives</div>
-              {renderTable(
+                ),
+                "offense-strategies"
+              )
+            )}
+
+            {renderCollapsibleSection(
+              "defense-strategies",
+              "Stratégies défensives",
+              renderTable(
                 [
                   "Stratégie",
                   ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
@@ -304,14 +445,15 @@ export default function IndexPage() {
                     analysis.curr?.defenseStrategies,
                     analysis.prev?.defenseStrategies,
                   ]
-                )
-              )}
-            </div>
-            <div className="analysis-section">
-              <div className="analysis-title">
-                Notes moyennes de l&apos;équipe
-              </div>
-              {renderTable(
+                ),
+                "defense-strategies"
+              )
+            )}
+
+            {renderCollapsibleSection(
+              "avg-ratings",
+              "Notes moyennes de l'équipe",
+              renderTable(
                 [
                   "Catégorie",
                   ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
@@ -321,14 +463,15 @@ export default function IndexPage() {
                     analysis.curr?.avgRatings,
                     analysis.prev?.avgRatings,
                   ]
-                )
-              )}
-            </div>
-            <div className="analysis-section">
-              <div className="analysis-title">
-                Points moyens par 100 tirs selon le poste
-              </div>
-              {renderTable(
+                ),
+                "avg-ratings"
+              )
+            )}
+
+            {renderCollapsibleSection(
+              "avg-efficiency",
+              "Points moyens par 100 tirs selon le poste",
+              renderTable(
                 [
                   "Poste",
                   ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
@@ -338,14 +481,15 @@ export default function IndexPage() {
                     analysis.curr?.avgEfficiency,
                     analysis.prev?.avgEfficiency,
                   ]
-                )
-              )}
-            </div>
-            <div className="analysis-section">
-              <div className="analysis-title">
-                Statistiques des joueurs (moyennes, saison actuelle)
-              </div>
-              {renderTable(
+                ),
+                "avg-efficiency"
+              )
+            )}
+
+            {renderCollapsibleSection(
+              "player-stats",
+              "Statistiques des joueurs (moyennes, saison actuelle)",
+              renderTable(
                 [
                   "Joueur",
                   "PTS",
@@ -361,21 +505,23 @@ export default function IndexPage() {
                 playerRows(
                   analysis.seasonsData?.[0]?.playerSumStats ??
                     analysis.curr?.playerSumStats
-                )
-              )}
-            </div>
-            <div className="analysis-section">
-              <div className="analysis-title">
-                Variation d&apos;effort par match (saison actuelle)
-              </div>
-              {renderTable(
+                ),
+                "player-stats"
+              )
+            )}
+
+            {renderCollapsibleSection(
+              "effort-variation",
+              "Variation d'effort par match (saison actuelle)",
+              renderTable(
                 ["Date", "Variation d'effort", "MatchID"],
                 effortRows(
                   analysis.seasonsData?.[0]?.effortDeltaList ??
                     analysis.curr?.effortDeltaList
-                )
-              )}
-            </div>
+                ),
+                "effort-variation"
+              )
+            )}
           </>
         )}
       </div>
