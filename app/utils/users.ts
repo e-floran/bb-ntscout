@@ -36,4 +36,9 @@ export const users: User[] = [
     mainTeamId: "11",
     active: true,
   },
+  {
+    login: "Charlypeartree71",
+    mainTeamId: "1011",
+    active: true,
+  },
 ];
