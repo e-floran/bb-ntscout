@@ -25,6 +25,14 @@ interface LoadingStep {
 
 type AnalysisResult = any;
 
+type SectionId =
+  | "offense-strategies"
+  | "defense-strategies"
+  | "avg-ratings"
+  | "avg-efficiency"
+  | "player-stats"
+  | "effort-variation";
+
 // Strategy filter options
 const OFFENSIVE_STRATEGIES = {
   all: "Toutes les attaques",
@@ -93,7 +101,9 @@ export default function IndexPage() {
   } | null>(null);
 
   // Collapsed sections state - all collapsed by default
-  const [collapsedSections, setCollapsedSections] = useState({
+  const [collapsedSections, setCollapsedSections] = useState<
+    Record<SectionId, boolean>
+  >({
     "offense-strategies": true,
     "defense-strategies": true,
     "avg-ratings": true,
@@ -358,7 +368,7 @@ export default function IndexPage() {
   }
 
   // Toggle section collapse
-  const toggleSection = (sectionId: string) => {
+  const toggleSection = (sectionId: SectionId) => {
     setCollapsedSections((prev) => ({
       ...prev,
       [sectionId]: !prev[sectionId],
@@ -652,7 +662,7 @@ export default function IndexPage() {
 
   // Render collapsible section
   function renderCollapsibleSection(
-    sectionId: string,
+    sectionId: SectionId,
     title: string,
     content: React.ReactNode
   ) {
