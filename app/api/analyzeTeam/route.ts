@@ -37,12 +37,10 @@ export async function GET(req: NextRequest) {
   // --- User authentication and verification ---
   const login = req.cookies.get("authenticated_user")?.value;
   if (!login) {
-    // No login cookie, redirect to login
     return NextResponse.redirect("/login");
   }
   const user = users.find((u) => u.login === login && u.active);
   if (!user) {
-    // User not present or not active, redirect to login
     return NextResponse.redirect("/login");
   }
 
@@ -134,6 +132,7 @@ export async function GET(req: NextRequest) {
       players.forEach((p: any) => playerSet.add(Number(p.$.id)));
     }
   }
+
   // If file does not exist, create as per example.json format
   if (!fs.existsSync(jsonPath)) {
     const jsonTeam = {
@@ -185,6 +184,9 @@ export async function GET(req: NextRequest) {
     prev,
     season: SEASON,
     prevSeason: PREV_SEASON,
+    // Add these for compatibility with your modified frontend
+    seasons: [SEASON, PREV_SEASON],
+    seasonsData: [curr, prev],
   });
 }
 
@@ -211,6 +213,7 @@ async function analyzeTeamForSeason(
       avgEfficiency: {},
       effortDeltaList: [],
       playerSumStats: {},
+      matches: [],
     };
   }
 
@@ -230,11 +233,16 @@ async function analyzeTeamForSeason(
   const playerSumStats: Record<string, any> = {};
   const effortDeltaList: any[] = [];
 
+  // Store individual matches with their strategies and data for filtering
+  const matchesWithStrategies: any[] = [];
+
   const now = new Date();
   for (const match of opponentMatches) {
     const matchId = match["$"].id;
     const matchDateStr = match["$"].start;
     const matchDate = parseDate(matchDateStr);
+
+    // Skip future matches for current season analysis
     if (season === SEASON && matchDate >= now) continue;
 
     const boxscoreUrl = `${baseApiUrl}boxscore.aspx?matchid=${matchId}`;
@@ -270,40 +278,58 @@ async function analyzeTeamForSeason(
     offenseStrategies[offStrat] = (offenseStrategies[offStrat] || 0) + 1;
     defenseStrategies[defStrat] = (defenseStrategies[defStrat] || 0) + 1;
 
+    // Process ratings - ensure proper parsing
+    const matchRatings: Record<string, number> = {};
     if (teamNode.ratings) {
       for (const [cat, value] of Object.entries(teamNode.ratings)) {
-        ratingsTotal[cat] =
-          (ratingsTotal[cat] || 0) + parseFloat(value as string);
+        const numValue = parseFloat(value as string);
+        if (!isNaN(numValue)) {
+          ratingsTotal[cat] = (ratingsTotal[cat] || 0) + numValue;
+          matchRatings[cat] = numValue;
+        }
       }
       ratingsCount++;
     }
 
+    // Process efficiency - ensure proper parsing
+    const matchEfficiency: Partial<Record<Position, number>> = {};
     if (teamNode.efficiency) {
       for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
         if (teamNode.efficiency[pos] !== undefined) {
-          effTotal[pos] += parseFloat(teamNode.efficiency[pos]);
-          effCount[pos]++;
+          const numValue = parseFloat(teamNode.efficiency[pos]);
+          if (!isNaN(numValue)) {
+            effTotal[pos] += numValue;
+            effCount[pos]++;
+            matchEfficiency[pos] = numValue;
+          }
         }
       }
     }
 
-    if (
-      "effortDelta" in matchNode &&
-      !isNaN(parseFloat(matchNode.effortDelta))
-    ) {
+    // Process effort delta
+    const effortDelta =
+      matchNode && "effortDelta" in matchNode
+        ? parseFloat(matchNode.effortDelta)
+        : 0;
+
+    if (!isNaN(effortDelta)) {
       effortDeltaList.push({
         date: matchDateStr,
-        effortDelta: parseFloat(matchNode.effortDelta),
+        effortDelta,
         matchId: matchId,
       });
     }
 
+    // Extract and process player stats
+    const matchPlayerStats: Record<string, any> = {};
     if (teamNode.boxscore && teamNode.boxscore.player) {
       let players = teamNode.boxscore.player;
       if (!Array.isArray(players)) players = [players];
+
       for (const p of players) {
         const pid = p["$"].id;
         const name = `${p.firstName} ${p.lastName}`;
+
         if (!playerSumStats[pid]) {
           playerSumStats[pid] = {
             name,
@@ -318,29 +344,65 @@ async function analyzeTeamForSeason(
             pf: 0,
           };
         }
+
         if (
           p.performance &&
           p.performance.pts !== undefined &&
           p.performance.pts !== "N/A"
         ) {
-          playerSumStats[pid].pts += parseInt(p.performance.pts);
-          playerSumStats[pid].ast += parseInt(p.performance.ast);
-          playerSumStats[pid].reb += parseInt(p.performance.reb);
-          playerSumStats[pid].blk += parseInt(p.performance.blk);
-          playerSumStats[pid].stl += parseInt(p.performance.stl);
-          playerSumStats[pid].to += parseInt(p.performance.to);
-          playerSumStats[pid].pf += parseInt(p.performance.pf);
+          const stats = {
+            pts: parseInt(p.performance.pts) || 0,
+            ast: parseInt(p.performance.ast) || 0,
+            reb: parseInt(p.performance.reb) || 0,
+            blk: parseInt(p.performance.blk) || 0,
+            stl: parseInt(p.performance.stl) || 0,
+            to: parseInt(p.performance.to) || 0,
+            pf: parseInt(p.performance.pf) || 0,
+          };
+
+          // Add to season totals
+          playerSumStats[pid].pts += stats.pts;
+          playerSumStats[pid].ast += stats.ast;
+          playerSumStats[pid].reb += stats.reb;
+          playerSumStats[pid].blk += stats.blk;
+          playerSumStats[pid].stl += stats.stl;
+          playerSumStats[pid].to += stats.to;
+          playerSumStats[pid].pf += stats.pf;
+
+          // Calculate minutes
           let min = 0;
           for (const pos of ["PG", "SG", "SF", "PF", "C"]) {
-            if (p.minutes && p.minutes[pos]) min += parseInt(p.minutes[pos]);
+            if (p.minutes && p.minutes[pos]) {
+              min += parseInt(p.minutes[pos]) || 0;
+            }
           }
           playerSumStats[pid].min += min;
           playerSumStats[pid].games += 1;
+
+          // Store for this match with proper structure
+          matchPlayerStats[pid] = {
+            name,
+            ...stats,
+            min,
+          };
         }
       }
     }
+
+    // Store match data with proper structure for filtering
+    matchesWithStrategies.push({
+      matchId,
+      date: matchDateStr,
+      effortDelta,
+      offStrategy: offStrat,
+      defStrategy: defStrat,
+      ratings: matchRatings,
+      efficiency: matchEfficiency,
+      playerStats: matchPlayerStats,
+    });
   }
 
+  // Sort effort data by date
   effortDeltaList.sort(
     (a, b) =>
       (parseDate(a.date) as unknown as number) -
@@ -352,14 +414,17 @@ async function analyzeTeamForSeason(
   Object.entries(offenseStrategies).forEach(([k, v]) => {
     offenseStrategiesHumanized[humanize(k)] = v;
   });
+
   const defenseStrategiesHumanized: Record<string, number> = {};
   Object.entries(defenseStrategies).forEach(([k, v]) => {
     defenseStrategiesHumanized[humanize(k)] = v;
   });
+
   const avgRatingsHumanized: Record<string, number> = {};
   Object.entries(ratingsTotal).forEach(([k, sum]) => {
     avgRatingsHumanized[humanize(k)] = ratingsCount ? sum / ratingsCount : 0;
   });
+
   const avgEfficiencyHumanized: Record<string, number> = {};
   Object.entries(effTotal).forEach(([k, sum]) => {
     avgEfficiencyHumanized[k] = effCount[k as Position]
@@ -375,5 +440,6 @@ async function analyzeTeamForSeason(
     avgEfficiency: avgEfficiencyHumanized,
     effortDeltaList,
     playerSumStats,
+    matches: matchesWithStrategies, // Include properly structured match data
   };
 }

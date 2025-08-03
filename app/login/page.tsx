@@ -30,27 +30,23 @@ export default function LoginPage() {
     <div className="main-container">
       <form onSubmit={handleSubmit} className="form-container">
         <h2 className="form-title">Login</h2>
-        <div>
-          <label className="form-label">Login</label>
-          <input
-            className="form-input"
-            type="text"
-            value={login}
-            onChange={(e) => setLogin(e.target.value)}
-            required
-            autoFocus
-          />
-        </div>
-        <div>
-          <label className="form-label">Password</label>
-          <input
-            className="form-input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+        <label className="form-label">Login</label>
+        <input
+          className="form-input"
+          type="text"
+          value={login}
+          onChange={(e) => setLogin(e.target.value)}
+          required
+          autoFocus
+        />
+        <label className="form-label">Password</label>
+        <input
+          className="form-input"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         {error && <div className="form-error">{error}</div>}
         <button className="form-submit" type="submit">
           Submit

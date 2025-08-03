@@ -25,6 +25,45 @@ interface LoadingStep {
 
 type AnalysisResult = any;
 
+// Strategy filter options
+const OFFENSIVE_STRATEGIES = {
+  all: "Toutes les attaques",
+  "Look Inside": "Look Inside",
+  "Low Post": "Low Post",
+  interior: "Attaques intérieures",
+  Base: "Base",
+  Push: "Push",
+  Patient: "Patient",
+  "Outside Isolation": "Outside Isolation",
+  "Inside Isolation": "Inside Isolation",
+  neutral: "Attaques neutres",
+  Motion: "Motion",
+  "Run And Gun": "Run And Gun",
+  Princeton: "Princeton",
+  exterior: "Attaques extérieures",
+};
+
+const DEFENSIVE_STRATEGIES = {
+  all: "Toutes les défenses",
+  "32 Zone": "32 Zone",
+  "Outside Box And One": "Outside Box And One",
+  "23 Zone": "23 Zone",
+  "Inside Box And One": "Inside Box And One",
+  "Man To Man": "Man To Man",
+  "131 Zone": "131 Zone",
+};
+
+// Strategy groups
+const INTERIOR_OFFENSES = ["Look Inside", "Low Post"];
+const NEUTRAL_OFFENSES = [
+  "Base",
+  "Push",
+  "Patient",
+  "Outside Isolation",
+  "Inside Isolation",
+];
+const EXTERIOR_OFFENSES = ["Motion", "Run And Gun", "Princeton"];
+
 export default function IndexPage() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(true);
@@ -36,6 +75,15 @@ export default function IndexPage() {
   // Loading states
   const [loadingSteps, setLoadingSteps] = useState<LoadingStep[]>([]);
   const [showSkeletons, setShowSkeletons] = useState(false);
+
+  // Strategy filters
+  const [selectedOffensiveStrategy, setSelectedOffensiveStrategy] =
+    useState("all");
+  const [selectedDefensiveStrategy, setSelectedDefensiveStrategy] =
+    useState("all");
+
+  // Raw match data for filtering
+  const [rawMatchData, setRawMatchData] = useState<any>(null);
 
   // Sorting state
   const [sortConfig, setSortConfig] = useState<{
@@ -55,6 +103,144 @@ export default function IndexPage() {
   });
 
   const router = useRouter();
+
+  // Check if match satisfies offensive strategy filter
+  const matchesOffensiveFilter = (offStrategy: string) => {
+    if (selectedOffensiveStrategy === "all") return true;
+    if (selectedOffensiveStrategy === "interior")
+      return INTERIOR_OFFENSES.includes(offStrategy);
+    if (selectedOffensiveStrategy === "neutral")
+      return NEUTRAL_OFFENSES.includes(offStrategy);
+    if (selectedOffensiveStrategy === "exterior")
+      return EXTERIOR_OFFENSES.includes(offStrategy);
+    return offStrategy === selectedOffensiveStrategy;
+  };
+
+  // Check if match satisfies defensive strategy filter
+  const matchesDefensiveFilter = (defStrategy: string) => {
+    if (selectedDefensiveStrategy === "all") return true;
+    return defStrategy === selectedDefensiveStrategy;
+  };
+
+  // Filter and recalculate data based on selected strategies
+  const getFilteredData = () => {
+    if (
+      !rawMatchData ||
+      (!selectedOffensiveStrategy && !selectedDefensiveStrategy)
+    ) {
+      return analysis;
+    }
+
+    // Filter matches based on both offensive and defensive strategies (AND logic)
+    const filteredData = { ...analysis };
+
+    if (rawMatchData.seasonsData) {
+      filteredData.seasonsData = rawMatchData.seasonsData.map(
+        (seasonData: any) => {
+          const filteredMatches =
+            seasonData.matches?.filter(
+              (match: any) =>
+                matchesOffensiveFilter(match.offStrategy) &&
+                matchesDefensiveFilter(match.defStrategy)
+            ) || [];
+
+          // Recalculate averages based on filtered matches
+          return recalculateSeasonStats(filteredMatches, seasonData);
+        }
+      );
+    }
+
+    return filteredData;
+  };
+
+  // Recalculate season statistics from filtered matches
+  const recalculateSeasonStats = (matches: any[], originalSeasonData: any) => {
+    if (matches.length === 0) {
+      return {
+        ...originalSeasonData,
+        avgRatings: {},
+        avgEfficiency: {},
+        playerSumStats: {},
+      };
+    }
+
+    // Recalculate average ratings
+    const avgRatings: any = {};
+    const ratingCounts: any = {};
+    matches.forEach((match) => {
+      Object.entries(match.ratings || {}).forEach(
+        ([key, value]: [string, any]) => {
+          if (!avgRatings[key]) avgRatings[key] = 0;
+          if (!ratingCounts[key]) ratingCounts[key] = 0;
+          avgRatings[key] += value;
+          ratingCounts[key]++;
+        }
+      );
+    });
+    Object.keys(avgRatings).forEach((key) => {
+      avgRatings[key] = avgRatings[key] / ratingCounts[key];
+    });
+
+    // Recalculate average efficiency
+    const avgEfficiency: any = {};
+    const efficiencyCounts: any = {};
+    matches.forEach((match) => {
+      Object.entries(match.efficiency || {}).forEach(
+        ([key, value]: [string, any]) => {
+          if (!avgEfficiency[key]) avgEfficiency[key] = 0;
+          if (!efficiencyCounts[key]) efficiencyCounts[key] = 0;
+          avgEfficiency[key] += value;
+          efficiencyCounts[key]++;
+        }
+      );
+    });
+    Object.keys(avgEfficiency).forEach((key) => {
+      avgEfficiency[key] = avgEfficiency[key] / efficiencyCounts[key];
+    });
+
+    // Recalculate player statistics
+    const playerSumStats: any = {};
+    matches.forEach((match) => {
+      Object.entries(match.playerStats || {}).forEach(
+        ([playerId, stats]: [string, any]) => {
+          if (!playerSumStats[playerId]) {
+            playerSumStats[playerId] = {
+              name: stats.name,
+              pts: 0,
+              ast: 0,
+              reb: 0,
+              blk: 0,
+              stl: 0,
+              to: 0,
+              pf: 0,
+              min: 0,
+              games: 0,
+            };
+          }
+          const player = playerSumStats[playerId];
+          player.pts += stats.pts || 0;
+          player.ast += stats.ast || 0;
+          player.reb += stats.reb || 0;
+          player.blk += stats.blk || 0;
+          player.stl += stats.stl || 0;
+          player.to += stats.to || 0;
+          player.pf += stats.pf || 0;
+          player.min += stats.min || 0;
+          player.games += 1;
+        }
+      );
+    });
+
+    return {
+      ...originalSeasonData,
+      avgRatings,
+      avgEfficiency,
+      playerSumStats,
+    };
+  };
+
+  // Get filtered analysis data
+  const filteredAnalysis = getFilteredData();
 
   // Logout handler
   async function handleLogout() {
@@ -111,13 +297,17 @@ export default function IndexPage() {
     setLoading(true);
     setErr("");
     setAnalysis(null);
+    setRawMatchData(null);
     simulateLoadingSteps();
 
     fetch("/api/analyzeTeam")
       .then(async (res) => {
         const data = await res.json();
         if (data.error) setErr(data.error);
-        else setAnalysis(data);
+        else {
+          setAnalysis(data);
+          setRawMatchData(data); // Store raw data for filtering
+        }
       })
       .catch((e) => setErr(e.message))
       .finally(() => {
@@ -132,6 +322,7 @@ export default function IndexPage() {
     e.preventDefault();
     setErr("");
     setAnalysis(null);
+    setRawMatchData(null);
     setLoading(true);
 
     // Validate
@@ -156,7 +347,10 @@ export default function IndexPage() {
     const res = await fetch(`/api/analyzeTeam?${params}`);
     const data = await res.json();
     if (data.error) setErr(data.error);
-    else setAnalysis(data);
+    else {
+      setAnalysis(data);
+      setRawMatchData(data); // Store raw data for filtering
+    }
 
     setLoading(false);
     setLoadingSteps([]);
@@ -430,7 +624,7 @@ export default function IndexPage() {
                   backgroundColor:
                     sortConfig?.table === tableId && sortConfig?.column === i
                       ? "#f0f0f0"
-                      : "transparent",
+                      : "#3c5489",
                 }}
               >
                 {h}
@@ -519,10 +713,12 @@ export default function IndexPage() {
   }
 
   const seasonLabels =
-    analysis && analysis.seasons
-      ? analysis.seasons
-      : analysis && analysis.season && analysis.prevSeason
-      ? [analysis.season, analysis.prevSeason]
+    filteredAnalysis && filteredAnalysis.seasons
+      ? filteredAnalysis.seasons
+      : filteredAnalysis &&
+        filteredAnalysis.season &&
+        filteredAnalysis.prevSeason
+      ? [filteredAnalysis.season, filteredAnalysis.prevSeason]
       : [];
 
   function stratRows(
@@ -689,6 +885,119 @@ export default function IndexPage() {
               )}
             </div>
 
+            {/* Strategy Filters */}
+            <div
+              className="analysis-section"
+              style={{
+                backgroundColor: "#f8f9fa",
+                padding: "1.5rem",
+                borderRadius: "8px",
+                border: "1px solid #e9ecef",
+                marginBottom: "2rem",
+              }}
+            >
+              <div
+                className="analysis-title"
+                style={{ marginBottom: "1rem", borderBottom: "none" }}
+              >
+                Filtres par stratégies
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "1.5rem",
+                  alignItems: "start",
+                }}
+              >
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "0.5rem",
+                      fontWeight: "600",
+                      color: "#495057",
+                    }}
+                  >
+                    Stratégie offensive :
+                  </label>
+                  <select
+                    value={selectedOffensiveStrategy}
+                    onChange={(e) =>
+                      setSelectedOffensiveStrategy(e.target.value)
+                    }
+                    style={{
+                      width: "100%",
+                      padding: "0.5rem",
+                      border: "1px solid #ced4da",
+                      borderRadius: "4px",
+                      backgroundColor: "white",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {Object.entries(OFFENSIVE_STRATEGIES).map(
+                      ([key, label]) => (
+                        <option key={key} value={key}>
+                          {label}
+                        </option>
+                      )
+                    )}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    style={{
+                      display: "block",
+                      marginBottom: "0.5rem",
+                      fontWeight: "600",
+                      color: "#495057",
+                    }}
+                  >
+                    Stratégie défensive :
+                  </label>
+                  <select
+                    value={selectedDefensiveStrategy}
+                    onChange={(e) =>
+                      setSelectedDefensiveStrategy(e.target.value)
+                    }
+                    style={{
+                      width: "100%",
+                      padding: "0.5rem",
+                      border: "1px solid #ced4da",
+                      borderRadius: "4px",
+                      backgroundColor: "white",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {Object.entries(DEFENSIVE_STRATEGIES).map(
+                      ([key, label]) => (
+                        <option key={key} value={key}>
+                          {label}
+                        </option>
+                      )
+                    )}
+                  </select>
+                </div>
+              </div>
+              {(selectedOffensiveStrategy !== "all" ||
+                selectedDefensiveStrategy !== "all") && (
+                <div
+                  style={{
+                    marginTop: "1rem",
+                    padding: "0.75rem",
+                    backgroundColor: "#d4edda",
+                    border: "1px solid #c3e6cb",
+                    borderRadius: "4px",
+                    fontSize: "0.9rem",
+                    color: "#155724",
+                  }}
+                >
+                  Filtres actifs - Les données ci-dessous sont filtrées selon
+                  les stratégies sélectionnées
+                </div>
+              )}
+            </div>
+
             {renderCollapsibleSection(
               "offense-strategies",
               "Stratégies offensives",
@@ -698,11 +1007,11 @@ export default function IndexPage() {
                   ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
                 ],
                 stratRows(
-                  analysis.seasonsData?.map(
+                  filteredAnalysis.seasonsData?.map(
                     (x: any) => x.offenseStrategies
                   ) ?? [
-                    analysis.curr?.offenseStrategies,
-                    analysis.prev?.offenseStrategies,
+                    filteredAnalysis.curr?.offenseStrategies,
+                    filteredAnalysis.prev?.offenseStrategies,
                   ]
                 ),
                 "offense-strategies"
@@ -718,11 +1027,11 @@ export default function IndexPage() {
                   ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
                 ],
                 stratRows(
-                  analysis.seasonsData?.map(
+                  filteredAnalysis.seasonsData?.map(
                     (x: any) => x.defenseStrategies
                   ) ?? [
-                    analysis.curr?.defenseStrategies,
-                    analysis.prev?.defenseStrategies,
+                    filteredAnalysis.curr?.defenseStrategies,
+                    filteredAnalysis.prev?.defenseStrategies,
                   ]
                 ),
                 "defense-strategies"
@@ -738,9 +1047,11 @@ export default function IndexPage() {
                   ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
                 ],
                 avgRows(
-                  analysis.seasonsData?.map((x: any) => x.avgRatings) ?? [
-                    analysis.curr?.avgRatings,
-                    analysis.prev?.avgRatings,
+                  filteredAnalysis.seasonsData?.map(
+                    (x: any) => x.avgRatings
+                  ) ?? [
+                    filteredAnalysis.curr?.avgRatings,
+                    filteredAnalysis.prev?.avgRatings,
                   ]
                 ),
                 "avg-ratings"
@@ -756,9 +1067,11 @@ export default function IndexPage() {
                   ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
                 ],
                 effRows(
-                  analysis.seasonsData?.map((x: any) => x.avgEfficiency) ?? [
-                    analysis.curr?.avgEfficiency,
-                    analysis.prev?.avgEfficiency,
+                  filteredAnalysis.seasonsData?.map(
+                    (x: any) => x.avgEfficiency
+                  ) ?? [
+                    filteredAnalysis.curr?.avgEfficiency,
+                    filteredAnalysis.prev?.avgEfficiency,
                   ]
                 ),
                 "avg-efficiency"
@@ -782,8 +1095,8 @@ export default function IndexPage() {
                   "Matchs",
                 ],
                 playerRows(
-                  analysis.seasonsData?.[0]?.playerSumStats ??
-                    analysis.curr?.playerSumStats
+                  filteredAnalysis.seasonsData?.[0]?.playerSumStats ??
+                    filteredAnalysis.curr?.playerSumStats
                 ),
                 "player-stats"
               )
@@ -795,8 +1108,8 @@ export default function IndexPage() {
               renderTable(
                 ["Date", "Variation d'effort", "MatchID"],
                 effortRows(
-                  analysis.seasonsData?.[0]?.effortDeltaList ??
-                    analysis.curr?.effortDeltaList
+                  filteredAnalysis.seasonsData?.[0]?.effortDeltaList ??
+                    filteredAnalysis.curr?.effortDeltaList
                 ),
                 "effort-variation"
               )

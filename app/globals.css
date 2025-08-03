@@ -47,6 +47,7 @@ body {
   background-color: #f9fafb;
   color: #222;
   transition: border 0.2s;
+  box-sizing: border-box;
 }
 .form-input:focus {
   border: 1.5px solid #3c5489;
