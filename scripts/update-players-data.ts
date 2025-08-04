@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from "fs";
 import path from "path";
 import axios from "axios";
@@ -57,10 +58,24 @@ class BBPlayerDataUpdater {
         params: { login: this.username, code: this.password },
       });
 
+      const responseText = response.data;
+
+      // First check if login was successful by looking for <loggedIn> tag
+      if (!responseText.includes("<loggedIn")) {
+        console.error("Login failed - invalid credentials or API error");
+        console.log("Response:", responseText.substring(0, 500));
+        return false;
+      }
+
       const setCookieHeader = response.headers["set-cookie"];
       if (setCookieHeader) {
-        this.sessionCookie = setCookieHeader[0].split(";")[0];
+        // Extract all cookie pairs, not just the first one
+        this.sessionCookie = setCookieHeader
+          .map((cookie) => cookie.split(";")[0].trim())
+          .join("; ");
+
         console.log("Login successful!");
+        console.log("Session cookies:", this.sessionCookie);
         return true;
       }
 
@@ -85,12 +100,19 @@ class BBPlayerDataUpdater {
 
   private async getPlayerData(playerId: string): Promise<any> {
     try {
+      console.log(`Making request with cookies: ${this.sessionCookie}`);
       const response = await axios.get(`${this.baseURL}/player.aspx`, {
         params: { playerid: playerId },
         headers: { Cookie: this.sessionCookie },
       });
 
       this.queryCount++;
+
+      // Log response to debug authentication issues
+      if (response.data.includes("<error")) {
+        console.error("API Error response:", response.data.substring(0, 500));
+      }
+
       return response.data;
     } catch (error) {
       throw error;
