@@ -6,7 +6,8 @@ import IconButton from "@mui/material/IconButton";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { LinearProgress } from "@mui/material";
 import { useRouter } from "next/navigation";
-import styles from "./page.module.css"; // Assuming you use this for styling
+import styles from "./page.module.css";
+import { PlayerHistoryCard } from "@/app/components/PlayerHistoryCard";
 
 // Utility to humanize camelCase/PascalCase for display
 function humanize(str: string) {
@@ -31,7 +32,8 @@ type SectionId =
   | "avg-ratings"
   | "avg-efficiency"
   | "player-stats"
-  | "effort-variation";
+  | "effort-variation"
+  | "player-history"; // NEW: Add player history section
 
 // Strategy filter options
 const OFFENSIVE_STRATEGIES = {
@@ -110,6 +112,7 @@ export default function IndexPage() {
     "avg-efficiency": true,
     "player-stats": true,
     "effort-variation": true,
+    "player-history": false, // NEW: Start expanded for player history
   });
 
   const router = useRouter();
@@ -1008,21 +1011,60 @@ export default function IndexPage() {
               )}
             </div>
 
+            {/* NEW: Player History Section */}
+            {filteredAnalysis?.seasonsData?.[0]?.players &&
+              filteredAnalysis.seasonsData[0].players.length > 0 &&
+              renderCollapsibleSection(
+                "player-history",
+                `Joueurs avec historique GS/DMI (${filteredAnalysis.seasonsData[0].players.length} joueurs)`,
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                    gap: "16px",
+                  }}
+                >
+                  {filteredAnalysis.seasonsData[0].players.map(
+                    (player: any) => (
+                      <PlayerHistoryCard key={player.id} player={player}>
+                        <div
+                          style={{
+                            padding: "8px",
+                            backgroundColor: "white",
+                            border: "1px solid #e5e7eb",
+                            borderRadius: "6px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              fontWeight: "600",
+                              fontSize: "14px",
+                              marginBottom: "4px",
+                            }}
+                          >
+                            {player.name}
+                          </div>
+                          {player.position && (
+                            <div style={{ fontSize: "12px", color: "#6b7280" }}>
+                              Position: {player.position}
+                            </div>
+                          )}
+                        </div>
+                      </PlayerHistoryCard>
+                    )
+                  )}
+                </div>
+              )}
+
             {renderCollapsibleSection(
               "offense-strategies",
               "Stratégies offensives",
               renderTable(
-                [
-                  "Stratégie",
-                  ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
-                ],
+                ["Stratégies", ...seasonLabels.map((s: any) => `Saison ${s}`)],
                 stratRows(
-                  filteredAnalysis.seasonsData?.map(
-                    (x: any) => x.offenseStrategies
-                  ) ?? [
-                    filteredAnalysis.curr?.offenseStrategies,
-                    filteredAnalysis.prev?.offenseStrategies,
-                  ]
+                  filteredAnalysis?.seasonsData?.map(
+                    (s: any) => s?.offenseStrategies || {}
+                  ) || []
                 ),
                 "offense-strategies"
               )
@@ -1032,17 +1074,11 @@ export default function IndexPage() {
               "defense-strategies",
               "Stratégies défensives",
               renderTable(
-                [
-                  "Stratégie",
-                  ...seasonLabels.map((s: string) => `Occurrences (S${s})`),
-                ],
+                ["Stratégies", ...seasonLabels.map((s: any) => `Saison ${s}`)],
                 stratRows(
-                  filteredAnalysis.seasonsData?.map(
-                    (x: any) => x.defenseStrategies
-                  ) ?? [
-                    filteredAnalysis.curr?.defenseStrategies,
-                    filteredAnalysis.prev?.defenseStrategies,
-                  ]
+                  filteredAnalysis?.seasonsData?.map(
+                    (s: any) => s?.defenseStrategies || {}
+                  ) || []
                 ),
                 "defense-strategies"
               )
@@ -1050,19 +1086,13 @@ export default function IndexPage() {
 
             {renderCollapsibleSection(
               "avg-ratings",
-              "Notes moyennes de l'équipe",
+              "Moyennes des ratings équipe",
               renderTable(
-                [
-                  "Catégorie",
-                  ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
-                ],
+                ["Catégorie", ...seasonLabels.map((s: any) => `Saison ${s}`)],
                 avgRows(
-                  filteredAnalysis.seasonsData?.map(
-                    (x: any) => x.avgRatings
-                  ) ?? [
-                    filteredAnalysis.curr?.avgRatings,
-                    filteredAnalysis.prev?.avgRatings,
-                  ]
+                  filteredAnalysis?.seasonsData?.map(
+                    (s: any) => s?.avgRatings || {}
+                  ) || []
                 ),
                 "avg-ratings"
               )
@@ -1070,19 +1100,13 @@ export default function IndexPage() {
 
             {renderCollapsibleSection(
               "avg-efficiency",
-              "Points moyens par 100 tirs selon le poste",
+              "Efficacité moyenne par poste",
               renderTable(
-                [
-                  "Poste",
-                  ...seasonLabels.map((s: string) => `Moyenne (S${s})`),
-                ],
+                ["Position", ...seasonLabels.map((s: any) => `Saison ${s}`)],
                 effRows(
-                  filteredAnalysis.seasonsData?.map(
-                    (x: any) => x.avgEfficiency
-                  ) ?? [
-                    filteredAnalysis.curr?.avgEfficiency,
-                    filteredAnalysis.prev?.avgEfficiency,
-                  ]
+                  filteredAnalysis?.seasonsData?.map(
+                    (s: any) => s?.avgEfficiency || {}
+                  ) || []
                 ),
                 "avg-efficiency"
               )
@@ -1090,7 +1114,7 @@ export default function IndexPage() {
 
             {renderCollapsibleSection(
               "player-stats",
-              "Statistiques des joueurs (moyennes, saison actuelle)",
+              "Statistiques joueurs (moyennes par match)",
               renderTable(
                 [
                   "Joueur",
@@ -1099,14 +1123,13 @@ export default function IndexPage() {
                   "REB",
                   "BLK",
                   "STL",
-                  "BP",
-                  "FP",
+                  "TO",
+                  "PF",
                   "MIN",
-                  "Matchs",
+                  "GP",
                 ],
                 playerRows(
-                  filteredAnalysis.seasonsData?.[0]?.playerSumStats ??
-                    filteredAnalysis.curr?.playerSumStats
+                  filteredAnalysis?.seasonsData?.[0]?.playerSumStats || {}
                 ),
                 "player-stats"
               )
@@ -1114,15 +1137,21 @@ export default function IndexPage() {
 
             {renderCollapsibleSection(
               "effort-variation",
-              "Variation d'effort par match (saison actuelle)",
-              renderTable(
-                ["Date", "Variation d'effort", "MatchID"],
-                effortRows(
-                  filteredAnalysis.seasonsData?.[0]?.effortDeltaList ??
-                    filteredAnalysis.curr?.effortDeltaList
-                ),
-                "effort-variation"
-              )
+              "Variation d'effort par match",
+              <div>
+                {filteredAnalysis?.seasonsData?.[0]?.effortDeltaList &&
+                filteredAnalysis.seasonsData[0].effortDeltaList.length > 0 ? (
+                  renderTable(
+                    ["Date", "Delta d'effort", "Match ID"],
+                    effortRows(filteredAnalysis.seasonsData[0].effortDeltaList),
+                    "effort-variation"
+                  )
+                ) : (
+                  <p>
+                    Aucune donnée d&apos;effort disponible pour cette équipe.
+                  </p>
+                )}
+              </div>
             )}
           </>
         )}

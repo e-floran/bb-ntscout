@@ -1,0 +1,90 @@
+.playerHistoryWrapper {
+  /* Inherits existing styling */
+}
+
+.playerGsDmiSection {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+  background: #fafbfc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.currentStatsRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.statItem {
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.toggleHistoryBtn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.toggleHistoryBtn:hover {
+  color: #374151;
+}
+
+.historyContainer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.historyWeek {
+  text-align: center;
+  padding: 6px 4px;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #e5e7eb;
+}
+
+.weekLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 3px;
+}
+
+.weekStats {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.weekStats span {
+  font-size: 9px;
+  color: #374151;
+}
+
+.historyNote {
+  font-size: 10px;
+  color: #9ca3af;
+  text-align: center;
+  font-style: italic;
+}

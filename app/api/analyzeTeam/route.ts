@@ -5,6 +5,7 @@ import path from "path";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
 import { users } from "@/app/utils/users";
 import xml2js from "xml2js";
+import { enrichPlayersWithHistory } from "@/app/utils/playerHistoryUtils";
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
@@ -214,6 +215,7 @@ async function analyzeTeamForSeason(
       effortDeltaList: [],
       playerSumStats: {},
       matches: [],
+      players: [], // Add empty players array for consistency
     };
   }
 
@@ -232,6 +234,7 @@ async function analyzeTeamForSeason(
     effCount: Record<Position, number> = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 };
   const playerSumStats: Record<string, any> = {};
   const effortDeltaList: any[] = [];
+  const uniquePlayers: Map<string, any> = new Map(); // Track unique players
 
   // Store individual matches with their strategies and data for filtering
   const matchesWithStrategies: any[] = [];
@@ -329,6 +332,15 @@ async function analyzeTeamForSeason(
       for (const p of players) {
         const pid = p["$"].id;
         const name = `${p.firstName} ${p.lastName}`;
+
+        // Track unique players
+        if (!uniquePlayers.has(pid)) {
+          uniquePlayers.set(pid, {
+            id: pid,
+            name: name,
+            position: p.position || null,
+          });
+        }
 
         if (!playerSumStats[pid]) {
           playerSumStats[pid] = {
@@ -432,6 +444,10 @@ async function analyzeTeamForSeason(
       : 0;
   });
 
+  // Convert unique players to array and enrich with history
+  const playersArray = Array.from(uniquePlayers.values());
+  const playersWithHistory = enrichPlayersWithHistory(playersArray);
+
   return {
     teamName,
     offenseStrategies: offenseStrategiesHumanized,
@@ -441,5 +457,6 @@ async function analyzeTeamForSeason(
     effortDeltaList,
     playerSumStats,
     matches: matchesWithStrategies, // Include properly structured match data
+    players: playersWithHistory, // NEW: Add players with history
   };
 }
