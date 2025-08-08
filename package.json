@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "update-players": "tsx scripts/update-players-data.ts",
-    "monday-check": "tsx scripts/checkNewPlayers.ts"
+    "monday-check": "tsx scripts/checkNewPlayers.ts",
+    "friday-check": "tsx scripts/fridayScript.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

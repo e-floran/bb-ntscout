@@ -8,6 +8,13 @@
       "weekStart": "2025-08-01T00:00:00.000Z",
       "gameShape": 7,
       "dmi": 59300
+    },
+    {
+      "season": 69,
+      "id": 5,
+      "weekStart": "2025-08-08T00:00:00.000Z",
+      "gameShape": 5,
+      "dmi": 44200
     }
   ]
 }
