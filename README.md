@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Buzzerbeater is a basketball management game. This web app is used to fetch data from the public API bbapi to help national teams coaches to prepare their games.
 
-## Getting Started
+## Buzzerbeater informations
 
-First, run the development server:
+- Weeks start on friday
+- each week, gameshape changes
+- national teams games are on monday
+- club teams games are on saturday, thuesday and thursday
+- training is position based. Either single position (PG, SG, SF, PF or C) or certain two-positions sets (PG-SG, SF-PF or PF-C) based. A player must play at least 48 minutes at a given position (or set) in its club team games during the week to receive a full training. Each missing minute means missing percentages of training
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## BBAPI informations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- BBAPI requires login before querying any other route
+- it outputs XML
+- BBAPI has a short timeout and rate limit
+- the app/utils/api folder contains .txt files to document the BBAPI. bbapi_docs.txt is the API full documentation other .txt files are routes output examples.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Basic app workflow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- a user must login on the login page. the users variable, containing a list of authorized users, is checked before sending a login request to the bbapi.
+- on login, the user is redirected to the index, where data is fetched on its main national team next opponent.
+- the user can then pick another team to analyze on this same index page.
 
-## Learn More
+## Manual scripts
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- in the scripts folder, manual scripts have bben created to fetch data that must be fetched each week : gameshape and dmi
+- update-players-data.ts get all players from the games played by all national teams this season
+- checkNewPlayers.ts is intended to be used after national teams games on monday, to check all national teams last game and see if there are new players to add
