@@ -4,19 +4,22 @@
 import { useEffect, useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { LinearProgress } from "@mui/material";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import { PlayerHistoryCard } from "@/app/components/PlayerHistoryCard";
-
-// Utility to humanize camelCase/PascalCase for display
-function humanize(str: string) {
-  if (!str) return "";
-  return str
-    .replace(/([A-Z])/g, " $1")
-    .replace(/^./, (s) => s.toUpperCase())
-    .trim();
-}
+import { TeamAnalysisForm } from "@/app/components/TeamAnalysisForm";
+import { LoadingProgress } from "@/app/components/LoadingProgress";
+import { StrategyFilters } from "@/app/components/StrategyFilters";
+import { CollapsibleSection } from "@/app/components/CollapsibleSection";
+import { DataTable } from "@/app/components/DataTable";
+import { useDataFiltering } from "@/app/hooks/useDataFiltering";
+import {
+  stratRows,
+  avgRows,
+  effRows,
+  playerRows,
+  effortRows,
+} from "@/app/utils/dataProcessing";
 
 interface LoadingStep {
   step: string;
@@ -26,59 +29,19 @@ interface LoadingStep {
 
 type AnalysisResult = any;
 
-type SectionId =
+export type SectionId =
   | "offense-strategies"
   | "defense-strategies"
   | "avg-ratings"
   | "avg-efficiency"
   | "player-stats"
   | "effort-variation"
-  | "player-history"; // NEW: Add player history section
-
-// Strategy filter options
-const OFFENSIVE_STRATEGIES = {
-  all: "Toutes les attaques",
-  "Look Inside": "Look Inside",
-  "Low Post": "Low Post",
-  interior: "Attaques intérieures",
-  Base: "Base",
-  Push: "Push",
-  Patient: "Patient",
-  "Outside Isolation": "Outside Isolation",
-  "Inside Isolation": "Inside Isolation",
-  neutral: "Attaques neutres",
-  Motion: "Motion",
-  "Run And Gun": "Run And Gun",
-  Princeton: "Princeton",
-  exterior: "Attaques extérieures",
-};
-
-const DEFENSIVE_STRATEGIES = {
-  all: "Toutes les défenses",
-  "32 Zone": "32 Zone",
-  "Outside Box And One": "Outside Box And One",
-  "23 Zone": "23 Zone",
-  "Inside Box And One": "Inside Box And One",
-  "Man To Man": "Man To Man",
-  "131 Zone": "131 Zone",
-};
-
-// Strategy groups
-const INTERIOR_OFFENSES = ["Look Inside", "Low Post"];
-const NEUTRAL_OFFENSES = [
-  "Base",
-  "Push",
-  "Patient",
-  "Outside Isolation",
-  "Inside Isolation",
-];
-const EXTERIOR_OFFENSES = ["Motion", "Run And Gun", "Princeton"];
+  | "player-history";
 
 export default function IndexPage() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
-  // New: form state
   const [teamId, setTeamId] = useState("");
   const [numSeasons, setNumSeasons] = useState<number>(2);
 
@@ -112,148 +75,18 @@ export default function IndexPage() {
     "avg-efficiency": true,
     "player-stats": true,
     "effort-variation": true,
-    "player-history": false, // NEW: Start expanded for player history
+    "player-history": false,
   });
 
   const router = useRouter();
 
-  // Check if match satisfies offensive strategy filter
-  const matchesOffensiveFilter = (offStrategy: string) => {
-    if (selectedOffensiveStrategy === "all") return true;
-    if (selectedOffensiveStrategy === "interior")
-      return INTERIOR_OFFENSES.includes(offStrategy);
-    if (selectedOffensiveStrategy === "neutral")
-      return NEUTRAL_OFFENSES.includes(offStrategy);
-    if (selectedOffensiveStrategy === "exterior")
-      return EXTERIOR_OFFENSES.includes(offStrategy);
-    return offStrategy === selectedOffensiveStrategy;
-  };
-
-  // Check if match satisfies defensive strategy filter
-  const matchesDefensiveFilter = (defStrategy: string) => {
-    if (selectedDefensiveStrategy === "all") return true;
-    return defStrategy === selectedDefensiveStrategy;
-  };
-
-  // Filter and recalculate data based on selected strategies
-  const getFilteredData = () => {
-    if (
-      !rawMatchData ||
-      (!selectedOffensiveStrategy && !selectedDefensiveStrategy)
-    ) {
-      return analysis;
-    }
-
-    // Filter matches based on both offensive and defensive strategies (AND logic)
-    const filteredData = { ...analysis };
-
-    if (rawMatchData.seasonsData) {
-      filteredData.seasonsData = rawMatchData.seasonsData.map(
-        (seasonData: any) => {
-          const filteredMatches =
-            seasonData.matches?.filter(
-              (match: any) =>
-                matchesOffensiveFilter(match.offStrategy) &&
-                matchesDefensiveFilter(match.defStrategy)
-            ) || [];
-
-          // Recalculate averages based on filtered matches
-          return recalculateSeasonStats(filteredMatches, seasonData);
-        }
-      );
-    }
-
-    return filteredData;
-  };
-
-  // Recalculate season statistics from filtered matches
-  const recalculateSeasonStats = (matches: any[], originalSeasonData: any) => {
-    if (matches.length === 0) {
-      return {
-        ...originalSeasonData,
-        avgRatings: {},
-        avgEfficiency: {},
-        playerSumStats: {},
-      };
-    }
-
-    // Recalculate average ratings
-    const avgRatings: any = {};
-    const ratingCounts: any = {};
-    matches.forEach((match) => {
-      Object.entries(match.ratings || {}).forEach(
-        ([key, value]: [string, any]) => {
-          if (!avgRatings[key]) avgRatings[key] = 0;
-          if (!ratingCounts[key]) ratingCounts[key] = 0;
-          avgRatings[key] += value;
-          ratingCounts[key]++;
-        }
-      );
-    });
-    Object.keys(avgRatings).forEach((key) => {
-      avgRatings[key] = avgRatings[key] / ratingCounts[key];
-    });
-
-    // Recalculate average efficiency
-    const avgEfficiency: any = {};
-    const efficiencyCounts: any = {};
-    matches.forEach((match) => {
-      Object.entries(match.efficiency || {}).forEach(
-        ([key, value]: [string, any]) => {
-          if (!avgEfficiency[key]) avgEfficiency[key] = 0;
-          if (!efficiencyCounts[key]) efficiencyCounts[key] = 0;
-          avgEfficiency[key] += value;
-          efficiencyCounts[key]++;
-        }
-      );
-    });
-    Object.keys(avgEfficiency).forEach((key) => {
-      avgEfficiency[key] = avgEfficiency[key] / efficiencyCounts[key];
-    });
-
-    // Recalculate player statistics
-    const playerSumStats: any = {};
-    matches.forEach((match) => {
-      Object.entries(match.playerStats || {}).forEach(
-        ([playerId, stats]: [string, any]) => {
-          if (!playerSumStats[playerId]) {
-            playerSumStats[playerId] = {
-              name: stats.name,
-              pts: 0,
-              ast: 0,
-              reb: 0,
-              blk: 0,
-              stl: 0,
-              to: 0,
-              pf: 0,
-              min: 0,
-              games: 0,
-            };
-          }
-          const player = playerSumStats[playerId];
-          player.pts += stats.pts || 0;
-          player.ast += stats.ast || 0;
-          player.reb += stats.reb || 0;
-          player.blk += stats.blk || 0;
-          player.stl += stats.stl || 0;
-          player.to += stats.to || 0;
-          player.pf += stats.pf || 0;
-          player.min += stats.min || 0;
-          player.games += 1;
-        }
-      );
-    });
-
-    return {
-      ...originalSeasonData,
-      avgRatings,
-      avgEfficiency,
-      playerSumStats,
-    };
-  };
-
-  // Get filtered analysis data
-  const filteredAnalysis = getFilteredData();
+  // Use the custom hook for data filtering
+  const filteredAnalysis = useDataFiltering(
+    analysis,
+    rawMatchData,
+    selectedOffensiveStrategy,
+    selectedDefensiveStrategy
+  );
 
   // Logout handler
   async function handleLogout() {
@@ -319,7 +152,7 @@ export default function IndexPage() {
         if (data.error) setErr(data.error);
         else {
           setAnalysis(data);
-          setRawMatchData(data); // Store raw data for filtering
+          setRawMatchData(data);
         }
       })
       .catch((e) => setErr(e.message))
@@ -362,7 +195,7 @@ export default function IndexPage() {
     if (data.error) setErr(data.error);
     else {
       setAnalysis(data);
-      setRawMatchData(data); // Store raw data for filtering
+      setRawMatchData(data);
     }
 
     setLoading(false);
@@ -394,337 +227,6 @@ export default function IndexPage() {
     setSortConfig({ table: tableId, column: columnIndex, direction });
   };
 
-  // Generic sort function for table rows
-  const sortRows = (
-    rows: (string | number)[][],
-    tableId: string
-  ): (string | number)[][] => {
-    if (!sortConfig || sortConfig.table !== tableId) {
-      return rows;
-    }
-
-    return [...rows].sort((a, b) => {
-      const aVal = a[sortConfig.column];
-      const bVal = b[sortConfig.column];
-
-      // Handle numeric values
-      const aNum = parseFloat(String(aVal));
-      const bNum = parseFloat(String(bVal));
-
-      let comparison = 0;
-
-      if (!isNaN(aNum) && !isNaN(bNum)) {
-        // Both are numbers
-        comparison = aNum - bNum;
-      } else {
-        // String comparison
-        comparison = String(aVal).localeCompare(String(bVal));
-      }
-
-      return sortConfig.direction === "asc" ? comparison : -comparison;
-    });
-  };
-
-  // Loading Progress Component
-  const LoadingProgress = () => (
-    <div
-      style={{
-        margin: "2rem 0",
-        padding: "1.5rem",
-        backgroundColor: "#f8f9fa",
-        borderRadius: "8px",
-        border: "1px solid #e9ecef",
-      }}
-    >
-      <div style={{ marginBottom: "1.5rem" }}>
-        <h3
-          style={{ margin: "0 0 1rem 0", color: "#495057", fontSize: "1.1rem" }}
-        >
-          Analyse en cours...
-        </h3>
-        <LinearProgress
-          variant="determinate"
-          value={
-            (loadingSteps.filter((s) => s.completed).length /
-              loadingSteps.length) *
-            100
-          }
-          style={{
-            height: "8px",
-            borderRadius: "4px",
-            backgroundColor: "#e9ecef",
-          }}
-          sx={{
-            "& .MuiLinearProgress-bar": {
-              backgroundColor: "#28a745",
-            },
-          }}
-        />
-        <div
-          style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#6c757d" }}
-        >
-          {Math.round(
-            (loadingSteps.filter((s) => s.completed).length /
-              loadingSteps.length) *
-              100
-          )}
-          % terminé
-        </div>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-        {loadingSteps.map((step, index) => (
-          <div
-            key={index}
-            style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
-          >
-            <div
-              style={{
-                width: 16,
-                height: 16,
-                borderRadius: "50%",
-                backgroundColor: step.completed
-                  ? "#28a745"
-                  : step.current
-                  ? "#007bff"
-                  : "#dee2e6",
-                border: step.current ? "2px solid #007bff" : "none",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                transition: "all 0.3s ease",
-              }}
-            >
-              {step.completed && (
-                <span
-                  style={{
-                    color: "white",
-                    fontSize: "10px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  ✓
-                </span>
-              )}
-              {step.current && !step.completed && (
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    backgroundColor: "#007bff",
-                    borderRadius: "50%",
-                    animation: "pulse 1.5s ease-in-out infinite",
-                  }}
-                />
-              )}
-            </div>
-            <span
-              style={{
-                color: step.completed
-                  ? "#28a745"
-                  : step.current
-                  ? "#007bff"
-                  : "#6c757d",
-                fontWeight: step.current ? "600" : "normal",
-                fontSize: "0.95rem",
-              }}
-            >
-              {step.step}
-            </span>
-          </div>
-        ))}
-      </div>
-      <style jsx>{`
-        @keyframes pulse {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      `}</style>
-    </div>
-  );
-
-  // Skeleton Loading Component
-  const SkeletonTable = ({ rows = 5, cols = 4 }) => (
-    <div style={{ margin: "1rem 0" }}>
-      <div
-        style={{
-          height: "20px",
-          backgroundColor: "#e9ecef",
-          borderRadius: "4px",
-          marginBottom: "1rem",
-          width: "60%",
-          animation: "skeleton-loading 1.5s ease-in-out infinite",
-        }}
-      />
-      <table className="table-analysis" style={{ opacity: 0.7 }}>
-        <thead>
-          <tr>
-            {Array.from({ length: cols }).map((_, i) => (
-              <th key={i}>
-                <div
-                  style={{
-                    height: "16px",
-                    backgroundColor: "#e9ecef",
-                    borderRadius: "3px",
-                    animation: "skeleton-loading 1.5s ease-in-out infinite",
-                    animationDelay: `${i * 0.1}s`,
-                  }}
-                />
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {Array.from({ length: rows }).map((_, rowIndex) => (
-            <tr key={rowIndex}>
-              {Array.from({ length: cols }).map((_, colIndex) => (
-                <td key={colIndex}>
-                  <div
-                    style={{
-                      height: "14px",
-                      backgroundColor: "#f8f9fa",
-                      borderRadius: "3px",
-                      animation: "skeleton-loading 1.5s ease-in-out infinite",
-                      animationDelay: `${(rowIndex * cols + colIndex) * 0.05}s`,
-                    }}
-                  />
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <style jsx>{`
-        @keyframes skeleton-loading {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.4;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      `}</style>
-    </div>
-  );
-
-  function renderTable(
-    headers: string[],
-    rows: (string | number)[][],
-    tableId: string
-  ) {
-    const sortedRows = sortRows(rows, tableId);
-
-    return (
-      <table className="table-analysis">
-        <thead>
-          <tr>
-            {headers.map((h, i) => (
-              <th
-                key={i}
-                onClick={() => handleSort(tableId, i)}
-                style={{
-                  cursor: "pointer",
-                  userSelect: "none",
-                  backgroundColor:
-                    sortConfig?.table === tableId && sortConfig?.column === i
-                      ? "#f0f0f0"
-                      : "#3c5489",
-                }}
-              >
-                {h}
-                {sortConfig?.table === tableId && sortConfig?.column === i && (
-                  <span style={{ marginLeft: "4px" }}>
-                    {sortConfig.direction === "asc" ? "↑" : "↓"}
-                  </span>
-                )}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {sortedRows.map((row, i) => (
-            <tr key={i}>
-              {row.map((val, j) => (
-                <td key={j}>{val}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  }
-
-  // Render collapsible section
-  function renderCollapsibleSection(
-    sectionId: SectionId,
-    title: string,
-    content: React.ReactNode
-  ) {
-    const isCollapsed = collapsedSections[sectionId];
-
-    if (showSkeletons) {
-      return (
-        <div className="analysis-section">
-          <div
-            className="analysis-title"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              padding: "10px 0",
-              borderBottom: "1px solid #e0e0e0",
-              marginBottom: "15px",
-            }}
-          >
-            <span>{title}</span>
-            <span style={{ fontSize: "18px" }}>▼</span>
-          </div>
-          <SkeletonTable />
-        </div>
-      );
-    }
-
-    return (
-      <div className="analysis-section">
-        <div
-          className="analysis-title"
-          onClick={() => toggleSection(sectionId)}
-          style={{
-            cursor: "pointer",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "10px 0",
-            borderBottom: "1px solid #e0e0e0",
-            marginBottom: isCollapsed ? 0 : "15px",
-          }}
-        >
-          <span>{title}</span>
-          <span
-            style={{
-              fontSize: "18px",
-              fontWeight: "normal",
-              transition: "transform 0.2s ease",
-            }}
-          >
-            {isCollapsed ? "▶" : "▼"}
-          </span>
-        </div>
-        {!isCollapsed && <div style={{ paddingTop: "15px" }}>{content}</div>}
-      </div>
-    );
-  }
-
   const seasonLabels =
     filteredAnalysis && filteredAnalysis.seasons
       ? filteredAnalysis.seasons
@@ -733,77 +235,6 @@ export default function IndexPage() {
         filteredAnalysis.prevSeason
       ? [filteredAnalysis.season, filteredAnalysis.prevSeason]
       : [];
-
-  function stratRows(
-    strats: Record<string, number>[] = []
-  ): [string, ...(number | "")[]][] {
-    // Get all unique strategy names from all seasons
-    const allKeys = Array.from(
-      new Set(
-        strats
-          .map((obj) => Object.keys(obj || {}))
-          .reduce((a, b) => a.concat(b), [])
-      )
-    );
-    return allKeys.map((strat) => [
-      humanize(strat),
-      ...strats.map((obj) => obj?.[strat] ?? ""),
-    ]);
-  }
-
-  function avgRows(
-    avgs: Record<string, number>[] = []
-  ): [string, ...(string | "")[]][] {
-    const allCats = Array.from(
-      new Set(
-        avgs
-          .map((obj) => Object.keys(obj || {}))
-          .reduce((a, b) => a.concat(b), [])
-      )
-    );
-    return allCats.map((cat) => [
-      humanize(cat),
-      ...avgs.map((obj) =>
-        obj?.[cat] !== undefined ? obj[cat].toFixed(2) : ""
-      ),
-    ]);
-  }
-
-  type Position = "PG" | "SG" | "SF" | "PF" | "C";
-  function effRows(
-    effs: Partial<Record<Position, number>>[] = []
-  ): [string, ...(string | "")[]][] {
-    return (["PG", "SG", "SF", "PF", "C"] as Position[]).map((pos) => [
-      pos,
-      ...effs.map((eff) =>
-        eff?.[pos] !== undefined ? eff[pos]!.toFixed(1) : ""
-      ),
-    ]);
-  }
-
-  function playerRows(stats = {}) {
-    return Object.values(stats)
-      .filter((s: any) => s.games > 0)
-      .map((s: any) => [
-        s.name,
-        (s.pts / s.games).toFixed(1),
-        (s.ast / s.games).toFixed(1),
-        (s.reb / s.games).toFixed(1),
-        (s.blk / s.games).toFixed(1),
-        (s.stl / s.games).toFixed(1),
-        (s.to / s.games).toFixed(1),
-        (s.pf / s.games).toFixed(1),
-        (s.min / s.games).toFixed(1),
-        s.games,
-      ]);
-  }
-
-  type Effort = { date: string; effortDelta: number; matchId: string | number };
-  function effortRows(
-    effortList: Effort[] = []
-  ): [string, string, string | number][] {
-    return effortList.map((e) => [e.date, e.effortDelta.toFixed(2), e.matchId]);
-  }
 
   return (
     <div className="main-container" style={{ position: "relative" }}>
@@ -837,44 +268,16 @@ export default function IndexPage() {
           Analyse de l&apos;équipe adverse pour le prochain match
         </h2>
 
-        {/* New: Dedicated analysis-form classes */}
-        <form className="analysis-form" onSubmit={handleSubmit}>
-          <label className="analysis-form-label">
-            Team Id&nbsp;
-            <input
-              className="analysis-form-input"
-              type="text"
-              value={teamId}
-              onChange={(e) => setTeamId(e.target.value)}
-              required
-              placeholder="ID"
-              disabled={loading}
-            />
-          </label>
-          <label className="analysis-form-label">
-            Nombre de saisons&nbsp;
-            <input
-              className="analysis-form-input"
-              type="number"
-              value={numSeasons}
-              min={1}
-              max={10}
-              onChange={(e) => setNumSeasons(Number(e.target.value))}
-              required
-              disabled={loading}
-            />
-          </label>
-          <button
-            type="submit"
-            className="analysis-form-submit"
-            disabled={loading}
-            style={{ opacity: loading ? 0.6 : 1 }}
-          >
-            {loading ? "Analyse..." : "Analyser"}
-          </button>
-        </form>
+        <TeamAnalysisForm
+          teamId={teamId}
+          numSeasons={numSeasons}
+          loading={loading}
+          onTeamIdChange={setTeamId}
+          onNumSeasonsChange={setNumSeasons}
+          onSubmit={handleSubmit}
+        />
 
-        {loading && <LoadingProgress />}
+        {loading && <LoadingProgress loadingSteps={loadingSteps} />}
 
         {err && <div className="form-error">{err}</div>}
 
@@ -898,225 +301,167 @@ export default function IndexPage() {
               )}
             </div>
 
-            {/* Strategy Filters */}
-            <div
-              className="analysis-section"
-              style={{
-                backgroundColor: "#f8f9fa",
-                padding: "1.5rem",
-                borderRadius: "8px",
-                border: "1px solid #e9ecef",
-                marginBottom: "2rem",
-              }}
-            >
-              <div
-                className="analysis-title"
-                style={{ marginBottom: "1rem", borderBottom: "none" }}
-              >
-                Filtres par stratégies
-              </div>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1.5rem",
-                  alignItems: "start",
-                }}
-              >
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "0.5rem",
-                      fontWeight: "600",
-                      color: "#495057",
-                    }}
-                  >
-                    Stratégie offensive :
-                  </label>
-                  <select
-                    value={selectedOffensiveStrategy}
-                    onChange={(e) =>
-                      setSelectedOffensiveStrategy(e.target.value)
-                    }
-                    style={{
-                      width: "100%",
-                      padding: "0.5rem",
-                      border: "1px solid #ced4da",
-                      borderRadius: "4px",
-                      backgroundColor: "white",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    {Object.entries(OFFENSIVE_STRATEGIES).map(
-                      ([key, label]) => (
-                        <option key={key} value={key}>
-                          {label}
-                        </option>
-                      )
-                    )}
-                  </select>
-                </div>
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "0.5rem",
-                      fontWeight: "600",
-                      color: "#495057",
-                    }}
-                  >
-                    Stratégie défensive :
-                  </label>
-                  <select
-                    value={selectedDefensiveStrategy}
-                    onChange={(e) =>
-                      setSelectedDefensiveStrategy(e.target.value)
-                    }
-                    style={{
-                      width: "100%",
-                      padding: "0.5rem",
-                      border: "1px solid #ced4da",
-                      borderRadius: "4px",
-                      backgroundColor: "white",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    {Object.entries(DEFENSIVE_STRATEGIES).map(
-                      ([key, label]) => (
-                        <option key={key} value={key}>
-                          {label}
-                        </option>
-                      )
-                    )}
-                  </select>
-                </div>
-              </div>
-              {(selectedOffensiveStrategy !== "all" ||
-                selectedDefensiveStrategy !== "all") && (
-                <div
-                  style={{
-                    marginTop: "1rem",
-                    padding: "0.75rem",
-                    backgroundColor: "#d4edda",
-                    border: "1px solid #c3e6cb",
-                    borderRadius: "4px",
-                    fontSize: "0.9rem",
-                    color: "#155724",
-                  }}
-                >
-                  Filtres actifs - Les données ci-dessous sont filtrées selon
-                  les stratégies sélectionnées
-                </div>
-              )}
-            </div>
+            <StrategyFilters
+              selectedOffensiveStrategy={selectedOffensiveStrategy}
+              selectedDefensiveStrategy={selectedDefensiveStrategy}
+              onOffensiveStrategyChange={setSelectedOffensiveStrategy}
+              onDefensiveStrategyChange={setSelectedDefensiveStrategy}
+            />
 
-            {/* NEW: Player History Section */}
+            {/* Player History Section */}
             {filteredAnalysis?.seasonsData?.[0]?.players &&
-              filteredAnalysis.seasonsData[0].players.length > 0 &&
-              renderCollapsibleSection(
-                "player-history",
-                `Joueurs avec historique GS/DMI (${filteredAnalysis.seasonsData[0].players.length} joueurs)`,
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                    gap: "16px",
-                  }}
+              filteredAnalysis.seasonsData[0].players.length > 0 && (
+                <CollapsibleSection
+                  sectionId="player-history"
+                  title={`Joueurs avec historique GS/DMI (${filteredAnalysis.seasonsData[0].players.length} joueurs)`}
+                  isCollapsed={collapsedSections["player-history"]}
+                  showSkeletons={showSkeletons}
+                  onToggle={toggleSection}
                 >
-                  {filteredAnalysis.seasonsData[0].players.map(
-                    (player: any) => (
-                      <PlayerHistoryCard key={player.id} player={player}>
-                        <div
-                          style={{
-                            padding: "8px",
-                            backgroundColor: "white",
-                            border: "1px solid #e5e7eb",
-                            borderRadius: "6px",
-                          }}
-                        >
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(300px, 1fr))",
+                      gap: "16px",
+                    }}
+                  >
+                    {filteredAnalysis.seasonsData[0].players.map(
+                      (player: any) => (
+                        <PlayerHistoryCard key={player.id} player={player}>
                           <div
                             style={{
-                              fontWeight: "600",
-                              fontSize: "14px",
-                              marginBottom: "4px",
+                              padding: "8px",
+                              backgroundColor: "white",
+                              border: "1px solid #e5e7eb",
+                              borderRadius: "6px",
                             }}
                           >
-                            {player.name}
-                          </div>
-                          {player.position && (
-                            <div style={{ fontSize: "12px", color: "#6b7280" }}>
-                              Position: {player.position}
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "14px",
+                                marginBottom: "4px",
+                              }}
+                            >
+                              {player.name}
                             </div>
-                          )}
-                        </div>
-                      </PlayerHistoryCard>
-                    )
-                  )}
-                </div>
+                            {player.position && (
+                              <div
+                                style={{ fontSize: "12px", color: "#6b7280" }}
+                              >
+                                Position: {player.position}
+                              </div>
+                            )}
+                          </div>
+                        </PlayerHistoryCard>
+                      )
+                    )}
+                  </div>
+                </CollapsibleSection>
               )}
 
-            {renderCollapsibleSection(
-              "offense-strategies",
-              "Stratégies offensives",
-              renderTable(
-                ["Stratégies", ...seasonLabels.map((s: any) => `Saison ${s}`)],
-                stratRows(
+            <CollapsibleSection
+              sectionId="offense-strategies"
+              title="Stratégies offensives"
+              isCollapsed={collapsedSections["offense-strategies"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              <DataTable
+                headers={[
+                  "Stratégies",
+                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                ]}
+                rows={stratRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.offenseStrategies || {}
                   ) || []
-                ),
-                "offense-strategies"
-              )
-            )}
+                )}
+                tableId="offense-strategies"
+                sortConfig={sortConfig}
+                onSort={handleSort}
+              />
+            </CollapsibleSection>
 
-            {renderCollapsibleSection(
-              "defense-strategies",
-              "Stratégies défensives",
-              renderTable(
-                ["Stratégies", ...seasonLabels.map((s: any) => `Saison ${s}`)],
-                stratRows(
+            <CollapsibleSection
+              sectionId="defense-strategies"
+              title="Stratégies défensives"
+              isCollapsed={collapsedSections["defense-strategies"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              <DataTable
+                headers={[
+                  "Stratégies",
+                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                ]}
+                rows={stratRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.defenseStrategies || {}
                   ) || []
-                ),
-                "defense-strategies"
-              )
-            )}
+                )}
+                tableId="defense-strategies"
+                sortConfig={sortConfig}
+                onSort={handleSort}
+              />
+            </CollapsibleSection>
 
-            {renderCollapsibleSection(
-              "avg-ratings",
-              "Moyennes des ratings équipe",
-              renderTable(
-                ["Catégorie", ...seasonLabels.map((s: any) => `Saison ${s}`)],
-                avgRows(
+            <CollapsibleSection
+              sectionId="avg-ratings"
+              title="Moyennes des ratings équipe"
+              isCollapsed={collapsedSections["avg-ratings"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              <DataTable
+                headers={[
+                  "Catégorie",
+                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                ]}
+                rows={avgRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.avgRatings || {}
                   ) || []
-                ),
-                "avg-ratings"
-              )
-            )}
+                )}
+                tableId="avg-ratings"
+                sortConfig={sortConfig}
+                onSort={handleSort}
+              />
+            </CollapsibleSection>
 
-            {renderCollapsibleSection(
-              "avg-efficiency",
-              "Efficacité moyenne par poste",
-              renderTable(
-                ["Position", ...seasonLabels.map((s: any) => `Saison ${s}`)],
-                effRows(
+            <CollapsibleSection
+              sectionId="avg-efficiency"
+              title="Efficacité moyenne par poste"
+              isCollapsed={collapsedSections["avg-efficiency"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              <DataTable
+                headers={[
+                  "Position",
+                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                ]}
+                rows={effRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.avgEfficiency || {}
                   ) || []
-                ),
-                "avg-efficiency"
-              )
-            )}
+                )}
+                tableId="avg-efficiency"
+                sortConfig={sortConfig}
+                onSort={handleSort}
+              />
+            </CollapsibleSection>
 
-            {renderCollapsibleSection(
-              "player-stats",
-              "Statistiques joueurs (moyennes par match)",
-              renderTable(
-                [
+            <CollapsibleSection
+              sectionId="player-stats"
+              title="Statistiques joueurs (moyennes par match)"
+              isCollapsed={collapsedSections["player-stats"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              <DataTable
+                headers={[
                   "Joueur",
                   "PTS",
                   "AST",
@@ -1127,32 +472,38 @@ export default function IndexPage() {
                   "PF",
                   "MIN",
                   "GP",
-                ],
-                playerRows(
+                ]}
+                rows={playerRows(
                   filteredAnalysis?.seasonsData?.[0]?.playerSumStats || {}
-                ),
-                "player-stats"
-              )
-            )}
-
-            {renderCollapsibleSection(
-              "effort-variation",
-              "Variation d'effort par match",
-              <div>
-                {filteredAnalysis?.seasonsData?.[0]?.effortDeltaList &&
-                filteredAnalysis.seasonsData[0].effortDeltaList.length > 0 ? (
-                  renderTable(
-                    ["Date", "Delta d'effort", "Match ID"],
-                    effortRows(filteredAnalysis.seasonsData[0].effortDeltaList),
-                    "effort-variation"
-                  )
-                ) : (
-                  <p>
-                    Aucune donnée d&apos;effort disponible pour cette équipe.
-                  </p>
                 )}
-              </div>
-            )}
+                tableId="player-stats"
+                sortConfig={sortConfig}
+                onSort={handleSort}
+              />
+            </CollapsibleSection>
+
+            <CollapsibleSection
+              sectionId="effort-variation"
+              title="Variation d'effort par match"
+              isCollapsed={collapsedSections["effort-variation"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              {filteredAnalysis?.seasonsData?.[0]?.effortDeltaList &&
+              filteredAnalysis.seasonsData[0].effortDeltaList.length > 0 ? (
+                <DataTable
+                  headers={["Date", "Delta d'effort", "Match ID"]}
+                  rows={effortRows(
+                    filteredAnalysis.seasonsData[0].effortDeltaList
+                  )}
+                  tableId="effort-variation"
+                  sortConfig={sortConfig}
+                  onSort={handleSort}
+                />
+              ) : (
+                <p>Aucune donnée d&apos;effort disponible pour cette équipe.</p>
+              )}
+            </CollapsibleSection>
           </>
         )}
       </div>
