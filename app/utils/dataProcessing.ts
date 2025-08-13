@@ -71,6 +71,7 @@ export function playerRows(stats = {}) {
     .filter((s: any) => s.games > 0)
     .map((s: any) => [
       s.name,
+      s.games,
       (s.pts / s.games).toFixed(1),
       (s.ast / s.games).toFixed(1),
       (s.reb / s.games).toFixed(1),
@@ -79,7 +80,6 @@ export function playerRows(stats = {}) {
       (s.to / s.games).toFixed(1),
       (s.pf / s.games).toFixed(1),
       (s.min / s.games).toFixed(1),
-      s.games,
     ]);
 }
 

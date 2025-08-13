@@ -85,6 +85,7 @@ export function useDataFiltering(
           if (!playerSumStats[playerId]) {
             playerSumStats[playerId] = {
               name: stats.name,
+              games: 0,
               pts: 0,
               ast: 0,
               reb: 0,
@@ -93,7 +94,6 @@ export function useDataFiltering(
               to: 0,
               pf: 0,
               min: 0,
-              games: 0,
             };
           }
           const player = playerSumStats[playerId];

@@ -38,6 +38,8 @@ export type SectionId =
   | "effort-variation"
   | "player-history";
 
+const stepDuration = 2000;
+
 export default function IndexPage() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [loading, setLoading] = useState(true);
@@ -75,7 +77,7 @@ export default function IndexPage() {
     "avg-efficiency": true,
     "player-stats": true,
     "effort-variation": true,
-    "player-history": false,
+    "player-history": true,
   });
 
   const router = useRouter();
@@ -129,13 +131,13 @@ export default function IndexPage() {
             current: i === index + 1,
           }))
         );
-      }, (index + 1) * 600);
+      }, (index + 1) * stepDuration);
     });
 
     // Hide skeletons after steps complete
     setTimeout(() => {
       setShowSkeletons(false);
-    }, steps.length * 600 + 300);
+    }, steps.length * stepDuration + 300);
   };
 
   // Load main data on mount
@@ -326,8 +328,16 @@ export default function IndexPage() {
                       gap: "16px",
                     }}
                   >
-                    {filteredAnalysis.seasonsData[0].players.map(
-                      (player: any) => (
+                    {filteredAnalysis.seasonsData[0].players
+                      .sort((a: any, b: any) => {
+                        // Get current week DMI for both players
+                        const currentWeekA = a.currentDMI || 0;
+                        const currentWeekB = b.currentDMI || 0;
+
+                        // Sort by current week DMI in descending order (highest first)
+                        return currentWeekB - currentWeekA;
+                      })
+                      .map((player: any) => (
                         <PlayerHistoryCard key={player.id} player={player}>
                           <div
                             style={{
@@ -355,8 +365,7 @@ export default function IndexPage() {
                             )}
                           </div>
                         </PlayerHistoryCard>
-                      )
-                    )}
+                      ))}
                   </div>
                 </CollapsibleSection>
               )}
@@ -463,6 +472,7 @@ export default function IndexPage() {
               <DataTable
                 headers={[
                   "Joueur",
+                  "GP",
                   "PTS",
                   "AST",
                   "REB",
@@ -471,7 +481,6 @@ export default function IndexPage() {
                   "TO",
                   "PF",
                   "MIN",
-                  "GP",
                 ]}
                 rows={playerRows(
                   filteredAnalysis?.seasonsData?.[0]?.playerSumStats || {}
