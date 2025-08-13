@@ -105,51 +105,53 @@ export function DataTable({
   const sortedRows = sortRows(rows);
 
   return (
-    <table className="table-analysis">
-      <thead>
-        <tr>
-          {headers.map((h, i) => (
-            <th
-              key={i}
-              onClick={() => onSort(tableId, i)}
-              style={{
-                cursor: "pointer",
-                userSelect: "none",
-                backgroundColor:
-                  sortConfig?.table === tableId && sortConfig?.column === i
-                    ? "#f0f0f0"
-                    : "#3c5489",
-              }}
-            >
-              {h}
-              {sortConfig?.table === tableId && sortConfig?.column === i && (
-                <span style={{ marginLeft: "4px" }}>
-                  {sortConfig.direction === "asc" ? "↑" : "↓"}
-                </span>
-              )}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {sortedRows.map((row, i) => (
-          <tr key={i}>
-            {row.slice(0, headers.length).map(
-              (
-                val,
-                j // Only show the visible columns
-              ) => (
-                <td
-                  key={j}
-                  className={isNumeric(val, j) ? getLevelClass(val) : ""}
-                >
-                  {val}
-                </td>
-              )
-            )}
+    <div className="table-container">
+      <table className="table-analysis">
+        <thead>
+          <tr>
+            {headers.map((h, i) => (
+              <th
+                key={i}
+                onClick={() => onSort(tableId, i)}
+                style={{
+                  cursor: "pointer",
+                  userSelect: "none",
+                  backgroundColor:
+                    sortConfig?.table === tableId && sortConfig?.column === i
+                      ? "#f0f0f0"
+                      : "#3c5489",
+                }}
+              >
+                {h}
+                {sortConfig?.table === tableId && sortConfig?.column === i && (
+                  <span style={{ marginLeft: "4px" }}>
+                    {sortConfig.direction === "asc" ? "↑" : "↓"}
+                  </span>
+                )}
+              </th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sortedRows.map((row, i) => (
+            <tr key={i}>
+              {row.slice(0, headers.length).map(
+                (
+                  val,
+                  j // Only show the visible columns
+                ) => (
+                  <td
+                    key={j}
+                    className={isNumeric(val, j) ? getLevelClass(val) : ""}
+                  >
+                    {val}
+                  </td>
+                )
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
