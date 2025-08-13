@@ -187,3 +187,84 @@ body {
     width: 100%;
   }
 }
+
+.lev1 {
+  font-weight: bold;
+  color: #000000 !important;
+}
+.lev2 {
+  font-weight: bold;
+  color: #121263 !important;
+}
+.lev3 {
+  font-weight: bold;
+  color: #221385 !important;
+}
+.lev4 {
+  font-weight: bold;
+  color: #30139f !important;
+}
+.lev5 {
+  font-weight: bold;
+  color: #700ba2 !important;
+}
+.lev6 {
+  font-weight: bold;
+  color: #910b9d !important;
+}
+.lev7 {
+  font-weight: bold;
+  color: #ad0b88 !important;
+}
+.lev8 {
+  font-weight: bold;
+  color: #b70b5a !important;
+}
+.lev9 {
+  font-weight: bold;
+  color: #9c0b32 !important;
+}
+.lev10 {
+  font-weight: bold;
+  color: #a70b00 !important;
+}
+.lev11 {
+  font-weight: bold;
+  color: #bd2600 !important;
+}
+.lev12 {
+  font-weight: bold;
+  color: #cb3100 !important;
+}
+.lev13 {
+  font-weight: bold;
+  color: #d93c00 !important;
+}
+.lev14 {
+  font-weight: bold;
+  color: #db6e04 !important;
+}
+.lev15 {
+  font-weight: bold;
+  color: #e5a64b !important;
+}
+.lev16 {
+  font-weight: bold;
+  color: #ac860a !important;
+}
+.lev17 {
+  font-weight: bold;
+  color: #8e9800 !important;
+}
+.lev18 {
+  font-weight: bold;
+  color: #498e00 !important;
+}
+.lev19 {
+  font-weight: bold;
+  color: #0eae28 !important;
+}
+.lev20 {
+  font-weight: bold;
+  color: #0eb366 !important;
+}
