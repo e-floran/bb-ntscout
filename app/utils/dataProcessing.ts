@@ -10,6 +10,12 @@ export function humanize(str: string) {
     .trim();
 }
 
+// Utility to normalize strategy names for comparison (removes spaces, consistent casing)
+export function normalizeStrategyName(str: string): string {
+  if (!str) return "";
+  return str.replace(/\s+/g, "").toLowerCase();
+}
+
 // Strategy groups
 export const INTERIOR_OFFENSES = ["Look Inside", "Low Post"];
 export const NEUTRAL_OFFENSES = [

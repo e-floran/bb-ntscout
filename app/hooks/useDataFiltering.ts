@@ -6,6 +6,7 @@ import {
   INTERIOR_OFFENSES,
   NEUTRAL_OFFENSES,
   EXTERIOR_OFFENSES,
+  normalizeStrategyName,
 } from "@/app/utils/dataProcessing";
 
 export function useDataFiltering(
@@ -18,17 +19,31 @@ export function useDataFiltering(
   const matchesOffensiveFilter = (offStrategy: string) => {
     if (selectedOffensiveStrategy === "all") return true;
     if (selectedOffensiveStrategy === "interior")
-      return INTERIOR_OFFENSES.includes(offStrategy);
+      return INTERIOR_OFFENSES.some(
+        (offense) =>
+          normalizeStrategyName(offense) === normalizeStrategyName(offStrategy)
+      );
     if (selectedOffensiveStrategy === "neutral")
-      return NEUTRAL_OFFENSES.includes(offStrategy);
+      return NEUTRAL_OFFENSES.some(
+        (offense) =>
+          normalizeStrategyName(offense) === normalizeStrategyName(offStrategy)
+      );
     if (selectedOffensiveStrategy === "exterior")
-      return EXTERIOR_OFFENSES.includes(offStrategy);
-    return offStrategy === selectedOffensiveStrategy;
+      return EXTERIOR_OFFENSES.some(
+        (offense) =>
+          normalizeStrategyName(offense) === normalizeStrategyName(offStrategy)
+      );
+    // For individual strategy comparison, normalize both strings
+    return (
+      normalizeStrategyName(offStrategy) ===
+      normalizeStrategyName(selectedOffensiveStrategy)
+    );
   };
 
   // Check if match satisfies defensive strategy filter
   const matchesDefensiveFilter = (defStrategy: string) => {
     if (selectedDefensiveStrategy === "all") return true;
+    // For defensive strategies, we can also normalize if needed in the future
     return defStrategy === selectedDefensiveStrategy;
   };
 
