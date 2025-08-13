@@ -14,4 +14,9 @@ export interface PlayerWithHistory {
   currentDMI?: number;
   gameShapeChange?: number;
   dmiChange?: number;
+  dmiComparisonToLastGS9?: {
+    percentage: number;
+    lastGS9DMI: number;
+    lastGS9WeekId: number;
+  } | null;
 }

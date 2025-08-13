@@ -26,6 +26,13 @@ export function PlayerHistoryCard({
     return "→";
   };
 
+  const getDMIComparisonColor = (percentage: number) => {
+    if (percentage >= 95) return "#22c55e"; // Green for 95%+
+    if (percentage >= 85) return "#f59e0b"; // Amber for 85-94%
+    if (percentage >= 70) return "#f97316"; // Orange for 70-84%
+    return "#ef4444"; // Red for below 70%
+  };
+
   const hasHistory =
     player.gameShapeHistory && player.gameShapeHistory.length > 0;
   const hasCurrentData =
@@ -63,6 +70,7 @@ export function PlayerHistoryCard({
               gap: "20px",
               marginBottom: "8px",
               alignItems: "center",
+              flexWrap: "wrap",
             }}
           >
             <span
@@ -111,6 +119,72 @@ export function PlayerHistoryCard({
             </span>
           </div>
 
+          {/* DMI Comparison to last GS=9 */}
+          <div
+            style={{
+              marginBottom: "8px",
+              padding: "6px 8px",
+              backgroundColor: "white",
+              borderRadius: "4px",
+              border: "1px solid #e5e7eb",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "12px",
+                color: "#6b7280",
+                fontWeight: "500",
+              }}
+            >
+              % du dernier compétent:
+            </span>
+            {player.dmiComparisonToLastGS9 ? (
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
+              >
+                <span
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "600",
+                    color: getDMIComparisonColor(
+                      player.dmiComparisonToLastGS9.percentage
+                    ),
+                  }}
+                >
+                  {player.dmiComparisonToLastGS9.percentage.toFixed(1)}%
+                </span>
+                {player.currentGameShape !== 9 && (
+                  <span
+                    style={{
+                      fontSize: "10px",
+                      color: "#9ca3af",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    (S{player.dmiComparisonToLastGS9.lastGS9WeekId}:{" "}
+                    {Math.round(
+                      player.dmiComparisonToLastGS9.lastGS9DMI / 1000
+                    )}
+                    k)
+                  </span>
+                )}
+              </div>
+            ) : (
+              <span
+                style={{
+                  fontSize: "12px",
+                  color: "#9ca3af",
+                  fontStyle: "italic",
+                }}
+              >
+                Pas de comparaison
+              </span>
+            )}
+          </div>
+
           {hasHistory && player.gameShapeHistory!.length > 1 && (
             <>
               <button
@@ -154,9 +228,13 @@ export function PlayerHistoryCard({
                         style={{
                           textAlign: "center",
                           padding: "6px 4px",
-                          backgroundColor: "white",
+                          backgroundColor:
+                            week.gameShape === 9 ? "#f0fdf4" : "white",
                           borderRadius: "3px",
-                          border: "1px solid #e5e7eb",
+                          border:
+                            week.gameShape === 9
+                              ? "1px solid #22c55e"
+                              : "1px solid #e5e7eb",
                         }}
                       >
                         <div
@@ -176,7 +254,14 @@ export function PlayerHistoryCard({
                             gap: "1px",
                           }}
                         >
-                          <span style={{ fontSize: "9px", color: "#374151" }}>
+                          <span
+                            style={{
+                              fontSize: "9px",
+                              color: "#374151",
+                              fontWeight:
+                                week.gameShape === 9 ? "600" : "normal",
+                            }}
+                          >
                             GS: {week.gameShape}
                           </span>
                           <span style={{ fontSize: "9px", color: "#374151" }}>

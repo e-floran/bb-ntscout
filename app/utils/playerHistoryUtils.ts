@@ -62,11 +62,47 @@ export function calculateChanges(history: GameShapeHistory[]): {
   };
 }
 
+export function calculateDMIComparisonToLastGS9(history: GameShapeHistory[]): {
+  percentage: number;
+  lastGS9DMI: number;
+  lastGS9WeekId: number;
+} | null {
+  if (!history || history.length === 0) return null;
+
+  const currentWeek = history[0];
+
+  // If current GameShape is 9, always return 100%
+  if (currentWeek.gameShape === 9) {
+    return {
+      percentage: 100,
+      lastGS9DMI: currentWeek.dmi,
+      lastGS9WeekId: currentWeek.weekId,
+    };
+  }
+
+  // Find the most recent week with GameShape = 9
+  const lastGS9Week = history.find((week) => week.gameShape === 9);
+
+  if (!lastGS9Week) {
+    return null; // No GS=9 week found
+  }
+
+  // Calculate percentage: (current DMI / last GS9 DMI) * 100
+  const percentage = (currentWeek.dmi / lastGS9Week.dmi) * 100;
+
+  return {
+    percentage: Math.round(percentage * 10) / 10, // Round to 1 decimal place
+    lastGS9DMI: lastGS9Week.dmi,
+    lastGS9WeekId: lastGS9Week.weekId,
+  };
+}
+
 export function enrichPlayersWithHistory(players: any[]): PlayerWithHistory[] {
   return players.map((player) => {
     const playerId = player.id || player.playerId || String(player.id);
     const history = getPlayerHistory(playerId);
     const changes = calculateChanges(history);
+    const dmiComparison = calculateDMIComparisonToLastGS9(history);
 
     return {
       ...player, // Preserve all existing fields
@@ -75,6 +111,7 @@ export function enrichPlayersWithHistory(players: any[]): PlayerWithHistory[] {
       currentDMI: history[0]?.dmi,
       gameShapeChange: changes.gameShapeChange,
       dmiChange: changes.dmiChange,
+      dmiComparisonToLastGS9: dmiComparison,
     };
   });
 }
