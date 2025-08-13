@@ -354,6 +354,11 @@ async function analyzeTeamForSeason(
             stl: 0,
             to: 0,
             pf: 0,
+            // Add shooting statistics
+            fgm: 0,
+            fga: 0,
+            tpm: 0,
+            tpa: 0,
           };
         }
 
@@ -370,6 +375,11 @@ async function analyzeTeamForSeason(
             stl: parseInt(p.performance.stl) || 0,
             to: parseInt(p.performance.to) || 0,
             pf: parseInt(p.performance.pf) || 0,
+            // Add shooting statistics extraction
+            fgm: parseInt(p.performance.fgm) || 0,
+            fga: parseInt(p.performance.fga) || 0,
+            tpm: parseInt(p.performance.tpm) || 0,
+            tpa: parseInt(p.performance.tpa) || 0,
           };
 
           // Add to season totals
@@ -380,6 +390,11 @@ async function analyzeTeamForSeason(
           playerSumStats[pid].stl += stats.stl;
           playerSumStats[pid].to += stats.to;
           playerSumStats[pid].pf += stats.pf;
+          // Add shooting statistics aggregation
+          playerSumStats[pid].fgm += stats.fgm;
+          playerSumStats[pid].fga += stats.fga;
+          playerSumStats[pid].tpm += stats.tpm;
+          playerSumStats[pid].tpa += stats.tpa;
 
           // Calculate minutes
           let min = 0;

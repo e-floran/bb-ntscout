@@ -94,6 +94,10 @@ export function useDataFiltering(
               to: 0,
               pf: 0,
               min: 0,
+              fgm: 0,
+              fga: 0,
+              tpm: 0,
+              tpa: 0,
             };
           }
           const player = playerSumStats[playerId];
@@ -106,6 +110,10 @@ export function useDataFiltering(
           player.pf += stats.pf || 0;
           player.min += stats.min || 0;
           player.games += 1;
+          player.fgm += stats.fgm || 0;
+          player.fga += stats.fga || 0;
+          player.tpm += stats.tpm || 0;
+          player.tpa += stats.tpa || 0;
         }
       );
     });

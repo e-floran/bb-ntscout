@@ -264,7 +264,7 @@ export default function IndexPage() {
 
       <div
         className="form-container"
-        style={{ maxWidth: "1100px", width: "100%" }}
+        style={{ maxWidth: "1800px", width: "100%" }}
       >
         <h2 className="form-title">
           Analyse de l&apos;équipe adverse pour le prochain match
@@ -474,6 +474,10 @@ export default function IndexPage() {
                   "Joueur",
                   "GP",
                   "PTS",
+                  "FG%",
+                  "Avg FGM",
+                  "3P%",
+                  "Avg 3PM",
                   "AST",
                   "REB",
                   "BLK",

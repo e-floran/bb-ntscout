@@ -69,18 +69,46 @@ export function effRows(
 export function playerRows(stats = {}) {
   return Object.values(stats)
     .filter((s: any) => s.games > 0)
-    .map((s: any) => [
-      s.name,
-      s.games,
-      (s.pts / s.games).toFixed(1),
-      (s.ast / s.games).toFixed(1),
-      (s.reb / s.games).toFixed(1),
-      (s.blk / s.games).toFixed(1),
-      (s.stl / s.games).toFixed(1),
-      (s.to / s.games).toFixed(1),
-      (s.pf / s.games).toFixed(1),
-      (s.min / s.games).toFixed(1),
-    ]);
+    .map((s: any) => {
+      // Calculate FG% - only show if shooting data is available
+      const fgPercentage =
+        s.fga && s.fga > 0
+          ? ((s.fgm / s.fga) * 100).toFixed(1) + "%"
+          : s.fgm !== undefined
+          ? "0.0%"
+          : "N/A";
+
+      // Calculate Average FGM per game
+      const avgFgm = s.fgm !== undefined ? (s.fgm / s.games).toFixed(1) : "N/A";
+
+      // Calculate 3P%
+      const tpPercentage =
+        s.tpa && s.tpa > 0
+          ? ((s.tpm / s.tpa) * 100).toFixed(1) + "%"
+          : s.tpm !== undefined
+          ? "0.0%"
+          : "N/A";
+
+      // Calculate Average 3PM per game
+      const avgTpm = s.tpm !== undefined ? (s.tpm / s.games).toFixed(1) : "N/A";
+
+      return [
+        s.name,
+        s.games,
+        (s.pts / s.games).toFixed(1),
+        fgPercentage, // FG%
+        avgFgm, // Avg FGM
+        tpPercentage, // 3P%
+        avgTpm, // Avg 3PM
+        (s.ast / s.games).toFixed(1),
+        (s.reb / s.games).toFixed(1),
+        (s.blk / s.games).toFixed(1),
+        (s.stl / s.games).toFixed(1),
+        (s.to / s.games).toFixed(1),
+        (s.pf / s.games).toFixed(1),
+        (s.min / s.games).toFixed(1),
+      ];
+    });
 }
 
 type Effort = { date: string; effortDelta: number; matchId: string | number };
