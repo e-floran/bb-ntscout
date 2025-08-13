@@ -70,7 +70,15 @@ export function playerRows(stats = {}) {
   return Object.values(stats)
     .filter((s: any) => s.games > 0)
     .map((s: any) => {
-      // Calculate FG% - only show if shooting data is available
+      const games = s.games || 1; // Avoid division by zero
+
+      // Calculate shooting averages
+      const avgFGM = s.games > 0 && s.fgm !== undefined ? s.fgm / s.games : 0;
+      const avgFGA = s.games > 0 && s.fga !== undefined ? s.fga / s.games : 0;
+      const avgTPM = s.games > 0 && s.tpm !== undefined ? s.tpm / s.games : 0;
+      const avgTPA = s.games > 0 && s.tpa !== undefined ? s.tpa / s.games : 0;
+
+      // Calculate FG% and create FG M-A display
       const fgPercentage =
         s.fga && s.fga > 0
           ? ((s.fgm / s.fga) * 100).toFixed(1) + "%"
@@ -78,10 +86,12 @@ export function playerRows(stats = {}) {
           ? "0.0%"
           : "N/A";
 
-      // Calculate Average FGM per game
-      const avgFgm = s.fgm !== undefined ? (s.fgm / s.games).toFixed(1) : "N/A";
+      const fgDisplay =
+        s.fgm !== undefined && s.fga !== undefined
+          ? `${avgFGM.toFixed(1)}-${avgFGA.toFixed(1)}`
+          : "N/A";
 
-      // Calculate 3P%
+      // Calculate 3P% and create 3P M-A display
       const tpPercentage =
         s.tpa && s.tpa > 0
           ? ((s.tpm / s.tpa) * 100).toFixed(1) + "%"
@@ -89,24 +99,28 @@ export function playerRows(stats = {}) {
           ? "0.0%"
           : "N/A";
 
-      // Calculate Average 3PM per game
-      const avgTpm = s.tpm !== undefined ? (s.tpm / s.games).toFixed(1) : "N/A";
+      const tpDisplay =
+        s.tpm !== undefined && s.tpa !== undefined
+          ? `${avgTPM.toFixed(1)}-${avgTPA.toFixed(1)}`
+          : "N/A";
 
       return [
-        s.name,
-        s.games,
-        (s.pts / s.games).toFixed(1),
-        fgPercentage, // FG%
-        avgFgm, // Avg FGM
-        tpPercentage, // 3P%
-        avgTpm, // Avg 3PM
-        (s.ast / s.games).toFixed(1),
-        (s.reb / s.games).toFixed(1),
-        (s.blk / s.games).toFixed(1),
-        (s.stl / s.games).toFixed(1),
-        (s.to / s.games).toFixed(1),
-        (s.pf / s.games).toFixed(1),
-        (s.min / s.games).toFixed(1),
+        s.name, // 0: Player name
+        s.games, // 1: Games played
+        (s.pts / games).toFixed(1), // 2: Points per game
+        fgPercentage, // 3: FG%
+        fgDisplay, // 4: FG M-A (display)
+        tpPercentage, // 5: 3P%
+        tpDisplay, // 6: 3P M-A (display)
+        (s.ast / games).toFixed(1), // 7: Assists per game
+        (s.reb / games).toFixed(1), // 8: Rebounds per game
+        (s.blk / games).toFixed(1), // 9: Blocks per game
+        (s.stl / games).toFixed(1), // 10: Steals per game
+        (s.to / games).toFixed(1), // 11: Turnovers per game
+        (s.pf / games).toFixed(1), // 12: Personal fouls per game
+        (s.min / games).toFixed(1), // 13: Minutes per game
+        avgFGA, // 14: Raw FGA for sorting (hidden)
+        avgTPA, // 15: Raw TPA for sorting (hidden)
       ];
     });
 }

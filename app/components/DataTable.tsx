@@ -68,8 +68,21 @@ export function DataTable({
     }
 
     return [...rows].sort((a, b) => {
-      const aVal = a[sortConfig.column];
-      const bVal = b[sortConfig.column];
+      let aVal = a[sortConfig.column];
+      let bVal = b[sortConfig.column];
+
+      // Special handling for player stats table shooting columns
+      if (tableId === "player-stats") {
+        if (sortConfig.column === 4) {
+          // FG M-A column
+          aVal = a[14]; // Use hidden raw FGA value
+          bVal = b[14];
+        } else if (sortConfig.column === 6) {
+          // 3P M-A column
+          aVal = a[15]; // Use hidden raw TPA value
+          bVal = b[15];
+        }
+      }
 
       // Handle numeric values
       const aNum = parseFloat(String(aVal));
@@ -121,14 +134,19 @@ export function DataTable({
       <tbody>
         {sortedRows.map((row, i) => (
           <tr key={i}>
-            {row.map((val, j) => (
-              <td
-                key={j}
-                className={isNumeric(val, j) ? getLevelClass(val) : ""}
-              >
-                {val}
-              </td>
-            ))}
+            {row.slice(0, headers.length).map(
+              (
+                val,
+                j // Only show the visible columns
+              ) => (
+                <td
+                  key={j}
+                  className={isNumeric(val, j) ? getLevelClass(val) : ""}
+                >
+                  {val}
+                </td>
+              )
+            )}
           </tr>
         ))}
       </tbody>
