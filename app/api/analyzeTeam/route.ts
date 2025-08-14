@@ -216,6 +216,7 @@ async function analyzeTeamForSeason(
       playerSumStats: {},
       matches: [],
       players: [], // Add empty players array for consistency
+      recentGames: [], // NEW: Add empty recent games array
     };
   }
 
@@ -239,6 +240,9 @@ async function analyzeTeamForSeason(
   // Store individual matches with their strategies and data for filtering
   const matchesWithStrategies: any[] = [];
 
+  // NEW: Store recent games data
+  const recentGames: any[] = [];
+
   const now = new Date();
   for (const match of opponentMatches) {
     const matchId = match["$"].id;
@@ -258,19 +262,23 @@ async function analyzeTeamForSeason(
 
     const matchNode = boxXml?.bbapi?.match;
     let teamNode = null;
+    let opponentNode = null;
+
     if (
       matchNode?.awayTeam &&
       matchNode.awayTeam.$ &&
       matchNode.awayTeam.$.id == teamId
-    )
+    ) {
       teamNode = matchNode.awayTeam;
-    else if (
+      opponentNode = matchNode.homeTeam;
+    } else if (
       matchNode?.homeTeam &&
       matchNode.homeTeam.$ &&
       matchNode.homeTeam.$.id == teamId
-    )
+    ) {
       teamNode = matchNode.homeTeam;
-    else continue;
+      opponentNode = matchNode.awayTeam;
+    } else continue;
 
     if (!teamName && teamNode && teamNode.teamName) {
       teamName = teamNode.teamName;
@@ -325,6 +333,9 @@ async function analyzeTeamForSeason(
 
     // Extract and process player stats
     const matchPlayerStats: Record<string, any> = {};
+    // NEW: Extract player positions and minutes for recent games
+    const gamePlayerMinutes: Record<string, any> = {};
+
     if (teamNode.boxscore && teamNode.boxscore.player) {
       let players = teamNode.boxscore.player;
       if (!Array.isArray(players)) players = [players];
@@ -398,11 +409,22 @@ async function analyzeTeamForSeason(
 
           // Calculate minutes
           let min = 0;
-          for (const pos of ["PG", "SG", "SF", "PF", "C"]) {
+          const positionMinutes: Record<Position, number> = {
+            PG: 0,
+            SG: 0,
+            SF: 0,
+            PF: 0,
+            C: 0,
+          };
+
+          for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
             if (p.minutes && p.minutes[pos]) {
-              min += parseInt(p.minutes[pos]) || 0;
+              const posMin = parseInt(p.minutes[pos]) || 0;
+              min += posMin;
+              positionMinutes[pos] = posMin;
             }
           }
+
           playerSumStats[pid].min += min;
           playerSumStats[pid].games += 1;
 
@@ -411,6 +433,13 @@ async function analyzeTeamForSeason(
             name,
             ...stats,
             min,
+          };
+
+          // NEW: Store position minutes for recent games
+          gamePlayerMinutes[pid] = {
+            name,
+            positionMinutes,
+            totalMinutes: min,
           };
         }
       }
@@ -427,6 +456,23 @@ async function analyzeTeamForSeason(
       efficiency: matchEfficiency,
       playerStats: matchPlayerStats,
     });
+
+    // NEW: Store recent game data (all games, not limited)
+    recentGames.push({
+      matchId,
+      date: matchDateStr,
+      opponent: opponentNode
+        ? {
+            id: opponentNode.$ ? opponentNode.$.id : null,
+            name: opponentNode.teamName || "Unknown",
+          }
+        : null,
+      strategies: {
+        offense: humanize(offStrat),
+        defense: humanize(defStrat),
+      },
+      playerMinutes: gamePlayerMinutes,
+    });
   }
 
   // Sort effort data by date
@@ -434,6 +480,13 @@ async function analyzeTeamForSeason(
     (a, b) =>
       (parseDate(a.date) as unknown as number) -
       (parseDate(b.date) as unknown as number)
+  );
+
+  // NEW: Sort recent games by date (most recent first) - analyze all games, no limit
+  recentGames.sort(
+    (a, b) =>
+      (parseDate(b.date) as unknown as number) -
+      (parseDate(a.date) as unknown as number)
   );
 
   // Humanize keys for frontend display
@@ -473,5 +526,6 @@ async function analyzeTeamForSeason(
     playerSumStats,
     matches: matchesWithStrategies, // Include properly structured match data
     players: playersWithHistory, // NEW: Add players with history
+    recentGames: recentGames, // NEW: Add all recent games data (no limit)
   };
 }

@@ -12,6 +12,7 @@ import { LoadingProgress } from "@/app/components/LoadingProgress";
 import { StrategyFilters } from "@/app/components/StrategyFilters";
 import { CollapsibleSection } from "@/app/components/CollapsibleSection";
 import { DataTable } from "@/app/components/DataTable";
+import { RecentGamesCard } from "@/app/components/RecentGamesCard";
 import { useDataFiltering } from "@/app/hooks/useDataFiltering";
 import {
   stratRows,
@@ -36,7 +37,8 @@ export type SectionId =
   | "avg-efficiency"
   | "player-stats"
   | "effort-variation"
-  | "player-history";
+  | "player-history"
+  | "recent-games";
 
 const stepDuration = 2000;
 
@@ -67,7 +69,7 @@ export default function IndexPage() {
     direction: "asc" | "desc";
   } | null>(null);
 
-  // Collapsed sections state - all collapsed by default
+  // Collapsed sections state - all collapsed by default (including recent games)
   const [collapsedSections, setCollapsedSections] = useState<
     Record<SectionId, boolean>
   >({
@@ -78,6 +80,7 @@ export default function IndexPage() {
     "player-stats": true,
     "effort-variation": true,
     "player-history": true,
+    "recent-games": true, // NEW: Collapsed by default
   });
 
   const router = useRouter();
@@ -310,66 +313,6 @@ export default function IndexPage() {
               onDefensiveStrategyChange={setSelectedDefensiveStrategy}
             />
 
-            {/* Player History Section */}
-            {filteredAnalysis?.seasonsData?.[0]?.players &&
-              filteredAnalysis.seasonsData[0].players.length > 0 && (
-                <CollapsibleSection
-                  sectionId="player-history"
-                  title={`Joueurs avec historique GS/DMI (${filteredAnalysis.seasonsData[0].players.length} joueurs)`}
-                  isCollapsed={collapsedSections["player-history"]}
-                  showSkeletons={showSkeletons}
-                  onToggle={toggleSection}
-                >
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns:
-                        "repeat(auto-fit, minmax(300px, 1fr))",
-                      gap: "16px",
-                    }}
-                  >
-                    {filteredAnalysis.seasonsData[0].players
-                      .sort((a: any, b: any) => {
-                        // Get current week DMI for both players
-                        const currentWeekA = a.currentDMI || 0;
-                        const currentWeekB = b.currentDMI || 0;
-
-                        // Sort by current week DMI in descending order (highest first)
-                        return currentWeekB - currentWeekA;
-                      })
-                      .map((player: any) => (
-                        <PlayerHistoryCard key={player.id} player={player}>
-                          <div
-                            style={{
-                              padding: "8px",
-                              backgroundColor: "white",
-                              border: "1px solid #e5e7eb",
-                              borderRadius: "6px",
-                            }}
-                          >
-                            <div
-                              style={{
-                                fontWeight: "600",
-                                fontSize: "14px",
-                                marginBottom: "4px",
-                              }}
-                            >
-                              {player.name}
-                            </div>
-                            {player.position && (
-                              <div
-                                style={{ fontSize: "12px", color: "#6b7280" }}
-                              >
-                                Position: {player.position}
-                              </div>
-                            )}
-                          </div>
-                        </PlayerHistoryCard>
-                      ))}
-                  </div>
-                </CollapsibleSection>
-              )}
-
             <CollapsibleSection
               sectionId="offense-strategies"
               title="Stratégies offensives"
@@ -517,6 +460,98 @@ export default function IndexPage() {
                 <p>Aucune donnée d&apos;effort disponible pour cette équipe.</p>
               )}
             </CollapsibleSection>
+
+            {/* Player History Section */}
+            {filteredAnalysis?.seasonsData?.[0]?.players &&
+              filteredAnalysis.seasonsData[0].players.length > 0 && (
+                <CollapsibleSection
+                  sectionId="player-history"
+                  title={`Joueurs avec historique GS/DMI (${filteredAnalysis.seasonsData[0].players.length} joueurs)`}
+                  isCollapsed={collapsedSections["player-history"]}
+                  showSkeletons={showSkeletons}
+                  onToggle={toggleSection}
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(300px, 1fr))",
+                      gap: "16px",
+                    }}
+                  >
+                    {filteredAnalysis.seasonsData[0].players
+                      .sort((a: any, b: any) => {
+                        // Get current week DMI for both players
+                        const currentWeekA = a.currentDMI || 0;
+                        const currentWeekB = b.currentDMI || 0;
+
+                        // Sort by current week DMI in descending order (highest first)
+                        return currentWeekB - currentWeekA;
+                      })
+                      .map((player: any) => (
+                        <PlayerHistoryCard key={player.id} player={player}>
+                          <div
+                            style={{
+                              padding: "8px",
+                              backgroundColor: "white",
+                              border: "1px solid #e5e7eb",
+                              borderRadius: "6px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                fontWeight: "600",
+                                fontSize: "14px",
+                                marginBottom: "4px",
+                              }}
+                            >
+                              {player.name}
+                            </div>
+                            {player.position && (
+                              <div
+                                style={{ fontSize: "12px", color: "#6b7280" }}
+                              >
+                                Position: {player.position}
+                              </div>
+                            )}
+                          </div>
+                        </PlayerHistoryCard>
+                      ))}
+                  </div>
+                </CollapsibleSection>
+              )}
+
+            {/* NEW: Recent Games Section - moved to bottom and collapsed by default */}
+            {filteredAnalysis?.seasonsData?.[0]?.recentGames &&
+              filteredAnalysis.seasonsData[0].recentGames.length > 0 && (
+                <CollapsibleSection
+                  sectionId="recent-games"
+                  title={`Tous les matchs de la saison (${filteredAnalysis.seasonsData[0].recentGames.length} matchs)`}
+                  isCollapsed={collapsedSections["recent-games"]}
+                  showSkeletons={showSkeletons}
+                  onToggle={toggleSection}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "16px",
+                    }}
+                  >
+                    {filteredAnalysis.seasonsData[0].recentGames.map(
+                      (game: any) => (
+                        <RecentGamesCard
+                          key={game.matchId}
+                          game={game}
+                          playersWithHistory={
+                            filteredAnalysis.seasonsData[0].players || []
+                          }
+                        />
+                      )
+                    )}
+                  </div>
+                </CollapsibleSection>
+              )}
           </>
         )}
       </div>
