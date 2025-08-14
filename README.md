@@ -20,6 +20,7 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 - a user must login on the login page. the users variable, containing a list of authorized users, is checked before sending a login request to the bbapi.
 - on login, the user is redirected to the index, where data is fetched on its main national team next opponent.
 - the user can then pick another team to analyze on this same index page.
+- several collapsable section display data in tables. Data is either fetched from the bbapi or retrieved from the json files stored in the data folder of this app.
 
 ## Stored data
 
