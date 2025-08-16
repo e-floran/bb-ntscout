@@ -19,4 +19,7 @@ export interface PlayerWithHistory {
     lastGS9DMI: number;
     lastGS9WeekId: number;
   } | null;
+  // New fields to track data freshness
+  mostRecentWeekId?: number;
+  isCurrentWeekDataAvailable?: boolean;
 }

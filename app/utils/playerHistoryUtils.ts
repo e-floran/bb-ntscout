@@ -17,6 +17,22 @@ interface PlayerData {
   weeks: PlayerWeek[];
 }
 
+// Function to get current week ID based on season start
+function getCurrentWeekId(): number {
+  // Season 69 started on July 11th, 2025 (Friday)
+  const seasonStartDate = new Date("2025-07-11");
+  const now = new Date();
+
+  // Calculate weeks since season start
+  const daysSinceStart = Math.floor(
+    (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+  );
+  const weeksSinceStart = Math.floor(daysSinceStart / 7);
+
+  // Current week ID (1-14)
+  return Math.min(weeksSinceStart + 1, 14);
+}
+
 export function getPlayerHistory(playerId: string): GameShapeHistory[] {
   try {
     const playerFile = path.join(
@@ -98,20 +114,35 @@ export function calculateDMIComparisonToLastGS9(history: GameShapeHistory[]): {
 }
 
 export function enrichPlayersWithHistory(players: any[]): PlayerWithHistory[] {
+  const currentWeekId = getCurrentWeekId();
+
   return players.map((player) => {
     const playerId = player.id || player.playerId || String(player.id);
     const history = getPlayerHistory(playerId);
+
+    // Check if we have current week data
+    const currentWeekData = history.find(
+      (week) => week.weekId === currentWeekId
+    );
+    const hasCurrentWeekData = !!currentWeekData;
+
+    // Use current week data if available, otherwise use most recent
+    const dataToUse = currentWeekData || history[0];
+
     const changes = calculateChanges(history);
     const dmiComparison = calculateDMIComparisonToLastGS9(history);
 
     return {
       ...player, // Preserve all existing fields
       gameShapeHistory: history,
-      currentGameShape: history[0]?.gameShape,
-      currentDMI: history[0]?.dmi,
-      gameShapeChange: changes.gameShapeChange,
-      dmiChange: changes.dmiChange,
-      dmiComparisonToLastGS9: dmiComparison,
+      currentGameShape: hasCurrentWeekData ? dataToUse?.gameShape : undefined,
+      currentDMI: hasCurrentWeekData ? dataToUse?.dmi : undefined,
+      gameShapeChange: hasCurrentWeekData ? changes.gameShapeChange : 0,
+      dmiChange: hasCurrentWeekData ? changes.dmiChange : 0,
+      dmiComparisonToLastGS9: hasCurrentWeekData ? dmiComparison : null,
+      // Add metadata to track data freshness
+      mostRecentWeekId: history[0]?.weekId,
+      isCurrentWeekDataAvailable: hasCurrentWeekData,
     };
   });
 }
