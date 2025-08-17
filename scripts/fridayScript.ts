@@ -2,9 +2,7 @@
 import fs from "fs";
 import path from "path";
 import axios from "axios";
-import * as readline from "readline";
 import { PlayerWeek, GameShapeRange } from "../app/utils/types";
-import { updateLastUpdateTimestamp } from "../app/utils/updateLastUpdate";
 
 interface PlayerData {
   id: string;
@@ -17,35 +15,25 @@ class BBWeeklyGameShapeDMIUpdater {
   private sessionCookie = "";
   private queryCount = 0;
   private currentSeason = 69;
-  private rl: readline.Interface;
   private username = "";
   private password = "";
   private processedPlayers = 0;
   private totalPlayers = 0;
 
   constructor() {
-    this.rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    });
-  }
+    // Get credentials from environment variables for automation
+    this.username = process.env.BB_USERNAME || "";
+    this.password = process.env.BB_PASSWORD || "";
 
-  private async question(query: string): Promise<string> {
-    return new Promise((resolve) => {
-      this.rl.question(query, resolve);
-    });
+    if (!this.username || !this.password) {
+      throw new Error(
+        "BB_USERNAME and BB_PASSWORD environment variables are required"
+      );
+    }
   }
 
   private async login(): Promise<boolean> {
     try {
-      // Only ask for credentials on first login
-      if (!this.username || !this.password) {
-        this.username = await this.question("Enter your BB username: ");
-        this.password = await this.question(
-          "Enter your BB read-only password: "
-        );
-      }
-
       console.log("Logging in...");
       const response = await axios.get(`${this.baseURL}/login.aspx`, {
         params: { login: this.username, code: this.password },
@@ -356,17 +344,19 @@ class BBWeeklyGameShapeDMIUpdater {
         `Week ${weekInfo.id} gameshape and DMI data has been added to all updated players`
       );
       console.log("Weekly update completed successfully! 🎉");
-      updateLastUpdateTimestamp();
     } catch (error) {
       console.error("\nFatal error:", error);
       console.log("Script terminated due to critical error.");
+      process.exit(1);
     } finally {
       await this.logout();
-      this.rl.close();
     }
   }
 }
 
 // Run the script
 const updater = new BBWeeklyGameShapeDMIUpdater();
-updater.run().catch(console.error);
+updater.run().catch((error) => {
+  console.error("Script failed:", error);
+  process.exit(1);
+});

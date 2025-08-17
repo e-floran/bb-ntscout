@@ -2,9 +2,7 @@
 import fs from "fs";
 import path from "path";
 import axios from "axios";
-import * as readline from "readline";
 import { PlayerWeek, GameShapeRange } from "../app/utils/types";
-import { updateLastUpdateTimestamp } from "../app/utils/updateLastUpdate";
 
 interface TeamData {
   id: string;
@@ -35,32 +33,23 @@ class BBPostMondayPlayerChecker {
   private sessionCookie = "";
   private queryCount = 0;
   private currentSeason = 69;
-  private rl: readline.Interface;
   private username = "";
   private password = "";
 
   constructor() {
-    this.rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    });
-  }
+    // Get credentials from environment variables for automation
+    this.username = process.env.BB_USERNAME || "";
+    this.password = process.env.BB_PASSWORD || "";
 
-  private async question(query: string): Promise<string> {
-    return new Promise((resolve) => {
-      this.rl.question(query, resolve);
-    });
+    if (!this.username || !this.password) {
+      throw new Error(
+        "BB_USERNAME and BB_PASSWORD environment variables are required"
+      );
+    }
   }
 
   private async login(): Promise<boolean> {
     try {
-      if (!this.username || !this.password) {
-        this.username = await this.question("Enter your BB username: ");
-        this.password = await this.question(
-          "Enter your BB read-only password: "
-        );
-      }
-
       console.log("Logging in...");
       const response = await axios.get(`${this.baseURL}/login.aspx`, {
         params: { login: this.username, code: this.password },
@@ -393,27 +382,11 @@ class BBPostMondayPlayerChecker {
     console.log("BB Post-Monday New Players Checker");
     console.log("==================================");
 
-    // Check for resume data
-    const resumeData = this.loadResumeData();
-    let processedTeams: Set<string> = new Set();
-
-    if (resumeData) {
-      const shouldResume = await this.question(
-        `Found previous session. Resume from team ${resumeData.teamId}? (y/n): `
-      );
-      if (shouldResume.toLowerCase() === "y") {
-        processedTeams = new Set(resumeData.processedTeams);
-        console.log(
-          `Resuming... ${processedTeams.size} teams already processed.`
-        );
-      } else {
-        this.deleteResumeData();
-      }
-    }
+    // For automation, skip resume logic and process all teams
+    const processedTeams: Set<string> = new Set();
 
     if (!(await this.login())) {
-      this.rl.close();
-      return;
+      throw new Error("Login failed");
     }
 
     try {
@@ -550,14 +523,10 @@ class BBPostMondayPlayerChecker {
           }
 
           teamsChecked++;
-
-          // Save progress
-          this.saveResumeData(teamData.id, Array.from(processedTeams));
         } catch (error) {
           console.error(`Error processing team ${teamData.id}:`, error);
-          console.log("Saving progress and stopping...");
-          this.saveResumeData(teamData.id, Array.from(processedTeams));
-          break;
+          // Continue with next team instead of stopping
+          continue;
         }
       }
 
@@ -568,17 +537,20 @@ class BBPostMondayPlayerChecker {
       if (newPlayersFound === 0) {
         console.log("🎉 No last-minute roster additions found!");
       }
-      updateLastUpdateTimestamp();
+
       this.deleteResumeData();
     } catch (error) {
       console.error("Fatal error:", error);
+      process.exit(1);
     } finally {
       await this.logout();
-      this.rl.close();
     }
   }
 }
 
 // Run the script
 const checker = new BBPostMondayPlayerChecker();
-checker.run().catch(console.error);
+checker.run().catch((error) => {
+  console.error("Script failed:", error);
+  process.exit(1);
+});

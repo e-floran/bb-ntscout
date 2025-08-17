@@ -1,0 +1,40 @@
+name: Manual Script Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "Which script to run"
+        required: true
+        default: "friday"
+        type: choice
+        options:
+          - friday
+          - tuesday
+
+jobs:
+  test-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Selected Script
+        run: |
+          if [ "${{ github.event.inputs.script }}" = "friday" ]; then
+            npm run friday-script
+          else
+            npm run check-new-players
+          fi
+        env:
+          BB_USERNAME: ${{ secrets.BB_USERNAME }}
+          BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
