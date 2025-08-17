@@ -1,4 +1,4 @@
-import { Continents } from "./types";
+import { Continents } from "../types/types";
 
 export const mainCountriesByContinent: Map<Continents, string[]> = new Map<
   Continents,

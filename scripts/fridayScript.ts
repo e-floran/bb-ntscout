@@ -2,7 +2,7 @@
 import fs from "fs";
 import path from "path";
 import axios from "axios";
-import { PlayerWeek, GameShapeRange } from "../app/utils/types";
+import { PlayerWeek, GameShapeRange } from "../app/types/types";
 
 interface PlayerData {
   id: string;

@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import axios from "axios";
 import * as readline from "readline";
-import { PlayerWeek, GameShapeRange } from "../app/utils/types";
+import { PlayerWeek, GameShapeRange } from "../app/types/types";
 import { updateLastUpdateTimestamp } from "../app/utils/updateLastUpdate";
 
 interface TeamData {

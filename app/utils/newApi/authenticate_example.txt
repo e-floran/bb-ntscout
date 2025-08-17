@@ -1,0 +1,18 @@
+{
+    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMTA5ODc5IiwicHJpbWFyeVRlYW1JZCI6IjI3MjMwIiwic2Vjb25kVGVhbUlkIjoiMjc2MjYyIiwicHJpbWFyeUxlYWd1ZUlkIjoiMjc1Iiwic2Vjb25kTGVhZ3VlSWQiOiIxNzY4NyIsImlzU3VwcG9ydGVyIjoiVHJ1ZSIsImNvdW50cnlJZCI6IjExIiwibGFuZ3VhZ2VQcmVmIjoiZnIiLCJjdXJyZW50U2Vhc29uIjoiNjkiLCJuYXRpb25hbFRlYW1JZCI6IjAiLCJuYmYiOjE3NTU0MzU1NjMsImV4cCI6MTc1NTQzOTE2MywiaWF0IjoxNzU1NDM1NTYzfQ.05cOpppOGrFMqNRaYcllF6qM-9qghE7oRu_4KaOEN8Q",
+    "refreshToken": "o0JMc2JxiMgRH0+bxMhHX5G5vxpSMW3oVBuo1C9i0akVj5UwyEAF3QqPm8PPhb6PVZ/uLdP6CCfE6lbsoQ08Fw==",
+    "countryId": 11,
+    "primaryTeamId": 27230,
+    "secondTeamId": 276262,
+    "primaryTeamName": "Atlantique Titans",
+    "secondTeamName": "International Nexus",
+    "primaryLeagueId": 275,
+    "secondLeagueId": 17687,
+    "alias": "Phoenix",
+    "supporterUntil": "2025-11-12T18:11:24.093Z",
+    "languagePref": "fr",
+    "currentSeason": 69,
+    "isSupporter": true,
+    "hasSecondTeam": true,
+    "isNationalTeamCoach": false
+}

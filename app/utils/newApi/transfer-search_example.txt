@@ -1,0 +1,6 @@
+{
+    "searchId": "B7C768BA-2F2A-48AE-99DF-A3C968265489 ",
+    "pages": 1,
+    "numResults": 20,
+    "timeStamp": "2025-08-17T12:59:37.2391854Z"
+}
