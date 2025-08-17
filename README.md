@@ -27,6 +27,7 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 - the app/data folder contains data on national teams and their players
 - the teams subfolder has a json file for each national team in the game. The name of the file being the ID of the team in the game (it can be used to query the bbapi). The players array lists the IDs of all the players that have played at least one game for this national team this season.
 - the players subfolder has a json file for each national teams player. Its weeks array list week object with keys to identify the week and important data : gameshape and dmi for this week. The name of each file is also the ID of the player that can be used to query the bbapi.
+- the scoutedPlayers subfolder has a json file for each player scouted from the transfer marker, with complete skillset at the time of the scouting.
 
 ## Manual scripts
 
@@ -34,3 +35,4 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 - update-players-data.ts get all players from the games played by all national teams this season
 - checkNewPlayers.ts is intended to be used after national teams games on monday, to check all national teams last game and see if there are new players to add
 - fridayScript.ts add a new entry for each player in the app/data/players folder, in their weeks array.
+- fetch-players-bbapi.ts use another API of Buzzerbeater to get complete players profiles if they are on the transfer market at the time of the script.
