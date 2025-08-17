@@ -4,6 +4,7 @@ import path from "path";
 import axios from "axios";
 import * as readline from "readline";
 import { PlayerWeek, GameShapeRange } from "../app/utils/types";
+import { updateLastUpdateTimestamp } from "../app/utils/updateLastUpdate";
 
 interface TeamData {
   id: string;
@@ -170,9 +171,7 @@ class BBPostMondayPlayerChecker {
     return matches;
   }
 
-  private async getBoxscoreData(
-    matchId: string
-  ): Promise<{
+  private async getBoxscoreData(matchId: string): Promise<{
     homeTeamPlayers: string[];
     awayTeamPlayers: string[];
     homeTeamId: string;
@@ -569,7 +568,7 @@ class BBPostMondayPlayerChecker {
       if (newPlayersFound === 0) {
         console.log("🎉 No last-minute roster additions found!");
       }
-
+      updateLastUpdateTimestamp();
       this.deleteResumeData();
     } catch (error) {
       console.error("Fatal error:", error);

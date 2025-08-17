@@ -4,6 +4,7 @@ import path from "path";
 import axios from "axios";
 import * as readline from "readline";
 import { PlayerWeek, GameShapeRange } from "../app/utils/types";
+import { updateLastUpdateTimestamp } from "../app/utils/updateLastUpdate";
 
 interface TeamData {
   id: string;
@@ -426,6 +427,7 @@ class BBPlayerDataUpdater {
       }
 
       console.log("\n✅ All teams processed successfully!");
+      updateLastUpdateTimestamp();
       this.deleteResumeData();
     } catch (error) {
       console.error("Fatal error:", error);
