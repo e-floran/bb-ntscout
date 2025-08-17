@@ -1,4 +1,4 @@
-import { Continents, PlayerSeason, PlayerSkillset, PlayerWeek } from "./types";
+import { Continents, PlayerScouting, PlayerSeason, PlayerWeek } from "./types";
 
 export interface User {
   login: string;
@@ -24,13 +24,6 @@ export interface ScoutedPlayer {
   firstName: string;
   lastName: string;
   countryId: number;
-  auctionOver: string;
-  age: number;
-  salary: number;
-  skillset: PlayerSkillset;
-  gs: number;
   potential: number;
-  tce: number;
-  tci: number;
-  tc: number;
+  scoutings: PlayerScouting[];
 }
