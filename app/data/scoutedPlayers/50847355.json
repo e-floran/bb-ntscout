@@ -1,0 +1,31 @@
+{
+  "id": 50847355,
+  "firstName": "Witold",
+  "lastName": "Maziejuk",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 98230,
+      "tce": 98,
+      "tci": 26,
+      "tc": 124,
+      "gs": 6,
+      "js": 17,
+      "jr": 12,
+      "od": 17,
+      "ha": 20,
+      "dr": 20,
+      "pa": 12,
+      "is": 10,
+      "id": 7,
+      "rb": 6,
+      "sb": 3,
+      "st": 8,
+      "ft": 14,
+      "ex": 11,
+      "scoutedAt": "2025-08-17T21:43:47.603Z"
+    }
+  ]
+}

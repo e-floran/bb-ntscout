@@ -1,0 +1,31 @@
+{
+  "id": 53553704,
+  "firstName": "Kamil",
+  "lastName": "Skrzypacz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 48738,
+      "tce": 82,
+      "tci": 43,
+      "tc": 125,
+      "gs": 8,
+      "js": 16,
+      "jr": 12,
+      "od": 12,
+      "ha": 13,
+      "dr": 15,
+      "pa": 14,
+      "is": 14,
+      "id": 10,
+      "rb": 9,
+      "sb": 10,
+      "st": 9,
+      "ft": 12,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:50.979Z"
+    }
+  ]
+}

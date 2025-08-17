@@ -1,0 +1,31 @@
+{
+  "id": 54643797,
+  "firstName": "Emili",
+  "lastName": "Bartomeu",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4121,
+      "tce": 42,
+      "tci": 20,
+      "tc": 62,
+      "gs": 7,
+      "js": 5,
+      "jr": 4,
+      "od": 7,
+      "ha": 8,
+      "dr": 9,
+      "pa": 9,
+      "is": 10,
+      "id": 2,
+      "rb": 4,
+      "sb": 4,
+      "st": 2,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.929Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54515745,
+  "firstName": "Igor",
+  "lastName": "Lužnik",
+  "countryId": 66,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4266,
+      "tce": 50,
+      "tci": 15,
+      "tc": 65,
+      "gs": 7,
+      "js": 10,
+      "jr": 6,
+      "od": 3,
+      "ha": 11,
+      "dr": 13,
+      "pa": 7,
+      "is": 3,
+      "id": 3,
+      "rb": 7,
+      "sb": 2,
+      "st": 6,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:41.353Z"
+    }
+  ]
+}

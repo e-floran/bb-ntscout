@@ -1,0 +1,31 @@
+{
+  "id": 51390554,
+  "firstName": "Largo",
+  "lastName": "Goovaerts",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 252695,
+      "tce": 79,
+      "tci": 67,
+      "tc": 146,
+      "gs": 8,
+      "js": 16,
+      "jr": 10,
+      "od": 14,
+      "ha": 16,
+      "dr": 17,
+      "pa": 6,
+      "is": 17,
+      "id": 18,
+      "rb": 15,
+      "sb": 17,
+      "st": 9,
+      "ft": 23,
+      "ex": 10,
+      "scoutedAt": "2025-08-17T21:43:46.942Z"
+    }
+  ]
+}

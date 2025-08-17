@@ -1,0 +1,31 @@
+{
+  "id": 53796972,
+  "firstName": "Mauro",
+  "lastName": "Molteni",
+  "countryId": 17,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 22288,
+      "tce": 36,
+      "tci": 40,
+      "tc": 76,
+      "gs": 7,
+      "js": 10,
+      "jr": 5,
+      "od": 2,
+      "ha": 8,
+      "dr": 5,
+      "pa": 6,
+      "is": 15,
+      "id": 9,
+      "rb": 11,
+      "sb": 5,
+      "st": 3,
+      "ft": 4,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:39.733Z"
+    }
+  ]
+}

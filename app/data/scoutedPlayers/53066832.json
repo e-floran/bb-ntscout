@@ -1,0 +1,31 @@
+{
+  "id": 53066832,
+  "firstName": "Eugenio",
+  "lastName": "Giusto",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 43716,
+      "tce": 86,
+      "tci": 39,
+      "tc": 125,
+      "gs": 8,
+      "js": 19,
+      "jr": 9,
+      "od": 12,
+      "ha": 20,
+      "dr": 20,
+      "pa": 6,
+      "is": 17,
+      "id": 10,
+      "rb": 7,
+      "sb": 5,
+      "st": 6,
+      "ft": 15,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:49.692Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54047545,
+  "firstName": "Andrea",
+  "lastName": "Barni",
+  "countryId": 10,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10351,
+      "tce": 69,
+      "tci": 31,
+      "tc": 100,
+      "gs": 8,
+      "js": 12,
+      "jr": 7,
+      "od": 11,
+      "ha": 17,
+      "dr": 17,
+      "pa": 5,
+      "is": 12,
+      "id": 8,
+      "rb": 7,
+      "sb": 4,
+      "st": 7,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:37.130Z"
+    }
+  ]
+}

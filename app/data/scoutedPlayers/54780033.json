@@ -1,0 +1,31 @@
+{
+  "id": 54780033,
+  "firstName": "Bastian",
+  "lastName": "Krøjgaard",
+  "countryId": 39,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2386,
+      "tce": 35,
+      "tci": 17,
+      "tc": 52,
+      "gs": 8,
+      "js": 5,
+      "jr": 6,
+      "od": 7,
+      "ha": 4,
+      "dr": 8,
+      "pa": 5,
+      "is": 5,
+      "id": 6,
+      "rb": 4,
+      "sb": 2,
+      "st": 8,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:42.000Z"
+    }
+  ]
+}

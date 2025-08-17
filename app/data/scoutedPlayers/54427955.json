@@ -1,0 +1,31 @@
+{
+  "id": 54427955,
+  "firstName": "Kostantinas",
+  "lastName": "Bulvidas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8235,
+      "tce": 51,
+      "tci": 27,
+      "tc": 78,
+      "gs": 9,
+      "js": 11,
+      "jr": 9,
+      "od": 6,
+      "ha": 7,
+      "dr": 11,
+      "pa": 7,
+      "is": 11,
+      "id": 8,
+      "rb": 5,
+      "sb": 3,
+      "st": 5,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.284Z"
+    }
+  ]
+}

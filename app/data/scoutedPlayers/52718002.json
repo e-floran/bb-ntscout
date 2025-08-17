@@ -1,0 +1,31 @@
+{
+  "id": 52718002,
+  "firstName": "Pablo",
+  "lastName": "Castelltelsor",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 36763,
+      "tce": 86,
+      "tci": 14,
+      "tc": 100,
+      "gs": 9,
+      "js": 17,
+      "jr": 17,
+      "od": 11,
+      "ha": 16,
+      "dr": 18,
+      "pa": 7,
+      "is": 4,
+      "id": 3,
+      "rb": 3,
+      "sb": 4,
+      "st": 5,
+      "ft": 4,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:49.690Z"
+    }
+  ]
+}

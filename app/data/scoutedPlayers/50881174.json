@@ -1,0 +1,31 @@
+{
+  "id": 50881174,
+  "firstName": "Sebastián",
+  "lastName": "Macaluso",
+  "countryId": 73,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 94826,
+      "tce": 85,
+      "tci": 52,
+      "tc": 137,
+      "gs": 8,
+      "js": 14,
+      "jr": 11,
+      "od": 15,
+      "ha": 18,
+      "dr": 18,
+      "pa": 9,
+      "is": 15,
+      "id": 15,
+      "rb": 14,
+      "sb": 8,
+      "st": 9,
+      "ft": 5,
+      "ex": 13,
+      "scoutedAt": "2025-08-17T21:43:46.945Z"
+    }
+  ]
+}

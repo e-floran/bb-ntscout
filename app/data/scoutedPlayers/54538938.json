@@ -1,0 +1,31 @@
+{
+  "id": 54538938,
+  "firstName": "Chui",
+  "lastName": "Yiu Wing",
+  "countryId": 45,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 15219,
+      "tce": 47,
+      "tci": 41,
+      "tc": 88,
+      "gs": 9,
+      "js": 9,
+      "jr": 4,
+      "od": 5,
+      "ha": 11,
+      "dr": 11,
+      "pa": 7,
+      "is": 11,
+      "id": 10,
+      "rb": 10,
+      "sb": 10,
+      "st": 2,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:39.094Z"
+    }
+  ]
+}

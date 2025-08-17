@@ -1,0 +1,31 @@
+{
+  "id": 53125138,
+  "firstName": "Tsach",
+  "lastName": "Granot",
+  "countryId": 15,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 81394,
+      "tce": 64,
+      "tci": 55,
+      "tc": 119,
+      "gs": 8,
+      "js": 14,
+      "jr": 9,
+      "od": 6,
+      "ha": 15,
+      "dr": 16,
+      "pa": 4,
+      "is": 16,
+      "id": 16,
+      "rb": 14,
+      "sb": 9,
+      "st": 7,
+      "ft": 17,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:50.978Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54855995,
+  "firstName": "Pasha",
+  "lastName": "Palasyan",
+  "countryId": 87,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5414,
+      "tce": 39,
+      "tci": 29,
+      "tc": 68,
+      "gs": 8,
+      "js": 11,
+      "jr": 2,
+      "od": 6,
+      "ha": 5,
+      "dr": 9,
+      "pa": 6,
+      "is": 2,
+      "id": 9,
+      "rb": 9,
+      "sb": 9,
+      "st": 3,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.284Z"
+    }
+  ]
+}

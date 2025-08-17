@@ -1,0 +1,31 @@
+{
+  "id": 54353502,
+  "firstName": "Carmine",
+  "lastName": "Cingolani",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6153,
+      "tce": 24,
+      "tci": 35,
+      "tc": 59,
+      "gs": 7,
+      "js": 4,
+      "jr": 2,
+      "od": 4,
+      "ha": 7,
+      "dr": 5,
+      "pa": 2,
+      "is": 7,
+      "id": 8,
+      "rb": 13,
+      "sb": 7,
+      "st": 3,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:42.637Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54111889,
+  "firstName": "Inácio",
+  "lastName": "Bastos",
+  "countryId": 18,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11277,
+      "tce": 62,
+      "tci": 28,
+      "tc": 90,
+      "gs": 9,
+      "js": 9,
+      "jr": 6,
+      "od": 5,
+      "ha": 16,
+      "dr": 18,
+      "pa": 8,
+      "is": 11,
+      "id": 5,
+      "rb": 8,
+      "sb": 4,
+      "st": 3,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:36.455Z"
+    }
+  ]
+}

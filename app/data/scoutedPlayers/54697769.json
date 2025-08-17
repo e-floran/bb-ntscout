@@ -1,0 +1,31 @@
+{
+  "id": 54697769,
+  "firstName": "Damianos",
+  "lastName": "Aslanis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4944,
+      "tce": 27,
+      "tci": 29,
+      "tc": 56,
+      "gs": 8,
+      "js": 9,
+      "jr": 3,
+      "od": 2,
+      "ha": 8,
+      "dr": 2,
+      "pa": 3,
+      "is": 9,
+      "id": 8,
+      "rb": 4,
+      "sb": 8,
+      "st": 4,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:41.361Z"
+    }
+  ]
+}

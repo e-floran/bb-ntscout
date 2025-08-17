@@ -1,0 +1,31 @@
+{
+  "id": 49751693,
+  "firstName": "Theo",
+  "lastName": "Irvin",
+  "countryId": 4,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 54086,
+      "tce": 84,
+      "tci": 36,
+      "tc": 120,
+      "gs": 7,
+      "js": 17,
+      "jr": 10,
+      "od": 15,
+      "ha": 15,
+      "dr": 16,
+      "pa": 11,
+      "is": 14,
+      "id": 9,
+      "rb": 8,
+      "sb": 5,
+      "st": 8,
+      "ft": 6,
+      "ex": 14,
+      "scoutedAt": "2025-08-17T21:43:47.604Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53791872,
+  "firstName": "Aviran",
+  "lastName": "Amit",
+  "countryId": 15,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 19327,
+      "tce": 69,
+      "tci": 39,
+      "tc": 108,
+      "gs": 8,
+      "js": 13,
+      "jr": 7,
+      "od": 7,
+      "ha": 18,
+      "dr": 18,
+      "pa": 6,
+      "is": 13,
+      "id": 10,
+      "rb": 9,
+      "sb": 7,
+      "st": 3,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:50.334Z"
+    }
+  ]
+}

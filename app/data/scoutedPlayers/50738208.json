@@ -1,0 +1,31 @@
+{
+  "id": 50738208,
+  "firstName": "Alekos",
+  "lastName": "Karapatakis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 188174,
+      "tce": 63,
+      "tci": 69,
+      "tc": 132,
+      "gs": 8,
+      "js": 10,
+      "jr": 6,
+      "od": 19,
+      "ha": 9,
+      "dr": 8,
+      "pa": 11,
+      "is": 9,
+      "id": 22,
+      "rb": 17,
+      "sb": 21,
+      "st": 7,
+      "ft": 3,
+      "ex": 13,
+      "scoutedAt": "2025-08-17T21:43:47.603Z"
+    }
+  ]
+}

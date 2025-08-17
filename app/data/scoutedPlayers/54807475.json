@@ -1,0 +1,31 @@
+{
+  "id": 54807475,
+  "firstName": "Emil",
+  "lastName": "Jaromiński",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5534,
+      "tce": 42,
+      "tci": 21,
+      "tc": 63,
+      "gs": 9,
+      "js": 9,
+      "jr": 6,
+      "od": 3,
+      "ha": 8,
+      "dr": 7,
+      "pa": 9,
+      "is": 4,
+      "id": 6,
+      "rb": 8,
+      "sb": 3,
+      "st": 8,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:41.352Z"
+    }
+  ]
+}

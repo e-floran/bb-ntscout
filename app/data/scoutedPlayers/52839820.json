@@ -1,0 +1,31 @@
+{
+  "id": 52839820,
+  "firstName": "Vlada",
+  "lastName": "Ðurišić",
+  "countryId": 29,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 104066,
+      "tce": 104,
+      "tci": 36,
+      "tc": 140,
+      "gs": 8,
+      "js": 21,
+      "jr": 13,
+      "od": 20,
+      "ha": 21,
+      "dr": 21,
+      "pa": 8,
+      "is": 14,
+      "id": 10,
+      "rb": 4,
+      "sb": 8,
+      "st": 5,
+      "ft": 17,
+      "ex": 6,
+      "scoutedAt": "2025-08-17T21:43:50.975Z"
+    }
+  ]
+}

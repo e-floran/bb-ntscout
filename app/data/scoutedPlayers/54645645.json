@@ -1,0 +1,31 @@
+{
+  "id": 54645645,
+  "firstName": "Manuel Alberto",
+  "lastName": "Guerradell",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3935,
+      "tce": 24,
+      "tci": 25,
+      "tc": 49,
+      "gs": 3,
+      "js": 7,
+      "jr": 7,
+      "od": 7,
+      "ha": 1,
+      "dr": 1,
+      "pa": 1,
+      "is": 7,
+      "id": 7,
+      "rb": 5,
+      "sb": 6,
+      "st": 4,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.003Z"
+    }
+  ]
+}

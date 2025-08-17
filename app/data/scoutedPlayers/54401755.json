@@ -1,0 +1,31 @@
+{
+  "id": 54401755,
+  "firstName": "Patrice",
+  "lastName": "Vercaigne",
+  "countryId": 13,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10006,
+      "tce": 43,
+      "tci": 30,
+      "tc": 73,
+      "gs": 7,
+      "js": 10,
+      "jr": 7,
+      "od": 10,
+      "ha": 5,
+      "dr": 7,
+      "pa": 4,
+      "is": 4,
+      "id": 9,
+      "rb": 7,
+      "sb": 10,
+      "st": 8,
+      "ft": 11,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:36.457Z"
+    }
+  ]
+}

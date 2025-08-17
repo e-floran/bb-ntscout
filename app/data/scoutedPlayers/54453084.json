@@ -1,0 +1,31 @@
+{
+  "id": 54453084,
+  "firstName": "Cvetko",
+  "lastName": "Stepanov",
+  "countryId": 29,
+  "potential": 4,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10295,
+      "tce": 45,
+      "tci": 36,
+      "tc": 81,
+      "gs": 7,
+      "js": 10,
+      "jr": 4,
+      "od": 6,
+      "ha": 10,
+      "dr": 11,
+      "pa": 4,
+      "is": 12,
+      "id": 8,
+      "rb": 8,
+      "sb": 8,
+      "st": 8,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:36.457Z"
+    }
+  ]
+}

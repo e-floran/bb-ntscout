@@ -1,0 +1,31 @@
+{
+  "id": 51778332,
+  "firstName": "Magnus",
+  "lastName": "Mustkivi",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 98342,
+      "tce": 101,
+      "tci": 32,
+      "tc": 133,
+      "gs": 7,
+      "js": 19,
+      "jr": 15,
+      "od": 16,
+      "ha": 21,
+      "dr": 22,
+      "pa": 8,
+      "is": 13,
+      "id": 5,
+      "rb": 6,
+      "sb": 8,
+      "st": 9,
+      "ft": 10,
+      "ex": 10,
+      "scoutedAt": "2025-08-17T21:43:46.295Z"
+    }
+  ]
+}

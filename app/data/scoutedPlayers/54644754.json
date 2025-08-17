@@ -1,0 +1,31 @@
+{
+  "id": 54644754,
+  "firstName": "Vicente",
+  "lastName": "Pérez del Río",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4447,
+      "tce": 35,
+      "tci": 27,
+      "tc": 62,
+      "gs": 7,
+      "js": 9,
+      "jr": 6,
+      "od": 6,
+      "ha": 6,
+      "dr": 3,
+      "pa": 5,
+      "is": 9,
+      "id": 5,
+      "rb": 4,
+      "sb": 9,
+      "st": 7,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.002Z"
+    }
+  ]
+}

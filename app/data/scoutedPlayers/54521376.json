@@ -1,0 +1,31 @@
+{
+  "id": 54521376,
+  "firstName": "Jarno",
+  "lastName": "Pukki",
+  "countryId": 69,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5382,
+      "tce": 37,
+      "tci": 26,
+      "tc": 63,
+      "gs": 7,
+      "js": 9,
+      "jr": 2,
+      "od": 4,
+      "ha": 6,
+      "dr": 10,
+      "pa": 6,
+      "is": 7,
+      "id": 8,
+      "rb": 7,
+      "sb": 4,
+      "st": 7,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.930Z"
+    }
+  ]
+}

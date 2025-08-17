@@ -1,0 +1,31 @@
+{
+  "id": 53714959,
+  "firstName": "Ernest",
+  "lastName": "Guri",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 40474,
+      "tce": 74,
+      "tci": 43,
+      "tc": 117,
+      "gs": 7,
+      "js": 14,
+      "jr": 10,
+      "od": 14,
+      "ha": 12,
+      "dr": 14,
+      "pa": 10,
+      "is": 15,
+      "id": 13,
+      "rb": 9,
+      "sb": 6,
+      "st": 4,
+      "ft": 14,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:50.977Z"
+    }
+  ]
+}

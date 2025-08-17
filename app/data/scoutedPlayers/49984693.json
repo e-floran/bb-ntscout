@@ -1,0 +1,31 @@
+{
+  "id": 49984693,
+  "firstName": "Guillermo",
+  "lastName": "Zayas Méndez",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 256044,
+      "tce": 98,
+      "tci": 62,
+      "tc": 160,
+      "gs": 8,
+      "js": 16,
+      "jr": 8,
+      "od": 20,
+      "ha": 21,
+      "dr": 21,
+      "pa": 12,
+      "is": 18,
+      "id": 18,
+      "rb": 14,
+      "sb": 12,
+      "st": 9,
+      "ft": 26,
+      "ex": 17,
+      "scoutedAt": "2025-08-17T21:43:46.295Z"
+    }
+  ]
+}

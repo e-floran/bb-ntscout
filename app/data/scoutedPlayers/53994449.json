@@ -1,0 +1,31 @@
+{
+  "id": 53994449,
+  "firstName": "José Humberto",
+  "lastName": "Gallo",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5721,
+      "tce": 52,
+      "tci": 24,
+      "tc": 76,
+      "gs": 7,
+      "js": 11,
+      "jr": 10,
+      "od": 7,
+      "ha": 9,
+      "dr": 10,
+      "pa": 5,
+      "is": 9,
+      "id": 6,
+      "rb": 1,
+      "sb": 8,
+      "st": 8,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:43.283Z"
+    }
+  ]
+}

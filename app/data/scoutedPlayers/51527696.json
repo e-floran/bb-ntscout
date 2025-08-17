@@ -1,0 +1,31 @@
+{
+  "id": 51527696,
+  "firstName": "Rosalino",
+  "lastName": "Medellín",
+  "countryId": 54,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 289005,
+      "tce": 71,
+      "tci": 64,
+      "tc": 135,
+      "gs": 9,
+      "js": 14,
+      "jr": 7,
+      "od": 13,
+      "ha": 15,
+      "dr": 16,
+      "pa": 6,
+      "is": 19,
+      "id": 19,
+      "rb": 15,
+      "sb": 11,
+      "st": 7,
+      "ft": 18,
+      "ex": 14,
+      "scoutedAt": "2025-08-17T21:43:47.605Z"
+    }
+  ]
+}

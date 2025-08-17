@@ -1,0 +1,31 @@
+{
+  "id": 54405768,
+  "firstName": "Hunter",
+  "lastName": "Evans",
+  "countryId": 14,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 14618,
+      "tce": 16,
+      "tci": 44,
+      "tc": 60,
+      "gs": 6,
+      "js": 5,
+      "jr": 1,
+      "od": 1,
+      "ha": 5,
+      "dr": 3,
+      "pa": 1,
+      "is": 13,
+      "id": 11,
+      "rb": 10,
+      "sb": 10,
+      "st": 1,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:37.793Z"
+    }
+  ]
+}

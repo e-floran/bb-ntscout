@@ -1,0 +1,31 @@
+{
+  "id": 51469296,
+  "firstName": "Heinrihs",
+  "lastName": "Olavs",
+  "countryId": 46,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 190700,
+      "tce": 100,
+      "tci": 49,
+      "tc": 149,
+      "gs": 9,
+      "js": 16,
+      "jr": 13,
+      "od": 18,
+      "ha": 19,
+      "dr": 20,
+      "pa": 14,
+      "is": 15,
+      "id": 14,
+      "rb": 11,
+      "sb": 9,
+      "st": 9,
+      "ft": 27,
+      "ex": 11,
+      "scoutedAt": "2025-08-17T21:43:47.603Z"
+    }
+  ]
+}

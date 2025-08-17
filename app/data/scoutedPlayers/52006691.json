@@ -1,0 +1,31 @@
+{
+  "id": 52006691,
+  "firstName": "Rodrigo",
+  "lastName": "Rodal",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 134691,
+      "tce": 104,
+      "tci": 28,
+      "tc": 132,
+      "gs": 5,
+      "js": 20,
+      "jr": 12,
+      "od": 20,
+      "ha": 20,
+      "dr": 21,
+      "pa": 11,
+      "is": 9,
+      "id": 7,
+      "rb": 7,
+      "sb": 5,
+      "st": 4,
+      "ft": 19,
+      "ex": 8,
+      "scoutedAt": "2025-08-17T21:43:49.689Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54741150,
+  "firstName": "Matas",
+  "lastName": "Škaradekas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2889,
+      "tce": 26,
+      "tci": 24,
+      "tc": 50,
+      "gs": 9,
+      "js": 8,
+      "jr": 3,
+      "od": 2,
+      "ha": 5,
+      "dr": 4,
+      "pa": 4,
+      "is": 8,
+      "id": 5,
+      "rb": 5,
+      "sb": 6,
+      "st": 1,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:43.927Z"
+    }
+  ]
+}

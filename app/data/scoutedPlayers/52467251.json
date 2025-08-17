@@ -1,0 +1,31 @@
+{
+  "id": 52467251,
+  "firstName": "Dinko",
+  "lastName": "Mohorovičić",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 41115,
+      "tce": 82,
+      "tci": 36,
+      "tc": 118,
+      "gs": 7,
+      "js": 12,
+      "jr": 8,
+      "od": 17,
+      "ha": 19,
+      "dr": 18,
+      "pa": 8,
+      "is": 10,
+      "id": 10,
+      "rb": 9,
+      "sb": 7,
+      "st": 3,
+      "ft": 6,
+      "ex": 6,
+      "scoutedAt": "2025-08-17T21:43:49.690Z"
+    }
+  ]
+}

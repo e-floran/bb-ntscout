@@ -1,0 +1,31 @@
+{
+  "id": 54593724,
+  "firstName": "Cris",
+  "lastName": "Pierre",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 9565,
+      "tce": 48,
+      "tci": 31,
+      "tc": 79,
+      "gs": 8,
+      "js": 10,
+      "jr": 7,
+      "od": 8,
+      "ha": 7,
+      "dr": 8,
+      "pa": 8,
+      "is": 7,
+      "id": 8,
+      "rb": 10,
+      "sb": 6,
+      "st": 5,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.283Z"
+    }
+  ]
+}

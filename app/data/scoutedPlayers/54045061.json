@@ -1,0 +1,31 @@
+{
+  "id": 54045061,
+  "firstName": "Camillo",
+  "lastName": "Amico",
+  "countryId": 10,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11336,
+      "tce": 55,
+      "tci": 33,
+      "tc": 88,
+      "gs": 9,
+      "js": 11,
+      "jr": 5,
+      "od": 3,
+      "ha": 12,
+      "dr": 15,
+      "pa": 9,
+      "is": 11,
+      "id": 7,
+      "rb": 7,
+      "sb": 8,
+      "st": 8,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:39.095Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54019586,
+  "firstName": "Mehmet",
+  "lastName": "Kayhan",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7589,
+      "tce": 50,
+      "tci": 24,
+      "tc": 74,
+      "gs": 9,
+      "js": 12,
+      "jr": 8,
+      "od": 6,
+      "ha": 9,
+      "dr": 9,
+      "pa": 6,
+      "is": 7,
+      "id": 8,
+      "rb": 5,
+      "sb": 4,
+      "st": 7,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:42.634Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53041135,
+  "firstName": "Durusel",
+  "lastName": "Rabap",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 82982,
+      "tce": 92,
+      "tci": 33,
+      "tc": 125,
+      "gs": 8,
+      "js": 17,
+      "jr": 13,
+      "od": 16,
+      "ha": 17,
+      "dr": 16,
+      "pa": 13,
+      "is": 11,
+      "id": 4,
+      "rb": 9,
+      "sb": 9,
+      "st": 9,
+      "ft": 11,
+      "ex": 7,
+      "scoutedAt": "2025-08-17T21:43:50.332Z"
+    }
+  ]
+}

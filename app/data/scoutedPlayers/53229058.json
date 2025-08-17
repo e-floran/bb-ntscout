@@ -1,0 +1,31 @@
+{
+  "id": 53229058,
+  "firstName": "Givi",
+  "lastName": "Kordzadze",
+  "countryId": 62,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 31752,
+      "tce": 94,
+      "tci": 27,
+      "tc": 121,
+      "gs": 7,
+      "js": 16,
+      "jr": 12,
+      "od": 17,
+      "ha": 23,
+      "dr": 23,
+      "pa": 3,
+      "is": 12,
+      "id": 6,
+      "rb": 5,
+      "sb": 4,
+      "st": 2,
+      "ft": 7,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:50.978Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54851569,
+  "firstName": "Časlav",
+  "lastName": "Šanko",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6362,
+      "tce": 42,
+      "tci": 25,
+      "tc": 67,
+      "gs": 8,
+      "js": 9,
+      "jr": 6,
+      "od": 8,
+      "ha": 6,
+      "dr": 9,
+      "pa": 4,
+      "is": 7,
+      "id": 7,
+      "rb": 6,
+      "sb": 5,
+      "st": 8,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.636Z"
+    }
+  ]
+}

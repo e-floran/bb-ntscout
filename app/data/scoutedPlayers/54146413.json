@@ -1,0 +1,31 @@
+{
+  "id": 54146413,
+  "firstName": "Saša",
+  "lastName": "Vujičić",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5173,
+      "tce": 36,
+      "tci": 32,
+      "tc": 68,
+      "gs": 5,
+      "js": 5,
+      "jr": 8,
+      "od": 4,
+      "ha": 6,
+      "dr": 4,
+      "pa": 9,
+      "is": 9,
+      "id": 7,
+      "rb": 6,
+      "sb": 10,
+      "st": 9,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:41.999Z"
+    }
+  ]
+}

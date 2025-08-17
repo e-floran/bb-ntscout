@@ -1,0 +1,31 @@
+{
+  "id": 51072606,
+  "firstName": "Erik",
+  "lastName": "Delarue",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 236697,
+      "tce": 106,
+      "tci": 37,
+      "tc": 143,
+      "gs": 7,
+      "js": 18,
+      "jr": 18,
+      "od": 20,
+      "ha": 19,
+      "dr": 18,
+      "pa": 13,
+      "is": 9,
+      "id": 9,
+      "rb": 9,
+      "sb": 10,
+      "st": 6,
+      "ft": 26,
+      "ex": 12,
+      "scoutedAt": "2025-08-17T21:43:47.605Z"
+    }
+  ]
+}

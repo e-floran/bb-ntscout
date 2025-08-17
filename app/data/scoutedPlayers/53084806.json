@@ -1,0 +1,31 @@
+{
+  "id": 53084806,
+  "firstName": "Damien",
+  "lastName": "Grain",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 128374,
+      "tce": 45,
+      "tci": 61,
+      "tc": 106,
+      "gs": 8,
+      "js": 11,
+      "jr": 6,
+      "od": 7,
+      "ha": 7,
+      "dr": 9,
+      "pa": 5,
+      "is": 17,
+      "id": 16,
+      "rb": 15,
+      "sb": 13,
+      "st": 1,
+      "ft": 10,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:50.334Z"
+    }
+  ]
+}

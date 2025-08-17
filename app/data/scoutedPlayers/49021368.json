@@ -1,0 +1,31 @@
+{
+  "id": 49021368,
+  "firstName": "Francesco",
+  "lastName": "Visini",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 150676,
+      "tce": 100,
+      "tci": 34,
+      "tc": 134,
+      "gs": 9,
+      "js": 17,
+      "jr": 15,
+      "od": 19,
+      "ha": 18,
+      "dr": 18,
+      "pa": 13,
+      "is": 13,
+      "id": 12,
+      "rb": 3,
+      "sb": 6,
+      "st": 8,
+      "ft": 9,
+      "ex": 16,
+      "scoutedAt": "2025-08-17T21:43:47.600Z"
+    }
+  ]
+}

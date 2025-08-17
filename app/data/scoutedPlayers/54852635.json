@@ -1,0 +1,31 @@
+{
+  "id": 54852635,
+  "firstName": "Vladislav",
+  "lastName": "Kekić",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3016,
+      "tce": 32,
+      "tci": 22,
+      "tc": 54,
+      "gs": 9,
+      "js": 4,
+      "jr": 3,
+      "od": 4,
+      "ha": 7,
+      "dr": 10,
+      "pa": 4,
+      "is": 7,
+      "id": 9,
+      "rb": 5,
+      "sb": 1,
+      "st": 6,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.001Z"
+    }
+  ]
+}

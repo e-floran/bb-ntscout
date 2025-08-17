@@ -1,0 +1,31 @@
+{
+  "id": 54205350,
+  "firstName": "Radu",
+  "lastName": "Dan",
+  "countryId": 61,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11568,
+      "tce": 58,
+      "tci": 24,
+      "tc": 82,
+      "gs": 8,
+      "js": 8,
+      "jr": 10,
+      "od": 11,
+      "ha": 12,
+      "dr": 7,
+      "pa": 10,
+      "is": 4,
+      "id": 6,
+      "rb": 9,
+      "sb": 5,
+      "st": 5,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:38.453Z"
+    }
+  ]
+}

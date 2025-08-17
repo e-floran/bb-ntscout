@@ -1,0 +1,31 @@
+{
+  "id": 52712932,
+  "firstName": "Oguz Atalay",
+  "lastName": "Durhan",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 173422,
+      "tce": 48,
+      "tci": 57,
+      "tc": 105,
+      "gs": 8,
+      "js": 15,
+      "jr": 6,
+      "od": 5,
+      "ha": 7,
+      "dr": 10,
+      "pa": 5,
+      "is": 20,
+      "id": 14,
+      "rb": 14,
+      "sb": 9,
+      "st": 1,
+      "ft": 2,
+      "ex": 8,
+      "scoutedAt": "2025-08-17T21:43:50.975Z"
+    }
+  ]
+}

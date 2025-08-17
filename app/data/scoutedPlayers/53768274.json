@@ -1,0 +1,31 @@
+{
+  "id": 53768274,
+  "firstName": "Theodoros",
+  "lastName": "Vintros",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 27578,
+      "tce": 71,
+      "tci": 35,
+      "tc": 106,
+      "gs": 8,
+      "js": 8,
+      "jr": 10,
+      "od": 13,
+      "ha": 13,
+      "dr": 14,
+      "pa": 13,
+      "is": 9,
+      "id": 12,
+      "rb": 9,
+      "sb": 5,
+      "st": 6,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:50.333Z"
+    }
+  ]
+}

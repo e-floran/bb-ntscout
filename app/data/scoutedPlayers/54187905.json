@@ -1,0 +1,31 @@
+{
+  "id": 54187905,
+  "firstName": "Bogusław",
+  "lastName": "Gano",
+  "countryId": 58,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17573,
+      "tce": 69,
+      "tci": 33,
+      "tc": 102,
+      "gs": 6,
+      "js": 12,
+      "jr": 10,
+      "od": 11,
+      "ha": 12,
+      "dr": 14,
+      "pa": 10,
+      "is": 8,
+      "id": 6,
+      "rb": 10,
+      "sb": 9,
+      "st": 3,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:37.131Z"
+    }
+  ]
+}

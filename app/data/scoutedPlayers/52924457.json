@@ -1,0 +1,31 @@
+{
+  "id": 52924457,
+  "firstName": "Thembekile",
+  "lastName": "Ngoma",
+  "countryId": 68,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 55780,
+      "tce": 94,
+      "tci": 23,
+      "tc": 117,
+      "gs": 8,
+      "js": 18,
+      "jr": 10,
+      "od": 20,
+      "ha": 18,
+      "dr": 19,
+      "pa": 9,
+      "is": 11,
+      "id": 6,
+      "rb": 1,
+      "sb": 5,
+      "st": 3,
+      "ft": 8,
+      "ex": 7,
+      "scoutedAt": "2025-08-17T21:43:50.334Z"
+    }
+  ]
+}

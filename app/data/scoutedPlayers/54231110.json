@@ -1,0 +1,31 @@
+{
+  "id": 54231110,
+  "firstName": "Bruno",
+  "lastName": "Eanes",
+  "countryId": 18,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10150,
+      "tce": 50,
+      "tci": 33,
+      "tc": 83,
+      "gs": 8,
+      "js": 9,
+      "jr": 8,
+      "od": 13,
+      "ha": 7,
+      "dr": 7,
+      "pa": 6,
+      "is": 9,
+      "id": 9,
+      "rb": 7,
+      "sb": 8,
+      "st": 2,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:39.093Z"
+    }
+  ]
+}

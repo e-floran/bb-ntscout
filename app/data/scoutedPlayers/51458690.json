@@ -1,0 +1,31 @@
+{
+  "id": 51458690,
+  "firstName": "Tanel",
+  "lastName": "Alp",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 101188,
+      "tce": 75,
+      "tci": 57,
+      "tc": 132,
+      "gs": 7,
+      "js": 13,
+      "jr": 4,
+      "od": 12,
+      "ha": 19,
+      "dr": 20,
+      "pa": 7,
+      "is": 14,
+      "id": 16,
+      "rb": 14,
+      "sb": 13,
+      "st": 8,
+      "ft": 9,
+      "ex": 11,
+      "scoutedAt": "2025-08-17T21:43:46.293Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54019284,
+  "firstName": "Fikri",
+  "lastName": "Soysaltürk",
+  "countryId": 6,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13273,
+      "tce": 61,
+      "tci": 28,
+      "tc": 89,
+      "gs": 8,
+      "js": 10,
+      "jr": 10,
+      "od": 15,
+      "ha": 9,
+      "dr": 8,
+      "pa": 9,
+      "is": 7,
+      "id": 7,
+      "rb": 8,
+      "sb": 6,
+      "st": 2,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:38.453Z"
+    }
+  ]
+}

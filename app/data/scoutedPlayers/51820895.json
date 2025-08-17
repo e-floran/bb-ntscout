@@ -1,0 +1,31 @@
+{
+  "id": 51820895,
+  "firstName": "Danesh",
+  "lastName": "Shajare",
+  "countryId": 59,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 131207,
+      "tce": 106,
+      "tci": 14,
+      "tc": 120,
+      "gs": 9,
+      "js": 19,
+      "jr": 14,
+      "od": 20,
+      "ha": 21,
+      "dr": 19,
+      "pa": 13,
+      "is": 4,
+      "id": 6,
+      "rb": 2,
+      "sb": 2,
+      "st": 7,
+      "ft": 21,
+      "ex": 7,
+      "scoutedAt": "2025-08-17T21:43:50.331Z"
+    }
+  ]
+}

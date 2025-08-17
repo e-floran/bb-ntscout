@@ -1,0 +1,31 @@
+{
+  "id": 54177134,
+  "firstName": "Árpád",
+  "lastName": "Ócsai",
+  "countryId": 48,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10107,
+      "tce": 59,
+      "tci": 27,
+      "tc": 86,
+      "gs": 8,
+      "js": 11,
+      "jr": 6,
+      "od": 6,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 9,
+      "id": 6,
+      "rb": 7,
+      "sb": 5,
+      "st": 2,
+      "ft": 12,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:36.457Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54781278,
+  "firstName": "Juss",
+  "lastName": "Moks",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5942,
+      "tce": 45,
+      "tci": 20,
+      "tc": 65,
+      "gs": 4,
+      "js": 5,
+      "jr": 6,
+      "od": 9,
+      "ha": 9,
+      "dr": 8,
+      "pa": 8,
+      "is": 9,
+      "id": 5,
+      "rb": 4,
+      "sb": 2,
+      "st": 5,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.636Z"
+    }
+  ]
+}

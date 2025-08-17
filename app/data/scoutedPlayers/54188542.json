@@ -1,0 +1,31 @@
+{
+  "id": 54188542,
+  "firstName": "Waldemar",
+  "lastName": "Ciechowski",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6795,
+      "tce": 52,
+      "tci": 20,
+      "tc": 72,
+      "gs": 9,
+      "js": 11,
+      "jr": 7,
+      "od": 7,
+      "ha": 10,
+      "dr": 11,
+      "pa": 6,
+      "is": 4,
+      "id": 7,
+      "rb": 5,
+      "sb": 4,
+      "st": 7,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:42.634Z"
+    }
+  ]
+}

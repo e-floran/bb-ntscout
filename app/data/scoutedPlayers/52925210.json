@@ -1,0 +1,31 @@
+{
+  "id": 52925210,
+  "firstName": "Andrej",
+  "lastName": "Orlický",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 213771,
+      "tce": 36,
+      "tci": 64,
+      "tc": 100,
+      "gs": 5,
+      "js": 9,
+      "jr": 4,
+      "od": 3,
+      "ha": 8,
+      "dr": 9,
+      "pa": 3,
+      "is": 16,
+      "id": 18,
+      "rb": 19,
+      "sb": 11,
+      "st": 3,
+      "ft": 17,
+      "ex": 8,
+      "scoutedAt": "2025-08-17T21:43:50.978Z"
+    }
+  ]
+}

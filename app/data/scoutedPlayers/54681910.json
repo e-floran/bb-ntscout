@@ -1,0 +1,31 @@
+{
+  "id": 54681910,
+  "firstName": "Mathieu",
+  "lastName": "Constantin",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6077,
+      "tce": 37,
+      "tci": 29,
+      "tc": 66,
+      "gs": 8,
+      "js": 8,
+      "jr": 4,
+      "od": 3,
+      "ha": 5,
+      "dr": 7,
+      "pa": 10,
+      "is": 9,
+      "id": 9,
+      "rb": 7,
+      "sb": 4,
+      "st": 1,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.634Z"
+    }
+  ]
+}

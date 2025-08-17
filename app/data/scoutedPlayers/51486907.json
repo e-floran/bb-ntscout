@@ -1,0 +1,31 @@
+{
+  "id": 51486907,
+  "firstName": "Artur",
+  "lastName": "Listosz",
+  "countryId": 58,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 96774,
+      "tce": 92,
+      "tci": 45,
+      "tc": 137,
+      "gs": 7,
+      "js": 14,
+      "jr": 10,
+      "od": 20,
+      "ha": 19,
+      "dr": 18,
+      "pa": 11,
+      "is": 15,
+      "id": 14,
+      "rb": 8,
+      "sb": 8,
+      "st": 5,
+      "ft": 3,
+      "ex": 10,
+      "scoutedAt": "2025-08-17T21:43:48.240Z"
+    }
+  ]
+}

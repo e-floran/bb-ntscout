@@ -1,0 +1,31 @@
+{
+  "id": 49817809,
+  "firstName": "Loïc",
+  "lastName": "Gilles",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 37589,
+      "tce": 79,
+      "tci": 43,
+      "tc": 122,
+      "gs": 8,
+      "js": 14,
+      "jr": 11,
+      "od": 12,
+      "ha": 17,
+      "dr": 18,
+      "pa": 7,
+      "is": 17,
+      "id": 10,
+      "rb": 8,
+      "sb": 8,
+      "st": 2,
+      "ft": 21,
+      "ex": 13,
+      "scoutedAt": "2025-08-17T21:43:46.296Z"
+    }
+  ]
+}

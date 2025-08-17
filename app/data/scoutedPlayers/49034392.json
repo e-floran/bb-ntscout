@@ -1,0 +1,31 @@
+{
+  "id": 49034392,
+  "firstName": "Johannes",
+  "lastName": "Kaur",
+  "countryId": 27,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 196444,
+      "tce": 101,
+      "tci": 32,
+      "tc": 133,
+      "gs": 9,
+      "js": 20,
+      "jr": 16,
+      "od": 19,
+      "ha": 17,
+      "dr": 18,
+      "pa": 11,
+      "is": 13,
+      "id": 9,
+      "rb": 7,
+      "sb": 3,
+      "st": 4,
+      "ft": 5,
+      "ex": 17,
+      "scoutedAt": "2025-08-17T21:43:46.942Z"
+    }
+  ]
+}

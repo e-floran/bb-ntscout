@@ -1,0 +1,31 @@
+{
+  "id": 54121270,
+  "firstName": "Archipas",
+  "lastName": "Trepšas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 8002,
+      "tce": 51,
+      "tci": 19,
+      "tc": 70,
+      "gs": 9,
+      "js": 9,
+      "jr": 5,
+      "od": 11,
+      "ha": 11,
+      "dr": 7,
+      "pa": 8,
+      "is": 10,
+      "id": 3,
+      "rb": 5,
+      "sb": 1,
+      "st": 5,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.282Z"
+    }
+  ]
+}

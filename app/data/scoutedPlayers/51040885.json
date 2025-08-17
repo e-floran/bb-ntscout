@@ -1,0 +1,31 @@
+{
+  "id": 51040885,
+  "firstName": "Kévin",
+  "lastName": "Reine",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 136423,
+      "tce": 103,
+      "tci": 47,
+      "tc": 150,
+      "gs": 8,
+      "js": 19,
+      "jr": 10,
+      "od": 20,
+      "ha": 21,
+      "dr": 22,
+      "pa": 11,
+      "is": 20,
+      "id": 14,
+      "rb": 5,
+      "sb": 8,
+      "st": 3,
+      "ft": 20,
+      "ex": 11,
+      "scoutedAt": "2025-08-17T21:43:48.239Z"
+    }
+  ]
+}

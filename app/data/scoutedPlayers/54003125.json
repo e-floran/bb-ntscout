@@ -1,0 +1,31 @@
+{
+  "id": 54003125,
+  "firstName": "Yin",
+  "lastName": "Kunhang",
+  "countryId": 5,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 14262,
+      "tce": 30,
+      "tci": 37,
+      "tc": 67,
+      "gs": 8,
+      "js": 5,
+      "jr": 5,
+      "od": 6,
+      "ha": 3,
+      "dr": 7,
+      "pa": 4,
+      "is": 13,
+      "id": 8,
+      "rb": 12,
+      "sb": 4,
+      "st": 4,
+      "ft": 4,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:39.095Z"
+    }
+  ]
+}

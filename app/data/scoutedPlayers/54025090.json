@@ -1,0 +1,31 @@
+{
+  "id": 54025090,
+  "firstName": "Jesús",
+  "lastName": "Rojas",
+  "countryId": 7,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 24879,
+      "tce": 43,
+      "tci": 47,
+      "tc": 90,
+      "gs": 5,
+      "js": 9,
+      "jr": 6,
+      "od": 4,
+      "ha": 9,
+      "dr": 9,
+      "pa": 6,
+      "is": 10,
+      "id": 7,
+      "rb": 20,
+      "sb": 10,
+      "st": 6,
+      "ft": 4,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:36.459Z"
+    }
+  ]
+}

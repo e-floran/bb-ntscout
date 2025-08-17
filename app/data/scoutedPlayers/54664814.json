@@ -1,0 +1,31 @@
+{
+  "id": 54664814,
+  "firstName": "Prospero",
+  "lastName": "Pigoli",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 8705,
+      "tce": 50,
+      "tci": 31,
+      "tc": 81,
+      "gs": 7,
+      "js": 10,
+      "jr": 9,
+      "od": 9,
+      "ha": 11,
+      "dr": 5,
+      "pa": 6,
+      "is": 10,
+      "id": 7,
+      "rb": 6,
+      "sb": 8,
+      "st": 1,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:41.999Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53691396,
+  "firstName": "Cao",
+  "lastName": "Guangwei",
+  "countryId": 5,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 24249,
+      "tce": 41,
+      "tci": 48,
+      "tc": 89,
+      "gs": 9,
+      "js": 6,
+      "jr": 6,
+      "od": 8,
+      "ha": 8,
+      "dr": 6,
+      "pa": 7,
+      "is": 13,
+      "id": 16,
+      "rb": 9,
+      "sb": 10,
+      "st": 8,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:39.095Z"
+    }
+  ]
+}

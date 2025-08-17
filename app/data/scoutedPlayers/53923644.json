@@ -1,0 +1,53 @@
+{
+  "id": 53923644,
+  "firstName": "Aristotelis",
+  "lastName": "Masadis",
+  "countryId": 77,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15775,
+      "tce": 61,
+      "tci": 37,
+      "tc": 98,
+      "gs": 8,
+      "js": 11,
+      "jr": 6,
+      "od": 17,
+      "ha": 10,
+      "dr": 12,
+      "pa": 5,
+      "is": 10,
+      "id": 14,
+      "rb": 5,
+      "sb": 8,
+      "st": 6,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:39.094Z"
+    },
+    {
+      "age": 21,
+      "salary": 15775,
+      "tce": 61,
+      "tci": 37,
+      "tc": 98,
+      "gs": 8,
+      "js": 11,
+      "jr": 6,
+      "od": 17,
+      "ha": 10,
+      "dr": 12,
+      "pa": 5,
+      "is": 10,
+      "id": 14,
+      "rb": 5,
+      "sb": 8,
+      "st": 6,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:43.930Z"
+    }
+  ]
+}

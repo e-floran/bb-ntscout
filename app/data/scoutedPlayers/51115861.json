@@ -1,0 +1,31 @@
+{
+  "id": 51115861,
+  "firstName": "José Ignacio",
+  "lastName": "Salazar",
+  "countryId": 22,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 105489,
+      "tce": 102,
+      "tci": 33,
+      "tc": 135,
+      "gs": 7,
+      "js": 19,
+      "jr": 11,
+      "od": 18,
+      "ha": 22,
+      "dr": 22,
+      "pa": 10,
+      "is": 9,
+      "id": 8,
+      "rb": 8,
+      "sb": 8,
+      "st": 5,
+      "ft": 6,
+      "ex": 10,
+      "scoutedAt": "2025-08-17T21:43:46.946Z"
+    }
+  ]
+}

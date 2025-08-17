@@ -1,0 +1,31 @@
+{
+  "id": 54275669,
+  "firstName": "Erkan",
+  "lastName": "Selçuker",
+  "countryId": 6,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 20914,
+      "tce": 35,
+      "tci": 49,
+      "tc": 84,
+      "gs": 8,
+      "js": 3,
+      "jr": 5,
+      "od": 5,
+      "ha": 8,
+      "dr": 6,
+      "pa": 8,
+      "is": 11,
+      "id": 19,
+      "rb": 7,
+      "sb": 12,
+      "st": 3,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:37.790Z"
+    }
+  ]
+}

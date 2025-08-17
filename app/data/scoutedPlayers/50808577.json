@@ -1,0 +1,31 @@
+{
+  "id": 50808577,
+  "firstName": "Juan Ignacio",
+  "lastName": "Fierro",
+  "countryId": 30,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 53513,
+      "tce": 88,
+      "tci": 34,
+      "tc": 122,
+      "gs": 6,
+      "js": 16,
+      "jr": 10,
+      "od": 12,
+      "ha": 20,
+      "dr": 21,
+      "pa": 9,
+      "is": 11,
+      "id": 8,
+      "rb": 8,
+      "sb": 7,
+      "st": 4,
+      "ft": 17,
+      "ex": 10,
+      "scoutedAt": "2025-08-17T21:43:46.943Z"
+    }
+  ]
+}

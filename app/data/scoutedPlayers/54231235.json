@@ -1,0 +1,31 @@
+{
+  "id": 54231235,
+  "firstName": "Thierno",
+  "lastName": "Diop",
+  "countryId": 93,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 21095,
+      "tce": 69,
+      "tci": 30,
+      "tc": 99,
+      "gs": 6,
+      "js": 11,
+      "jr": 8,
+      "od": 10,
+      "ha": 16,
+      "dr": 15,
+      "pa": 9,
+      "is": 9,
+      "id": 3,
+      "rb": 8,
+      "sb": 10,
+      "st": 9,
+      "ft": 9,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:37.791Z"
+    }
+  ]
+}

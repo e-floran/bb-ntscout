@@ -1,0 +1,31 @@
+{
+  "id": 53594030,
+  "firstName": "Səbuhi",
+  "lastName": "Tahirov",
+  "countryId": 88,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 41109,
+      "tce": 66,
+      "tci": 35,
+      "tc": 101,
+      "gs": 9,
+      "js": 15,
+      "jr": 10,
+      "od": 14,
+      "ha": 12,
+      "dr": 10,
+      "pa": 5,
+      "is": 14,
+      "id": 10,
+      "rb": 8,
+      "sb": 3,
+      "st": 4,
+      "ft": 12,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:50.979Z"
+    }
+  ]
+}

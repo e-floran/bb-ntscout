@@ -1,0 +1,31 @@
+{
+  "id": 54697277,
+  "firstName": "Vardis",
+  "lastName": "Neochoritis",
+  "countryId": 12,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6804,
+      "tce": 35,
+      "tci": 32,
+      "tc": 67,
+      "gs": 5,
+      "js": 8,
+      "jr": 8,
+      "od": 2,
+      "ha": 4,
+      "dr": 9,
+      "pa": 4,
+      "is": 6,
+      "id": 9,
+      "rb": 8,
+      "sb": 9,
+      "st": 6,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:43.283Z"
+    }
+  ]
+}

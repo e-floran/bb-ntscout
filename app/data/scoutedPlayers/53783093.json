@@ -1,0 +1,31 @@
+{
+  "id": 53783093,
+  "firstName": "Tjörven",
+  "lastName": "Dimvula",
+  "countryId": 13,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 16445,
+      "tce": 64,
+      "tci": 18,
+      "tc": 82,
+      "gs": 8,
+      "js": 16,
+      "jr": 8,
+      "od": 9,
+      "ha": 13,
+      "dr": 13,
+      "pa": 5,
+      "is": 2,
+      "id": 5,
+      "rb": 7,
+      "sb": 4,
+      "st": 4,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:39.094Z"
+    }
+  ]
+}

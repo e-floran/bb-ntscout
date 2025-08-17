@@ -1,0 +1,31 @@
+{
+  "id": 50401921,
+  "firstName": "Robin",
+  "lastName": "Chedeville",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 50627,
+      "tce": 91,
+      "tci": 41,
+      "tc": 132,
+      "gs": 8,
+      "js": 15,
+      "jr": 10,
+      "od": 16,
+      "ha": 22,
+      "dr": 24,
+      "pa": 4,
+      "is": 15,
+      "id": 12,
+      "rb": 8,
+      "sb": 6,
+      "st": 3,
+      "ft": 27,
+      "ex": 12,
+      "scoutedAt": "2025-08-17T21:43:46.945Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53551694,
+  "firstName": "Bartosz",
+  "lastName": "Dadun",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 42164,
+      "tce": 83,
+      "tci": 27,
+      "tc": 110,
+      "gs": 8,
+      "js": 14,
+      "jr": 8,
+      "od": 16,
+      "ha": 16,
+      "dr": 18,
+      "pa": 11,
+      "is": 9,
+      "id": 7,
+      "rb": 5,
+      "sb": 6,
+      "st": 5,
+      "ft": 3,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:50.977Z"
+    }
+  ]
+}

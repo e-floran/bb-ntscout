@@ -1,0 +1,31 @@
+{
+  "id": 52439073,
+  "firstName": "Kiros",
+  "lastName": "Leanis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 54474,
+      "tce": 88,
+      "tci": 38,
+      "tc": 126,
+      "gs": 7,
+      "js": 16,
+      "jr": 8,
+      "od": 10,
+      "ha": 22,
+      "dr": 22,
+      "pa": 10,
+      "is": 17,
+      "id": 11,
+      "rb": 4,
+      "sb": 6,
+      "st": 5,
+      "ft": 7,
+      "ex": 8,
+      "scoutedAt": "2025-08-17T21:43:50.331Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53767244,
+  "firstName": "Dimitris",
+  "lastName": "Apostolakis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9272,
+      "tce": 67,
+      "tci": 15,
+      "tc": 82,
+      "gs": 6,
+      "js": 15,
+      "jr": 4,
+      "od": 7,
+      "ha": 16,
+      "dr": 17,
+      "pa": 8,
+      "is": 5,
+      "id": 5,
+      "rb": 2,
+      "sb": 3,
+      "st": 5,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-08-17T21:43:43.929Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54540223,
+  "firstName": "David",
+  "lastName": "Gasulla",
+  "countryId": 75,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11550,
+      "tce": 47,
+      "tci": 39,
+      "tc": 86,
+      "gs": 8,
+      "js": 9,
+      "jr": 8,
+      "od": 4,
+      "ha": 9,
+      "dr": 14,
+      "pa": 3,
+      "is": 12,
+      "id": 7,
+      "rb": 11,
+      "sb": 9,
+      "st": 7,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:37.790Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54845151,
+  "firstName": "Bernardo",
+  "lastName": "Villarroel",
+  "countryId": 74,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5725,
+      "tce": 29,
+      "tci": 29,
+      "tc": 58,
+      "gs": 6,
+      "js": 2,
+      "jr": 3,
+      "od": 6,
+      "ha": 9,
+      "dr": 3,
+      "pa": 6,
+      "is": 8,
+      "id": 8,
+      "rb": 10,
+      "sb": 3,
+      "st": 2,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:43.285Z"
+    }
+  ]
+}

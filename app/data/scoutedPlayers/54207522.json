@@ -1,0 +1,31 @@
+{
+  "id": 54207522,
+  "firstName": "Teh",
+  "lastName": "Chin Feng",
+  "countryId": 65,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 16589,
+      "tce": 55,
+      "tci": 27,
+      "tc": 82,
+      "gs": 7,
+      "js": 15,
+      "jr": 10,
+      "od": 8,
+      "ha": 9,
+      "dr": 6,
+      "pa": 7,
+      "is": 13,
+      "id": 9,
+      "rb": 3,
+      "sb": 2,
+      "st": 5,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:37.793Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 55169960,
+  "firstName": "Steph",
+  "lastName": "Ruff",
+  "countryId": 1,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3269,
+      "tce": 24,
+      "tci": 22,
+      "tc": 46,
+      "gs": 7,
+      "js": 7,
+      "jr": 3,
+      "od": 7,
+      "ha": 1,
+      "dr": 2,
+      "pa": 4,
+      "is": 3,
+      "id": 7,
+      "rb": 7,
+      "sb": 5,
+      "st": 3,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:43.283Z"
+    }
+  ]
+}

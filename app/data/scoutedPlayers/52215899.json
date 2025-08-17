@@ -1,0 +1,31 @@
+{
+  "id": 52215899,
+  "firstName": "Alun",
+  "lastName": "Marshall",
+  "countryId": 81,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 59250,
+      "tce": 84,
+      "tci": 38,
+      "tc": 122,
+      "gs": 7,
+      "js": 17,
+      "jr": 11,
+      "od": 13,
+      "ha": 17,
+      "dr": 18,
+      "pa": 8,
+      "is": 11,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 5,
+      "ft": 16,
+      "ex": 8,
+      "scoutedAt": "2025-08-17T21:43:49.691Z"
+    }
+  ]
+}

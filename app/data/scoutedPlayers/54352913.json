@@ -1,0 +1,53 @@
+{
+  "id": 54352913,
+  "firstName": "Antonino",
+  "lastName": "Chessa",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 14405,
+      "tce": 66,
+      "tci": 31,
+      "tc": 97,
+      "gs": 9,
+      "js": 11,
+      "jr": 7,
+      "od": 12,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 12,
+      "id": 6,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:37.793Z"
+    },
+    {
+      "age": 20,
+      "salary": 14405,
+      "tce": 66,
+      "tci": 31,
+      "tc": 97,
+      "gs": 9,
+      "js": 11,
+      "jr": 7,
+      "od": 12,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 12,
+      "id": 6,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:42.636Z"
+    }
+  ]
+}

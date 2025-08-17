@@ -1,0 +1,31 @@
+{
+  "id": 51422718,
+  "firstName": "Jonas",
+  "lastName": "Radivilovicius",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 91597,
+      "tce": 72,
+      "tci": 53,
+      "tc": 125,
+      "gs": 8,
+      "js": 14,
+      "jr": 10,
+      "od": 6,
+      "ha": 15,
+      "dr": 17,
+      "pa": 10,
+      "is": 18,
+      "id": 16,
+      "rb": 10,
+      "sb": 9,
+      "st": 2,
+      "ft": 6,
+      "ex": 9,
+      "scoutedAt": "2025-08-17T21:43:47.601Z"
+    }
+  ]
+}

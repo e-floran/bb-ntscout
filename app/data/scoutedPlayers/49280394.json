@@ -1,0 +1,31 @@
+{
+  "id": 49280394,
+  "firstName": "Jogminas",
+  "lastName": "Olšinskas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 52273,
+      "tce": 82,
+      "tci": 49,
+      "tc": 131,
+      "gs": 9,
+      "js": 8,
+      "jr": 10,
+      "od": 18,
+      "ha": 19,
+      "dr": 18,
+      "pa": 9,
+      "is": 8,
+      "id": 18,
+      "rb": 11,
+      "sb": 12,
+      "st": 1,
+      "ft": 29,
+      "ex": 20,
+      "scoutedAt": "2025-08-17T21:43:46.946Z"
+    }
+  ]
+}

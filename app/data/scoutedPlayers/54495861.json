@@ -1,0 +1,31 @@
+{
+  "id": 54495861,
+  "firstName": "Bohdan",
+  "lastName": "Moszczyński",
+  "countryId": 58,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 13124,
+      "tce": 53,
+      "tci": 35,
+      "tc": 88,
+      "gs": 8,
+      "js": 10,
+      "jr": 10,
+      "od": 9,
+      "ha": 9,
+      "dr": 8,
+      "pa": 7,
+      "is": 8,
+      "id": 11,
+      "rb": 10,
+      "sb": 6,
+      "st": 9,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-17T21:43:36.456Z"
+    }
+  ]
+}

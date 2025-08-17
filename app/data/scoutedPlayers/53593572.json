@@ -1,0 +1,31 @@
+{
+  "id": 53593572,
+  "firstName": "Stefan",
+  "lastName": "Noriega",
+  "countryId": 54,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 43354,
+      "tce": 79,
+      "tci": 29,
+      "tc": 108,
+      "gs": 8,
+      "js": 11,
+      "jr": 7,
+      "od": 16,
+      "ha": 17,
+      "dr": 16,
+      "pa": 12,
+      "is": 10,
+      "id": 7,
+      "rb": 6,
+      "sb": 6,
+      "st": 3,
+      "ft": 6,
+      "ex": 5,
+      "scoutedAt": "2025-08-17T21:43:50.977Z"
+    }
+  ]
+}

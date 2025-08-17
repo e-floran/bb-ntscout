@@ -1,0 +1,31 @@
+{
+  "id": 53797153,
+  "firstName": "Di",
+  "lastName": "Shunqi",
+  "countryId": 17,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11507,
+      "tce": 66,
+      "tci": 34,
+      "tc": 100,
+      "gs": 9,
+      "js": 14,
+      "jr": 9,
+      "od": 7,
+      "ha": 14,
+      "dr": 16,
+      "pa": 6,
+      "is": 13,
+      "id": 8,
+      "rb": 7,
+      "sb": 6,
+      "st": 5,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:39.734Z"
+    }
+  ]
+}

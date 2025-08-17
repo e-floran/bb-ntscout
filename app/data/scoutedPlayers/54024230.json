@@ -1,0 +1,31 @@
+{
+  "id": 54024230,
+  "firstName": "Paco",
+  "lastName": "Can Palet",
+  "countryId": 7,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 24111,
+      "tce": 36,
+      "tci": 46,
+      "tc": 82,
+      "gs": 9,
+      "js": 4,
+      "jr": 10,
+      "od": 5,
+      "ha": 6,
+      "dr": 8,
+      "pa": 3,
+      "is": 12,
+      "id": 10,
+      "rb": 15,
+      "sb": 9,
+      "st": 6,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-17T21:43:37.135Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54851676,
+  "firstName": "Robbie",
+  "lastName": "Begley",
+  "countryId": 4,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 2751,
+      "tce": 39,
+      "tci": 17,
+      "tc": 56,
+      "gs": 7,
+      "js": 7,
+      "jr": 6,
+      "od": 2,
+      "ha": 6,
+      "dr": 10,
+      "pa": 8,
+      "is": 4,
+      "id": 4,
+      "rb": 3,
+      "sb": 6,
+      "st": 8,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-17T21:43:44.562Z"
+    }
+  ]
+}
