@@ -22,6 +22,7 @@ export default function LoginPage() {
     if (data.error) {
       setError(data.error);
     } else {
+      window.dispatchEvent(new Event("user-login"));
       router.push("/");
     }
   };
