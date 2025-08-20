@@ -17,7 +17,7 @@ export const users: User[] = [
     active: true,
   },
   {
-    login: "SquallL81",
+    login: "Squall_L81",
     mainTeamId: "11",
     active: true,
   },
