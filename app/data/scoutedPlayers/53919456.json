@@ -1,0 +1,31 @@
+{
+  "id": 53919456,
+  "firstName": "Fred",
+  "lastName": "Kuta",
+  "countryId": 25,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 40264,
+      "tce": 78,
+      "tci": 41,
+      "tc": 119,
+      "gs": 9,
+      "js": 14,
+      "jr": 10,
+      "od": 11,
+      "ha": 15,
+      "dr": 15,
+      "pa": 13,
+      "is": 5,
+      "id": 10,
+      "rb": 12,
+      "sb": 14,
+      "st": 6,
+      "ft": 12,
+      "ex": 6,
+      "scoutedAt": "2025-08-20T19:09:26.843Z"
+    }
+  ]
+}

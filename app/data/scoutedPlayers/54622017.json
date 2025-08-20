@@ -1,0 +1,31 @@
+{
+  "id": 54622017,
+  "firstName": "Zhang",
+  "lastName": "Hanming",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6143,
+      "tce": 55,
+      "tci": 20,
+      "tc": 75,
+      "gs": 8,
+      "js": 11,
+      "jr": 9,
+      "od": 5,
+      "ha": 10,
+      "dr": 11,
+      "pa": 9,
+      "is": 8,
+      "id": 5,
+      "rb": 2,
+      "sb": 5,
+      "st": 5,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:18.076Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49044377,
+  "firstName": "Shelton",
+  "lastName": "Alexander",
+  "countryId": 99,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 124098,
+      "tce": 79,
+      "tci": 56,
+      "tc": 135,
+      "gs": 9,
+      "js": 14,
+      "jr": 9,
+      "od": 13,
+      "ha": 17,
+      "dr": 19,
+      "pa": 7,
+      "is": 18,
+      "id": 16,
+      "rb": 12,
+      "sb": 10,
+      "st": 10,
+      "ft": 21,
+      "ex": 16,
+      "scoutedAt": "2025-08-20T19:09:24.702Z"
+    }
+  ]
+}

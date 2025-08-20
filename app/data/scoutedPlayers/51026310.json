@@ -1,0 +1,31 @@
+{
+  "id": 51026310,
+  "firstName": "Paolo",
+  "lastName": "Casini",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 64691,
+      "tce": 81,
+      "tci": 42,
+      "tc": 123,
+      "gs": 4,
+      "js": 12,
+      "jr": 6,
+      "od": 10,
+      "ha": 20,
+      "dr": 20,
+      "pa": 13,
+      "is": 14,
+      "id": 12,
+      "rb": 10,
+      "sb": 6,
+      "st": 3,
+      "ft": 11,
+      "ex": 9,
+      "scoutedAt": "2025-08-20T19:09:23.335Z"
+    }
+  ]
+}

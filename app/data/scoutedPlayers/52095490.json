@@ -1,0 +1,31 @@
+{
+  "id": 52095490,
+  "firstName": "Celestino",
+  "lastName": "Fundo",
+  "countryId": 18,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 110450,
+      "tce": 93,
+      "tci": 50,
+      "tc": 143,
+      "gs": 9,
+      "js": 19,
+      "jr": 11,
+      "od": 15,
+      "ha": 19,
+      "dr": 21,
+      "pa": 8,
+      "is": 19,
+      "id": 12,
+      "rb": 9,
+      "sb": 10,
+      "st": 6,
+      "ft": 21,
+      "ex": 8,
+      "scoutedAt": "2025-08-20T19:09:23.339Z"
+    }
+  ]
+}

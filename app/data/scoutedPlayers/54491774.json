@@ -1,0 +1,31 @@
+{
+  "id": 54491774,
+  "firstName": "Frank",
+  "lastName": "Velasco",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7223,
+      "tce": 44,
+      "tci": 24,
+      "tc": 68,
+      "gs": 9,
+      "js": 10,
+      "jr": 7,
+      "od": 5,
+      "ha": 6,
+      "dr": 7,
+      "pa": 9,
+      "is": 2,
+      "id": 5,
+      "rb": 10,
+      "sb": 7,
+      "st": 4,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:16.639Z"
+    }
+  ]
+}

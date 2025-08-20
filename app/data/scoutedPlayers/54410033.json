@@ -1,0 +1,31 @@
+{
+  "id": 54410033,
+  "firstName": "David",
+  "lastName": "Pochatshevsky",
+  "countryId": 15,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10976,
+      "tce": 31,
+      "tci": 39,
+      "tc": 70,
+      "gs": 8,
+      "js": 10,
+      "jr": 2,
+      "od": 4,
+      "ha": 6,
+      "dr": 3,
+      "pa": 6,
+      "is": 11,
+      "id": 10,
+      "rb": 8,
+      "sb": 10,
+      "st": 5,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:11.643Z"
+    }
+  ]
+}

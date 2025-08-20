@@ -1,0 +1,31 @@
+{
+  "id": 54311659,
+  "firstName": "Zhang",
+  "lastName": "Baoting",
+  "countryId": 5,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12760,
+      "tce": 60,
+      "tci": 20,
+      "tc": 80,
+      "gs": 9,
+      "js": 10,
+      "jr": 9,
+      "od": 16,
+      "ha": 10,
+      "dr": 10,
+      "pa": 5,
+      "is": 3,
+      "id": 10,
+      "rb": 4,
+      "sb": 3,
+      "st": 5,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:11.642Z"
+    }
+  ]
+}

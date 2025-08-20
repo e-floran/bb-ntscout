@@ -1,0 +1,31 @@
+{
+  "id": 51485074,
+  "firstName": "Henryk",
+  "lastName": "Figa",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 91215,
+      "tce": 80,
+      "tci": 52,
+      "tc": 132,
+      "gs": 8,
+      "js": 15,
+      "jr": 12,
+      "od": 10,
+      "ha": 18,
+      "dr": 17,
+      "pa": 8,
+      "is": 16,
+      "id": 16,
+      "rb": 10,
+      "sb": 10,
+      "st": 9,
+      "ft": 10,
+      "ex": 12,
+      "scoutedAt": "2025-08-20T19:09:24.703Z"
+    }
+  ]
+}

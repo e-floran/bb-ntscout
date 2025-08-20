@@ -1,0 +1,31 @@
+{
+  "id": 53679140,
+  "firstName": "Enrico",
+  "lastName": "Mobile",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 29658,
+      "tce": 71,
+      "tci": 30,
+      "tc": 101,
+      "gs": 7,
+      "js": 12,
+      "jr": 7,
+      "od": 11,
+      "ha": 15,
+      "dr": 15,
+      "pa": 11,
+      "is": 11,
+      "id": 6,
+      "rb": 8,
+      "sb": 5,
+      "st": 8,
+      "ft": 13,
+      "ex": 4,
+      "scoutedAt": "2025-08-20T19:09:26.199Z"
+    }
+  ]
+}

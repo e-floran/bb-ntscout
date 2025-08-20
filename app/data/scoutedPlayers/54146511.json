@@ -1,0 +1,31 @@
+{
+  "id": 54146511,
+  "firstName": "Ivan",
+  "lastName": "Balać",
+  "countryId": 29,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12635,
+      "tce": 24,
+      "tci": 40,
+      "tc": 64,
+      "gs": 7,
+      "js": 9,
+      "jr": 3,
+      "od": 2,
+      "ha": 1,
+      "dr": 7,
+      "pa": 2,
+      "is": 14,
+      "id": 12,
+      "rb": 7,
+      "sb": 7,
+      "st": 1,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:11.637Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54775086,
+  "firstName": "Nikolay",
+  "lastName": "Peshev",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6054,
+      "tce": 48,
+      "tci": 21,
+      "tc": 69,
+      "gs": 7,
+      "js": 10,
+      "jr": 10,
+      "od": 5,
+      "ha": 7,
+      "dr": 8,
+      "pa": 8,
+      "is": 11,
+      "id": 4,
+      "rb": 4,
+      "sb": 2,
+      "st": 3,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:19.477Z"
+    }
+  ]
+}

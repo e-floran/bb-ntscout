@@ -1,0 +1,31 @@
+{
+  "id": 54230862,
+  "firstName": "Gaël",
+  "lastName": "Baduel",
+  "countryId": 11,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 31580,
+      "tce": 24,
+      "tci": 56,
+      "tc": 80,
+      "gs": 8,
+      "js": 3,
+      "jr": 4,
+      "od": 4,
+      "ha": 10,
+      "dr": 1,
+      "pa": 2,
+      "is": 7,
+      "id": 18,
+      "rb": 13,
+      "sb": 18,
+      "st": 2,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:11.647Z"
+    }
+  ]
+}

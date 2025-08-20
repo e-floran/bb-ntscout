@@ -1,0 +1,53 @@
+{
+  "id": 53827522,
+  "firstName": "Rudi",
+  "lastName": "Marojević",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 20259,
+      "tce": 54,
+      "tci": 43,
+      "tc": 97,
+      "gs": 9,
+      "js": 9,
+      "jr": 5,
+      "od": 8,
+      "ha": 11,
+      "dr": 14,
+      "pa": 7,
+      "is": 13,
+      "id": 12,
+      "rb": 10,
+      "sb": 8,
+      "st": 3,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:14.394Z"
+    },
+    {
+      "age": 21,
+      "salary": 20259,
+      "tce": 54,
+      "tci": 43,
+      "tc": 97,
+      "gs": 9,
+      "js": 9,
+      "jr": 5,
+      "od": 8,
+      "ha": 11,
+      "dr": 14,
+      "pa": 7,
+      "is": 13,
+      "id": 12,
+      "rb": 10,
+      "sb": 8,
+      "st": 3,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:20.945Z"
+    }
+  ]
+}

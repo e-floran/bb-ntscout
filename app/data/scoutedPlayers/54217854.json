@@ -1,0 +1,53 @@
+{
+  "id": 54217854,
+  "firstName": "Chan",
+  "lastName": "Sai Lung",
+  "countryId": 70,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11271,
+      "tce": 63,
+      "tci": 19,
+      "tc": 82,
+      "gs": 9,
+      "js": 13,
+      "jr": 7,
+      "od": 10,
+      "ha": 12,
+      "dr": 11,
+      "pa": 10,
+      "is": 5,
+      "id": 2,
+      "rb": 3,
+      "sb": 9,
+      "st": 8,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:12.352Z"
+    },
+    {
+      "age": 21,
+      "salary": 11271,
+      "tce": 63,
+      "tci": 19,
+      "tc": 82,
+      "gs": 9,
+      "js": 13,
+      "jr": 7,
+      "od": 10,
+      "ha": 12,
+      "dr": 11,
+      "pa": 10,
+      "is": 5,
+      "id": 2,
+      "rb": 3,
+      "sb": 9,
+      "st": 8,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:18.075Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49203073,
+  "firstName": "Umberto",
+  "lastName": "Ferrari",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 164202,
+      "tce": 98,
+      "tci": 38,
+      "tc": 136,
+      "gs": 9,
+      "js": 15,
+      "jr": 12,
+      "od": 18,
+      "ha": 20,
+      "dr": 19,
+      "pa": 14,
+      "is": 11,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 5,
+      "ft": 23,
+      "ex": 15,
+      "scoutedAt": "2025-08-20T19:09:24.018Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53025814,
+  "firstName": "Zhu",
+  "lastName": "Kaixing",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 39612,
+      "tce": 86,
+      "tci": 40,
+      "tc": 126,
+      "gs": 7,
+      "js": 14,
+      "jr": 5,
+      "od": 20,
+      "ha": 20,
+      "dr": 20,
+      "pa": 7,
+      "is": 14,
+      "id": 11,
+      "rb": 7,
+      "sb": 8,
+      "st": 3,
+      "ft": 8,
+      "ex": 7,
+      "scoutedAt": "2025-08-20T19:09:26.843Z"
+    }
+  ]
+}

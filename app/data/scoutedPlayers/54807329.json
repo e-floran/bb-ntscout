@@ -1,0 +1,31 @@
+{
+  "id": 54807329,
+  "firstName": "Patryk",
+  "lastName": "Szalbót",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 7276,
+      "tce": 54,
+      "tci": 20,
+      "tc": 74,
+      "gs": 9,
+      "js": 10,
+      "jr": 8,
+      "od": 8,
+      "ha": 10,
+      "dr": 9,
+      "pa": 9,
+      "is": 2,
+      "id": 7,
+      "rb": 4,
+      "sb": 7,
+      "st": 5,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:17.307Z"
+    }
+  ]
+}

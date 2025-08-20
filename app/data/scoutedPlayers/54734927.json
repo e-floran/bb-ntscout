@@ -1,0 +1,31 @@
+{
+  "id": 54734927,
+  "firstName": "Roman",
+  "lastName": "Abasov",
+  "countryId": 19,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4003,
+      "tce": 38,
+      "tci": 17,
+      "tc": 55,
+      "gs": 7,
+      "js": 7,
+      "jr": 3,
+      "od": 7,
+      "ha": 6,
+      "dr": 6,
+      "pa": 9,
+      "is": 1,
+      "id": 1,
+      "rb": 7,
+      "sb": 8,
+      "st": 8,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:17.305Z"
+    }
+  ]
+}

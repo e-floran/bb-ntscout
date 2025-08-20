@@ -1,0 +1,31 @@
+{
+  "id": 54544203,
+  "firstName": "Pau",
+  "lastName": "Asensi",
+  "countryId": 75,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 13442,
+      "tce": 64,
+      "tci": 21,
+      "tc": 85,
+      "gs": 5,
+      "js": 9,
+      "jr": 10,
+      "od": 11,
+      "ha": 13,
+      "dr": 12,
+      "pa": 9,
+      "is": 3,
+      "id": 10,
+      "rb": 7,
+      "sb": 1,
+      "st": 4,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:14.395Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52806360,
+  "firstName": "Toni",
+  "lastName": "Soares",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 220638,
+      "tce": 39,
+      "tci": 64,
+      "tc": 103,
+      "gs": 8,
+      "js": 8,
+      "jr": 8,
+      "od": 3,
+      "ha": 7,
+      "dr": 9,
+      "pa": 4,
+      "is": 19,
+      "id": 19,
+      "rb": 16,
+      "sb": 10,
+      "st": 3,
+      "ft": 16,
+      "ex": 7,
+      "scoutedAt": "2025-08-20T19:09:27.499Z"
+    }
+  ]
+}

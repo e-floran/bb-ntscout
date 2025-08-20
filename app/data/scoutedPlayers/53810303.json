@@ -1,0 +1,31 @@
+{
+  "id": 53810303,
+  "firstName": "Andžiejus",
+  "lastName": "Ilgenis",
+  "countryId": 20,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 16664,
+      "tce": 70,
+      "tci": 27,
+      "tc": 97,
+      "gs": 6,
+      "js": 14,
+      "jr": 7,
+      "od": 13,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 7,
+      "id": 9,
+      "rb": 6,
+      "sb": 5,
+      "st": 7,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-08-20T19:09:11.629Z"
+    }
+  ]
+}

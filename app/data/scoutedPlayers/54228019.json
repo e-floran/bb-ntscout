@@ -1,0 +1,31 @@
+{
+  "id": 54228019,
+  "firstName": "Makarios",
+  "lastName": "Prinianakis",
+  "countryId": 77,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 8863,
+      "tce": 64,
+      "tci": 29,
+      "tc": 93,
+      "gs": 7,
+      "js": 12,
+      "jr": 9,
+      "od": 8,
+      "ha": 15,
+      "dr": 14,
+      "pa": 6,
+      "is": 10,
+      "id": 3,
+      "rb": 7,
+      "sb": 9,
+      "st": 7,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:18.077Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49370238,
+  "firstName": "Kliment",
+  "lastName": "Pánis",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 253723,
+      "tce": 80,
+      "tci": 63,
+      "tc": 143,
+      "gs": 9,
+      "js": 15,
+      "jr": 6,
+      "od": 14,
+      "ha": 16,
+      "dr": 18,
+      "pa": 11,
+      "is": 19,
+      "id": 18,
+      "rb": 15,
+      "sb": 11,
+      "st": 4,
+      "ft": 15,
+      "ex": 20,
+      "scoutedAt": "2025-08-20T19:09:23.338Z"
+    }
+  ]
+}

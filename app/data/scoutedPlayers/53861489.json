@@ -1,0 +1,31 @@
+{
+  "id": 53861489,
+  "firstName": "Jevgenijs",
+  "lastName": "Rozentals",
+  "countryId": 46,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15980,
+      "tce": 64,
+      "tci": 27,
+      "tc": 91,
+      "gs": 8,
+      "js": 14,
+      "jr": 7,
+      "od": 8,
+      "ha": 13,
+      "dr": 15,
+      "pa": 7,
+      "is": 6,
+      "id": 7,
+      "rb": 7,
+      "sb": 7,
+      "st": 7,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:12.344Z"
+    }
+  ]
+}

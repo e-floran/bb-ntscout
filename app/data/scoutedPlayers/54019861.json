@@ -1,0 +1,31 @@
+{
+  "id": 54019861,
+  "firstName": "Agop",
+  "lastName": "Hürriyet",
+  "countryId": 6,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 22553,
+      "tce": 62,
+      "tci": 22,
+      "tc": 84,
+      "gs": 7,
+      "js": 9,
+      "jr": 6,
+      "od": 10,
+      "ha": 13,
+      "dr": 11,
+      "pa": 13,
+      "is": 6,
+      "id": 5,
+      "rb": 8,
+      "sb": 3,
+      "st": 9,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:13.028Z"
+    }
+  ]
+}

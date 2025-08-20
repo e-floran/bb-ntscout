@@ -1,0 +1,31 @@
+{
+  "id": 54112043,
+  "firstName": "José",
+  "lastName": "Matias",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7311,
+      "tce": 53,
+      "tci": 31,
+      "tc": 84,
+      "gs": 6,
+      "js": 8,
+      "jr": 3,
+      "od": 5,
+      "ha": 14,
+      "dr": 17,
+      "pa": 6,
+      "is": 11,
+      "id": 7,
+      "rb": 7,
+      "sb": 6,
+      "st": 8,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:18.073Z"
+    }
+  ]
+}

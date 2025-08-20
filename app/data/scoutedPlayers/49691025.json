@@ -1,0 +1,31 @@
+{
+  "id": 49691025,
+  "firstName": "Geo",
+  "lastName": "Moraru",
+  "countryId": 86,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 237860,
+      "tce": 74,
+      "tci": 60,
+      "tc": 134,
+      "gs": 8,
+      "js": 16,
+      "jr": 6,
+      "od": 11,
+      "ha": 16,
+      "dr": 17,
+      "pa": 8,
+      "is": 18,
+      "id": 17,
+      "rb": 16,
+      "sb": 9,
+      "st": 3,
+      "ft": 16,
+      "ex": 23,
+      "scoutedAt": "2025-08-20T19:09:24.012Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54496944,
+  "firstName": "Mariusz",
+  "lastName": "Szaran",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6905,
+      "tce": 51,
+      "tci": 25,
+      "tc": 76,
+      "gs": 7,
+      "js": 9,
+      "jr": 8,
+      "od": 5,
+      "ha": 10,
+      "dr": 9,
+      "pa": 10,
+      "is": 9,
+      "id": 6,
+      "rb": 7,
+      "sb": 3,
+      "st": 6,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:20.286Z"
+    }
+  ]
+}

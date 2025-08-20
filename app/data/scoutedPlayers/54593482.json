@@ -1,0 +1,31 @@
+{
+  "id": 54593482,
+  "firstName": "Zak",
+  "lastName": "Mobutu",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5359,
+      "tce": 39,
+      "tci": 28,
+      "tc": 67,
+      "gs": 9,
+      "js": 9,
+      "jr": 7,
+      "od": 3,
+      "ha": 5,
+      "dr": 9,
+      "pa": 6,
+      "is": 8,
+      "id": 8,
+      "rb": 9,
+      "sb": 3,
+      "st": 7,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:16.646Z"
+    }
+  ]
+}

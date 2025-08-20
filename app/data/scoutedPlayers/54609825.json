@@ -1,0 +1,31 @@
+{
+  "id": 54609825,
+  "firstName": "Martiniano",
+  "lastName": "Velazquez",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3254,
+      "tce": 23,
+      "tci": 24,
+      "tc": 47,
+      "gs": 8,
+      "js": 3,
+      "jr": 5,
+      "od": 5,
+      "ha": 4,
+      "dr": 3,
+      "pa": 3,
+      "is": 7,
+      "id": 7,
+      "rb": 6,
+      "sb": 4,
+      "st": 7,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:18.075Z"
+    }
+  ]
+}

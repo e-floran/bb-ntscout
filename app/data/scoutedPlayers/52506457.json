@@ -1,0 +1,31 @@
+{
+  "id": 52506457,
+  "firstName": "Dragoljub",
+  "lastName": "Vasić",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 148546,
+      "tce": 73,
+      "tci": 59,
+      "tc": 132,
+      "gs": 7,
+      "js": 15,
+      "jr": 9,
+      "od": 14,
+      "ha": 13,
+      "dr": 14,
+      "pa": 8,
+      "is": 20,
+      "id": 20,
+      "rb": 9,
+      "sb": 10,
+      "st": 6,
+      "ft": 4,
+      "ex": 7,
+      "scoutedAt": "2025-08-20T19:09:27.500Z"
+    }
+  ]
+}

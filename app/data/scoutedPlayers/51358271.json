@@ -1,0 +1,31 @@
+{
+  "id": 51358271,
+  "firstName": "Olivier",
+  "lastName": "Malle",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 119288,
+      "tce": 78,
+      "tci": 55,
+      "tc": 133,
+      "gs": 6,
+      "js": 16,
+      "jr": 8,
+      "od": 12,
+      "ha": 16,
+      "dr": 19,
+      "pa": 7,
+      "is": 20,
+      "id": 16,
+      "rb": 9,
+      "sb": 10,
+      "st": 5,
+      "ft": 7,
+      "ex": 10,
+      "scoutedAt": "2025-08-20T19:09:23.332Z"
+    }
+  ]
+}

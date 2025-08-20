@@ -1,0 +1,31 @@
+{
+  "id": 54480072,
+  "firstName": "Zintis",
+  "lastName": "Kuškis",
+  "countryId": 46,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4165,
+      "tce": 49,
+      "tci": 24,
+      "tc": 73,
+      "gs": 9,
+      "js": 10,
+      "jr": 7,
+      "od": 5,
+      "ha": 8,
+      "dr": 12,
+      "pa": 7,
+      "is": 6,
+      "id": 8,
+      "rb": 4,
+      "sb": 6,
+      "st": 7,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:18.785Z"
+    }
+  ]
+}

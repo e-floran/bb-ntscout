@@ -1,0 +1,31 @@
+{
+  "id": 54807752,
+  "firstName": "Stefan",
+  "lastName": "Lach",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6049,
+      "tce": 22,
+      "tci": 33,
+      "tc": 55,
+      "gs": 7,
+      "js": 4,
+      "jr": 7,
+      "od": 3,
+      "ha": 2,
+      "dr": 4,
+      "pa": 2,
+      "is": 8,
+      "id": 10,
+      "rb": 10,
+      "sb": 5,
+      "st": 6,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:19.479Z"
+    }
+  ]
+}

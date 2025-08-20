@@ -1,0 +1,31 @@
+{
+  "id": 53047679,
+  "firstName": "Pere Jordi",
+  "lastName": "Andrada",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 35700,
+      "tce": 85,
+      "tci": 31,
+      "tc": 116,
+      "gs": 7,
+      "js": 18,
+      "jr": 13,
+      "od": 13,
+      "ha": 16,
+      "dr": 17,
+      "pa": 8,
+      "is": 15,
+      "id": 5,
+      "rb": 5,
+      "sb": 6,
+      "st": 4,
+      "ft": 9,
+      "ex": 6,
+      "scoutedAt": "2025-08-20T19:09:26.194Z"
+    }
+  ]
+}

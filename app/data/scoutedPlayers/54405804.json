@@ -1,0 +1,31 @@
+{
+  "id": 54405804,
+  "firstName": "Beau",
+  "lastName": "Thomas",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5771,
+      "tce": 50,
+      "tci": 29,
+      "tc": 79,
+      "gs": 8,
+      "js": 7,
+      "jr": 5,
+      "od": 7,
+      "ha": 11,
+      "dr": 13,
+      "pa": 7,
+      "is": 8,
+      "id": 5,
+      "rb": 8,
+      "sb": 8,
+      "st": 7,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:17.306Z"
+    }
+  ]
+}

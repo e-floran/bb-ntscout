@@ -1,0 +1,53 @@
+{
+  "id": 53851323,
+  "firstName": "Mihkel",
+  "lastName": "Laidla",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10189,
+      "tce": 60,
+      "tci": 32,
+      "tc": 92,
+      "gs": 7,
+      "js": 13,
+      "jr": 7,
+      "od": 8,
+      "ha": 13,
+      "dr": 12,
+      "pa": 7,
+      "is": 11,
+      "id": 5,
+      "rb": 8,
+      "sb": 8,
+      "st": 7,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:13.036Z"
+    },
+    {
+      "age": 21,
+      "salary": 10189,
+      "tce": 60,
+      "tci": 32,
+      "tc": 92,
+      "gs": 7,
+      "js": 13,
+      "jr": 7,
+      "od": 8,
+      "ha": 13,
+      "dr": 12,
+      "pa": 7,
+      "is": 11,
+      "id": 5,
+      "rb": 8,
+      "sb": 8,
+      "st": 7,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:18.789Z"
+    }
+  ]
+}

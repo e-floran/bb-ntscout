@@ -1,0 +1,31 @@
+{
+  "id": 51641131,
+  "firstName": "Aday",
+  "lastName": "Ram de Montoro",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 151917,
+      "tce": 100,
+      "tci": 42,
+      "tc": 142,
+      "gs": 7,
+      "js": 16,
+      "jr": 15,
+      "od": 17,
+      "ha": 18,
+      "dr": 20,
+      "pa": 14,
+      "is": 15,
+      "id": 13,
+      "rb": 10,
+      "sb": 4,
+      "st": 2,
+      "ft": 12,
+      "ex": 9,
+      "scoutedAt": "2025-08-20T19:09:23.331Z"
+    }
+  ]
+}

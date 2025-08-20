@@ -1,0 +1,31 @@
+{
+  "id": 52856123,
+  "firstName": "Maarek",
+  "lastName": "Peepson",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 86385,
+      "tce": 63,
+      "tci": 53,
+      "tc": 116,
+      "gs": 8,
+      "js": 15,
+      "jr": 3,
+      "od": 6,
+      "ha": 17,
+      "dr": 19,
+      "pa": 3,
+      "is": 17,
+      "id": 14,
+      "rb": 13,
+      "sb": 9,
+      "st": 3,
+      "ft": 8,
+      "ex": 6,
+      "scoutedAt": "2025-08-20T19:09:28.145Z"
+    }
+  ]
+}

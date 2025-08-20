@@ -1,0 +1,31 @@
+{
+  "id": 54120632,
+  "firstName": "Džiugas",
+  "lastName": "Heidikis",
+  "countryId": 20,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 16410,
+      "tce": 22,
+      "tci": 44,
+      "tc": 66,
+      "gs": 9,
+      "js": 5,
+      "jr": 7,
+      "od": 1,
+      "ha": 4,
+      "dr": 2,
+      "pa": 3,
+      "is": 12,
+      "id": 11,
+      "rb": 13,
+      "sb": 8,
+      "st": 1,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:11.648Z"
+    }
+  ]
+}

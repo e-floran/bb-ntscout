@@ -1,0 +1,31 @@
+{
+  "id": 54332649,
+  "firstName": "Néstor",
+  "lastName": "Rubio Marín",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3306,
+      "tce": 36,
+      "tci": 24,
+      "tc": 60,
+      "gs": 6,
+      "js": 6,
+      "jr": 4,
+      "od": 7,
+      "ha": 8,
+      "dr": 7,
+      "pa": 4,
+      "is": 8,
+      "id": 6,
+      "rb": 7,
+      "sb": 3,
+      "st": 5,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:16.643Z"
+    }
+  ]
+}

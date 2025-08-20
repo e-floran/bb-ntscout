@@ -1,0 +1,31 @@
+{
+  "id": 51837045,
+  "firstName": "Xian",
+  "lastName": "Dong Sun",
+  "countryId": 70,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 145428,
+      "tce": 102,
+      "tci": 31,
+      "tc": 133,
+      "gs": 8,
+      "js": 19,
+      "jr": 17,
+      "od": 17,
+      "ha": 17,
+      "dr": 17,
+      "pa": 15,
+      "is": 9,
+      "id": 9,
+      "rb": 8,
+      "sb": 5,
+      "st": 3,
+      "ft": 13,
+      "ex": 10,
+      "scoutedAt": "2025-08-20T19:09:22.574Z"
+    }
+  ]
+}

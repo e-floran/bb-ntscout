@@ -1,0 +1,31 @@
+{
+  "id": 51800135,
+  "firstName": "Arby",
+  "lastName": "Teston",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 232088,
+      "tce": 65,
+      "tci": 64,
+      "tc": 129,
+      "gs": 6,
+      "js": 13,
+      "jr": 6,
+      "od": 9,
+      "ha": 12,
+      "dr": 15,
+      "pa": 10,
+      "is": 19,
+      "id": 19,
+      "rb": 14,
+      "sb": 12,
+      "st": 7,
+      "ft": 16,
+      "ex": 9,
+      "scoutedAt": "2025-08-20T19:09:22.574Z"
+    }
+  ]
+}

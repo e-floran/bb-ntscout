@@ -1,0 +1,31 @@
+{
+  "id": 50379548,
+  "firstName": "Daniel",
+  "lastName": "Kwade",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 226252,
+      "tce": 54,
+      "tci": 70,
+      "tc": 124,
+      "gs": 8,
+      "js": 7,
+      "jr": 4,
+      "od": 12,
+      "ha": 12,
+      "dr": 10,
+      "pa": 9,
+      "is": 15,
+      "id": 20,
+      "rb": 15,
+      "sb": 20,
+      "st": 7,
+      "ft": 18,
+      "ex": 11,
+      "scoutedAt": "2025-08-20T19:09:23.334Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54417515,
+  "firstName": "Bobby",
+  "lastName": "Crouch",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5951,
+      "tce": 50,
+      "tci": 25,
+      "tc": 75,
+      "gs": 8,
+      "js": 7,
+      "jr": 3,
+      "od": 10,
+      "ha": 11,
+      "dr": 10,
+      "pa": 9,
+      "is": 5,
+      "id": 10,
+      "rb": 3,
+      "sb": 7,
+      "st": 6,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:18.784Z"
+    }
+  ]
+}

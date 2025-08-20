@@ -1,0 +1,31 @@
+{
+  "id": 50683790,
+  "firstName": "Antonio",
+  "lastName": "Marcel Ros",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 170042,
+      "tce": 101,
+      "tci": 55,
+      "tc": 156,
+      "gs": 6,
+      "js": 17,
+      "jr": 13,
+      "od": 20,
+      "ha": 20,
+      "dr": 20,
+      "pa": 11,
+      "is": 18,
+      "id": 18,
+      "rb": 8,
+      "sb": 11,
+      "st": 5,
+      "ft": 22,
+      "ex": 15,
+      "scoutedAt": "2025-08-20T19:09:24.000Z"
+    }
+  ]
+}

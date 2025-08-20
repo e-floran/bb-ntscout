@@ -1,0 +1,53 @@
+{
+  "id": 53712843,
+  "firstName": "Xulián",
+  "lastName": "Abandero",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11075,
+      "tce": 63,
+      "tci": 30,
+      "tc": 93,
+      "gs": 9,
+      "js": 14,
+      "jr": 7,
+      "od": 6,
+      "ha": 15,
+      "dr": 14,
+      "pa": 7,
+      "is": 11,
+      "id": 6,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:13.036Z"
+    },
+    {
+      "age": 21,
+      "salary": 11075,
+      "tce": 63,
+      "tci": 30,
+      "tc": 93,
+      "gs": 9,
+      "js": 14,
+      "jr": 7,
+      "od": 6,
+      "ha": 15,
+      "dr": 14,
+      "pa": 7,
+      "is": 11,
+      "id": 6,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:18.789Z"
+    }
+  ]
+}

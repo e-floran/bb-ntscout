@@ -1,0 +1,31 @@
+{
+  "id": 49265365,
+  "firstName": "Tobias",
+  "lastName": "Kusto",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 153136,
+      "tce": 103,
+      "tci": 27,
+      "tc": 130,
+      "gs": 8,
+      "js": 20,
+      "jr": 15,
+      "od": 19,
+      "ha": 17,
+      "dr": 18,
+      "pa": 14,
+      "is": 9,
+      "id": 8,
+      "rb": 6,
+      "sb": 4,
+      "st": 9,
+      "ft": 16,
+      "ex": 15,
+      "scoutedAt": "2025-08-20T19:09:24.014Z"
+    }
+  ]
+}

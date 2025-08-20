@@ -1,0 +1,31 @@
+{
+  "id": 54019958,
+  "firstName": "Levent",
+  "lastName": "Çağbay",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9633,
+      "tce": 59,
+      "tci": 25,
+      "tc": 84,
+      "gs": 8,
+      "js": 9,
+      "jr": 7,
+      "od": 10,
+      "ha": 13,
+      "dr": 12,
+      "pa": 8,
+      "is": 8,
+      "id": 6,
+      "rb": 7,
+      "sb": 4,
+      "st": 1,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:20.946Z"
+    }
+  ]
+}

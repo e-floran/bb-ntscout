@@ -1,0 +1,53 @@
+{
+  "id": 54370323,
+  "firstName": "Matthieu",
+  "lastName": "Vallier",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11538,
+      "tce": 61,
+      "tci": 34,
+      "tc": 95,
+      "gs": 8,
+      "js": 10,
+      "jr": 9,
+      "od": 6,
+      "ha": 14,
+      "dr": 12,
+      "pa": 10,
+      "is": 10,
+      "id": 6,
+      "rb": 8,
+      "sb": 10,
+      "st": 2,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:10.557Z"
+    },
+    {
+      "age": 20,
+      "salary": 11538,
+      "tce": 61,
+      "tci": 34,
+      "tc": 95,
+      "gs": 8,
+      "js": 10,
+      "jr": 9,
+      "od": 6,
+      "ha": 14,
+      "dr": 12,
+      "pa": 10,
+      "is": 10,
+      "id": 6,
+      "rb": 8,
+      "sb": 10,
+      "st": 2,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:16.641Z"
+    }
+  ]
+}

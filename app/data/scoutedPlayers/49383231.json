@@ -1,0 +1,31 @@
+{
+  "id": 49383231,
+  "firstName": "Mario Alberto",
+  "lastName": "Azuaje",
+  "countryId": 74,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 111870,
+      "tce": 95,
+      "tci": 41,
+      "tc": 136,
+      "gs": 7,
+      "js": 18,
+      "jr": 12,
+      "od": 19,
+      "ha": 18,
+      "dr": 18,
+      "pa": 10,
+      "is": 15,
+      "id": 11,
+      "rb": 6,
+      "sb": 9,
+      "st": 3,
+      "ft": 15,
+      "ex": 13,
+      "scoutedAt": "2025-08-20T19:09:23.334Z"
+    }
+  ]
+}

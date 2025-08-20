@@ -1,0 +1,31 @@
+{
+  "id": 54106531,
+  "firstName": "Riny",
+  "lastName": "Rougoor",
+  "countryId": 16,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 14073,
+      "tce": 51,
+      "tci": 42,
+      "tc": 93,
+      "gs": 7,
+      "js": 9,
+      "jr": 4,
+      "od": 7,
+      "ha": 12,
+      "dr": 12,
+      "pa": 7,
+      "is": 9,
+      "id": 10,
+      "rb": 10,
+      "sb": 13,
+      "st": 3,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:10.561Z"
+    }
+  ]
+}

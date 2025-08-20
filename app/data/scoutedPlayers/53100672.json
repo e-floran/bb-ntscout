@@ -1,0 +1,31 @@
+{
+  "id": 53100672,
+  "firstName": "Athanasios",
+  "lastName": "Violidis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 28821,
+      "tce": 75,
+      "tci": 46,
+      "tc": 121,
+      "gs": 9,
+      "js": 10,
+      "jr": 8,
+      "od": 17,
+      "ha": 18,
+      "dr": 18,
+      "pa": 4,
+      "is": 13,
+      "id": 17,
+      "rb": 7,
+      "sb": 9,
+      "st": 5,
+      "ft": 8,
+      "ex": 5,
+      "scoutedAt": "2025-08-20T19:09:26.842Z"
+    }
+  ]
+}

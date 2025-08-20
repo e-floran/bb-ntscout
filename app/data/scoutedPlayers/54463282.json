@@ -1,0 +1,31 @@
+{
+  "id": 54463282,
+  "firstName": "Vasil",
+  "lastName": "Petkov",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7457,
+      "tce": 44,
+      "tci": 25,
+      "tc": 69,
+      "gs": 3,
+      "js": 8,
+      "jr": 8,
+      "od": 9,
+      "ha": 6,
+      "dr": 5,
+      "pa": 8,
+      "is": 6,
+      "id": 5,
+      "rb": 8,
+      "sb": 6,
+      "st": 7,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:20.287Z"
+    }
+  ]
+}

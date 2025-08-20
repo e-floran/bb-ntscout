@@ -1,0 +1,31 @@
+{
+  "id": 54774953,
+  "firstName": "Dimitar",
+  "lastName": "Hristov",
+  "countryId": 36,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 12700,
+      "tce": 47,
+      "tci": 28,
+      "tc": 75,
+      "gs": 2,
+      "js": 9,
+      "jr": 9,
+      "od": 10,
+      "ha": 5,
+      "dr": 5,
+      "pa": 9,
+      "is": 4,
+      "id": 10,
+      "rb": 9,
+      "sb": 5,
+      "st": 6,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:12.352Z"
+    }
+  ]
+}

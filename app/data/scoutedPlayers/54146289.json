@@ -1,0 +1,31 @@
+{
+  "id": 54146289,
+  "firstName": "Šako",
+  "lastName": "Savić",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9111,
+      "tce": 51,
+      "tci": 32,
+      "tc": 83,
+      "gs": 9,
+      "js": 11,
+      "jr": 6,
+      "od": 8,
+      "ha": 8,
+      "dr": 12,
+      "pa": 6,
+      "is": 13,
+      "id": 8,
+      "rb": 8,
+      "sb": 3,
+      "st": 6,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-08-20T19:09:20.284Z"
+    }
+  ]
+}

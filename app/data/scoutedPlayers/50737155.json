@@ -1,0 +1,31 @@
+{
+  "id": 50737155,
+  "firstName": "Vassilis",
+  "lastName": "Kazakos",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 129055,
+      "tce": 85,
+      "tci": 56,
+      "tc": 141,
+      "gs": 9,
+      "js": 15,
+      "jr": 12,
+      "od": 13,
+      "ha": 18,
+      "dr": 18,
+      "pa": 9,
+      "is": 16,
+      "id": 16,
+      "rb": 13,
+      "sb": 11,
+      "st": 2,
+      "ft": 12,
+      "ex": 12,
+      "scoutedAt": "2025-08-20T19:09:23.335Z"
+    }
+  ]
+}

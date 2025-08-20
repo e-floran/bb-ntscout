@@ -1,0 +1,31 @@
+{
+  "id": 53470941,
+  "firstName": "Pat",
+  "lastName": "Tapp",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 28330,
+      "tce": 86,
+      "tci": 28,
+      "tc": 114,
+      "gs": 9,
+      "js": 17,
+      "jr": 10,
+      "od": 11,
+      "ha": 20,
+      "dr": 21,
+      "pa": 7,
+      "is": 12,
+      "id": 8,
+      "rb": 6,
+      "sb": 2,
+      "st": 3,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-08-20T19:09:26.200Z"
+    }
+  ]
+}

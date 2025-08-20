@@ -1,0 +1,31 @@
+{
+  "id": 51211746,
+  "firstName": "Federico",
+  "lastName": "Aguirre",
+  "countryId": 55,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 208088,
+      "tce": 102,
+      "tci": 56,
+      "tc": 158,
+      "gs": 8,
+      "js": 18,
+      "jr": 14,
+      "od": 19,
+      "ha": 20,
+      "dr": 20,
+      "pa": 11,
+      "is": 19,
+      "id": 17,
+      "rb": 9,
+      "sb": 11,
+      "st": 7,
+      "ft": 27,
+      "ex": 14,
+      "scoutedAt": "2025-08-20T19:09:24.706Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53483628,
+  "firstName": "Hilarijus",
+  "lastName": "Vaišnoras",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 19568,
+      "tce": 63,
+      "tci": 40,
+      "tc": 103,
+      "gs": 9,
+      "js": 10,
+      "jr": 9,
+      "od": 10,
+      "ha": 13,
+      "dr": 9,
+      "pa": 12,
+      "is": 7,
+      "id": 12,
+      "rb": 11,
+      "sb": 10,
+      "st": 8,
+      "ft": 12,
+      "ex": 5,
+      "scoutedAt": "2025-08-20T19:09:26.196Z"
+    }
+  ]
+}

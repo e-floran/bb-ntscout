@@ -1,0 +1,31 @@
+{
+  "id": 54617581,
+  "firstName": "Jared",
+  "lastName": "Boston",
+  "countryId": 4,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10239,
+      "tce": 49,
+      "tci": 23,
+      "tc": 72,
+      "gs": 9,
+      "js": 10,
+      "jr": 10,
+      "od": 6,
+      "ha": 9,
+      "dr": 10,
+      "pa": 4,
+      "is": 3,
+      "id": 10,
+      "rb": 9,
+      "sb": 1,
+      "st": 2,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:13.726Z"
+    }
+  ]
+}

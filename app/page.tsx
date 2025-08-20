@@ -47,7 +47,7 @@ export default function IndexPage() {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState("");
   const [teamId, setTeamId] = useState("");
-  const [numSeasons, setNumSeasons] = useState<number>(2);
+  const [numSeasons, setNumSeasons] = useState<number>(1);
 
   // Loading states
   const [loadingSteps, setLoadingSteps] = useState<LoadingStep[]>([]);

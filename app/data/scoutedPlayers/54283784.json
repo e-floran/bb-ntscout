@@ -1,0 +1,31 @@
+{
+  "id": 54283784,
+  "firstName": "Rick",
+  "lastName": "Mayer",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6848,
+      "tce": 56,
+      "tci": 29,
+      "tc": 85,
+      "gs": 7,
+      "js": 12,
+      "jr": 3,
+      "od": 6,
+      "ha": 14,
+      "dr": 13,
+      "pa": 8,
+      "is": 10,
+      "id": 7,
+      "rb": 4,
+      "sb": 8,
+      "st": 5,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:18.076Z"
+    }
+  ]
+}

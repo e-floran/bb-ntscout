@@ -1,0 +1,31 @@
+{
+  "id": 54172628,
+  "firstName": "Aloizs",
+  "lastName": "Zalmanis",
+  "countryId": 46,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10371,
+      "tce": 51,
+      "tci": 26,
+      "tc": 77,
+      "gs": 6,
+      "js": 6,
+      "jr": 9,
+      "od": 8,
+      "ha": 8,
+      "dr": 9,
+      "pa": 11,
+      "is": 8,
+      "id": 8,
+      "rb": 9,
+      "sb": 1,
+      "st": 5,
+      "ft": 13,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:13.028Z"
+    }
+  ]
+}

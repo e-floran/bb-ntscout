@@ -1,0 +1,53 @@
+{
+  "id": 53783264,
+  "firstName": "Ibrahim",
+  "lastName": "Mansiz",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13956,
+      "tce": 65,
+      "tci": 27,
+      "tc": 92,
+      "gs": 5,
+      "js": 11,
+      "jr": 5,
+      "od": 11,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 10,
+      "id": 5,
+      "rb": 6,
+      "sb": 6,
+      "st": 2,
+      "ft": 4,
+      "ex": 5,
+      "scoutedAt": "2025-08-20T19:09:13.732Z"
+    },
+    {
+      "age": 21,
+      "salary": 13956,
+      "tce": 65,
+      "tci": 27,
+      "tc": 92,
+      "gs": 5,
+      "js": 11,
+      "jr": 5,
+      "od": 11,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 10,
+      "id": 5,
+      "rb": 6,
+      "sb": 6,
+      "st": 2,
+      "ft": 4,
+      "ex": 5,
+      "scoutedAt": "2025-08-20T19:09:20.277Z"
+    }
+  ]
+}

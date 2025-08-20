@@ -1,0 +1,31 @@
+{
+  "id": 54681825,
+  "firstName": "David",
+  "lastName": "Bodein",
+  "countryId": 11,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10097,
+      "tce": 39,
+      "tci": 28,
+      "tc": 67,
+      "gs": 3,
+      "js": 10,
+      "jr": 5,
+      "od": 9,
+      "ha": 6,
+      "dr": 3,
+      "pa": 6,
+      "is": 3,
+      "id": 9,
+      "rb": 9,
+      "sb": 7,
+      "st": 4,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:11.645Z"
+    }
+  ]
+}

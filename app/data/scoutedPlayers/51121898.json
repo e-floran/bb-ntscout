@@ -1,0 +1,31 @@
+{
+  "id": 51121898,
+  "firstName": "Arjan",
+  "lastName": "Cigler",
+  "countryId": 27,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 82721,
+      "tce": 80,
+      "tci": 45,
+      "tc": 125,
+      "gs": 8,
+      "js": 17,
+      "jr": 11,
+      "od": 14,
+      "ha": 16,
+      "dr": 15,
+      "pa": 7,
+      "is": 16,
+      "id": 12,
+      "rb": 11,
+      "sb": 6,
+      "st": 3,
+      "ft": 17,
+      "ex": 8,
+      "scoutedAt": "2025-08-20T19:09:23.323Z"
+    }
+  ]
+}

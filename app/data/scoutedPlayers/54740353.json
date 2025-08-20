@@ -1,0 +1,31 @@
+{
+  "id": 54740353,
+  "firstName": "Minutis",
+  "lastName": "Špinkys",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4167,
+      "tce": 34,
+      "tci": 27,
+      "tc": 61,
+      "gs": 8,
+      "js": 4,
+      "jr": 6,
+      "od": 7,
+      "ha": 7,
+      "dr": 3,
+      "pa": 7,
+      "is": 7,
+      "id": 7,
+      "rb": 6,
+      "sb": 7,
+      "st": 7,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-08-20T19:09:18.065Z"
+    }
+  ]
+}

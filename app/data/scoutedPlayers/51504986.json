@@ -1,0 +1,31 @@
+{
+  "id": 51504986,
+  "firstName": "Sebastjan",
+  "lastName": "Šprah",
+  "countryId": 66,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 237803,
+      "tce": 68,
+      "tci": 63,
+      "tc": 131,
+      "gs": 7,
+      "js": 15,
+      "jr": 8,
+      "od": 13,
+      "ha": 11,
+      "dr": 12,
+      "pa": 9,
+      "is": 18,
+      "id": 18,
+      "rb": 15,
+      "sb": 12,
+      "st": 7,
+      "ft": 24,
+      "ex": 12,
+      "scoutedAt": "2025-08-20T19:09:24.704Z"
+    }
+  ]
+}

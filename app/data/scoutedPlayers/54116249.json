@@ -1,0 +1,31 @@
+{
+  "id": 54116249,
+  "firstName": "Lev",
+  "lastName": "Shumilkin",
+  "countryId": 19,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8970,
+      "tce": 59,
+      "tci": 30,
+      "tc": 89,
+      "gs": 6,
+      "js": 12,
+      "jr": 7,
+      "od": 6,
+      "ha": 12,
+      "dr": 14,
+      "pa": 8,
+      "is": 9,
+      "id": 6,
+      "rb": 8,
+      "sb": 7,
+      "st": 6,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-08-20T19:09:18.783Z"
+    }
+  ]
+}

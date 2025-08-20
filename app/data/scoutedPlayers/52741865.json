@@ -1,0 +1,31 @@
+{
+  "id": 52741865,
+  "firstName": "Eugenio",
+  "lastName": "Finotti",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 143190,
+      "tce": 96,
+      "tci": 31,
+      "tc": 127,
+      "gs": 7,
+      "js": 14,
+      "jr": 8,
+      "od": 16,
+      "ha": 22,
+      "dr": 22,
+      "pa": 14,
+      "is": 10,
+      "id": 6,
+      "rb": 9,
+      "sb": 6,
+      "st": 3,
+      "ft": 14,
+      "ex": 6,
+      "scoutedAt": "2025-08-20T19:09:26.196Z"
+    }
+  ]
+}

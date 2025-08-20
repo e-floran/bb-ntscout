@@ -1,0 +1,31 @@
+{
+  "id": 51358292,
+  "firstName": "Kenny",
+  "lastName": "Sorriaux",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 56607,
+      "tce": 78,
+      "tci": 46,
+      "tc": 124,
+      "gs": 8,
+      "js": 15,
+      "jr": 8,
+      "od": 13,
+      "ha": 15,
+      "dr": 19,
+      "pa": 8,
+      "is": 16,
+      "id": 17,
+      "rb": 6,
+      "sb": 7,
+      "st": 6,
+      "ft": 7,
+      "ex": 8,
+      "scoutedAt": "2025-08-20T19:09:23.333Z"
+    }
+  ]
+}
