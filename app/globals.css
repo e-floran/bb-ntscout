@@ -263,12 +263,14 @@ body {
     flex-direction: column !important;
     align-items: center !important;
     min-height: unset !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
   .header-title {
     text-align: center !important;
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     width: 100% !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.3rem !important;
   }
   .header-user {
     align-items: center !important;

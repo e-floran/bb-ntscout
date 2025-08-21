@@ -32,14 +32,15 @@ export function Header() {
       style={{
         maxWidth: "1800px",
         width: "100%",
-        margin: "2rem auto 1.5rem auto",
+        margin: "0 auto 1.5rem auto",
         background: "linear-gradient(180deg, #1976d2 0%, #133a8a 100%)",
         color: "white",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         boxSizing: "border-box",
-        borderRadius: "12px",
+        borderBottomLeftRadius: "12px",
+        borderBottomRightRadius: "12px",
         padding: "1.5rem 2.5rem",
         minHeight: "64px",
         boxShadow: "0 4px 24px rgba(60, 84, 137, 0.1)",
@@ -74,13 +75,17 @@ export function Header() {
             <b>{userName}</b>
           </span>
           <IconButton
-            size="small"
             aria-label="Déconnexion"
             onClick={handleLogout}
             sx={{
+              p: "5px",
+              fontSize: "0.7rem",
               background: "#f5f7fa",
               color: "#1976d2",
               boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+              "& .MuiSvgIcon-root": {
+                fontSize: "1.2rem",
+             },
               "&:hover": {
                 background: "#e3eaf7",
                 color: "#1565c0",
