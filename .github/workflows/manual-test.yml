@@ -33,7 +33,7 @@ jobs:
           if [ "${{ github.event.inputs.script }}" = "friday" ]; then
             npm run friday-script
           else
-            npm run check-new-players
+            npm run monday-script
           fi
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}

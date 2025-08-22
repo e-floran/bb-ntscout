@@ -68,7 +68,7 @@ jobs:
         run: npm ci
 
       - name: Run Tuesday Script
-        run: npm run check-new-players
+        run: npm run monday-check
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
