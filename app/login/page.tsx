@@ -3,8 +3,12 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import Button from "@mui/material/Button";
+import CircularProgress from "@mui/material/CircularProgress";
+
 export default function LoginPage() {
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const loginRef = useRef<HTMLInputElement>(null);
@@ -13,12 +17,14 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     const currentLogin = loginRef.current?.value || "";
     const currentPassword = passwordRef.current?.value || "";
 
     if (!currentLogin || !currentPassword) {
       setError("Veuillez saisir votre login et mot de passe.");
+      setLoading(false);
       return;
     }
 
@@ -40,6 +46,8 @@ export default function LoginPage() {
       }
     } catch (err) {
       setError("Erreur réseau, veuillez réessayer.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,9 +77,20 @@ export default function LoginPage() {
           autoComplete="current-password"
         />
         {error && <div className="form-error">{error}</div>}
-        <button className="form-submit" type="submit">
-          Submit
-        </button>
+        <Button
+          className="form-submit"
+          type="submit"
+          variant="contained"
+          fullWidth
+          disabled={loading}
+          sx={{ mt: 2, height: 50, fontWeight: 600, fontSize: "1.1rem", borderRadius: 2, textTransform: "none" }}
+        >
+          {loading ? (
+          <CircularProgress size={22} sx={{ color: "white" }} />
+          ) : (
+            "Submit"
+          )}
+        </Button>
       </form>
     </div>
   );
