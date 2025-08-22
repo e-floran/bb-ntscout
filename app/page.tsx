@@ -137,7 +137,11 @@ export default function IndexPage() {
     fetch("/api/analyzeTeam")
       .then(async (res) => {
         const data = await res.json();
-        if (data.error) setErr(data.error);
+        if (data.error === "Not authenticated") {
+            setErr("Vous devez vous connecter.");
+        } else if (data.error === "Session expired") {
+            setErr("Votre session a expiré, veuillez vous reconnecter.");
+        }
         else {
           setAnalysis(data);
           setRawMatchData(data);
@@ -179,6 +183,10 @@ export default function IndexPage() {
     }).toString();
 
     const res = await fetch(`/api/analyzeTeam?${params}`);
+    if (res.status === 401) {
+      window.location.href = "/login";
+      return;
+    }
     const data = await res.json();
     if (data.error) setErr(data.error);
     else {

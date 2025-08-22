@@ -38,11 +38,11 @@ export async function GET(req: NextRequest) {
   // --- User authentication and verification ---
   const login = req.cookies.get("authenticated_user")?.value;
   if (!login) {
-    return NextResponse.redirect("/login");
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
   const user = users.find((u) => u.login === login && u.active);
   if (!user) {
-    return NextResponse.redirect("/login");
+    return NextResponse.json({ error: "Session expired" }, { status: 401 });
   }
 
   // --- Read query params for advanced analysis ---
