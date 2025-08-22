@@ -4,11 +4,12 @@
 import { useEffect, useState } from "react";
 import { CollapsibleSection } from "./CollapsibleSection";
 import { DataTable } from "./DataTable";
+import { SectionId } from "../page";
 
 interface ScoutedPlayersSectionProps {
   teamId: string | null;
   isCollapsed: boolean;
-  onToggle: (sectionId: string) => void;
+  onToggle: (sectionId: SectionId) => void;
   sortConfig: {
     table: string;
     column: number;
