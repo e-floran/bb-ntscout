@@ -31,9 +31,9 @@ jobs:
       - name: Run Selected Script
         run: |
           if [ "${{ github.event.inputs.script }}" = "friday" ]; then
-            npm run friday-script
+            npm run friday-check
           else
-            npm run monday-script
+            npm run monday-check
           fi
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}

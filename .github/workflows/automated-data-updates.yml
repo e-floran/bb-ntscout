@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Run Friday Script
-        run: npm run friday-script
+        run: npm run friday-check
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
