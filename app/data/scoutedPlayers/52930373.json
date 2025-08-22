@@ -1,0 +1,31 @@
+{
+  "id": 52930373,
+  "firstName": "Scott",
+  "lastName": "Kennedy",
+  "countryId": 64,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 27186,
+      "tce": 77,
+      "tci": 39,
+      "tc": 116,
+      "gs": 5,
+      "js": 13,
+      "jr": 10,
+      "od": 13,
+      "ha": 17,
+      "dr": 19,
+      "pa": 5,
+      "is": 14,
+      "id": 10,
+      "rb": 10,
+      "sb": 5,
+      "st": 4,
+      "ft": 16,
+      "ex": 5,
+      "scoutedAt": "2025-08-22T11:23:20.586Z"
+    }
+  ]
+}

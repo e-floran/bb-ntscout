@@ -1,0 +1,31 @@
+{
+  "id": 53735573,
+  "firstName": "Angelo",
+  "lastName": "Carpentieri",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12052,
+      "tce": 70,
+      "tci": 19,
+      "tc": 89,
+      "gs": 8,
+      "js": 15,
+      "jr": 4,
+      "od": 8,
+      "ha": 17,
+      "dr": 18,
+      "pa": 8,
+      "is": 7,
+      "id": 6,
+      "rb": 3,
+      "sb": 3,
+      "st": 4,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-08-22T11:23:04.784Z"
+    }
+  ]
+}

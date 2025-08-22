@@ -1,0 +1,31 @@
+{
+  "id": 48998072,
+  "firstName": "Shayne",
+  "lastName": "Ali",
+  "countryId": 99,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 159173,
+      "tce": 95,
+      "tci": 33,
+      "tc": 128,
+      "gs": 9,
+      "js": 17,
+      "jr": 11,
+      "od": 17,
+      "ha": 16,
+      "dr": 21,
+      "pa": 13,
+      "is": 11,
+      "id": 10,
+      "rb": 4,
+      "sb": 8,
+      "st": 2,
+      "ft": 12,
+      "ex": 17,
+      "scoutedAt": "2025-08-22T11:23:17.570Z"
+    }
+  ]
+}

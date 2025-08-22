@@ -1,0 +1,53 @@
+{
+  "id": 54231590,
+  "firstName": "Sajjad",
+  "lastName": "Atabay",
+  "countryId": 89,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19388,
+      "tce": 68,
+      "tci": 23,
+      "tc": 91,
+      "gs": 6,
+      "js": 13,
+      "jr": 11,
+      "od": 14,
+      "ha": 10,
+      "dr": 11,
+      "pa": 9,
+      "is": 8,
+      "id": 6,
+      "rb": 4,
+      "sb": 5,
+      "st": 6,
+      "ft": 4,
+      "ex": 4,
+      "scoutedAt": "2025-08-22T11:23:04.098Z"
+    },
+    {
+      "age": 21,
+      "salary": 19388,
+      "tce": 68,
+      "tci": 23,
+      "tc": 91,
+      "gs": 6,
+      "js": 13,
+      "jr": 11,
+      "od": 14,
+      "ha": 10,
+      "dr": 11,
+      "pa": 9,
+      "is": 8,
+      "id": 6,
+      "rb": 4,
+      "sb": 5,
+      "st": 6,
+      "ft": 4,
+      "ex": 4,
+      "scoutedAt": "2025-08-22T11:23:11.028Z"
+    }
+  ]
+}

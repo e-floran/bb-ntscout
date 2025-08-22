@@ -1,0 +1,31 @@
+{
+  "id": 50527485,
+  "firstName": "Hieronim",
+  "lastName": "Wudarczyk",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 214761,
+      "tce": 107,
+      "tci": 44,
+      "tc": 151,
+      "gs": 7,
+      "js": 22,
+      "jr": 12,
+      "od": 20,
+      "ha": 19,
+      "dr": 21,
+      "pa": 13,
+      "is": 20,
+      "id": 11,
+      "rb": 8,
+      "sb": 5,
+      "st": 6,
+      "ft": 26,
+      "ex": 13,
+      "scoutedAt": "2025-08-22T11:23:16.848Z"
+    }
+  ]
+}

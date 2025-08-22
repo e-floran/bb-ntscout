@@ -1,0 +1,31 @@
+{
+  "id": 54851403,
+  "firstName": "Gyong-Si",
+  "lastName": "Lee",
+  "countryId": 23,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4298,
+      "tce": 39,
+      "tci": 28,
+      "tc": 67,
+      "gs": 6,
+      "js": 4,
+      "jr": 5,
+      "od": 8,
+      "ha": 7,
+      "dr": 11,
+      "pa": 4,
+      "is": 9,
+      "id": 9,
+      "rb": 5,
+      "sb": 5,
+      "st": 8,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:11.023Z"
+    }
+  ]
+}

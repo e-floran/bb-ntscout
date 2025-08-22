@@ -1,0 +1,31 @@
+{
+  "id": 54206415,
+  "firstName": "Giga",
+  "lastName": "Jordania",
+  "countryId": 62,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 3790,
+      "tce": 39,
+      "tci": 20,
+      "tc": 59,
+      "gs": 4,
+      "js": 8,
+      "jr": 5,
+      "od": 7,
+      "ha": 6,
+      "dr": 10,
+      "pa": 3,
+      "is": 7,
+      "id": 7,
+      "rb": 4,
+      "sb": 2,
+      "st": 7,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-22T11:23:11.686Z"
+    }
+  ]
+}

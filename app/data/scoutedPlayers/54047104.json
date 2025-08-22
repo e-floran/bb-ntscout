@@ -1,0 +1,31 @@
+{
+  "id": 54047104,
+  "firstName": "Angelomaria",
+  "lastName": "Zingaretti",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4136,
+      "tce": 47,
+      "tci": 12,
+      "tc": 59,
+      "gs": 6,
+      "js": 10,
+      "jr": 7,
+      "od": 6,
+      "ha": 9,
+      "dr": 10,
+      "pa": 5,
+      "is": 4,
+      "id": 2,
+      "rb": 4,
+      "sb": 2,
+      "st": 7,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:11.021Z"
+    }
+  ]
+}

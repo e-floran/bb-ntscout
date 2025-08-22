@@ -1,0 +1,31 @@
+{
+  "id": 54774993,
+  "firstName": "Grigor",
+  "lastName": "Tonev",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4824,
+      "tce": 48,
+      "tci": 23,
+      "tc": 71,
+      "gs": 8,
+      "js": 10,
+      "jr": 2,
+      "od": 5,
+      "ha": 12,
+      "dr": 10,
+      "pa": 9,
+      "is": 4,
+      "id": 7,
+      "rb": 8,
+      "sb": 4,
+      "st": 3,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:13.077Z"
+    }
+  ]
+}

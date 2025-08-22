@@ -1,0 +1,31 @@
+{
+  "id": 50780267,
+  "firstName": "Juozapas",
+  "lastName": "Kosionokas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 110180,
+      "tce": 85,
+      "tci": 48,
+      "tc": 133,
+      "gs": 9,
+      "js": 19,
+      "jr": 12,
+      "od": 13,
+      "ha": 16,
+      "dr": 17,
+      "pa": 8,
+      "is": 22,
+      "id": 12,
+      "rb": 9,
+      "sb": 5,
+      "st": 7,
+      "ft": 5,
+      "ex": 12,
+      "scoutedAt": "2025-08-22T11:23:18.231Z"
+    }
+  ]
+}

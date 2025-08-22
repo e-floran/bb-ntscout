@@ -1,0 +1,31 @@
+{
+  "id": 49687183,
+  "firstName": "Vígmundur",
+  "lastName": "Gunnlaugsson",
+  "countryId": 78,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 200349,
+      "tce": 89,
+      "tci": 59,
+      "tc": 148,
+      "gs": 9,
+      "js": 17,
+      "jr": 10,
+      "od": 13,
+      "ha": 17,
+      "dr": 20,
+      "pa": 12,
+      "is": 19,
+      "id": 16,
+      "rb": 13,
+      "sb": 11,
+      "st": 5,
+      "ft": 21,
+      "ex": 23,
+      "scoutedAt": "2025-08-22T11:23:17.572Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52480670,
+  "firstName": "Vaišgirdas",
+  "lastName": "Cujanas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 65867,
+      "tce": 86,
+      "tci": 42,
+      "tc": 128,
+      "gs": 6,
+      "js": 19,
+      "jr": 13,
+      "od": 12,
+      "ha": 15,
+      "dr": 18,
+      "pa": 9,
+      "is": 16,
+      "id": 13,
+      "rb": 5,
+      "sb": 8,
+      "st": 4,
+      "ft": 15,
+      "ex": 5,
+      "scoutedAt": "2025-08-22T11:23:20.588Z"
+    }
+  ]
+}

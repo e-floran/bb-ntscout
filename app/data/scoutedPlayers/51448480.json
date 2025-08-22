@@ -1,0 +1,31 @@
+{
+  "id": 51448480,
+  "firstName": "Omer",
+  "lastName": "Rustić",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 213211,
+      "tce": 92,
+      "tci": 60,
+      "tc": 152,
+      "gs": 9,
+      "js": 15,
+      "jr": 10,
+      "od": 17,
+      "ha": 17,
+      "dr": 17,
+      "pa": 16,
+      "is": 19,
+      "id": 18,
+      "rb": 13,
+      "sb": 10,
+      "st": 5,
+      "ft": 20,
+      "ex": 13,
+      "scoutedAt": "2025-08-22T11:23:18.239Z"
+    }
+  ]
+}

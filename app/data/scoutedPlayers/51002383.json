@@ -1,0 +1,31 @@
+{
+  "id": 51002383,
+  "firstName": "Serafí",
+  "lastName": "Pallares",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 194583,
+      "tce": 105,
+      "tci": 50,
+      "tc": 155,
+      "gs": 7,
+      "js": 19,
+      "jr": 13,
+      "od": 21,
+      "ha": 20,
+      "dr": 20,
+      "pa": 12,
+      "is": 21,
+      "id": 13,
+      "rb": 8,
+      "sb": 8,
+      "st": 3,
+      "ft": 20,
+      "ex": 13,
+      "scoutedAt": "2025-08-22T11:23:17.569Z"
+    }
+  ]
+}

@@ -11,7 +11,9 @@
     "update-players": "tsx scripts/update-players-data.ts",
     "monday-check": "tsx scripts/checkNewPlayers.ts",
     "friday-check": "tsx scripts/fridayScript.ts",
-    "fetch-players": "tsx scripts/fetch-players-bbapi.ts"
+    "fetch-players": "tsx scripts/fetch-players-bbapi.ts",
+    "monday-manual": "tsx scripts/manual/mondayScript.ts",
+    "friday-manual": "tsx scripts/manual/fridayScript.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

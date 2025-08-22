@@ -1,0 +1,31 @@
+{
+  "id": 52926617,
+  "firstName": "Arso",
+  "lastName": "Chadikoski",
+  "countryId": 49,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 16773,
+      "tce": 73,
+      "tci": 28,
+      "tc": 101,
+      "gs": 7,
+      "js": 15,
+      "jr": 6,
+      "od": 7,
+      "ha": 18,
+      "dr": 20,
+      "pa": 7,
+      "is": 12,
+      "id": 3,
+      "rb": 6,
+      "sb": 7,
+      "st": 4,
+      "ft": 5,
+      "ex": 5,
+      "scoutedAt": "2025-08-22T11:23:21.275Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52174330,
+  "firstName": "Tadeusz",
+  "lastName": "Swiety",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 118191,
+      "tce": 61,
+      "tci": 59,
+      "tc": 120,
+      "gs": 8,
+      "js": 11,
+      "jr": 9,
+      "od": 10,
+      "ha": 9,
+      "dr": 14,
+      "pa": 8,
+      "is": 20,
+      "id": 17,
+      "rb": 11,
+      "sb": 11,
+      "st": 5,
+      "ft": 25,
+      "ex": 9,
+      "scoutedAt": "2025-08-22T11:23:17.570Z"
+    }
+  ]
+}

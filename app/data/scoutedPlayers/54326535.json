@@ -1,0 +1,31 @@
+{
+  "id": 54326535,
+  "firstName": "Ahmet",
+  "lastName": "Ceviz",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7410,
+      "tce": 55,
+      "tci": 19,
+      "tc": 74,
+      "gs": 8,
+      "js": 7,
+      "jr": 11,
+      "od": 10,
+      "ha": 11,
+      "dr": 8,
+      "pa": 8,
+      "is": 4,
+      "id": 5,
+      "rb": 6,
+      "sb": 4,
+      "st": 9,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:12.383Z"
+    }
+  ]
+}

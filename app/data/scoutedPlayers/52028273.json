@@ -1,0 +1,31 @@
+{
+  "id": 52028273,
+  "firstName": "Loris",
+  "lastName": "Borzì",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 128615,
+      "tce": 94,
+      "tci": 43,
+      "tc": 137,
+      "gs": 9,
+      "js": 21,
+      "jr": 11,
+      "od": 17,
+      "ha": 19,
+      "dr": 18,
+      "pa": 8,
+      "is": 19,
+      "id": 10,
+      "rb": 9,
+      "sb": 5,
+      "st": 2,
+      "ft": 6,
+      "ex": 7,
+      "scoutedAt": "2025-08-22T11:23:20.579Z"
+    }
+  ]
+}

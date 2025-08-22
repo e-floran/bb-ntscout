@@ -1,0 +1,31 @@
+{
+  "id": 54177201,
+  "firstName": "Gyula",
+  "lastName": "Járomy",
+  "countryId": 48,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8280,
+      "tce": 63,
+      "tci": 22,
+      "tc": 85,
+      "gs": 8,
+      "js": 11,
+      "jr": 4,
+      "od": 10,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 8,
+      "id": 4,
+      "rb": 7,
+      "sb": 3,
+      "st": 4,
+      "ft": 2,
+      "ex": 4,
+      "scoutedAt": "2025-08-22T11:23:11.697Z"
+    }
+  ]
+}

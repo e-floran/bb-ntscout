@@ -1,0 +1,31 @@
+{
+  "id": 50706828,
+  "firstName": "Donato",
+  "lastName": "Mureddu",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 220230,
+      "tce": 99,
+      "tci": 57,
+      "tc": 156,
+      "gs": 8,
+      "js": 17,
+      "jr": 9,
+      "od": 19,
+      "ha": 20,
+      "dr": 21,
+      "pa": 13,
+      "is": 20,
+      "id": 18,
+      "rb": 11,
+      "sb": 8,
+      "st": 4,
+      "ft": 16,
+      "ex": 11,
+      "scoutedAt": "2025-08-22T11:23:17.572Z"
+    }
+  ]
+}

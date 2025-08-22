@@ -1,0 +1,31 @@
+{
+  "id": 54659356,
+  "firstName": "Robert",
+  "lastName": "Dechantsreiter",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 7092,
+      "tce": 25,
+      "tci": 35,
+      "tc": 60,
+      "gs": 9,
+      "js": 5,
+      "jr": 7,
+      "od": 1,
+      "ha": 5,
+      "dr": 5,
+      "pa": 2,
+      "is": 10,
+      "id": 7,
+      "rb": 8,
+      "sb": 10,
+      "st": 8,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-08-22T11:23:11.699Z"
+    }
+  ]
+}

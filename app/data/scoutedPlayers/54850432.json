@@ -1,0 +1,31 @@
+{
+  "id": 54850432,
+  "firstName": "Joven",
+  "lastName": "Migallos",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4035,
+      "tce": 45,
+      "tci": 17,
+      "tc": 62,
+      "gs": 7,
+      "js": 5,
+      "jr": 7,
+      "od": 7,
+      "ha": 10,
+      "dr": 9,
+      "pa": 7,
+      "is": 3,
+      "id": 7,
+      "rb": 3,
+      "sb": 4,
+      "st": 6,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:11.697Z"
+    }
+  ]
+}

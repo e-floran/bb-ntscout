@@ -1,0 +1,31 @@
+{
+  "id": 53551351,
+  "firstName": "Piotr",
+  "lastName": "Przesławski",
+  "countryId": 58,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 30367,
+      "tce": 54,
+      "tci": 46,
+      "tc": 100,
+      "gs": 8,
+      "js": 10,
+      "jr": 3,
+      "od": 7,
+      "ha": 13,
+      "dr": 16,
+      "pa": 5,
+      "is": 12,
+      "id": 15,
+      "rb": 10,
+      "sb": 9,
+      "st": 3,
+      "ft": 15,
+      "ex": 6,
+      "scoutedAt": "2025-08-22T11:23:21.284Z"
+    }
+  ]
+}

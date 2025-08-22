@@ -1,0 +1,31 @@
+{
+  "id": 54078259,
+  "firstName": "Alkis",
+  "lastName": "Papatrichas",
+  "countryId": 12,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11194,
+      "tce": 57,
+      "tci": 25,
+      "tc": 82,
+      "gs": 9,
+      "js": 13,
+      "jr": 10,
+      "od": 6,
+      "ha": 13,
+      "dr": 11,
+      "pa": 4,
+      "is": 9,
+      "id": 4,
+      "rb": 9,
+      "sb": 3,
+      "st": 6,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-22T11:23:06.146Z"
+    }
+  ]
+}

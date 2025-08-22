@@ -1,0 +1,31 @@
+{
+  "id": 53922540,
+  "firstName": "Mehrshad",
+  "lastName": "Hafezi",
+  "countryId": 89,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 18462,
+      "tce": 72,
+      "tci": 33,
+      "tc": 105,
+      "gs": 8,
+      "js": 14,
+      "jr": 11,
+      "od": 12,
+      "ha": 12,
+      "dr": 13,
+      "pa": 10,
+      "is": 10,
+      "id": 6,
+      "rb": 7,
+      "sb": 10,
+      "st": 4,
+      "ft": 6,
+      "ex": 5,
+      "scoutedAt": "2025-08-22T11:23:21.282Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54188948,
+  "firstName": "Mateusz",
+  "lastName": "Karpinski",
+  "countryId": 58,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17009,
+      "tce": 76,
+      "tci": 23,
+      "tc": 99,
+      "gs": 8,
+      "js": 16,
+      "jr": 9,
+      "od": 9,
+      "ha": 18,
+      "dr": 17,
+      "pa": 7,
+      "is": 5,
+      "id": 10,
+      "rb": 5,
+      "sb": 3,
+      "st": 5,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-22T11:23:05.444Z"
+    }
+  ]
+}

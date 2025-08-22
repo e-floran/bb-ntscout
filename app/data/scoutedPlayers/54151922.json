@@ -1,0 +1,31 @@
+{
+  "id": 54151922,
+  "firstName": "Fidan",
+  "lastName": "Bešlić",
+  "countryId": 35,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17097,
+      "tce": 71,
+      "tci": 26,
+      "tc": 97,
+      "gs": 9,
+      "js": 13,
+      "jr": 6,
+      "od": 6,
+      "ha": 18,
+      "dr": 19,
+      "pa": 9,
+      "is": 13,
+      "id": 1,
+      "rb": 6,
+      "sb": 6,
+      "st": 9,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-08-22T11:23:05.450Z"
+    }
+  ]
+}

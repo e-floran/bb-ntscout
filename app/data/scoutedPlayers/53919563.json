@@ -1,0 +1,31 @@
+{
+  "id": 53919563,
+  "firstName": "Thjeshtak",
+  "lastName": "Duro",
+  "countryId": 79,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 81108,
+      "tce": 27,
+      "tci": 57,
+      "tc": 84,
+      "gs": 9,
+      "js": 4,
+      "jr": 8,
+      "od": 4,
+      "ha": 3,
+      "dr": 6,
+      "pa": 2,
+      "is": 15,
+      "id": 17,
+      "rb": 14,
+      "sb": 11,
+      "st": 2,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-08-22T11:23:06.148Z"
+    }
+  ]
+}

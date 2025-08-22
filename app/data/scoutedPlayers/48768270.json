@@ -1,0 +1,31 @@
+{
+  "id": 48768270,
+  "firstName": "Wilburn",
+  "lastName": "Holley",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 195048,
+      "tce": 102,
+      "tci": 45,
+      "tc": 147,
+      "gs": 9,
+      "js": 18,
+      "jr": 14,
+      "od": 22,
+      "ha": 18,
+      "dr": 20,
+      "pa": 10,
+      "is": 15,
+      "id": 16,
+      "rb": 6,
+      "sb": 8,
+      "st": 3,
+      "ft": 18,
+      "ex": 17,
+      "scoutedAt": "2025-08-22T11:23:18.230Z"
+    }
+  ]
+}

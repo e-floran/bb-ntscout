@@ -1,0 +1,31 @@
+{
+  "id": 52437613,
+  "firstName": "Mimis",
+  "lastName": "Pachtas",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 58605,
+      "tce": 89,
+      "tci": 31,
+      "tc": 120,
+      "gs": 8,
+      "js": 16,
+      "jr": 15,
+      "od": 12,
+      "ha": 16,
+      "dr": 18,
+      "pa": 12,
+      "is": 13,
+      "id": 8,
+      "rb": 6,
+      "sb": 4,
+      "st": 3,
+      "ft": 3,
+      "ex": 8,
+      "scoutedAt": "2025-08-22T11:23:21.275Z"
+    }
+  ]
+}

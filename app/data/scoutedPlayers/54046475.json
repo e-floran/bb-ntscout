@@ -1,0 +1,31 @@
+{
+  "id": 54046475,
+  "firstName": "Daniele",
+  "lastName": "Popone",
+  "countryId": 10,
+  "potential": 4,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10532,
+      "tce": 31,
+      "tci": 38,
+      "tc": 69,
+      "gs": 6,
+      "js": 6,
+      "jr": 1,
+      "od": 3,
+      "ha": 5,
+      "dr": 8,
+      "pa": 8,
+      "is": 10,
+      "id": 9,
+      "rb": 10,
+      "sb": 9,
+      "st": 2,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-22T11:23:05.446Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54386542,
+  "firstName": "Thodoris",
+  "lastName": "Fouskas",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6968,
+      "tce": 46,
+      "tci": 27,
+      "tc": 73,
+      "gs": 7,
+      "js": 9,
+      "jr": 3,
+      "od": 10,
+      "ha": 9,
+      "dr": 10,
+      "pa": 5,
+      "is": 6,
+      "id": 8,
+      "rb": 10,
+      "sb": 3,
+      "st": 6,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-22T11:23:12.385Z"
+    }
+  ]
+}

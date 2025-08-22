@@ -1,0 +1,31 @@
+{
+  "id": 51155554,
+  "firstName": "Károly",
+  "lastName": "Udvardy",
+  "countryId": 48,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 214455,
+      "tce": 103,
+      "tci": 42,
+      "tc": 145,
+      "gs": 8,
+      "js": 20,
+      "jr": 17,
+      "od": 20,
+      "ha": 17,
+      "dr": 19,
+      "pa": 10,
+      "is": 12,
+      "id": 15,
+      "rb": 6,
+      "sb": 9,
+      "st": 5,
+      "ft": 12,
+      "ex": 11,
+      "scoutedAt": "2025-08-22T11:23:17.571Z"
+    }
+  ]
+}

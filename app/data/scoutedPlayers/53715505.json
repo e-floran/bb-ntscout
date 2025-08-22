@@ -1,0 +1,31 @@
+{
+  "id": 53715505,
+  "firstName": "Guerau",
+  "lastName": "Calderó",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5036,
+      "tce": 39,
+      "tci": 27,
+      "tc": 66,
+      "gs": 7,
+      "js": 7,
+      "jr": 5,
+      "od": 4,
+      "ha": 7,
+      "dr": 9,
+      "pa": 7,
+      "is": 9,
+      "id": 7,
+      "rb": 7,
+      "sb": 4,
+      "st": 6,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-08-22T11:23:11.028Z"
+    }
+  ]
+}

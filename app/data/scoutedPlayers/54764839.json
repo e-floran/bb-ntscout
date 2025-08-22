@@ -1,0 +1,31 @@
+{
+  "id": 54764839,
+  "firstName": "Vlada",
+  "lastName": "Milićević",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2688,
+      "tce": 43,
+      "tci": 14,
+      "tc": 57,
+      "gs": 9,
+      "js": 8,
+      "jr": 2,
+      "od": 7,
+      "ha": 10,
+      "dr": 10,
+      "pa": 6,
+      "is": 3,
+      "id": 5,
+      "rb": 4,
+      "sb": 2,
+      "st": 5,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:13.074Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54355798,
+  "firstName": "Renato",
+  "lastName": "Gandolfi",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4423,
+      "tce": 43,
+      "tci": 28,
+      "tc": 71,
+      "gs": 7,
+      "js": 11,
+      "jr": 2,
+      "od": 4,
+      "ha": 10,
+      "dr": 11,
+      "pa": 5,
+      "is": 7,
+      "id": 7,
+      "rb": 6,
+      "sb": 8,
+      "st": 6,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-22T11:23:13.077Z"
+    }
+  ]
+}

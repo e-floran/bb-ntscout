@@ -1,0 +1,31 @@
+{
+  "id": 54334330,
+  "firstName": "Gurdunfo",
+  "lastName": "Bendoiro",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3648,
+      "tce": 36,
+      "tci": 19,
+      "tc": 55,
+      "gs": 4,
+      "js": 7,
+      "jr": 7,
+      "od": 5,
+      "ha": 4,
+      "dr": 7,
+      "pa": 6,
+      "is": 5,
+      "id": 5,
+      "rb": 7,
+      "sb": 2,
+      "st": 1,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:11.696Z"
+    }
+  ]
+}

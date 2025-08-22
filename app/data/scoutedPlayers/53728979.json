@@ -1,0 +1,31 @@
+{
+  "id": 53728979,
+  "firstName": "Marinus",
+  "lastName": "Schöttl",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 4577,
+      "tce": 27,
+      "tci": 25,
+      "tc": 52,
+      "gs": 5,
+      "js": 9,
+      "jr": 6,
+      "od": 4,
+      "ha": 4,
+      "dr": 3,
+      "pa": 1,
+      "is": 8,
+      "id": 7,
+      "rb": 5,
+      "sb": 5,
+      "st": 5,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:11.699Z"
+    }
+  ]
+}

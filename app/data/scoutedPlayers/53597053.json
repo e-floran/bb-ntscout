@@ -1,0 +1,31 @@
+{
+  "id": 53597053,
+  "firstName": "Ndongo",
+  "lastName": "Diouf",
+  "countryId": 93,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 19327,
+      "tce": 62,
+      "tci": 40,
+      "tc": 102,
+      "gs": 8,
+      "js": 12,
+      "jr": 12,
+      "od": 5,
+      "ha": 12,
+      "dr": 17,
+      "pa": 4,
+      "is": 12,
+      "id": 12,
+      "rb": 7,
+      "sb": 9,
+      "st": 6,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-22T11:23:21.275Z"
+    }
+  ]
+}

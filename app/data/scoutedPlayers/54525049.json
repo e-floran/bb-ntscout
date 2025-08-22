@@ -1,0 +1,31 @@
+{
+  "id": 54525049,
+  "firstName": "Lin",
+  "lastName": "Chee Long",
+  "countryId": 70,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 16265,
+      "tce": 38,
+      "tci": 41,
+      "tc": 79,
+      "gs": 8,
+      "js": 10,
+      "jr": 4,
+      "od": 4,
+      "ha": 5,
+      "dr": 11,
+      "pa": 4,
+      "is": 9,
+      "id": 9,
+      "rb": 14,
+      "sb": 9,
+      "st": 1,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-22T11:23:06.131Z"
+    }
+  ]
+}

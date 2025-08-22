@@ -1,0 +1,31 @@
+{
+  "id": 50892505,
+  "firstName": "Alberto",
+  "lastName": "Ocaña",
+  "countryId": 80,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 223938,
+      "tce": 67,
+      "tci": 60,
+      "tc": 127,
+      "gs": 9,
+      "js": 14,
+      "jr": 6,
+      "od": 13,
+      "ha": 12,
+      "dr": 11,
+      "pa": 11,
+      "is": 20,
+      "id": 20,
+      "rb": 12,
+      "sb": 8,
+      "st": 9,
+      "ft": 19,
+      "ex": 14,
+      "scoutedAt": "2025-08-22T11:23:17.571Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52882440,
+  "firstName": "Konstanty",
+  "lastName": "Poświatowski",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 26630,
+      "tce": 71,
+      "tci": 32,
+      "tc": 103,
+      "gs": 9,
+      "js": 12,
+      "jr": 9,
+      "od": 7,
+      "ha": 16,
+      "dr": 16,
+      "pa": 11,
+      "is": 9,
+      "id": 8,
+      "rb": 10,
+      "sb": 5,
+      "st": 4,
+      "ft": 12,
+      "ex": 4,
+      "scoutedAt": "2025-08-22T11:23:21.276Z"
+    }
+  ]
+}

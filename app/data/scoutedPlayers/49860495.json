@@ -1,0 +1,31 @@
+{
+  "id": 49860495,
+  "firstName": "George",
+  "lastName": "Haasnoot",
+  "countryId": 16,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 280629,
+      "tce": 112,
+      "tci": 39,
+      "tc": 151,
+      "gs": 8,
+      "js": 20,
+      "jr": 15,
+      "od": 19,
+      "ha": 21,
+      "dr": 22,
+      "pa": 15,
+      "is": 12,
+      "id": 12,
+      "rb": 9,
+      "sb": 6,
+      "st": 3,
+      "ft": 6,
+      "ex": 16,
+      "scoutedAt": "2025-08-22T11:23:16.841Z"
+    }
+  ]
+}
