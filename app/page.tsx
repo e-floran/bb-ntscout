@@ -10,6 +10,7 @@ import { StrategyFilters } from "@/app/components/StrategyFilters";
 import { CollapsibleSection } from "@/app/components/CollapsibleSection";
 import { DataTable } from "@/app/components/DataTable";
 import { RecentGamesCard } from "@/app/components/RecentGamesCard";
+import { ScoutedPlayersSection } from "@/app/components/ScoutedPlayersSection";
 import { useDataFiltering } from "@/app/hooks/useDataFiltering";
 import {
   stratRows,
@@ -35,7 +36,8 @@ export type SectionId =
   | "player-stats"
   | "effort-variation"
   | "player-history"
-  | "recent-games";
+  | "recent-games"
+  | "scouted-players";
 
 const stepDuration = 2000;
 
@@ -77,7 +79,8 @@ export default function IndexPage() {
     "player-stats": true,
     "effort-variation": true,
     "player-history": true,
-    "recent-games": true, // NEW: Collapsed by default
+    "recent-games": true,
+    "scouted-players": true,
   });
 
   const router = useRouter();
@@ -138,11 +141,10 @@ export default function IndexPage() {
       .then(async (res) => {
         const data = await res.json();
         if (data.error === "Not authenticated") {
-            setErr("Vous devez vous connecter.");
+          setErr("Vous devez vous connecter.");
         } else if (data.error === "Session expired") {
-            setErr("Votre session a expiré, veuillez vous reconnecter.");
-        }
-        else {
+          setErr("Votre session a expiré, veuillez vous reconnecter.");
+        } else {
           setAnalysis(data);
           setRawMatchData(data);
         }
@@ -430,6 +432,15 @@ export default function IndexPage() {
               )}
             </CollapsibleSection>
 
+            {/* Scouted Players Section */}
+            <ScoutedPlayersSection
+              teamId={analysis?.opponentId || null}
+              isCollapsed={collapsedSections["scouted-players"]}
+              onToggle={toggleSection}
+              sortConfig={sortConfig}
+              onSort={handleSort}
+            />
+
             {/* Player History Section */}
             {filteredAnalysis?.seasonsData?.[0]?.players &&
               filteredAnalysis.seasonsData[0].players.length > 0 && (
@@ -490,7 +501,7 @@ export default function IndexPage() {
                 </CollapsibleSection>
               )}
 
-            {/* NEW: Recent Games Section - moved to bottom and collapsed by default */}
+            {/* Recent Games Section - moved to bottom and collapsed by default */}
             {filteredAnalysis?.seasonsData?.[0]?.recentGames &&
               filteredAnalysis.seasonsData[0].recentGames.length > 0 && (
                 <CollapsibleSection

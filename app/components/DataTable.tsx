@@ -14,6 +14,7 @@ interface DataTableProps {
   tableId: string;
   sortConfig: SortConfig | null;
   onSort: (tableId: string, columnIndex: number) => void;
+  rowClassName?: (rowIndex: number) => string;
 }
 
 export function DataTable({
@@ -22,6 +23,7 @@ export function DataTable({
   tableId,
   sortConfig,
   onSort,
+  rowClassName,
 }: DataTableProps) {
   // Helper function to get the appropriate level class based on numeric value
   const getLevelClass = (value: string | number): string => {
@@ -134,7 +136,7 @@ export function DataTable({
         </thead>
         <tbody>
           {sortedRows.map((row, i) => (
-            <tr key={i}>
+            <tr key={i} className={rowClassName ? rowClassName(i) : ""}>
               {row.slice(0, headers.length).map(
                 (
                   val,

@@ -58,10 +58,22 @@ export interface PlayerSkillset {
 }
 
 export interface PlayerScouting {
-  auctionOver: string;
+  scoutedAt: string;
   age: number;
   salary: number;
-  skillset: PlayerSkillset;
+  js: number;
+  jr: number;
+  od: number;
+  ha: number;
+  dr: number;
+  pa: number;
+  is: number;
+  id: number;
+  rb: number;
+  sb: number;
+  st: number;
+  ft: number;
+  ex: number;
   gs: number;
   tce: number;
   tci: number;
