@@ -1,12 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from "fs";
 import path from "path";
+import readline from "readline";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Create readline interface for user input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+// Promisify readline question
+const question = (query: string): Promise<string> =>
+  new Promise((resolve) => rl.question(query, resolve));
 
 // API endpoints
 const BASE_URL = "https://buzzerbeater.com/BBAPI/api/Players";
@@ -351,15 +362,10 @@ async function main(): Promise<void> {
   try {
     console.log("=== BB-NTScout Player Fetcher ===\n");
 
-    // Get credentials from environment variables
-    const username = process.env.BB_USERNAME || "";
-    const password = process.env.BB_PASSWORD || "";
-
-    if (!username || !password) {
-      throw new Error(
-        "BB_USERNAME and BB_PASSWORD environment variables are required"
-      );
-    }
+    // Get credentials from user
+    const username = await question("Enter your Buzzerbeater username: ");
+    const password = await question("Enter your Buzzerbeater password: ");
+    console.log();
 
     // Authenticate
     const token = await authenticate(username, password);
@@ -431,12 +437,15 @@ async function main(): Promise<void> {
   } catch (error) {
     console.error("Script failed:", (error as Error).message);
     process.exit(1);
+  } finally {
+    rl.close();
   }
 }
 
 // Handle graceful shutdown
 process.on("SIGINT", () => {
   console.log("\nScript interrupted by user");
+  rl.close();
   process.exit(0);
 });
 

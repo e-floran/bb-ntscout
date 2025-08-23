@@ -6,7 +6,52 @@ on:
     - cron: "0 14 * * 5"
     # Tuesday script - Tuesdays at 07:00 UTC (7:00 AM)
     - cron: "0 7 * * 2"
+    # Fetch players - Fridays at 15:00 UTC
+    - cron: "0 15 * * 5"
+    # Fetch players - Mondays at 15:00 UTC
+    - cron: "0 15 * * 1"
+    # Fetch players - Wednesdays at 15:00 UTC
+    - cron: "0 15 * * 3"
   workflow_dispatch: # Allow manual triggering
+  fetch-players:
+    if: github.event.schedule == '0 15 * * 5' || github.event.schedule == '0 15 * * 1' || github.event.schedule == '0 15 * * 3' || (github.event_name == 'workflow_dispatch' && github.event.inputs.script == 'fetch-players')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Fetch Players Script
+        run: npm run fetch-players
+        env:
+          BB_USERNAME: ${{ secrets.BB_USERNAME }}
+          BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add app/data/scoutedPlayers/*.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Scouted players update - $(date +'%Y-%m-%d')"
+            git push
+          fi
+
+      - name: Trigger Netlify rebuild
+        run: |
+          curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
 
 jobs:
   friday-update:

@@ -13,7 +13,8 @@
     "friday-check": "tsx scripts/fridayScript.ts",
     "fetch-players": "tsx scripts/fetch-players-bbapi.ts",
     "monday-manual": "tsx scripts/manual/mondayScript.ts",
-    "friday-manual": "tsx scripts/manual/fridayScript.ts"
+    "friday-manual": "tsx scripts/manual/fridayScript.ts",
+    "tl-manual": "tsx scripts/fetch-players-bbapi.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
