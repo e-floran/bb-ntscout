@@ -2,7 +2,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { PlayerHistoryCard } from "@/app/components/PlayerHistoryCard";
 import { TeamAnalysisForm } from "@/app/components/TeamAnalysisForm";
 import { LoadingProgress } from "@/app/components/LoadingProgress";
@@ -82,8 +81,6 @@ export default function IndexPage() {
     "recent-games": true,
     "scouted-players": true,
   });
-
-  const router = useRouter();
 
   // Use the custom hook for data filtering
   const filteredAnalysis = useDataFiltering(

@@ -41,22 +41,6 @@ export interface PlayerTrainings {
   partials: number;
 }
 
-export interface PlayerSkillset {
-  js: number;
-  jr: number;
-  od: number;
-  ha: number;
-  dr: number;
-  pa: number;
-  is: number;
-  id: number;
-  rb: number;
-  sb: number;
-  st: number;
-  ft: number;
-  ex: number;
-}
-
 export interface PlayerScouting {
   scoutedAt: string;
   age: number;
