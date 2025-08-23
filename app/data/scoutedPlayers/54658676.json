@@ -1,0 +1,31 @@
+{
+  "id": 54658676,
+  "firstName": "Fabian",
+  "lastName": "Endredine",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6690,
+      "tce": 54,
+      "tci": 18,
+      "tc": 72,
+      "gs": 8,
+      "js": 10,
+      "jr": 6,
+      "od": 9,
+      "ha": 10,
+      "dr": 10,
+      "pa": 9,
+      "is": 3,
+      "id": 9,
+      "rb": 3,
+      "sb": 3,
+      "st": 6,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-23T15:17:05.993Z"
+    }
+  ]
+}

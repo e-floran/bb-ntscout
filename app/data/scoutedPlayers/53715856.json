@@ -1,0 +1,31 @@
+{
+  "id": 53715856,
+  "firstName": "Gastón",
+  "lastName": "Abreu",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 102179,
+      "tce": 51,
+      "tci": 63,
+      "tc": 114,
+      "gs": 8,
+      "js": 6,
+      "jr": 5,
+      "od": 10,
+      "ha": 7,
+      "dr": 10,
+      "pa": 13,
+      "is": 10,
+      "id": 18,
+      "rb": 15,
+      "sb": 20,
+      "st": 2,
+      "ft": 14,
+      "ex": 5,
+      "scoutedAt": "2025-08-23T15:17:14.246Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53714747,
+  "firstName": "Víctor",
+  "lastName": "Carnicero",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 89681,
+      "tce": 52,
+      "tci": 62,
+      "tc": 114,
+      "gs": 8,
+      "js": 9,
+      "jr": 7,
+      "od": 5,
+      "ha": 10,
+      "dr": 10,
+      "pa": 11,
+      "is": 11,
+      "id": 18,
+      "rb": 15,
+      "sb": 18,
+      "st": 3,
+      "ft": 10,
+      "ex": 5,
+      "scoutedAt": "2025-08-23T15:17:14.247Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54347788,
+  "firstName": "Tim",
+  "lastName": "Goeldel",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3378,
+      "tce": 25,
+      "tci": 26,
+      "tc": 51,
+      "gs": 9,
+      "js": 7,
+      "jr": 6,
+      "od": 1,
+      "ha": 3,
+      "dr": 4,
+      "pa": 4,
+      "is": 7,
+      "id": 4,
+      "rb": 8,
+      "sb": 7,
+      "st": 1,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-23T15:17:07.182Z"
+    }
+  ]
+}

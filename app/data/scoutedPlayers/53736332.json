@@ -1,0 +1,31 @@
+{
+  "id": 53736332,
+  "firstName": "Valter",
+  "lastName": "Dalmo",
+  "countryId": 10,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10241,
+      "tce": 44,
+      "tci": 36,
+      "tc": 80,
+      "gs": 9,
+      "js": 9,
+      "jr": 2,
+      "od": 8,
+      "ha": 8,
+      "dr": 11,
+      "pa": 6,
+      "is": 11,
+      "id": 10,
+      "rb": 9,
+      "sb": 6,
+      "st": 2,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-23T15:16:59.919Z"
+    }
+  ]
+}

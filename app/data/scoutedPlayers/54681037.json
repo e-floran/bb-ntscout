@@ -1,0 +1,31 @@
+{
+  "id": 54681037,
+  "firstName": "Rudy",
+  "lastName": "Marbœuf",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2886,
+      "tce": 43,
+      "tci": 11,
+      "tc": 54,
+      "gs": 4,
+      "js": 5,
+      "jr": 7,
+      "od": 4,
+      "ha": 10,
+      "dr": 9,
+      "pa": 8,
+      "is": 1,
+      "id": 1,
+      "rb": 5,
+      "sb": 4,
+      "st": 6,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-23T15:17:05.993Z"
+    }
+  ]
+}

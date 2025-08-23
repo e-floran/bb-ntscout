@@ -1,0 +1,31 @@
+{
+  "id": 51416098,
+  "firstName": "Aurimas",
+  "lastName": "Bodzinskas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 139465,
+      "tce": 103,
+      "tci": 39,
+      "tc": 142,
+      "gs": 6,
+      "js": 18,
+      "jr": 11,
+      "od": 21,
+      "ha": 21,
+      "dr": 22,
+      "pa": 10,
+      "is": 10,
+      "id": 12,
+      "rb": 9,
+      "sb": 8,
+      "st": 3,
+      "ft": 21,
+      "ex": 10,
+      "scoutedAt": "2025-08-23T15:17:11.565Z"
+    }
+  ]
+}

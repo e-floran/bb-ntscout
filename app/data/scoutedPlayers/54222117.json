@@ -1,0 +1,31 @@
+{
+  "id": 54222117,
+  "firstName": "Marcelo",
+  "lastName": "Herrera",
+  "countryId": 73,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18666,
+      "tce": 64,
+      "tci": 18,
+      "tc": 82,
+      "gs": 7,
+      "js": 10,
+      "jr": 10,
+      "od": 9,
+      "ha": 12,
+      "dr": 9,
+      "pa": 14,
+      "is": 9,
+      "id": 4,
+      "rb": 3,
+      "sb": 2,
+      "st": 5,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-08-23T15:16:59.919Z"
+    }
+  ]
+}

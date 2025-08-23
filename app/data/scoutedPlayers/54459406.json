@@ -1,0 +1,31 @@
+{
+  "id": 54459406,
+  "firstName": "Fuad",
+  "lastName": "Pilav",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4334,
+      "tce": 52,
+      "tci": 20,
+      "tc": 72,
+      "gs": 7,
+      "js": 9,
+      "jr": 6,
+      "od": 5,
+      "ha": 12,
+      "dr": 13,
+      "pa": 7,
+      "is": 6,
+      "id": 7,
+      "rb": 3,
+      "sb": 4,
+      "st": 4,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-23T15:17:07.819Z"
+    }
+  ]
+}

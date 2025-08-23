@@ -1,0 +1,31 @@
+{
+  "id": 53708248,
+  "firstName": "Saner",
+  "lastName": "Ülüfer",
+  "countryId": 6,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15422,
+      "tce": 67,
+      "tci": 19,
+      "tc": 86,
+      "gs": 8,
+      "js": 8,
+      "jr": 11,
+      "od": 15,
+      "ha": 13,
+      "dr": 11,
+      "pa": 9,
+      "is": 5,
+      "id": 5,
+      "rb": 6,
+      "sb": 3,
+      "st": 5,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-08-23T15:16:59.919Z"
+    }
+  ]
+}

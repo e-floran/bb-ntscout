@@ -1,0 +1,31 @@
+{
+  "id": 54385688,
+  "firstName": "Kostas",
+  "lastName": "Patrianakos",
+  "countryId": 12,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 14435,
+      "tce": 46,
+      "tci": 39,
+      "tc": 85,
+      "gs": 9,
+      "js": 9,
+      "jr": 8,
+      "od": 3,
+      "ha": 9,
+      "dr": 7,
+      "pa": 10,
+      "is": 11,
+      "id": 10,
+      "rb": 9,
+      "sb": 9,
+      "st": 3,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-08-23T15:16:59.920Z"
+    }
+  ]
+}

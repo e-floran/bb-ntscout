@@ -1,0 +1,31 @@
+{
+  "id": 53927967,
+  "firstName": "David",
+  "lastName": "Hayes",
+  "countryId": 98,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12243,
+      "tce": 40,
+      "tci": 39,
+      "tc": 79,
+      "gs": 8,
+      "js": 9,
+      "jr": 5,
+      "od": 5,
+      "ha": 6,
+      "dr": 9,
+      "pa": 6,
+      "is": 12,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 8,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-08-23T15:16:59.920Z"
+    }
+  ]
+}

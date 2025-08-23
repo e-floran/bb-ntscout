@@ -1,0 +1,31 @@
+{
+  "id": 54231075,
+  "firstName": "Felipe",
+  "lastName": "Ibañez",
+  "countryId": 56,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10034,
+      "tce": 61,
+      "tci": 29,
+      "tc": 90,
+      "gs": 9,
+      "js": 12,
+      "jr": 10,
+      "od": 9,
+      "ha": 13,
+      "dr": 14,
+      "pa": 3,
+      "is": 9,
+      "id": 8,
+      "rb": 5,
+      "sb": 7,
+      "st": 6,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-08-23T15:17:00.712Z"
+    }
+  ]
+}

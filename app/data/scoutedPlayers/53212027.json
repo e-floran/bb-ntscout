@@ -1,0 +1,31 @@
+{
+  "id": 53212027,
+  "firstName": "Cezary",
+  "lastName": "Dondera",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 67196,
+      "tce": 100,
+      "tci": 30,
+      "tc": 130,
+      "gs": 7,
+      "js": 20,
+      "jr": 13,
+      "od": 17,
+      "ha": 20,
+      "dr": 21,
+      "pa": 9,
+      "is": 11,
+      "id": 7,
+      "rb": 5,
+      "sb": 7,
+      "st": 6,
+      "ft": 14,
+      "ex": 7,
+      "scoutedAt": "2025-08-23T15:17:14.247Z"
+    }
+  ]
+}

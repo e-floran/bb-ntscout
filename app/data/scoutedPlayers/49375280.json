@@ -1,0 +1,31 @@
+{
+  "id": 49375280,
+  "firstName": "Tan",
+  "lastName": "Teck Onn",
+  "countryId": 70,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 168917,
+      "tce": 101,
+      "tci": 21,
+      "tc": 122,
+      "gs": 6,
+      "js": 19,
+      "jr": 10,
+      "od": 20,
+      "ha": 18,
+      "dr": 18,
+      "pa": 16,
+      "is": 4,
+      "id": 7,
+      "rb": 5,
+      "sb": 5,
+      "st": 6,
+      "ft": 11,
+      "ex": 14,
+      "scoutedAt": "2025-08-23T15:17:11.563Z"
+    }
+  ]
+}

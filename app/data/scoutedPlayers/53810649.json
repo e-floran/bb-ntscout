@@ -1,0 +1,31 @@
+{
+  "id": 53810649,
+  "firstName": "Paulius",
+  "lastName": "Tidikis",
+  "countryId": 20,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 16718,
+      "tce": 73,
+      "tci": 26,
+      "tc": 99,
+      "gs": 7,
+      "js": 11,
+      "jr": 8,
+      "od": 16,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 9,
+      "id": 7,
+      "rb": 6,
+      "sb": 4,
+      "st": 5,
+      "ft": 9,
+      "ex": 5,
+      "scoutedAt": "2025-08-23T15:16:59.921Z"
+    }
+  ]
+}

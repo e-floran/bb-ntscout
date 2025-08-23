@@ -1,0 +1,31 @@
+{
+  "id": 54645000,
+  "firstName": "Luis Manuel",
+  "lastName": "Vallecillo",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3278,
+      "tce": 42,
+      "tci": 19,
+      "tc": 61,
+      "gs": 7,
+      "js": 6,
+      "jr": 8,
+      "od": 6,
+      "ha": 9,
+      "dr": 8,
+      "pa": 5,
+      "is": 5,
+      "id": 4,
+      "rb": 7,
+      "sb": 3,
+      "st": 6,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-23T15:17:05.993Z"
+    }
+  ]
+}

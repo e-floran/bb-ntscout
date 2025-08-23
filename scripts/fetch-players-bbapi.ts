@@ -290,7 +290,17 @@ function transformPlayerData(player: ApiPlayer): ScoutedPlayer {
   };
 }
 
-// Save player data to JSON file
+// Helper: get week start date (Friday) for a given date
+function getWeekStart(dateStr: string): string {
+  const date = new Date(dateStr);
+  const day = date.getUTCDay();
+  const daysToFriday = day >= 5 ? day - 5 : day + 2;
+  date.setUTCDate(date.getUTCDate() - daysToFriday);
+  date.setUTCHours(0, 0, 0, 0);
+  return date.toISOString().slice(0, 10); // YYYY-MM-DD
+}
+
+// Save player data to JSON file, preventing duplicate scouting entries for the same week
 function savePlayerData(player: ApiPlayer, searchIndex: number): void {
   try {
     const dataDir = path.join(__dirname, "..", "app", "data", "scoutedPlayers");
@@ -305,6 +315,8 @@ function savePlayerData(player: ApiPlayer, searchIndex: number): void {
 
     // Transform the player data
     const transformedPlayer = transformPlayerData(player);
+    const newScouting = transformedPlayer.scoutings[0];
+    const newWeek = getWeekStart(newScouting.scoutedAt);
 
     // If file already exists, merge the scouting data
     if (fs.existsSync(filepath)) {
@@ -313,10 +325,19 @@ function savePlayerData(player: ApiPlayer, searchIndex: number): void {
           fs.readFileSync(filepath, "utf8")
         );
         if (existingData.scoutings) {
-          transformedPlayer.scoutings = [
-            ...existingData.scoutings,
-            ...transformedPlayer.scoutings,
-          ];
+          // Check if a scouting entry for the same week already exists
+          const weekExists = existingData.scoutings.some(
+            (s) => getWeekStart(s.scoutedAt) === newWeek
+          );
+          if (!weekExists) {
+            transformedPlayer.scoutings = [
+              ...existingData.scoutings,
+              newScouting,
+            ];
+          } else {
+            // Keep existing scoutings, do not add duplicate for the week
+            transformedPlayer.scoutings = [...existingData.scoutings];
+          }
         }
       } catch (error) {
         console.warn(

@@ -1,0 +1,31 @@
+{
+  "id": 54188641,
+  "firstName": "Jacek",
+  "lastName": "Potapowicz",
+  "countryId": 58,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10672,
+      "tce": 64,
+      "tci": 24,
+      "tc": 88,
+      "gs": 5,
+      "js": 11,
+      "jr": 9,
+      "od": 11,
+      "ha": 12,
+      "dr": 11,
+      "pa": 10,
+      "is": 6,
+      "id": 10,
+      "rb": 3,
+      "sb": 5,
+      "st": 2,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-23T15:16:58.950Z"
+    }
+  ]
+}

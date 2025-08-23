@@ -1,0 +1,31 @@
+{
+  "id": 53712801,
+  "firstName": "Frederic",
+  "lastName": "Mas",
+  "countryId": 7,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15487,
+      "tce": 46,
+      "tci": 38,
+      "tc": 84,
+      "gs": 7,
+      "js": 12,
+      "jr": 7,
+      "od": 8,
+      "ha": 6,
+      "dr": 9,
+      "pa": 4,
+      "is": 12,
+      "id": 11,
+      "rb": 7,
+      "sb": 8,
+      "st": 3,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-08-23T15:16:59.918Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53388997,
+  "firstName": "Manuel José",
+  "lastName": "Zaplana",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 50817,
+      "tce": 55,
+      "tci": 56,
+      "tc": 111,
+      "gs": 7,
+      "js": 9,
+      "jr": 7,
+      "od": 8,
+      "ha": 11,
+      "dr": 10,
+      "pa": 10,
+      "is": 10,
+      "id": 15,
+      "rb": 14,
+      "sb": 17,
+      "st": 3,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-08-23T15:17:14.247Z"
+    }
+  ]
+}
