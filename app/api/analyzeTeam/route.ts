@@ -324,10 +324,21 @@ async function analyzeTeamForSeason(
         : 0;
 
     if (!isNaN(effortDelta)) {
+      // If analyzed team is away, invert effortDelta sign
+      let adjustedEffortDelta = effortDelta;
+      if (teamNode === matchNode.awayTeam) {
+        adjustedEffortDelta = -effortDelta;
+      }
+      // Get opponent name for this match
+      let opponentName = "";
+      if (opponentNode && opponentNode.teamName) {
+        opponentName = opponentNode.teamName;
+      }
       effortDeltaList.push({
         date: matchDateStr,
-        effortDelta,
+        effortDelta: adjustedEffortDelta,
         matchId: matchId,
+        opponent: opponentName,
       });
     }
 

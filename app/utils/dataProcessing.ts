@@ -145,9 +145,30 @@ export function playerRows(stats = {}) {
     });
 }
 
-type Effort = { date: string; effortDelta: number; matchId: string | number };
+type Effort = {
+  date: string;
+  effortDelta: number;
+  matchId: string | number;
+  opponent?: string;
+};
 export function effortRows(
   effortList: Effort[] = []
-): [string, string, string | number][] {
-  return effortList.map((e) => [e.date, e.effortDelta.toFixed(2), e.matchId]);
+): [string, string, string | number, string][] {
+  return effortList.map((e) => {
+    // Format date from ISO to DD-MM-YYYY
+    let formattedDate = e.date;
+    if (typeof formattedDate === "string" && formattedDate.includes("T")) {
+      const d = new Date(formattedDate);
+      const day = String(d.getDate()).padStart(2, "0");
+      const month = String(d.getMonth() + 1).padStart(2, "0");
+      const year = d.getFullYear();
+      formattedDate = `${day}-${month}-${year}`;
+    }
+    return [
+      formattedDate,
+      e.effortDelta.toFixed(2),
+      e.matchId,
+      e.opponent || "",
+    ];
+  });
 }

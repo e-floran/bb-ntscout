@@ -421,7 +421,7 @@ export default function IndexPage() {
               {filteredAnalysis?.seasonsData?.[0]?.effortDeltaList &&
               filteredAnalysis.seasonsData[0].effortDeltaList.length > 0 ? (
                 <DataTable
-                  headers={["Date", "Delta d'effort", "Match ID"]}
+                  headers={["Date", "Delta d'effort", "Match ID", "Adversaire"]}
                   rows={effortRows(
                     filteredAnalysis.seasonsData[0].effortDeltaList
                   )}
