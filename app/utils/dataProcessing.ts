@@ -52,12 +52,26 @@ export function avgRows(
       avgs
         .map((obj) => Object.keys(obj || {}))
         .reduce((a, b) => a.concat(b), [])
+        .filter((key) => !key.endsWith("_max"))
     )
   );
-  return allCats.map((cat) => [
-    humanize(cat),
-    ...avgs.map((obj) => (obj?.[cat] !== undefined ? obj[cat].toFixed(2) : "")),
-  ]);
+  return allCats.map((cat) => {
+    // For each season, get average and max for this category
+    const values = avgs.map((obj) => obj?.[cat]).filter((v) => v !== undefined);
+    return [
+      humanize(cat),
+      ...avgs.flatMap((obj) => {
+        const avg = obj?.[cat] !== undefined ? obj[cat].toFixed(2) : "";
+        // Find max for this category in this season (if array of games is available)
+        // If obj[cat + "_max"] exists, use it, else fallback to avg
+        const max =
+          obj?.[cat + "_max"] !== undefined
+            ? obj[cat + "_max"].toFixed(2)
+            : avg;
+        return [avg, max];
+      }),
+    ];
+  });
 }
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";

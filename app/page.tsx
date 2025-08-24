@@ -238,7 +238,9 @@ export default function IndexPage() {
         style={{ maxWidth: "1800px", width: "100%" }}
       >
         <h2 className="form-title">
-          Analyse de l&apos;équipe adverse pour le prochain match
+          {analysis && !loading && !err
+            ? "Analyse de " + analysis.opponentName
+            : "Analyse de l'équipe adverse pour le prochain match"}
         </h2>
 
         <TeamAnalysisForm
@@ -329,7 +331,7 @@ export default function IndexPage() {
 
             <CollapsibleSection
               sectionId="avg-ratings"
-              title="Moyennes des ratings équipe"
+              title="Notes d'équipe"
               isCollapsed={collapsedSections["avg-ratings"]}
               showSkeletons={showSkeletons}
               onToggle={toggleSection}
@@ -337,7 +339,10 @@ export default function IndexPage() {
               <DataTable
                 headers={[
                   "Catégorie",
-                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                  ...seasonLabels.flatMap((s: any) => [
+                    `Moyennes s${s}`,
+                    `Max s${s}`,
+                  ]),
                 ]}
                 rows={avgRows(
                   filteredAnalysis?.seasonsData?.map(

@@ -58,9 +58,10 @@ export function useDataFiltering(
       };
     }
 
-    // Recalculate average ratings
+    // Recalculate average and max ratings
     const avgRatings: any = {};
     const ratingCounts: any = {};
+    const maxRatings: any = {};
     matches.forEach((match) => {
       Object.entries(match.ratings || {}).forEach(
         ([key, value]: [string, any]) => {
@@ -68,11 +69,16 @@ export function useDataFiltering(
           if (!ratingCounts[key]) ratingCounts[key] = 0;
           avgRatings[key] += value;
           ratingCounts[key]++;
+          if (maxRatings[key] === undefined || value > maxRatings[key]) {
+            maxRatings[key] = value;
+          }
         }
       );
     });
     Object.keys(avgRatings).forEach((key) => {
       avgRatings[key] = avgRatings[key] / ratingCounts[key];
+      avgRatings[key + "_max"] =
+        maxRatings[key] !== undefined ? maxRatings[key] : avgRatings[key];
     });
 
     // Recalculate average efficiency
