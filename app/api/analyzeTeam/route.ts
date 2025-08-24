@@ -103,6 +103,11 @@ export async function GET(req: NextRequest) {
     if (!Array.isArray(matches)) matches = [matches];
   } else {
     // API error or empty schedule
+    // Check for NotAuthorized error in XML response
+    if (teamScheduleXml?.bbapi?.error?.["$"]?.message === "NotAuthorized") {
+      // Return a JSON error so frontend can handle redirect
+      return NextResponse.json({ error: "session_expired" }, { status: 401 });
+    }
     return NextResponse.json({
       error: "Calendrier de l'équipe non trouvé ou erreur API",
       details: teamScheduleXml,

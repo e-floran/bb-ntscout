@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import Button from "@mui/material/Button";
@@ -13,6 +13,17 @@ export default function LoginPage() {
 
   const loginRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
+  // Check for session_expired message in query string
+  // Use useEffect to set error if present
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("message") === "session_expired") {
+        setError("Votre session a expiré. Veuillez vous reconnecter.");
+      }
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +43,10 @@ export default function LoginPage() {
       const res = await fetch("/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ login: currentLogin, password: currentPassword }),
+        body: JSON.stringify({
+          login: currentLogin,
+          password: currentPassword,
+        }),
         credentials: "include",
       });
 
@@ -68,7 +82,7 @@ export default function LoginPage() {
         />
         <label className="form-label">Password</label>
         <input
-        id="password"
+          id="password"
           ref={passwordRef}
           className="form-input"
           type="password"
@@ -83,10 +97,17 @@ export default function LoginPage() {
           variant="contained"
           fullWidth
           disabled={loading}
-          sx={{ mt: 2, height: 50, fontWeight: 600, fontSize: "1.1rem", borderRadius: 2, textTransform: "none" }}
+          sx={{
+            mt: 2,
+            height: 50,
+            fontWeight: 600,
+            fontSize: "1.1rem",
+            borderRadius: 2,
+            textTransform: "none",
+          }}
         >
           {loading ? (
-          <CircularProgress size={22} sx={{ color: "white" }} />
+            <CircularProgress size={22} sx={{ color: "white" }} />
           ) : (
             "Submit"
           )}

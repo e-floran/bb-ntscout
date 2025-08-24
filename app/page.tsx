@@ -139,6 +139,9 @@ export default function IndexPage() {
         const data = await res.json();
         if (data.error === "Not authenticated") {
           setErr("Vous devez vous connecter.");
+        } else if (data.error === "session_expired") {
+          window.location.href = "/login?message=session_expired";
+          return;
         } else if (data.error === "Session expired") {
           setErr("Votre session a expiré, veuillez vous reconnecter.");
         } else {
