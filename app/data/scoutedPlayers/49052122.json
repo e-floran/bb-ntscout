@@ -1,0 +1,31 @@
+{
+  "id": 49052122,
+  "firstName": "Pierre",
+  "lastName": "Lelong",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 246659,
+      "tce": 95,
+      "tci": 61,
+      "tc": 156,
+      "gs": 9,
+      "js": 15,
+      "jr": 14,
+      "od": 12,
+      "ha": 18,
+      "dr": 19,
+      "pa": 17,
+      "is": 19,
+      "id": 17,
+      "rb": 14,
+      "sb": 11,
+      "st": 9,
+      "ft": 33,
+      "ex": 20,
+      "scoutedAt": "2025-08-25T19:36:11.131Z"
+    }
+  ]
+}

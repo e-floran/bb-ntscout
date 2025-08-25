@@ -1,0 +1,31 @@
+{
+  "id": 53254329,
+  "firstName": "Gabi",
+  "lastName": "Dimitrijevic",
+  "countryId": 49,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 18135,
+      "tce": 60,
+      "tci": 40,
+      "tc": 100,
+      "gs": 8,
+      "js": 12,
+      "jr": 5,
+      "od": 7,
+      "ha": 13,
+      "dr": 15,
+      "pa": 8,
+      "is": 14,
+      "id": 9,
+      "rb": 9,
+      "sb": 8,
+      "st": 9,
+      "ft": 16,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:14.473Z"
+    }
+  ]
+}

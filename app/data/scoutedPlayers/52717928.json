@@ -1,0 +1,31 @@
+{
+  "id": 52717928,
+  "firstName": "Javier",
+  "lastName": "Vilella",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 167607,
+      "tce": 101,
+      "tci": 33,
+      "tc": 134,
+      "gs": 6,
+      "js": 17,
+      "jr": 19,
+      "od": 18,
+      "ha": 19,
+      "dr": 18,
+      "pa": 10,
+      "is": 12,
+      "id": 11,
+      "rb": 7,
+      "sb": 3,
+      "st": 5,
+      "ft": 11,
+      "ex": 7,
+      "scoutedAt": "2025-08-25T19:36:14.485Z"
+    }
+  ]
+}

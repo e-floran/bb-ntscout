@@ -1,0 +1,31 @@
+{
+  "id": 53840806,
+  "firstName": "Ivica",
+  "lastName": "Žampera",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9556,
+      "tce": 58,
+      "tci": 18,
+      "tc": 76,
+      "gs": 8,
+      "js": 9,
+      "jr": 11,
+      "od": 10,
+      "ha": 10,
+      "dr": 7,
+      "pa": 11,
+      "is": 6,
+      "id": 5,
+      "rb": 2,
+      "sb": 5,
+      "st": 3,
+      "ft": 1,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:08.132Z"
+    }
+  ]
+}

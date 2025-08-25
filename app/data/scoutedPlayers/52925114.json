@@ -1,0 +1,31 @@
+{
+  "id": 52925114,
+  "firstName": "Bryan",
+  "lastName": "Spear",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 23256,
+      "tce": 80,
+      "tci": 26,
+      "tc": 106,
+      "gs": 3,
+      "js": 17,
+      "jr": 12,
+      "od": 7,
+      "ha": 18,
+      "dr": 18,
+      "pa": 8,
+      "is": 13,
+      "id": 5,
+      "rb": 2,
+      "sb": 6,
+      "st": 9,
+      "ft": 13,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:15.174Z"
+    }
+  ]
+}

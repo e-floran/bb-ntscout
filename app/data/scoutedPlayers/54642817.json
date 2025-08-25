@@ -1,0 +1,31 @@
+{
+  "id": 54642817,
+  "firstName": "Claudi",
+  "lastName": "Cartoixà",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4079,
+      "tce": 35,
+      "tci": 31,
+      "tc": 66,
+      "gs": 9,
+      "js": 4,
+      "jr": 11,
+      "od": 8,
+      "ha": 3,
+      "dr": 3,
+      "pa": 6,
+      "is": 4,
+      "id": 8,
+      "rb": 9,
+      "sb": 10,
+      "st": 7,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:06.170Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53901624,
+  "firstName": "Ján",
+  "lastName": "Škrábik",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15777,
+      "tce": 74,
+      "tci": 25,
+      "tc": 99,
+      "gs": 7,
+      "js": 15,
+      "jr": 11,
+      "od": 7,
+      "ha": 16,
+      "dr": 17,
+      "pa": 8,
+      "is": 8,
+      "id": 6,
+      "rb": 7,
+      "sb": 4,
+      "st": 5,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:35:59.842Z"
+    }
+  ]
+}

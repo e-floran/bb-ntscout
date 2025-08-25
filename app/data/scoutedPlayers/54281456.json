@@ -1,0 +1,31 @@
+{
+  "id": 54281456,
+  "firstName": "Rusty",
+  "lastName": "Waddell",
+  "countryId": 1,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12590,
+      "tce": 54,
+      "tci": 31,
+      "tc": 85,
+      "gs": 9,
+      "js": 11,
+      "jr": 13,
+      "od": 6,
+      "ha": 7,
+      "dr": 10,
+      "pa": 7,
+      "is": 9,
+      "id": 7,
+      "rb": 9,
+      "sb": 6,
+      "st": 4,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:01.195Z"
+    }
+  ]
+}

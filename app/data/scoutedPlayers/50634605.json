@@ -1,0 +1,31 @@
+{
+  "id": 50634605,
+  "firstName": "Salvatore",
+  "lastName": "Guajardo",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 105705,
+      "tce": 68,
+      "tci": 56,
+      "tc": 124,
+      "gs": 9,
+      "js": 11,
+      "jr": 7,
+      "od": 16,
+      "ha": 12,
+      "dr": 12,
+      "pa": 10,
+      "is": 16,
+      "id": 16,
+      "rb": 14,
+      "sb": 10,
+      "st": 9,
+      "ft": 24,
+      "ex": 12,
+      "scoutedAt": "2025-08-25T19:36:11.776Z"
+    }
+  ]
+}

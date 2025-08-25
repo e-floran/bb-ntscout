@@ -1,0 +1,31 @@
+{
+  "id": 54591944,
+  "firstName": "Diego",
+  "lastName": "Malo",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3555,
+      "tce": 46,
+      "tci": 19,
+      "tc": 65,
+      "gs": 7,
+      "js": 8,
+      "jr": 7,
+      "od": 7,
+      "ha": 10,
+      "dr": 8,
+      "pa": 6,
+      "is": 5,
+      "id": 3,
+      "rb": 6,
+      "sb": 5,
+      "st": 2,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:06.179Z"
+    }
+  ]
+}

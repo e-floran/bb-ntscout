@@ -1,0 +1,31 @@
+{
+  "id": 54645779,
+  "firstName": "Diego",
+  "lastName": "Valdero",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3194,
+      "tce": 46,
+      "tci": 12,
+      "tc": 58,
+      "gs": 8,
+      "js": 9,
+      "jr": 7,
+      "od": 7,
+      "ha": 9,
+      "dr": 9,
+      "pa": 5,
+      "is": 3,
+      "id": 1,
+      "rb": 1,
+      "sb": 7,
+      "st": 8,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:08.136Z"
+    }
+  ]
+}

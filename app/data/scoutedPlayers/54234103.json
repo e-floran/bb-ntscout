@@ -1,0 +1,31 @@
+{
+  "id": 54234103,
+  "firstName": "Cheah",
+  "lastName": "Teck Kwang",
+  "countryId": 65,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12169,
+      "tce": 60,
+      "tci": 25,
+      "tc": 85,
+      "gs": 6,
+      "js": 6,
+      "jr": 9,
+      "od": 10,
+      "ha": 14,
+      "dr": 14,
+      "pa": 7,
+      "is": 4,
+      "id": 2,
+      "rb": 10,
+      "sb": 9,
+      "st": 8,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:02.547Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54046328,
+  "firstName": "Gastone",
+  "lastName": "Puleo",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 3972,
+      "tce": 36,
+      "tci": 27,
+      "tc": 63,
+      "gs": 4,
+      "js": 6,
+      "jr": 5,
+      "od": 7,
+      "ha": 6,
+      "dr": 5,
+      "pa": 7,
+      "is": 6,
+      "id": 3,
+      "rb": 9,
+      "sb": 9,
+      "st": 9,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:08.135Z"
+    }
+  ]
+}

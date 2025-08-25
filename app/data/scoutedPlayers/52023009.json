@@ -1,0 +1,31 @@
+{
+  "id": 52023009,
+  "firstName": "Jonas Fabio",
+  "lastName": "Knoefel",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 94716,
+      "tce": 66,
+      "tci": 57,
+      "tc": 123,
+      "gs": 9,
+      "js": 13,
+      "jr": 9,
+      "od": 10,
+      "ha": 12,
+      "dr": 13,
+      "pa": 9,
+      "is": 9,
+      "id": 15,
+      "rb": 19,
+      "sb": 14,
+      "st": 6,
+      "ft": 9,
+      "ex": 8,
+      "scoutedAt": "2025-08-25T19:36:11.143Z"
+    }
+  ]
+}

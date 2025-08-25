@@ -1,0 +1,31 @@
+{
+  "id": 53388227,
+  "firstName": "Simeón",
+  "lastName": "Vargas",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 24377,
+      "tce": 76,
+      "tci": 25,
+      "tc": 101,
+      "gs": 7,
+      "js": 13,
+      "jr": 8,
+      "od": 13,
+      "ha": 16,
+      "dr": 17,
+      "pa": 9,
+      "is": 8,
+      "id": 5,
+      "rb": 7,
+      "sb": 5,
+      "st": 7,
+      "ft": 12,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:14.485Z"
+    }
+  ]
+}

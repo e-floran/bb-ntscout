@@ -1,0 +1,31 @@
+{
+  "id": 54026092,
+  "firstName": "Xaquín",
+  "lastName": "Carballosa",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7132,
+      "tce": 53,
+      "tci": 28,
+      "tc": 81,
+      "gs": 7,
+      "js": 11,
+      "jr": 5,
+      "od": 4,
+      "ha": 12,
+      "dr": 13,
+      "pa": 8,
+      "is": 11,
+      "id": 5,
+      "rb": 7,
+      "sb": 5,
+      "st": 8,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:05.505Z"
+    }
+  ]
+}

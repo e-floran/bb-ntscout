@@ -1,0 +1,31 @@
+{
+  "id": 53554000,
+  "firstName": "Antoni",
+  "lastName": "Derewicz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 22112,
+      "tce": 76,
+      "tci": 35,
+      "tc": 111,
+      "gs": 9,
+      "js": 15,
+      "jr": 7,
+      "od": 10,
+      "ha": 18,
+      "dr": 19,
+      "pa": 7,
+      "is": 17,
+      "id": 7,
+      "rb": 8,
+      "sb": 3,
+      "st": 2,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:14.487Z"
+    }
+  ]
+}

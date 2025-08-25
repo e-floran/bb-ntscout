@@ -1,0 +1,31 @@
+{
+  "id": 54757878,
+  "firstName": "Vito",
+  "lastName": "Mrnjauš",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 8124,
+      "tce": 53,
+      "tci": 25,
+      "tc": 78,
+      "gs": 9,
+      "js": 8,
+      "jr": 9,
+      "od": 10,
+      "ha": 9,
+      "dr": 8,
+      "pa": 9,
+      "is": 5,
+      "id": 8,
+      "rb": 9,
+      "sb": 3,
+      "st": 3,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:07.480Z"
+    }
+  ]
+}

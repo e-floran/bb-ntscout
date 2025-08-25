@@ -1,0 +1,31 @@
+{
+  "id": 54852948,
+  "firstName": "Stefan",
+  "lastName": "Holler",
+  "countryId": 27,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10800,
+      "tce": 53,
+      "tci": 22,
+      "tc": 75,
+      "gs": 9,
+      "js": 11,
+      "jr": 9,
+      "od": 9,
+      "ha": 7,
+      "dr": 10,
+      "pa": 7,
+      "is": 2,
+      "id": 3,
+      "rb": 10,
+      "sb": 7,
+      "st": 7,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:35:59.844Z"
+    }
+  ]
+}

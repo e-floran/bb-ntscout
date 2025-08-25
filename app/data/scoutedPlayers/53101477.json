@@ -1,0 +1,31 @@
+{
+  "id": 53101477,
+  "firstName": "Petros",
+  "lastName": "Iliadis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 48651,
+      "tce": 86,
+      "tci": 37,
+      "tc": 123,
+      "gs": 9,
+      "js": 13,
+      "jr": 10,
+      "od": 16,
+      "ha": 18,
+      "dr": 18,
+      "pa": 11,
+      "is": 9,
+      "id": 8,
+      "rb": 10,
+      "sb": 10,
+      "st": 4,
+      "ft": 4,
+      "ex": 5,
+      "scoutedAt": "2025-08-25T19:36:14.489Z"
+    }
+  ]
+}

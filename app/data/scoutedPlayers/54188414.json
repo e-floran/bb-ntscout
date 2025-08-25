@@ -1,0 +1,31 @@
+{
+  "id": 54188414,
+  "firstName": "Zbigniew",
+  "lastName": "Kuc",
+  "countryId": 58,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15395,
+      "tce": 52,
+      "tci": 36,
+      "tc": 88,
+      "gs": 7,
+      "js": 11,
+      "jr": 9,
+      "od": 1,
+      "ha": 9,
+      "dr": 13,
+      "pa": 9,
+      "is": 11,
+      "id": 10,
+      "rb": 11,
+      "sb": 4,
+      "st": 4,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:35:59.846Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54039813,
+  "firstName": "Kleanthis",
+  "lastName": "Melonakos",
+  "countryId": 8,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10768,
+      "tce": 37,
+      "tci": 37,
+      "tc": 74,
+      "gs": 9,
+      "js": 7,
+      "jr": 4,
+      "od": 5,
+      "ha": 6,
+      "dr": 9,
+      "pa": 6,
+      "is": 12,
+      "id": 8,
+      "rb": 8,
+      "sb": 9,
+      "st": 9,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:00.536Z"
+    }
+  ]
+}

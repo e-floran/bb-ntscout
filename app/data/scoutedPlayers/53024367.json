@@ -1,0 +1,31 @@
+{
+  "id": 53024367,
+  "firstName": "Zeng",
+  "lastName": "Zhongwei",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 30779,
+      "tce": 72,
+      "tci": 43,
+      "tc": 115,
+      "gs": 9,
+      "js": 12,
+      "jr": 8,
+      "od": 9,
+      "ha": 17,
+      "dr": 16,
+      "pa": 10,
+      "is": 12,
+      "id": 8,
+      "rb": 15,
+      "sb": 8,
+      "st": 5,
+      "ft": 21,
+      "ex": 5,
+      "scoutedAt": "2025-08-25T19:36:13.803Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51319377,
+  "firstName": "Joan",
+  "lastName": "Bosch",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 66002,
+      "tce": 83,
+      "tci": 44,
+      "tc": 127,
+      "gs": 8,
+      "js": 17,
+      "jr": 9,
+      "od": 16,
+      "ha": 16,
+      "dr": 18,
+      "pa": 7,
+      "is": 15,
+      "id": 13,
+      "rb": 9,
+      "sb": 7,
+      "st": 7,
+      "ft": 14,
+      "ex": 8,
+      "scoutedAt": "2025-08-25T19:36:09.800Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51090095,
+  "firstName": "Diogo",
+  "lastName": "Pinhal",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 66396,
+      "tce": 89,
+      "tci": 47,
+      "tc": 136,
+      "gs": 8,
+      "js": 19,
+      "jr": 11,
+      "od": 7,
+      "ha": 22,
+      "dr": 22,
+      "pa": 8,
+      "is": 18,
+      "id": 13,
+      "rb": 6,
+      "sb": 10,
+      "st": 6,
+      "ft": 24,
+      "ex": 10,
+      "scoutedAt": "2025-08-25T19:36:11.142Z"
+    }
+  ]
+}

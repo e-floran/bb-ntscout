@@ -1,0 +1,31 @@
+{
+  "id": 49535165,
+  "firstName": "Dimosthenis",
+  "lastName": "Mutakidis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 178164,
+      "tce": 106,
+      "tci": 51,
+      "tc": 157,
+      "gs": 9,
+      "js": 19,
+      "jr": 14,
+      "od": 20,
+      "ha": 21,
+      "dr": 22,
+      "pa": 10,
+      "is": 20,
+      "id": 15,
+      "rb": 6,
+      "sb": 10,
+      "st": 9,
+      "ft": 19,
+      "ex": 17,
+      "scoutedAt": "2025-08-25T19:36:11.784Z"
+    }
+  ]
+}

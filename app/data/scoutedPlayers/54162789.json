@@ -1,0 +1,31 @@
+{
+  "id": 54162789,
+  "firstName": "Taido",
+  "lastName": "Nael",
+  "countryId": 41,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10796,
+      "tce": 31,
+      "tci": 36,
+      "tc": 67,
+      "gs": 8,
+      "js": 9,
+      "jr": 2,
+      "od": 1,
+      "ha": 8,
+      "dr": 8,
+      "pa": 3,
+      "is": 9,
+      "id": 10,
+      "rb": 10,
+      "sb": 7,
+      "st": 9,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:35:59.844Z"
+    }
+  ]
+}

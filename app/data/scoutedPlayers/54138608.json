@@ -1,0 +1,31 @@
+{
+  "id": 54138608,
+  "firstName": "Rudolf",
+  "lastName": "Radmanović",
+  "countryId": 24,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13441,
+      "tce": 49,
+      "tci": 40,
+      "tc": 89,
+      "gs": 9,
+      "js": 10,
+      "jr": 9,
+      "od": 4,
+      "ha": 10,
+      "dr": 11,
+      "pa": 5,
+      "is": 7,
+      "id": 10,
+      "rb": 14,
+      "sb": 9,
+      "st": 5,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:00.534Z"
+    }
+  ]
+}

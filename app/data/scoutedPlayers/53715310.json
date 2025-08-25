@@ -1,0 +1,31 @@
+{
+  "id": 53715310,
+  "firstName": "Abelino",
+  "lastName": "Sánchez",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 57216,
+      "tce": 14,
+      "tci": 56,
+      "tc": 70,
+      "gs": 8,
+      "js": 2,
+      "jr": 4,
+      "od": 2,
+      "ha": 1,
+      "dr": 3,
+      "pa": 2,
+      "is": 10,
+      "id": 15,
+      "rb": 21,
+      "sb": 10,
+      "st": 3,
+      "ft": 11,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:00.530Z"
+    }
+  ]
+}

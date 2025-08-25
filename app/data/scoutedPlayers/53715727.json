@@ -1,0 +1,31 @@
+{
+  "id": 53715727,
+  "firstName": "Isaías",
+  "lastName": "Uclés",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 6770,
+      "tce": 47,
+      "tci": 30,
+      "tc": 77,
+      "gs": 9,
+      "js": 11,
+      "jr": 5,
+      "od": 5,
+      "ha": 11,
+      "dr": 13,
+      "pa": 2,
+      "is": 11,
+      "id": 7,
+      "rb": 6,
+      "sb": 6,
+      "st": 6,
+      "ft": 1,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:07.484Z"
+    }
+  ]
+}

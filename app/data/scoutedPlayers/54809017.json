@@ -1,0 +1,31 @@
+{
+  "id": 54809017,
+  "firstName": "Igor",
+  "lastName": "Dziczek",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 8391,
+      "tce": 43,
+      "tci": 22,
+      "tc": 65,
+      "gs": 3,
+      "js": 9,
+      "jr": 9,
+      "od": 8,
+      "ha": 9,
+      "dr": 5,
+      "pa": 3,
+      "is": 4,
+      "id": 5,
+      "rb": 7,
+      "sb": 6,
+      "st": 1,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:08.132Z"
+    }
+  ]
+}

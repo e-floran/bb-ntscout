@@ -1,0 +1,31 @@
+{
+  "id": 54544042,
+  "firstName": "Ragnar",
+  "lastName": "Matthíasson",
+  "countryId": 78,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10866,
+      "tce": 45,
+      "tci": 38,
+      "tc": 83,
+      "gs": 4,
+      "js": 8,
+      "jr": 9,
+      "od": 3,
+      "ha": 9,
+      "dr": 9,
+      "pa": 7,
+      "is": 13,
+      "id": 10,
+      "rb": 6,
+      "sb": 9,
+      "st": 8,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:00.534Z"
+    }
+  ]
+}

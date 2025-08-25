@@ -1,0 +1,31 @@
+{
+  "id": 54429120,
+  "firstName": "Kamilis",
+  "lastName": "Memgaudis",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4652,
+      "tce": 49,
+      "tci": 23,
+      "tc": 72,
+      "gs": 7,
+      "js": 8,
+      "jr": 10,
+      "od": 6,
+      "ha": 11,
+      "dr": 8,
+      "pa": 6,
+      "is": 7,
+      "id": 3,
+      "rb": 7,
+      "sb": 6,
+      "st": 4,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:06.834Z"
+    }
+  ]
+}

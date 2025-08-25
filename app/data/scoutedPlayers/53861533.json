@@ -1,0 +1,31 @@
+{
+  "id": 53861533,
+  "firstName": "Františeks",
+  "lastName": "Kapaklis",
+  "countryId": 46,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13284,
+      "tce": 35,
+      "tci": 41,
+      "tc": 76,
+      "gs": 9,
+      "js": 9,
+      "jr": 7,
+      "od": 4,
+      "ha": 6,
+      "dr": 6,
+      "pa": 3,
+      "is": 12,
+      "id": 11,
+      "rb": 12,
+      "sb": 6,
+      "st": 5,
+      "ft": 2,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:00.526Z"
+    }
+  ]
+}

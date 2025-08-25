@@ -1,0 +1,31 @@
+{
+  "id": 54003576,
+  "firstName": "Wang",
+  "lastName": "Diyong",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10418,
+      "tce": 39,
+      "tci": 37,
+      "tc": 76,
+      "gs": 6,
+      "js": 6,
+      "jr": 4,
+      "od": 4,
+      "ha": 7,
+      "dr": 8,
+      "pa": 10,
+      "is": 13,
+      "id": 10,
+      "rb": 10,
+      "sb": 4,
+      "st": 8,
+      "ft": 3,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:02.547Z"
+    }
+  ]
+}

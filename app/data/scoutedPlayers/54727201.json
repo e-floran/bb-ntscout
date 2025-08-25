@@ -1,0 +1,31 @@
+{
+  "id": 54727201,
+  "firstName": "Aidan",
+  "lastName": "Dominik",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 4042,
+      "tce": 41,
+      "tci": 21,
+      "tc": 62,
+      "gs": 7,
+      "js": 8,
+      "jr": 7,
+      "od": 7,
+      "ha": 8,
+      "dr": 9,
+      "pa": 2,
+      "is": 6,
+      "id": 5,
+      "rb": 8,
+      "sb": 2,
+      "st": 8,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:05.510Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53665396,
+  "firstName": "George",
+  "lastName": "Trickle",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 3655,
+      "tce": 39,
+      "tci": 14,
+      "tc": 53,
+      "gs": 2,
+      "js": 8,
+      "jr": 7,
+      "od": 8,
+      "ha": 8,
+      "dr": 5,
+      "pa": 3,
+      "is": 5,
+      "id": 3,
+      "rb": 3,
+      "sb": 3,
+      "st": 7,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:07.479Z"
+    }
+  ]
+}

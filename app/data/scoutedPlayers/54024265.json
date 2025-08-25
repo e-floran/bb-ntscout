@@ -1,0 +1,31 @@
+{
+  "id": 54024265,
+  "firstName": "Ignacio",
+  "lastName": "Mínguez Ochoa",
+  "countryId": 7,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 30989,
+      "tce": 48,
+      "tci": 52,
+      "tc": 100,
+      "gs": 8,
+      "js": 8,
+      "jr": 10,
+      "od": 11,
+      "ha": 3,
+      "dr": 10,
+      "pa": 6,
+      "is": 15,
+      "id": 14,
+      "rb": 12,
+      "sb": 11,
+      "st": 1,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:01.187Z"
+    }
+  ]
+}

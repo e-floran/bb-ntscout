@@ -1,0 +1,31 @@
+{
+  "id": 49028489,
+  "firstName": "Lyle",
+  "lastName": "Feaster",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 169964,
+      "tce": 108,
+      "tci": 39,
+      "tc": 147,
+      "gs": 8,
+      "js": 21,
+      "jr": 13,
+      "od": 21,
+      "ha": 20,
+      "dr": 21,
+      "pa": 12,
+      "is": 14,
+      "id": 12,
+      "rb": 5,
+      "sb": 8,
+      "st": 5,
+      "ft": 24,
+      "ex": 20,
+      "scoutedAt": "2025-08-25T19:36:11.142Z"
+    }
+  ]
+}

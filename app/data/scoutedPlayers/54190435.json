@@ -1,0 +1,31 @@
+{
+  "id": 54190435,
+  "firstName": "Damian",
+  "lastName": "Rodziewicz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5262,
+      "tce": 39,
+      "tci": 27,
+      "tc": 66,
+      "gs": 7,
+      "js": 10,
+      "jr": 3,
+      "od": 1,
+      "ha": 9,
+      "dr": 11,
+      "pa": 5,
+      "is": 8,
+      "id": 7,
+      "rb": 7,
+      "sb": 5,
+      "st": 5,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:06.836Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54297868,
+  "firstName": "Alberto",
+  "lastName": "Varro",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9069,
+      "tce": 34,
+      "tci": 33,
+      "tc": 67,
+      "gs": 9,
+      "js": 10,
+      "jr": 6,
+      "od": 1,
+      "ha": 6,
+      "dr": 2,
+      "pa": 9,
+      "is": 9,
+      "id": 9,
+      "rb": 6,
+      "sb": 9,
+      "st": 2,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:08.136Z"
+    }
+  ]
+}

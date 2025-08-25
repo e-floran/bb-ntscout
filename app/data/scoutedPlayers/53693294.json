@@ -1,0 +1,31 @@
+{
+  "id": 53693294,
+  "firstName": "Vitjun",
+  "lastName": "Nymadawa",
+  "countryId": 5,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 40554,
+      "tce": 31,
+      "tci": 51,
+      "tc": 82,
+      "gs": 7,
+      "js": 7,
+      "jr": 3,
+      "od": 6,
+      "ha": 7,
+      "dr": 5,
+      "pa": 3,
+      "is": 17,
+      "id": 15,
+      "rb": 12,
+      "sb": 7,
+      "st": 8,
+      "ft": 9,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:01.206Z"
+    }
+  ]
+}

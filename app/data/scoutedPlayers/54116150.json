@@ -1,0 +1,31 @@
+{
+  "id": 54116150,
+  "firstName": "Maximilian",
+  "lastName": "Gromyko",
+  "countryId": 19,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18555,
+      "tce": 60,
+      "tci": 21,
+      "tc": 81,
+      "gs": 8,
+      "js": 16,
+      "jr": 10,
+      "od": 9,
+      "ha": 8,
+      "dr": 10,
+      "pa": 7,
+      "is": 6,
+      "id": 7,
+      "rb": 4,
+      "sb": 4,
+      "st": 4,
+      "ft": 7,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:02.560Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54045132,
+  "firstName": "Enzo Paolo",
+  "lastName": "Sannino",
+  "countryId": 10,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 16250,
+      "tce": 23,
+      "tci": 43,
+      "tc": 66,
+      "gs": 8,
+      "js": 5,
+      "jr": 6,
+      "od": 5,
+      "ha": 2,
+      "dr": 2,
+      "pa": 3,
+      "is": 11,
+      "id": 12,
+      "rb": 13,
+      "sb": 7,
+      "st": 4,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:01.200Z"
+    }
+  ]
+}

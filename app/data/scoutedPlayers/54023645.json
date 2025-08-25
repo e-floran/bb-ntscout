@@ -1,0 +1,31 @@
+{
+  "id": 54023645,
+  "firstName": "Carlos",
+  "lastName": "Cariello",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11590,
+      "tce": 64,
+      "tci": 20,
+      "tc": 84,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 6,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 7,
+      "id": 7,
+      "rb": 4,
+      "sb": 2,
+      "st": 6,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:02.558Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53048557,
+  "firstName": "Ástor",
+  "lastName": "Cirueña",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 48399,
+      "tce": 83,
+      "tci": 46,
+      "tc": 129,
+      "gs": 8,
+      "js": 14,
+      "jr": 8,
+      "od": 16,
+      "ha": 18,
+      "dr": 18,
+      "pa": 9,
+      "is": 16,
+      "id": 14,
+      "rb": 8,
+      "sb": 8,
+      "st": 3,
+      "ft": 9,
+      "ex": 7,
+      "scoutedAt": "2025-08-25T19:36:15.175Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52566900,
+  "firstName": "Gogita",
+  "lastName": "Machavariani",
+  "countryId": 62,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 87604,
+      "tce": 94,
+      "tci": 18,
+      "tc": 112,
+      "gs": 8,
+      "js": 19,
+      "jr": 12,
+      "od": 15,
+      "ha": 16,
+      "dr": 16,
+      "pa": 16,
+      "is": 3,
+      "id": 5,
+      "rb": 5,
+      "sb": 5,
+      "st": 8,
+      "ft": 17,
+      "ex": 7,
+      "scoutedAt": "2025-08-25T19:36:15.182Z"
+    }
+  ]
+}

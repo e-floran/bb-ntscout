@@ -1,0 +1,31 @@
+{
+  "id": 53849951,
+  "firstName": "Axel",
+  "lastName": "Avnskjold",
+  "countryId": 39,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13954,
+      "tce": 64,
+      "tci": 38,
+      "tc": 102,
+      "gs": 8,
+      "js": 12,
+      "jr": 8,
+      "od": 7,
+      "ha": 15,
+      "dr": 15,
+      "pa": 7,
+      "is": 16,
+      "id": 10,
+      "rb": 6,
+      "sb": 6,
+      "st": 2,
+      "ft": 11,
+      "ex": 4,
+      "scoutedAt": "2025-08-25T19:36:02.546Z"
+    }
+  ]
+}

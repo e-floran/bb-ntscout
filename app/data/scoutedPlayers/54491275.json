@@ -1,0 +1,31 @@
+{
+  "id": 54491275,
+  "firstName": "Antolin",
+  "lastName": "Dullano",
+  "countryId": 57,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10305,
+      "tce": 35,
+      "tci": 33,
+      "tc": 68,
+      "gs": 5,
+      "js": 10,
+      "jr": 7,
+      "od": 7,
+      "ha": 5,
+      "dr": 3,
+      "pa": 3,
+      "is": 6,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 7,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:00.527Z"
+    }
+  ]
+}

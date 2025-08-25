@@ -1,0 +1,31 @@
+{
+  "id": 54334387,
+  "firstName": "Alfredo",
+  "lastName": "Vivar",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6377,
+      "tce": 45,
+      "tci": 25,
+      "tc": 70,
+      "gs": 5,
+      "js": 10,
+      "jr": 4,
+      "od": 8,
+      "ha": 7,
+      "dr": 12,
+      "pa": 4,
+      "is": 7,
+      "id": 9,
+      "rb": 5,
+      "sb": 4,
+      "st": 10,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:06.835Z"
+    }
+  ]
+}

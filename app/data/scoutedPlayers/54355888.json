@@ -1,0 +1,31 @@
+{
+  "id": 54355888,
+  "firstName": "Cesare",
+  "lastName": "Valsecchi",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11263,
+      "tce": 36,
+      "tci": 41,
+      "tc": 77,
+      "gs": 3,
+      "js": 6,
+      "jr": 8,
+      "od": 5,
+      "ha": 9,
+      "dr": 4,
+      "pa": 4,
+      "is": 8,
+      "id": 9,
+      "rb": 12,
+      "sb": 12,
+      "st": 1,
+      "ft": 11,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:00.524Z"
+    }
+  ]
+}

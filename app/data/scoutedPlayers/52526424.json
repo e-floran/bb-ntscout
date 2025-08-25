@@ -1,0 +1,31 @@
+{
+  "id": 52526424,
+  "firstName": "Engkus",
+  "lastName": "Kirono",
+  "countryId": 43,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 67147,
+      "tce": 93,
+      "tci": 34,
+      "tc": 127,
+      "gs": 8,
+      "js": 20,
+      "jr": 11,
+      "od": 13,
+      "ha": 18,
+      "dr": 19,
+      "pa": 12,
+      "is": 15,
+      "id": 6,
+      "rb": 5,
+      "sb": 8,
+      "st": 4,
+      "ft": 14,
+      "ex": 7,
+      "scoutedAt": "2025-08-25T19:36:13.808Z"
+    }
+  ]
+}

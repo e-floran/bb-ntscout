@@ -1,0 +1,31 @@
+{
+  "id": 54233224,
+  "firstName": "Ye",
+  "lastName": "Yuze",
+  "countryId": 97,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5368,
+      "tce": 52,
+      "tci": 19,
+      "tc": 71,
+      "gs": 9,
+      "js": 13,
+      "jr": 5,
+      "od": 5,
+      "ha": 10,
+      "dr": 14,
+      "pa": 5,
+      "is": 7,
+      "id": 1,
+      "rb": 7,
+      "sb": 4,
+      "st": 9,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:05.504Z"
+    }
+  ]
+}

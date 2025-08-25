@@ -1,0 +1,31 @@
+{
+  "id": 54046036,
+  "firstName": "Severino",
+  "lastName": "Rivaben",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8334,
+      "tce": 61,
+      "tci": 18,
+      "tc": 79,
+      "gs": 8,
+      "js": 11,
+      "jr": 7,
+      "od": 6,
+      "ha": 15,
+      "dr": 15,
+      "pa": 7,
+      "is": 5,
+      "id": 3,
+      "rb": 8,
+      "sb": 2,
+      "st": 6,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:07.478Z"
+    }
+  ]
+}

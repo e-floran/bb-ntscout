@@ -1,0 +1,31 @@
+{
+  "id": 51026115,
+  "firstName": "Guarino",
+  "lastName": "Caboni",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 142137,
+      "tce": 90,
+      "tci": 53,
+      "tc": 143,
+      "gs": 8,
+      "js": 18,
+      "jr": 12,
+      "od": 6,
+      "ha": 24,
+      "dr": 25,
+      "pa": 5,
+      "is": 18,
+      "id": 12,
+      "rb": 16,
+      "sb": 7,
+      "st": 1,
+      "ft": 11,
+      "ex": 15,
+      "scoutedAt": "2025-08-25T19:36:10.461Z"
+    }
+  ]
+}

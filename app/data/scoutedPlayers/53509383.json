@@ -1,0 +1,31 @@
+{
+  "id": 53509383,
+  "firstName": "Danilo",
+  "lastName": "Kačar",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 23769,
+      "tce": 65,
+      "tci": 40,
+      "tc": 105,
+      "gs": 7,
+      "js": 12,
+      "jr": 6,
+      "od": 11,
+      "ha": 14,
+      "dr": 17,
+      "pa": 5,
+      "is": 15,
+      "id": 12,
+      "rb": 9,
+      "sb": 4,
+      "st": 5,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:13.130Z"
+    }
+  ]
+}

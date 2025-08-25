@@ -1,0 +1,31 @@
+{
+  "id": 54807372,
+  "firstName": "Marek",
+  "lastName": "Kwarciak",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6508,
+      "tce": 36,
+      "tci": 32,
+      "tc": 68,
+      "gs": 8,
+      "js": 7,
+      "jr": 4,
+      "od": 3,
+      "ha": 9,
+      "dr": 9,
+      "pa": 4,
+      "is": 10,
+      "id": 7,
+      "rb": 8,
+      "sb": 7,
+      "st": 2,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:06.833Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51219440,
+  "firstName": "Marc",
+  "lastName": "Ayorecha",
+  "countryId": 21,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 223603,
+      "tce": 73,
+      "tci": 64,
+      "tc": 137,
+      "gs": 9,
+      "js": 15,
+      "jr": 4,
+      "od": 11,
+      "ha": 16,
+      "dr": 16,
+      "pa": 11,
+      "is": 15,
+      "id": 19,
+      "rb": 15,
+      "sb": 15,
+      "st": 4,
+      "ft": 24,
+      "ex": 11,
+      "scoutedAt": "2025-08-25T19:36:11.135Z"
+    }
+  ]
+}

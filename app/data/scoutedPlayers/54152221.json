@@ -1,0 +1,31 @@
+{
+  "id": 54152221,
+  "firstName": "Slobodan",
+  "lastName": "Bodrožić",
+  "countryId": 35,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11702,
+      "tce": 40,
+      "tci": 38,
+      "tc": 78,
+      "gs": 7,
+      "js": 8,
+      "jr": 6,
+      "od": 4,
+      "ha": 8,
+      "dr": 7,
+      "pa": 7,
+      "is": 11,
+      "id": 9,
+      "rb": 12,
+      "sb": 6,
+      "st": 6,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-25T19:36:02.558Z"
+    }
+  ]
+}

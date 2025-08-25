@@ -1,0 +1,31 @@
+{
+  "id": 54667574,
+  "firstName": "Pierpaolo",
+  "lastName": "Papapietro",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3091,
+      "tce": 39,
+      "tci": 22,
+      "tc": 61,
+      "gs": 8,
+      "js": 7,
+      "jr": 6,
+      "od": 7,
+      "ha": 5,
+      "dr": 7,
+      "pa": 7,
+      "is": 7,
+      "id": 4,
+      "rb": 6,
+      "sb": 5,
+      "st": 1,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-25T19:36:06.189Z"
+    }
+  ]
+}

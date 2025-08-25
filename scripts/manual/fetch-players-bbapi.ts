@@ -303,7 +303,14 @@ function getWeekStart(dateStr: string): string {
 // Save player data to JSON file, preventing duplicate scouting entries for the same week
 function savePlayerData(player: ApiPlayer, searchIndex: number): void {
   try {
-    const dataDir = path.join(__dirname, "..", "app", "data", "scoutedPlayers");
+    const dataDir = path.join(
+      __dirname,
+      "..",
+      "..",
+      "app",
+      "data",
+      "scoutedPlayers"
+    );
 
     // Create data directory if it doesn't exist
     if (!fs.existsSync(dataDir)) {

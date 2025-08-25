@@ -1,0 +1,31 @@
+{
+  "id": 54538560,
+  "firstName": "Tellis",
+  "lastName": "Skapaneas",
+  "countryId": 12,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12355,
+      "tce": 57,
+      "tci": 27,
+      "tc": 84,
+      "gs": 7,
+      "js": 12,
+      "jr": 10,
+      "od": 8,
+      "ha": 7,
+      "dr": 11,
+      "pa": 9,
+      "is": 9,
+      "id": 7,
+      "rb": 8,
+      "sb": 3,
+      "st": 1,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-25T19:36:00.533Z"
+    }
+  ]
+}
