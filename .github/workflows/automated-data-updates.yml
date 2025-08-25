@@ -40,6 +40,8 @@ jobs:
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
 
       - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -48,7 +50,8 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "🤖 Weekly GameShape & DMI update - $(date +'%Y-%m-%d')"
-            git push
+            git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+            git push origin main
           fi
 
       - name: Trigger Netlify rebuild
@@ -80,6 +83,8 @@ jobs:
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
 
       - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -88,7 +93,8 @@ jobs:
             echo "No new players found"
           else
             git commit -m "🆕 New players check - $(date +'%Y-%m-%d')"
-            git push
+            git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+            git push origin main
           fi
 
       - name: Trigger Netlify rebuild
@@ -120,6 +126,8 @@ jobs:
           BB_PASSWORD: ${{ secrets.BB_PASSWORD_2 }}
 
       - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -128,7 +136,8 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "🤖 Scouted players update - $(date +'%Y-%m-%d')"
-            git push
+            git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+            git push origin main
           fi
 
       - name: Trigger Netlify rebuild
