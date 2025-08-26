@@ -39,6 +39,9 @@ jobs:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
 
+      - name: Debug GH_PAT
+        run: echo "GH_PAT is set ${{ secrets.GH_PAT != '' }}"
+
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -82,6 +85,9 @@ jobs:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
 
+      - name: Debug GH_PAT
+        run: echo "GH_PAT is set ${{ secrets.GH_PAT != '' }}"
+
       - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -124,6 +130,9 @@ jobs:
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD_2 }}
+
+      - name: Debug GH_PAT
+        run: echo "GH_PAT is set ${{ secrets.GH_PAT != '' }}"
 
       - name: Commit and push changes
         env:
