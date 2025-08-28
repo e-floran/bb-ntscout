@@ -1,0 +1,31 @@
+{
+  "id": 54146392,
+  "firstName": "Slobodan",
+  "lastName": "Baretić",
+  "countryId": 29,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11039,
+      "tce": 44,
+      "tci": 34,
+      "tc": 78,
+      "gs": 8,
+      "js": 9,
+      "jr": 9,
+      "od": 9,
+      "ha": 6,
+      "dr": 8,
+      "pa": 3,
+      "is": 8,
+      "id": 9,
+      "rb": 12,
+      "sb": 5,
+      "st": 4,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:51.884Z"
+    }
+  ]
+}

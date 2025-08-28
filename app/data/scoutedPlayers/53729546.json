@@ -1,0 +1,31 @@
+{
+  "id": 53729546,
+  "firstName": "Dalyan",
+  "lastName": "Özbag",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18214,
+      "tce": 75,
+      "tci": 27,
+      "tc": 102,
+      "gs": 8,
+      "js": 13,
+      "jr": 8,
+      "od": 10,
+      "ha": 18,
+      "dr": 18,
+      "pa": 8,
+      "is": 8,
+      "id": 6,
+      "rb": 5,
+      "sb": 8,
+      "st": 7,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-08-28T05:43:50.997Z"
+    }
+  ]
+}

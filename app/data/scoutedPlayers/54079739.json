@@ -1,0 +1,31 @@
+{
+  "id": 54079739,
+  "firstName": "Yiannis",
+  "lastName": "Vourousakis",
+  "countryId": 12,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11300,
+      "tce": 48,
+      "tci": 38,
+      "tc": 86,
+      "gs": 9,
+      "js": 10,
+      "jr": 8,
+      "od": 5,
+      "ha": 7,
+      "dr": 10,
+      "pa": 8,
+      "is": 11,
+      "id": 10,
+      "rb": 9,
+      "sb": 8,
+      "st": 5,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:52.821Z"
+    }
+  ]
+}

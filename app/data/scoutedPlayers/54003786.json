@@ -1,0 +1,31 @@
+{
+  "id": 54003786,
+  "firstName": "Shang",
+  "lastName": "Yifu",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6753,
+      "tce": 50,
+      "tci": 23,
+      "tc": 73,
+      "gs": 8,
+      "js": 10,
+      "jr": 4,
+      "od": 12,
+      "ha": 10,
+      "dr": 11,
+      "pa": 3,
+      "is": 5,
+      "id": 8,
+      "rb": 7,
+      "sb": 3,
+      "st": 4,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-28T05:43:56.430Z"
+    }
+  ]
+}

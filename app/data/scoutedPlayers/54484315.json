@@ -1,0 +1,31 @@
+{
+  "id": 54484315,
+  "firstName": "Andor",
+  "lastName": "Tandary",
+  "countryId": 48,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10143,
+      "tce": 30,
+      "tci": 39,
+      "tc": 69,
+      "gs": 6,
+      "js": 7,
+      "jr": 4,
+      "od": 8,
+      "ha": 1,
+      "dr": 2,
+      "pa": 8,
+      "is": 11,
+      "id": 15,
+      "rb": 5,
+      "sb": 8,
+      "st": 7,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:47.183Z"
+    }
+  ]
+}

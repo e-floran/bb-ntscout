@@ -1,0 +1,31 @@
+{
+  "id": 53410435,
+  "firstName": "Dario Antonio",
+  "lastName": "Arione",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 37548,
+      "tce": 75,
+      "tci": 40,
+      "tc": 115,
+      "gs": 6,
+      "js": 17,
+      "jr": 11,
+      "od": 10,
+      "ha": 14,
+      "dr": 14,
+      "pa": 9,
+      "is": 15,
+      "id": 8,
+      "rb": 9,
+      "sb": 8,
+      "st": 5,
+      "ft": 3,
+      "ex": 5,
+      "scoutedAt": "2025-08-28T05:44:08.515Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54233228,
+  "firstName": "Boro",
+  "lastName": "Vujovic",
+  "countryId": 76,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 26852,
+      "tce": 31,
+      "tci": 48,
+      "tc": 79,
+      "gs": 9,
+      "js": 8,
+      "jr": 6,
+      "od": 5,
+      "ha": 4,
+      "dr": 5,
+      "pa": 3,
+      "is": 12,
+      "id": 14,
+      "rb": 11,
+      "sb": 11,
+      "st": 3,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:51.890Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53861827,
+  "firstName": "Oļģerts",
+  "lastName": "Zilnieks",
+  "countryId": 46,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 24042,
+      "tce": 73,
+      "tci": 35,
+      "tc": 108,
+      "gs": 9,
+      "js": 14,
+      "jr": 8,
+      "od": 14,
+      "ha": 13,
+      "dr": 16,
+      "pa": 8,
+      "is": 13,
+      "id": 9,
+      "rb": 7,
+      "sb": 6,
+      "st": 4,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-08-28T05:44:07.829Z"
+    }
+  ]
+}

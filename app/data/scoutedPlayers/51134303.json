@@ -1,0 +1,31 @@
+{
+  "id": 51134303,
+  "firstName": "Valeri",
+  "lastName": "Kopoev",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 199802,
+      "tce": 108,
+      "tci": 45,
+      "tc": 153,
+      "gs": 8,
+      "js": 20,
+      "jr": 13,
+      "od": 21,
+      "ha": 22,
+      "dr": 21,
+      "pa": 11,
+      "is": 19,
+      "id": 11,
+      "rb": 7,
+      "sb": 8,
+      "st": 4,
+      "ft": 17,
+      "ex": 11,
+      "scoutedAt": "2025-08-28T05:44:04.817Z"
+    }
+  ]
+}

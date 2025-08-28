@@ -1,0 +1,31 @@
+{
+  "id": 54542460,
+  "firstName": "Matías",
+  "lastName": "Nájera",
+  "countryId": 54,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3744,
+      "tce": 25,
+      "tci": 26,
+      "tc": 51,
+      "gs": 4,
+      "js": 3,
+      "jr": 1,
+      "od": 1,
+      "ha": 7,
+      "dr": 11,
+      "pa": 2,
+      "is": 8,
+      "id": 7,
+      "rb": 7,
+      "sb": 4,
+      "st": 1,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-08-28T05:43:58.615Z"
+    }
+  ]
+}

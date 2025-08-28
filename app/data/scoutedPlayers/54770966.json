@@ -1,0 +1,31 @@
+{
+  "id": 54770966,
+  "firstName": "Mak",
+  "lastName": "Dvornik",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3034,
+      "tce": 38,
+      "tci": 17,
+      "tc": 55,
+      "gs": 8,
+      "js": 6,
+      "jr": 6,
+      "od": 5,
+      "ha": 8,
+      "dr": 6,
+      "pa": 7,
+      "is": 4,
+      "id": 6,
+      "rb": 5,
+      "sb": 2,
+      "st": 2,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-28T05:43:56.423Z"
+    }
+  ]
+}

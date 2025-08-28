@@ -1,0 +1,31 @@
+{
+  "id": 51441052,
+  "firstName": "Silas",
+  "lastName": "Eberhart",
+  "countryId": 28,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 101865,
+      "tce": 93,
+      "tci": 28,
+      "tc": 121,
+      "gs": 4,
+      "js": 15,
+      "jr": 14,
+      "od": 16,
+      "ha": 17,
+      "dr": 16,
+      "pa": 15,
+      "is": 4,
+      "id": 10,
+      "rb": 5,
+      "sb": 9,
+      "st": 6,
+      "ft": 7,
+      "ex": 12,
+      "scoutedAt": "2025-08-28T05:44:03.408Z"
+    }
+  ]
+}

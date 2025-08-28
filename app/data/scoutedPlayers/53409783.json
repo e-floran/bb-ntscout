@@ -1,0 +1,31 @@
+{
+  "id": 53409783,
+  "firstName": "Tonio",
+  "lastName": "Specchio",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 20172,
+      "tce": 63,
+      "tci": 39,
+      "tc": 102,
+      "gs": 9,
+      "js": 13,
+      "jr": 6,
+      "od": 11,
+      "ha": 11,
+      "dr": 13,
+      "pa": 9,
+      "is": 13,
+      "id": 10,
+      "rb": 8,
+      "sb": 8,
+      "st": 4,
+      "ft": 11,
+      "ex": 4,
+      "scoutedAt": "2025-08-28T05:44:07.820Z"
+    }
+  ]
+}

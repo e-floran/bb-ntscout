@@ -1,0 +1,31 @@
+{
+  "id": 54206436,
+  "firstName": "Levan",
+  "lastName": "Gelovani",
+  "countryId": 62,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 20418,
+      "tce": 25,
+      "tci": 44,
+      "tc": 69,
+      "gs": 8,
+      "js": 6,
+      "jr": 9,
+      "od": 1,
+      "ha": 3,
+      "dr": 3,
+      "pa": 3,
+      "is": 12,
+      "id": 11,
+      "rb": 13,
+      "sb": 8,
+      "st": 8,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:47.188Z"
+    }
+  ]
+}

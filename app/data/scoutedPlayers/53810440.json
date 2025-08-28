@@ -1,0 +1,31 @@
+{
+  "id": 53810440,
+  "firstName": "Minius",
+  "lastName": "Kuprelevicius",
+  "countryId": 20,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 21311,
+      "tce": 38,
+      "tci": 45,
+      "tc": 83,
+      "gs": 7,
+      "js": 9,
+      "jr": 2,
+      "od": 6,
+      "ha": 8,
+      "dr": 9,
+      "pa": 4,
+      "is": 15,
+      "id": 15,
+      "rb": 7,
+      "sb": 8,
+      "st": 1,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-08-28T05:43:50.996Z"
+    }
+  ]
+}

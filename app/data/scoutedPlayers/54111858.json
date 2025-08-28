@@ -1,0 +1,31 @@
+{
+  "id": 54111858,
+  "firstName": "Anselmo",
+  "lastName": "Viegas",
+  "countryId": 18,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 20632,
+      "tce": 41,
+      "tci": 45,
+      "tc": 86,
+      "gs": 9,
+      "js": 2,
+      "jr": 6,
+      "od": 9,
+      "ha": 7,
+      "dr": 4,
+      "pa": 13,
+      "is": 11,
+      "id": 13,
+      "rb": 9,
+      "sb": 12,
+      "st": 6,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:47.187Z"
+    }
+  ]
+}

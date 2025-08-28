@@ -1,0 +1,31 @@
+{
+  "id": 53907100,
+  "firstName": "Li",
+  "lastName": "Won uk",
+  "countryId": 70,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 29535,
+      "tce": 76,
+      "tci": 19,
+      "tc": 95,
+      "gs": 9,
+      "js": 8,
+      "jr": 9,
+      "od": 12,
+      "ha": 19,
+      "dr": 17,
+      "pa": 11,
+      "is": 4,
+      "id": 5,
+      "rb": 4,
+      "sb": 6,
+      "st": 4,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:50.997Z"
+    }
+  ]
+}

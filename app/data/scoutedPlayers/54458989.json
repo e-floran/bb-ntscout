@@ -1,0 +1,31 @@
+{
+  "id": 54458989,
+  "firstName": "Šaban",
+  "lastName": "Zahirović",
+  "countryId": 35,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10698,
+      "tce": 54,
+      "tci": 26,
+      "tc": 80,
+      "gs": 7,
+      "js": 9,
+      "jr": 10,
+      "od": 9,
+      "ha": 10,
+      "dr": 7,
+      "pa": 9,
+      "is": 4,
+      "id": 9,
+      "rb": 9,
+      "sb": 4,
+      "st": 3,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-08-28T05:43:50.997Z"
+    }
+  ]
+}

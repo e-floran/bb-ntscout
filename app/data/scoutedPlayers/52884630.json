@@ -1,0 +1,31 @@
+{
+  "id": 52884630,
+  "firstName": "Julian",
+  "lastName": "Stromczynski",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 62598,
+      "tce": 87,
+      "tci": 32,
+      "tc": 119,
+      "gs": 9,
+      "js": 17,
+      "jr": 13,
+      "od": 14,
+      "ha": 16,
+      "dr": 17,
+      "pa": 10,
+      "is": 12,
+      "id": 5,
+      "rb": 9,
+      "sb": 6,
+      "st": 5,
+      "ft": 8,
+      "ex": 6,
+      "scoutedAt": "2025-08-28T05:44:07.826Z"
+    }
+  ]
+}

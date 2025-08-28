@@ -1,0 +1,31 @@
+{
+  "id": 51212049,
+  "firstName": "Nuri",
+  "lastName": "Ayik",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 176261,
+      "tce": 102,
+      "tci": 45,
+      "tc": 147,
+      "gs": 9,
+      "js": 20,
+      "jr": 13,
+      "od": 19,
+      "ha": 19,
+      "dr": 20,
+      "pa": 11,
+      "is": 20,
+      "id": 12,
+      "rb": 9,
+      "sb": 4,
+      "st": 3,
+      "ft": 16,
+      "ex": 11,
+      "scoutedAt": "2025-08-28T05:44:04.102Z"
+    }
+  ]
+}

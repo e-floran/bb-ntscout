@@ -1,0 +1,31 @@
+{
+  "id": 54369751,
+  "firstName": "Anthony",
+  "lastName": "Christ",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4738,
+      "tce": 48,
+      "tci": 17,
+      "tc": 65,
+      "gs": 7,
+      "js": 10,
+      "jr": 3,
+      "od": 10,
+      "ha": 10,
+      "dr": 10,
+      "pa": 5,
+      "is": 1,
+      "id": 8,
+      "rb": 4,
+      "sb": 4,
+      "st": 4,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-28T05:44:00.072Z"
+    }
+  ]
+}

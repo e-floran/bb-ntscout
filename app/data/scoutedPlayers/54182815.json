@@ -1,0 +1,31 @@
+{
+  "id": 54182815,
+  "firstName": "Aldo",
+  "lastName": "Cumpa",
+  "countryId": 56,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10900,
+      "tce": 28,
+      "tci": 44,
+      "tc": 72,
+      "gs": 9,
+      "js": 7,
+      "jr": 3,
+      "od": 6,
+      "ha": 4,
+      "dr": 1,
+      "pa": 7,
+      "is": 7,
+      "id": 13,
+      "rb": 10,
+      "sb": 14,
+      "st": 5,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-08-28T05:43:52.826Z"
+    }
+  ]
+}

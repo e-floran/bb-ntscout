@@ -1,0 +1,31 @@
+{
+  "id": 54609644,
+  "firstName": "Gonzalo",
+  "lastName": "Chaparro",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4693,
+      "tce": 46,
+      "tci": 14,
+      "tc": 60,
+      "gs": 7,
+      "js": 3,
+      "jr": 10,
+      "od": 10,
+      "ha": 7,
+      "dr": 8,
+      "pa": 8,
+      "is": 2,
+      "id": 1,
+      "rb": 4,
+      "sb": 7,
+      "st": 6,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-08-28T05:43:56.425Z"
+    }
+  ]
+}

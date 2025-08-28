@@ -1,0 +1,31 @@
+{
+  "id": 54370990,
+  "firstName": "Christophe",
+  "lastName": "Escudie",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3190,
+      "tce": 39,
+      "tci": 20,
+      "tc": 59,
+      "gs": 8,
+      "js": 6,
+      "jr": 7,
+      "od": 7,
+      "ha": 8,
+      "dr": 7,
+      "pa": 4,
+      "is": 5,
+      "id": 2,
+      "rb": 6,
+      "sb": 7,
+      "st": 7,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:44:00.073Z"
+    }
+  ]
+}

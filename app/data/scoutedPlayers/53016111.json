@@ -1,0 +1,31 @@
+{
+  "id": 53016111,
+  "firstName": "Alessandro",
+  "lastName": "Müller",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 41174,
+      "tce": 83,
+      "tci": 19,
+      "tc": 102,
+      "gs": 8,
+      "js": 14,
+      "jr": 11,
+      "od": 14,
+      "ha": 17,
+      "dr": 16,
+      "pa": 11,
+      "is": 3,
+      "id": 4,
+      "rb": 9,
+      "sb": 3,
+      "st": 7,
+      "ft": 13,
+      "ex": 4,
+      "scoutedAt": "2025-08-28T05:44:07.822Z"
+    }
+  ]
+}

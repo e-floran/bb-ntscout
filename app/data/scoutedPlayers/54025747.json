@@ -1,0 +1,31 @@
+{
+  "id": 54025747,
+  "firstName": "Adolfo",
+  "lastName": "Almozara",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10734,
+      "tce": 59,
+      "tci": 30,
+      "tc": 89,
+      "gs": 7,
+      "js": 11,
+      "jr": 8,
+      "od": 10,
+      "ha": 12,
+      "dr": 10,
+      "pa": 8,
+      "is": 8,
+      "id": 7,
+      "rb": 8,
+      "sb": 7,
+      "st": 5,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:52.818Z"
+    }
+  ]
+}

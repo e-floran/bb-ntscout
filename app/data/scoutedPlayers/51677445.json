@@ -1,0 +1,31 @@
+{
+  "id": 51677445,
+  "firstName": "Grégor",
+  "lastName": "Arslan",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 85617,
+      "tce": 92,
+      "tci": 31,
+      "tc": 123,
+      "gs": 8,
+      "js": 20,
+      "jr": 11,
+      "od": 17,
+      "ha": 18,
+      "dr": 18,
+      "pa": 8,
+      "is": 11,
+      "id": 10,
+      "rb": 6,
+      "sb": 4,
+      "st": 3,
+      "ft": 14,
+      "ex": 8,
+      "scoutedAt": "2025-08-28T05:44:04.107Z"
+    }
+  ]
+}

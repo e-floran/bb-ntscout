@@ -1,0 +1,31 @@
+{
+  "id": 50815363,
+  "firstName": "Ivaylo",
+  "lastName": "Lozanchev",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 49168,
+      "tce": 85,
+      "tci": 38,
+      "tc": 123,
+      "gs": 9,
+      "js": 16,
+      "jr": 7,
+      "od": 12,
+      "ha": 20,
+      "dr": 21,
+      "pa": 9,
+      "is": 13,
+      "id": 8,
+      "rb": 10,
+      "sb": 7,
+      "st": 4,
+      "ft": 11,
+      "ex": 11,
+      "scoutedAt": "2025-08-28T05:44:04.108Z"
+    }
+  ]
+}

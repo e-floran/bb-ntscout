@@ -1,0 +1,31 @@
+{
+  "id": 54231440,
+  "firstName": "Jordi",
+  "lastName": "Zalarich",
+  "countryId": 75,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 23970,
+      "tce": 30,
+      "tci": 47,
+      "tc": 77,
+      "gs": 7,
+      "js": 7,
+      "jr": 7,
+      "od": 4,
+      "ha": 7,
+      "dr": 3,
+      "pa": 2,
+      "is": 11,
+      "id": 14,
+      "rb": 14,
+      "sb": 8,
+      "st": 5,
+      "ft": 14,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:51.002Z"
+    }
+  ]
+}

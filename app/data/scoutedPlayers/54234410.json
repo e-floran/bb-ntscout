@@ -1,0 +1,31 @@
+{
+  "id": 54234410,
+  "firstName": "Arne",
+  "lastName": "Reinsch",
+  "countryId": 4,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 8510,
+      "tce": 48,
+      "tci": 33,
+      "tc": 81,
+      "gs": 7,
+      "js": 7,
+      "jr": 9,
+      "od": 9,
+      "ha": 11,
+      "dr": 7,
+      "pa": 5,
+      "is": 7,
+      "id": 8,
+      "rb": 12,
+      "sb": 6,
+      "st": 3,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:56.425Z"
+    }
+  ]
+}

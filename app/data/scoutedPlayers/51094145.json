@@ -1,0 +1,31 @@
+{
+  "id": 51094145,
+  "firstName": "Sergey",
+  "lastName": "Tuev",
+  "countryId": 19,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 177472,
+      "tce": 99,
+      "tci": 51,
+      "tc": 150,
+      "gs": 9,
+      "js": 17,
+      "jr": 14,
+      "od": 18,
+      "ha": 18,
+      "dr": 17,
+      "pa": 15,
+      "is": 15,
+      "id": 16,
+      "rb": 11,
+      "sb": 9,
+      "st": 5,
+      "ft": 25,
+      "ex": 12,
+      "scoutedAt": "2025-08-28T05:44:03.401Z"
+    }
+  ]
+}

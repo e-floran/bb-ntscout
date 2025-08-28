@@ -1,0 +1,31 @@
+{
+  "id": 53974358,
+  "firstName": "Ashton",
+  "lastName": "Borden",
+  "countryId": 1,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 22612,
+      "tce": 66,
+      "tci": 32,
+      "tc": 98,
+      "gs": 9,
+      "js": 8,
+      "jr": 5,
+      "od": 14,
+      "ha": 14,
+      "dr": 14,
+      "pa": 11,
+      "is": 10,
+      "id": 11,
+      "rb": 8,
+      "sb": 3,
+      "st": 8,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:51.890Z"
+    }
+  ]
+}

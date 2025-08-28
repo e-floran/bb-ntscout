@@ -1,0 +1,31 @@
+{
+  "id": 50501675,
+  "firstName": "Kaur",
+  "lastName": "Kask",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 180958,
+      "tce": 95,
+      "tci": 51,
+      "tc": 146,
+      "gs": 5,
+      "js": 17,
+      "jr": 14,
+      "od": 19,
+      "ha": 18,
+      "dr": 18,
+      "pa": 9,
+      "is": 13,
+      "id": 16,
+      "rb": 11,
+      "sb": 11,
+      "st": 4,
+      "ft": 25,
+      "ex": 13,
+      "scoutedAt": "2025-08-28T05:44:03.399Z"
+    }
+  ]
+}

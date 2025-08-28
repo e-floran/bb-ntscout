@@ -1,0 +1,31 @@
+{
+  "id": 54385734,
+  "firstName": "Andreas",
+  "lastName": "Kostenoglou",
+  "countryId": 12,
+  "potential": 4,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11411,
+      "tce": 46,
+      "tci": 35,
+      "tc": 81,
+      "gs": 6,
+      "js": 10,
+      "jr": 6,
+      "od": 9,
+      "ha": 4,
+      "dr": 9,
+      "pa": 8,
+      "is": 11,
+      "id": 9,
+      "rb": 10,
+      "sb": 5,
+      "st": 1,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:45.879Z"
+    }
+  ]
+}

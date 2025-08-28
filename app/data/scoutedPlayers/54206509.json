@@ -1,0 +1,31 @@
+{
+  "id": 54206509,
+  "firstName": "Shalva",
+  "lastName": "Karkashadze",
+  "countryId": 62,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11043,
+      "tce": 65,
+      "tci": 35,
+      "tc": 100,
+      "gs": 8,
+      "js": 11,
+      "jr": 4,
+      "od": 6,
+      "ha": 18,
+      "dr": 18,
+      "pa": 8,
+      "is": 12,
+      "id": 8,
+      "rb": 6,
+      "sb": 9,
+      "st": 5,
+      "ft": 12,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:51.002Z"
+    }
+  ]
+}

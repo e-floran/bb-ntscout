@@ -1,0 +1,31 @@
+{
+  "id": 54063382,
+  "firstName": "Thomas",
+  "lastName": "Fagard",
+  "countryId": 11,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 50190,
+      "tce": 21,
+      "tci": 55,
+      "tc": 76,
+      "gs": 8,
+      "js": 2,
+      "jr": 5,
+      "od": 1,
+      "ha": 1,
+      "dr": 3,
+      "pa": 9,
+      "is": 14,
+      "id": 15,
+      "rb": 15,
+      "sb": 11,
+      "st": 2,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:50.996Z"
+    }
+  ]
+}

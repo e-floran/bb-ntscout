@@ -1,0 +1,31 @@
+{
+  "id": 52901495,
+  "firstName": "Mok",
+  "lastName": "Meng Keong",
+  "countryId": 65,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 15519,
+      "tce": 69,
+      "tci": 37,
+      "tc": 106,
+      "gs": 7,
+      "js": 12,
+      "jr": 5,
+      "od": 12,
+      "ha": 17,
+      "dr": 18,
+      "pa": 5,
+      "is": 12,
+      "id": 9,
+      "rb": 8,
+      "sb": 8,
+      "st": 4,
+      "ft": 5,
+      "ex": 5,
+      "scoutedAt": "2025-08-28T05:44:08.509Z"
+    }
+  ]
+}

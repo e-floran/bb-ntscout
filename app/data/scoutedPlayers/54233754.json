@@ -1,0 +1,31 @@
+{
+  "id": 54233754,
+  "firstName": "Cui",
+  "lastName": "Shaiming",
+  "countryId": 45,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10184,
+      "tce": 60,
+      "tci": 28,
+      "tc": 88,
+      "gs": 8,
+      "js": 12,
+      "jr": 7,
+      "od": 7,
+      "ha": 14,
+      "dr": 16,
+      "pa": 4,
+      "is": 11,
+      "id": 7,
+      "rb": 7,
+      "sb": 3,
+      "st": 2,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-28T05:43:45.879Z"
+    }
+  ]
+}
