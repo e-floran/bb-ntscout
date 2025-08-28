@@ -21,8 +21,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # Removed 'with: token: ${{ secrets.GITHUB_TOKEN }}'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -54,6 +53,7 @@ jobs:
           else
             git commit -m "🤖 Weekly GameShape & DMI update - $(date +'%Y-%m-%d')"
             git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+            git remote -v
             git push origin main
           fi
 
@@ -67,8 +67,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # Removed 'with: token: ${{ secrets.GITHUB_TOKEN }}'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -100,6 +99,7 @@ jobs:
           else
             git commit -m "🆕 New players check - $(date +'%Y-%m-%d')"
             git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+            git remote -v
             git push origin main
           fi
 
@@ -113,8 +113,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # Removed 'with: token: ${{ secrets.GITHUB_TOKEN }}'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -146,6 +145,7 @@ jobs:
           else
             git commit -m "🤖 Scouted players update - $(date +'%Y-%m-%d')"
             git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+            git remote -v
             git push origin main
           fi
 
