@@ -1,0 +1,31 @@
+{
+  "id": 53551930,
+  "firstName": "Baltazar",
+  "lastName": "Róg",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 163677,
+      "tce": 50,
+      "tci": 62,
+      "tc": 112,
+      "gs": 7,
+      "js": 10,
+      "jr": 6,
+      "od": 6,
+      "ha": 9,
+      "dr": 11,
+      "pa": 8,
+      "is": 19,
+      "id": 18,
+      "rb": 14,
+      "sb": 11,
+      "st": 3,
+      "ft": 13,
+      "ex": 4,
+      "scoutedAt": "2025-08-29T22:41:46.323Z"
+    }
+  ]
+}

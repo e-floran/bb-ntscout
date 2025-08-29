@@ -1,0 +1,31 @@
+{
+  "id": 54541661,
+  "firstName": "Flavio",
+  "lastName": "Zuñiga",
+  "countryId": 54,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11699,
+      "tce": 66,
+      "tci": 14,
+      "tc": 80,
+      "gs": 9,
+      "js": 14,
+      "jr": 11,
+      "od": 9,
+      "ha": 13,
+      "dr": 10,
+      "pa": 9,
+      "is": 3,
+      "id": 3,
+      "rb": 7,
+      "sb": 1,
+      "st": 2,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:32.298Z"
+    }
+  ]
+}

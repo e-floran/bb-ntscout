@@ -1,0 +1,31 @@
+{
+  "id": 51835033,
+  "firstName": "Yan",
+  "lastName": "Lin Wen",
+  "countryId": 70,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 191109,
+      "tce": 106,
+      "tci": 34,
+      "tc": 140,
+      "gs": 7,
+      "js": 19,
+      "jr": 17,
+      "od": 17,
+      "ha": 19,
+      "dr": 19,
+      "pa": 15,
+      "is": 8,
+      "id": 11,
+      "rb": 7,
+      "sb": 8,
+      "st": 9,
+      "ft": 20,
+      "ex": 11,
+      "scoutedAt": "2025-08-29T22:41:41.623Z"
+    }
+  ]
+}

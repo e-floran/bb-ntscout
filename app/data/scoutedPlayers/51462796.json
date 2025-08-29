@@ -1,0 +1,31 @@
+{
+  "id": 51462796,
+  "firstName": "Ucok Baa",
+  "lastName": "Siburian",
+  "countryId": 43,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 176930,
+      "tce": 97,
+      "tci": 30,
+      "tc": 127,
+      "gs": 8,
+      "js": 21,
+      "jr": 14,
+      "od": 17,
+      "ha": 16,
+      "dr": 19,
+      "pa": 10,
+      "is": 6,
+      "id": 10,
+      "rb": 9,
+      "sb": 5,
+      "st": 6,
+      "ft": 12,
+      "ex": 13,
+      "scoutedAt": "2025-08-29T22:41:40.941Z"
+    }
+  ]
+}

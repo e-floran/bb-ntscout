@@ -1,0 +1,31 @@
+{
+  "id": 49152220,
+  "firstName": "Joca",
+  "lastName": "Fumaça",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 205668,
+      "tce": 99,
+      "tci": 46,
+      "tc": 145,
+      "gs": 8,
+      "js": 19,
+      "jr": 13,
+      "od": 20,
+      "ha": 18,
+      "dr": 17,
+      "pa": 12,
+      "is": 15,
+      "id": 14,
+      "rb": 8,
+      "sb": 9,
+      "st": 8,
+      "ft": 24,
+      "ex": 21,
+      "scoutedAt": "2025-08-29T22:41:41.627Z"
+    }
+  ]
+}

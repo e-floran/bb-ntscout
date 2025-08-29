@@ -1,0 +1,31 @@
+{
+  "id": 54188062,
+  "firstName": "Szymon",
+  "lastName": "Switkiewicz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17952,
+      "tce": 54,
+      "tci": 38,
+      "tc": 92,
+      "gs": 7,
+      "js": 12,
+      "jr": 4,
+      "od": 11,
+      "ha": 10,
+      "dr": 14,
+      "pa": 3,
+      "is": 12,
+      "id": 12,
+      "rb": 8,
+      "sb": 6,
+      "st": 5,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:30.282Z"
+    }
+  ]
+}

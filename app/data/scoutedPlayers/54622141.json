@@ -1,0 +1,31 @@
+{
+  "id": 54622141,
+  "firstName": "Mi",
+  "lastName": "Zhirong",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2940,
+      "tce": 28,
+      "tci": 27,
+      "tc": 55,
+      "gs": 8,
+      "js": 8,
+      "jr": 4,
+      "od": 3,
+      "ha": 8,
+      "dr": 2,
+      "pa": 3,
+      "is": 8,
+      "id": 7,
+      "rb": 5,
+      "sb": 7,
+      "st": 8,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:37.965Z"
+    }
+  ]
+}

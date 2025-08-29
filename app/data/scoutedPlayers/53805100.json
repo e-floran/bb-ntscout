@@ -1,0 +1,31 @@
+{
+  "id": 53805100,
+  "firstName": "Rostislav",
+  "lastName": "Shenberg",
+  "countryId": 19,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 14629,
+      "tce": 53,
+      "tci": 38,
+      "tc": 91,
+      "gs": 8,
+      "js": 10,
+      "jr": 5,
+      "od": 5,
+      "ha": 12,
+      "dr": 14,
+      "pa": 7,
+      "is": 11,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 5,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-08-29T22:41:32.295Z"
+    }
+  ]
+}

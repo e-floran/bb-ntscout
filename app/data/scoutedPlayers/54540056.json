@@ -1,0 +1,31 @@
+{
+  "id": 54540056,
+  "firstName": "Devran",
+  "lastName": "Kiliç",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3489,
+      "tce": 20,
+      "tci": 29,
+      "tc": 49,
+      "gs": 7,
+      "js": 2,
+      "jr": 2,
+      "od": 7,
+      "ha": 4,
+      "dr": 2,
+      "pa": 3,
+      "is": 9,
+      "id": 7,
+      "rb": 6,
+      "sb": 7,
+      "st": 7,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:35.291Z"
+    }
+  ]
+}

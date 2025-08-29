@@ -1,0 +1,31 @@
+{
+  "id": 54108045,
+  "firstName": "Burl",
+  "lastName": "Webb",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9548,
+      "tce": 51,
+      "tci": 34,
+      "tc": 85,
+      "gs": 7,
+      "js": 11,
+      "jr": 8,
+      "od": 7,
+      "ha": 10,
+      "dr": 9,
+      "pa": 6,
+      "is": 12,
+      "id": 6,
+      "rb": 9,
+      "sb": 7,
+      "st": 7,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:37.966Z"
+    }
+  ]
+}

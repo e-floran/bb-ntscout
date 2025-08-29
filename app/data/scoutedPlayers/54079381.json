@@ -1,0 +1,31 @@
+{
+  "id": 54079381,
+  "firstName": "Filimon",
+  "lastName": "Eleftherakis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10286,
+      "tce": 67,
+      "tci": 14,
+      "tc": 81,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 11,
+      "ha": 13,
+      "dr": 13,
+      "pa": 8,
+      "is": 3,
+      "id": 5,
+      "rb": 3,
+      "sb": 3,
+      "st": 3,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-08-29T22:41:30.958Z"
+    }
+  ]
+}

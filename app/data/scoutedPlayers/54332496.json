@@ -1,0 +1,31 @@
+{
+  "id": 54332496,
+  "firstName": "Isidro",
+  "lastName": "Arrufat",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 2843,
+      "tce": 36,
+      "tci": 14,
+      "tc": 50,
+      "gs": 5,
+      "js": 7,
+      "jr": 3,
+      "od": 6,
+      "ha": 5,
+      "dr": 8,
+      "pa": 7,
+      "is": 2,
+      "id": 4,
+      "rb": 7,
+      "sb": 1,
+      "st": 6,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:35.971Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51486849,
+  "firstName": "Ryszard",
+  "lastName": "Strzepek",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 154728,
+      "tce": 94,
+      "tci": 54,
+      "tc": 148,
+      "gs": 9,
+      "js": 18,
+      "jr": 11,
+      "od": 17,
+      "ha": 20,
+      "dr": 20,
+      "pa": 8,
+      "is": 20,
+      "id": 19,
+      "rb": 7,
+      "sb": 8,
+      "st": 6,
+      "ft": 13,
+      "ex": 9,
+      "scoutedAt": "2025-08-29T22:41:41.625Z"
+    }
+  ]
+}

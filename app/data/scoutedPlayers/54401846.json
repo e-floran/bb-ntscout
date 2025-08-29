@@ -1,0 +1,31 @@
+{
+  "id": 54401846,
+  "firstName": "Franck",
+  "lastName": "Blondel",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9353,
+      "tce": 51,
+      "tci": 28,
+      "tc": 79,
+      "gs": 9,
+      "js": 14,
+      "jr": 11,
+      "od": 4,
+      "ha": 7,
+      "dr": 10,
+      "pa": 5,
+      "is": 8,
+      "id": 5,
+      "rb": 7,
+      "sb": 8,
+      "st": 6,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:37.305Z"
+    }
+  ]
+}

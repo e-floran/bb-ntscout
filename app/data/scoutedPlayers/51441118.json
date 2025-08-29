@@ -1,0 +1,31 @@
+{
+  "id": 51441118,
+  "firstName": "Jimmy",
+  "lastName": "Le Tutour",
+  "countryId": 28,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 150673,
+      "tce": 104,
+      "tci": 27,
+      "tc": 131,
+      "gs": 7,
+      "js": 23,
+      "jr": 14,
+      "od": 18,
+      "ha": 20,
+      "dr": 20,
+      "pa": 9,
+      "is": 9,
+      "id": 7,
+      "rb": 6,
+      "sb": 5,
+      "st": 8,
+      "ft": 25,
+      "ex": 10,
+      "scoutedAt": "2025-08-29T22:41:41.623Z"
+    }
+  ]
+}

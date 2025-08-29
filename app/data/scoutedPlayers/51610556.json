@@ -1,0 +1,31 @@
+{
+  "id": 51610556,
+  "firstName": "Roberto",
+  "lastName": "Tomate",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 47527,
+      "tce": 88,
+      "tci": 36,
+      "tc": 124,
+      "gs": 7,
+      "js": 15,
+      "jr": 9,
+      "od": 18,
+      "ha": 17,
+      "dr": 18,
+      "pa": 11,
+      "is": 14,
+      "id": 11,
+      "rb": 3,
+      "sb": 8,
+      "st": 6,
+      "ft": 13,
+      "ex": 8,
+      "scoutedAt": "2025-08-29T22:41:42.288Z"
+    }
+  ]
+}

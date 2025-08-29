@@ -1,0 +1,31 @@
+{
+  "id": 54040545,
+  "firstName": "Giuseppe",
+  "lastName": "Perri",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5082,
+      "tce": 9,
+      "tci": 32,
+      "tc": 41,
+      "gs": 7,
+      "js": 1,
+      "jr": 2,
+      "od": 1,
+      "ha": 3,
+      "dr": 1,
+      "pa": 1,
+      "is": 7,
+      "id": 8,
+      "rb": 9,
+      "sb": 8,
+      "st": 3,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:37.964Z"
+    }
+  ]
+}

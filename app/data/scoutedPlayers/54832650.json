@@ -1,0 +1,31 @@
+{
+  "id": 54832650,
+  "firstName": "Thomas",
+  "lastName": "Vinlund",
+  "countryId": 69,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2886,
+      "tce": 30,
+      "tci": 21,
+      "tc": 51,
+      "gs": 9,
+      "js": 7,
+      "jr": 6,
+      "od": 4,
+      "ha": 5,
+      "dr": 3,
+      "pa": 5,
+      "is": 1,
+      "id": 7,
+      "rb": 5,
+      "sb": 8,
+      "st": 3,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:37.303Z"
+    }
+  ]
+}

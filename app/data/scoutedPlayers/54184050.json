@@ -1,0 +1,31 @@
+{
+  "id": 54184050,
+  "firstName": "Eppie Marcelo",
+  "lastName": "Cirunay",
+  "countryId": 57,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10310,
+      "tce": 22,
+      "tci": 36,
+      "tc": 58,
+      "gs": 5,
+      "js": 2,
+      "jr": 2,
+      "od": 2,
+      "ha": 4,
+      "dr": 5,
+      "pa": 7,
+      "is": 11,
+      "id": 8,
+      "rb": 11,
+      "sb": 6,
+      "st": 4,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:30.952Z"
+    }
+  ]
+}

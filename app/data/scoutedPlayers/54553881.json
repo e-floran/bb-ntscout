@@ -1,0 +1,31 @@
+{
+  "id": 54553881,
+  "firstName": "Stephen",
+  "lastName": "Eason",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 3744,
+      "tce": 23,
+      "tci": 28,
+      "tc": 51,
+      "gs": 5,
+      "js": 2,
+      "jr": 3,
+      "od": 3,
+      "ha": 6,
+      "dr": 7,
+      "pa": 2,
+      "is": 6,
+      "id": 7,
+      "rb": 8,
+      "sb": 7,
+      "st": 7,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:35.967Z"
+    }
+  ]
+}

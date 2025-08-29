@@ -1,0 +1,31 @@
+{
+  "id": 54026775,
+  "firstName": "Guillermo",
+  "lastName": "Prado",
+  "countryId": 7,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18581,
+      "tce": 68,
+      "tci": 25,
+      "tc": 93,
+      "gs": 9,
+      "js": 14,
+      "jr": 11,
+      "od": 10,
+      "ha": 12,
+      "dr": 14,
+      "pa": 7,
+      "is": 6,
+      "id": 10,
+      "rb": 6,
+      "sb": 3,
+      "st": 4,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:32.290Z"
+    }
+  ]
+}

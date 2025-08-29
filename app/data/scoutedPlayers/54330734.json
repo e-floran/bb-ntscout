@@ -1,0 +1,31 @@
+{
+  "id": 54330734,
+  "firstName": "Felip",
+  "lastName": "Pijoan",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 3780,
+      "tce": 30,
+      "tci": 27,
+      "tc": 57,
+      "gs": 6,
+      "js": 8,
+      "jr": 9,
+      "od": 4,
+      "ha": 3,
+      "dr": 3,
+      "pa": 3,
+      "is": 7,
+      "id": 11,
+      "rb": 2,
+      "sb": 7,
+      "st": 5,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:35.292Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53922208,
+  "firstName": "Sergo",
+  "lastName": "Machabeli",
+  "countryId": 62,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12442,
+      "tce": 67,
+      "tci": 29,
+      "tc": 96,
+      "gs": 8,
+      "js": 10,
+      "jr": 8,
+      "od": 11,
+      "ha": 16,
+      "dr": 16,
+      "pa": 6,
+      "is": 10,
+      "id": 9,
+      "rb": 8,
+      "sb": 2,
+      "st": 2,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:29.628Z"
+    }
+  ]
+}

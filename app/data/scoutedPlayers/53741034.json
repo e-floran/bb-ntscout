@@ -1,0 +1,31 @@
+{
+  "id": 53741034,
+  "firstName": "Samuele",
+  "lastName": "Caserta",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 39470,
+      "tce": 39,
+      "tci": 52,
+      "tc": 91,
+      "gs": 9,
+      "js": 7,
+      "jr": 6,
+      "od": 6,
+      "ha": 8,
+      "dr": 7,
+      "pa": 5,
+      "is": 16,
+      "id": 15,
+      "rb": 11,
+      "sb": 10,
+      "st": 5,
+      "ft": 1,
+      "ex": 3,
+      "scoutedAt": "2025-08-29T22:41:31.643Z"
+    }
+  ]
+}

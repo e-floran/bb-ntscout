@@ -1,0 +1,31 @@
+{
+  "id": 53567721,
+  "firstName": "Rashid",
+  "lastName": "Hatampour",
+  "countryId": 59,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 23044,
+      "tce": 73,
+      "tci": 27,
+      "tc": 100,
+      "gs": 8,
+      "js": 15,
+      "jr": 12,
+      "od": 13,
+      "ha": 12,
+      "dr": 14,
+      "pa": 7,
+      "is": 6,
+      "id": 9,
+      "rb": 6,
+      "sb": 6,
+      "st": 6,
+      "ft": 13,
+      "ex": 5,
+      "scoutedAt": "2025-08-29T22:41:45.667Z"
+    }
+  ]
+}

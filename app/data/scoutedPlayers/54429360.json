@@ -1,0 +1,31 @@
+{
+  "id": 54429360,
+  "firstName": "Emilis",
+  "lastName": "Jekentas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8527,
+      "tce": 30,
+      "tci": 39,
+      "tc": 69,
+      "gs": 6,
+      "js": 4,
+      "jr": 5,
+      "od": 7,
+      "ha": 3,
+      "dr": 4,
+      "pa": 7,
+      "is": 9,
+      "id": 11,
+      "rb": 10,
+      "sb": 9,
+      "st": 2,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:36.642Z"
+    }
+  ]
+}

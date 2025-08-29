@@ -1,0 +1,31 @@
+{
+  "id": 54791606,
+  "firstName": "Didzis",
+  "lastName": "Kemrausis",
+  "countryId": 46,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2758,
+      "tce": 36,
+      "tci": 22,
+      "tc": 58,
+      "gs": 8,
+      "js": 5,
+      "jr": 7,
+      "od": 7,
+      "ha": 5,
+      "dr": 7,
+      "pa": 5,
+      "is": 1,
+      "id": 7,
+      "rb": 5,
+      "sb": 9,
+      "st": 2,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:37.302Z"
+    }
+  ]
+}

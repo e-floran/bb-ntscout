@@ -1,0 +1,31 @@
+{
+  "id": 51300095,
+  "firstName": "Huang",
+  "lastName": "Honghai",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 51482,
+      "tce": 93,
+      "tci": 30,
+      "tc": 123,
+      "gs": 8,
+      "js": 17,
+      "jr": 10,
+      "od": 17,
+      "ha": 22,
+      "dr": 21,
+      "pa": 6,
+      "is": 15,
+      "id": 7,
+      "rb": 5,
+      "sb": 3,
+      "st": 5,
+      "ft": 15,
+      "ex": 11,
+      "scoutedAt": "2025-08-29T22:41:41.629Z"
+    }
+  ]
+}

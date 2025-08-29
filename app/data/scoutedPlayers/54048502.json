@@ -1,0 +1,31 @@
+{
+  "id": 54048502,
+  "firstName": "Daniele",
+  "lastName": "Banzato",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12830,
+      "tce": 64,
+      "tci": 32,
+      "tc": 96,
+      "gs": 7,
+      "js": 10,
+      "jr": 5,
+      "od": 8,
+      "ha": 15,
+      "dr": 17,
+      "pa": 9,
+      "is": 12,
+      "id": 3,
+      "rb": 8,
+      "sb": 9,
+      "st": 5,
+      "ft": 15,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:32.296Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54667811,
+  "firstName": "Diego",
+  "lastName": "Balestreri",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3445,
+      "tce": 38,
+      "tci": 27,
+      "tc": 65,
+      "gs": 8,
+      "js": 7,
+      "jr": 7,
+      "od": 6,
+      "ha": 7,
+      "dr": 8,
+      "pa": 3,
+      "is": 7,
+      "id": 8,
+      "rb": 7,
+      "sb": 5,
+      "st": 7,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:37.965Z"
+    }
+  ]
+}

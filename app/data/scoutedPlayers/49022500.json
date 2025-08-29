@@ -1,0 +1,31 @@
+{
+  "id": 49022500,
+  "firstName": "Cyril",
+  "lastName": "Ladreyt",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 144135,
+      "tce": 98,
+      "tci": 27,
+      "tc": 125,
+      "gs": 9,
+      "js": 17,
+      "jr": 12,
+      "od": 18,
+      "ha": 17,
+      "dr": 22,
+      "pa": 12,
+      "is": 12,
+      "id": 5,
+      "rb": 4,
+      "sb": 6,
+      "st": 6,
+      "ft": 24,
+      "ex": 15,
+      "scoutedAt": "2025-08-29T22:41:40.939Z"
+    }
+  ]
+}

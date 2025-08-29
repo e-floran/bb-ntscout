@@ -1,0 +1,31 @@
+{
+  "id": 53714476,
+  "firstName": "Nemesio",
+  "lastName": "Rodríguez",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 6630,
+      "tce": 47,
+      "tci": 12,
+      "tc": 59,
+      "gs": 7,
+      "js": 12,
+      "jr": 10,
+      "od": 7,
+      "ha": 5,
+      "dr": 8,
+      "pa": 5,
+      "is": 4,
+      "id": 4,
+      "rb": 2,
+      "sb": 2,
+      "st": 9,
+      "ft": 5,
+      "ex": 5,
+      "scoutedAt": "2025-08-29T22:41:35.300Z"
+    }
+  ]
+}

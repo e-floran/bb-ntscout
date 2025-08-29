@@ -1,0 +1,31 @@
+{
+  "id": 49237181,
+  "firstName": "Sotos",
+  "lastName": "Gorillas",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 166125,
+      "tce": 73,
+      "tci": 60,
+      "tc": 133,
+      "gs": 9,
+      "js": 13,
+      "jr": 5,
+      "od": 9,
+      "ha": 18,
+      "dr": 19,
+      "pa": 9,
+      "is": 17,
+      "id": 17,
+      "rb": 16,
+      "sb": 10,
+      "st": 3,
+      "ft": 19,
+      "ex": 17,
+      "scoutedAt": "2025-08-29T22:41:41.621Z"
+    }
+  ]
+}

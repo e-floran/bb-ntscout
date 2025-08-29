@@ -1,0 +1,31 @@
+{
+  "id": 50704709,
+  "firstName": "Nicola",
+  "lastName": "Campanella",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 200812,
+      "tce": 105,
+      "tci": 52,
+      "tc": 157,
+      "gs": 7,
+      "js": 19,
+      "jr": 13,
+      "od": 20,
+      "ha": 21,
+      "dr": 22,
+      "pa": 10,
+      "is": 19,
+      "id": 17,
+      "rb": 8,
+      "sb": 8,
+      "st": 2,
+      "ft": 17,
+      "ex": 13,
+      "scoutedAt": "2025-08-29T22:41:40.941Z"
+    }
+  ]
+}

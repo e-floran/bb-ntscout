@@ -1,0 +1,31 @@
+{
+  "id": 54019000,
+  "firstName": "Argün",
+  "lastName": "Aksüyek",
+  "countryId": 6,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10370,
+      "tce": 57,
+      "tci": 27,
+      "tc": 84,
+      "gs": 7,
+      "js": 9,
+      "jr": 9,
+      "od": 8,
+      "ha": 10,
+      "dr": 11,
+      "pa": 10,
+      "is": 5,
+      "id": 6,
+      "rb": 9,
+      "sb": 7,
+      "st": 8,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:30.957Z"
+    }
+  ]
+}

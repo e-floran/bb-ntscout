@@ -1,0 +1,31 @@
+{
+  "id": 54643233,
+  "firstName": "Oscar",
+  "lastName": "Poncio Pilatos",
+  "countryId": 7,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 12479,
+      "tce": 28,
+      "tci": 37,
+      "tc": 65,
+      "gs": 9,
+      "js": 10,
+      "jr": 4,
+      "od": 2,
+      "ha": 3,
+      "dr": 2,
+      "pa": 7,
+      "is": 9,
+      "id": 9,
+      "rb": 9,
+      "sb": 10,
+      "st": 6,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:30.956Z"
+    }
+  ]
+}

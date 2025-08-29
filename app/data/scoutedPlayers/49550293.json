@@ -1,0 +1,31 @@
+{
+  "id": 49550293,
+  "firstName": "Anthony",
+  "lastName": "Havaux",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 215671,
+      "tce": 99,
+      "tci": 55,
+      "tc": 154,
+      "gs": 8,
+      "js": 20,
+      "jr": 13,
+      "od": 17,
+      "ha": 19,
+      "dr": 21,
+      "pa": 9,
+      "is": 20,
+      "id": 16,
+      "rb": 9,
+      "sb": 10,
+      "st": 6,
+      "ft": 19,
+      "ex": 15,
+      "scoutedAt": "2025-08-29T22:41:41.627Z"
+    }
+  ]
+}

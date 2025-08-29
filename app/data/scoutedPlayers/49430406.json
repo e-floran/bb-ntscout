@@ -1,0 +1,31 @@
+{
+  "id": 49430406,
+  "firstName": "Dustin",
+  "lastName": "Artis",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 230317,
+      "tce": 108,
+      "tci": 55,
+      "tc": 163,
+      "gs": 9,
+      "js": 20,
+      "jr": 10,
+      "od": 20,
+      "ha": 23,
+      "dr": 23,
+      "pa": 12,
+      "is": 22,
+      "id": 18,
+      "rb": 8,
+      "sb": 7,
+      "st": 4,
+      "ft": 20,
+      "ex": 17,
+      "scoutedAt": "2025-08-29T22:41:42.284Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52696242,
+  "firstName": "Liao",
+  "lastName": "Guantian",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 28079,
+      "tce": 74,
+      "tci": 43,
+      "tc": 117,
+      "gs": 7,
+      "js": 14,
+      "jr": 10,
+      "od": 7,
+      "ha": 17,
+      "dr": 17,
+      "pa": 9,
+      "is": 15,
+      "id": 11,
+      "rb": 9,
+      "sb": 8,
+      "st": 3,
+      "ft": 10,
+      "ex": 6,
+      "scoutedAt": "2025-08-29T22:41:45.676Z"
+    }
+  ]
+}

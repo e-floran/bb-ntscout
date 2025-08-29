@@ -1,0 +1,31 @@
+{
+  "id": 54451839,
+  "firstName": "Mathieu",
+  "lastName": "Caron",
+  "countryId": 28,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11793,
+      "tce": 70,
+      "tci": 15,
+      "tc": 85,
+      "gs": 9,
+      "js": 15,
+      "jr": 10,
+      "od": 9,
+      "ha": 13,
+      "dr": 13,
+      "pa": 10,
+      "is": 4,
+      "id": 6,
+      "rb": 3,
+      "sb": 2,
+      "st": 7,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:30.953Z"
+    }
+  ]
+}

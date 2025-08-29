@@ -1,0 +1,31 @@
+{
+  "id": 54429023,
+  "firstName": "Serafinas",
+  "lastName": "Garifulinas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7901,
+      "tce": 55,
+      "tci": 35,
+      "tc": 90,
+      "gs": 9,
+      "js": 8,
+      "jr": 8,
+      "od": 11,
+      "ha": 12,
+      "dr": 11,
+      "pa": 5,
+      "is": 11,
+      "id": 11,
+      "rb": 4,
+      "sb": 9,
+      "st": 4,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:35.964Z"
+    }
+  ]
+}

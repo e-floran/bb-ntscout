@@ -1,0 +1,31 @@
+{
+  "id": 54023097,
+  "firstName": "Lucas",
+  "lastName": "Sáinz Diez",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15302,
+      "tce": 69,
+      "tci": 37,
+      "tc": 106,
+      "gs": 6,
+      "js": 14,
+      "jr": 7,
+      "od": 8,
+      "ha": 16,
+      "dr": 16,
+      "pa": 8,
+      "is": 15,
+      "id": 5,
+      "rb": 7,
+      "sb": 10,
+      "st": 3,
+      "ft": 8,
+      "ex": 5,
+      "scoutedAt": "2025-08-29T22:41:31.633Z"
+    }
+  ]
+}

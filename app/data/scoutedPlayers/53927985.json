@@ -1,0 +1,31 @@
+{
+  "id": 53927985,
+  "firstName": "Ken",
+  "lastName": "Paul",
+  "countryId": 98,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 7891,
+      "tce": 41,
+      "tci": 34,
+      "tc": 75,
+      "gs": 8,
+      "js": 9,
+      "jr": 5,
+      "od": 7,
+      "ha": 8,
+      "dr": 8,
+      "pa": 4,
+      "is": 11,
+      "id": 10,
+      "rb": 6,
+      "sb": 7,
+      "st": 1,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:36.640Z"
+    }
+  ]
+}

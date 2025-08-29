@@ -1,0 +1,31 @@
+{
+  "id": 49294219,
+  "firstName": "Fernando",
+  "lastName": "Opazo",
+  "countryId": 21,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 158189,
+      "tce": 95,
+      "tci": 42,
+      "tc": 137,
+      "gs": 8,
+      "js": 16,
+      "jr": 13,
+      "od": 20,
+      "ha": 16,
+      "dr": 20,
+      "pa": 10,
+      "is": 13,
+      "id": 11,
+      "rb": 9,
+      "sb": 9,
+      "st": 5,
+      "ft": 17,
+      "ex": 17,
+      "scoutedAt": "2025-08-29T22:41:42.930Z"
+    }
+  ]
+}

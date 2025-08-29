@@ -1,0 +1,31 @@
+{
+  "id": 54757679,
+  "firstName": "Vice",
+  "lastName": "Trobec",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3855,
+      "tce": 36,
+      "tci": 26,
+      "tc": 62,
+      "gs": 4,
+      "js": 5,
+      "jr": 3,
+      "od": 3,
+      "ha": 9,
+      "dr": 10,
+      "pa": 6,
+      "is": 4,
+      "id": 9,
+      "rb": 6,
+      "sb": 7,
+      "st": 2,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:37.963Z"
+    }
+  ]
+}

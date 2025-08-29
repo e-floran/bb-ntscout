@@ -1,0 +1,31 @@
+{
+  "id": 54795800,
+  "firstName": "Elõd",
+  "lastName": "Gárdián",
+  "countryId": 48,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2926,
+      "tce": 36,
+      "tci": 12,
+      "tc": 48,
+      "gs": 8,
+      "js": 6,
+      "jr": 6,
+      "od": 10,
+      "ha": 6,
+      "dr": 3,
+      "pa": 5,
+      "is": 3,
+      "id": 4,
+      "rb": 4,
+      "sb": 1,
+      "st": 7,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-08-29T22:41:37.306Z"
+    }
+  ]
+}

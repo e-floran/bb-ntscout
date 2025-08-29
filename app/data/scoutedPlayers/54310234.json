@@ -1,0 +1,31 @@
+{
+  "id": 54310234,
+  "firstName": "He",
+  "lastName": "Jingli",
+  "countryId": 5,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 22589,
+      "tce": 45,
+      "tci": 50,
+      "tc": 95,
+      "gs": 9,
+      "js": 6,
+      "jr": 4,
+      "od": 6,
+      "ha": 9,
+      "dr": 10,
+      "pa": 10,
+      "is": 11,
+      "id": 16,
+      "rb": 11,
+      "sb": 12,
+      "st": 1,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-08-29T22:41:30.286Z"
+    }
+  ]
+}
