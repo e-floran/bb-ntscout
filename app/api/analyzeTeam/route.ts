@@ -86,7 +86,7 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  // --- Default flow: analyze mainTeamId's next opponent for 2 seasons ---
+  // --- Default flow: analyze mainTeamId's next opponent for 1 season ---
   const mainTeamId = user.mainTeamId;
   const jsonPath = path.join(TEAM_DATA_DIR, `${mainTeamId}.json`);
   if (!fs.existsSync(TEAM_DATA_DIR)) {
@@ -175,24 +175,18 @@ export async function GET(req: NextRequest) {
   }
   const opponentId = opponentTeam["$"].id;
   const opponentName = opponentTeam.teamName;
-  const PREV_SEASON = SEASON - 1;
 
-  // Run analysis for opponent, current and previous season
-  const [curr, prev] = await Promise.all([
-    analyzeTeamForSeason(opponentId, bbSession, SEASON),
-    analyzeTeamForSeason(opponentId, bbSession, PREV_SEASON),
-  ]);
+  // Run analysis for opponent, current season
+  const curr = await analyzeTeamForSeason(opponentId, bbSession, SEASON);
 
   return NextResponse.json({
     opponentName,
     opponentId,
     curr,
-    prev,
     season: SEASON,
-    prevSeason: PREV_SEASON,
     // Add these for compatibility with your modified frontend
-    seasons: [SEASON, PREV_SEASON],
-    seasonsData: [curr, prev],
+    seasons: [SEASON],
+    seasonsData: [curr],
   });
 }
 
