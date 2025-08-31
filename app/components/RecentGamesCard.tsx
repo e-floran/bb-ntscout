@@ -105,11 +105,13 @@ export function RecentGamesCard({
         onClick={() => setShowDetails(!showDetails)}
       >
         <div>
-          <div
-            style={{ fontWeight: "600", fontSize: "16px", marginBottom: "4px" }}
+          <a
+            target="_blank"
+            href={`https://www.buzzerbeater.com/match/${game.matchId}/boxscore.aspx`}
+            style={{ fontWeight: "600", fontSize: "16px", marginBottom: "8px" }}
           >
             vs {game.opponent?.name || "Adversaire inconnu"}
-          </div>
+          </a>
           <div style={{ fontSize: "14px", color: "#6b7280" }}>
             {formatDate(game.date)} • Match ID: {game.matchId}
           </div>

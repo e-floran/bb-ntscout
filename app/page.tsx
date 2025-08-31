@@ -262,10 +262,18 @@ export default function IndexPage() {
         {analysis && !loading && !err && (
           <>
             <div className="analysis-section">
-              <div className="analysis-title">
+              <a
+                href={`https://www.buzzerbeater.com/country/${
+                  analysis.opponentId > 1000
+                    ? analysis.opponentId - 1000
+                    : analysis.opponentId
+                }/${analysis.opponentId > 1000 ? "jnt" : "nt"}/overview.aspx`}
+                target="_blank"
+                className="analysis-title"
+              >
                 Équipe analysée : {analysis.opponentName} (ID :{" "}
                 {analysis.opponentId})
-              </div>
+              </a>
               {seasonLabels.length > 0 && (
                 <div className="analysis-subtitle">
                   Saisons analysées :
@@ -483,15 +491,17 @@ export default function IndexPage() {
                               borderRadius: "6px",
                             }}
                           >
-                            <div
+                            <a
                               style={{
                                 fontWeight: "600",
                                 fontSize: "14px",
                                 marginBottom: "4px",
                               }}
+                              target="_blank"
+                              href={`https://www.buzzerbeater.com/player/${player.id}/overview.aspx`}
                             >
                               {player.name}
-                            </div>
+                            </a>
                             {player.position && (
                               <div
                                 style={{ fontSize: "12px", color: "#6b7280" }}
