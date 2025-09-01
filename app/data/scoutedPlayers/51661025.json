@@ -1,0 +1,31 @@
+{
+  "id": 51661025,
+  "firstName": "Massimo",
+  "lastName": "Tesi",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 113730,
+      "tce": 99,
+      "tci": 25,
+      "tc": 124,
+      "gs": 9,
+      "js": 18,
+      "jr": 14,
+      "od": 17,
+      "ha": 18,
+      "dr": 19,
+      "pa": 13,
+      "is": 9,
+      "id": 6,
+      "rb": 7,
+      "sb": 3,
+      "st": 9,
+      "ft": 15,
+      "ex": 9,
+      "scoutedAt": "2025-09-01T15:23:43.106Z"
+    }
+  ]
+}

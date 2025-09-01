@@ -1,0 +1,31 @@
+{
+  "id": 54757498,
+  "firstName": "Leo",
+  "lastName": "Skalamera",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3010,
+      "tce": 45,
+      "tci": 22,
+      "tc": 67,
+      "gs": 7,
+      "js": 7,
+      "jr": 6,
+      "od": 6,
+      "ha": 9,
+      "dr": 10,
+      "pa": 7,
+      "is": 6,
+      "id": 4,
+      "rb": 7,
+      "sb": 5,
+      "st": 7,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:39.488Z"
+    }
+  ]
+}

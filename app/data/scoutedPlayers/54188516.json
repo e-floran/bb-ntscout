@@ -1,0 +1,31 @@
+{
+  "id": 54188516,
+  "firstName": "Radosław",
+  "lastName": "Krempa",
+  "countryId": 58,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11533,
+      "tce": 51,
+      "tci": 26,
+      "tc": 77,
+      "gs": 8,
+      "js": 13,
+      "jr": 6,
+      "od": 9,
+      "ha": 6,
+      "dr": 8,
+      "pa": 9,
+      "is": 6,
+      "id": 6,
+      "rb": 9,
+      "sb": 5,
+      "st": 3,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:34.860Z"
+    }
+  ]
+}

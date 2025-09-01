@@ -1,0 +1,31 @@
+{
+  "id": 53783441,
+  "firstName": "Temiz",
+  "lastName": "Abbas",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 7066,
+      "tce": 54,
+      "tci": 26,
+      "tc": 80,
+      "gs": 9,
+      "js": 11,
+      "jr": 4,
+      "od": 4,
+      "ha": 14,
+      "dr": 14,
+      "pa": 7,
+      "is": 11,
+      "id": 7,
+      "rb": 3,
+      "sb": 5,
+      "st": 3,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-01T15:23:40.043Z"
+    }
+  ]
+}

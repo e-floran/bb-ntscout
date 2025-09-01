@@ -1,0 +1,31 @@
+{
+  "id": 54115731,
+  "firstName": "Nikolay",
+  "lastName": "Dormidonov",
+  "countryId": 19,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11600,
+      "tce": 63,
+      "tci": 30,
+      "tc": 93,
+      "gs": 9,
+      "js": 13,
+      "jr": 10,
+      "od": 9,
+      "ha": 10,
+      "dr": 13,
+      "pa": 8,
+      "is": 9,
+      "id": 4,
+      "rb": 8,
+      "sb": 9,
+      "st": 3,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-09-01T15:23:34.301Z"
+    }
+  ]
+}

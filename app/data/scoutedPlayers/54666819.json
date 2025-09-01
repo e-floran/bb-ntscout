@@ -1,0 +1,31 @@
+{
+  "id": 54666819,
+  "firstName": "Carlo",
+  "lastName": "Corvaglia",
+  "countryId": 10,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10158,
+      "tce": 43,
+      "tci": 23,
+      "tc": 66,
+      "gs": 6,
+      "js": 9,
+      "jr": 9,
+      "od": 9,
+      "ha": 4,
+      "dr": 9,
+      "pa": 3,
+      "is": 9,
+      "id": 4,
+      "rb": 9,
+      "sb": 1,
+      "st": 9,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:35.415Z"
+    }
+  ]
+}

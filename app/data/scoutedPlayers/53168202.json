@@ -1,0 +1,31 @@
+{
+  "id": 53168202,
+  "firstName": "Aleksandar",
+  "lastName": "Babamović",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 97644,
+      "tce": 77,
+      "tci": 56,
+      "tc": 133,
+      "gs": 7,
+      "js": 14,
+      "jr": 8,
+      "od": 17,
+      "ha": 14,
+      "dr": 13,
+      "pa": 11,
+      "is": 15,
+      "id": 18,
+      "rb": 10,
+      "sb": 13,
+      "st": 3,
+      "ft": 7,
+      "ex": 6,
+      "scoutedAt": "2025-09-01T15:23:46.600Z"
+    }
+  ]
+}

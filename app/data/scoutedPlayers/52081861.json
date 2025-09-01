@@ -1,0 +1,31 @@
+{
+  "id": 52081861,
+  "firstName": "Carl",
+  "lastName": "Royston",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 171675,
+      "tce": 79,
+      "tci": 59,
+      "tc": 138,
+      "gs": 8,
+      "js": 15,
+      "jr": 9,
+      "od": 14,
+      "ha": 18,
+      "dr": 17,
+      "pa": 6,
+      "is": 20,
+      "id": 18,
+      "rb": 9,
+      "sb": 12,
+      "st": 3,
+      "ft": 12,
+      "ex": 8,
+      "scoutedAt": "2025-09-01T15:23:45.446Z"
+    }
+  ]
+}

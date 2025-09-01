@@ -1,0 +1,31 @@
+{
+  "id": 52384815,
+  "firstName": "Miguel",
+  "lastName": "Xavier",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 52700,
+      "tce": 71,
+      "tci": 33,
+      "tc": 104,
+      "gs": 7,
+      "js": 18,
+      "jr": 13,
+      "od": 10,
+      "ha": 12,
+      "dr": 11,
+      "pa": 7,
+      "is": 7,
+      "id": 9,
+      "rb": 9,
+      "sb": 8,
+      "st": 8,
+      "ft": 10,
+      "ex": 8,
+      "scoutedAt": "2025-09-01T15:23:46.038Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54045901,
+  "firstName": "Mauro",
+  "lastName": "Paglialunga",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19336,
+      "tce": 35,
+      "tci": 49,
+      "tc": 84,
+      "gs": 4,
+      "js": 1,
+      "jr": 7,
+      "od": 10,
+      "ha": 8,
+      "dr": 5,
+      "pa": 4,
+      "is": 5,
+      "id": 19,
+      "rb": 9,
+      "sb": 16,
+      "st": 2,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:33.740Z"
+    }
+  ]
+}

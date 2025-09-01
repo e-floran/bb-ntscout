@@ -1,0 +1,31 @@
+{
+  "id": 51001833,
+  "firstName": "Damià",
+  "lastName": "Eraustieta",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 124305,
+      "tce": 96,
+      "tci": 44,
+      "tc": 140,
+      "gs": 8,
+      "js": 20,
+      "jr": 11,
+      "od": 16,
+      "ha": 19,
+      "dr": 21,
+      "pa": 9,
+      "is": 14,
+      "id": 13,
+      "rb": 9,
+      "sb": 8,
+      "st": 7,
+      "ft": 24,
+      "ex": 10,
+      "scoutedAt": "2025-09-01T15:23:43.662Z"
+    }
+  ]
+}

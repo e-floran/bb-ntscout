@@ -1,0 +1,31 @@
+{
+  "id": 50951857,
+  "firstName": "Gayle",
+  "lastName": "Singer",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 116428,
+      "tce": 79,
+      "tci": 50,
+      "tc": 129,
+      "gs": 5,
+      "js": 18,
+      "jr": 12,
+      "od": 7,
+      "ha": 17,
+      "dr": 20,
+      "pa": 5,
+      "is": 17,
+      "id": 17,
+      "rb": 9,
+      "sb": 7,
+      "st": 3,
+      "ft": 25,
+      "ex": 11,
+      "scoutedAt": "2025-09-01T15:23:42.547Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53547833,
+  "firstName": "David",
+  "lastName": "McKee",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 73585,
+      "tce": 59,
+      "tci": 55,
+      "tc": 114,
+      "gs": 7,
+      "js": 11,
+      "jr": 8,
+      "od": 6,
+      "ha": 10,
+      "dr": 17,
+      "pa": 7,
+      "is": 18,
+      "id": 17,
+      "rb": 11,
+      "sb": 9,
+      "st": 5,
+      "ft": 6,
+      "ex": 6,
+      "scoutedAt": "2025-09-01T15:23:46.603Z"
+    }
+  ]
+}

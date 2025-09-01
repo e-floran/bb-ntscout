@@ -1,0 +1,31 @@
+{
+  "id": 52081906,
+  "firstName": "Gary",
+  "lastName": "Williamson",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 161827,
+      "tce": 87,
+      "tci": 57,
+      "tc": 144,
+      "gs": 8,
+      "js": 18,
+      "jr": 11,
+      "od": 16,
+      "ha": 17,
+      "dr": 19,
+      "pa": 6,
+      "is": 20,
+      "id": 18,
+      "rb": 7,
+      "sb": 12,
+      "st": 4,
+      "ft": 17,
+      "ex": 9,
+      "scoutedAt": "2025-09-01T15:23:45.445Z"
+    }
+  ]
+}

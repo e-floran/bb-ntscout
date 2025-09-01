@@ -1,0 +1,31 @@
+{
+  "id": 50402116,
+  "firstName": "Youssoufa",
+  "lastName": "Biagui",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 89006,
+      "tce": 98,
+      "tci": 37,
+      "tc": 135,
+      "gs": 8,
+      "js": 19,
+      "jr": 13,
+      "od": 16,
+      "ha": 20,
+      "dr": 20,
+      "pa": 10,
+      "is": 19,
+      "id": 8,
+      "rb": 4,
+      "sb": 6,
+      "st": 2,
+      "ft": 9,
+      "ex": 13,
+      "scoutedAt": "2025-09-01T15:23:42.546Z"
+    }
+  ]
+}

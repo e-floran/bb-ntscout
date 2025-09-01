@@ -1,0 +1,31 @@
+{
+  "id": 54144745,
+  "firstName": "Mauro",
+  "lastName": "Gasparetto",
+  "countryId": 28,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10447,
+      "tce": 68,
+      "tci": 26,
+      "tc": 94,
+      "gs": 9,
+      "js": 13,
+      "jr": 9,
+      "od": 8,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 12,
+      "id": 5,
+      "rb": 4,
+      "sb": 5,
+      "st": 2,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:33.162Z"
+    }
+  ]
+}

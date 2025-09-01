@@ -1,0 +1,31 @@
+{
+  "id": 54664348,
+  "firstName": "Aldo Maria",
+  "lastName": "Larocca",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10286,
+      "tce": 45,
+      "tci": 33,
+      "tc": 78,
+      "gs": 4,
+      "js": 10,
+      "jr": 6,
+      "od": 7,
+      "ha": 10,
+      "dr": 8,
+      "pa": 4,
+      "is": 6,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 9,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:33.741Z"
+    }
+  ]
+}

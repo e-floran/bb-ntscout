@@ -1,0 +1,31 @@
+{
+  "id": 54102885,
+  "firstName": "Alex",
+  "lastName": "Katzav",
+  "countryId": 15,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 25246,
+      "tce": 33,
+      "tci": 49,
+      "tc": 82,
+      "gs": 9,
+      "js": 5,
+      "jr": 3,
+      "od": 12,
+      "ha": 1,
+      "dr": 4,
+      "pa": 8,
+      "is": 8,
+      "id": 14,
+      "rb": 11,
+      "sb": 16,
+      "st": 5,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-01T15:23:35.987Z"
+    }
+  ]
+}

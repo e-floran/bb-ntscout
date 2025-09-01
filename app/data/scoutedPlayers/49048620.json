@@ -1,0 +1,31 @@
+{
+  "id": 49048620,
+  "firstName": "He",
+  "lastName": "Xiaoyuan",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 212819,
+      "tce": 99,
+      "tci": 53,
+      "tc": 152,
+      "gs": 8,
+      "js": 18,
+      "jr": 9,
+      "od": 20,
+      "ha": 20,
+      "dr": 20,
+      "pa": 12,
+      "is": 18,
+      "id": 17,
+      "rb": 11,
+      "sb": 7,
+      "st": 5,
+      "ft": 35,
+      "ex": 19,
+      "scoutedAt": "2025-09-01T15:23:43.105Z"
+    }
+  ]
+}

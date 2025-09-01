@@ -1,0 +1,31 @@
+{
+  "id": 54188500,
+  "firstName": "Paweł",
+  "lastName": "Kosiec",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11705,
+      "tce": 66,
+      "tci": 33,
+      "tc": 99,
+      "gs": 4,
+      "js": 9,
+      "jr": 4,
+      "od": 10,
+      "ha": 19,
+      "dr": 19,
+      "pa": 5,
+      "is": 10,
+      "id": 9,
+      "rb": 10,
+      "sb": 4,
+      "st": 2,
+      "ft": 5,
+      "ex": 4,
+      "scoutedAt": "2025-09-01T15:23:34.859Z"
+    }
+  ]
+}

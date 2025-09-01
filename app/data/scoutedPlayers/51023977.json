@@ -1,0 +1,31 @@
+{
+  "id": 51023977,
+  "firstName": "Adriano",
+  "lastName": "Zavatta",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 171802,
+      "tce": 94,
+      "tci": 57,
+      "tc": 151,
+      "gs": 9,
+      "js": 15,
+      "jr": 8,
+      "od": 20,
+      "ha": 19,
+      "dr": 20,
+      "pa": 12,
+      "is": 18,
+      "id": 18,
+      "rb": 12,
+      "sb": 9,
+      "st": 3,
+      "ft": 22,
+      "ex": 13,
+      "scoutedAt": "2025-09-01T15:23:42.547Z"
+    }
+  ]
+}

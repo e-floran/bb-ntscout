@@ -1,0 +1,31 @@
+{
+  "id": 53715135,
+  "firstName": "Luis",
+  "lastName": "Guntín",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 3355,
+      "tce": 38,
+      "tci": 16,
+      "tc": 54,
+      "gs": 6,
+      "js": 8,
+      "jr": 7,
+      "od": 8,
+      "ha": 5,
+      "dr": 6,
+      "pa": 4,
+      "is": 5,
+      "id": 7,
+      "rb": 3,
+      "sb": 1,
+      "st": 3,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:39.489Z"
+    }
+  ]
+}

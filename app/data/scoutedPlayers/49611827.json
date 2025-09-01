@@ -1,0 +1,31 @@
+{
+  "id": 49611827,
+  "firstName": "Aleks",
+  "lastName": "Simeonov",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 124072,
+      "tce": 98,
+      "tci": 48,
+      "tc": 146,
+      "gs": 7,
+      "js": 18,
+      "jr": 10,
+      "od": 19,
+      "ha": 20,
+      "dr": 20,
+      "pa": 11,
+      "is": 16,
+      "id": 14,
+      "rb": 9,
+      "sb": 9,
+      "st": 6,
+      "ft": 26,
+      "ex": 15,
+      "scoutedAt": "2025-09-01T15:23:43.659Z"
+    }
+  ]
+}

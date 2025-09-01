@@ -1,0 +1,31 @@
+{
+  "id": 50484909,
+  "firstName": "Jagoš",
+  "lastName": "Vujanović",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 235662,
+      "tce": 89,
+      "tci": 61,
+      "tc": 150,
+      "gs": 9,
+      "js": 16,
+      "jr": 9,
+      "od": 15,
+      "ha": 17,
+      "dr": 18,
+      "pa": 14,
+      "is": 18,
+      "id": 18,
+      "rb": 14,
+      "sb": 11,
+      "st": 9,
+      "ft": 21,
+      "ex": 12,
+      "scoutedAt": "2025-09-01T15:23:43.106Z"
+    }
+  ]
+}

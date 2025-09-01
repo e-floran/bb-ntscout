@@ -1,0 +1,31 @@
+{
+  "id": 50315052,
+  "firstName": "Mick",
+  "lastName": "Paige",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 87257,
+      "tce": 92,
+      "tci": 36,
+      "tc": 128,
+      "gs": 7,
+      "js": 18,
+      "jr": 12,
+      "od": 17,
+      "ha": 16,
+      "dr": 18,
+      "pa": 11,
+      "is": 10,
+      "id": 10,
+      "rb": 9,
+      "sb": 7,
+      "st": 5,
+      "ft": 16,
+      "ex": 13,
+      "scoutedAt": "2025-09-01T15:23:44.255Z"
+    }
+  ]
+}

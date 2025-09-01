@@ -1,0 +1,31 @@
+{
+  "id": 54026175,
+  "firstName": "Paulo",
+  "lastName": "Meneses",
+  "countryId": 7,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11666,
+      "tce": 58,
+      "tci": 25,
+      "tc": 83,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 9,
+      "ha": 7,
+      "dr": 10,
+      "pa": 10,
+      "is": 4,
+      "id": 9,
+      "rb": 8,
+      "sb": 4,
+      "st": 4,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-01T15:23:35.984Z"
+    }
+  ]
+}

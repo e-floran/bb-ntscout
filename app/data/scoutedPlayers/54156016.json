@@ -1,0 +1,31 @@
+{
+  "id": 54156016,
+  "firstName": "Stoyan",
+  "lastName": "Nikolov",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11300,
+      "tce": 69,
+      "tci": 22,
+      "tc": 91,
+      "gs": 9,
+      "js": 12,
+      "jr": 7,
+      "od": 11,
+      "ha": 15,
+      "dr": 16,
+      "pa": 8,
+      "is": 9,
+      "id": 4,
+      "rb": 5,
+      "sb": 4,
+      "st": 7,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:35.987Z"
+    }
+  ]
+}

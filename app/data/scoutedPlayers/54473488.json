@@ -1,0 +1,31 @@
+{
+  "id": 54473488,
+  "firstName": "Raga",
+  "lastName": "Humaid",
+  "countryId": 43,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 2879,
+      "tce": 39,
+      "tci": 26,
+      "tc": 65,
+      "gs": 5,
+      "js": 6,
+      "jr": 1,
+      "od": 6,
+      "ha": 11,
+      "dr": 10,
+      "pa": 5,
+      "is": 8,
+      "id": 7,
+      "rb": 5,
+      "sb": 6,
+      "st": 8,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:38.326Z"
+    }
+  ]
+}

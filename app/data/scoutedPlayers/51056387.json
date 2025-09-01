@@ -1,0 +1,31 @@
+{
+  "id": 51056387,
+  "firstName": "Prokopis",
+  "lastName": "Ftiaratos",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 143249,
+      "tce": 100,
+      "tci": 41,
+      "tc": 141,
+      "gs": 9,
+      "js": 17,
+      "jr": 16,
+      "od": 16,
+      "ha": 18,
+      "dr": 18,
+      "pa": 15,
+      "is": 17,
+      "id": 13,
+      "rb": 5,
+      "sb": 6,
+      "st": 8,
+      "ft": 25,
+      "ex": 13,
+      "scoutedAt": "2025-09-01T15:23:43.662Z"
+    }
+  ]
+}

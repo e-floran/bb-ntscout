@@ -1,0 +1,31 @@
+{
+  "id": 54026360,
+  "firstName": "Carlos",
+  "lastName": "Tejada",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5740,
+      "tce": 58,
+      "tci": 21,
+      "tc": 79,
+      "gs": 6,
+      "js": 11,
+      "jr": 4,
+      "od": 6,
+      "ha": 15,
+      "dr": 16,
+      "pa": 6,
+      "is": 9,
+      "id": 2,
+      "rb": 3,
+      "sb": 7,
+      "st": 7,
+      "ft": 1,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:37.780Z"
+    }
+  ]
+}

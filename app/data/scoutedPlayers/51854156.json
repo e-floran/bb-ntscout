@@ -1,0 +1,31 @@
+{
+  "id": 51854156,
+  "firstName": "Amal",
+  "lastName": "Hanna",
+  "countryId": 84,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 80752,
+      "tce": 95,
+      "tci": 30,
+      "tc": 125,
+      "gs": 8,
+      "js": 17,
+      "jr": 9,
+      "od": 21,
+      "ha": 18,
+      "dr": 20,
+      "pa": 10,
+      "is": 8,
+      "id": 7,
+      "rb": 7,
+      "sb": 8,
+      "st": 8,
+      "ft": 14,
+      "ex": 9,
+      "scoutedAt": "2025-09-01T15:23:43.660Z"
+    }
+  ]
+}

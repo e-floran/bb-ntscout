@@ -1,0 +1,31 @@
+{
+  "id": 49045012,
+  "firstName": "Richard",
+  "lastName": "Brown",
+  "countryId": 99,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 234436,
+      "tce": 108,
+      "tci": 48,
+      "tc": 156,
+      "gs": 8,
+      "js": 21,
+      "jr": 14,
+      "od": 20,
+      "ha": 19,
+      "dr": 21,
+      "pa": 13,
+      "is": 20,
+      "id": 14,
+      "rb": 7,
+      "sb": 7,
+      "st": 7,
+      "ft": 37,
+      "ex": 17,
+      "scoutedAt": "2025-09-01T15:23:43.108Z"
+    }
+  ]
+}

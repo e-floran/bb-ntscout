@@ -1,0 +1,31 @@
+{
+  "id": 54520828,
+  "firstName": "Juho",
+  "lastName": "Jäntti",
+  "countryId": 69,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11142,
+      "tce": 40,
+      "tci": 36,
+      "tc": 76,
+      "gs": 8,
+      "js": 8,
+      "jr": 8,
+      "od": 2,
+      "ha": 8,
+      "dr": 8,
+      "pa": 6,
+      "is": 12,
+      "id": 9,
+      "rb": 10,
+      "sb": 5,
+      "st": 7,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:34.302Z"
+    }
+  ]
+}

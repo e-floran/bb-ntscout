@@ -1,0 +1,31 @@
+{
+  "id": 53783103,
+  "firstName": "Sébastien",
+  "lastName": "Quaglia",
+  "countryId": 13,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10497,
+      "tce": 53,
+      "tci": 17,
+      "tc": 70,
+      "gs": 8,
+      "js": 14,
+      "jr": 9,
+      "od": 7,
+      "ha": 6,
+      "dr": 10,
+      "pa": 7,
+      "is": 2,
+      "id": 2,
+      "rb": 7,
+      "sb": 6,
+      "st": 4,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:34.859Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54206427,
+  "firstName": "Kakha",
+  "lastName": "Barateli",
+  "countryId": 62,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 27711,
+      "tce": 26,
+      "tci": 52,
+      "tc": 78,
+      "gs": 4,
+      "js": 1,
+      "jr": 3,
+      "od": 8,
+      "ha": 4,
+      "dr": 4,
+      "pa": 6,
+      "is": 5,
+      "id": 18,
+      "rb": 12,
+      "sb": 17,
+      "st": 3,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-01T15:23:33.740Z"
+    }
+  ]
+}

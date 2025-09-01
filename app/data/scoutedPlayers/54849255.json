@@ -1,0 +1,31 @@
+{
+  "id": 54849255,
+  "firstName": "Andrés",
+  "lastName": "Guachamín",
+  "countryId": 40,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2088,
+      "tce": 29,
+      "tci": 18,
+      "tc": 47,
+      "gs": 8,
+      "js": 4,
+      "jr": 4,
+      "od": 4,
+      "ha": 4,
+      "dr": 6,
+      "pa": 7,
+      "is": 3,
+      "id": 7,
+      "rb": 5,
+      "sb": 3,
+      "st": 2,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:40.644Z"
+    }
+  ]
+}

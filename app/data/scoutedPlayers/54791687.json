@@ -1,0 +1,31 @@
+{
+  "id": 54791687,
+  "firstName": "Billijs",
+  "lastName": "Punculis",
+  "countryId": 46,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10180,
+      "tce": 42,
+      "tci": 37,
+      "tc": 79,
+      "gs": 9,
+      "js": 9,
+      "jr": 7,
+      "od": 4,
+      "ha": 7,
+      "dr": 12,
+      "pa": 3,
+      "is": 10,
+      "id": 10,
+      "rb": 8,
+      "sb": 9,
+      "st": 2,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:33.161Z"
+    }
+  ]
+}

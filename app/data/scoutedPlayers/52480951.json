@@ -1,0 +1,31 @@
+{
+  "id": 52480951,
+  "firstName": "Alexander",
+  "lastName": "Zhurikhin",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 24092,
+      "tce": 81,
+      "tci": 32,
+      "tc": 113,
+      "gs": 8,
+      "js": 15,
+      "jr": 9,
+      "od": 12,
+      "ha": 19,
+      "dr": 21,
+      "pa": 5,
+      "is": 16,
+      "id": 5,
+      "rb": 5,
+      "sb": 6,
+      "st": 4,
+      "ft": 2,
+      "ex": 7,
+      "scoutedAt": "2025-09-01T15:23:46.038Z"
+    }
+  ]
+}

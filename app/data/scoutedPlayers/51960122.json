@@ -1,0 +1,31 @@
+{
+  "id": 51960122,
+  "firstName": "Richard",
+  "lastName": "Carter",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 126129,
+      "tce": 95,
+      "tci": 39,
+      "tc": 134,
+      "gs": 8,
+      "js": 12,
+      "jr": 9,
+      "od": 21,
+      "ha": 19,
+      "dr": 20,
+      "pa": 14,
+      "is": 13,
+      "id": 13,
+      "rb": 5,
+      "sb": 8,
+      "st": 2,
+      "ft": 11,
+      "ex": 8,
+      "scoutedAt": "2025-09-01T15:23:46.603Z"
+    }
+  ]
+}

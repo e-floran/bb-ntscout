@@ -1,0 +1,31 @@
+{
+  "id": 49206317,
+  "firstName": "Cesarino",
+  "lastName": "Fabbricatore",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 72219,
+      "tce": 85,
+      "tci": 37,
+      "tc": 122,
+      "gs": 7,
+      "js": 19,
+      "jr": 10,
+      "od": 13,
+      "ha": 18,
+      "dr": 20,
+      "pa": 5,
+      "is": 12,
+      "id": 12,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 15,
+      "ex": 17,
+      "scoutedAt": "2025-09-01T15:23:43.660Z"
+    }
+  ]
+}

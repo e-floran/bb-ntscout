@@ -1,0 +1,31 @@
+{
+  "id": 54213710,
+  "firstName": "Juhani",
+  "lastName": "Hieta",
+  "countryId": 69,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13425,
+      "tce": 49,
+      "tci": 18,
+      "tc": 67,
+      "gs": 8,
+      "js": 7,
+      "jr": 3,
+      "od": 7,
+      "ha": 10,
+      "dr": 7,
+      "pa": 15,
+      "is": 4,
+      "id": 4,
+      "rb": 7,
+      "sb": 3,
+      "st": 2,
+      "ft": 1,
+      "ex": 4,
+      "scoutedAt": "2025-09-01T15:23:34.861Z"
+    }
+  ]
+}

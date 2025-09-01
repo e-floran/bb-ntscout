@@ -1,0 +1,31 @@
+{
+  "id": 51752576,
+  "firstName": "Juan Antonio",
+  "lastName": "Heiremans",
+  "countryId": 21,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 114602,
+      "tce": 95,
+      "tci": 46,
+      "tc": 141,
+      "gs": 6,
+      "js": 17,
+      "jr": 13,
+      "od": 20,
+      "ha": 18,
+      "dr": 19,
+      "pa": 8,
+      "is": 17,
+      "id": 16,
+      "rb": 6,
+      "sb": 7,
+      "st": 5,
+      "ft": 20,
+      "ex": 10,
+      "scoutedAt": "2025-09-01T15:23:44.257Z"
+    }
+  ]
+}

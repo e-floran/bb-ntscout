@@ -1,0 +1,31 @@
+{
+  "id": 54184382,
+  "firstName": "Doug",
+  "lastName": "Zulueta",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18449,
+      "tce": 43,
+      "tci": 44,
+      "tc": 87,
+      "gs": 9,
+      "js": 10,
+      "jr": 7,
+      "od": 6,
+      "ha": 9,
+      "dr": 4,
+      "pa": 7,
+      "is": 11,
+      "id": 14,
+      "rb": 8,
+      "sb": 11,
+      "st": 7,
+      "ft": 7,
+      "ex": 4,
+      "scoutedAt": "2025-09-01T15:23:35.986Z"
+    }
+  ]
+}

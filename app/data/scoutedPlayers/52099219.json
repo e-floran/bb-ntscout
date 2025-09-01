@@ -1,0 +1,31 @@
+{
+  "id": 52099219,
+  "firstName": "Vitaly",
+  "lastName": "Gurevich",
+  "countryId": 19,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 54762,
+      "tce": 92,
+      "tci": 39,
+      "tc": 131,
+      "gs": 7,
+      "js": 20,
+      "jr": 11,
+      "od": 12,
+      "ha": 19,
+      "dr": 21,
+      "pa": 9,
+      "is": 18,
+      "id": 7,
+      "rb": 6,
+      "sb": 8,
+      "st": 6,
+      "ft": 18,
+      "ex": 10,
+      "scoutedAt": "2025-09-01T15:23:46.039Z"
+    }
+  ]
+}

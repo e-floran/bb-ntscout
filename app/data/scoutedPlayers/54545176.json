@@ -1,0 +1,31 @@
+{
+  "id": 54545176,
+  "firstName": "Takashi",
+  "lastName": "Nakamura",
+  "countryId": 53,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9932,
+      "tce": 56,
+      "tci": 22,
+      "tc": 78,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 11,
+      "ha": 7,
+      "dr": 11,
+      "pa": 5,
+      "is": 2,
+      "id": 3,
+      "rb": 8,
+      "sb": 9,
+      "st": 4,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:40.645Z"
+    }
+  ]
+}

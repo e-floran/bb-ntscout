@@ -1,0 +1,31 @@
+{
+  "id": 54645836,
+  "firstName": "Félix",
+  "lastName": "Zaloña",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5112,
+      "tce": 49,
+      "tci": 22,
+      "tc": 71,
+      "gs": 8,
+      "js": 9,
+      "jr": 7,
+      "od": 10,
+      "ha": 8,
+      "dr": 7,
+      "pa": 8,
+      "is": 1,
+      "id": 6,
+      "rb": 5,
+      "sb": 10,
+      "st": 4,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:40.646Z"
+    }
+  ]
+}

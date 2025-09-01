@@ -1,0 +1,31 @@
+{
+  "id": 54458092,
+  "firstName": "Andriy",
+  "lastName": "Adamenko",
+  "countryId": 33,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7353,
+      "tce": 63,
+      "tci": 16,
+      "tc": 79,
+      "gs": 8,
+      "js": 14,
+      "jr": 6,
+      "od": 5,
+      "ha": 14,
+      "dr": 16,
+      "pa": 8,
+      "is": 1,
+      "id": 2,
+      "rb": 5,
+      "sb": 8,
+      "st": 8,
+      "ft": 12,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:39.488Z"
+    }
+  ]
+}

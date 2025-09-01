@@ -1,0 +1,31 @@
+{
+  "id": 49027067,
+  "firstName": "Yossi",
+  "lastName": "Frishman",
+  "countryId": 15,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 172656,
+      "tce": 87,
+      "tci": 49,
+      "tc": 136,
+      "gs": 7,
+      "js": 12,
+      "jr": 9,
+      "od": 16,
+      "ha": 19,
+      "dr": 16,
+      "pa": 15,
+      "is": 14,
+      "id": 16,
+      "rb": 11,
+      "sb": 8,
+      "st": 9,
+      "ft": 10,
+      "ex": 16,
+      "scoutedAt": "2025-09-01T15:23:43.659Z"
+    }
+  ]
+}

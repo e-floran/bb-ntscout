@@ -1,0 +1,31 @@
+{
+  "id": 54496232,
+  "firstName": "Jan",
+  "lastName": "Michta",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6525,
+      "tce": 50,
+      "tci": 23,
+      "tc": 73,
+      "gs": 8,
+      "js": 11,
+      "jr": 9,
+      "od": 6,
+      "ha": 10,
+      "dr": 9,
+      "pa": 5,
+      "is": 4,
+      "id": 8,
+      "rb": 3,
+      "sb": 8,
+      "st": 7,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:40.043Z"
+    }
+  ]
+}

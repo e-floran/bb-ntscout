@@ -1,0 +1,31 @@
+{
+  "id": 51606710,
+  "firstName": "Sebastián",
+  "lastName": "Rocha",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 136847,
+      "tce": 102,
+      "tci": 34,
+      "tc": 136,
+      "gs": 7,
+      "js": 20,
+      "jr": 16,
+      "od": 16,
+      "ha": 19,
+      "dr": 19,
+      "pa": 12,
+      "is": 12,
+      "id": 7,
+      "rb": 9,
+      "sb": 6,
+      "st": 7,
+      "ft": 15,
+      "ex": 10,
+      "scoutedAt": "2025-09-01T15:23:42.546Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 50890237,
+  "firstName": "Majid",
+  "lastName": "Edalatgostar",
+  "countryId": 59,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 54045,
+      "tce": 82,
+      "tci": 41,
+      "tc": 123,
+      "gs": 7,
+      "js": 19,
+      "jr": 11,
+      "od": 8,
+      "ha": 17,
+      "dr": 19,
+      "pa": 8,
+      "is": 15,
+      "id": 7,
+      "rb": 10,
+      "sb": 9,
+      "st": 6,
+      "ft": 18,
+      "ex": 12,
+      "scoutedAt": "2025-09-01T15:23:43.659Z"
+    }
+  ]
+}

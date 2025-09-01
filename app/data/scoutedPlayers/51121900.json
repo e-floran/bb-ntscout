@@ -1,0 +1,31 @@
+{
+  "id": 51121900,
+  "firstName": "Harald",
+  "lastName": "Artner",
+  "countryId": 27,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 46234,
+      "tce": 86,
+      "tci": 35,
+      "tc": 121,
+      "gs": 8,
+      "js": 15,
+      "jr": 9,
+      "od": 17,
+      "ha": 18,
+      "dr": 19,
+      "pa": 8,
+      "is": 11,
+      "id": 10,
+      "rb": 8,
+      "sb": 6,
+      "st": 8,
+      "ft": 31,
+      "ex": 13,
+      "scoutedAt": "2025-09-01T15:23:42.545Z"
+    }
+  ]
+}

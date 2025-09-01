@@ -1,0 +1,31 @@
+{
+  "id": 54355139,
+  "firstName": "Lorenzo Elvis",
+  "lastName": "Paccottelli",
+  "countryId": 10,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4736,
+      "tce": 54,
+      "tci": 20,
+      "tc": 74,
+      "gs": 7,
+      "js": 13,
+      "jr": 4,
+      "od": 6,
+      "ha": 12,
+      "dr": 14,
+      "pa": 5,
+      "is": 2,
+      "id": 6,
+      "rb": 5,
+      "sb": 7,
+      "st": 3,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:38.328Z"
+    }
+  ]
+}

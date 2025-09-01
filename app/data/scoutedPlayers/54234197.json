@@ -1,0 +1,31 @@
+{
+  "id": 54234197,
+  "firstName": "Kakha",
+  "lastName": "Bobokhidze",
+  "countryId": 62,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8396,
+      "tce": 64,
+      "tci": 18,
+      "tc": 82,
+      "gs": 7,
+      "js": 9,
+      "jr": 8,
+      "od": 7,
+      "ha": 17,
+      "dr": 16,
+      "pa": 7,
+      "is": 8,
+      "id": 4,
+      "rb": 3,
+      "sb": 3,
+      "st": 5,
+      "ft": 3,
+      "ex": 4,
+      "scoutedAt": "2025-09-01T15:23:37.780Z"
+    }
+  ]
+}

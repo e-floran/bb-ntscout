@@ -1,0 +1,31 @@
+{
+  "id": 54409981,
+  "firstName": "Kirill",
+  "lastName": "Karikov",
+  "countryId": 15,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 13634,
+      "tce": 29,
+      "tci": 46,
+      "tc": 75,
+      "gs": 7,
+      "js": 6,
+      "jr": 6,
+      "od": 4,
+      "ha": 4,
+      "dr": 4,
+      "pa": 5,
+      "is": 6,
+      "id": 15,
+      "rb": 12,
+      "sb": 13,
+      "st": 3,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:35.417Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54019989,
+  "firstName": "Vahdet",
+  "lastName": "Günyeli",
+  "countryId": 6,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18900,
+      "tce": 75,
+      "tci": 34,
+      "tc": 109,
+      "gs": 9,
+      "js": 14,
+      "jr": 6,
+      "od": 13,
+      "ha": 17,
+      "dr": 17,
+      "pa": 8,
+      "is": 11,
+      "id": 10,
+      "rb": 6,
+      "sb": 7,
+      "st": 5,
+      "ft": 1,
+      "ex": 4,
+      "scoutedAt": "2025-09-01T15:23:33.162Z"
+    }
+  ]
+}

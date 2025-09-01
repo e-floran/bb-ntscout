@@ -1,0 +1,31 @@
+{
+  "id": 54764829,
+  "firstName": "Rajko",
+  "lastName": "Stojšin",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2532,
+      "tce": 21,
+      "tci": 26,
+      "tc": 47,
+      "gs": 7,
+      "js": 3,
+      "jr": 1,
+      "od": 4,
+      "ha": 3,
+      "dr": 7,
+      "pa": 3,
+      "is": 8,
+      "id": 6,
+      "rb": 7,
+      "sb": 5,
+      "st": 7,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:38.889Z"
+    }
+  ]
+}

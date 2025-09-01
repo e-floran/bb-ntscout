@@ -1,0 +1,31 @@
+{
+  "id": 50345508,
+  "firstName": "Deng",
+  "lastName": "Xingzong",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 200053,
+      "tce": 96,
+      "tci": 54,
+      "tc": 150,
+      "gs": 9,
+      "js": 20,
+      "jr": 12,
+      "od": 15,
+      "ha": 19,
+      "dr": 18,
+      "pa": 12,
+      "is": 19,
+      "id": 14,
+      "rb": 12,
+      "sb": 9,
+      "st": 7,
+      "ft": 19,
+      "ex": 14,
+      "scoutedAt": "2025-09-01T15:23:43.660Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54369803,
+  "firstName": "Willy",
+  "lastName": "Delalandre",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4054,
+      "tce": 49,
+      "tci": 18,
+      "tc": 67,
+      "gs": 8,
+      "js": 9,
+      "jr": 6,
+      "od": 6,
+      "ha": 10,
+      "dr": 11,
+      "pa": 7,
+      "is": 7,
+      "id": 6,
+      "rb": 4,
+      "sb": 1,
+      "st": 2,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:38.328Z"
+    }
+  ]
+}

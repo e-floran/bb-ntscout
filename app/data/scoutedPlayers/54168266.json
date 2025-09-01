@@ -1,0 +1,31 @@
+{
+  "id": 54168266,
+  "firstName": "Tang",
+  "lastName": "Kok Wun",
+  "countryId": 45,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11749,
+      "tce": 42,
+      "tci": 38,
+      "tc": 80,
+      "gs": 7,
+      "js": 10,
+      "jr": 3,
+      "od": 8,
+      "ha": 9,
+      "dr": 5,
+      "pa": 7,
+      "is": 8,
+      "id": 8,
+      "rb": 13,
+      "sb": 9,
+      "st": 1,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-01T15:23:35.985Z"
+    }
+  ]
+}

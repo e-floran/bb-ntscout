@@ -1,0 +1,31 @@
+{
+  "id": 54111826,
+  "firstName": "João Evangelista",
+  "lastName": "Duarte",
+  "countryId": 18,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18655,
+      "tce": 72,
+      "tci": 37,
+      "tc": 109,
+      "gs": 8,
+      "js": 15,
+      "jr": 5,
+      "od": 10,
+      "ha": 16,
+      "dr": 17,
+      "pa": 9,
+      "is": 12,
+      "id": 9,
+      "rb": 9,
+      "sb": 7,
+      "st": 6,
+      "ft": 5,
+      "ex": 4,
+      "scoutedAt": "2025-09-01T15:23:35.986Z"
+    }
+  ]
+}

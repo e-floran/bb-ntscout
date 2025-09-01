@@ -1,0 +1,31 @@
+{
+  "id": 54851961,
+  "firstName": "Irvan",
+  "lastName": "Sandria",
+  "countryId": 43,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2951,
+      "tce": 42,
+      "tci": 17,
+      "tc": 59,
+      "gs": 7,
+      "js": 7,
+      "jr": 7,
+      "od": 5,
+      "ha": 9,
+      "dr": 8,
+      "pa": 6,
+      "is": 5,
+      "id": 2,
+      "rb": 7,
+      "sb": 3,
+      "st": 2,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-01T15:23:39.489Z"
+    }
+  ]
+}
