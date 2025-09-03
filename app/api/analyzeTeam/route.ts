@@ -98,6 +98,7 @@ export async function GET(req: NextRequest) {
   const teamScheduleXml = await fetchXml(teamScheduleUrl, bbSession);
 
   let matches = [];
+
   if (teamScheduleXml?.bbapi?.schedule?.match) {
     matches = teamScheduleXml.bbapi.schedule.match;
     if (!Array.isArray(matches)) matches = [matches];
@@ -242,6 +243,8 @@ async function analyzeTeamForSeason(
   // NEW: Store recent games data
   const recentGames: any[] = [];
 
+  const gdpList: any[] = [];
+
   const now = new Date();
   for (const match of opponentMatches) {
     const matchId = match["$"].id;
@@ -287,6 +290,15 @@ async function analyzeTeamForSeason(
     const defStrat = (teamNode.defStrategy || "").trim();
     offenseStrategies[offStrat] = (offenseStrategies[offStrat] || 0) + 1;
     defenseStrategies[defStrat] = (defenseStrategies[defStrat] || 0) + 1;
+
+    const matchGdp = teamNode.gdp
+
+    gdpList.push({
+      date: matchDateStr,
+      matchId,
+      opponent: opponentNode?.teamName || "Unknown",
+      gdp: ((matchGdp.focus || "").trim() + " " + (matchGdp.pace || "").trim()),
+    });
 
     // Process ratings - ensure proper parsing
     const matchRatings: Record<string, number> = {};
@@ -465,6 +477,7 @@ async function analyzeTeamForSeason(
       ratings: matchRatings,
       efficiency: matchEfficiency,
       playerStats: matchPlayerStats,
+      gdp: matchGdp,
     });
 
     // NEW: Store recent game data (all games, not limited)
@@ -491,6 +504,8 @@ async function analyzeTeamForSeason(
       (parseDate(a.date) as unknown as number) -
       (parseDate(b.date) as unknown as number)
   );
+
+  gdpList.sort((a, b) => (parseDate(a.date) as any) - (parseDate(b.date) as any));
 
   // NEW: Sort recent games by date (most recent first) - analyze all games, no limit
   recentGames.sort(
@@ -537,5 +552,6 @@ async function analyzeTeamForSeason(
     matches: matchesWithStrategies, // Include properly structured match data
     players: playersWithHistory, // NEW: Add players with history
     recentGames: recentGames, // NEW: Add all recent games data (no limit)
+    gdpList,
   };
 }

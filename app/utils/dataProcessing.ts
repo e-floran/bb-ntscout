@@ -172,3 +172,48 @@ export function effortRows(
     ];
   });
 }
+
+type GdpEntry = {
+  date: string;
+  opponent?: string;
+  gdp: string;
+};
+export function gdpRows(
+  gdpList: GdpEntry[] = []
+): [string, string | string, string][] {
+  return gdpList.map((g) => {
+    // Format date from ISO to DD-MM-YYYY
+    let formattedDate = g.date;
+    if (typeof formattedDate === "string" && formattedDate.includes("T")) {
+      const d = new Date(formattedDate);
+      const day = String(d.getDate()).padStart(2, "0");
+      const month = String(d.getMonth() + 1).padStart(2, "0");
+      const year = d.getFullYear();
+      formattedDate = `${day}-${month}-${year}`;
+    }
+
+    let gdpValue = g.gdp ?? "";
+    if (gdpValue === "N/A N/A") {
+      gdpValue = "N/A";
+    } else {
+      gdpValue = gdpValue
+        .replace(/\.hit\b/g, " ✅")
+        .replace(/\.miss\b/g, " ❌");
+
+      gdpValue = gdpValue.replace(/([✅❌])\s*\/\s*/g, "$1 / ");
+
+      gdpValue = gdpValue.replace(/([✅❌])(?=[^\s/])/g, "$1 / ");
+
+      gdpValue = gdpValue.replace(/([✅❌])\s+(?=[^\s/])/g, "$1 / ");
+
+      gdpValue = gdpValue.replace(/\s{2,}/g, " ").trim();
+    }
+
+    return [
+      formattedDate,
+      g.opponent || "",
+      gdpValue,
+    ];
+  });
+}
+
