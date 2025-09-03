@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import axios from "axios";
 import { PlayerWeek, GameShapeRange } from "../app/types/types";
+import { updateLastUpdateTimestamp } from "@/app/utils/updateLastUpdate";
 
 interface PlayerData {
   id: string;
@@ -344,6 +345,7 @@ class BBWeeklyGameShapeDMIUpdater {
         `Week ${weekInfo.id} gameshape and DMI data has been added to all updated players`
       );
       console.log("Weekly update completed successfully! 🎉");
+      updateLastUpdateTimestamp();
     } catch (error) {
       console.error("\nFatal error:", error);
       console.log("Script terminated due to critical error.");

@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import axios from "axios";
 import { PlayerWeek, GameShapeRange } from "../app/types/types";
+import { updateLastUpdateTimestamp } from "@/app/utils/updateLastUpdate";
 
 interface TeamData {
   id: string;
@@ -537,7 +538,7 @@ class BBPostMondayPlayerChecker {
       if (newPlayersFound === 0) {
         console.log("🎉 No last-minute roster additions found!");
       }
-
+      updateLastUpdateTimestamp();
       this.deleteResumeData();
     } catch (error) {
       console.error("Fatal error:", error);
