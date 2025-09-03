@@ -1,0 +1,31 @@
+{
+  "id": 54594890,
+  "firstName": "Gerardo",
+  "lastName": "Carrillo",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3246,
+      "tce": 42,
+      "tci": 23,
+      "tc": 65,
+      "gs": 8,
+      "js": 8,
+      "jr": 4,
+      "od": 7,
+      "ha": 7,
+      "dr": 9,
+      "pa": 7,
+      "is": 6,
+      "id": 4,
+      "rb": 6,
+      "sb": 7,
+      "st": 6,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:35.790Z"
+    }
+  ]
+}

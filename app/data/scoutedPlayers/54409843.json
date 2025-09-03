@@ -1,0 +1,31 @@
+{
+  "id": 54409843,
+  "firstName": "Walid",
+  "lastName": "Muthanna",
+  "countryId": 15,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12230,
+      "tce": 29,
+      "tci": 37,
+      "tc": 66,
+      "gs": 9,
+      "js": 9,
+      "jr": 5,
+      "od": 4,
+      "ha": 4,
+      "dr": 5,
+      "pa": 2,
+      "is": 9,
+      "id": 9,
+      "rb": 10,
+      "sb": 9,
+      "st": 3,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-03T15:14:31.204Z"
+    }
+  ]
+}

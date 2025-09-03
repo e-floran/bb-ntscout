@@ -1,0 +1,31 @@
+{
+  "id": 54354051,
+  "firstName": "Guido",
+  "lastName": "Bottani",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 3743,
+      "tce": 35,
+      "tci": 25,
+      "tc": 60,
+      "gs": 9,
+      "js": 6,
+      "jr": 4,
+      "od": 5,
+      "ha": 7,
+      "dr": 4,
+      "pa": 9,
+      "is": 6,
+      "id": 9,
+      "rb": 7,
+      "sb": 3,
+      "st": 2,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:36.333Z"
+    }
+  ]
+}

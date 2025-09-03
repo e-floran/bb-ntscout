@@ -1,0 +1,31 @@
+{
+  "id": 53715807,
+  "firstName": "Oscar",
+  "lastName": "Badenes",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 16615,
+      "tce": 74,
+      "tci": 29,
+      "tc": 103,
+      "gs": 8,
+      "js": 16,
+      "jr": 7,
+      "od": 11,
+      "ha": 15,
+      "dr": 17,
+      "pa": 8,
+      "is": 12,
+      "id": 6,
+      "rb": 5,
+      "sb": 6,
+      "st": 2,
+      "ft": 13,
+      "ex": 4,
+      "scoutedAt": "2025-09-03T15:14:30.073Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53713617,
+  "firstName": "Ignacio",
+  "lastName": "Viscasillas",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 14237,
+      "tce": 73,
+      "tci": 27,
+      "tc": 100,
+      "gs": 5,
+      "js": 13,
+      "jr": 7,
+      "od": 5,
+      "ha": 20,
+      "dr": 20,
+      "pa": 8,
+      "is": 13,
+      "id": 8,
+      "rb": 3,
+      "sb": 3,
+      "st": 6,
+      "ft": 6,
+      "ex": 5,
+      "scoutedAt": "2025-09-03T15:14:31.202Z"
+    }
+  ]
+}

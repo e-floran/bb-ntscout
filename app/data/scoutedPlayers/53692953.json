@@ -1,0 +1,31 @@
+{
+  "id": 53692953,
+  "firstName": "Tan",
+  "lastName": "Danjie",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9912,
+      "tce": 64,
+      "tci": 18,
+      "tc": 82,
+      "gs": 7,
+      "js": 14,
+      "jr": 4,
+      "od": 9,
+      "ha": 14,
+      "dr": 15,
+      "pa": 8,
+      "is": 3,
+      "id": 7,
+      "rb": 5,
+      "sb": 3,
+      "st": 9,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-03T15:14:35.790Z"
+    }
+  ]
+}

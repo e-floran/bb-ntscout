@@ -1,0 +1,31 @@
+{
+  "id": 53752236,
+  "firstName": "Alexandre",
+  "lastName": "Barbedette",
+  "countryId": 11,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19506,
+      "tce": 14,
+      "tci": 43,
+      "tc": 57,
+      "gs": 6,
+      "js": 4,
+      "jr": 1,
+      "od": 3,
+      "ha": 3,
+      "dr": 2,
+      "pa": 1,
+      "is": 11,
+      "id": 14,
+      "rb": 11,
+      "sb": 7,
+      "st": 2,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-03T15:14:30.623Z"
+    }
+  ]
+}

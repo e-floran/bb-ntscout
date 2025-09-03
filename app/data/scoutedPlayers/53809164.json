@@ -1,0 +1,31 @@
+{
+  "id": 53809164,
+  "firstName": "Jonas",
+  "lastName": "Vilkanauskas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 23585,
+      "tce": 60,
+      "tci": 43,
+      "tc": 103,
+      "gs": 7,
+      "js": 15,
+      "jr": 3,
+      "od": 4,
+      "ha": 17,
+      "dr": 18,
+      "pa": 3,
+      "is": 14,
+      "id": 10,
+      "rb": 9,
+      "sb": 10,
+      "st": 3,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-09-03T15:14:41.587Z"
+    }
+  ]
+}

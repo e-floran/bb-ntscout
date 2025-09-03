@@ -1,0 +1,31 @@
+{
+  "id": 53809597,
+  "firstName": "Justinas",
+  "lastName": "Važinskas",
+  "countryId": 20,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19140,
+      "tce": 65,
+      "tci": 23,
+      "tc": 88,
+      "gs": 9,
+      "js": 14,
+      "jr": 9,
+      "od": 10,
+      "ha": 11,
+      "dr": 13,
+      "pa": 8,
+      "is": 3,
+      "id": 7,
+      "rb": 7,
+      "sb": 6,
+      "st": 3,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-03T15:14:31.763Z"
+    }
+  ]
+}

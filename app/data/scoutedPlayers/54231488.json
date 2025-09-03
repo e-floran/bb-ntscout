@@ -1,0 +1,31 @@
+{
+  "id": 54231488,
+  "firstName": "Chang",
+  "lastName": "Yitian",
+  "countryId": 97,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15653,
+      "tce": 59,
+      "tci": 33,
+      "tc": 92,
+      "gs": 8,
+      "js": 10,
+      "jr": 10,
+      "od": 13,
+      "ha": 6,
+      "dr": 11,
+      "pa": 9,
+      "is": 4,
+      "id": 11,
+      "rb": 9,
+      "sb": 9,
+      "st": 9,
+      "ft": 1,
+      "ex": 2,
+      "scoutedAt": "2025-09-03T15:14:29.482Z"
+    }
+  ]
+}

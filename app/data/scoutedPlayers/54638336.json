@@ -1,0 +1,31 @@
+{
+  "id": 54638336,
+  "firstName": "Ozan",
+  "lastName": "Öker",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5109,
+      "tce": 29,
+      "tci": 22,
+      "tc": 51,
+      "gs": 5,
+      "js": 8,
+      "jr": 9,
+      "od": 6,
+      "ha": 3,
+      "dr": 2,
+      "pa": 1,
+      "is": 7,
+      "id": 3,
+      "rb": 4,
+      "sb": 8,
+      "st": 3,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:34.165Z"
+    }
+  ]
+}

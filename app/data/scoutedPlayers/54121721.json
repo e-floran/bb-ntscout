@@ -1,0 +1,31 @@
+{
+  "id": 54121721,
+  "firstName": "Albas",
+  "lastName": "Kliukinskas",
+  "countryId": 20,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 41088,
+      "tce": 67,
+      "tci": 30,
+      "tc": 97,
+      "gs": 9,
+      "js": 16,
+      "jr": 11,
+      "od": 13,
+      "ha": 7,
+      "dr": 12,
+      "pa": 8,
+      "is": 8,
+      "id": 8,
+      "rb": 10,
+      "sb": 4,
+      "st": 7,
+      "ft": 14,
+      "ex": 4,
+      "scoutedAt": "2025-09-03T15:14:31.205Z"
+    }
+  ]
+}

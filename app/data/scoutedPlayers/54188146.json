@@ -1,0 +1,31 @@
+{
+  "id": 54188146,
+  "firstName": "Maksym",
+  "lastName": "Budnicki",
+  "countryId": 58,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19085,
+      "tce": 65,
+      "tci": 24,
+      "tc": 89,
+      "gs": 6,
+      "js": 14,
+      "jr": 10,
+      "od": 10,
+      "ha": 14,
+      "dr": 13,
+      "pa": 4,
+      "is": 6,
+      "id": 8,
+      "rb": 6,
+      "sb": 4,
+      "st": 9,
+      "ft": 13,
+      "ex": 4,
+      "scoutedAt": "2025-09-03T15:14:30.622Z"
+    }
+  ]
+}

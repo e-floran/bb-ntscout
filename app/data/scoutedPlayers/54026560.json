@@ -1,0 +1,31 @@
+{
+  "id": 54026560,
+  "firstName": "Abel",
+  "lastName": "Ezcurra",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11999,
+      "tce": 45,
+      "tci": 39,
+      "tc": 84,
+      "gs": 9,
+      "js": 8,
+      "jr": 7,
+      "od": 5,
+      "ha": 8,
+      "dr": 13,
+      "pa": 4,
+      "is": 12,
+      "id": 10,
+      "rb": 10,
+      "sb": 7,
+      "st": 5,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-03T15:14:30.621Z"
+    }
+  ]
+}

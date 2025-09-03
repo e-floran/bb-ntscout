@@ -1,0 +1,31 @@
+{
+  "id": 55178644,
+  "firstName": "Trenton",
+  "lastName": "Lentz",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2781,
+      "tce": 33,
+      "tci": 18,
+      "tc": 51,
+      "gs": 7,
+      "js": 2,
+      "jr": 7,
+      "od": 7,
+      "ha": 5,
+      "dr": 5,
+      "pa": 7,
+      "is": 7,
+      "id": 3,
+      "rb": 6,
+      "sb": 2,
+      "st": 3,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:34.705Z"
+    }
+  ]
+}

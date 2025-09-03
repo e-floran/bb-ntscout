@@ -1,0 +1,31 @@
+{
+  "id": 54593739,
+  "firstName": "Stu",
+  "lastName": "Murry",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2964,
+      "tce": 23,
+      "tci": 24,
+      "tc": 47,
+      "gs": 7,
+      "js": 6,
+      "jr": 4,
+      "od": 4,
+      "ha": 4,
+      "dr": 3,
+      "pa": 2,
+      "is": 7,
+      "id": 7,
+      "rb": 5,
+      "sb": 5,
+      "st": 7,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:35.246Z"
+    }
+  ]
+}

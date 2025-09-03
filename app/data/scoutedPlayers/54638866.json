@@ -1,0 +1,31 @@
+{
+  "id": 54638866,
+  "firstName": "Davut",
+  "lastName": "Çağan",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2696,
+      "tce": 41,
+      "tci": 11,
+      "tc": 52,
+      "gs": 7,
+      "js": 7,
+      "jr": 7,
+      "od": 6,
+      "ha": 9,
+      "dr": 8,
+      "pa": 4,
+      "is": 3,
+      "id": 1,
+      "rb": 4,
+      "sb": 3,
+      "st": 9,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:34.702Z"
+    }
+  ]
+}

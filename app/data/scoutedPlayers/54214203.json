@@ -1,0 +1,31 @@
+{
+  "id": 54214203,
+  "firstName": "Ilmari",
+  "lastName": "Rekilä",
+  "countryId": 69,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 38438,
+      "tce": 74,
+      "tci": 31,
+      "tc": 105,
+      "gs": 9,
+      "js": 14,
+      "jr": 11,
+      "od": 15,
+      "ha": 16,
+      "dr": 15,
+      "pa": 3,
+      "is": 9,
+      "id": 6,
+      "rb": 10,
+      "sb": 6,
+      "st": 3,
+      "ft": 11,
+      "ex": 3,
+      "scoutedAt": "2025-09-03T15:14:31.205Z"
+    }
+  ]
+}

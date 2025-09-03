@@ -1,0 +1,31 @@
+{
+  "id": 54230294,
+  "firstName": "Abdoulaye",
+  "lastName": "Roberts",
+  "countryId": 95,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 30187,
+      "tce": 29,
+      "tci": 43,
+      "tc": 72,
+      "gs": 7,
+      "js": 10,
+      "jr": 1,
+      "od": 9,
+      "ha": 3,
+      "dr": 5,
+      "pa": 1,
+      "is": 12,
+      "id": 12,
+      "rb": 14,
+      "sb": 5,
+      "st": 3,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-03T15:14:31.763Z"
+    }
+  ]
+}

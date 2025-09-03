@@ -1,0 +1,31 @@
+{
+  "id": 53712800,
+  "firstName": "Ángel",
+  "lastName": "Yáñez-Fajardo",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15177,
+      "tce": 73,
+      "tci": 29,
+      "tc": 102,
+      "gs": 9,
+      "js": 16,
+      "jr": 8,
+      "od": 11,
+      "ha": 14,
+      "dr": 16,
+      "pa": 8,
+      "is": 13,
+      "id": 6,
+      "rb": 5,
+      "sb": 5,
+      "st": 7,
+      "ft": 14,
+      "ex": 5,
+      "scoutedAt": "2025-09-03T15:14:30.072Z"
+    }
+  ]
+}

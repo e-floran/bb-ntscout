@@ -1,0 +1,31 @@
+{
+  "id": 54512765,
+  "firstName": "Daniel",
+  "lastName": "Dobrogeanu",
+  "countryId": 61,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9152,
+      "tce": 56,
+      "tci": 28,
+      "tc": 84,
+      "gs": 7,
+      "js": 11,
+      "jr": 7,
+      "od": 9,
+      "ha": 14,
+      "dr": 10,
+      "pa": 5,
+      "is": 11,
+      "id": 6,
+      "rb": 10,
+      "sb": 1,
+      "st": 1,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-03T15:14:35.788Z"
+    }
+  ]
+}

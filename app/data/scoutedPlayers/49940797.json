@@ -1,0 +1,31 @@
+{
+  "id": 49940797,
+  "firstName": "Bronisław",
+  "lastName": "Nawrocki",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 96413,
+      "tce": 85,
+      "tci": 37,
+      "tc": 122,
+      "gs": 7,
+      "js": 12,
+      "jr": 8,
+      "od": 15,
+      "ha": 17,
+      "dr": 17,
+      "pa": 16,
+      "is": 10,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 9,
+      "ft": 14,
+      "ex": 14,
+      "scoutedAt": "2025-09-03T15:14:39.280Z"
+    }
+  ]
+}

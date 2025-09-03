@@ -1,0 +1,31 @@
+{
+  "id": 53715610,
+  "firstName": "Guillermo",
+  "lastName": "Isasaga",
+  "countryId": 7,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11401,
+      "tce": 70,
+      "tci": 31,
+      "tc": 101,
+      "gs": 9,
+      "js": 12,
+      "jr": 8,
+      "od": 8,
+      "ha": 17,
+      "dr": 18,
+      "pa": 7,
+      "is": 12,
+      "id": 8,
+      "rb": 4,
+      "sb": 7,
+      "st": 6,
+      "ft": 12,
+      "ex": 2,
+      "scoutedAt": "2025-09-03T15:14:28.918Z"
+    }
+  ]
+}

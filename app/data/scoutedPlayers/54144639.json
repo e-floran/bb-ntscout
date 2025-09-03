@@ -1,0 +1,31 @@
+{
+  "id": 54144639,
+  "firstName": "Christian",
+  "lastName": "Rettenmaier",
+  "countryId": 28,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12647,
+      "tce": 63,
+      "tci": 28,
+      "tc": 91,
+      "gs": 7,
+      "js": 4,
+      "jr": 9,
+      "od": 15,
+      "ha": 12,
+      "dr": 11,
+      "pa": 12,
+      "is": 7,
+      "id": 11,
+      "rb": 8,
+      "sb": 2,
+      "st": 2,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-03T15:14:28.917Z"
+    }
+  ]
+}
