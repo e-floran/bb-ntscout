@@ -17,6 +17,7 @@ import {
   effRows,
   playerRows,
   effortRows,
+  gdpRows,
 } from "@/app/utils/dataProcessing";
 
 interface LoadingStep {
@@ -36,7 +37,8 @@ export type SectionId =
   | "effort-variation"
   | "player-history"
   | "recent-games"
-  | "scouted-players";
+  | "scouted-players"
+  | "gdp";
 
 const stepDuration = 2000;
 
@@ -80,6 +82,7 @@ export default function IndexPage() {
     "player-history": true,
     "recent-games": true,
     "scouted-players": true,
+    "gdp": true,
   });
 
   // Use the custom hook for data filtering
@@ -437,6 +440,29 @@ export default function IndexPage() {
                     filteredAnalysis.seasonsData[0].effortDeltaList
                   )}
                   tableId="effort-variation"
+                  sortConfig={sortConfig}
+                  onSort={handleSort}
+                />
+              ) : (
+                <p>Aucune donnée d&apos;effort disponible pour cette équipe.</p>
+              )}
+            </CollapsibleSection>
+
+            <CollapsibleSection
+              sectionId="gdp"
+              title="Historique PAM"
+              isCollapsed={collapsedSections["gdp"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              {filteredAnalysis?.seasonsData?.[0]?.effortDeltaList &&
+              filteredAnalysis.seasonsData[0].effortDeltaList.length > 0 ? (
+                <DataTable
+                  headers={["Date", "Adversaire", "PAM"]}
+                  rows={gdpRows(
+                    filteredAnalysis.seasonsData[0].gdpList
+                  )}
+                  tableId="gdp"
                   sortConfig={sortConfig}
                   onSort={handleSort}
                 />

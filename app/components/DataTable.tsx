@@ -62,10 +62,10 @@ export function DataTable({
     const numValue = parseFloat(String(value));
     return !isNaN(numValue) && String(value).trim() !== "";
   };
-
+  
   // Generic sort function for table rows
   const sortRows = (rows: (string | number)[][]): (string | number)[][] => {
-    if (!sortConfig || sortConfig.table !== tableId) {
+    if (sortConfig?.table !== tableId) {
       return rows;
     }
 
@@ -73,7 +73,6 @@ export function DataTable({
       let aVal = a[sortConfig.column];
       let bVal = b[sortConfig.column];
 
-      // Special handling for player stats table shooting columns
       if (tableId === "player-stats") {
         if (sortConfig.column === 4) {
           // FG M-A column
@@ -84,6 +83,13 @@ export function DataTable({
           aVal = a[15]; // Use hidden raw TPA value
           bVal = b[15];
         }
+      }
+      
+      if (tableId === "gdp") {
+        const aDate = new Date(String(aVal)).getTime();
+        const bDate = new Date(String(bVal)).getTime();
+        const comp = aDate - bDate;
+        return sortConfig.direction === "asc" ? comp : -comp;
       }
 
       // Handle numeric values
@@ -137,19 +143,14 @@ export function DataTable({
         <tbody>
           {sortedRows.map((row, i) => (
             <tr key={i} className={rowClassName ? rowClassName(i) : ""}>
-              {row.slice(0, headers.length).map(
-                (
-                  val,
-                  j // Only show the visible columns
-                ) => (
-                  <td
-                    key={j}
-                    className={isNumeric(val, j) ? getLevelClass(val) : ""}
-                  >
-                    {val}
-                  </td>
-                )
-              )}
+              {row.slice(0, headers.length).map((val, j) => (
+                <td
+                  key={j}
+                  className={isNumeric(val, j) ? getLevelClass(val) : ""}
+                >
+                  {val}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
