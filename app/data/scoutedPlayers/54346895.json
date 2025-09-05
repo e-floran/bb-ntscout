@@ -1,0 +1,31 @@
+{
+  "id": 54346895,
+  "firstName": "Ludwik",
+  "lastName": "Lewna",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8509,
+      "tce": 57,
+      "tci": 17,
+      "tc": 74,
+      "gs": 8,
+      "js": 7,
+      "jr": 8,
+      "od": 10,
+      "ha": 10,
+      "dr": 10,
+      "pa": 12,
+      "is": 3,
+      "id": 7,
+      "rb": 4,
+      "sb": 3,
+      "st": 6,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-05T15:10:27.739Z"
+    }
+  ]
+}

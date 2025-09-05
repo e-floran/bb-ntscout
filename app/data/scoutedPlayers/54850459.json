@@ -1,0 +1,31 @@
+{
+  "id": 54850459,
+  "firstName": "Edgar",
+  "lastName": "Purkiss",
+  "countryId": 98,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2877,
+      "tce": 38,
+      "tci": 15,
+      "tc": 53,
+      "gs": 8,
+      "js": 8,
+      "jr": 5,
+      "od": 6,
+      "ha": 6,
+      "dr": 5,
+      "pa": 8,
+      "is": 2,
+      "id": 6,
+      "rb": 3,
+      "sb": 4,
+      "st": 9,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-05T15:10:27.738Z"
+    }
+  ]
+}

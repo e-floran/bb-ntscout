@@ -1,0 +1,31 @@
+{
+  "id": 54541751,
+  "firstName": "Aleksy",
+  "lastName": "Ćwiertniewicz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 9881,
+      "tce": 43,
+      "tci": 36,
+      "tc": 79,
+      "gs": 9,
+      "js": 10,
+      "jr": 2,
+      "od": 5,
+      "ha": 6,
+      "dr": 11,
+      "pa": 9,
+      "is": 8,
+      "id": 9,
+      "rb": 9,
+      "sb": 10,
+      "st": 2,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-05T15:10:25.983Z"
+    }
+  ]
+}

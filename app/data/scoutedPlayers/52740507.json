@@ -1,0 +1,31 @@
+{
+  "id": 52740507,
+  "firstName": "Luca",
+  "lastName": "Tripodo",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 83865,
+      "tce": 97,
+      "tci": 29,
+      "tc": 126,
+      "gs": 9,
+      "js": 17,
+      "jr": 11,
+      "od": 17,
+      "ha": 20,
+      "dr": 20,
+      "pa": 12,
+      "is": 11,
+      "id": 7,
+      "rb": 4,
+      "sb": 7,
+      "st": 6,
+      "ft": 14,
+      "ex": 6,
+      "scoutedAt": "2025-09-05T15:10:33.479Z"
+    }
+  ]
+}

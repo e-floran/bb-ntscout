@@ -1,0 +1,31 @@
+{
+  "id": 54120582,
+  "firstName": "Radvilis",
+  "lastName": "Jeninas",
+  "countryId": 20,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13832,
+      "tce": 53,
+      "tci": 34,
+      "tc": 87,
+      "gs": 8,
+      "js": 11,
+      "jr": 9,
+      "od": 8,
+      "ha": 11,
+      "dr": 9,
+      "pa": 5,
+      "is": 6,
+      "id": 11,
+      "rb": 11,
+      "sb": 6,
+      "st": 3,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-05T15:10:19.884Z"
+    }
+  ]
+}

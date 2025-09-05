@@ -1,0 +1,31 @@
+{
+  "id": 54427826,
+  "firstName": "Angeliūnas",
+  "lastName": "Kaunackas",
+  "countryId": 20,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10978,
+      "tce": 43,
+      "tci": 38,
+      "tc": 81,
+      "gs": 4,
+      "js": 10,
+      "jr": 5,
+      "od": 9,
+      "ha": 9,
+      "dr": 6,
+      "pa": 4,
+      "is": 11,
+      "id": 10,
+      "rb": 9,
+      "sb": 8,
+      "st": 7,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-09-05T15:10:21.649Z"
+    }
+  ]
+}

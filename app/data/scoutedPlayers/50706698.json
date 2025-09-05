@@ -1,0 +1,31 @@
+{
+  "id": 50706698,
+  "firstName": "Fabrizio",
+  "lastName": "Pasquinucci",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 184802,
+      "tce": 104,
+      "tci": 48,
+      "tc": 152,
+      "gs": 9,
+      "js": 19,
+      "jr": 12,
+      "od": 20,
+      "ha": 21,
+      "dr": 21,
+      "pa": 11,
+      "is": 20,
+      "id": 15,
+      "rb": 9,
+      "sb": 4,
+      "st": 5,
+      "ft": 15,
+      "ex": 13,
+      "scoutedAt": "2025-09-05T15:10:31.083Z"
+    }
+  ]
+}

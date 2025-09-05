@@ -1,0 +1,31 @@
+{
+  "id": 52220239,
+  "firstName": "Barlas",
+  "lastName": "Yagubov",
+  "countryId": 88,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 54740,
+      "tce": 85,
+      "tci": 46,
+      "tc": 131,
+      "gs": 7,
+      "js": 16,
+      "jr": 9,
+      "od": 11,
+      "ha": 17,
+      "dr": 20,
+      "pa": 12,
+      "is": 17,
+      "id": 13,
+      "rb": 7,
+      "sb": 9,
+      "st": 6,
+      "ft": 12,
+      "ex": 9,
+      "scoutedAt": "2025-09-05T15:10:31.083Z"
+    }
+  ]
+}

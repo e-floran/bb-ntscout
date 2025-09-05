@@ -1,0 +1,31 @@
+{
+  "id": 54025925,
+  "firstName": "Eduardo",
+  "lastName": "Hipólito",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11028,
+      "tce": 37,
+      "tci": 36,
+      "tc": 73,
+      "gs": 8,
+      "js": 7,
+      "jr": 3,
+      "od": 10,
+      "ha": 5,
+      "dr": 6,
+      "pa": 6,
+      "is": 13,
+      "id": 12,
+      "rb": 6,
+      "sb": 5,
+      "st": 8,
+      "ft": 11,
+      "ex": 3,
+      "scoutedAt": "2025-09-05T15:10:21.646Z"
+    }
+  ]
+}

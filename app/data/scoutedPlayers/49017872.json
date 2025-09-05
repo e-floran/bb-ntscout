@@ -1,0 +1,31 @@
+{
+  "id": 49017872,
+  "firstName": "Mo",
+  "lastName": "Yikun",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 239458,
+      "tce": 105,
+      "tci": 44,
+      "tc": 149,
+      "gs": 9,
+      "js": 22,
+      "jr": 13,
+      "od": 21,
+      "ha": 19,
+      "dr": 21,
+      "pa": 9,
+      "is": 19,
+      "id": 12,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 26,
+      "ex": 20,
+      "scoutedAt": "2025-09-05T15:10:29.290Z"
+    }
+  ]
+}

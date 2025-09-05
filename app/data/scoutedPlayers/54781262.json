@@ -1,0 +1,31 @@
+{
+  "id": 54781262,
+  "firstName": "Marten",
+  "lastName": "Aruväli",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2541,
+      "tce": 38,
+      "tci": 12,
+      "tc": 50,
+      "gs": 7,
+      "js": 8,
+      "jr": 6,
+      "od": 6,
+      "ha": 5,
+      "dr": 6,
+      "pa": 7,
+      "is": 6,
+      "id": 1,
+      "rb": 3,
+      "sb": 2,
+      "st": 8,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-09-05T15:10:24.815Z"
+    }
+  ]
+}

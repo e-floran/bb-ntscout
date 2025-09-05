@@ -1,0 +1,31 @@
+{
+  "id": 54371013,
+  "firstName": "Grégory",
+  "lastName": "Hoareau",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3213,
+      "tce": 48,
+      "tci": 20,
+      "tc": 68,
+      "gs": 6,
+      "js": 8,
+      "jr": 5,
+      "od": 7,
+      "ha": 11,
+      "dr": 12,
+      "pa": 5,
+      "is": 7,
+      "id": 6,
+      "rb": 2,
+      "sb": 5,
+      "st": 2,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-09-05T15:10:27.164Z"
+    }
+  ]
+}

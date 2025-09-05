@@ -1,0 +1,31 @@
+{
+  "id": 51761911,
+  "firstName": "Vuk",
+  "lastName": "Maksić",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 192487,
+      "tce": 93,
+      "tci": 43,
+      "tc": 136,
+      "gs": 9,
+      "js": 21,
+      "jr": 11,
+      "od": 16,
+      "ha": 17,
+      "dr": 18,
+      "pa": 10,
+      "is": 11,
+      "id": 11,
+      "rb": 13,
+      "sb": 8,
+      "st": 3,
+      "ft": 12,
+      "ex": 9,
+      "scoutedAt": "2025-09-05T15:10:31.083Z"
+    }
+  ]
+}

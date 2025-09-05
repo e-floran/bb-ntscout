@@ -1,0 +1,31 @@
+{
+  "id": 52215262,
+  "firstName": "Garegin",
+  "lastName": "Levonyan",
+  "countryId": 87,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 118742,
+      "tce": 69,
+      "tci": 58,
+      "tc": 127,
+      "gs": 9,
+      "js": 13,
+      "jr": 9,
+      "od": 6,
+      "ha": 15,
+      "dr": 17,
+      "pa": 9,
+      "is": 18,
+      "id": 16,
+      "rb": 15,
+      "sb": 9,
+      "st": 2,
+      "ft": 11,
+      "ex": 9,
+      "scoutedAt": "2025-09-05T15:10:30.449Z"
+    }
+  ]
+}

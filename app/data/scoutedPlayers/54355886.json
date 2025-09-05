@@ -1,0 +1,31 @@
+{
+  "id": 54355886,
+  "firstName": "Fabrizio",
+  "lastName": "Guidi",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7989,
+      "tce": 61,
+      "tci": 24,
+      "tc": 85,
+      "gs": 8,
+      "js": 9,
+      "jr": 6,
+      "od": 8,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 9,
+      "id": 7,
+      "rb": 4,
+      "sb": 4,
+      "st": 4,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-09-05T15:10:25.414Z"
+    }
+  ]
+}

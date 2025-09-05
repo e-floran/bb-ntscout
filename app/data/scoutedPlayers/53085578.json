@@ -1,0 +1,31 @@
+{
+  "id": 53085578,
+  "firstName": "Emmanuel",
+  "lastName": "Coze",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 112428,
+      "tce": 91,
+      "tci": 23,
+      "tc": 114,
+      "gs": 8,
+      "js": 13,
+      "jr": 12,
+      "od": 18,
+      "ha": 16,
+      "dr": 15,
+      "pa": 17,
+      "is": 4,
+      "id": 6,
+      "rb": 9,
+      "sb": 4,
+      "st": 3,
+      "ft": 13,
+      "ex": 5,
+      "scoutedAt": "2025-09-05T15:10:33.479Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54184339,
+  "firstName": "Sergio",
+  "lastName": "Dejarme",
+  "countryId": 57,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11436,
+      "tce": 51,
+      "tci": 37,
+      "tc": 88,
+      "gs": 8,
+      "js": 9,
+      "jr": 9,
+      "od": 7,
+      "ha": 7,
+      "dr": 10,
+      "pa": 9,
+      "is": 10,
+      "id": 9,
+      "rb": 9,
+      "sb": 9,
+      "st": 1,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-05T15:10:20.488Z"
+    }
+  ]
+}

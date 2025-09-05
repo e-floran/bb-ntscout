@@ -1,0 +1,31 @@
+{
+  "id": 53994330,
+  "firstName": "Avelino",
+  "lastName": "Potiguar",
+  "countryId": 3,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12519,
+      "tce": 54,
+      "tci": 37,
+      "tc": 91,
+      "gs": 6,
+      "js": 7,
+      "jr": 7,
+      "od": 9,
+      "ha": 12,
+      "dr": 13,
+      "pa": 6,
+      "is": 12,
+      "id": 10,
+      "rb": 10,
+      "sb": 5,
+      "st": 2,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-09-05T15:10:19.882Z"
+    }
+  ]
+}

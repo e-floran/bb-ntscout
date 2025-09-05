@@ -1,0 +1,31 @@
+{
+  "id": 50401453,
+  "firstName": "Laurent",
+  "lastName": "Boillet",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 203560,
+      "tce": 111,
+      "tci": 39,
+      "tc": 150,
+      "gs": 9,
+      "js": 20,
+      "jr": 14,
+      "od": 21,
+      "ha": 23,
+      "dr": 23,
+      "pa": 10,
+      "is": 18,
+      "id": 8,
+      "rb": 8,
+      "sb": 5,
+      "st": 9,
+      "ft": 15,
+      "ex": 12,
+      "scoutedAt": "2025-09-05T15:10:30.448Z"
+    }
+  ]
+}

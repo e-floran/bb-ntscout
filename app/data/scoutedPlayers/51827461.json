@@ -1,0 +1,31 @@
+{
+  "id": 51827461,
+  "firstName": "Danijel",
+  "lastName": "Bratkić",
+  "countryId": 66,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 190388,
+      "tce": 105,
+      "tci": 31,
+      "tc": 136,
+      "gs": 9,
+      "js": 20,
+      "jr": 15,
+      "od": 20,
+      "ha": 19,
+      "dr": 19,
+      "pa": 12,
+      "is": 11,
+      "id": 8,
+      "rb": 9,
+      "sb": 3,
+      "st": 5,
+      "ft": 11,
+      "ex": 9,
+      "scoutedAt": "2025-09-05T15:10:30.449Z"
+    }
+  ]
+}

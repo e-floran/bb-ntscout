@@ -1,0 +1,31 @@
+{
+  "id": 54370366,
+  "firstName": "Jean-Christophe",
+  "lastName": "Bastien",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7864,
+      "tce": 47,
+      "tci": 34,
+      "tc": 81,
+      "gs": 7,
+      "js": 11,
+      "jr": 9,
+      "od": 7,
+      "ha": 7,
+      "dr": 9,
+      "pa": 4,
+      "is": 8,
+      "id": 10,
+      "rb": 6,
+      "sb": 10,
+      "st": 5,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-09-05T15:10:27.163Z"
+    }
+  ]
+}

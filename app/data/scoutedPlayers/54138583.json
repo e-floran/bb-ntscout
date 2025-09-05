@@ -1,0 +1,31 @@
+{
+  "id": 54138583,
+  "firstName": "Joško",
+  "lastName": "Bertoncelj",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5506,
+      "tce": 54,
+      "tci": 22,
+      "tc": 76,
+      "gs": 5,
+      "js": 12,
+      "jr": 7,
+      "od": 7,
+      "ha": 11,
+      "dr": 10,
+      "pa": 7,
+      "is": 8,
+      "id": 2,
+      "rb": 7,
+      "sb": 5,
+      "st": 9,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-09-05T15:10:27.163Z"
+    }
+  ]
+}
