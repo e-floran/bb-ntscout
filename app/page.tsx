@@ -15,7 +15,6 @@ import {
   stratRows,
   avgRows,
   effRows,
-  playerRows,
   effortRows,
   gdpRows,
   multiSeasonPlayerRows,
@@ -392,39 +391,6 @@ export default function IndexPage() {
                 onSort={handleSort}
               />
             </CollapsibleSection>
-
-            {/* <CollapsibleSection
-              sectionId="player-stats"
-              title="Statistiques joueurs (moyennes par match)"
-              isCollapsed={collapsedSections["player-stats"]}
-              showSkeletons={showSkeletons}
-              onToggle={toggleSection}
-            >
-              <DataTable
-                headers={[
-                  "Joueur",
-                  "GP",
-                  "PTS",
-                  "FG%",
-                  "FG M-A",
-                  "3P%",
-                  "3P M-A",
-                  "AST",
-                  "REB",
-                  "BLK",
-                  "STL",
-                  "TO",
-                  "PF",
-                  "MIN",
-                ]}
-                rows={playerRows(
-                  filteredAnalysis?.seasonsData?.[0]?.playerSumStats || {}
-                )}
-                tableId="player-stats"
-                sortConfig={sortConfig}
-                onSort={handleSort}
-              />
-            </CollapsibleSection> */}
 
             <CollapsibleSection
               sectionId="player-stats"
