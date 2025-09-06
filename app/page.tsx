@@ -18,6 +18,7 @@ import {
   playerRows,
   effortRows,
   gdpRows,
+  multiSeasonPlayerRows,
 } from "@/app/utils/dataProcessing";
 
 interface LoadingStep {
@@ -82,7 +83,7 @@ export default function IndexPage() {
     "player-history": true,
     "recent-games": true,
     "scouted-players": true,
-    "gdp": true,
+    gdp: true,
   });
 
   // Use the custom hook for data filtering
@@ -392,7 +393,7 @@ export default function IndexPage() {
               />
             </CollapsibleSection>
 
-            <CollapsibleSection
+            {/* <CollapsibleSection
               sectionId="player-stats"
               title="Statistiques joueurs (moyennes par match)"
               isCollapsed={collapsedSections["player-stats"]}
@@ -418,6 +419,41 @@ export default function IndexPage() {
                 ]}
                 rows={playerRows(
                   filteredAnalysis?.seasonsData?.[0]?.playerSumStats || {}
+                )}
+                tableId="player-stats"
+                sortConfig={sortConfig}
+                onSort={handleSort}
+              />
+            </CollapsibleSection> */}
+
+            <CollapsibleSection
+              sectionId="player-stats"
+              title={`Statistiques joueurs (moyennes sur ${
+                seasonLabels.length
+              } saison${seasonLabels.length > 1 ? "s" : ""})`}
+              isCollapsed={collapsedSections["player-stats"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              <DataTable
+                headers={[
+                  "Joueur",
+                  "GP",
+                  "PTS",
+                  "FG%",
+                  "FG M-A",
+                  "3P%",
+                  "3P M-A",
+                  "AST",
+                  "REB",
+                  "BLK",
+                  "STL",
+                  "TO",
+                  "PF",
+                  "MIN",
+                ]}
+                rows={multiSeasonPlayerRows(
+                  filteredAnalysis?.seasonsData || []
                 )}
                 tableId="player-stats"
                 sortConfig={sortConfig}
@@ -459,9 +495,7 @@ export default function IndexPage() {
               filteredAnalysis.seasonsData[0].effortDeltaList.length > 0 ? (
                 <DataTable
                   headers={["Date", "Adversaire", "PAM"]}
-                  rows={gdpRows(
-                    filteredAnalysis.seasonsData[0].gdpList
-                  )}
+                  rows={gdpRows(filteredAnalysis.seasonsData[0].gdpList)}
                   tableId="gdp"
                   sortConfig={sortConfig}
                   onSort={handleSort}
