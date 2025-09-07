@@ -1,0 +1,154 @@
+[
+  {
+    "gameId": "81013",
+    "gameDate": "2025-08-04T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 8,
+      "insideScoring": 10.3,
+      "outsideDefense": 10.6,
+      "insideDefense": 9.6,
+      "rebounding": 7.3,
+      "offensiveFlow": 7.3
+    },
+    "positionsEfficiencies": {
+      "PG": 61.3,
+      "SG": 79.3,
+      "SF": 91.9,
+      "PF": 96.6,
+      "C": 94.1
+    }
+  },
+  {
+    "gameId": "81005",
+    "gameDate": "2025-07-21T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 6,
+      "insideScoring": 12.6,
+      "outsideDefense": 9,
+      "insideDefense": 8,
+      "rebounding": 6.3,
+      "offensiveFlow": 7.6
+    },
+    "positionsEfficiencies": {
+      "PG": 90.1,
+      "SG": 78.1,
+      "SF": 102,
+      "PF": 122.3,
+      "C": 121
+    }
+  },
+  {
+    "gameId": "80654",
+    "gameDate": "2025-07-14T10:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 6.3,
+      "insideScoring": 7.3,
+      "outsideDefense": 6.3,
+      "insideDefense": 6,
+      "rebounding": 4.3,
+      "offensiveFlow": 7
+    },
+    "positionsEfficiencies": {
+      "PG": 107.8,
+      "SG": 98.8,
+      "SF": 119.8,
+      "PF": 104,
+      "C": 82.8
+    }
+  },
+  {
+    "gameId": "81009",
+    "gameDate": "2025-07-28T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 9.6,
+      "insideScoring": 6,
+      "outsideDefense": 9.3,
+      "insideDefense": 8.3,
+      "rebounding": 6,
+      "offensiveFlow": 7.3
+    },
+    "positionsEfficiencies": {
+      "PG": 122.1,
+      "SG": 108.8,
+      "SF": 121.2,
+      "PF": 114.7,
+      "C": 76.7
+    }
+  },
+  {
+    "gameId": "81017",
+    "gameDate": "2025-08-11T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 10,
+      "insideScoring": 8.3,
+      "outsideDefense": 9.6,
+      "insideDefense": 10.6,
+      "rebounding": 7,
+      "offensiveFlow": 7.6
+    },
+    "positionsEfficiencies": {
+      "PG": 99.3,
+      "SG": 120.3,
+      "SF": 128.5,
+      "PF": 118.2,
+      "C": 107.1
+    }
+  },
+  {
+    "gameId": "81025",
+    "gameDate": "2025-08-25T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 10,
+      "insideScoring": 5.6,
+      "outsideDefense": 11.6,
+      "insideDefense": 9.6,
+      "rebounding": 8,
+      "offensiveFlow": 7.6
+    },
+    "positionsEfficiencies": {
+      "PG": 84.6,
+      "SG": 86,
+      "SF": 79.3,
+      "PF": 86.5,
+      "C": 50.2
+    }
+  },
+  {
+    "gameId": "81029",
+    "gameDate": "2025-09-01T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 8.6,
+      "insideScoring": 8.3,
+      "outsideDefense": 11.3,
+      "insideDefense": 9.6,
+      "rebounding": 8.3,
+      "offensiveFlow": 7.3
+    },
+    "positionsEfficiencies": {
+      "PG": 53.3,
+      "SG": 81,
+      "SF": 83.9,
+      "PF": 103.3,
+      "C": 54.2
+    }
+  },
+  {
+    "gameId": "81021",
+    "gameDate": "2025-08-18T17:30:00Z",
+    "teamRatings": {
+      "outsideScoring": 11.6,
+      "insideScoring": 7,
+      "outsideDefense": 11.6,
+      "insideDefense": 10.6,
+      "rebounding": 8.3,
+      "offensiveFlow": 8.3
+    },
+    "positionsEfficiencies": {
+      "PG": 91.8,
+      "SG": 91.1,
+      "SF": 97.6,
+      "PF": 77.6,
+      "C": 40
+    }
+  }
+]
