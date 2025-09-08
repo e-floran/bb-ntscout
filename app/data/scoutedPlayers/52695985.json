@@ -1,0 +1,31 @@
+{
+  "id": 52695985,
+  "firstName": "Dong-Joon",
+  "lastName": "Kim",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 19859,
+      "tce": 72,
+      "tci": 35,
+      "tc": 107,
+      "gs": 3,
+      "js": 14,
+      "jr": 9,
+      "od": 13,
+      "ha": 16,
+      "dr": 18,
+      "pa": 2,
+      "is": 16,
+      "id": 10,
+      "rb": 3,
+      "sb": 6,
+      "st": 4,
+      "ft": 5,
+      "ex": 5,
+      "scoutedAt": "2025-09-08T15:25:06.831Z"
+    }
+  ]
+}

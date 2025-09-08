@@ -1,0 +1,31 @@
+{
+  "id": 53918051,
+  "firstName": "Hipalit",
+  "lastName": "Maskalevich",
+  "countryId": 85,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10261,
+      "tce": 65,
+      "tci": 28,
+      "tc": 93,
+      "gs": 7,
+      "js": 12,
+      "jr": 8,
+      "od": 9,
+      "ha": 14,
+      "dr": 15,
+      "pa": 7,
+      "is": 6,
+      "id": 8,
+      "rb": 7,
+      "sb": 7,
+      "st": 7,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:54.661Z"
+    }
+  ]
+}

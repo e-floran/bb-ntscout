@@ -1,0 +1,31 @@
+{
+  "id": 54218194,
+  "firstName": "Geng",
+  "lastName": "Tsung Te",
+  "countryId": 70,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 8318,
+      "tce": 58,
+      "tci": 19,
+      "tc": 77,
+      "gs": 9,
+      "js": 12,
+      "jr": 9,
+      "od": 5,
+      "ha": 10,
+      "dr": 13,
+      "pa": 9,
+      "is": 5,
+      "id": 7,
+      "rb": 5,
+      "sb": 2,
+      "st": 2,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:57.568Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52589867,
+  "firstName": "Bazyl",
+  "lastName": "Mil'ko",
+  "countryId": 85,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 86116,
+      "tce": 79,
+      "tci": 44,
+      "tc": 123,
+      "gs": 7,
+      "js": 20,
+      "jr": 12,
+      "od": 9,
+      "ha": 15,
+      "dr": 18,
+      "pa": 5,
+      "is": 16,
+      "id": 9,
+      "rb": 13,
+      "sb": 6,
+      "st": 5,
+      "ft": 19,
+      "ex": 6,
+      "scoutedAt": "2025-09-08T15:25:06.291Z"
+    }
+  ]
+}

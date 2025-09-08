@@ -1,0 +1,31 @@
+{
+  "id": 49967175,
+  "firstName": "Tomi",
+  "lastName": "Huovila",
+  "countryId": 69,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 191911,
+      "tce": 105,
+      "tci": 44,
+      "tc": 149,
+      "gs": 9,
+      "js": 18,
+      "jr": 14,
+      "od": 22,
+      "ha": 19,
+      "dr": 19,
+      "pa": 13,
+      "is": 16,
+      "id": 11,
+      "rb": 8,
+      "sb": 9,
+      "st": 9,
+      "ft": 17,
+      "ex": 14,
+      "scoutedAt": "2025-09-08T15:25:03.228Z"
+    }
+  ]
+}

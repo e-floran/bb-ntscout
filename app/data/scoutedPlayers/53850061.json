@@ -1,0 +1,31 @@
+{
+  "id": 53850061,
+  "firstName": "Jimmi",
+  "lastName": "Kirk",
+  "countryId": 39,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 27159,
+      "tce": 24,
+      "tci": 52,
+      "tc": 76,
+      "gs": 9,
+      "js": 9,
+      "jr": 1,
+      "od": 4,
+      "ha": 7,
+      "dr": 2,
+      "pa": 1,
+      "is": 14,
+      "id": 14,
+      "rb": 11,
+      "sb": 13,
+      "st": 5,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:53.888Z"
+    }
+  ]
+}

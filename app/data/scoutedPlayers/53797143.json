@@ -1,0 +1,31 @@
+{
+  "id": 53797143,
+  "firstName": "Joshua",
+  "lastName": "Slavan",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 6886,
+      "tce": 60,
+      "tci": 17,
+      "tc": 77,
+      "gs": 9,
+      "js": 11,
+      "jr": 8,
+      "od": 12,
+      "ha": 11,
+      "dr": 13,
+      "pa": 5,
+      "is": 9,
+      "id": 3,
+      "rb": 1,
+      "sb": 4,
+      "st": 4,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:59.252Z"
+    }
+  ]
+}

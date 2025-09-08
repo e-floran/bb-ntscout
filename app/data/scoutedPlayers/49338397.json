@@ -1,0 +1,31 @@
+{
+  "id": 49338397,
+  "firstName": "Sazdo",
+  "lastName": "Bundalevski",
+  "countryId": 49,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 105690,
+      "tce": 73,
+      "tci": 51,
+      "tc": 124,
+      "gs": 8,
+      "js": 15,
+      "jr": 8,
+      "od": 11,
+      "ha": 14,
+      "dr": 16,
+      "pa": 9,
+      "is": 18,
+      "id": 14,
+      "rb": 12,
+      "sb": 7,
+      "st": 3,
+      "ft": 32,
+      "ex": 16,
+      "scoutedAt": "2025-09-08T15:25:02.054Z"
+    }
+  ]
+}

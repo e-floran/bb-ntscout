@@ -1,0 +1,31 @@
+{
+  "id": 53750768,
+  "firstName": "Julien",
+  "lastName": "Mérand",
+  "countryId": 11,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10696,
+      "tce": 67,
+      "tci": 24,
+      "tc": 91,
+      "gs": 6,
+      "js": 12,
+      "jr": 4,
+      "od": 8,
+      "ha": 18,
+      "dr": 19,
+      "pa": 6,
+      "is": 9,
+      "id": 8,
+      "rb": 6,
+      "sb": 1,
+      "st": 5,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:52.796Z"
+    }
+  ]
+}

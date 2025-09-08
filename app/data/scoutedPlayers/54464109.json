@@ -1,0 +1,31 @@
+{
+  "id": 54464109,
+  "firstName": "Jaroslav",
+  "lastName": "Ulrich",
+  "countryId": 37,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6377,
+      "tce": 45,
+      "tci": 27,
+      "tc": 72,
+      "gs": 7,
+      "js": 7,
+      "jr": 5,
+      "od": 7,
+      "ha": 7,
+      "dr": 9,
+      "pa": 10,
+      "is": 5,
+      "id": 8,
+      "rb": 9,
+      "sb": 5,
+      "st": 5,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:59.252Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54188964,
+  "firstName": "Radomir",
+  "lastName": "Rasz",
+  "countryId": 58,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13142,
+      "tce": 58,
+      "tci": 34,
+      "tc": 92,
+      "gs": 8,
+      "js": 11,
+      "jr": 9,
+      "od": 10,
+      "ha": 7,
+      "dr": 14,
+      "pa": 7,
+      "is": 11,
+      "id": 10,
+      "rb": 9,
+      "sb": 4,
+      "st": 3,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:55.209Z"
+    }
+  ]
+}

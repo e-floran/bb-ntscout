@@ -1,0 +1,31 @@
+{
+  "id": 53168192,
+  "firstName": "Lazar",
+  "lastName": "Pantović",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 81021,
+      "tce": 96,
+      "tci": 33,
+      "tc": 129,
+      "gs": 8,
+      "js": 20,
+      "jr": 13,
+      "od": 15,
+      "ha": 18,
+      "dr": 20,
+      "pa": 10,
+      "is": 11,
+      "id": 10,
+      "rb": 8,
+      "sb": 4,
+      "st": 7,
+      "ft": 12,
+      "ex": 5,
+      "scoutedAt": "2025-09-08T15:25:05.749Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54495988,
+  "firstName": "Chrystian",
+  "lastName": "Pruchniewicz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6247,
+      "tce": 50,
+      "tci": 21,
+      "tc": 71,
+      "gs": 9,
+      "js": 10,
+      "jr": 10,
+      "od": 7,
+      "ha": 10,
+      "dr": 7,
+      "pa": 6,
+      "is": 8,
+      "id": 2,
+      "rb": 8,
+      "sb": 3,
+      "st": 9,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:59.251Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53919360,
+  "firstName": "Massimo",
+  "lastName": "Galvan",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 29644,
+      "tce": 38,
+      "tci": 47,
+      "tc": 85,
+      "gs": 8,
+      "js": 11,
+      "jr": 2,
+      "od": 3,
+      "ha": 7,
+      "dr": 11,
+      "pa": 4,
+      "is": 15,
+      "id": 13,
+      "rb": 11,
+      "sb": 8,
+      "st": 3,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:52.795Z"
+    }
+  ]
+}

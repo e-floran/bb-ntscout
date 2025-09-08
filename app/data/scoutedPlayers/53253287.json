@@ -1,0 +1,31 @@
+{
+  "id": 53253287,
+  "firstName": "Martí",
+  "lastName": "Pereramon",
+  "countryId": 75,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 55810,
+      "tce": 58,
+      "tci": 54,
+      "tc": 112,
+      "gs": 9,
+      "js": 8,
+      "jr": 6,
+      "od": 9,
+      "ha": 11,
+      "dr": 13,
+      "pa": 11,
+      "is": 15,
+      "id": 16,
+      "rb": 12,
+      "sb": 11,
+      "st": 3,
+      "ft": 19,
+      "ex": 6,
+      "scoutedAt": "2025-09-08T15:25:05.203Z"
+    }
+  ]
+}

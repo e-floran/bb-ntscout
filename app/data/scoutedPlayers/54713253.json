@@ -1,0 +1,31 @@
+{
+  "id": 54713253,
+  "firstName": "Ali Ekber",
+  "lastName": "Arikli",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 1898,
+      "tce": 22,
+      "tci": 18,
+      "tc": 40,
+      "gs": 5,
+      "js": 2,
+      "jr": 4,
+      "od": 7,
+      "ha": 1,
+      "dr": 6,
+      "pa": 2,
+      "is": 6,
+      "id": 5,
+      "rb": 6,
+      "sb": 1,
+      "st": 7,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:59.249Z"
+    }
+  ]
+}

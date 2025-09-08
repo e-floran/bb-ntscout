@@ -1,0 +1,31 @@
+{
+  "id": 54063337,
+  "firstName": "Wahid",
+  "lastName": "Hamila",
+  "countryId": 11,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 14781,
+      "tce": 49,
+      "tci": 40,
+      "tc": 89,
+      "gs": 8,
+      "js": 9,
+      "jr": 9,
+      "od": 4,
+      "ha": 10,
+      "dr": 11,
+      "pa": 6,
+      "is": 9,
+      "id": 11,
+      "rb": 10,
+      "sb": 10,
+      "st": 4,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:55.799Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54208821,
+  "firstName": "Gaber",
+  "lastName": "Simončič",
+  "countryId": 66,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5149,
+      "tce": 52,
+      "tci": 22,
+      "tc": 74,
+      "gs": 9,
+      "js": 9,
+      "jr": 8,
+      "od": 9,
+      "ha": 9,
+      "dr": 10,
+      "pa": 7,
+      "is": 5,
+      "id": 6,
+      "rb": 6,
+      "sb": 5,
+      "st": 8,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:58.668Z"
+    }
+  ]
+}

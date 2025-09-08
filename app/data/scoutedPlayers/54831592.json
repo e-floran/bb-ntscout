@@ -1,0 +1,31 @@
+{
+  "id": 54831592,
+  "firstName": "Kristián",
+  "lastName": "Prokipčák",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4006,
+      "tce": 47,
+      "tci": 19,
+      "tc": 66,
+      "gs": 8,
+      "js": 11,
+      "jr": 4,
+      "od": 9,
+      "ha": 5,
+      "dr": 10,
+      "pa": 8,
+      "is": 10,
+      "id": 1,
+      "rb": 4,
+      "sb": 4,
+      "st": 3,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:59.830Z"
+    }
+  ]
+}

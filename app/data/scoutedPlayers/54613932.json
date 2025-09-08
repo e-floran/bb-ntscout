@@ -1,0 +1,31 @@
+{
+  "id": 54613932,
+  "firstName": "Neto",
+  "lastName": "Pena França",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2898,
+      "tce": 41,
+      "tci": 20,
+      "tc": 61,
+      "gs": 7,
+      "js": 8,
+      "jr": 7,
+      "od": 7,
+      "ha": 6,
+      "dr": 6,
+      "pa": 7,
+      "is": 6,
+      "id": 6,
+      "rb": 3,
+      "sb": 5,
+      "st": 3,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:25:00.381Z"
+    }
+  ]
+}

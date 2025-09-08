@@ -1,0 +1,31 @@
+{
+  "id": 54302156,
+  "firstName": "Otávio",
+  "lastName": "Andrade",
+  "countryId": 3,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11777,
+      "tce": 21,
+      "tci": 46,
+      "tc": 67,
+      "gs": 9,
+      "js": 9,
+      "jr": 2,
+      "od": 5,
+      "ha": 1,
+      "dr": 2,
+      "pa": 2,
+      "is": 10,
+      "id": 12,
+      "rb": 10,
+      "sb": 14,
+      "st": 1,
+      "ft": 11,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:55.209Z"
+    }
+  ]
+}

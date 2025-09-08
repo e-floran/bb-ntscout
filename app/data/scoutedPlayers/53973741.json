@@ -1,0 +1,31 @@
+{
+  "id": 53973741,
+  "firstName": "Louis-Charles",
+  "lastName": "Colette",
+  "countryId": 1,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11427,
+      "tce": 37,
+      "tci": 41,
+      "tc": 78,
+      "gs": 6,
+      "js": 8,
+      "jr": 4,
+      "od": 4,
+      "ha": 6,
+      "dr": 9,
+      "pa": 6,
+      "is": 7,
+      "id": 15,
+      "rb": 9,
+      "sb": 10,
+      "st": 7,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:55.209Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54770941,
+  "firstName": "Zoran",
+  "lastName": "Stančević",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5300,
+      "tce": 25,
+      "tci": 30,
+      "tc": 55,
+      "gs": 8,
+      "js": 4,
+      "jr": 3,
+      "od": 4,
+      "ha": 6,
+      "dr": 2,
+      "pa": 6,
+      "is": 9,
+      "id": 4,
+      "rb": 9,
+      "sb": 8,
+      "st": 6,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:58.110Z"
+    }
+  ]
+}

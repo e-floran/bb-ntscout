@@ -1,0 +1,31 @@
+{
+  "id": 54231100,
+  "firstName": "Minas",
+  "lastName": "Abrahamyan",
+  "countryId": 87,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11118,
+      "tce": 40,
+      "tci": 35,
+      "tc": 75,
+      "gs": 8,
+      "js": 11,
+      "jr": 2,
+      "od": 7,
+      "ha": 11,
+      "dr": 8,
+      "pa": 1,
+      "is": 11,
+      "id": 9,
+      "rb": 8,
+      "sb": 7,
+      "st": 1,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:53.336Z"
+    }
+  ]
+}

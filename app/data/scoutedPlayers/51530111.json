@@ -1,0 +1,31 @@
+{
+  "id": 51530111,
+  "firstName": "Sənan",
+  "lastName": "Jabrayilov",
+  "countryId": 88,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 68453,
+      "tce": 78,
+      "tci": 54,
+      "tc": 132,
+      "gs": 8,
+      "js": 13,
+      "jr": 8,
+      "od": 12,
+      "ha": 18,
+      "dr": 18,
+      "pa": 9,
+      "is": 14,
+      "id": 10,
+      "rb": 18,
+      "sb": 12,
+      "st": 8,
+      "ft": 23,
+      "ex": 10,
+      "scoutedAt": "2025-09-08T15:25:02.593Z"
+    }
+  ]
+}

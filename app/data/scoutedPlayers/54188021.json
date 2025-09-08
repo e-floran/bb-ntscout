@@ -1,0 +1,31 @@
+{
+  "id": 54188021,
+  "firstName": "Marceli",
+  "lastName": "Wolej",
+  "countryId": 58,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10287,
+      "tce": 56,
+      "tci": 24,
+      "tc": 80,
+      "gs": 8,
+      "js": 10,
+      "jr": 9,
+      "od": 11,
+      "ha": 9,
+      "dr": 10,
+      "pa": 7,
+      "is": 4,
+      "id": 9,
+      "rb": 7,
+      "sb": 4,
+      "st": 6,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:53.889Z"
+    }
+  ]
+}

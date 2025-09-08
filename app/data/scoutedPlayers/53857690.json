@@ -1,0 +1,31 @@
+{
+  "id": 53857690,
+  "firstName": "Ho",
+  "lastName": "Shun Tam",
+  "countryId": 45,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9955,
+      "tce": 67,
+      "tci": 27,
+      "tc": 94,
+      "gs": 8,
+      "js": 15,
+      "jr": 9,
+      "od": 6,
+      "ha": 17,
+      "dr": 17,
+      "pa": 3,
+      "is": 13,
+      "id": 7,
+      "rb": 4,
+      "sb": 3,
+      "st": 6,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:59.827Z"
+    }
+  ]
+}

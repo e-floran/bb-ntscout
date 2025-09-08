@@ -1,0 +1,31 @@
+{
+  "id": 53990578,
+  "firstName": "Mattia",
+  "lastName": "Bocchini",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12848,
+      "tce": 56,
+      "tci": 31,
+      "tc": 87,
+      "gs": 7,
+      "js": 13,
+      "jr": 12,
+      "od": 6,
+      "ha": 8,
+      "dr": 9,
+      "pa": 8,
+      "is": 6,
+      "id": 8,
+      "rb": 7,
+      "sb": 10,
+      "st": 6,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:54.662Z"
+    }
+  ]
+}

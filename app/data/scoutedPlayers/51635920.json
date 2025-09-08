@@ -1,0 +1,31 @@
+{
+  "id": 51635920,
+  "firstName": "Hidir",
+  "lastName": "Isilak",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 141471,
+      "tce": 87,
+      "tci": 55,
+      "tc": 142,
+      "gs": 9,
+      "js": 17,
+      "jr": 7,
+      "od": 14,
+      "ha": 19,
+      "dr": 20,
+      "pa": 10,
+      "is": 17,
+      "id": 17,
+      "rb": 12,
+      "sb": 9,
+      "st": 5,
+      "ft": 13,
+      "ex": 9,
+      "scoutedAt": "2025-09-08T15:25:02.592Z"
+    }
+  ]
+}

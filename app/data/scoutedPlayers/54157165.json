@@ -1,0 +1,31 @@
+{
+  "id": 54157165,
+  "firstName": "Robin",
+  "lastName": "Drašar",
+  "countryId": 37,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11546,
+      "tce": 33,
+      "tci": 39,
+      "tc": 72,
+      "gs": 8,
+      "js": 8,
+      "jr": 5,
+      "od": 1,
+      "ha": 6,
+      "dr": 6,
+      "pa": 7,
+      "is": 9,
+      "id": 11,
+      "rb": 12,
+      "sb": 7,
+      "st": 5,
+      "ft": 7,
+      "ex": 4,
+      "scoutedAt": "2025-09-08T15:24:56.343Z"
+    }
+  ]
+}

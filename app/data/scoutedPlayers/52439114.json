@@ -1,0 +1,31 @@
+{
+  "id": 52439114,
+  "firstName": "Nikos",
+  "lastName": "Gkousis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 70591,
+      "tce": 93,
+      "tci": 41,
+      "tc": 134,
+      "gs": 9,
+      "js": 18,
+      "jr": 9,
+      "od": 21,
+      "ha": 17,
+      "dr": 19,
+      "pa": 9,
+      "is": 17,
+      "id": 9,
+      "rb": 8,
+      "sb": 7,
+      "st": 3,
+      "ft": 12,
+      "ex": 8,
+      "scoutedAt": "2025-09-08T15:25:05.749Z"
+    }
+  ]
+}

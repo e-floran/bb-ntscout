@@ -1,0 +1,31 @@
+{
+  "id": 54453822,
+  "firstName": "Hristivoje",
+  "lastName": "Golubović",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12773,
+      "tce": 36,
+      "tci": 38,
+      "tc": 74,
+      "gs": 8,
+      "js": 6,
+      "jr": 5,
+      "od": 1,
+      "ha": 8,
+      "dr": 7,
+      "pa": 9,
+      "is": 9,
+      "id": 9,
+      "rb": 13,
+      "sb": 7,
+      "st": 2,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:56.344Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54683055,
+  "firstName": "Frantz",
+  "lastName": "Deloumeaux",
+  "countryId": 11,
+  "potential": 4,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10546,
+      "tce": 46,
+      "tci": 19,
+      "tc": 65,
+      "gs": 8,
+      "js": 11,
+      "jr": 10,
+      "od": 8,
+      "ha": 6,
+      "dr": 8,
+      "pa": 3,
+      "is": 4,
+      "id": 2,
+      "rb": 9,
+      "sb": 4,
+      "st": 5,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:54.662Z"
+    }
+  ]
+}

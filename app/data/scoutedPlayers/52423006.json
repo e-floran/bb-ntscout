@@ -1,0 +1,31 @@
+{
+  "id": 52423006,
+  "firstName": "Théophile",
+  "lastName": "Dejardin",
+  "countryId": 11,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 39220,
+      "tce": 82,
+      "tci": 38,
+      "tc": 120,
+      "gs": 8,
+      "js": 15,
+      "jr": 12,
+      "od": 15,
+      "ha": 13,
+      "dr": 14,
+      "pa": 13,
+      "is": 13,
+      "id": 13,
+      "rb": 6,
+      "sb": 6,
+      "st": 2,
+      "ft": 20,
+      "ex": 6,
+      "scoutedAt": "2025-09-08T15:25:05.200Z"
+    }
+  ]
+}

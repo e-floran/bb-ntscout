@@ -1,0 +1,31 @@
+{
+  "id": 53975765,
+  "firstName": "Marty",
+  "lastName": "Hendrickson",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10897,
+      "tce": 60,
+      "tci": 20,
+      "tc": 80,
+      "gs": 9,
+      "js": 11,
+      "jr": 10,
+      "od": 9,
+      "ha": 10,
+      "dr": 9,
+      "pa": 11,
+      "is": 6,
+      "id": 6,
+      "rb": 3,
+      "sb": 5,
+      "st": 6,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:55.210Z"
+    }
+  ]
+}

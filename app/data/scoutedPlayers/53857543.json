@@ -1,0 +1,31 @@
+{
+  "id": 53857543,
+  "firstName": "Lee",
+  "lastName": "Hay Ling",
+  "countryId": 45,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 20417,
+      "tce": 36,
+      "tci": 51,
+      "tc": 87,
+      "gs": 7,
+      "js": 3,
+      "jr": 7,
+      "od": 7,
+      "ha": 5,
+      "dr": 8,
+      "pa": 6,
+      "is": 4,
+      "id": 15,
+      "rb": 12,
+      "sb": 20,
+      "st": 4,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:54.660Z"
+    }
+  ]
+}

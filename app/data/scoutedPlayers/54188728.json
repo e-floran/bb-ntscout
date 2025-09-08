@@ -1,0 +1,31 @@
+{
+  "id": 54188728,
+  "firstName": "Ferdynand",
+  "lastName": "Krakowian",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 7769,
+      "tce": 53,
+      "tci": 33,
+      "tc": 86,
+      "gs": 9,
+      "js": 11,
+      "jr": 6,
+      "od": 4,
+      "ha": 13,
+      "dr": 14,
+      "pa": 5,
+      "is": 9,
+      "id": 8,
+      "rb": 6,
+      "sb": 10,
+      "st": 6,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:25:00.380Z"
+    }
+  ]
+}

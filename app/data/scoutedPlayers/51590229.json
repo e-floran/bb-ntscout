@@ -1,0 +1,31 @@
+{
+  "id": 51590229,
+  "firstName": "Shayne",
+  "lastName": "Banner",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 208625,
+      "tce": 87,
+      "tci": 65,
+      "tc": 152,
+      "gs": 8,
+      "js": 17,
+      "jr": 8,
+      "od": 13,
+      "ha": 17,
+      "dr": 18,
+      "pa": 14,
+      "is": 11,
+      "id": 20,
+      "rb": 16,
+      "sb": 18,
+      "st": 6,
+      "ft": 24,
+      "ex": 10,
+      "scoutedAt": "2025-09-08T15:25:03.231Z"
+    }
+  ]
+}

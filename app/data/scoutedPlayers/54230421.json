@@ -1,0 +1,31 @@
+{
+  "id": 54230421,
+  "firstName": "Magnus",
+  "lastName": "Kicoš",
+  "countryId": 67,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10764,
+      "tce": 42,
+      "tci": 35,
+      "tc": 77,
+      "gs": 7,
+      "js": 9,
+      "jr": 8,
+      "od": 8,
+      "ha": 4,
+      "dr": 10,
+      "pa": 3,
+      "is": 10,
+      "id": 8,
+      "rb": 8,
+      "sb": 9,
+      "st": 3,
+      "ft": 12,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:52.800Z"
+    }
+  ]
+}

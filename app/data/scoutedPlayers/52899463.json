@@ -1,0 +1,31 @@
+{
+  "id": 52899463,
+  "firstName": "Marian",
+  "lastName": "Gafton",
+  "countryId": 61,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 46897,
+      "tce": 90,
+      "tci": 28,
+      "tc": 118,
+      "gs": 5,
+      "js": 18,
+      "jr": 6,
+      "od": 17,
+      "ha": 20,
+      "dr": 20,
+      "pa": 9,
+      "is": 7,
+      "id": 9,
+      "rb": 3,
+      "sb": 9,
+      "st": 9,
+      "ft": 12,
+      "ex": 4,
+      "scoutedAt": "2025-09-08T15:25:05.203Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54047169,
+  "firstName": "Cristiano",
+  "lastName": "Trabace",
+  "countryId": 10,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15360,
+      "tce": 63,
+      "tci": 23,
+      "tc": 86,
+      "gs": 8,
+      "js": 15,
+      "jr": 10,
+      "od": 7,
+      "ha": 11,
+      "dr": 11,
+      "pa": 9,
+      "is": 9,
+      "id": 5,
+      "rb": 6,
+      "sb": 3,
+      "st": 8,
+      "ft": 9,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:55.211Z"
+    }
+  ]
+}

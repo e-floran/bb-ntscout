@@ -1,0 +1,31 @@
+{
+  "id": 54851420,
+  "firstName": "Mate",
+  "lastName": "Cerina",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2515,
+      "tce": 33,
+      "tci": 24,
+      "tc": 57,
+      "gs": 7,
+      "js": 4,
+      "jr": 7,
+      "od": 1,
+      "ha": 9,
+      "dr": 5,
+      "pa": 7,
+      "is": 6,
+      "id": 7,
+      "rb": 7,
+      "sb": 4,
+      "st": 2,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:25:00.382Z"
+    }
+  ]
+}

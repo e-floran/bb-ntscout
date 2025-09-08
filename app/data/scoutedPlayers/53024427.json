@@ -1,0 +1,31 @@
+{
+  "id": 53024427,
+  "firstName": "Chen",
+  "lastName": "Shirong",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 25158,
+      "tce": 62,
+      "tci": 39,
+      "tc": 101,
+      "gs": 7,
+      "js": 8,
+      "jr": 5,
+      "od": 15,
+      "ha": 12,
+      "dr": 8,
+      "pa": 14,
+      "is": 9,
+      "id": 14,
+      "rb": 10,
+      "sb": 6,
+      "st": 5,
+      "ft": 16,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:25:05.202Z"
+    }
+  ]
+}

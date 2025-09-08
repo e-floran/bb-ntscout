@@ -1,0 +1,31 @@
+{
+  "id": 54151852,
+  "firstName": "Matija",
+  "lastName": "Tišma",
+  "countryId": 35,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10374,
+      "tce": 34,
+      "tci": 38,
+      "tc": 72,
+      "gs": 4,
+      "js": 7,
+      "jr": 5,
+      "od": 6,
+      "ha": 4,
+      "dr": 7,
+      "pa": 5,
+      "is": 10,
+      "id": 8,
+      "rb": 9,
+      "sb": 11,
+      "st": 6,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:53.888Z"
+    }
+  ]
+}

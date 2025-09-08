@@ -1,0 +1,31 @@
+{
+  "id": 54177251,
+  "firstName": "István",
+  "lastName": "Brezovcsik",
+  "countryId": 48,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10226,
+      "tce": 51,
+      "tci": 30,
+      "tc": 81,
+      "gs": 7,
+      "js": 9,
+      "jr": 10,
+      "od": 8,
+      "ha": 9,
+      "dr": 6,
+      "pa": 9,
+      "is": 7,
+      "id": 8,
+      "rb": 9,
+      "sb": 6,
+      "st": 7,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:56.343Z"
+    }
+  ]
+}

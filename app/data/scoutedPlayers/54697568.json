@@ -1,0 +1,31 @@
+{
+  "id": 54697568,
+  "firstName": "Konstantinos",
+  "lastName": "Yiakoumakis",
+  "countryId": 12,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10601,
+      "tce": 46,
+      "tci": 31,
+      "tc": 77,
+      "gs": 4,
+      "js": 9,
+      "jr": 10,
+      "od": 9,
+      "ha": 7,
+      "dr": 6,
+      "pa": 5,
+      "is": 10,
+      "id": 3,
+      "rb": 9,
+      "sb": 9,
+      "st": 4,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:52.797Z"
+    }
+  ]
+}

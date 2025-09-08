@@ -1,0 +1,31 @@
+{
+  "id": 53923727,
+  "firstName": "Oumar",
+  "lastName": "Brownridge",
+  "countryId": 95,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 23982,
+      "tce": 34,
+      "tci": 45,
+      "tc": 79,
+      "gs": 9,
+      "js": 8,
+      "jr": 3,
+      "od": 4,
+      "ha": 6,
+      "dr": 6,
+      "pa": 7,
+      "is": 12,
+      "id": 12,
+      "rb": 12,
+      "sb": 9,
+      "st": 6,
+      "ft": 3,
+      "ex": 4,
+      "scoutedAt": "2025-09-08T15:24:53.336Z"
+    }
+  ]
+}

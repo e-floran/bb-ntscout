@@ -1,0 +1,31 @@
+{
+  "id": 54852288,
+  "firstName": "Jeffrey",
+  "lastName": "Dundas",
+  "countryId": 64,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2959,
+      "tce": 26,
+      "tci": 27,
+      "tc": 53,
+      "gs": 9,
+      "js": 1,
+      "jr": 3,
+      "od": 3,
+      "ha": 7,
+      "dr": 7,
+      "pa": 5,
+      "is": 7,
+      "id": 7,
+      "rb": 7,
+      "sb": 6,
+      "st": 3,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:57.564Z"
+    }
+  ]
+}

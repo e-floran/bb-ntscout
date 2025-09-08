@@ -1,0 +1,31 @@
+{
+  "id": 52860332,
+  "firstName": "Gayus",
+  "lastName": "Pongoh",
+  "countryId": 43,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 32189,
+      "tce": 83,
+      "tci": 23,
+      "tc": 106,
+      "gs": 8,
+      "js": 14,
+      "jr": 11,
+      "od": 18,
+      "ha": 15,
+      "dr": 16,
+      "pa": 9,
+      "is": 4,
+      "id": 8,
+      "rb": 5,
+      "sb": 6,
+      "st": 8,
+      "ft": 8,
+      "ex": 6,
+      "scoutedAt": "2025-09-08T15:25:06.294Z"
+    }
+  ]
+}

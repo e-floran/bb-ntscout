@@ -1,0 +1,31 @@
+{
+  "id": 54418912,
+  "firstName": "Jacinto",
+  "lastName": "Pontevedra",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3938,
+      "tce": 49,
+      "tci": 25,
+      "tc": 74,
+      "gs": 8,
+      "js": 9,
+      "jr": 3,
+      "od": 6,
+      "ha": 13,
+      "dr": 13,
+      "pa": 5,
+      "is": 9,
+      "id": 5,
+      "rb": 6,
+      "sb": 5,
+      "st": 3,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:25:00.379Z"
+    }
+  ]
+}

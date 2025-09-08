@@ -1,0 +1,31 @@
+{
+  "id": 51465188,
+  "firstName": "Cheuk",
+  "lastName": "Kwok Po",
+  "countryId": 45,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 163319,
+      "tce": 106,
+      "tci": 43,
+      "tc": 149,
+      "gs": 8,
+      "js": 21,
+      "jr": 14,
+      "od": 21,
+      "ha": 18,
+      "dr": 19,
+      "pa": 13,
+      "is": 18,
+      "id": 13,
+      "rb": 4,
+      "sb": 8,
+      "st": 4,
+      "ft": 17,
+      "ex": 11,
+      "scoutedAt": "2025-09-08T15:25:02.053Z"
+    }
+  ]
+}

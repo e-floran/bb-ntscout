@@ -1,0 +1,31 @@
+{
+  "id": 54327125,
+  "firstName": "Dursun",
+  "lastName": "Öztoygar",
+  "countryId": 6,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11315,
+      "tce": 58,
+      "tci": 30,
+      "tc": 88,
+      "gs": 7,
+      "js": 13,
+      "jr": 8,
+      "od": 9,
+      "ha": 9,
+      "dr": 14,
+      "pa": 5,
+      "is": 8,
+      "id": 3,
+      "rb": 10,
+      "sb": 9,
+      "st": 4,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:52.797Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54107713,
+  "firstName": "Lovel",
+  "lastName": "Gica",
+  "countryId": 17,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10608,
+      "tce": 32,
+      "tci": 42,
+      "tc": 74,
+      "gs": 9,
+      "js": 6,
+      "jr": 4,
+      "od": 7,
+      "ha": 5,
+      "dr": 5,
+      "pa": 5,
+      "is": 9,
+      "id": 12,
+      "rb": 12,
+      "sb": 9,
+      "st": 1,
+      "ft": 3,
+      "ex": 4,
+      "scoutedAt": "2025-09-08T15:24:55.208Z"
+    }
+  ]
+}

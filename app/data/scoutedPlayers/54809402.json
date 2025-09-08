@@ -1,0 +1,31 @@
+{
+  "id": 54809402,
+  "firstName": "Szczepan",
+  "lastName": "Blachnicki",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2434,
+      "tce": 32,
+      "tci": 15,
+      "tc": 47,
+      "gs": 5,
+      "js": 3,
+      "jr": 5,
+      "od": 5,
+      "ha": 7,
+      "dr": 5,
+      "pa": 7,
+      "is": 5,
+      "id": 3,
+      "rb": 3,
+      "sb": 4,
+      "st": 7,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:25:00.380Z"
+    }
+  ]
+}

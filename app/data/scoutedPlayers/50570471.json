@@ -1,0 +1,31 @@
+{
+  "id": 50570471,
+  "firstName": "Dolbert",
+  "lastName": "Bieze",
+  "countryId": 16,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 94646,
+      "tce": 95,
+      "tci": 37,
+      "tc": 132,
+      "gs": 9,
+      "js": 19,
+      "jr": 13,
+      "od": 16,
+      "ha": 17,
+      "dr": 20,
+      "pa": 10,
+      "is": 11,
+      "id": 8,
+      "rb": 9,
+      "sb": 9,
+      "st": 8,
+      "ft": 9,
+      "ex": 14,
+      "scoutedAt": "2025-09-08T15:25:03.769Z"
+    }
+  ]
+}

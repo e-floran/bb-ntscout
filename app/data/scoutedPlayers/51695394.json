@@ -1,0 +1,31 @@
+{
+  "id": 51695394,
+  "firstName": "Polizois",
+  "lastName": "Athanasopoulos",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 144535,
+      "tce": 98,
+      "tci": 41,
+      "tc": 139,
+      "gs": 9,
+      "js": 20,
+      "jr": 12,
+      "od": 19,
+      "ha": 18,
+      "dr": 19,
+      "pa": 10,
+      "is": 16,
+      "id": 11,
+      "rb": 8,
+      "sb": 6,
+      "st": 3,
+      "ft": 27,
+      "ex": 12,
+      "scoutedAt": "2025-09-08T15:25:02.596Z"
+    }
+  ]
+}

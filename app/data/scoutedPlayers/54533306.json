@@ -1,0 +1,31 @@
+{
+  "id": 54533306,
+  "firstName": "Reinaldo",
+  "lastName": "Zerpa",
+  "countryId": 74,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5054,
+      "tce": 25,
+      "tci": 35,
+      "tc": 60,
+      "gs": 8,
+      "js": 2,
+      "jr": 5,
+      "od": 6,
+      "ha": 3,
+      "dr": 4,
+      "pa": 5,
+      "is": 8,
+      "id": 9,
+      "rb": 11,
+      "sb": 7,
+      "st": 1,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-08T15:24:58.111Z"
+    }
+  ]
+}

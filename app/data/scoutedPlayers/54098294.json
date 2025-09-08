@@ -1,0 +1,31 @@
+{
+  "id": 54098294,
+  "firstName": "Nordin",
+  "lastName": "Stannard",
+  "countryId": 14,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18348,
+      "tce": 77,
+      "tci": 25,
+      "tc": 102,
+      "gs": 8,
+      "js": 15,
+      "jr": 9,
+      "od": 11,
+      "ha": 14,
+      "dr": 18,
+      "pa": 10,
+      "is": 8,
+      "id": 9,
+      "rb": 5,
+      "sb": 3,
+      "st": 6,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:52.799Z"
+    }
+  ]
+}

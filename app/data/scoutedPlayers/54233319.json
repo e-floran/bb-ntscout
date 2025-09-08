@@ -1,0 +1,31 @@
+{
+  "id": 54233319,
+  "firstName": "Pane",
+  "lastName": "Neloski",
+  "countryId": 49,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12773,
+      "tce": 69,
+      "tci": 23,
+      "tc": 92,
+      "gs": 6,
+      "js": 10,
+      "jr": 9,
+      "od": 15,
+      "ha": 15,
+      "dr": 14,
+      "pa": 6,
+      "is": 4,
+      "id": 4,
+      "rb": 10,
+      "sb": 5,
+      "st": 7,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:56.342Z"
+    }
+  ]
+}

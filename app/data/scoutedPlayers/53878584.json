@@ -1,0 +1,31 @@
+{
+  "id": 53878584,
+  "firstName": "Radosław",
+  "lastName": "Maślanka",
+  "countryId": 58,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11034,
+      "tce": 47,
+      "tci": 37,
+      "tc": 84,
+      "gs": 8,
+      "js": 11,
+      "jr": 8,
+      "od": 5,
+      "ha": 10,
+      "dr": 9,
+      "pa": 4,
+      "is": 9,
+      "id": 12,
+      "rb": 8,
+      "sb": 8,
+      "st": 5,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:52.795Z"
+    }
+  ]
+}

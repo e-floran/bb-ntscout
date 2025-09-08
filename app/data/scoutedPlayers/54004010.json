@@ -1,0 +1,31 @@
+{
+  "id": 54004010,
+  "firstName": "Zheng",
+  "lastName": "Bangwen",
+  "countryId": 5,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19326,
+      "tce": 67,
+      "tci": 30,
+      "tc": 97,
+      "gs": 5,
+      "js": 8,
+      "jr": 10,
+      "od": 10,
+      "ha": 14,
+      "dr": 15,
+      "pa": 10,
+      "is": 6,
+      "id": 6,
+      "rb": 10,
+      "sb": 8,
+      "st": 4,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:55.210Z"
+    }
+  ]
+}

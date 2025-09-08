@@ -1,0 +1,31 @@
+{
+  "id": 51169011,
+  "firstName": "Tomasz",
+  "lastName": "Supinski",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 227659,
+      "tce": 105,
+      "tci": 49,
+      "tc": 154,
+      "gs": 8,
+      "js": 22,
+      "jr": 13,
+      "od": 18,
+      "ha": 22,
+      "dr": 23,
+      "pa": 7,
+      "is": 20,
+      "id": 13,
+      "rb": 9,
+      "sb": 7,
+      "st": 3,
+      "ft": 16,
+      "ex": 12,
+      "scoutedAt": "2025-09-08T15:25:02.053Z"
+    }
+  ]
+}

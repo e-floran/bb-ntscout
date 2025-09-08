@@ -1,0 +1,31 @@
+{
+  "id": 54023997,
+  "firstName": "Eduardo",
+  "lastName": "Quijada",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 6694,
+      "tce": 47,
+      "tci": 19,
+      "tc": 66,
+      "gs": 3,
+      "js": 7,
+      "jr": 9,
+      "od": 10,
+      "ha": 6,
+      "dr": 8,
+      "pa": 7,
+      "is": 3,
+      "id": 2,
+      "rb": 8,
+      "sb": 6,
+      "st": 5,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:24:59.827Z"
+    }
+  ]
+}

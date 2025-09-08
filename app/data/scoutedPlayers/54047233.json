@@ -1,0 +1,31 @@
+{
+  "id": 54047233,
+  "firstName": "Luigi",
+  "lastName": "Guilizzoni",
+  "countryId": 10,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17005,
+      "tce": 42,
+      "tci": 40,
+      "tc": 82,
+      "gs": 9,
+      "js": 8,
+      "jr": 3,
+      "od": 10,
+      "ha": 4,
+      "dr": 10,
+      "pa": 7,
+      "is": 12,
+      "id": 12,
+      "rb": 10,
+      "sb": 6,
+      "st": 7,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-09-08T15:24:53.889Z"
+    }
+  ]
+}

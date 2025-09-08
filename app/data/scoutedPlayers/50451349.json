@@ -1,0 +1,31 @@
+{
+  "id": 50451349,
+  "firstName": "Dionísio",
+  "lastName": "Freire",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 178770,
+      "tce": 99,
+      "tci": 50,
+      "tc": 149,
+      "gs": 8,
+      "js": 21,
+      "jr": 9,
+      "od": 18,
+      "ha": 19,
+      "dr": 20,
+      "pa": 12,
+      "is": 17,
+      "id": 18,
+      "rb": 7,
+      "sb": 8,
+      "st": 4,
+      "ft": 18,
+      "ex": 14,
+      "scoutedAt": "2025-09-08T15:25:03.769Z"
+    }
+  ]
+}

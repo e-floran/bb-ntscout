@@ -1,0 +1,31 @@
+{
+  "id": 54537866,
+  "firstName": "Carlo",
+  "lastName": "Mangano",
+  "countryId": 91,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 8787,
+      "tce": 59,
+      "tci": 32,
+      "tc": 91,
+      "gs": 9,
+      "js": 8,
+      "jr": 5,
+      "od": 10,
+      "ha": 13,
+      "dr": 14,
+      "pa": 9,
+      "is": 9,
+      "id": 10,
+      "rb": 7,
+      "sb": 6,
+      "st": 6,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-08T15:25:00.382Z"
+    }
+  ]
+}
