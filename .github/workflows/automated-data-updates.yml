@@ -46,7 +46,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add app/data/players/*.json
+          git add app/data/players/*.json app/data/lastUpdate.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
@@ -86,7 +86,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add app/data/teams/*.json app/data/players/*.json
+          git add app/data/teams/*.json app/data/players/*.json app/data/lastUpdate.json
           if git diff --staged --quiet; then
             echo "No new players found"
           else
