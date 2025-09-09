@@ -4,6 +4,16 @@ import path from "path";
 import axios from "axios";
 import { PlayerWeek, GameShapeRange } from "../app/types/types";
 import { updateLastUpdateTimestamp } from "@/app/utils/updateLastUpdate";
+import xml2js from "xml2js";
+
+type Position = "PG" | "SG" | "SF" | "PF" | "C";
+
+interface GameData {
+  gameId: string;
+  gameDate: string;
+  teamRatings: Record<string, number>;
+  positionsEfficiencies: Record<Position, number>;
+}
 
 interface TeamData {
   id: string;
@@ -36,6 +46,12 @@ class BBPostMondayPlayerChecker {
   private currentSeason = 69;
   private username = "";
   private password = "";
+
+  private readonly MAIN_TEAMS = [11, 50, 1011];
+  private readonly MAIN_TEAMS_DIR = path.join(
+    process.cwd(),
+    "app/data/mainTeams"
+  );
 
   constructor() {
     // Get credentials from environment variables for automation
@@ -379,6 +395,192 @@ class BBPostMondayPlayerChecker {
     return null;
   }
 
+  private async updateMainTeamsLatestGames(): Promise<void> {
+    console.log("\n=== Updating Main Teams Latest Games ===");
+
+    // Ensure main teams directory exists
+    if (!fs.existsSync(this.MAIN_TEAMS_DIR)) {
+      fs.mkdirSync(this.MAIN_TEAMS_DIR, { recursive: true });
+    }
+
+    for (const teamId of this.MAIN_TEAMS) {
+      try {
+        console.log(`Checking latest games for team ${teamId}...`);
+
+        // Load existing team data
+        const teamFilePath = path.join(this.MAIN_TEAMS_DIR, `${teamId}.json`);
+        let existingGames: GameData[] = [];
+
+        if (fs.existsSync(teamFilePath)) {
+          try {
+            existingGames = JSON.parse(fs.readFileSync(teamFilePath, "utf8"));
+          } catch (error) {
+            console.error(`Error reading team file ${teamId}:`, error);
+            existingGames = [];
+          }
+        }
+
+        // Get the latest game ID we have on file
+        const latestGameId =
+          existingGames.length > 0
+            ? Math.max(...existingGames.map((g) => parseInt(g.gameId)))
+            : 0;
+
+        // Fetch team schedule for current season
+        await this.checkSessionAndReauth();
+        const scheduleResponse = await axios.get(
+          `${this.baseURL}/schedule.aspx`,
+          {
+            params: { teamid: teamId, season: this.currentSeason },
+            headers: { Cookie: this.sessionCookie },
+          }
+        );
+        this.queryCount++;
+
+        const parser = new xml2js.Parser({ explicitArray: false });
+        const scheduleXml = await parser.parseStringPromise(
+          scheduleResponse.data
+        );
+
+        let matches = [];
+        if (scheduleXml?.bbapi?.schedule?.match) {
+          matches = scheduleXml.bbapi.schedule.match;
+          if (!Array.isArray(matches)) matches = [matches];
+        } else {
+          console.warn(`No matches found for team ${teamId}`);
+          continue;
+        }
+
+        // Filter for completed games that are newer than our latest
+        const now = new Date();
+        const newGames: GameData[] = [];
+
+        for (const match of matches) {
+          const matchId = parseInt(match["$"].id);
+          const matchDateStr = match["$"].start;
+          const matchDate = new Date(matchDateStr);
+
+          // Skip if game is in the future or we already have it
+          if (matchDate >= now || matchId <= latestGameId) continue;
+
+          console.log(`Processing new match ${matchId} for team ${teamId}...`);
+
+          // Fetch boxscore for this match
+          await this.checkSessionAndReauth();
+
+          try {
+            const boxscoreResponse = await axios.get(
+              `${this.baseURL}/boxscore.aspx`,
+              {
+                params: { matchid: matchId },
+                headers: { Cookie: this.sessionCookie },
+              }
+            );
+            this.queryCount++;
+
+            const boxXml = await parser.parseStringPromise(
+              boxscoreResponse.data
+            );
+            const matchNode = boxXml?.bbapi?.match;
+            let teamNode = null;
+
+            // Find the correct team node
+            if (
+              matchNode?.awayTeam &&
+              matchNode.awayTeam.$ &&
+              matchNode.awayTeam.$.id == teamId
+            ) {
+              teamNode = matchNode.awayTeam;
+            } else if (
+              matchNode?.homeTeam &&
+              matchNode.homeTeam.$ &&
+              matchNode.homeTeam.$.id == teamId
+            ) {
+              teamNode = matchNode.homeTeam;
+            } else {
+              console.warn(`Team ${teamId} not found in match ${matchId}`);
+              continue;
+            }
+
+            // Extract team ratings
+            const teamRatings: Record<string, number> = {};
+            if (teamNode.ratings) {
+              for (const [category, value] of Object.entries(
+                teamNode.ratings
+              )) {
+                const numValue = parseFloat(value as string);
+                if (!isNaN(numValue)) {
+                  teamRatings[category] = numValue;
+                }
+              }
+            }
+
+            // Extract position efficiencies
+            const positionsEfficiencies: Record<Position, number> = {
+              PG: 0,
+              SG: 0,
+              SF: 0,
+              PF: 0,
+              C: 0,
+            };
+
+            if (teamNode.efficiency) {
+              for (const pos of ["PG", "SG", "SF", "PF", "C"] as Position[]) {
+                if (teamNode.efficiency[pos] !== undefined) {
+                  const numValue = parseFloat(teamNode.efficiency[pos]);
+                  if (!isNaN(numValue)) {
+                    positionsEfficiencies[pos] = numValue;
+                  }
+                }
+              }
+            }
+
+            newGames.push({
+              gameId: matchId.toString(),
+              gameDate: matchDateStr,
+              teamRatings,
+              positionsEfficiencies,
+            });
+
+            console.log(`  ✅ Added new game ${matchId} for team ${teamId}`);
+          } catch (error) {
+            console.warn(
+              `Failed to fetch boxscore for match ${matchId}:`,
+              error
+            );
+            continue;
+          }
+
+          // Small delay to be nice to the API
+          await new Promise((resolve) => setTimeout(resolve, 100));
+        }
+
+        // Add new games to existing data and save
+        if (newGames.length > 0) {
+          const updatedGames = [...existingGames, ...newGames];
+
+          // Sort by game date (most recent first)
+          updatedGames.sort(
+            (a, b) =>
+              new Date(b.gameDate).getTime() - new Date(a.gameDate).getTime()
+          );
+
+          fs.writeFileSync(teamFilePath, JSON.stringify(updatedGames, null, 2));
+          console.log(
+            `  📝 Saved ${newGames.length} new games for team ${teamId}`
+          );
+        } else {
+          console.log(`  ℹ️  No new games found for team ${teamId}`);
+        }
+      } catch (error) {
+        console.error(`Error updating team ${teamId}:`, error);
+        continue;
+      }
+    }
+
+    console.log("Main teams update completed! 🎉");
+  }
+
   async run(): Promise<void> {
     console.log("BB Post-Monday New Players Checker");
     console.log("==================================");
@@ -538,6 +740,10 @@ class BBPostMondayPlayerChecker {
       if (newPlayersFound === 0) {
         console.log("🎉 No last-minute roster additions found!");
       }
+
+      // NEW: Update main teams latest games
+      await this.updateMainTeamsLatestGames();
+
       updateLastUpdateTimestamp();
       this.deleteResumeData();
     } catch (error) {
