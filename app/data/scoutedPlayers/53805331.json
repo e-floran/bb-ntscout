@@ -1,0 +1,31 @@
+{
+  "id": 53805331,
+  "firstName": "Vsevolod",
+  "lastName": "Dolmatov",
+  "countryId": 19,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 52912,
+      "tce": 27,
+      "tci": 57,
+      "tc": 84,
+      "gs": 9,
+      "js": 5,
+      "jr": 4,
+      "od": 5,
+      "ha": 1,
+      "dr": 8,
+      "pa": 4,
+      "is": 13,
+      "id": 18,
+      "rb": 14,
+      "sb": 12,
+      "st": 5,
+      "ft": 7,
+      "ex": 5,
+      "scoutedAt": "2025-09-11T19:00:44.036Z"
+    }
+  ]
+}

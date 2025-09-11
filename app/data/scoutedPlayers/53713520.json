@@ -1,0 +1,31 @@
+{
+  "id": 53713520,
+  "firstName": "José David",
+  "lastName": "Rivera",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9659,
+      "tce": 66,
+      "tci": 32,
+      "tc": 98,
+      "gs": 8,
+      "js": 12,
+      "jr": 8,
+      "od": 7,
+      "ha": 16,
+      "dr": 16,
+      "pa": 7,
+      "is": 12,
+      "id": 8,
+      "rb": 5,
+      "sb": 7,
+      "st": 5,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:49.914Z"
+    }
+  ]
+}

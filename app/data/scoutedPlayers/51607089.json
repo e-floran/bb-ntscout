@@ -1,0 +1,31 @@
+{
+  "id": 51607089,
+  "firstName": "Nicolás José",
+  "lastName": "Fachini",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 221091,
+      "tce": 81,
+      "tci": 59,
+      "tc": 140,
+      "gs": 9,
+      "js": 16,
+      "jr": 8,
+      "od": 14,
+      "ha": 16,
+      "dr": 17,
+      "pa": 10,
+      "is": 18,
+      "id": 19,
+      "rb": 14,
+      "sb": 8,
+      "st": 9,
+      "ft": 20,
+      "ex": 13,
+      "scoutedAt": "2025-09-11T19:00:53.542Z"
+    }
+  ]
+}

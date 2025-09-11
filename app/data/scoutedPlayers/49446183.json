@@ -1,0 +1,31 @@
+{
+  "id": 49446183,
+  "firstName": "José",
+  "lastName": "Quiroga",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 68825,
+      "tce": 96,
+      "tci": 33,
+      "tc": 129,
+      "gs": 8,
+      "js": 18,
+      "jr": 12,
+      "od": 16,
+      "ha": 21,
+      "dr": 21,
+      "pa": 8,
+      "is": 14,
+      "id": 10,
+      "rb": 5,
+      "sb": 4,
+      "st": 8,
+      "ft": 12,
+      "ex": 13,
+      "scoutedAt": "2025-09-11T19:00:52.898Z"
+    }
+  ]
+}

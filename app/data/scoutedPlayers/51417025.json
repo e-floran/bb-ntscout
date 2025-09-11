@@ -1,0 +1,31 @@
+{
+  "id": 51417025,
+  "firstName": "Audrutis",
+  "lastName": "Parišauskas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 190905,
+      "tce": 89,
+      "tci": 62,
+      "tc": 151,
+      "gs": 9,
+      "js": 14,
+      "jr": 8,
+      "od": 16,
+      "ha": 19,
+      "dr": 19,
+      "pa": 13,
+      "is": 18,
+      "id": 18,
+      "rb": 12,
+      "sb": 14,
+      "st": 6,
+      "ft": 10,
+      "ex": 11,
+      "scoutedAt": "2025-09-11T19:00:54.927Z"
+    }
+  ]
+}

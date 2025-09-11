@@ -1,0 +1,31 @@
+{
+  "id": 54419025,
+  "firstName": "Constantino",
+  "lastName": "Pacheco",
+  "countryId": 18,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11280,
+      "tce": 62,
+      "tci": 27,
+      "tc": 89,
+      "gs": 9,
+      "js": 9,
+      "jr": 10,
+      "od": 10,
+      "ha": 11,
+      "dr": 13,
+      "pa": 9,
+      "is": 8,
+      "id": 9,
+      "rb": 7,
+      "sb": 3,
+      "st": 7,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:41.362Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52856754,
+  "firstName": "Taavo",
+  "lastName": "Lääne",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 70499,
+      "tce": 81,
+      "tci": 28,
+      "tc": 109,
+      "gs": 6,
+      "js": 21,
+      "jr": 11,
+      "od": 10,
+      "ha": 14,
+      "dr": 17,
+      "pa": 8,
+      "is": 7,
+      "id": 9,
+      "rb": 10,
+      "sb": 2,
+      "st": 9,
+      "ft": 11,
+      "ex": 8,
+      "scoutedAt": "2025-09-11T19:00:58.372Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 50952390,
+  "firstName": "Xavier",
+  "lastName": "McNair",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 269825,
+      "tce": 107,
+      "tci": 26,
+      "tc": 133,
+      "gs": 8,
+      "js": 20,
+      "jr": 15,
+      "od": 20,
+      "ha": 18,
+      "dr": 17,
+      "pa": 17,
+      "is": 8,
+      "id": 7,
+      "rb": 7,
+      "sb": 4,
+      "st": 8,
+      "ft": 19,
+      "ex": 12,
+      "scoutedAt": "2025-09-11T19:00:54.222Z"
+    }
+  ]
+}

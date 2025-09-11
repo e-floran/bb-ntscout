@@ -1,0 +1,31 @@
+{
+  "id": 50864490,
+  "firstName": "Trandafir",
+  "lastName": "Tãtãrus",
+  "countryId": 61,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 102133,
+      "tce": 87,
+      "tci": 44,
+      "tc": 131,
+      "gs": 8,
+      "js": 21,
+      "jr": 7,
+      "od": 16,
+      "ha": 16,
+      "dr": 19,
+      "pa": 8,
+      "is": 19,
+      "id": 12,
+      "rb": 8,
+      "sb": 5,
+      "st": 2,
+      "ft": 21,
+      "ex": 11,
+      "scoutedAt": "2025-09-11T19:00:52.880Z"
+    }
+  ]
+}

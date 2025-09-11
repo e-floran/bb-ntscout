@@ -1,0 +1,31 @@
+{
+  "id": 50489580,
+  "firstName": "Oleg",
+  "lastName": "Siverchuk",
+  "countryId": 33,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 225222,
+      "tce": 95,
+      "tci": 62,
+      "tc": 157,
+      "gs": 9,
+      "js": 13,
+      "jr": 8,
+      "od": 17,
+      "ha": 20,
+      "dr": 20,
+      "pa": 17,
+      "is": 17,
+      "id": 16,
+      "rb": 14,
+      "sb": 15,
+      "st": 9,
+      "ft": 28,
+      "ex": 14,
+      "scoutedAt": "2025-09-11T19:00:53.543Z"
+    }
+  ]
+}

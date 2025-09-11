@@ -1,0 +1,31 @@
+{
+  "id": 53923531,
+  "firstName": "Adelard",
+  "lastName": "Tanečka",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 33551,
+      "tce": 47,
+      "tci": 53,
+      "tc": 100,
+      "gs": 8,
+      "js": 9,
+      "jr": 6,
+      "od": 8,
+      "ha": 8,
+      "dr": 9,
+      "pa": 7,
+      "is": 13,
+      "id": 14,
+      "rb": 14,
+      "sb": 12,
+      "st": 5,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-09-11T19:00:44.023Z"
+    }
+  ]
+}

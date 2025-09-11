@@ -1,0 +1,31 @@
+{
+  "id": 49015014,
+  "firstName": "João Francisco",
+  "lastName": "Moriarti",
+  "countryId": 3,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 132472,
+      "tce": 88,
+      "tci": 48,
+      "tc": 136,
+      "gs": 8,
+      "js": 16,
+      "jr": 12,
+      "od": 14,
+      "ha": 15,
+      "dr": 17,
+      "pa": 14,
+      "is": 14,
+      "id": 14,
+      "rb": 12,
+      "sb": 8,
+      "st": 7,
+      "ft": 29,
+      "ex": 15,
+      "scoutedAt": "2025-09-11T19:00:52.205Z"
+    }
+  ]
+}

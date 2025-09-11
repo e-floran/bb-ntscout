@@ -1,0 +1,31 @@
+{
+  "id": 53256773,
+  "firstName": "Pedro",
+  "lastName": "Bedoya",
+  "countryId": 54,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 63564,
+      "tce": 55,
+      "tci": 55,
+      "tc": 110,
+      "gs": 9,
+      "js": 12,
+      "jr": 5,
+      "od": 7,
+      "ha": 12,
+      "dr": 13,
+      "pa": 6,
+      "is": 18,
+      "id": 18,
+      "rb": 9,
+      "sb": 10,
+      "st": 4,
+      "ft": 13,
+      "ex": 6,
+      "scoutedAt": "2025-09-11T19:00:57.708Z"
+    }
+  ]
+}

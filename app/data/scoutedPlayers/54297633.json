@@ -1,0 +1,31 @@
+{
+  "id": 54297633,
+  "firstName": "Juan Bautista",
+  "lastName": "Pintos",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6211,
+      "tce": 31,
+      "tci": 29,
+      "tc": 60,
+      "gs": 7,
+      "js": 9,
+      "jr": 3,
+      "od": 3,
+      "ha": 8,
+      "dr": 2,
+      "pa": 6,
+      "is": 10,
+      "id": 9,
+      "rb": 8,
+      "sb": 2,
+      "st": 4,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-09-11T19:00:49.919Z"
+    }
+  ]
+}

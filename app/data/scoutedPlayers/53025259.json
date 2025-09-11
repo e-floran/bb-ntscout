@@ -1,0 +1,31 @@
+{
+  "id": 53025259,
+  "firstName": "Lin",
+  "lastName": "Gangqiang",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 28793,
+      "tce": 81,
+      "tci": 29,
+      "tc": 110,
+      "gs": 9,
+      "js": 12,
+      "jr": 11,
+      "od": 20,
+      "ha": 17,
+      "dr": 14,
+      "pa": 7,
+      "is": 9,
+      "id": 12,
+      "rb": 3,
+      "sb": 5,
+      "st": 6,
+      "ft": 4,
+      "ex": 6,
+      "scoutedAt": "2025-09-11T19:00:56.344Z"
+    }
+  ]
+}

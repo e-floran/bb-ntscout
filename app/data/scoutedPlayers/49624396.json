@@ -1,0 +1,31 @@
+{
+  "id": 49624396,
+  "firstName": "Liu",
+  "lastName": "Yin",
+  "countryId": 45,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 268451,
+      "tce": 87,
+      "tci": 62,
+      "tc": 149,
+      "gs": 9,
+      "js": 14,
+      "jr": 6,
+      "od": 15,
+      "ha": 20,
+      "dr": 20,
+      "pa": 12,
+      "is": 21,
+      "id": 20,
+      "rb": 13,
+      "sb": 8,
+      "st": 2,
+      "ft": 7,
+      "ex": 15,
+      "scoutedAt": "2025-09-11T19:00:52.898Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54063257,
+  "firstName": "Pierre",
+  "lastName": "Créteur",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 3898,
+      "tce": 42,
+      "tci": 28,
+      "tc": 70,
+      "gs": 9,
+      "js": 6,
+      "jr": 5,
+      "od": 8,
+      "ha": 9,
+      "dr": 9,
+      "pa": 5,
+      "is": 4,
+      "id": 7,
+      "rb": 7,
+      "sb": 10,
+      "st": 4,
+      "ft": 1,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:46.347Z"
+    }
+  ]
+}

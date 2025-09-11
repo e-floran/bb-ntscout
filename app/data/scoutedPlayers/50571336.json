@@ -1,0 +1,31 @@
+{
+  "id": 50571336,
+  "firstName": "Mouss",
+  "lastName": "Keny",
+  "countryId": 94,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 131858,
+      "tce": 95,
+      "tci": 39,
+      "tc": 134,
+      "gs": 8,
+      "js": 21,
+      "jr": 11,
+      "od": 14,
+      "ha": 18,
+      "dr": 21,
+      "pa": 10,
+      "is": 14,
+      "id": 9,
+      "rb": 11,
+      "sb": 5,
+      "st": 3,
+      "ft": 11,
+      "ex": 16,
+      "scoutedAt": "2025-09-11T19:00:53.544Z"
+    }
+  ]
+}

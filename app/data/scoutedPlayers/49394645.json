@@ -1,0 +1,31 @@
+{
+  "id": 49394645,
+  "firstName": "Juan",
+  "lastName": "Grifitths",
+  "countryId": 38,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 189414,
+      "tce": 61,
+      "tci": 59,
+      "tc": 120,
+      "gs": 9,
+      "js": 14,
+      "jr": 7,
+      "od": 6,
+      "ha": 15,
+      "dr": 16,
+      "pa": 3,
+      "is": 17,
+      "id": 17,
+      "rb": 17,
+      "sb": 8,
+      "st": 9,
+      "ft": 21,
+      "ex": 22,
+      "scoutedAt": "2025-09-11T19:00:54.926Z"
+    }
+  ]
+}

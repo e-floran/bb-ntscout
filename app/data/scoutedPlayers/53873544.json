@@ -1,0 +1,31 @@
+{
+  "id": 53873544,
+  "firstName": "Edelio",
+  "lastName": "Celemente",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5753,
+      "tce": 43,
+      "tci": 25,
+      "tc": 68,
+      "gs": 7,
+      "js": 10,
+      "jr": 8,
+      "od": 5,
+      "ha": 6,
+      "dr": 9,
+      "pa": 5,
+      "is": 6,
+      "id": 4,
+      "rb": 9,
+      "sb": 6,
+      "st": 6,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-11T19:00:46.341Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 48804771,
+  "firstName": "Durmus Ali",
+  "lastName": "Güldemet",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 188572,
+      "tce": 96,
+      "tci": 47,
+      "tc": 143,
+      "gs": 9,
+      "js": 15,
+      "jr": 13,
+      "od": 19,
+      "ha": 19,
+      "dr": 20,
+      "pa": 10,
+      "is": 19,
+      "id": 13,
+      "rb": 9,
+      "sb": 6,
+      "st": 7,
+      "ft": 16,
+      "ex": 19,
+      "scoutedAt": "2025-09-11T19:00:54.929Z"
+    }
+  ]
+}

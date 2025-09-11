@@ -1,0 +1,31 @@
+{
+  "id": 54622522,
+  "firstName": "Hua",
+  "lastName": "Shuocheng",
+  "countryId": 5,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 13090,
+      "tce": 59,
+      "tci": 31,
+      "tc": 90,
+      "gs": 9,
+      "js": 11,
+      "jr": 9,
+      "od": 10,
+      "ha": 11,
+      "dr": 12,
+      "pa": 6,
+      "is": 9,
+      "id": 10,
+      "rb": 8,
+      "sb": 4,
+      "st": 6,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-11T19:00:44.705Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 50451389,
+  "firstName": "Diogo",
+  "lastName": "Bordalo",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 219402,
+      "tce": 100,
+      "tci": 58,
+      "tc": 158,
+      "gs": 9,
+      "js": 19,
+      "jr": 11,
+      "od": 18,
+      "ha": 21,
+      "dr": 21,
+      "pa": 10,
+      "is": 19,
+      "id": 19,
+      "rb": 9,
+      "sb": 11,
+      "st": 6,
+      "ft": 33,
+      "ex": 18,
+      "scoutedAt": "2025-09-11T19:00:53.543Z"
+    }
+  ]
+}

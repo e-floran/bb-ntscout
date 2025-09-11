@@ -1,0 +1,31 @@
+{
+  "id": 48809021,
+  "firstName": "Adán",
+  "lastName": "Villahoz",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 237638,
+      "tce": 104,
+      "tci": 48,
+      "tc": 152,
+      "gs": 8,
+      "js": 18,
+      "jr": 11,
+      "od": 22,
+      "ha": 20,
+      "dr": 21,
+      "pa": 12,
+      "is": 24,
+      "id": 13,
+      "rb": 8,
+      "sb": 3,
+      "st": 9,
+      "ft": 24,
+      "ex": 24,
+      "scoutedAt": "2025-09-11T19:00:54.928Z"
+    }
+  ]
+}

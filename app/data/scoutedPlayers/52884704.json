@@ -1,0 +1,31 @@
+{
+  "id": 52884704,
+  "firstName": "Emanuel",
+  "lastName": "Rzytki",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 56720,
+      "tce": 61,
+      "tci": 52,
+      "tc": 113,
+      "gs": 9,
+      "js": 9,
+      "jr": 10,
+      "od": 7,
+      "ha": 14,
+      "dr": 13,
+      "pa": 8,
+      "is": 15,
+      "id": 17,
+      "rb": 12,
+      "sb": 8,
+      "st": 8,
+      "ft": 10,
+      "ex": 6,
+      "scoutedAt": "2025-09-11T19:00:57.707Z"
+    }
+  ]
+}

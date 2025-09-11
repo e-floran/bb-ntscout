@@ -1,0 +1,31 @@
+{
+  "id": 54189472,
+  "firstName": "Filip",
+  "lastName": "Fuchs",
+  "countryId": 58,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15113,
+      "tce": 29,
+      "tci": 41,
+      "tc": 70,
+      "gs": 7,
+      "js": 8,
+      "jr": 4,
+      "od": 4,
+      "ha": 10,
+      "dr": 1,
+      "pa": 2,
+      "is": 11,
+      "id": 10,
+      "rb": 13,
+      "sb": 7,
+      "st": 6,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:40.685Z"
+    }
+  ]
+}

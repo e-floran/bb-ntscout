@@ -1,0 +1,31 @@
+{
+  "id": 54214081,
+  "firstName": "Markus",
+  "lastName": "Tiippana",
+  "countryId": 69,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12377,
+      "tce": 63,
+      "tci": 27,
+      "tc": 90,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 11,
+      "ha": 12,
+      "dr": 11,
+      "pa": 7,
+      "is": 6,
+      "id": 6,
+      "rb": 10,
+      "sb": 5,
+      "st": 1,
+      "ft": 13,
+      "ex": 3,
+      "scoutedAt": "2025-09-11T19:00:42.706Z"
+    }
+  ]
+}

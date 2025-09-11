@@ -1,0 +1,31 @@
+{
+  "id": 54078320,
+  "firstName": "Alkinoos",
+  "lastName": "Roros",
+  "countryId": 12,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12937,
+      "tce": 66,
+      "tci": 14,
+      "tc": 80,
+      "gs": 7,
+      "js": 12,
+      "jr": 10,
+      "od": 9,
+      "ha": 13,
+      "dr": 13,
+      "pa": 9,
+      "is": 6,
+      "id": 1,
+      "rb": 4,
+      "sb": 3,
+      "st": 6,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:40.676Z"
+    }
+  ]
+}

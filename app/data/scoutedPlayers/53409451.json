@@ -1,0 +1,31 @@
+{
+  "id": 53409451,
+  "firstName": "Carmine",
+  "lastName": "Amadori",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 28949,
+      "tce": 82,
+      "tci": 38,
+      "tc": 120,
+      "gs": 8,
+      "js": 19,
+      "jr": 10,
+      "od": 7,
+      "ha": 18,
+      "dr": 19,
+      "pa": 9,
+      "is": 18,
+      "id": 4,
+      "rb": 8,
+      "sb": 8,
+      "st": 2,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-09-11T19:00:58.367Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54233113,
+  "firstName": "Uriel Deyameda",
+  "lastName": "Lopez",
+  "countryId": 22,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10171,
+      "tce": 57,
+      "tci": 25,
+      "tc": 82,
+      "gs": 6,
+      "js": 10,
+      "jr": 10,
+      "od": 9,
+      "ha": 10,
+      "dr": 10,
+      "pa": 8,
+      "is": 4,
+      "id": 7,
+      "rb": 9,
+      "sb": 5,
+      "st": 2,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:40.662Z"
+    }
+  ]
+}

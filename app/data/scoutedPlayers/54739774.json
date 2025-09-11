@@ -1,0 +1,31 @@
+{
+  "id": 54739774,
+  "firstName": "Martynas",
+  "lastName": "Falkovskis",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2637,
+      "tce": 41,
+      "tci": 18,
+      "tc": 59,
+      "gs": 9,
+      "js": 9,
+      "jr": 6,
+      "od": 2,
+      "ha": 9,
+      "dr": 8,
+      "pa": 7,
+      "is": 5,
+      "id": 1,
+      "rb": 7,
+      "sb": 5,
+      "st": 8,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-11T19:00:46.992Z"
+    }
+  ]
+}

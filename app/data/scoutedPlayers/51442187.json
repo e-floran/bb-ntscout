@@ -1,0 +1,31 @@
+{
+  "id": 51442187,
+  "firstName": "Matija",
+  "lastName": "Arsenović",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 133670,
+      "tce": 93,
+      "tci": 48,
+      "tc": 141,
+      "gs": 8,
+      "js": 18,
+      "jr": 13,
+      "od": 18,
+      "ha": 18,
+      "dr": 19,
+      "pa": 7,
+      "is": 14,
+      "id": 16,
+      "rb": 8,
+      "sb": 10,
+      "st": 5,
+      "ft": 21,
+      "ex": 10,
+      "scoutedAt": "2025-09-11T19:00:52.214Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49022175,
+  "firstName": "Jamal",
+  "lastName": "Assouab",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 87313,
+      "tce": 89,
+      "tci": 38,
+      "tc": 127,
+      "gs": 8,
+      "js": 18,
+      "jr": 9,
+      "od": 17,
+      "ha": 18,
+      "dr": 19,
+      "pa": 8,
+      "is": 12,
+      "id": 11,
+      "rb": 8,
+      "sb": 7,
+      "st": 5,
+      "ft": 19,
+      "ex": 16,
+      "scoutedAt": "2025-09-11T19:00:54.229Z"
+    }
+  ]
+}

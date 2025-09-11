@@ -1,0 +1,31 @@
+{
+  "id": 54354248,
+  "firstName": "Giancarlo",
+  "lastName": "Sansone",
+  "countryId": 10,
+  "potential": 4,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11054,
+      "tce": 56,
+      "tci": 28,
+      "tc": 84,
+      "gs": 8,
+      "js": 10,
+      "jr": 10,
+      "od": 11,
+      "ha": 10,
+      "dr": 10,
+      "pa": 5,
+      "is": 8,
+      "id": 8,
+      "rb": 5,
+      "sb": 7,
+      "st": 7,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:43.363Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52669671,
+  "firstName": "Cornell",
+  "lastName": "Lockhart",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 41822,
+      "tce": 88,
+      "tci": 37,
+      "tc": 125,
+      "gs": 8,
+      "js": 15,
+      "jr": 7,
+      "od": 17,
+      "ha": 21,
+      "dr": 21,
+      "pa": 7,
+      "is": 15,
+      "id": 8,
+      "rb": 8,
+      "sb": 6,
+      "st": 3,
+      "ft": 11,
+      "ex": 5,
+      "scoutedAt": "2025-09-11T19:00:58.366Z"
+    }
+  ]
+}

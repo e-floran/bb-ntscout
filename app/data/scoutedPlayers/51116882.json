@@ -1,0 +1,31 @@
+{
+  "id": 51116882,
+  "firstName": "Mitar",
+  "lastName": "Acević",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 100336,
+      "tce": 98,
+      "tci": 34,
+      "tc": 132,
+      "gs": 9,
+      "js": 19,
+      "jr": 12,
+      "od": 16,
+      "ha": 20,
+      "dr": 20,
+      "pa": 11,
+      "is": 11,
+      "id": 8,
+      "rb": 9,
+      "sb": 6,
+      "st": 3,
+      "ft": 4,
+      "ex": 11,
+      "scoutedAt": "2025-09-11T19:00:52.216Z"
+    }
+  ]
+}

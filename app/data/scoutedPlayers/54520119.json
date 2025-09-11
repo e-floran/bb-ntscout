@@ -1,0 +1,31 @@
+{
+  "id": 54520119,
+  "firstName": "Rafael",
+  "lastName": "Telka",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10489,
+      "tce": 31,
+      "tci": 43,
+      "tc": 74,
+      "gs": 9,
+      "js": 7,
+      "jr": 3,
+      "od": 7,
+      "ha": 3,
+      "dr": 4,
+      "pa": 7,
+      "is": 10,
+      "id": 12,
+      "rb": 8,
+      "sb": 13,
+      "st": 2,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:43.365Z"
+    }
+  ]
+}

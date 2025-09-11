@@ -1,0 +1,31 @@
+{
+  "id": 54496721,
+  "firstName": "Jarosław",
+  "lastName": "Żymła",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4230,
+      "tce": 31,
+      "tci": 29,
+      "tc": 60,
+      "gs": 6,
+      "js": 5,
+      "jr": 5,
+      "od": 3,
+      "ha": 9,
+      "dr": 6,
+      "pa": 3,
+      "is": 10,
+      "id": 6,
+      "rb": 7,
+      "sb": 6,
+      "st": 2,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-09-11T19:00:48.347Z"
+    }
+  ]
+}

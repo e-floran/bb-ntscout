@@ -1,0 +1,31 @@
+{
+  "id": 53976941,
+  "firstName": "Tom",
+  "lastName": "Monk",
+  "countryId": 1,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12574,
+      "tce": 64,
+      "tci": 34,
+      "tc": 98,
+      "gs": 8,
+      "js": 12,
+      "jr": 8,
+      "od": 9,
+      "ha": 14,
+      "dr": 16,
+      "pa": 5,
+      "is": 8,
+      "id": 8,
+      "rb": 9,
+      "sb": 9,
+      "st": 4,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:40.687Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51530069,
+  "firstName": "Santiago",
+  "lastName": "Neiva",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 224272,
+      "tce": 110,
+      "tci": 42,
+      "tc": 152,
+      "gs": 9,
+      "js": 21,
+      "jr": 13,
+      "od": 21,
+      "ha": 21,
+      "dr": 21,
+      "pa": 13,
+      "is": 18,
+      "id": 11,
+      "rb": 7,
+      "sb": 6,
+      "st": 3,
+      "ft": 22,
+      "ex": 12,
+      "scoutedAt": "2025-09-11T19:00:54.212Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54234182,
+  "firstName": "Roman",
+  "lastName": "Pochekutov",
+  "countryId": 83,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 39154,
+      "tce": 33,
+      "tci": 52,
+      "tc": 85,
+      "gs": 8,
+      "js": 7,
+      "jr": 3,
+      "od": 7,
+      "ha": 1,
+      "dr": 10,
+      "pa": 5,
+      "is": 15,
+      "id": 16,
+      "rb": 15,
+      "sb": 6,
+      "st": 2,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-09-11T19:00:42.036Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54757476,
+  "firstName": "Tone",
+  "lastName": "Gračić",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4633,
+      "tce": 47,
+      "tci": 21,
+      "tc": 68,
+      "gs": 9,
+      "js": 6,
+      "jr": 10,
+      "od": 7,
+      "ha": 8,
+      "dr": 7,
+      "pa": 9,
+      "is": 1,
+      "id": 8,
+      "rb": 5,
+      "sb": 7,
+      "st": 7,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:47.003Z"
+    }
+  ]
+}

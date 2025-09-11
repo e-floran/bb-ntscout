@@ -1,0 +1,31 @@
+{
+  "id": 53851002,
+  "firstName": "Janek",
+  "lastName": "Kingu",
+  "countryId": 41,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 23280,
+      "tce": 73,
+      "tci": 20,
+      "tc": 93,
+      "gs": 8,
+      "js": 9,
+      "jr": 9,
+      "od": 14,
+      "ha": 15,
+      "dr": 14,
+      "pa": 12,
+      "is": 8,
+      "id": 4,
+      "rb": 3,
+      "sb": 5,
+      "st": 6,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-11T19:00:44.037Z"
+    }
+  ]
+}

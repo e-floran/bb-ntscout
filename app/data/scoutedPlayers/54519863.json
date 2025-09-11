@@ -1,0 +1,31 @@
+{
+  "id": 54519863,
+  "firstName": "István",
+  "lastName": "Baranovszky",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7503,
+      "tce": 47,
+      "tci": 36,
+      "tc": 83,
+      "gs": 7,
+      "js": 7,
+      "jr": 6,
+      "od": 9,
+      "ha": 10,
+      "dr": 11,
+      "pa": 4,
+      "is": 8,
+      "id": 11,
+      "rb": 9,
+      "sb": 8,
+      "st": 5,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-11T19:00:47.003Z"
+    }
+  ]
+}
