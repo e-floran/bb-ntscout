@@ -34,6 +34,82 @@ async function fetchXml(url: string, cookies: string) {
   return parser.parseStringPromise(text);
 }
 
+// Helper function to calculate averages from main team data
+function calculateMainTeamAverages(teamId: string) {
+  const mainTeamsDir = path.join(process.cwd(), "app/data/mainTeams");
+  const teamFilePath = path.join(mainTeamsDir, `${teamId}.json`);
+
+  if (!fs.existsSync(teamFilePath)) {
+    return { avgRatings: {}, avgEfficiency: {}, maxRatings: {} };
+  }
+
+  try {
+    const gameData = JSON.parse(fs.readFileSync(teamFilePath, "utf8"));
+
+    if (!Array.isArray(gameData) || gameData.length === 0) {
+      return { avgRatings: {}, avgEfficiency: {}, maxRatings: {} };
+    }
+
+    // Calculate average ratings and maximums
+    const ratingsTotal: Record<string, number> = {};
+    const ratingsCount: Record<string, number> = {};
+    const ratingsMax: Record<string, number> = {};
+
+    gameData.forEach((game: any) => {
+      if (game.teamRatings) {
+        Object.entries(game.teamRatings).forEach(([category, value]) => {
+          if (typeof value === "number") {
+            ratingsTotal[category] = (ratingsTotal[category] || 0) + value;
+            ratingsCount[category] = (ratingsCount[category] || 0) + 1;
+            ratingsMax[category] = Math.max(ratingsMax[category] || 0, value);
+          }
+        });
+      }
+    });
+
+    const avgRatings: Record<string, number> = {};
+    const maxRatings: Record<string, number> = {};
+    Object.keys(ratingsTotal).forEach((category) => {
+      if (ratingsCount[category] > 0) {
+        // Use the original camelCase keys to match the analyzed team data
+        avgRatings[category] = ratingsTotal[category] / ratingsCount[category];
+        maxRatings[category] = ratingsMax[category];
+      }
+    });
+
+    // Calculate average efficiency
+    const efficiencyTotal: Record<string, number> = {};
+    const efficiencyCount: Record<string, number> = {};
+
+    gameData.forEach((game: any) => {
+      if (game.positionsEfficiencies) {
+        Object.entries(game.positionsEfficiencies).forEach(
+          ([position, value]) => {
+            if (typeof value === "number") {
+              efficiencyTotal[position] =
+                (efficiencyTotal[position] || 0) + value;
+              efficiencyCount[position] = (efficiencyCount[position] || 0) + 1;
+            }
+          }
+        );
+      }
+    });
+
+    const avgEfficiency: Record<string, number> = {};
+    Object.keys(efficiencyTotal).forEach((position) => {
+      if (efficiencyCount[position] > 0) {
+        avgEfficiency[position] =
+          efficiencyTotal[position] / efficiencyCount[position];
+      }
+    });
+
+    return { avgRatings, avgEfficiency, maxRatings };
+  } catch (error) {
+    console.error(`Error reading main team data for ${teamId}:`, error);
+    return { avgRatings: {}, avgEfficiency: {}, maxRatings: {} };
+  }
+}
+
 export async function GET(req: NextRequest) {
   // --- User authentication and verification ---
   const login = req.cookies.get("authenticated_user")?.value;
@@ -78,11 +154,15 @@ export async function GET(req: NextRequest) {
       if (found) opponentName = found.teamName;
     }
 
+    // Get main team averages for comparison
+    const mainTeamAverages = calculateMainTeamAverages(user.mainTeamId);
+
     return NextResponse.json({
       opponentName,
       opponentId: teamId,
       seasons,
       seasonsData,
+      mainTeamAverages,
     });
   }
 
@@ -180,6 +260,9 @@ export async function GET(req: NextRequest) {
   // Run analysis for opponent, current season
   const curr = await analyzeTeamForSeason(opponentId, bbSession, SEASON);
 
+  // Get main team averages for comparison
+  const mainTeamAverages = calculateMainTeamAverages(user.mainTeamId);
+
   return NextResponse.json({
     opponentName,
     opponentId,
@@ -188,6 +271,7 @@ export async function GET(req: NextRequest) {
     // Add these for compatibility with your modified frontend
     seasons: [SEASON],
     seasonsData: [curr],
+    mainTeamAverages,
   });
 }
 
@@ -258,7 +342,7 @@ async function analyzeTeamForSeason(
     let boxXml;
     try {
       boxXml = await fetchXml(boxscoreUrl, cookies);
-    } catch (e) {
+    } catch {
       continue;
     }
 
@@ -291,13 +375,13 @@ async function analyzeTeamForSeason(
     offenseStrategies[offStrat] = (offenseStrategies[offStrat] || 0) + 1;
     defenseStrategies[defStrat] = (defenseStrategies[defStrat] || 0) + 1;
 
-    const matchGdp = teamNode.gdp
+    const matchGdp = teamNode.gdp;
 
     gdpList.push({
       date: matchDateStr,
       matchId,
       opponent: opponentNode?.teamName || "Unknown",
-      gdp: ((matchGdp.focus || "").trim() + " " + (matchGdp.pace || "").trim()),
+      gdp: (matchGdp.focus || "").trim() + " " + (matchGdp.pace || "").trim(),
     });
 
     // Process ratings - ensure proper parsing
@@ -505,7 +589,9 @@ async function analyzeTeamForSeason(
       (parseDate(b.date) as unknown as number)
   );
 
-  gdpList.sort((a, b) => (parseDate(a.date) as any) - (parseDate(b.date) as any));
+  gdpList.sort(
+    (a, b) => (parseDate(a.date) as any) - (parseDate(b.date) as any)
+  );
 
   // NEW: Sort recent games by date (most recent first) - analyze all games, no limit
   recentGames.sort(

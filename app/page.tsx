@@ -353,15 +353,23 @@ export default function IndexPage() {
               <DataTable
                 headers={[
                   "Catégorie",
-                  ...seasonLabels.flatMap((s: any) => [
-                    `Moyennes s${s}`,
-                    `Max s${s}`,
-                  ]),
+                  // First season (current)
+                  `Moyennes s${seasonLabels[0] || ""}`,
+                  `Max s${seasonLabels[0] || ""}`,
+                  // Main team columns after current season
+                  `Mes moyennes s${seasonLabels[0] || ""}`,
+                  `Mes max s${seasonLabels[0] || ""}`,
+                  // Remaining seasons if any
+                  ...seasonLabels
+                    .slice(1)
+                    .flatMap((s: any) => [`Moyennes s${s}`, `Max s${s}`]),
                 ]}
                 rows={avgRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.avgRatings || {}
-                  ) || []
+                  ) || [],
+                  analysis?.mainTeamAverages?.avgRatings,
+                  analysis?.mainTeamAverages?.maxRatings
                 )}
                 tableId="avg-ratings"
                 sortConfig={sortConfig}
@@ -379,12 +387,18 @@ export default function IndexPage() {
               <DataTable
                 headers={[
                   "Position",
-                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                  // First season (current)
+                  `Saison ${seasonLabels[0] || ""}`,
+                  // Main team column after current season
+                  `Mon équipe (s${seasonLabels[0] || ""})`,
+                  // Remaining seasons if any
+                  ...seasonLabels.slice(1).map((s: any) => `Saison ${s}`),
                 ]}
                 rows={effRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.avgEfficiency || {}
-                  ) || []
+                  ) || [],
+                  analysis?.mainTeamAverages?.avgEfficiency
                 )}
                 tableId="avg-efficiency"
                 sortConfig={sortConfig}

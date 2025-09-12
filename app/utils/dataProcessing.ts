@@ -45,7 +45,9 @@ export function stratRows(
 }
 
 export function avgRows(
-  avgs: Record<string, number>[] = []
+  avgs: Record<string, number>[] = [],
+  mainTeamAvg?: Record<string, number>,
+  mainTeamMax?: Record<string, number>
 ): [string, ...(string | "")[]][] {
   const allCats = Array.from(
     new Set(
@@ -55,35 +57,68 @@ export function avgRows(
         .filter((key) => !key.endsWith("_max"))
     )
   );
+
   return allCats.map((cat) => {
-    // For each season, get average and max for this category
-    const values = avgs.map((obj) => obj?.[cat]).filter((v) => v !== undefined);
-    return [
-      humanize(cat),
-      ...avgs.flatMap((obj) => {
-        const avg = obj?.[cat] !== undefined ? obj[cat].toFixed(2) : "";
-        // Find max for this category in this season (if array of games is available)
-        // If obj[cat + "_max"] exists, use it, else fallback to avg
-        const max =
-          obj?.[cat + "_max"] !== undefined
-            ? obj[cat + "_max"].toFixed(2)
-            : avg;
-        return [avg, max];
-      }),
-    ];
+    const result: (string | "")[] = [humanize(cat)];
+
+    // First add current season data (index 0)
+    if (avgs.length > 0) {
+      const currentSeasonObj = avgs[0];
+      const avg =
+        currentSeasonObj?.[cat] !== undefined
+          ? currentSeasonObj[cat].toFixed(2)
+          : "";
+      const max =
+        currentSeasonObj?.[cat + "_max"] !== undefined
+          ? currentSeasonObj[cat + "_max"].toFixed(2)
+          : avg;
+      result.push(avg, max);
+
+      // Add main team data after current season
+      const mainTeamAvgValue = mainTeamAvg?.[cat];
+      const mainTeamMaxValue = mainTeamMax?.[cat];
+      result.push(
+        mainTeamAvgValue !== undefined ? mainTeamAvgValue.toFixed(2) : "",
+        mainTeamMaxValue !== undefined ? mainTeamMaxValue.toFixed(2) : ""
+      );
+    }
+
+    // Then add remaining seasons data (index 1+)
+    for (let i = 1; i < avgs.length; i++) {
+      const obj = avgs[i];
+      const avg = obj?.[cat] !== undefined ? obj[cat].toFixed(2) : "";
+      const max =
+        obj?.[cat + "_max"] !== undefined ? obj[cat + "_max"].toFixed(2) : avg;
+      result.push(avg, max);
+    }
+
+    return result as [string, ...(string | "")[]];
   });
 }
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 export function effRows(
-  effs: Partial<Record<Position, number>>[] = []
+  effs: Partial<Record<Position, number>>[] = [],
+  mainTeamEff?: Partial<Record<Position, number>>
 ): [string, ...(string | "")[]][] {
-  return (["PG", "SG", "SF", "PF", "C"] as Position[]).map((pos) => [
-    pos,
-    ...effs.map((eff) =>
-      eff?.[pos] !== undefined ? eff[pos]!.toFixed(1) : ""
-    ),
-  ]);
+  return (["PG", "SG", "SF", "PF", "C"] as Position[]).map((pos) => {
+    const result: (string | "")[] = [pos];
+
+    // Add analyzed team data for each season
+    effs.forEach((eff, index) => {
+      const value = eff?.[pos] !== undefined ? eff[pos]!.toFixed(1) : "";
+      result.push(value);
+
+      // After the first season (current season), add main team data
+      if (index === 0) {
+        result.push(
+          mainTeamEff?.[pos] !== undefined ? mainTeamEff[pos]!.toFixed(1) : ""
+        );
+      }
+    });
+
+    return result as [string, ...(string | "")[]];
+  });
 }
 
 type Effort = {
