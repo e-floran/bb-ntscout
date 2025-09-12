@@ -63,3 +63,9 @@ export interface PlayerScouting {
   tci: number;
   tc: number;
 }
+export enum UserRoles {
+  Admin = "ADMIN",
+  User = "USER",
+  Coach = "COACH",
+  Staff = "STAFF",
+}

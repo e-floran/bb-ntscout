@@ -2,6 +2,23 @@ import { NextRequest, NextResponse } from "next/server";
 import { users } from "@/app/utils/users";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
 
+// In-memory storage for user credentials during their session
+const userCredentials = new Map<
+  string,
+  { login: string; password: string; timestamp: number }
+>();
+
+// Clean up expired credentials (older than 4 hours)
+const CREDENTIAL_EXPIRY = 4 * 60 * 60 * 1000; // 4 hours in milliseconds
+function cleanupExpiredCredentials() {
+  const now = Date.now();
+  for (const [sessionId, data] of userCredentials.entries()) {
+    if (now - data.timestamp > CREDENTIAL_EXPIRY) {
+      userCredentials.delete(sessionId);
+    }
+  }
+}
+
 // Utility to extract cookie pairs from Set-Cookie header(s)
 function extractCookiePairs(setCookieHeader: string): string {
   // Handles multiple cookies separated by comma
@@ -21,6 +38,9 @@ export async function POST(req: NextRequest) {
       { status: 401 }
     );
   }
+
+  // Clean up expired credentials periodically
+  cleanupExpiredCredentials();
 
   try {
     const url = `${baseApiUrl}login.aspx?login=${encodeURIComponent(
@@ -42,6 +62,14 @@ export async function POST(req: NextRequest) {
       // Only keep the cookie pairs, not the flags!
       const bbapiCookiePairs = extractCookiePairs(setCookie);
 
+      // Store credentials in memory for this session
+      const sessionId = `${login}_${Date.now()}_${Math.random()}`;
+      userCredentials.set(sessionId, {
+        login,
+        password,
+        timestamp: Date.now(),
+      });
+
       const response = NextResponse.json({ success: true });
       response.cookies.set("bbapi_session", bbapiCookiePairs, {
         httpOnly: true,
@@ -55,6 +83,13 @@ export async function POST(req: NextRequest) {
         path: "/",
         sameSite: "lax",
       });
+      // Store session ID for credential lookup
+      response.cookies.set("session_id", sessionId, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        path: "/",
+        sameSite: "lax",
+      });
       return response;
     } else {
       return NextResponse.json(
@@ -63,6 +98,10 @@ export async function POST(req: NextRequest) {
       );
     }
   } catch (err) {
+    console.error("Login error:", err);
     return NextResponse.json({ error: "API login failed" }, { status: 500 });
   }
 }
+
+// Export functions for use in other routes
+export { userCredentials, cleanupExpiredCredentials };

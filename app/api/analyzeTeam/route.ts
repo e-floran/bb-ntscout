@@ -5,12 +5,182 @@ import path from "path";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
 import { users } from "@/app/utils/users";
 import xml2js from "xml2js";
+import axios from "axios";
 import { enrichPlayersWithHistory } from "@/app/utils/playerHistoryUtils";
+import {
+  userCredentials,
+  cleanupExpiredCredentials,
+} from "@/app/api/login/route";
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
 const TEAM_DATA_DIR = path.join(process.cwd(), "app/data/teams");
 const SEASON = 69;
+
+// Session management class for handling BBAPI timeouts
+class BBAPISessionManager {
+  private queryCount = 0;
+  private sessionCookie = "";
+  private userLogin = "";
+  private userPassword = "";
+  private hasCredentials = false;
+
+  constructor(initialCookie?: string, sessionId?: string) {
+    this.sessionCookie = initialCookie || "";
+
+    // Try to get credentials from stored session or environment variables
+    if (sessionId) {
+      cleanupExpiredCredentials();
+      const storedCredentials = userCredentials.get(sessionId);
+      if (storedCredentials) {
+        this.userLogin = storedCredentials.login;
+        this.userPassword = storedCredentials.password;
+        this.hasCredentials = true;
+        console.log("Using stored session credentials for re-authentication");
+      }
+    }
+
+    // Fallback to environment variables (for scripts)
+    if (!this.hasCredentials) {
+      this.userLogin = process.env.BB_USERNAME || "";
+      this.userPassword = process.env.BB_PASSWORD || "";
+      this.hasCredentials = !!(this.userLogin && this.userPassword);
+      if (this.hasCredentials) {
+        console.log("Using environment variables for re-authentication");
+      }
+    }
+  }
+
+  private async login(): Promise<boolean> {
+    // Only attempt login if we have credentials
+    if (!this.hasCredentials) {
+      console.log(
+        "No credentials available for re-authentication, continuing with existing session"
+      );
+      return false;
+    }
+
+    try {
+      console.log("Re-authenticating BBAPI session...");
+      const response = await axios.get(`${baseApiUrl}login.aspx`, {
+        params: {
+          login: this.userLogin,
+          code: this.userPassword,
+        },
+      });
+
+      const responseText = response.data;
+
+      if (!responseText.includes("<loggedIn")) {
+        console.error("Login failed - invalid credentials or API error");
+        return false;
+      }
+
+      const setCookieHeader = response.headers["set-cookie"];
+      if (setCookieHeader) {
+        this.sessionCookie = setCookieHeader
+          .map((cookie) => cookie.split(";")[0].trim())
+          .join("; ");
+        console.log("Re-authentication successful!");
+        return true;
+      }
+
+      console.error("Login failed - no session cookie received");
+      return false;
+    } catch (error) {
+      console.error("Login error:", error);
+      return false;
+    }
+  }
+
+  private async logout(): Promise<void> {
+    // Only logout if we have credentials to log back in
+    if (!this.hasCredentials) {
+      return;
+    }
+
+    try {
+      await axios.get(`${baseApiUrl}logout.aspx`, {
+        headers: { Cookie: this.sessionCookie },
+      });
+      console.log("Logged out from BBAPI");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  }
+
+  private async checkSessionAndReauth(): Promise<boolean> {
+    // Only attempt re-authentication if we have credentials
+    if (this.queryCount >= 50 && this.hasCredentials) {
+      console.log("Re-authenticating due to query limit...");
+      await this.logout();
+      if (await this.login()) {
+        this.queryCount = 0;
+        return true;
+      } else {
+        console.log(
+          "Re-authentication failed, continuing with existing session"
+        );
+        this.queryCount = 0; // Reset count to avoid repeated attempts
+      }
+    }
+    return false;
+  }
+
+  async fetchXml(url: string): Promise<any> {
+    try {
+      // Check if we need to re-authenticate (only if we have credentials)
+      await this.checkSessionAndReauth();
+
+      const response = await fetch(url, {
+        headers: this.sessionCookie
+          ? { Cookie: this.sessionCookie }
+          : undefined,
+      });
+
+      this.queryCount++;
+
+      const text = await response.text();
+
+      // Check for authentication errors
+      if (text.includes("<error") && text.includes("NotAuthorized")) {
+        console.log("Session expired detected");
+
+        // Only attempt re-authentication if we have credentials
+        if (this.hasCredentials && (await this.login())) {
+          console.log("Retrying request with new session");
+          const retryResponse = await fetch(url, {
+            headers: { Cookie: this.sessionCookie },
+          });
+          this.queryCount++;
+          const retryText = await retryResponse.text();
+          const parser = new xml2js.Parser({ explicitArray: false });
+          return parser.parseStringPromise(retryText);
+        } else {
+          // No credentials available, return the error response to let the frontend handle it
+          console.log(
+            "No credentials for re-authentication, returning session expired error"
+          );
+          const parser = new xml2js.Parser({ explicitArray: false });
+          return parser.parseStringPromise(text);
+        }
+      }
+
+      const parser = new xml2js.Parser({ explicitArray: false });
+      return parser.parseStringPromise(text);
+    } catch (error) {
+      console.error("Error fetching XML:", error);
+      throw error;
+    }
+  }
+
+  getCookie(): string {
+    return this.sessionCookie;
+  }
+}
+
+// Global session manager instance
+let sessionManager: BBAPISessionManager;
 
 function parseDate(dateString: string) {
   return new Date(dateString);
@@ -23,15 +193,6 @@ function humanize(str: string) {
     .replace(/([A-Z])/g, " $1")
     .replace(/^./, (s) => s.toUpperCase())
     .trim();
-}
-
-async function fetchXml(url: string, cookies: string) {
-  const response = await fetch(url, {
-    headers: cookies ? { Cookie: cookies } : undefined,
-  });
-  const text = await response.text();
-  const parser = new xml2js.Parser({ explicitArray: false });
-  return parser.parseStringPromise(text);
 }
 
 // Helper function to calculate averages from main team data
@@ -121,11 +282,15 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Session expired" }, { status: 401 });
   }
 
+  // Initialize session manager with existing cookie and session ID
+  const bbSession = req.cookies.get("bbapi_session")?.value || "";
+  const sessionId = req.cookies.get("session_id")?.value;
+  sessionManager = new BBAPISessionManager(bbSession, sessionId);
+
   // --- Read query params for advanced analysis ---
   const url = new URL(req.url);
   const teamIdParam = url.searchParams.get("teamId");
   const numberOfSeasonsParam = url.searchParams.get("numberOfSeasons");
-  const bbSession = req.cookies.get("bbapi_session")?.value || "";
 
   // If both params are present, bypass normal flow
   if (teamIdParam && numberOfSeasonsParam) {
@@ -141,7 +306,7 @@ export async function GET(req: NextRequest) {
 
     // Analyze all seasons in parallel
     const seasonsData = await Promise.all(
-      seasons.map((season) => analyzeTeamForSeason(teamId, bbSession, season))
+      seasons.map((season) => analyzeTeamForSeason(teamId, season))
     );
 
     // Use the teamId and fetch team name from the most recent season
@@ -175,7 +340,7 @@ export async function GET(req: NextRequest) {
 
   // Fetch team schedule for this season
   const teamScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${mainTeamId}&season=${SEASON}`;
-  const teamScheduleXml = await fetchXml(teamScheduleUrl, bbSession);
+  const teamScheduleXml = await sessionManager.fetchXml(teamScheduleUrl);
 
   let matches = [];
 
@@ -258,7 +423,7 @@ export async function GET(req: NextRequest) {
   const opponentName = opponentTeam.teamName;
 
   // Run analysis for opponent, current season
-  const curr = await analyzeTeamForSeason(opponentId, bbSession, SEASON);
+  const curr = await analyzeTeamForSeason(opponentId, SEASON);
 
   // Get main team averages for comparison
   const mainTeamAverages = calculateMainTeamAverages(user.mainTeamId);
@@ -276,13 +441,11 @@ export async function GET(req: NextRequest) {
 }
 
 // --- Analysis logic for one season of a team ---
-async function analyzeTeamForSeason(
-  teamId: string,
-  cookies: string,
-  season: number
-) {
+async function analyzeTeamForSeason(teamId: string, season: number) {
   const opponentScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${teamId}&season=${season}`;
-  const opponentScheduleXml = await fetchXml(opponentScheduleUrl, cookies);
+  const opponentScheduleXml = await sessionManager.fetchXml(
+    opponentScheduleUrl
+  );
 
   let opponentMatches = [];
   if (opponentScheduleXml?.bbapi?.schedule?.match) {
@@ -299,8 +462,8 @@ async function analyzeTeamForSeason(
       effortDeltaList: [],
       playerSumStats: {},
       matches: [],
-      players: [], // Add empty players array for consistency
-      recentGames: [], // NEW: Add empty recent games array
+      players: [],
+      recentGames: [],
     };
   }
 
@@ -319,12 +482,12 @@ async function analyzeTeamForSeason(
     effCount: Record<Position, number> = { PG: 0, SG: 0, SF: 0, PF: 0, C: 0 };
   const playerSumStats: Record<string, any> = {};
   const effortDeltaList: any[] = [];
-  const uniquePlayers: Map<string, any> = new Map(); // Track unique players
+  const uniquePlayers: Map<string, any> = new Map();
 
   // Store individual matches with their strategies and data for filtering
   const matchesWithStrategies: any[] = [];
 
-  // NEW: Store recent games data
+  // Store recent games data
   const recentGames: any[] = [];
 
   const gdpList: any[] = [];
@@ -341,7 +504,7 @@ async function analyzeTeamForSeason(
     const boxscoreUrl = `${baseApiUrl}boxscore.aspx?matchid=${matchId}`;
     let boxXml;
     try {
-      boxXml = await fetchXml(boxscoreUrl, cookies);
+      boxXml = await sessionManager.fetchXml(boxscoreUrl);
     } catch {
       continue;
     }
@@ -439,7 +602,7 @@ async function analyzeTeamForSeason(
 
     // Extract and process player stats
     const matchPlayerStats: Record<string, any> = {};
-    // NEW: Extract player positions and minutes for recent games
+    // Extract player positions and minutes for recent games
     const gamePlayerMinutes: Record<string, any> = {};
 
     if (teamNode.boxscore && teamNode.boxscore.player) {
@@ -541,7 +704,7 @@ async function analyzeTeamForSeason(
             min,
           };
 
-          // NEW: Store position minutes for recent games
+          // Store position minutes for recent games
           gamePlayerMinutes[pid] = {
             name,
             positionMinutes,
@@ -564,7 +727,7 @@ async function analyzeTeamForSeason(
       gdp: matchGdp,
     });
 
-    // NEW: Store recent game data (all games, not limited)
+    // Store recent game data (all games, not limited)
     recentGames.push({
       matchId,
       date: matchDateStr,
@@ -593,7 +756,7 @@ async function analyzeTeamForSeason(
     (a, b) => (parseDate(a.date) as any) - (parseDate(b.date) as any)
   );
 
-  // NEW: Sort recent games by date (most recent first) - analyze all games, no limit
+  // Sort recent games by date (most recent first) - analyze all games, no limit
   recentGames.sort(
     (a, b) =>
       (parseDate(b.date) as unknown as number) -
@@ -635,9 +798,9 @@ async function analyzeTeamForSeason(
     avgEfficiency: avgEfficiencyHumanized,
     effortDeltaList,
     playerSumStats,
-    matches: matchesWithStrategies, // Include properly structured match data
-    players: playersWithHistory, // NEW: Add players with history
-    recentGames: recentGames, // NEW: Add all recent games data (no limit)
+    matches: matchesWithStrategies,
+    players: playersWithHistory,
+    recentGames: recentGames,
     gdpList,
   };
 }

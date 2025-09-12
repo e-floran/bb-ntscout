@@ -1,9 +1,16 @@
-import { Continents, PlayerScouting, PlayerSeason, PlayerWeek } from "./types";
+import {
+  Continents,
+  PlayerScouting,
+  PlayerSeason,
+  PlayerWeek,
+  UserRoles,
+} from "./types";
 
 export interface User {
   login: string;
   mainTeamId: string;
   active: boolean;
+  role: UserRoles;
 }
 
 export interface Player {
