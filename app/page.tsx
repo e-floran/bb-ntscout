@@ -93,6 +93,33 @@ export default function IndexPage() {
     selectedDefensiveStrategy
   );
 
+  // Debug logging for main team data
+  useEffect(() => {
+    if (analysis?.mainTeamAverages) {
+      console.log("[DEBUG] Frontend avgRows data:", {
+        seasonsData: filteredAnalysis?.seasonsData?.map(
+          (s: any) => s?.avgRatings || {}
+        ),
+        mainTeamAvgRatings: analysis?.mainTeamAverages?.avgRatings,
+        mainTeamMaxRatings: analysis?.mainTeamAverages?.maxRatings,
+        fullAnalysis: analysis?.mainTeamAverages,
+      });
+
+      // Check what keys the analyzed team has vs main team
+      const analyzedTeamKeys = Object.keys(
+        filteredAnalysis?.seasonsData?.[0]?.avgRatings || {}
+      );
+      const mainTeamKeys = Object.keys(
+        analysis?.mainTeamAverages?.avgRatings || {}
+      );
+      console.log("[DEBUG] Key comparison:", {
+        analyzedTeamKeys,
+        mainTeamKeys,
+        keysMatch: analyzedTeamKeys.some((key) => mainTeamKeys.includes(key)),
+      });
+    }
+  }, [analysis, filteredAnalysis]);
+
   // Simulate loading steps
   const simulateLoadingSteps = () => {
     const steps: LoadingStep[] = [
@@ -353,15 +380,23 @@ export default function IndexPage() {
               <DataTable
                 headers={[
                   "Catégorie",
-                  ...seasonLabels.flatMap((s: any) => [
-                    `Moyennes s${s}`,
-                    `Max s${s}`,
-                  ]),
+                  // First season (current)
+                  `Moyennes s${seasonLabels[0] || ""}`,
+                  `Max s${seasonLabels[0] || ""}`,
+                  // Main team columns after current season
+                  `Mes moyennes s${seasonLabels[0] || ""}`,
+                  `Mes max s${seasonLabels[0] || ""}`,
+                  // Remaining seasons if any
+                  ...seasonLabels
+                    .slice(1)
+                    .flatMap((s: any) => [`Moyennes s${s}`, `Max s${s}`]),
                 ]}
                 rows={avgRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.avgRatings || {}
-                  ) || []
+                  ) || [],
+                  analysis?.mainTeamAverages?.avgRatings,
+                  analysis?.mainTeamAverages?.maxRatings
                 )}
                 tableId="avg-ratings"
                 sortConfig={sortConfig}
@@ -379,12 +414,18 @@ export default function IndexPage() {
               <DataTable
                 headers={[
                   "Position",
-                  ...seasonLabels.map((s: any) => `Saison ${s}`),
+                  // First season (current)
+                  `Saison ${seasonLabels[0] || ""}`,
+                  // Main team column after current season
+                  `Mon équipe (s${seasonLabels[0] || ""})`,
+                  // Remaining seasons if any
+                  ...seasonLabels.slice(1).map((s: any) => `Saison ${s}`),
                 ]}
                 rows={effRows(
                   filteredAnalysis?.seasonsData?.map(
                     (s: any) => s?.avgEfficiency || {}
-                  ) || []
+                  ) || [],
+                  analysis?.mainTeamAverages?.avgEfficiency
                 )}
                 tableId="avg-efficiency"
                 sortConfig={sortConfig}
