@@ -77,9 +77,6 @@ function calculateMainTeamAverages(teamId: string) {
       }
     });
 
-    console.log(`[DEBUG] Team ${teamId} - avgRatings:`, avgRatings);
-    console.log(`[DEBUG] Team ${teamId} - maxRatings:`, maxRatings);
-
     // Calculate average efficiency
     const efficiencyTotal: Record<string, number> = {};
     const efficiencyCount: Record<string, number> = {};
@@ -159,10 +156,6 @@ export async function GET(req: NextRequest) {
 
     // Get main team averages for comparison
     const mainTeamAverages = calculateMainTeamAverages(user.mainTeamId);
-    console.log(
-      `[DEBUG] Main team averages for user ${user.login}:`,
-      mainTeamAverages
-    );
 
     return NextResponse.json({
       opponentName,
@@ -269,10 +262,6 @@ export async function GET(req: NextRequest) {
 
   // Get main team averages for comparison
   const mainTeamAverages = calculateMainTeamAverages(user.mainTeamId);
-  console.log(
-    `[DEBUG] Main team averages for user ${user.login} (default flow):`,
-    mainTeamAverages
-  );
 
   return NextResponse.json({
     opponentName,

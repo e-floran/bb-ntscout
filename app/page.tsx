@@ -93,33 +93,6 @@ export default function IndexPage() {
     selectedDefensiveStrategy
   );
 
-  // Debug logging for main team data
-  useEffect(() => {
-    if (analysis?.mainTeamAverages) {
-      console.log("[DEBUG] Frontend avgRows data:", {
-        seasonsData: filteredAnalysis?.seasonsData?.map(
-          (s: any) => s?.avgRatings || {}
-        ),
-        mainTeamAvgRatings: analysis?.mainTeamAverages?.avgRatings,
-        mainTeamMaxRatings: analysis?.mainTeamAverages?.maxRatings,
-        fullAnalysis: analysis?.mainTeamAverages,
-      });
-
-      // Check what keys the analyzed team has vs main team
-      const analyzedTeamKeys = Object.keys(
-        filteredAnalysis?.seasonsData?.[0]?.avgRatings || {}
-      );
-      const mainTeamKeys = Object.keys(
-        analysis?.mainTeamAverages?.avgRatings || {}
-      );
-      console.log("[DEBUG] Key comparison:", {
-        analyzedTeamKeys,
-        mainTeamKeys,
-        keysMatch: analyzedTeamKeys.some((key) => mainTeamKeys.includes(key)),
-      });
-    }
-  }, [analysis, filteredAnalysis]);
-
   // Simulate loading steps
   const simulateLoadingSteps = () => {
     const steps: LoadingStep[] = [
