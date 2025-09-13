@@ -18,7 +18,7 @@ export const users: User[] = [
     login: "Walter Sobchak",
     mainTeamId: "50",
     active: true,
-    role: UserRoles.User,
+    role: UserRoles.Staff,
   },
   {
     login: "Squall_L81",

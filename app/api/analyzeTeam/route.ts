@@ -11,6 +11,7 @@ import {
   userCredentials,
   cleanupExpiredCredentials,
 } from "@/app/api/login/route";
+import { User } from "@/app/types/mainTypes";
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
@@ -23,6 +24,7 @@ class BBAPISessionManager {
   private sessionCookie = "";
   private userLogin = "";
   private userPassword = "";
+  private user: User | undefined = undefined;
   private hasCredentials = false;
 
   constructor(initialCookie?: string, sessionId?: string) {
@@ -35,6 +37,7 @@ class BBAPISessionManager {
       if (storedCredentials) {
         this.userLogin = storedCredentials.login;
         this.userPassword = storedCredentials.password;
+        this.user = storedCredentials.user;
         this.hasCredentials = true;
         console.log("Using stored session credentials for re-authentication");
       }

@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { users } from "@/app/utils/users";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
+import { User } from "@/app/types/mainTypes";
 
 // In-memory storage for user credentials during their session
 const userCredentials = new Map<
   string,
-  { login: string; password: string; timestamp: number }
+  { login: string; password: string; timestamp: number; user: User }
 >();
 
 // Clean up expired credentials (older than 4 hours)
@@ -67,6 +68,7 @@ export async function POST(req: NextRequest) {
       userCredentials.set(sessionId, {
         login,
         password,
+        user,
         timestamp: Date.now(),
       });
 
