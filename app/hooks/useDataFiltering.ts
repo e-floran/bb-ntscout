@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 import {
   INTERIOR_OFFENSES,
   NEUTRAL_OFFENSES,
@@ -13,39 +13,73 @@ export function useDataFiltering(
   analysis: any,
   rawMatchData: any,
   selectedOffensiveStrategy: string,
-  selectedDefensiveStrategy: string
+  selectedDefensiveStrategy: string,
+  excludeIrrelevantGames: boolean
 ) {
-  // Check if match satisfies offensive strategy filter
-  const matchesOffensiveFilter = (offStrategy: string) => {
-    if (selectedOffensiveStrategy === "all") return true;
-    if (selectedOffensiveStrategy === "interior")
-      return INTERIOR_OFFENSES.some(
-        (offense) =>
-          normalizeStrategyName(offense) === normalizeStrategyName(offStrategy)
+  // Helper function to check if a match uses the selected offensive strategy
+  const matchesOffensiveFilter = useCallback(
+    (offStrategy: string) => {
+      if (selectedOffensiveStrategy === "all") return true;
+      if (selectedOffensiveStrategy === "interior")
+        return INTERIOR_OFFENSES.some((strat) =>
+          normalizeStrategyName(offStrategy).includes(
+            normalizeStrategyName(strat)
+          )
+        );
+      if (selectedOffensiveStrategy === "neutral")
+        return NEUTRAL_OFFENSES.some((strat) =>
+          normalizeStrategyName(offStrategy).includes(
+            normalizeStrategyName(strat)
+          )
+        );
+      if (selectedOffensiveStrategy === "exterior")
+        return EXTERIOR_OFFENSES.some((strat) =>
+          normalizeStrategyName(offStrategy).includes(
+            normalizeStrategyName(strat)
+          )
+        );
+      return normalizeStrategyName(offStrategy).includes(
+        normalizeStrategyName(selectedOffensiveStrategy)
       );
-    if (selectedOffensiveStrategy === "neutral")
-      return NEUTRAL_OFFENSES.some(
-        (offense) =>
-          normalizeStrategyName(offense) === normalizeStrategyName(offStrategy)
-      );
-    if (selectedOffensiveStrategy === "exterior")
-      return EXTERIOR_OFFENSES.some(
-        (offense) =>
-          normalizeStrategyName(offense) === normalizeStrategyName(offStrategy)
-      );
-    // For individual strategy comparison, normalize both strings
-    return (
-      normalizeStrategyName(offStrategy) ===
-      normalizeStrategyName(selectedOffensiveStrategy)
-    );
-  };
+    },
+    [selectedOffensiveStrategy]
+  );
 
-  // Check if match satisfies defensive strategy filter
-  const matchesDefensiveFilter = (defStrategy: string) => {
-    if (selectedDefensiveStrategy === "all") return true;
-    // For defensive strategies, we can also normalize if needed in the future
-    return defStrategy === selectedDefensiveStrategy;
-  };
+  // Helper function to check if a match is relevant
+  const matchesRelevanceFilter = useCallback(
+    (match: any) => {
+      if (!excludeIrrelevantGames) return true;
+
+      // Check if it's a scrimmage (friendly)
+      if (match.type === "nt.friendly") {
+        return false;
+      }
+
+      // Check if there are overtimes (more than 4 quarters)
+      // The partials are in the format "24,22,29,26" for regular games
+      if (match.partials && typeof match.partials === "string") {
+        const quarters = match.partials.split(",");
+        if (quarters.length > 4) {
+          return false;
+        }
+      }
+
+      return true;
+    },
+    [excludeIrrelevantGames]
+  );
+
+  // Helper function to check if a match uses the selected defensive strategy
+  const matchesDefensiveFilter = useCallback(
+    (defStrategy: string) => {
+      if (selectedDefensiveStrategy === "all") return true;
+      // For defensive strategies, we can also normalize if needed in the future
+      return normalizeStrategyName(defStrategy).includes(
+        normalizeStrategyName(selectedDefensiveStrategy)
+      );
+    },
+    [selectedDefensiveStrategy]
+  );
 
   // Recalculate season statistics from filtered matches
   const recalculateSeasonStats = (matches: any[], originalSeasonData: any) => {
@@ -161,15 +195,52 @@ export function useDataFiltering(
     if (rawMatchData.seasonsData) {
       filteredData.seasonsData = rawMatchData.seasonsData.map(
         (seasonData: any) => {
+          // Filter matches based on strategies and relevance
           const filteredMatches =
-            seasonData.matches?.filter(
-              (match: any) =>
-                matchesOffensiveFilter(match.offStrategy) &&
-                matchesDefensiveFilter(match.defStrategy)
-            ) || [];
+            seasonData.matches?.filter((match: any) => {
+              const offensiveMatch = matchesOffensiveFilter(match);
+              const defensiveMatch = matchesDefensiveFilter(match);
+              const relevanceMatch = matchesRelevanceFilter(match);
+              return offensiveMatch && defensiveMatch && relevanceMatch;
+            }) || [];
 
           // Recalculate averages based on filtered matches
-          return recalculateSeasonStats(filteredMatches, seasonData);
+          const recalculatedSeasonData = recalculateSeasonStats(
+            filteredMatches,
+            seasonData
+          );
+
+          // Filter recent games to match the same criteria
+          const filteredRecentGames =
+            seasonData.recentGames?.filter((game: any) => {
+              // Find corresponding match data to get type and partials
+              const matchData = seasonData.matches?.find(
+                (match: any) => match.matchId === game.matchId
+              );
+              if (matchData) {
+                const offensiveMatch = matchesOffensiveFilter(
+                  matchData.offStrategy
+                );
+                const defensiveMatch = matchesDefensiveFilter(
+                  matchData.defStrategy
+                );
+                const relevanceMatch = matchesRelevanceFilter(matchData);
+                return offensiveMatch && defensiveMatch && relevanceMatch;
+              }
+              // If no match data found, include by default (shouldn't happen)
+              return true;
+            }) || [];
+
+          return {
+            ...seasonData,
+            // Replace with filtered data
+            matches: filteredMatches,
+            recentGames: filteredRecentGames,
+            // Update aggregated data based on filtered matches
+            avgRatings: recalculatedSeasonData.avgRatings,
+            avgEfficiency: recalculatedSeasonData.avgEfficiency,
+            playerSumStats: recalculatedSeasonData.playerSumStats,
+          };
         }
       );
     }
@@ -180,6 +251,9 @@ export function useDataFiltering(
     rawMatchData,
     selectedOffensiveStrategy,
     selectedDefensiveStrategy,
+    matchesOffensiveFilter,
+    matchesDefensiveFilter,
+    matchesRelevanceFilter,
   ]);
 
   return filteredAnalysis;

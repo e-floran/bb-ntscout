@@ -58,6 +58,7 @@ export default function IndexPage() {
     useState("all");
   const [selectedDefensiveStrategy, setSelectedDefensiveStrategy] =
     useState("all");
+  const [excludeIrrelevantGames, setExcludeIrrelevantGames] = useState(true);
 
   // Raw match data for filtering
   const [rawMatchData, setRawMatchData] = useState<any>(null);
@@ -90,7 +91,8 @@ export default function IndexPage() {
     analysis,
     rawMatchData,
     selectedOffensiveStrategy,
-    selectedDefensiveStrategy
+    selectedDefensiveStrategy,
+    excludeIrrelevantGames
   );
 
   // Simulate loading steps
@@ -295,6 +297,8 @@ export default function IndexPage() {
               selectedDefensiveStrategy={selectedDefensiveStrategy}
               onOffensiveStrategyChange={setSelectedOffensiveStrategy}
               onDefensiveStrategyChange={setSelectedDefensiveStrategy}
+              excludeIrrelevantGames={excludeIrrelevantGames}
+              onExcludeIrrelevantGamesChange={setExcludeIrrelevantGames}
             />
 
             <CollapsibleSection

@@ -34,6 +34,8 @@ interface StrategyFiltersProps {
   selectedDefensiveStrategy: string;
   onOffensiveStrategyChange: (strategy: string) => void;
   onDefensiveStrategyChange: (strategy: string) => void;
+  excludeIrrelevantGames: boolean;
+  onExcludeIrrelevantGamesChange: (exclude: boolean) => void;
 }
 
 export function StrategyFilters({
@@ -41,6 +43,8 @@ export function StrategyFilters({
   selectedDefensiveStrategy,
   onOffensiveStrategyChange,
   onDefensiveStrategyChange,
+  excludeIrrelevantGames,
+  onExcludeIrrelevantGamesChange,
 }: StrategyFiltersProps) {
   const hasActiveFilters =
     selectedOffensiveStrategy !== "all" || selectedDefensiveStrategy !== "all";
@@ -130,6 +134,19 @@ export function StrategyFilters({
             ))}
           </select>
         </div>
+      </div>
+      <div className="filter-group">
+        <label className="checkbox-label">
+          <input
+            type="checkbox"
+            checked={excludeIrrelevantGames}
+            onChange={(e) => onExcludeIrrelevantGamesChange(e.target.checked)}
+            className="checkbox-input"
+          />
+          <span className="checkbox-text">
+            Exclure les matchs non pertinents (amicaux et prolongations)
+          </span>
+        </label>
       </div>
       {hasActiveFilters && (
         <div

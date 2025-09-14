@@ -728,6 +728,8 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
       efficiency: matchEfficiency,
       playerStats: matchPlayerStats,
       gdp: matchGdp,
+      type: matchNode?.$ ? matchNode.$.type : undefined,
+      partials: teamNode?.score?.$ ? teamNode.score.$.partials : undefined,
     });
 
     // Store recent game data (all games, not limited)
