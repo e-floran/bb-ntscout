@@ -1,24 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { users } from "@/app/utils/users";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
-import { User } from "@/app/types/mainTypes";
-
-// In-memory storage for user credentials during their session
-const userCredentials = new Map<
-  string,
-  { login: string; password: string; timestamp: number; user: User }
->();
-
-// Clean up expired credentials (older than 4 hours)
-const CREDENTIAL_EXPIRY = 4 * 60 * 60 * 1000; // 4 hours in milliseconds
-function cleanupExpiredCredentials() {
-  const now = Date.now();
-  for (const [sessionId, data] of userCredentials.entries()) {
-    if (now - data.timestamp > CREDENTIAL_EXPIRY) {
-      userCredentials.delete(sessionId);
-    }
-  }
-}
+import {
+  userCredentials,
+  cleanupExpiredCredentials,
+} from "@/app/utils/userCredentials";
 
 // Utility to extract cookie pairs from Set-Cookie header(s)
 function extractCookiePairs(setCookieHeader: string): string {
@@ -104,6 +90,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "API login failed" }, { status: 500 });
   }
 }
-
-// Export functions for use in other routes
-export { userCredentials, cleanupExpiredCredentials };

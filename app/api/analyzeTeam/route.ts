@@ -10,7 +10,7 @@ import { enrichPlayersWithHistory } from "@/app/utils/playerHistoryUtils";
 import {
   userCredentials,
   cleanupExpiredCredentials,
-} from "@/app/api/login/route";
+} from "@/app/utils/userCredentials";
 import { User } from "@/app/types/mainTypes";
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
