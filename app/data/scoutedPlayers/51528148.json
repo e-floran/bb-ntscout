@@ -1,0 +1,31 @@
+{
+  "id": 51528148,
+  "firstName": "Félix",
+  "lastName": "Flores",
+  "countryId": 40,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 175407,
+      "tce": 57,
+      "tci": 65,
+      "tc": 122,
+      "gs": 8,
+      "js": 9,
+      "jr": 9,
+      "od": 7,
+      "ha": 10,
+      "dr": 12,
+      "pa": 10,
+      "is": 17,
+      "id": 18,
+      "rb": 17,
+      "sb": 13,
+      "st": 2,
+      "ft": 4,
+      "ex": 12,
+      "scoutedAt": "2025-09-19T15:09:53.081Z"
+    }
+  ]
+}

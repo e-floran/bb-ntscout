@@ -1,0 +1,31 @@
+{
+  "id": 49270060,
+  "firstName": "Joaquim",
+  "lastName": "Bravo",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 175453,
+      "tce": 107,
+      "tci": 31,
+      "tc": 138,
+      "gs": 9,
+      "js": 21,
+      "jr": 14,
+      "od": 20,
+      "ha": 19,
+      "dr": 19,
+      "pa": 14,
+      "is": 10,
+      "id": 8,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 9,
+      "ex": 17,
+      "scoutedAt": "2025-09-19T15:09:54.770Z"
+    }
+  ]
+}

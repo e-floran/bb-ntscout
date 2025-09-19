@@ -1,0 +1,31 @@
+{
+  "id": 53810962,
+  "firstName": "Ivan",
+  "lastName": "Andrukhovich",
+  "countryId": 20,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 37553,
+      "tce": 86,
+      "tci": 24,
+      "tc": 110,
+      "gs": 7,
+      "js": 20,
+      "jr": 12,
+      "od": 16,
+      "ha": 14,
+      "dr": 15,
+      "pa": 9,
+      "is": 8,
+      "id": 8,
+      "rb": 3,
+      "sb": 5,
+      "st": 4,
+      "ft": 9,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:44.063Z"
+    }
+  ]
+}

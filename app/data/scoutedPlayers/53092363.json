@@ -1,0 +1,31 @@
+{
+  "id": 53092363,
+  "firstName": "Sébastien",
+  "lastName": "Clouard",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 45850,
+      "tce": 91,
+      "tci": 32,
+      "tc": 123,
+      "gs": 9,
+      "js": 15,
+      "jr": 11,
+      "od": 14,
+      "ha": 21,
+      "dr": 20,
+      "pa": 10,
+      "is": 16,
+      "id": 8,
+      "rb": 3,
+      "sb": 5,
+      "st": 4,
+      "ft": 7,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:58.239Z"
+    }
+  ]
+}

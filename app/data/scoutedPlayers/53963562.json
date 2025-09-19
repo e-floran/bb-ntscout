@@ -1,0 +1,31 @@
+{
+  "id": 53963562,
+  "firstName": "Steven",
+  "lastName": "Lutz",
+  "countryId": 1,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 31372,
+      "tce": 84,
+      "tci": 28,
+      "tc": 112,
+      "gs": 9,
+      "js": 17,
+      "jr": 12,
+      "od": 16,
+      "ha": 15,
+      "dr": 14,
+      "pa": 10,
+      "is": 8,
+      "id": 9,
+      "rb": 4,
+      "sb": 7,
+      "st": 4,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:40.613Z"
+    }
+  ]
+}

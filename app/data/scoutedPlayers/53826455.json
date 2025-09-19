@@ -1,0 +1,31 @@
+{
+  "id": 53826455,
+  "firstName": "Manuel",
+  "lastName": "Mallarino",
+  "countryId": 22,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 7050,
+      "tce": 55,
+      "tci": 19,
+      "tc": 74,
+      "gs": 9,
+      "js": 11,
+      "jr": 8,
+      "od": 10,
+      "ha": 10,
+      "dr": 11,
+      "pa": 5,
+      "is": 5,
+      "id": 6,
+      "rb": 5,
+      "sb": 3,
+      "st": 5,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:48.338Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54521356,
+  "firstName": "Mikko",
+  "lastName": "Haanperä",
+  "countryId": 69,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5925,
+      "tce": 48,
+      "tci": 37,
+      "tc": 85,
+      "gs": 8,
+      "js": 6,
+      "jr": 10,
+      "od": 9,
+      "ha": 7,
+      "dr": 10,
+      "pa": 6,
+      "is": 9,
+      "id": 14,
+      "rb": 8,
+      "sb": 6,
+      "st": 3,
+      "ft": 12,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:47.018Z"
+    }
+  ]
+}

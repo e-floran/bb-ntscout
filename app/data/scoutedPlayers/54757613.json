@@ -1,0 +1,31 @@
+{
+  "id": 54757613,
+  "firstName": "Vedran",
+  "lastName": "Orović",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2707,
+      "tce": 37,
+      "tci": 20,
+      "tc": 57,
+      "gs": 8,
+      "js": 9,
+      "jr": 7,
+      "od": 6,
+      "ha": 4,
+      "dr": 8,
+      "pa": 3,
+      "is": 2,
+      "id": 3,
+      "rb": 7,
+      "sb": 8,
+      "st": 5,
+      "ft": 2,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:47.714Z"
+    }
+  ]
+}

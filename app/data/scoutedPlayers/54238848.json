@@ -1,0 +1,31 @@
+{
+  "id": 54238848,
+  "firstName": "Christopher",
+  "lastName": "Vidal",
+  "countryId": 54,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15725,
+      "tce": 63,
+      "tci": 39,
+      "tc": 102,
+      "gs": 6,
+      "js": 9,
+      "jr": 5,
+      "od": 13,
+      "ha": 13,
+      "dr": 14,
+      "pa": 9,
+      "is": 8,
+      "id": 13,
+      "rb": 9,
+      "sb": 9,
+      "st": 4,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:43.470Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51663444,
+  "firstName": "Doriano",
+  "lastName": "Tschudi",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 81357,
+      "tce": 91,
+      "tci": 50,
+      "tc": 141,
+      "gs": 8,
+      "js": 14,
+      "jr": 10,
+      "od": 19,
+      "ha": 18,
+      "dr": 19,
+      "pa": 11,
+      "is": 21,
+      "id": 14,
+      "rb": 7,
+      "sb": 8,
+      "st": 9,
+      "ft": 13,
+      "ex": 10,
+      "scoutedAt": "2025-09-19T15:09:54.771Z"
+    }
+  ]
+}

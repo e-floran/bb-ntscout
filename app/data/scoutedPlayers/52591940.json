@@ -1,0 +1,31 @@
+{
+  "id": 52591940,
+  "firstName": "Allen",
+  "lastName": "Bruce",
+  "countryId": 64,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 67682,
+      "tce": 75,
+      "tci": 50,
+      "tc": 125,
+      "gs": 8,
+      "js": 17,
+      "jr": 10,
+      "od": 15,
+      "ha": 11,
+      "dr": 11,
+      "pa": 11,
+      "is": 16,
+      "id": 16,
+      "rb": 7,
+      "sb": 11,
+      "st": 3,
+      "ft": 23,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:57.682Z"
+    }
+  ]
+}

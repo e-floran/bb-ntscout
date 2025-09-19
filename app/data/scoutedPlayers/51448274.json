@@ -1,0 +1,31 @@
+{
+  "id": 51448274,
+  "firstName": "Vladimir",
+  "lastName": "Ðuranović",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 81253,
+      "tce": 71,
+      "tci": 52,
+      "tc": 123,
+      "gs": 6,
+      "js": 14,
+      "jr": 8,
+      "od": 7,
+      "ha": 18,
+      "dr": 19,
+      "pa": 5,
+      "is": 16,
+      "id": 16,
+      "rb": 11,
+      "sb": 9,
+      "st": 7,
+      "ft": 19,
+      "ex": 11,
+      "scoutedAt": "2025-09-19T15:09:53.079Z"
+    }
+  ]
+}

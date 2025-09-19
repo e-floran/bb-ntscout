@@ -1,0 +1,31 @@
+{
+  "id": 54190058,
+  "firstName": "Maciej",
+  "lastName": "Weinert",
+  "countryId": 58,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 22965,
+      "tce": 35,
+      "tci": 51,
+      "tc": 86,
+      "gs": 7,
+      "js": 3,
+      "jr": 5,
+      "od": 10,
+      "ha": 3,
+      "dr": 6,
+      "pa": 8,
+      "is": 12,
+      "id": 15,
+      "rb": 12,
+      "sb": 12,
+      "st": 3,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:40.058Z"
+    }
+  ]
+}

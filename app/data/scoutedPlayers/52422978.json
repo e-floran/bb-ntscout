@@ -1,0 +1,31 @@
+{
+  "id": 52422978,
+  "firstName": "Julien",
+  "lastName": "Ligny",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 26964,
+      "tce": 66,
+      "tci": 39,
+      "tc": 105,
+      "gs": 8,
+      "js": 16,
+      "jr": 10,
+      "od": 9,
+      "ha": 11,
+      "dr": 13,
+      "pa": 7,
+      "is": 13,
+      "id": 12,
+      "rb": 4,
+      "sb": 10,
+      "st": 9,
+      "ft": 4,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:57.682Z"
+    }
+  ]
+}

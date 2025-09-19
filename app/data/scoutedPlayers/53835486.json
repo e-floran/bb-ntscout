@@ -1,0 +1,31 @@
+{
+  "id": 53835486,
+  "firstName": "Stevan",
+  "lastName": "Borovinić",
+  "countryId": 29,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 16692,
+      "tce": 66,
+      "tci": 28,
+      "tc": 94,
+      "gs": 9,
+      "js": 15,
+      "jr": 7,
+      "od": 10,
+      "ha": 13,
+      "dr": 12,
+      "pa": 9,
+      "is": 7,
+      "id": 7,
+      "rb": 9,
+      "sb": 5,
+      "st": 4,
+      "ft": 11,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:40.612Z"
+    }
+  ]
+}

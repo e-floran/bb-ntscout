@@ -1,0 +1,31 @@
+{
+  "id": 54046508,
+  "firstName": "Antonio",
+  "lastName": "Cantone",
+  "countryId": 10,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 14160,
+      "tce": 22,
+      "tci": 42,
+      "tc": 64,
+      "gs": 7,
+      "js": 3,
+      "jr": 10,
+      "od": 2,
+      "ha": 1,
+      "dr": 2,
+      "pa": 4,
+      "is": 10,
+      "id": 9,
+      "rb": 12,
+      "sb": 11,
+      "st": 9,
+      "ft": 5,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:40.614Z"
+    }
+  ]
+}

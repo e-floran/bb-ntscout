@@ -1,0 +1,31 @@
+{
+  "id": 53846297,
+  "firstName": "Jaromír",
+  "lastName": "Hnilička",
+  "countryId": 37,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 30305,
+      "tce": 76,
+      "tci": 34,
+      "tc": 110,
+      "gs": 7,
+      "js": 14,
+      "jr": 10,
+      "od": 13,
+      "ha": 13,
+      "dr": 14,
+      "pa": 12,
+      "is": 8,
+      "id": 9,
+      "rb": 6,
+      "sb": 11,
+      "st": 4,
+      "ft": 16,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:56.568Z"
+    }
+  ]
+}

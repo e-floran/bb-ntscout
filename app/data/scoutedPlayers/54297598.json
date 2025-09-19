@@ -1,0 +1,31 @@
+{
+  "id": 54297598,
+  "firstName": "Vito",
+  "lastName": "Vidallé",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7439,
+      "tce": 23,
+      "tci": 36,
+      "tc": 59,
+      "gs": 2,
+      "js": 5,
+      "jr": 5,
+      "od": 4,
+      "ha": 3,
+      "dr": 4,
+      "pa": 2,
+      "is": 9,
+      "id": 10,
+      "rb": 8,
+      "sb": 9,
+      "st": 2,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:47.712Z"
+    }
+  ]
+}

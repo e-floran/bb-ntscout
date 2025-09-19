@@ -1,0 +1,31 @@
+{
+  "id": 53768368,
+  "firstName": "Kostas",
+  "lastName": "Premetis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5356,
+      "tce": 49,
+      "tci": 31,
+      "tc": 80,
+      "gs": 9,
+      "js": 9,
+      "jr": 4,
+      "od": 9,
+      "ha": 13,
+      "dr": 12,
+      "pa": 2,
+      "is": 9,
+      "id": 8,
+      "rb": 8,
+      "sb": 6,
+      "st": 6,
+      "ft": 13,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:50.220Z"
+    }
+  ]
+}

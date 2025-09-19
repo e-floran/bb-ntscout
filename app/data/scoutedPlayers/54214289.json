@@ -1,0 +1,31 @@
+{
+  "id": 54214289,
+  "firstName": "Juhopekka",
+  "lastName": "Metsola",
+  "countryId": 69,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9045,
+      "tce": 29,
+      "tci": 34,
+      "tc": 63,
+      "gs": 3,
+      "js": 1,
+      "jr": 7,
+      "od": 3,
+      "ha": 9,
+      "dr": 5,
+      "pa": 4,
+      "is": 9,
+      "id": 10,
+      "rb": 9,
+      "sb": 6,
+      "st": 3,
+      "ft": 2,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:47.019Z"
+    }
+  ]
+}

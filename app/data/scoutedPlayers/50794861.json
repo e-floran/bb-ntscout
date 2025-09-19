@@ -1,0 +1,31 @@
+{
+  "id": 50794861,
+  "firstName": "Jeraldo",
+  "lastName": "Barainca",
+  "countryId": 21,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 182221,
+      "tce": 107,
+      "tci": 43,
+      "tc": 150,
+      "gs": 8,
+      "js": 20,
+      "jr": 14,
+      "od": 22,
+      "ha": 19,
+      "dr": 20,
+      "pa": 12,
+      "is": 20,
+      "id": 13,
+      "rb": 4,
+      "sb": 6,
+      "st": 4,
+      "ft": 31,
+      "ex": 15,
+      "scoutedAt": "2025-09-19T15:09:52.521Z"
+    }
+  ]
+}

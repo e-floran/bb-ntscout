@@ -1,0 +1,31 @@
+{
+  "id": 51485831,
+  "firstName": "Jarosław",
+  "lastName": "Kolendowicz",
+  "countryId": 58,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 143544,
+      "tce": 66,
+      "tci": 64,
+      "tc": 130,
+      "gs": 9,
+      "js": 11,
+      "jr": 6,
+      "od": 9,
+      "ha": 15,
+      "dr": 14,
+      "pa": 11,
+      "is": 15,
+      "id": 19,
+      "rb": 15,
+      "sb": 15,
+      "st": 9,
+      "ft": 17,
+      "ex": 10,
+      "scoutedAt": "2025-09-19T15:09:52.524Z"
+    }
+  ]
+}

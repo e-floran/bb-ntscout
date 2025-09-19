@@ -1,0 +1,31 @@
+{
+  "id": 52523019,
+  "firstName": "Eduard",
+  "lastName": "Seitse",
+  "countryId": 41,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 46791,
+      "tce": 92,
+      "tci": 38,
+      "tc": 130,
+      "gs": 9,
+      "js": 17,
+      "jr": 9,
+      "od": 18,
+      "ha": 19,
+      "dr": 20,
+      "pa": 9,
+      "is": 18,
+      "id": 12,
+      "rb": 4,
+      "sb": 4,
+      "st": 3,
+      "ft": 14,
+      "ex": 8,
+      "scoutedAt": "2025-09-19T15:09:58.815Z"
+    }
+  ]
+}

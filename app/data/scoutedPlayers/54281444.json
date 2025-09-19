@@ -1,0 +1,31 @@
+{
+  "id": 54281444,
+  "firstName": "Jaime",
+  "lastName": "Velázquez",
+  "countryId": 1,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 21516,
+      "tce": 60,
+      "tci": 37,
+      "tc": 97,
+      "gs": 9,
+      "js": 14,
+      "jr": 9,
+      "od": 10,
+      "ha": 9,
+      "dr": 13,
+      "pa": 5,
+      "is": 6,
+      "id": 10,
+      "rb": 12,
+      "sb": 9,
+      "st": 3,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:44.066Z"
+    }
+  ]
+}

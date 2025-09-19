@@ -1,0 +1,31 @@
+{
+  "id": 53714992,
+  "firstName": "Abel",
+  "lastName": "Desfrán",
+  "countryId": 7,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13572,
+      "tce": 36,
+      "tci": 37,
+      "tc": 73,
+      "gs": 3,
+      "js": 10,
+      "jr": 6,
+      "od": 1,
+      "ha": 6,
+      "dr": 6,
+      "pa": 7,
+      "is": 13,
+      "id": 7,
+      "rb": 9,
+      "sb": 8,
+      "st": 6,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:41.729Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54791474,
+  "firstName": "Ziedonis",
+  "lastName": "Bukels",
+  "countryId": 46,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3258,
+      "tce": 37,
+      "tci": 18,
+      "tc": 55,
+      "gs": 8,
+      "js": 6,
+      "jr": 3,
+      "od": 8,
+      "ha": 7,
+      "dr": 5,
+      "pa": 8,
+      "is": 4,
+      "id": 1,
+      "rb": 5,
+      "sb": 8,
+      "st": 5,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:47.712Z"
+    }
+  ]
+}

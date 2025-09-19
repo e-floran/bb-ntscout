@@ -1,0 +1,31 @@
+{
+  "id": 54464324,
+  "firstName": "Patrik",
+  "lastName": "Mikeš",
+  "countryId": 37,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10073,
+      "tce": 39,
+      "tci": 32,
+      "tc": 71,
+      "gs": 7,
+      "js": 9,
+      "jr": 6,
+      "od": 3,
+      "ha": 7,
+      "dr": 4,
+      "pa": 10,
+      "is": 9,
+      "id": 9,
+      "rb": 10,
+      "sb": 4,
+      "st": 7,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:41.733Z"
+    }
+  ]
+}

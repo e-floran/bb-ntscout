@@ -1,0 +1,31 @@
+{
+  "id": 49197830,
+  "firstName": "Sören",
+  "lastName": "Roes",
+  "countryId": 8,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 242845,
+      "tce": 108,
+      "tci": 58,
+      "tc": 166,
+      "gs": 8,
+      "js": 18,
+      "jr": 14,
+      "od": 21,
+      "ha": 21,
+      "dr": 21,
+      "pa": 13,
+      "is": 20,
+      "id": 17,
+      "rb": 10,
+      "sb": 11,
+      "st": 9,
+      "ft": 26,
+      "ex": 21,
+      "scoutedAt": "2025-09-19T15:09:54.770Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52217716,
+  "firstName": "Dorin",
+  "lastName": "Lupu",
+  "countryId": 86,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 70362,
+      "tce": 95,
+      "tci": 38,
+      "tc": 133,
+      "gs": 9,
+      "js": 18,
+      "jr": 11,
+      "od": 19,
+      "ha": 19,
+      "dr": 20,
+      "pa": 8,
+      "is": 15,
+      "id": 10,
+      "rb": 7,
+      "sb": 6,
+      "st": 5,
+      "ft": 6,
+      "ex": 10,
+      "scoutedAt": "2025-09-19T15:09:58.239Z"
+    }
+  ]
+}

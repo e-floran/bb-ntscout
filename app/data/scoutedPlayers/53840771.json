@@ -1,0 +1,31 @@
+{
+  "id": 53840771,
+  "firstName": "Smajo",
+  "lastName": "Papac",
+  "countryId": 35,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15341,
+      "tce": 70,
+      "tci": 15,
+      "tc": 85,
+      "gs": 7,
+      "js": 13,
+      "jr": 12,
+      "od": 13,
+      "ha": 12,
+      "dr": 11,
+      "pa": 9,
+      "is": 3,
+      "id": 4,
+      "rb": 4,
+      "sb": 4,
+      "st": 5,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:43.467Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54217991,
+  "firstName": "Du",
+  "lastName": "Cheng Che",
+  "countryId": 70,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 24616,
+      "tce": 29,
+      "tci": 50,
+      "tc": 79,
+      "gs": 9,
+      "js": 6,
+      "jr": 2,
+      "od": 8,
+      "ha": 3,
+      "dr": 2,
+      "pa": 8,
+      "is": 6,
+      "id": 15,
+      "rb": 12,
+      "sb": 17,
+      "st": 2,
+      "ft": 5,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:41.731Z"
+    }
+  ]
+}

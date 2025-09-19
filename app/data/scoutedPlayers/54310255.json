@@ -1,0 +1,31 @@
+{
+  "id": 54310255,
+  "firstName": "Tan",
+  "lastName": "Bangfa",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 11872,
+      "tce": 44,
+      "tci": 44,
+      "tc": 88,
+      "gs": 9,
+      "js": 5,
+      "jr": 9,
+      "od": 10,
+      "ha": 7,
+      "dr": 7,
+      "pa": 6,
+      "is": 9,
+      "id": 14,
+      "rb": 9,
+      "sb": 12,
+      "st": 1,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:41.171Z"
+    }
+  ]
+}

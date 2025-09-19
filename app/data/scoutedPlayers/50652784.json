@@ -1,0 +1,31 @@
+{
+  "id": 50652784,
+  "firstName": "Eduardo",
+  "lastName": "Maestro",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 167622,
+      "tce": 98,
+      "tci": 51,
+      "tc": 149,
+      "gs": 9,
+      "js": 18,
+      "jr": 13,
+      "od": 17,
+      "ha": 18,
+      "dr": 19,
+      "pa": 13,
+      "is": 16,
+      "id": 15,
+      "rb": 11,
+      "sb": 9,
+      "st": 6,
+      "ft": 27,
+      "ex": 14,
+      "scoutedAt": "2025-09-19T15:09:54.202Z"
+    }
+  ]
+}

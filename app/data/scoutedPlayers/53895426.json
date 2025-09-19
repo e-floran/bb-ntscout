@@ -1,0 +1,31 @@
+{
+  "id": 53895426,
+  "firstName": "Kristesia",
+  "lastName": "Nikoladze",
+  "countryId": 62,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17189,
+      "tce": 40,
+      "tci": 44,
+      "tc": 84,
+      "gs": 7,
+      "js": 11,
+      "jr": 4,
+      "od": 7,
+      "ha": 5,
+      "dr": 7,
+      "pa": 6,
+      "is": 14,
+      "id": 11,
+      "rb": 10,
+      "sb": 9,
+      "st": 4,
+      "ft": 1,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:42.850Z"
+    }
+  ]
+}

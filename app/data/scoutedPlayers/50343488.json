@@ -1,0 +1,31 @@
+{
+  "id": 50343488,
+  "firstName": "Long",
+  "lastName": "Yilian",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 214244,
+      "tce": 97,
+      "tci": 55,
+      "tc": 152,
+      "gs": 7,
+      "js": 19,
+      "jr": 10,
+      "od": 19,
+      "ha": 19,
+      "dr": 19,
+      "pa": 11,
+      "is": 20,
+      "id": 19,
+      "rb": 9,
+      "sb": 7,
+      "st": 8,
+      "ft": 14,
+      "ex": 15,
+      "scoutedAt": "2025-09-19T15:09:54.204Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54045622,
+  "firstName": "Giuliano",
+  "lastName": "Madeo",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12355,
+      "tce": 27,
+      "tci": 43,
+      "tc": 70,
+      "gs": 8,
+      "js": 2,
+      "jr": 8,
+      "od": 5,
+      "ha": 6,
+      "dr": 4,
+      "pa": 2,
+      "is": 12,
+      "id": 12,
+      "rb": 8,
+      "sb": 11,
+      "st": 9,
+      "ft": 4,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:41.171Z"
+    }
+  ]
+}

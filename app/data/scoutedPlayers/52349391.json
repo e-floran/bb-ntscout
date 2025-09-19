@@ -1,0 +1,31 @@
+{
+  "id": 52349391,
+  "firstName": "Emiliano José",
+  "lastName": "Garfagnoli",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 34881,
+      "tce": 60,
+      "tci": 48,
+      "tc": 108,
+      "gs": 9,
+      "js": 9,
+      "jr": 7,
+      "od": 17,
+      "ha": 9,
+      "dr": 10,
+      "pa": 8,
+      "is": 13,
+      "id": 20,
+      "rb": 4,
+      "sb": 11,
+      "st": 2,
+      "ft": 16,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:57.682Z"
+    }
+  ]
+}

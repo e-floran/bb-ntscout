@@ -1,0 +1,31 @@
+{
+  "id": 54823298,
+  "firstName": "Nezam",
+  "lastName": "Ramezani",
+  "countryId": 59,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 5444,
+      "tce": 45,
+      "tci": 17,
+      "tc": 62,
+      "gs": 8,
+      "js": 10,
+      "jr": 10,
+      "od": 7,
+      "ha": 5,
+      "dr": 10,
+      "pa": 3,
+      "is": 7,
+      "id": 1,
+      "rb": 2,
+      "sb": 7,
+      "st": 5,
+      "ft": 8,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:50.771Z"
+    }
+  ]
+}

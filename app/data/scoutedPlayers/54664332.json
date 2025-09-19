@@ -1,0 +1,31 @@
+{
+  "id": 54664332,
+  "firstName": "Samuele",
+  "lastName": "Corigliano",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3105,
+      "tce": 38,
+      "tci": 20,
+      "tc": 58,
+      "gs": 8,
+      "js": 8,
+      "jr": 7,
+      "od": 2,
+      "ha": 6,
+      "dr": 9,
+      "pa": 6,
+      "is": 6,
+      "id": 7,
+      "rb": 4,
+      "sb": 3,
+      "st": 8,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:50.222Z"
+    }
+  ]
+}

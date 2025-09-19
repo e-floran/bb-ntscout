@@ -1,0 +1,31 @@
+{
+  "id": 54663946,
+  "firstName": "Attilio",
+  "lastName": "Barilli",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3223,
+      "tce": 43,
+      "tci": 21,
+      "tc": 64,
+      "gs": 8,
+      "js": 6,
+      "jr": 4,
+      "od": 8,
+      "ha": 10,
+      "dr": 8,
+      "pa": 7,
+      "is": 6,
+      "id": 5,
+      "rb": 3,
+      "sb": 7,
+      "st": 5,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:50.219Z"
+    }
+  ]
+}

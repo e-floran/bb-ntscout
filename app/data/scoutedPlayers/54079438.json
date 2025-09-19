@@ -1,0 +1,31 @@
+{
+  "id": 54079438,
+  "firstName": "Spiros",
+  "lastName": "Preftokis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4146,
+      "tce": 30,
+      "tci": 25,
+      "tc": 55,
+      "gs": 7,
+      "js": 2,
+      "jr": 6,
+      "od": 6,
+      "ha": 7,
+      "dr": 2,
+      "pa": 7,
+      "is": 8,
+      "id": 7,
+      "rb": 7,
+      "sb": 3,
+      "st": 5,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:49.469Z"
+    }
+  ]
+}

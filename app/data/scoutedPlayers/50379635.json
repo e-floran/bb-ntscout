@@ -1,0 +1,31 @@
+{
+  "id": 50379635,
+  "firstName": "Jannick",
+  "lastName": "Sembtner",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 140037,
+      "tce": 101,
+      "tci": 49,
+      "tc": 150,
+      "gs": 9,
+      "js": 19,
+      "jr": 10,
+      "od": 15,
+      "ha": 21,
+      "dr": 23,
+      "pa": 13,
+      "is": 18,
+      "id": 15,
+      "rb": 9,
+      "sb": 7,
+      "st": 9,
+      "ft": 22,
+      "ex": 13,
+      "scoutedAt": "2025-09-19T15:09:53.080Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53664481,
+  "firstName": "Andrea",
+  "lastName": "Evangelisti",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 29719,
+      "tce": 44,
+      "tci": 49,
+      "tc": 93,
+      "gs": 9,
+      "js": 10,
+      "jr": 6,
+      "od": 4,
+      "ha": 7,
+      "dr": 10,
+      "pa": 7,
+      "is": 13,
+      "id": 12,
+      "rb": 16,
+      "sb": 8,
+      "st": 3,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:41.171Z"
+    }
+  ]
+}

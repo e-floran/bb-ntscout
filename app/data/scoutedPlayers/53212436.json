@@ -1,0 +1,31 @@
+{
+  "id": 53212436,
+  "firstName": "Marcin",
+  "lastName": "Sciabisz",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 60852,
+      "tce": 99,
+      "tci": 31,
+      "tc": 130,
+      "gs": 9,
+      "js": 17,
+      "jr": 12,
+      "od": 20,
+      "ha": 19,
+      "dr": 20,
+      "pa": 11,
+      "is": 12,
+      "id": 8,
+      "rb": 6,
+      "sb": 5,
+      "st": 4,
+      "ft": 12,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:57.678Z"
+    }
+  ]
+}

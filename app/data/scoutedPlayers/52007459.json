@@ -1,0 +1,31 @@
+{
+  "id": 52007459,
+  "firstName": "Quintí",
+  "lastName": "Bantolrà",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 60741,
+      "tce": 97,
+      "tci": 25,
+      "tc": 122,
+      "gs": 8,
+      "js": 20,
+      "jr": 13,
+      "od": 16,
+      "ha": 18,
+      "dr": 19,
+      "pa": 11,
+      "is": 11,
+      "id": 7,
+      "rb": 4,
+      "sb": 3,
+      "st": 3,
+      "ft": 10,
+      "ex": 8,
+      "scoutedAt": "2025-09-19T15:09:58.236Z"
+    }
+  ]
+}

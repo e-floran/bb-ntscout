@@ -1,0 +1,31 @@
+{
+  "id": 51591552,
+  "firstName": "Víctor",
+  "lastName": "Ruiz",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 45227,
+      "tce": 92,
+      "tci": 30,
+      "tc": 122,
+      "gs": 6,
+      "js": 21,
+      "jr": 14,
+      "od": 6,
+      "ha": 21,
+      "dr": 21,
+      "pa": 9,
+      "is": 17,
+      "id": 7,
+      "rb": 3,
+      "sb": 3,
+      "st": 7,
+      "ft": 17,
+      "ex": 9,
+      "scoutedAt": "2025-09-19T15:09:53.081Z"
+    }
+  ]
+}

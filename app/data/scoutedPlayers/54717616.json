@@ -1,0 +1,31 @@
+{
+  "id": 54717616,
+  "firstName": "Dougie",
+  "lastName": "Morant",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 7838,
+      "tce": 44,
+      "tci": 30,
+      "tc": 74,
+      "gs": 8,
+      "js": 10,
+      "jr": 9,
+      "od": 6,
+      "ha": 5,
+      "dr": 10,
+      "pa": 4,
+      "is": 3,
+      "id": 9,
+      "rb": 10,
+      "sb": 8,
+      "st": 5,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:46.277Z"
+    }
+  ]
+}

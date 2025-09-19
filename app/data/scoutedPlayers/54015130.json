@@ -1,0 +1,31 @@
+{
+  "id": 54015130,
+  "firstName": "Peng",
+  "lastName": "Dizong",
+  "countryId": 5,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15431,
+      "tce": 42,
+      "tci": 39,
+      "tc": 81,
+      "gs": 9,
+      "js": 6,
+      "jr": 7,
+      "od": 3,
+      "ha": 10,
+      "dr": 8,
+      "pa": 8,
+      "is": 10,
+      "id": 10,
+      "rb": 14,
+      "sb": 5,
+      "st": 8,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:41.730Z"
+    }
+  ]
+}

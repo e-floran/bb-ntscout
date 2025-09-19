@@ -1,0 +1,31 @@
+{
+  "id": 53251747,
+  "firstName": "Irakliy",
+  "lastName": "Milyushchenko",
+  "countryId": 85,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 14425,
+      "tce": 64,
+      "tci": 36,
+      "tc": 100,
+      "gs": 8,
+      "js": 11,
+      "jr": 10,
+      "od": 12,
+      "ha": 11,
+      "dr": 11,
+      "pa": 9,
+      "is": 11,
+      "id": 9,
+      "rb": 10,
+      "sb": 6,
+      "st": 4,
+      "ft": 12,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:58.817Z"
+    }
+  ]
+}

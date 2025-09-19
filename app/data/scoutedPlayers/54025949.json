@@ -1,0 +1,31 @@
+{
+  "id": 54025949,
+  "firstName": "Zipiro",
+  "lastName": "Izaurralde",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18128,
+      "tce": 48,
+      "tci": 53,
+      "tc": 101,
+      "gs": 8,
+      "js": 5,
+      "jr": 8,
+      "od": 5,
+      "ha": 11,
+      "dr": 9,
+      "pa": 10,
+      "is": 6,
+      "id": 17,
+      "rb": 11,
+      "sb": 19,
+      "st": 3,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:41.171Z"
+    }
+  ]
+}

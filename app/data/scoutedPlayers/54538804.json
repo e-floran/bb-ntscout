@@ -1,0 +1,31 @@
+{
+  "id": 54538804,
+  "firstName": "Lásaro",
+  "lastName": "Magurno",
+  "countryId": 34,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5388,
+      "tce": 35,
+      "tci": 33,
+      "tc": 68,
+      "gs": 8,
+      "js": 6,
+      "jr": 5,
+      "od": 2,
+      "ha": 9,
+      "dr": 8,
+      "pa": 5,
+      "is": 4,
+      "id": 12,
+      "rb": 11,
+      "sb": 6,
+      "st": 3,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:50.219Z"
+    }
+  ]
+}

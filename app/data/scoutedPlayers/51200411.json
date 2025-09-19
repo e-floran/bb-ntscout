@@ -1,0 +1,31 @@
+{
+  "id": 51200411,
+  "firstName": "Elías",
+  "lastName": "Fontes",
+  "countryId": 73,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 153347,
+      "tce": 105,
+      "tci": 47,
+      "tc": 152,
+      "gs": 8,
+      "js": 20,
+      "jr": 13,
+      "od": 21,
+      "ha": 19,
+      "dr": 21,
+      "pa": 11,
+      "is": 18,
+      "id": 16,
+      "rb": 5,
+      "sb": 8,
+      "st": 5,
+      "ft": 8,
+      "ex": 13,
+      "scoutedAt": "2025-09-19T15:09:53.652Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54852797,
+  "firstName": "Mauro",
+  "lastName": "Massarenti",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4708,
+      "tce": 42,
+      "tci": 25,
+      "tc": 67,
+      "gs": 9,
+      "js": 12,
+      "jr": 6,
+      "od": 8,
+      "ha": 5,
+      "dr": 7,
+      "pa": 4,
+      "is": 9,
+      "id": 7,
+      "rb": 3,
+      "sb": 6,
+      "st": 7,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:49.468Z"
+    }
+  ]
+}

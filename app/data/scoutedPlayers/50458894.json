@@ -1,0 +1,31 @@
+{
+  "id": 50458894,
+  "firstName": "Povilas",
+  "lastName": "Viktorovas",
+  "countryId": 20,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 244113,
+      "tce": 94,
+      "tci": 44,
+      "tc": 138,
+      "gs": 8,
+      "js": 22,
+      "jr": 12,
+      "od": 21,
+      "ha": 16,
+      "dr": 16,
+      "pa": 7,
+      "is": 19,
+      "id": 13,
+      "rb": 7,
+      "sb": 5,
+      "st": 6,
+      "ft": 30,
+      "ex": 15,
+      "scoutedAt": "2025-09-19T15:09:54.201Z"
+    }
+  ]
+}

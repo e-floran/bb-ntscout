@@ -1,0 +1,31 @@
+{
+  "id": 54218033,
+  "firstName": "Zheng",
+  "lastName": "Kien",
+  "countryId": 70,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 22756,
+      "tce": 25,
+      "tci": 50,
+      "tc": 75,
+      "gs": 8,
+      "js": 6,
+      "jr": 5,
+      "od": 6,
+      "ha": 3,
+      "dr": 2,
+      "pa": 3,
+      "is": 13,
+      "id": 13,
+      "rb": 13,
+      "sb": 11,
+      "st": 1,
+      "ft": 13,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:41.168Z"
+    }
+  ]
+}

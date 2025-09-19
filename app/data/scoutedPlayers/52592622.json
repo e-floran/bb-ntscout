@@ -1,0 +1,31 @@
+{
+  "id": 52592622,
+  "firstName": "Thomas",
+  "lastName": "Flowers",
+  "countryId": 80,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 57608,
+      "tce": 58,
+      "tci": 48,
+      "tc": 106,
+      "gs": 7,
+      "js": 15,
+      "jr": 9,
+      "od": 10,
+      "ha": 9,
+      "dr": 8,
+      "pa": 7,
+      "is": 16,
+      "id": 16,
+      "rb": 7,
+      "sb": 9,
+      "st": 5,
+      "ft": 11,
+      "ex": 6,
+      "scoutedAt": "2025-09-19T15:09:58.239Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 50499877,
+  "firstName": "Keld",
+  "lastName": "Bøje Larsen",
+  "countryId": 39,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 258556,
+      "tce": 106,
+      "tci": 54,
+      "tc": 160,
+      "gs": 7,
+      "js": 20,
+      "jr": 13,
+      "od": 20,
+      "ha": 20,
+      "dr": 20,
+      "pa": 13,
+      "is": 19,
+      "id": 17,
+      "rb": 11,
+      "sb": 7,
+      "st": 6,
+      "ft": 10,
+      "ex": 19,
+      "scoutedAt": "2025-09-19T15:09:51.963Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 48950913,
+  "firstName": "Salvador Laurel",
+  "lastName": "Ricafuente",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 170821,
+      "tce": 97,
+      "tci": 37,
+      "tc": 134,
+      "gs": 8,
+      "js": 19,
+      "jr": 12,
+      "od": 19,
+      "ha": 17,
+      "dr": 18,
+      "pa": 12,
+      "is": 13,
+      "id": 11,
+      "rb": 7,
+      "sb": 6,
+      "st": 8,
+      "ft": 22,
+      "ex": 18,
+      "scoutedAt": "2025-09-19T15:09:52.524Z"
+    }
+  ]
+}

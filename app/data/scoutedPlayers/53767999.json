@@ -1,0 +1,31 @@
+{
+  "id": 53767999,
+  "firstName": "Konstantinos",
+  "lastName": "Chantzidis",
+  "countryId": 12,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12527,
+      "tce": 62,
+      "tci": 38,
+      "tc": 100,
+      "gs": 9,
+      "js": 11,
+      "jr": 7,
+      "od": 8,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 12,
+      "id": 9,
+      "rb": 9,
+      "sb": 8,
+      "st": 7,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:40.614Z"
+    }
+  ]
+}

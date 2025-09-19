@@ -1,0 +1,31 @@
+{
+  "id": 54122022,
+  "firstName": "Rimvaldas",
+  "lastName": "Sadas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11218,
+      "tce": 40,
+      "tci": 39,
+      "tc": 79,
+      "gs": 9,
+      "js": 9,
+      "jr": 3,
+      "od": 5,
+      "ha": 7,
+      "dr": 10,
+      "pa": 6,
+      "is": 10,
+      "id": 10,
+      "rb": 12,
+      "sb": 7,
+      "st": 2,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:42.849Z"
+    }
+  ]
+}

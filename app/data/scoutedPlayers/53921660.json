@@ -1,0 +1,31 @@
+{
+  "id": 53921660,
+  "firstName": "Prachuab",
+  "lastName": "Senamueng",
+  "countryId": 72,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12229,
+      "tce": 75,
+      "tci": 24,
+      "tc": 99,
+      "gs": 9,
+      "js": 16,
+      "jr": 7,
+      "od": 10,
+      "ha": 17,
+      "dr": 18,
+      "pa": 7,
+      "is": 8,
+      "id": 6,
+      "rb": 4,
+      "sb": 6,
+      "st": 3,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:40.058Z"
+    }
+  ]
+}

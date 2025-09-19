@@ -1,0 +1,31 @@
+{
+  "id": 54106658,
+  "firstName": "Folkert",
+  "lastName": "Fransman",
+  "countryId": 16,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 28252,
+      "tce": 77,
+      "tci": 30,
+      "tc": 107,
+      "gs": 9,
+      "js": 14,
+      "jr": 8,
+      "od": 16,
+      "ha": 13,
+      "dr": 14,
+      "pa": 12,
+      "is": 10,
+      "id": 6,
+      "rb": 9,
+      "sb": 5,
+      "st": 5,
+      "ft": 11,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:43.468Z"
+    }
+  ]
+}

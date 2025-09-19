@@ -1,0 +1,31 @@
+{
+  "id": 50662017,
+  "firstName": "He",
+  "lastName": "Chonglong",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 188582,
+      "tce": 84,
+      "tci": 58,
+      "tc": 142,
+      "gs": 9,
+      "js": 16,
+      "jr": 8,
+      "od": 14,
+      "ha": 17,
+      "dr": 17,
+      "pa": 12,
+      "is": 17,
+      "id": 16,
+      "rb": 16,
+      "sb": 9,
+      "st": 5,
+      "ft": 29,
+      "ex": 14,
+      "scoutedAt": "2025-09-19T15:09:53.648Z"
+    }
+  ]
+}

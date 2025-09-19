@@ -1,0 +1,31 @@
+{
+  "id": 50384595,
+  "firstName": "Mauro",
+  "lastName": "Oliveri",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 213906,
+      "tce": 106,
+      "tci": 54,
+      "tc": 160,
+      "gs": 9,
+      "js": 20,
+      "jr": 12,
+      "od": 22,
+      "ha": 21,
+      "dr": 20,
+      "pa": 11,
+      "is": 21,
+      "id": 18,
+      "rb": 5,
+      "sb": 10,
+      "st": 6,
+      "ft": 21,
+      "ex": 16,
+      "scoutedAt": "2025-09-19T15:09:53.647Z"
+    }
+  ]
+}

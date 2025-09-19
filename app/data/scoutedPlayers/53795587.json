@@ -1,0 +1,31 @@
+{
+  "id": 53795587,
+  "firstName": "Tjibbe",
+  "lastName": "Blokker",
+  "countryId": 16,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 7215,
+      "tce": 49,
+      "tci": 28,
+      "tc": 77,
+      "gs": 3,
+      "js": 11,
+      "jr": 7,
+      "od": 5,
+      "ha": 10,
+      "dr": 9,
+      "pa": 7,
+      "is": 7,
+      "id": 11,
+      "rb": 5,
+      "sb": 5,
+      "st": 6,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:47.016Z"
+    }
+  ]
+}

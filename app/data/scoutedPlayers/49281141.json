@@ -1,0 +1,31 @@
+{
+  "id": 49281141,
+  "firstName": "Aldvydas",
+  "lastName": "Liauksminas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 188593,
+      "tce": 103,
+      "tci": 48,
+      "tc": 151,
+      "gs": 9,
+      "js": 20,
+      "jr": 13,
+      "od": 20,
+      "ha": 18,
+      "dr": 19,
+      "pa": 13,
+      "is": 18,
+      "id": 13,
+      "rb": 9,
+      "sb": 8,
+      "st": 6,
+      "ft": 26,
+      "ex": 17,
+      "scoutedAt": "2025-09-19T15:09:51.964Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54542643,
+  "firstName": "Sirisak",
+  "lastName": "Surasena",
+  "countryId": 72,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10240,
+      "tce": 34,
+      "tci": 44,
+      "tc": 78,
+      "gs": 7,
+      "js": 6,
+      "jr": 1,
+      "od": 8,
+      "ha": 7,
+      "dr": 9,
+      "pa": 3,
+      "is": 14,
+      "id": 14,
+      "rb": 7,
+      "sb": 9,
+      "st": 1,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:40.060Z"
+    }
+  ]
+}

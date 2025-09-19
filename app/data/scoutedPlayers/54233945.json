@@ -1,0 +1,31 @@
+{
+  "id": 54233945,
+  "firstName": "Peter",
+  "lastName": "Jones",
+  "countryId": 81,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12600,
+      "tce": 64,
+      "tci": 34,
+      "tc": 98,
+      "gs": 8,
+      "js": 11,
+      "jr": 7,
+      "od": 13,
+      "ha": 11,
+      "dr": 13,
+      "pa": 9,
+      "is": 11,
+      "id": 10,
+      "rb": 7,
+      "sb": 6,
+      "st": 4,
+      "ft": 4,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:41.730Z"
+    }
+  ]
+}

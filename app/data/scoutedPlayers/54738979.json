@@ -1,0 +1,31 @@
+{
+  "id": 54738979,
+  "firstName": "Jovaras",
+  "lastName": "Liutvinas",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4211,
+      "tce": 35,
+      "tci": 26,
+      "tc": 61,
+      "gs": 7,
+      "js": 9,
+      "jr": 4,
+      "od": 3,
+      "ha": 9,
+      "dr": 5,
+      "pa": 5,
+      "is": 6,
+      "id": 3,
+      "rb": 9,
+      "sb": 8,
+      "st": 4,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:46.276Z"
+    }
+  ]
+}

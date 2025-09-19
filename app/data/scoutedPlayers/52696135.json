@@ -1,0 +1,31 @@
+{
+  "id": 52696135,
+  "firstName": "Wang",
+  "lastName": "Min",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 91437,
+      "tce": 102,
+      "tci": 29,
+      "tc": 131,
+      "gs": 9,
+      "js": 15,
+      "jr": 10,
+      "od": 18,
+      "ha": 23,
+      "dr": 22,
+      "pa": 14,
+      "is": 12,
+      "id": 7,
+      "rb": 2,
+      "sb": 8,
+      "st": 5,
+      "ft": 10,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:57.121Z"
+    }
+  ]
+}

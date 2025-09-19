@@ -1,0 +1,31 @@
+{
+  "id": 49961477,
+  "firstName": "Andraž",
+  "lastName": "Laba",
+  "countryId": 66,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 110665,
+      "tce": 97,
+      "tci": 23,
+      "tc": 120,
+      "gs": 8,
+      "js": 15,
+      "jr": 16,
+      "od": 17,
+      "ha": 16,
+      "dr": 17,
+      "pa": 16,
+      "is": 11,
+      "id": 7,
+      "rb": 1,
+      "sb": 4,
+      "st": 6,
+      "ft": 11,
+      "ex": 13,
+      "scoutedAt": "2025-09-19T15:09:55.317Z"
+    }
+  ]
+}

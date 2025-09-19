@@ -1,0 +1,31 @@
+{
+  "id": 53693084,
+  "firstName": "Wang",
+  "lastName": "Rufa",
+  "countryId": 5,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 20283,
+      "tce": 85,
+      "tci": 23,
+      "tc": 108,
+      "gs": 9,
+      "js": 16,
+      "jr": 5,
+      "od": 17,
+      "ha": 18,
+      "dr": 19,
+      "pa": 10,
+      "is": 7,
+      "id": 8,
+      "rb": 5,
+      "sb": 3,
+      "st": 2,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:42.851Z"
+    }
+  ]
+}

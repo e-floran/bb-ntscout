@@ -1,0 +1,31 @@
+{
+  "id": 49432653,
+  "firstName": "Albert",
+  "lastName": "May",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 64879,
+      "tce": 82,
+      "tci": 45,
+      "tc": 127,
+      "gs": 9,
+      "js": 15,
+      "jr": 9,
+      "od": 17,
+      "ha": 16,
+      "dr": 16,
+      "pa": 9,
+      "is": 14,
+      "id": 14,
+      "rb": 8,
+      "sb": 9,
+      "st": 2,
+      "ft": 10,
+      "ex": 15,
+      "scoutedAt": "2025-09-19T15:09:53.079Z"
+    }
+  ]
+}

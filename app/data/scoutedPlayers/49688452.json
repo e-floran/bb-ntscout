@@ -1,0 +1,31 @@
+{
+  "id": 49688452,
+  "firstName": "Romén",
+  "lastName": "Fernández Domínguez",
+  "countryId": 21,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 234665,
+      "tce": 94,
+      "tci": 63,
+      "tc": 157,
+      "gs": 9,
+      "js": 13,
+      "jr": 8,
+      "od": 20,
+      "ha": 19,
+      "dr": 19,
+      "pa": 15,
+      "is": 19,
+      "id": 18,
+      "rb": 14,
+      "sb": 12,
+      "st": 5,
+      "ft": 36,
+      "ex": 19,
+      "scoutedAt": "2025-09-19T15:09:52.523Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52385393,
+  "firstName": "Felipe Carlos",
+  "lastName": "Vadillo",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 37428,
+      "tce": 71,
+      "tci": 48,
+      "tc": 119,
+      "gs": 9,
+      "js": 12,
+      "jr": 8,
+      "od": 10,
+      "ha": 18,
+      "dr": 19,
+      "pa": 4,
+      "is": 13,
+      "id": 14,
+      "rb": 11,
+      "sb": 10,
+      "st": 4,
+      "ft": 6,
+      "ex": 8,
+      "scoutedAt": "2025-09-19T15:09:58.816Z"
+    }
+  ]
+}

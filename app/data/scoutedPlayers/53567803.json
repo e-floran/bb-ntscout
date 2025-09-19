@@ -1,0 +1,31 @@
+{
+  "id": 53567803,
+  "firstName": "Ali Asghar",
+  "lastName": "Eslahi",
+  "countryId": 59,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 48803,
+      "tce": 89,
+      "tci": 37,
+      "tc": 126,
+      "gs": 9,
+      "js": 15,
+      "jr": 11,
+      "od": 15,
+      "ha": 19,
+      "dr": 18,
+      "pa": 11,
+      "is": 11,
+      "id": 10,
+      "rb": 8,
+      "sb": 8,
+      "st": 6,
+      "ft": 14,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:59.408Z"
+    }
+  ]
+}

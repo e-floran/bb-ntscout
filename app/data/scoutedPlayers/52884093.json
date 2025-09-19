@@ -1,0 +1,31 @@
+{
+  "id": 52884093,
+  "firstName": "Przemysław",
+  "lastName": "Gliwa",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 48224,
+      "tce": 94,
+      "tci": 29,
+      "tc": 123,
+      "gs": 8,
+      "js": 18,
+      "jr": 15,
+      "od": 14,
+      "ha": 18,
+      "dr": 19,
+      "pa": 10,
+      "is": 14,
+      "id": 9,
+      "rb": 3,
+      "sb": 3,
+      "st": 9,
+      "ft": 14,
+      "ex": 6,
+      "scoutedAt": "2025-09-19T15:09:58.818Z"
+    }
+  ]
+}

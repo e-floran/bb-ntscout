@@ -1,0 +1,31 @@
+{
+  "id": 54137243,
+  "firstName": "Raúl Eduardo",
+  "lastName": "Von Ellenrieder",
+  "countryId": 22,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 14508,
+      "tce": 73,
+      "tci": 20,
+      "tc": 93,
+      "gs": 8,
+      "js": 16,
+      "jr": 9,
+      "od": 11,
+      "ha": 14,
+      "dr": 16,
+      "pa": 7,
+      "is": 4,
+      "id": 4,
+      "rb": 8,
+      "sb": 4,
+      "st": 4,
+      "ft": 3,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:40.060Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53735575,
+  "firstName": "Luca",
+  "lastName": "Lulli",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 13212,
+      "tce": 64,
+      "tci": 37,
+      "tc": 101,
+      "gs": 8,
+      "js": 12,
+      "jr": 7,
+      "od": 9,
+      "ha": 13,
+      "dr": 12,
+      "pa": 11,
+      "is": 9,
+      "id": 9,
+      "rb": 9,
+      "sb": 10,
+      "st": 6,
+      "ft": 17,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:58.817Z"
+    }
+  ]
+}

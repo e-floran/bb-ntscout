@@ -1,0 +1,31 @@
+{
+  "id": 50827701,
+  "firstName": "Chan",
+  "lastName": "Hao Yip",
+  "countryId": 45,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 203894,
+      "tce": 106,
+      "tci": 50,
+      "tc": 156,
+      "gs": 8,
+      "js": 19,
+      "jr": 13,
+      "od": 20,
+      "ha": 20,
+      "dr": 21,
+      "pa": 13,
+      "is": 16,
+      "id": 18,
+      "rb": 8,
+      "sb": 8,
+      "st": 7,
+      "ft": 21,
+      "ex": 15,
+      "scoutedAt": "2025-09-19T15:09:51.967Z"
+    }
+  ]
+}

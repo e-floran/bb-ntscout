@@ -1,0 +1,31 @@
+{
+  "id": 54235377,
+  "firstName": "Auhiej",
+  "lastName": "Ivashenka",
+  "countryId": 85,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18388,
+      "tce": 36,
+      "tci": 43,
+      "tc": 79,
+      "gs": 8,
+      "js": 10,
+      "jr": 5,
+      "od": 3,
+      "ha": 6,
+      "dr": 9,
+      "pa": 3,
+      "is": 14,
+      "id": 14,
+      "rb": 6,
+      "sb": 9,
+      "st": 7,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:40.613Z"
+    }
+  ]
+}

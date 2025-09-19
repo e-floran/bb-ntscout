@@ -1,0 +1,31 @@
+{
+  "id": 53766786,
+  "firstName": "Panteleimon",
+  "lastName": "Keratzoglou",
+  "countryId": 12,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 30966,
+      "tce": 80,
+      "tci": 37,
+      "tc": 117,
+      "gs": 9,
+      "js": 12,
+      "jr": 12,
+      "od": 12,
+      "ha": 16,
+      "dr": 17,
+      "pa": 11,
+      "is": 13,
+      "id": 10,
+      "rb": 9,
+      "sb": 5,
+      "st": 3,
+      "ft": 7,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:57.120Z"
+    }
+  ]
+}

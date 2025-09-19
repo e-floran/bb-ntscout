@@ -1,0 +1,31 @@
+{
+  "id": 54855912,
+  "firstName": "Przemysław",
+  "lastName": "Babirecki",
+  "countryId": 64,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 2682,
+      "tce": 29,
+      "tci": 27,
+      "tc": 56,
+      "gs": 7,
+      "js": 1,
+      "jr": 8,
+      "od": 3,
+      "ha": 9,
+      "dr": 7,
+      "pa": 1,
+      "is": 7,
+      "id": 10,
+      "rb": 7,
+      "sb": 3,
+      "st": 8,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:50.221Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54613354,
+  "firstName": "Marquinho",
+  "lastName": "Fiúza",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3053,
+      "tce": 36,
+      "tci": 24,
+      "tc": 60,
+      "gs": 7,
+      "js": 9,
+      "jr": 3,
+      "od": 7,
+      "ha": 4,
+      "dr": 5,
+      "pa": 8,
+      "is": 7,
+      "id": 3,
+      "rb": 7,
+      "sb": 7,
+      "st": 8,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-09-19T15:09:48.336Z"
+    }
+  ]
+}

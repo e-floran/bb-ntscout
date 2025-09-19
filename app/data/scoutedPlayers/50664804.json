@@ -1,0 +1,31 @@
+{
+  "id": 50664804,
+  "firstName": "Li",
+  "lastName": "Henglei",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 219374,
+      "tce": 110,
+      "tci": 49,
+      "tc": 159,
+      "gs": 8,
+      "js": 20,
+      "jr": 13,
+      "od": 21,
+      "ha": 22,
+      "dr": 21,
+      "pa": 13,
+      "is": 20,
+      "id": 15,
+      "rb": 5,
+      "sb": 9,
+      "st": 6,
+      "ft": 20,
+      "ex": 15,
+      "scoutedAt": "2025-09-19T15:09:53.648Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49800233,
+  "firstName": "Dario",
+  "lastName": "Orton",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 156964,
+      "tce": 100,
+      "tci": 48,
+      "tc": 148,
+      "gs": 9,
+      "js": 20,
+      "jr": 10,
+      "od": 19,
+      "ha": 19,
+      "dr": 20,
+      "pa": 12,
+      "is": 20,
+      "id": 13,
+      "rb": 9,
+      "sb": 6,
+      "st": 9,
+      "ft": 20,
+      "ex": 17,
+      "scoutedAt": "2025-09-19T15:09:51.966Z"
+    }
+  ]
+}

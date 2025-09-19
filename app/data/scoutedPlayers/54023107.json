@@ -1,0 +1,31 @@
+{
+  "id": 54023107,
+  "firstName": "Norberto",
+  "lastName": "Turpín",
+  "countryId": 7,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 28684,
+      "tce": 39,
+      "tci": 56,
+      "tc": 95,
+      "gs": 8,
+      "js": 8,
+      "jr": 6,
+      "od": 4,
+      "ha": 7,
+      "dr": 4,
+      "pa": 10,
+      "is": 6,
+      "id": 18,
+      "rb": 13,
+      "sb": 19,
+      "st": 4,
+      "ft": 3,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:41.171Z"
+    }
+  ]
+}

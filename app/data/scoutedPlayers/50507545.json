@@ -1,0 +1,31 @@
+{
+  "id": 50507545,
+  "firstName": "Tan",
+  "lastName": "Chun Tung",
+  "countryId": 45,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 183459,
+      "tce": 99,
+      "tci": 44,
+      "tc": 143,
+      "gs": 9,
+      "js": 21,
+      "jr": 11,
+      "od": 19,
+      "ha": 20,
+      "dr": 21,
+      "pa": 7,
+      "is": 18,
+      "id": 12,
+      "rb": 9,
+      "sb": 5,
+      "st": 4,
+      "ft": 19,
+      "ex": 16,
+      "scoutedAt": "2025-09-19T15:09:53.647Z"
+    }
+  ]
+}

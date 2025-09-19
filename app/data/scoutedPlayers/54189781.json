@@ -1,0 +1,31 @@
+{
+  "id": 54189781,
+  "firstName": "Piotr",
+  "lastName": "Bulik",
+  "countryId": 58,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 12932,
+      "tce": 68,
+      "tci": 22,
+      "tc": 90,
+      "gs": 9,
+      "js": 10,
+      "jr": 7,
+      "od": 20,
+      "ha": 11,
+      "dr": 11,
+      "pa": 9,
+      "is": 3,
+      "id": 10,
+      "rb": 4,
+      "sb": 5,
+      "st": 5,
+      "ft": 6,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:42.292Z"
+    }
+  ]
+}

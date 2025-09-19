@@ -1,0 +1,31 @@
+{
+  "id": 53600034,
+  "firstName": "Alaister",
+  "lastName": "Chisholm",
+  "countryId": 64,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 35161,
+      "tce": 89,
+      "tci": 39,
+      "tc": 128,
+      "gs": 8,
+      "js": 11,
+      "jr": 11,
+      "od": 17,
+      "ha": 20,
+      "dr": 19,
+      "pa": 11,
+      "is": 12,
+      "id": 11,
+      "rb": 8,
+      "sb": 8,
+      "st": 7,
+      "ft": 16,
+      "ex": 4,
+      "scoutedAt": "2025-09-19T15:09:58.238Z"
+    }
+  ]
+}

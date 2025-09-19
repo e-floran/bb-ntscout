@@ -1,0 +1,31 @@
+{
+  "id": 51291023,
+  "firstName": "Yure",
+  "lastName": "Corujito",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 122986,
+      "tce": 94,
+      "tci": 43,
+      "tc": 137,
+      "gs": 9,
+      "js": 19,
+      "jr": 9,
+      "od": 17,
+      "ha": 19,
+      "dr": 20,
+      "pa": 10,
+      "is": 14,
+      "id": 12,
+      "rb": 11,
+      "sb": 6,
+      "st": 2,
+      "ft": 21,
+      "ex": 13,
+      "scoutedAt": "2025-09-19T15:09:53.651Z"
+    }
+  ]
+}

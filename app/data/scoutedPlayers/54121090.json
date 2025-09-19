@@ -1,0 +1,31 @@
+{
+  "id": 54121090,
+  "firstName": "Algis",
+  "lastName": "Būdas",
+  "countryId": 20,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13665,
+      "tce": 64,
+      "tci": 30,
+      "tc": 94,
+      "gs": 6,
+      "js": 14,
+      "jr": 10,
+      "od": 9,
+      "ha": 11,
+      "dr": 12,
+      "pa": 8,
+      "is": 6,
+      "id": 6,
+      "rb": 8,
+      "sb": 10,
+      "st": 6,
+      "ft": 13,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:40.612Z"
+    }
+  ]
+}

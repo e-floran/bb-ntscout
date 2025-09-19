@@ -1,0 +1,31 @@
+{
+  "id": 53595766,
+  "firstName": "Jan",
+  "lastName": "Horešovský",
+  "countryId": 37,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 17637,
+      "tce": 70,
+      "tci": 35,
+      "tc": 105,
+      "gs": 9,
+      "js": 13,
+      "jr": 10,
+      "od": 10,
+      "ha": 13,
+      "dr": 15,
+      "pa": 9,
+      "is": 11,
+      "id": 10,
+      "rb": 6,
+      "sb": 8,
+      "st": 9,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:57.679Z"
+    }
+  ]
+}

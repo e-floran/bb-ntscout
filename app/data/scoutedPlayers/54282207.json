@@ -1,0 +1,31 @@
+{
+  "id": 54282207,
+  "firstName": "Joseph",
+  "lastName": "Palmer",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4913,
+      "tce": 45,
+      "tci": 21,
+      "tc": 66,
+      "gs": 9,
+      "js": 9,
+      "jr": 5,
+      "od": 11,
+      "ha": 7,
+      "dr": 4,
+      "pa": 9,
+      "is": 4,
+      "id": 4,
+      "rb": 4,
+      "sb": 9,
+      "st": 6,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-09-19T15:09:46.276Z"
+    }
+  ]
+}

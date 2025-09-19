@@ -1,0 +1,31 @@
+{
+  "id": 53692078,
+  "firstName": "Pi",
+  "lastName": "Yongwei",
+  "countryId": 5,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 84303,
+      "tce": 31,
+      "tci": 61,
+      "tc": 92,
+      "gs": 8,
+      "js": 10,
+      "jr": 3,
+      "od": 5,
+      "ha": 5,
+      "dr": 4,
+      "pa": 4,
+      "is": 18,
+      "id": 18,
+      "rb": 15,
+      "sb": 10,
+      "st": 2,
+      "ft": 7,
+      "ex": 5,
+      "scoutedAt": "2025-09-19T15:09:42.851Z"
+    }
+  ]
+}

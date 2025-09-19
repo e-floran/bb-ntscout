@@ -1,0 +1,31 @@
+{
+  "id": 53735935,
+  "firstName": "Stefano",
+  "lastName": "D'Alessio",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 14438,
+      "tce": 75,
+      "tci": 24,
+      "tc": 99,
+      "gs": 9,
+      "js": 14,
+      "jr": 7,
+      "od": 6,
+      "ha": 20,
+      "dr": 21,
+      "pa": 7,
+      "is": 12,
+      "id": 3,
+      "rb": 4,
+      "sb": 5,
+      "st": 4,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:44.063Z"
+    }
+  ]
+}

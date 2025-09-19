@@ -1,0 +1,31 @@
+{
+  "id": 54233568,
+  "firstName": "Fu",
+  "lastName": "Yongtian",
+  "countryId": 97,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 11306,
+      "tce": 66,
+      "tci": 30,
+      "tc": 96,
+      "gs": 7,
+      "js": 11,
+      "jr": 6,
+      "od": 14,
+      "ha": 13,
+      "dr": 14,
+      "pa": 8,
+      "is": 8,
+      "id": 11,
+      "rb": 6,
+      "sb": 5,
+      "st": 5,
+      "ft": 2,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:42.295Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54045307,
+  "firstName": "Gian Luca",
+  "lastName": "Maconi",
+  "countryId": 10,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 13281,
+      "tce": 32,
+      "tci": 41,
+      "tc": 73,
+      "gs": 9,
+      "js": 9,
+      "jr": 4,
+      "od": 4,
+      "ha": 3,
+      "dr": 8,
+      "pa": 4,
+      "is": 11,
+      "id": 13,
+      "rb": 11,
+      "sb": 6,
+      "st": 3,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-19T15:09:42.848Z"
+    }
+  ]
+}
