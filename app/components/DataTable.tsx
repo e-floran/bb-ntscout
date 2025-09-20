@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface SortConfig {
   table: string;
@@ -17,6 +17,64 @@ interface DataTableProps {
   rowClassName?: (rowIndex: number) => string;
 }
 
+// Mobile abbreviations mappings
+const MOBILE_ABBREVIATIONS = {
+  // Headers
+  Stratégies: "Strat",
+  Catégorie: "Cat",
+  Position: "Pos",
+
+  // Season header variations
+  "Saison 69": "S69",
+  "Saison 68": "S68",
+  "Saison 67": "S67",
+  "Saison 66": "S66",
+  "Saison 65": "S65",
+  "Saison 64": "S64",
+  "Saison 63": "S63",
+  "Saison 62": "S62",
+  "Saison 61": "S61",
+  "Saison 60": "S60",
+
+  // Offensive strategies (all from StrategyFilters.tsx)
+  "Toutes les attaques": "Toutes",
+  "Look Inside": "LI",
+  "Low Post": "PB",
+  "Attaques intérieures": "AI",
+  Base: "BO",
+  Push: "PTB",
+  Patient: "Pat",
+  "Outside Isolation": "IE",
+  "Inside Isolation": "II",
+  "Attaques neutres": "AN",
+  Motion: "Mot",
+  "Run And Gun": "RnG",
+  Princeton: "Pri",
+  "Attaques extérieures": "AE",
+
+  // Additional potential offensive strategy variations
+  interior: "AI",
+  neutral: "AN",
+  exterior: "AE",
+
+  // Defensive strategies (all from StrategyFilters.tsx)
+  "Toutes les défenses": "Toutes",
+  "32 Zone": "32",
+  "Outside Box And One": "BE",
+  "23 Zone": "23",
+  "Inside Box And One": "BI",
+  "Man To Man": "HH",
+  "131 Zone": "131",
+
+  // Team ratings categories
+  "Outside Scoring": "AE",
+  "Inside Scoring": "AI",
+  "Outside Defense": "DE",
+  "Inside Defense": "DI",
+  Rebounding: "RE",
+  "Offensive Flow": "GA",
+};
+
 export function DataTable({
   headers,
   rows,
@@ -25,6 +83,43 @@ export function DataTable({
   onSort,
   rowClassName,
 }: DataTableProps) {
+  // Mobile detection hook
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  // Helper function to get abbreviated text for mobile
+  const getDisplayText = (text: string | number): string | number => {
+    if (!isMobile || typeof text !== "string") return text;
+
+    // Try exact match first
+    const exactMatch =
+      MOBILE_ABBREVIATIONS[text as keyof typeof MOBILE_ABBREVIATIONS];
+    if (exactMatch) return exactMatch;
+
+    // Normalize spaces and try matching (handles multiple spaces between words)
+    const normalizedText = text.trim().replace(/\s+/g, " ");
+    const matchingKey = Object.keys(MOBILE_ABBREVIATIONS).find(
+      (key) => key.toLowerCase() === normalizedText.toLowerCase()
+    );
+
+    if (matchingKey) {
+      return MOBILE_ABBREVIATIONS[
+        matchingKey as keyof typeof MOBILE_ABBREVIATIONS
+      ];
+    }
+
+    return text;
+  };
+
   // Helper function to get the appropriate level class based on numeric value
   const getLevelClass = (value: string | number): string => {
     if (tableId !== "avg-ratings") return "";
@@ -62,7 +157,7 @@ export function DataTable({
     const numValue = parseFloat(String(value));
     return !isNaN(numValue) && String(value).trim() !== "";
   };
-  
+
   // Generic sort function for table rows
   const sortRows = (rows: (string | number)[][]): (string | number)[][] => {
     if (sortConfig?.table !== tableId) {
@@ -84,7 +179,7 @@ export function DataTable({
           bVal = b[15];
         }
       }
-      
+
       if (tableId === "gdp") {
         const aDate = new Date(String(aVal)).getTime();
         const bDate = new Date(String(bVal)).getTime();
@@ -130,7 +225,7 @@ export function DataTable({
                       : "#3c5489",
                 }}
               >
-                {h}
+                {getDisplayText(h)}
                 {sortConfig?.table === tableId && sortConfig?.column === i && (
                   <span style={{ marginLeft: "4px" }}>
                     {sortConfig.direction === "asc" ? "↑" : "↓"}
@@ -148,7 +243,7 @@ export function DataTable({
                   key={j}
                   className={isNumeric(val, j) ? getLevelClass(val) : ""}
                 >
-                  {val}
+                  {getDisplayText(val)}
                 </td>
               ))}
             </tr>
