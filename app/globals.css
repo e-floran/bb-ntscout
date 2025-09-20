@@ -272,6 +272,18 @@ body {
   .table-container {
     -webkit-overflow-scrolling: touch;
   }
+
+  /* Mobile table adjustments for better responsive behavior */
+  .table-analysis {
+    min-width: unset; /* Remove minimum width constraint on mobile */
+    table-layout: auto; /* Allow table to auto-size columns */
+  }
+
+  .table-analysis th,
+  .table-analysis td {
+    padding: 0.5em 0.7em; /* Reduce padding on mobile */
+    white-space: nowrap; /* Keep text on single lines for abbreviated content */
+  }
 }
 
 @media (max-width: 600px) {
