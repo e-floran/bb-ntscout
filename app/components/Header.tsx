@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useAuthenticatedUser } from "@/app/hooks/useAuthenticatedUser";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 
 export function Header() {
   const userName = useAuthenticatedUser();
@@ -58,44 +58,58 @@ export function Header() {
       >
         BB NTScout
       </span>
+      <nav>
+        <ul className="flex space-x-4">
+          <li>
+            <Link href="/" className="hover:text-blue-200">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/scouting" className="hover:text-blue-200">
+              Scouting
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
         {userName && (
-        <div
-          className="header-user"
-          style={{
-            position: "absolute",
-            right: "5.5rem",
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            zIndex: 2,
-          }}
-        >
-          <span style={{ fontSize: "1rem", fontWeight: 400 }}>
-            <b>{userName}</b>
-          </span>
-          <IconButton
-            aria-label="Déconnexion"
-            onClick={handleLogout}
-            sx={{
-              p: "5px",
-              fontSize: "0.7rem",
-              background: "#f5f7fa",
-              color: "#1976d2",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-              "& .MuiSvgIcon-root": {
-                fontSize: "1.2rem",
-             },
-              "&:hover": {
-                background: "#e3eaf7",
-                color: "#1565c0",
-              },
+          <div
+            className="header-user"
+            style={{
+              position: "absolute",
+              right: "5.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              zIndex: 2,
             }}
           >
-            <LogoutIcon />
-          </IconButton>
-        </div>
-      )}
+            <span style={{ fontSize: "1rem", fontWeight: 400 }}>
+              <b>{userName}</b>
+            </span>
+            <IconButton
+              aria-label="Déconnexion"
+              onClick={handleLogout}
+              sx={{
+                p: "5px",
+                fontSize: "0.7rem",
+                background: "#f5f7fa",
+                color: "#1976d2",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+                "& .MuiSvgIcon-root": {
+                  fontSize: "1.2rem",
+                },
+                "&:hover": {
+                  background: "#e3eaf7",
+                  color: "#1565c0",
+                },
+              }}
+            >
+              <LogoutIcon />
+            </IconButton>
+          </div>
+        )}
       </div>
     </header>
   );
