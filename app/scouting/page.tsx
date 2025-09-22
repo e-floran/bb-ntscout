@@ -123,11 +123,11 @@ export default function ScoutingPage() {
         }
         setShowScoutingForm(true);
       } else {
-        alert("Error occurred while looking up player");
+        alert("Erreur lors de la recherche du joueur");
       }
     } catch (error) {
       console.error("Error looking up player:", error);
-      alert("Error looking up player");
+      alert("Erreur lors de la recherche du joueur");
     }
   };
 
@@ -156,7 +156,7 @@ export default function ScoutingPage() {
       });
 
       if (response.ok) {
-        alert("Scouting report saved successfully!");
+        alert("Rapport de scouting sauvegardé avec succès !");
         // Reset form
         setPlayerId("");
         setPlayerData(null);
@@ -169,11 +169,11 @@ export default function ScoutingPage() {
           potential: 0,
         });
       } else {
-        alert("Error saving scouting report");
+        alert("Erreur lors de la sauvegarde du rapport");
       }
     } catch (error) {
       console.error("Error submitting scouting:", error);
-      alert("Error submitting scouting report");
+      alert("Erreur lors de la soumission du rapport");
     }
   };
 
@@ -185,48 +185,82 @@ export default function ScoutingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6">Player Scouting</h1>
+    <div className="main-container">
+      <div
+        className="form-container"
+        style={{ maxWidth: "1200px", width: "100%" }}
+      >
+        <h2 className="form-title">Scouting Manuel</h2>
 
         {!showScoutingForm ? (
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-4">Enter Player ID</h2>
-            <form onSubmit={handlePlayerLookup} className="flex gap-4">
-              <input
-                type="number"
-                value={playerId}
-                onChange={(e) => setPlayerId(e.target.value)}
-                placeholder="Player ID"
-                className="border rounded px-3 py-2 flex-1"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-              >
-                Look Up Player
+          <div
+            style={{
+              background: "#fff",
+              padding: "2rem",
+              borderRadius: "12px",
+              boxShadow: "0 4px 24px rgba(60, 84, 137, 0.1)",
+              textAlign: "center",
+            }}
+          >
+            <h3 className="analysis-title" style={{ marginBottom: "1.5rem" }}>
+              Rechercher un joueur
+            </h3>
+            <form
+              onSubmit={handlePlayerLookup}
+              className="analysis-form"
+              style={{
+                justifyContent: "center",
+                maxWidth: "400px",
+                margin: "0 auto",
+              }}
+            >
+              <label className="analysis-form-label">
+                ID du joueur :
+                <input
+                  type="number"
+                  value={playerId}
+                  onChange={(e) => setPlayerId(e.target.value)}
+                  placeholder="Ex: 12345678"
+                  className="analysis-form-input"
+                  style={{ width: "120px", marginLeft: "0.5rem" }}
+                  required
+                />
+              </label>
+              <button type="submit" className="analysis-form-submit">
+                Rechercher
               </button>
             </form>
           </div>
         ) : (
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-4">
-              Scouting Report for{" "}
+          <div className="analysis-section">
+            <h3 className="analysis-title">
+              Rapport de scouting pour{" "}
               {isNewPlayer
-                ? "New Player"
+                ? "Nouveau joueur"
                 : `${playerData?.firstName} ${playerData?.lastName}`}{" "}
               (ID: {playerId})
-            </h2>
+            </h3>
 
             {isNewPlayer && (
-              <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <h3 className="text-lg font-medium mb-3">Player Information</h3>
-                <div className="grid grid-cols-2 gap-4">
+              <div
+                style={{
+                  marginBottom: "2rem",
+                  padding: "1.5rem",
+                  background: "#fff3cd",
+                  border: "1px solid #ffeaa7",
+                  borderRadius: "8px",
+                }}
+              >
+                <h4 className="analysis-subtitle">Informations du joueur</h4>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                    gap: "1rem",
+                  }}
+                >
                   <div>
-                    <label className="block text-sm font-medium mb-1">
-                      First Name
-                    </label>
+                    <label className="form-label">Prénom</label>
                     <input
                       type="text"
                       value={newPlayerData.firstName}
@@ -236,14 +270,12 @@ export default function ScoutingPage() {
                           firstName: e.target.value,
                         }))
                       }
-                      className="border rounded px-3 py-2 w-full"
+                      className="form-input"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">
-                      Last Name
-                    </label>
+                    <label className="form-label">Nom</label>
                     <input
                       type="text"
                       value={newPlayerData.lastName}
@@ -253,14 +285,12 @@ export default function ScoutingPage() {
                           lastName: e.target.value,
                         }))
                       }
-                      className="border rounded px-3 py-2 w-full"
+                      className="form-input"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">
-                      Country ID
-                    </label>
+                    <label className="form-label">ID Pays</label>
                     <input
                       type="number"
                       value={newPlayerData.countryId}
@@ -270,14 +300,12 @@ export default function ScoutingPage() {
                           countryId: parseInt(e.target.value) || 0,
                         }))
                       }
-                      className="border rounded px-3 py-2 w-full"
+                      className="form-input"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">
-                      Potential
-                    </label>
+                    <label className="form-label">Potentiel</label>
                     <input
                       type="number"
                       value={newPlayerData.potential}
@@ -287,7 +315,7 @@ export default function ScoutingPage() {
                           potential: parseInt(e.target.value) || 0,
                         }))
                       }
-                      className="border rounded px-3 py-2 w-full"
+                      className="form-input"
                       required
                     />
                   </div>
@@ -295,228 +323,266 @@ export default function ScoutingPage() {
               </div>
             )}
 
-            <form
-              onSubmit={handleScoutingSubmit}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            <div
+              style={{
+                background: "#fff",
+                padding: "2rem",
+                borderRadius: "12px",
+                boxShadow: "0 4px 24px rgba(60, 84, 137, 0.1)",
+              }}
             >
-              <div>
-                <label className="block text-sm font-medium mb-1">Age</label>
-                <input
-                  type="number"
-                  value={scoutingData.age}
-                  onChange={(e) => handleInputChange("age", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">Salary</label>
-                <input
-                  type="number"
-                  value={scoutingData.salary}
-                  onChange={(e) => handleInputChange("salary", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">GS</label>
-                <input
-                  type="number"
-                  value={scoutingData.gs}
-                  onChange={(e) => handleInputChange("gs", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">JS</label>
-                <input
-                  type="number"
-                  value={scoutingData.js}
-                  onChange={(e) => handleInputChange("js", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">JR</label>
-                <input
-                  type="number"
-                  value={scoutingData.jr}
-                  onChange={(e) => handleInputChange("jr", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">OD</label>
-                <input
-                  type="number"
-                  value={scoutingData.od}
-                  onChange={(e) => handleInputChange("od", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">HA</label>
-                <input
-                  type="number"
-                  value={scoutingData.ha}
-                  onChange={(e) => handleInputChange("ha", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">DR</label>
-                <input
-                  type="number"
-                  value={scoutingData.dr}
-                  onChange={(e) => handleInputChange("dr", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">PA</label>
-                <input
-                  type="number"
-                  value={scoutingData.pa}
-                  onChange={(e) => handleInputChange("pa", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">IS</label>
-                <input
-                  type="number"
-                  value={scoutingData.is}
-                  onChange={(e) => handleInputChange("is", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">ID</label>
-                <input
-                  type="number"
-                  value={scoutingData.id}
-                  onChange={(e) => handleInputChange("id", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">RB</label>
-                <input
-                  type="number"
-                  value={scoutingData.rb}
-                  onChange={(e) => handleInputChange("rb", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">SB</label>
-                <input
-                  type="number"
-                  value={scoutingData.sb}
-                  onChange={(e) => handleInputChange("sb", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">ST</label>
-                <input
-                  type="number"
-                  value={scoutingData.st}
-                  onChange={(e) => handleInputChange("st", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">FT</label>
-                <input
-                  type="number"
-                  value={scoutingData.ft}
-                  onChange={(e) => handleInputChange("ft", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1">EX</label>
-                <input
-                  type="number"
-                  value={scoutingData.ex}
-                  onChange={(e) => handleInputChange("ex", e.target.value)}
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div className="col-span-2">
-                <label className="block text-sm font-medium mb-1">
-                  Scouted At
-                </label>
-                <input
-                  type="datetime-local"
-                  value={scoutingData.scoutedAt}
-                  onChange={(e) =>
-                    handleInputChange("scoutedAt", e.target.value)
-                  }
-                  className="border rounded px-3 py-2 w-full"
-                  required
-                />
-              </div>
-
-              <div className="col-span-2 md:col-span-4 flex gap-4 mt-4">
-                <button
-                  type="submit"
-                  className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
-                >
-                  Save Scouting Report
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowScoutingForm(false);
-                    setPlayerId("");
-                    setPlayerData(null);
-                    setIsNewPlayer(false);
-                    setNewPlayerData({
-                      firstName: "",
-                      lastName: "",
-                      countryId: 0,
-                      potential: 0,
-                    });
+              <h4 className="analysis-subtitle">Données de scouting</h4>
+              <form onSubmit={handleScoutingSubmit}>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                    gap: "1rem",
+                    marginBottom: "2rem",
                   }}
-                  className="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700"
                 >
-                  Cancel
-                </button>
-              </div>
-            </form>
+                  <div>
+                    <label className="form-label">Âge</label>
+                    <input
+                      type="number"
+                      value={scoutingData.age}
+                      onChange={(e) => handleInputChange("age", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">Salaire</label>
+                    <input
+                      type="number"
+                      value={scoutingData.salary}
+                      onChange={(e) =>
+                        handleInputChange("salary", e.target.value)
+                      }
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">GS</label>
+                    <input
+                      type="number"
+                      value={scoutingData.gs}
+                      onChange={(e) => handleInputChange("gs", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">JS</label>
+                    <input
+                      type="number"
+                      value={scoutingData.js}
+                      onChange={(e) => handleInputChange("js", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">JR</label>
+                    <input
+                      type="number"
+                      value={scoutingData.jr}
+                      onChange={(e) => handleInputChange("jr", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">OD</label>
+                    <input
+                      type="number"
+                      value={scoutingData.od}
+                      onChange={(e) => handleInputChange("od", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">HA</label>
+                    <input
+                      type="number"
+                      value={scoutingData.ha}
+                      onChange={(e) => handleInputChange("ha", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">DR</label>
+                    <input
+                      type="number"
+                      value={scoutingData.dr}
+                      onChange={(e) => handleInputChange("dr", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">PA</label>
+                    <input
+                      type="number"
+                      value={scoutingData.pa}
+                      onChange={(e) => handleInputChange("pa", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">IS</label>
+                    <input
+                      type="number"
+                      value={scoutingData.is}
+                      onChange={(e) => handleInputChange("is", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">ID</label>
+                    <input
+                      type="number"
+                      value={scoutingData.id}
+                      onChange={(e) => handleInputChange("id", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">RB</label>
+                    <input
+                      type="number"
+                      value={scoutingData.rb}
+                      onChange={(e) => handleInputChange("rb", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">SB</label>
+                    <input
+                      type="number"
+                      value={scoutingData.sb}
+                      onChange={(e) => handleInputChange("sb", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">ST</label>
+                    <input
+                      type="number"
+                      value={scoutingData.st}
+                      onChange={(e) => handleInputChange("st", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">FT</label>
+                    <input
+                      type="number"
+                      value={scoutingData.ft}
+                      onChange={(e) => handleInputChange("ft", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="form-label">EX</label>
+                    <input
+                      type="number"
+                      value={scoutingData.ex}
+                      onChange={(e) => handleInputChange("ex", e.target.value)}
+                      className="form-input"
+                      required
+                    />
+                  </div>
+
+                  <div style={{ gridColumn: "span 2" }}>
+                    <label className="form-label">Date de scouting</label>
+                    <input
+                      type="datetime-local"
+                      value={scoutingData.scoutedAt}
+                      onChange={(e) =>
+                        handleInputChange("scoutedAt", e.target.value)
+                      }
+                      className="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  <button
+                    type="submit"
+                    className="form-submit"
+                    style={{
+                      width: "auto",
+                      padding: "0.75rem 2rem",
+                      background:
+                        "linear-gradient(90deg, #059669 0%, #10b981 100%)",
+                    }}
+                  >
+                    Sauvegarder le rapport
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowScoutingForm(false);
+                      setPlayerId("");
+                      setPlayerData(null);
+                      setIsNewPlayer(false);
+                      setNewPlayerData({
+                        firstName: "",
+                        lastName: "",
+                        countryId: 0,
+                        potential: 0,
+                      });
+                    }}
+                    style={{
+                      padding: "0.75rem 2rem",
+                      background:
+                        "linear-gradient(90deg, #6b7280 0%, #9ca3af 100%)",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "8px",
+                      fontWeight: "600",
+                      cursor: "pointer",
+                      transition: "background 0.2s",
+                    }}
+                  >
+                    Annuler
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         )}
       </div>

@@ -1,31 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import IconButton from "@mui/material/IconButton";
-import LogoutIcon from "@mui/icons-material/Logout";
-import { useAuthenticatedUser } from "@/app/hooks/useAuthenticatedUser";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { Navigation } from "./Navigation";
 
 export function Header() {
-  const userName = useAuthenticatedUser();
-  const router = useRouter();
-
-  // Logout handler
-  async function handleLogout() {
-    try {
-      const res = await fetch("/api/logout", { method: "POST" });
-      if (res.ok) {
-        window.dispatchEvent(new Event("user-logout"));
-        router.replace("/login");
-      } else {
-        alert("Déconnexion échouée.");
-      }
-    } catch (e) {
-      alert("Erreur lors de la déconnexion.");
-    }
-  }
-
   return (
     <header
       className="header-responsive"
@@ -49,8 +27,9 @@ export function Header() {
       <span
         className="header-title"
         style={{
-          flex: 1,
-          textAlign: "center",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
           fontSize: "2.5rem",
           fontWeight: 700,
           letterSpacing: "1px",
@@ -58,59 +37,19 @@ export function Header() {
       >
         BB NTScout
       </span>
-      <nav>
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/" className="hover:text-blue-200">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/scouting" className="hover:text-blue-200">
-              Scouting
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        {userName && (
-          <div
-            className="header-user"
-            style={{
-              position: "absolute",
-              right: "5.5rem",
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-              zIndex: 2,
-            }}
-          >
-            <span style={{ fontSize: "1rem", fontWeight: 400 }}>
-              <b>{userName}</b>
-            </span>
-            <IconButton
-              aria-label="Déconnexion"
-              onClick={handleLogout}
-              sx={{
-                p: "5px",
-                fontSize: "0.7rem",
-                background: "#f5f7fa",
-                color: "#1976d2",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-                "& .MuiSvgIcon-root": {
-                  fontSize: "1.2rem",
-                },
-                "&:hover": {
-                  background: "#e3eaf7",
-                  color: "#1565c0",
-                },
-              }}
-            >
-              <LogoutIcon />
-            </IconButton>
-          </div>
-        )}
-      </div>
+      <style jsx>{`
+        @media (max-width: 720px) {
+          .header-title {
+            position: static !important;
+            transform: none !important;
+            left: auto !important;
+            text-align: center !important;
+            width: 100% !important;
+            margin-bottom: 0.3rem !important;
+          }
+        }
+      `}</style>
+      <Navigation />
     </header>
   );
 }
