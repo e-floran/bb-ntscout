@@ -1,0 +1,13 @@
+{
+  "id": "54003556",
+  "nationalTeamId": "1005",
+  "weeks": [
+    {
+      "season": 69,
+      "id": 11,
+      "weekStart": "2025-09-19T00:00:00.000Z",
+      "gameShape": 9,
+      "dmi": 356300
+    }
+  ]
+}
