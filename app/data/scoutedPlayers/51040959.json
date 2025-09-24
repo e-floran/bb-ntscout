@@ -1,0 +1,31 @@
+{
+  "id": 51040959,
+  "firstName": "Thierry",
+  "lastName": "Martin",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 59817,
+      "tce": 85,
+      "tci": 35,
+      "tc": 120,
+      "gs": 7,
+      "js": 17,
+      "jr": 13,
+      "od": 15,
+      "ha": 17,
+      "dr": 18,
+      "pa": 5,
+      "is": 12,
+      "id": 10,
+      "rb": 7,
+      "sb": 6,
+      "st": 5,
+      "ft": 10,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:39.321Z"
+    }
+  ]
+}

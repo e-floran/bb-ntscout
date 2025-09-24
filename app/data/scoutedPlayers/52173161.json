@@ -1,0 +1,31 @@
+{
+  "id": 52173161,
+  "firstName": "Przemysław",
+  "lastName": "Norek",
+  "countryId": 58,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 112651,
+      "tce": 101,
+      "tci": 50,
+      "tc": 151,
+      "gs": 9,
+      "js": 19,
+      "jr": 12,
+      "od": 19,
+      "ha": 20,
+      "dr": 20,
+      "pa": 11,
+      "is": 19,
+      "id": 16,
+      "rb": 6,
+      "sb": 9,
+      "st": 2,
+      "ft": 14,
+      "ex": 8,
+      "scoutedAt": "2025-09-24T15:14:43.864Z"
+    }
+  ]
+}

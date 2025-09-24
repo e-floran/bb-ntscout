@@ -1,0 +1,31 @@
+{
+  "id": 50797007,
+  "firstName": "Ivan",
+  "lastName": "Pršut",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 71914,
+      "tce": 85,
+      "tci": 40,
+      "tc": 125,
+      "gs": 9,
+      "js": 17,
+      "jr": 12,
+      "od": 16,
+      "ha": 15,
+      "dr": 15,
+      "pa": 10,
+      "is": 15,
+      "id": 11,
+      "rb": 8,
+      "sb": 6,
+      "st": 2,
+      "ft": 2,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:36.519Z"
+    }
+  ]
+}

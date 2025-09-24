@@ -1,0 +1,31 @@
+{
+  "id": 51343294,
+  "firstName": "Mario",
+  "lastName": "Sanguanini",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 138882,
+      "tce": 100,
+      "tci": 51,
+      "tc": 151,
+      "gs": 8,
+      "js": 18,
+      "jr": 12,
+      "od": 19,
+      "ha": 19,
+      "dr": 19,
+      "pa": 13,
+      "is": 17,
+      "id": 15,
+      "rb": 10,
+      "sb": 9,
+      "st": 4,
+      "ft": 14,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:38.757Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49814421,
+  "firstName": "Frédéric",
+  "lastName": "Rondeau",
+  "countryId": 11,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 282310,
+      "tce": 114,
+      "tci": 44,
+      "tc": 158,
+      "gs": 8,
+      "js": 22,
+      "jr": 14,
+      "od": 21,
+      "ha": 21,
+      "dr": 22,
+      "pa": 14,
+      "is": 20,
+      "id": 12,
+      "rb": 6,
+      "sb": 6,
+      "st": 9,
+      "ft": 19,
+      "ex": 15,
+      "scoutedAt": "2025-09-24T15:14:40.439Z"
+    }
+  ]
+}

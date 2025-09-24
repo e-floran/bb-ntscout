@@ -1,0 +1,31 @@
+{
+  "id": 54731427,
+  "firstName": "Luís Pedro",
+  "lastName": "Melo",
+  "countryId": 18,
+  "potential": 4,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 12785,
+      "tce": 54,
+      "tci": 17,
+      "tc": 71,
+      "gs": 3,
+      "js": 10,
+      "jr": 10,
+      "od": 10,
+      "ha": 7,
+      "dr": 7,
+      "pa": 10,
+      "is": 6,
+      "id": 2,
+      "rb": 8,
+      "sb": 1,
+      "st": 5,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:26.905Z"
+    }
+  ]
+}

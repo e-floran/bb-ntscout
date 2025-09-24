@@ -1,0 +1,31 @@
+{
+  "id": 54098727,
+  "firstName": "Stewart",
+  "lastName": "Gallagher",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5791,
+      "tce": 61,
+      "tci": 22,
+      "tc": 83,
+      "gs": 8,
+      "js": 10,
+      "jr": 7,
+      "od": 8,
+      "ha": 13,
+      "dr": 14,
+      "pa": 9,
+      "is": 7,
+      "id": 6,
+      "rb": 7,
+      "sb": 2,
+      "st": 6,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:31.370Z"
+    }
+  ]
+}

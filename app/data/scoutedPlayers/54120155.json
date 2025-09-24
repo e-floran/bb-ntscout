@@ -1,0 +1,31 @@
+{
+  "id": 54120155,
+  "firstName": "Hugas",
+  "lastName": "Masterovas",
+  "countryId": 20,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10570,
+      "tce": 50,
+      "tci": 25,
+      "tc": 75,
+      "gs": 8,
+      "js": 11,
+      "jr": 10,
+      "od": 10,
+      "ha": 6,
+      "dr": 7,
+      "pa": 6,
+      "is": 7,
+      "id": 7,
+      "rb": 7,
+      "sb": 4,
+      "st": 8,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:26.906Z"
+    }
+  ]
+}

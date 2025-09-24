@@ -1,0 +1,31 @@
+{
+  "id": 49179797,
+  "firstName": "Bekir",
+  "lastName": "Arpak",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 101972,
+      "tce": 88,
+      "tci": 55,
+      "tc": 143,
+      "gs": 8,
+      "js": 13,
+      "jr": 11,
+      "od": 19,
+      "ha": 17,
+      "dr": 17,
+      "pa": 11,
+      "is": 16,
+      "id": 16,
+      "rb": 13,
+      "sb": 10,
+      "st": 5,
+      "ft": 24,
+      "ex": 18,
+      "scoutedAt": "2025-09-24T15:14:39.882Z"
+    }
+  ]
+}

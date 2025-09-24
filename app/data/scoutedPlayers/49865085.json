@@ -1,0 +1,31 @@
+{
+  "id": 49865085,
+  "firstName": "António",
+  "lastName": "Alves",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 260897,
+      "tce": 109,
+      "tci": 45,
+      "tc": 154,
+      "gs": 8,
+      "js": 20,
+      "jr": 12,
+      "od": 20,
+      "ha": 20,
+      "dr": 21,
+      "pa": 16,
+      "is": 17,
+      "id": 14,
+      "rb": 6,
+      "sb": 8,
+      "st": 8,
+      "ft": 31,
+      "ex": 18,
+      "scoutedAt": "2025-09-24T15:14:36.520Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53714958,
+  "firstName": "Vado",
+  "lastName": "Marcel",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9251,
+      "tce": 44,
+      "tci": 38,
+      "tc": 82,
+      "gs": 8,
+      "js": 8,
+      "jr": 7,
+      "od": 3,
+      "ha": 9,
+      "dr": 11,
+      "pa": 6,
+      "is": 11,
+      "id": 11,
+      "rb": 10,
+      "sb": 6,
+      "st": 9,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:30.268Z"
+    }
+  ]
+}

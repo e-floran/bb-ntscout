@@ -1,0 +1,31 @@
+{
+  "id": 50364828,
+  "firstName": "Felipe",
+  "lastName": "Doña",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 147098,
+      "tce": 96,
+      "tci": 54,
+      "tc": 150,
+      "gs": 8,
+      "js": 16,
+      "jr": 10,
+      "od": 18,
+      "ha": 21,
+      "dr": 21,
+      "pa": 10,
+      "is": 16,
+      "id": 17,
+      "rb": 13,
+      "sb": 8,
+      "st": 5,
+      "ft": 17,
+      "ex": 16,
+      "scoutedAt": "2025-09-24T15:14:37.634Z"
+    }
+  ]
+}

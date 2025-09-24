@@ -1,0 +1,31 @@
+{
+  "id": 54138357,
+  "firstName": "Tonči",
+  "lastName": "Sarić",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 3589,
+      "tce": 40,
+      "tci": 26,
+      "tc": 66,
+      "gs": 5,
+      "js": 7,
+      "jr": 4,
+      "od": 7,
+      "ha": 4,
+      "dr": 10,
+      "pa": 8,
+      "is": 10,
+      "id": 6,
+      "rb": 2,
+      "sb": 8,
+      "st": 1,
+      "ft": 8,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:31.927Z"
+    }
+  ]
+}

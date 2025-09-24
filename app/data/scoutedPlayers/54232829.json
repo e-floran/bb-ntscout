@@ -1,0 +1,31 @@
+{
+  "id": 54232829,
+  "firstName": "Alejandro",
+  "lastName": "Regidor",
+  "countryId": 60,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19871,
+      "tce": 71,
+      "tci": 31,
+      "tc": 102,
+      "gs": 7,
+      "js": 12,
+      "jr": 9,
+      "od": 13,
+      "ha": 13,
+      "dr": 13,
+      "pa": 11,
+      "is": 6,
+      "id": 8,
+      "rb": 7,
+      "sb": 10,
+      "st": 7,
+      "ft": 11,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:29.122Z"
+    }
+  ]
+}

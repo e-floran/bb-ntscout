@@ -1,0 +1,31 @@
+{
+  "id": 54453068,
+  "firstName": "Dávid",
+  "lastName": "Jordáki",
+  "countryId": 29,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 15276,
+      "tce": 61,
+      "tci": 30,
+      "tc": 91,
+      "gs": 4,
+      "js": 10,
+      "jr": 7,
+      "od": 11,
+      "ha": 10,
+      "dr": 11,
+      "pa": 12,
+      "is": 6,
+      "id": 8,
+      "rb": 10,
+      "sb": 6,
+      "st": 2,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:28.019Z"
+    }
+  ]
+}

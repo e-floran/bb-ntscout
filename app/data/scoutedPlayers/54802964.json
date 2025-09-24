@@ -1,0 +1,31 @@
+{
+  "id": 54802964,
+  "firstName": "Allan Nikkette",
+  "lastName": "Hofilena",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6336,
+      "tce": 57,
+      "tci": 20,
+      "tc": 77,
+      "gs": 9,
+      "js": 6,
+      "jr": 9,
+      "od": 10,
+      "ha": 13,
+      "dr": 10,
+      "pa": 9,
+      "is": 7,
+      "id": 2,
+      "rb": 2,
+      "sb": 9,
+      "st": 6,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:30.819Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54208953,
+  "firstName": "Tugomir",
+  "lastName": "Simončič",
+  "countryId": 66,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5193,
+      "tce": 51,
+      "tci": 21,
+      "tc": 72,
+      "gs": 7,
+      "js": 10,
+      "jr": 9,
+      "od": 11,
+      "ha": 10,
+      "dr": 10,
+      "pa": 1,
+      "is": 7,
+      "id": 6,
+      "rb": 6,
+      "sb": 2,
+      "st": 7,
+      "ft": 2,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:31.372Z"
+    }
+  ]
+}

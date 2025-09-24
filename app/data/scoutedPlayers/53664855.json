@@ -1,0 +1,31 @@
+{
+  "id": 53664855,
+  "firstName": "Hugo",
+  "lastName": "Ladd",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15020,
+      "tce": 65,
+      "tci": 27,
+      "tc": 92,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 13,
+      "ha": 13,
+      "dr": 13,
+      "pa": 4,
+      "is": 6,
+      "id": 8,
+      "rb": 7,
+      "sb": 6,
+      "st": 7,
+      "ft": 2,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:28.016Z"
+    }
+  ]
+}

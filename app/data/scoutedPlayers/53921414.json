@@ -1,0 +1,31 @@
+{
+  "id": 53921414,
+  "firstName": "Marián",
+  "lastName": "Marcinák",
+  "countryId": 67,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 48633,
+      "tce": 48,
+      "tci": 51,
+      "tc": 99,
+      "gs": 8,
+      "js": 11,
+      "jr": 7,
+      "od": 8,
+      "ha": 6,
+      "dr": 10,
+      "pa": 6,
+      "is": 13,
+      "id": 15,
+      "rb": 14,
+      "sb": 9,
+      "st": 7,
+      "ft": 8,
+      "ex": 5,
+      "scoutedAt": "2025-09-24T15:14:28.017Z"
+    }
+  ]
+}

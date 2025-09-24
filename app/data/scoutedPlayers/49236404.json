@@ -1,0 +1,31 @@
+{
+  "id": 49236404,
+  "firstName": "Zefos",
+  "lastName": "Feroutsos",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 214768,
+      "tce": 89,
+      "tci": 62,
+      "tc": 151,
+      "gs": 8,
+      "js": 11,
+      "jr": 7,
+      "od": 15,
+      "ha": 19,
+      "dr": 19,
+      "pa": 18,
+      "is": 16,
+      "id": 19,
+      "rb": 18,
+      "sb": 9,
+      "st": 6,
+      "ft": 28,
+      "ex": 18,
+      "scoutedAt": "2025-09-24T15:14:37.634Z"
+    }
+  ]
+}

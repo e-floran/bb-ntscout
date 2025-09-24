@@ -1,0 +1,31 @@
+{
+  "id": 54642820,
+  "firstName": "Alarico",
+  "lastName": "Camiño",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 4670,
+      "tce": 46,
+      "tci": 28,
+      "tc": 74,
+      "gs": 5,
+      "js": 5,
+      "jr": 6,
+      "od": 7,
+      "ha": 8,
+      "dr": 10,
+      "pa": 10,
+      "is": 8,
+      "id": 7,
+      "rb": 6,
+      "sb": 7,
+      "st": 4,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:30.267Z"
+    }
+  ]
+}

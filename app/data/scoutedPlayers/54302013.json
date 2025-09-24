@@ -1,0 +1,31 @@
+{
+  "id": 54302013,
+  "firstName": "Roni",
+  "lastName": "Machemmer",
+  "countryId": 3,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10228,
+      "tce": 54,
+      "tci": 32,
+      "tc": 86,
+      "gs": 9,
+      "js": 10,
+      "jr": 9,
+      "od": 11,
+      "ha": 7,
+      "dr": 11,
+      "pa": 6,
+      "is": 8,
+      "id": 8,
+      "rb": 9,
+      "sb": 7,
+      "st": 7,
+      "ft": 10,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:25.751Z"
+    }
+  ]
+}

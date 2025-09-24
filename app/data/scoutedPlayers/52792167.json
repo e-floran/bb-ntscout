@@ -1,0 +1,31 @@
+{
+  "id": 52792167,
+  "firstName": "Daniel",
+  "lastName": "Plant",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 202852,
+      "tce": 59,
+      "tci": 64,
+      "tc": 123,
+      "gs": 9,
+      "js": 8,
+      "jr": 8,
+      "od": 10,
+      "ha": 12,
+      "dr": 13,
+      "pa": 8,
+      "is": 16,
+      "id": 17,
+      "rb": 19,
+      "sb": 12,
+      "st": 6,
+      "ft": 15,
+      "ex": 8,
+      "scoutedAt": "2025-09-24T15:14:41.609Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 51058785,
+  "firstName": "Vassos",
+  "lastName": "Kelepouris",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 261513,
+      "tce": 101,
+      "tci": 59,
+      "tc": 160,
+      "gs": 8,
+      "js": 20,
+      "jr": 9,
+      "od": 20,
+      "ha": 20,
+      "dr": 21,
+      "pa": 11,
+      "is": 20,
+      "id": 19,
+      "rb": 10,
+      "sb": 10,
+      "st": 9,
+      "ft": 32,
+      "ex": 13,
+      "scoutedAt": "2025-09-24T15:14:35.962Z"
+    }
+  ]
+}

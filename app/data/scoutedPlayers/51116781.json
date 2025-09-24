@@ -1,0 +1,31 @@
+{
+  "id": 51116781,
+  "firstName": "Nedjeljko",
+  "lastName": "Crnošija",
+  "countryId": 24,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 128125,
+      "tce": 81,
+      "tci": 52,
+      "tc": 133,
+      "gs": 8,
+      "js": 16,
+      "jr": 12,
+      "od": 14,
+      "ha": 14,
+      "dr": 16,
+      "pa": 9,
+      "is": 17,
+      "id": 15,
+      "rb": 16,
+      "sb": 4,
+      "st": 2,
+      "ft": 4,
+      "ex": 10,
+      "scoutedAt": "2025-09-24T15:14:36.519Z"
+    }
+  ]
+}

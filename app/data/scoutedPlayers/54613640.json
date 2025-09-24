@@ -1,0 +1,31 @@
+{
+  "id": 54613640,
+  "firstName": "Dilermando",
+  "lastName": "Ascurra",
+  "countryId": 3,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2784,
+      "tce": 42,
+      "tci": 18,
+      "tc": 60,
+      "gs": 8,
+      "js": 8,
+      "jr": 7,
+      "od": 4,
+      "ha": 9,
+      "dr": 9,
+      "pa": 5,
+      "is": 6,
+      "id": 3,
+      "rb": 7,
+      "sb": 2,
+      "st": 5,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:31.371Z"
+    }
+  ]
+}

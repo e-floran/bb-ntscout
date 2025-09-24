@@ -1,0 +1,31 @@
+{
+  "id": 54334379,
+  "firstName": "Eladio",
+  "lastName": "Cordero",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3173,
+      "tce": 42,
+      "tci": 26,
+      "tc": 68,
+      "gs": 9,
+      "js": 8,
+      "jr": 6,
+      "od": 8,
+      "ha": 8,
+      "dr": 8,
+      "pa": 4,
+      "is": 9,
+      "id": 5,
+      "rb": 5,
+      "sb": 7,
+      "st": 6,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:31.927Z"
+    }
+  ]
+}

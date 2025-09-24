@@ -1,0 +1,31 @@
+{
+  "id": 51166890,
+  "firstName": "Albert",
+  "lastName": "Bzdyra",
+  "countryId": 58,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 254654,
+      "tce": 100,
+      "tci": 58,
+      "tc": 158,
+      "gs": 8,
+      "js": 21,
+      "jr": 11,
+      "od": 18,
+      "ha": 21,
+      "dr": 22,
+      "pa": 7,
+      "is": 22,
+      "id": 19,
+      "rb": 8,
+      "sb": 9,
+      "st": 3,
+      "ft": 23,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:35.963Z"
+    }
+  ]
+}

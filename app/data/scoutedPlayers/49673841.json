@@ -1,0 +1,31 @@
+{
+  "id": 49673841,
+  "firstName": "Lan",
+  "lastName": "Hong Jye",
+  "countryId": 70,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 33,
+      "salary": 127893,
+      "tce": 97,
+      "tci": 47,
+      "tc": 144,
+      "gs": 9,
+      "js": 20,
+      "jr": 9,
+      "od": 20,
+      "ha": 19,
+      "dr": 20,
+      "pa": 9,
+      "is": 18,
+      "id": 14,
+      "rb": 7,
+      "sb": 8,
+      "st": 6,
+      "ft": 19,
+      "ex": 15,
+      "scoutedAt": "2025-09-24T15:14:36.520Z"
+    }
+  ]
+}

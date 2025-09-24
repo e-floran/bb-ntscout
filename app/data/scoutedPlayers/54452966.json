@@ -1,0 +1,31 @@
+{
+  "id": 54452966,
+  "firstName": "Ljubinko",
+  "lastName": "Popara",
+  "countryId": 29,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10408,
+      "tce": 61,
+      "tci": 23,
+      "tc": 84,
+      "gs": 8,
+      "js": 11,
+      "jr": 12,
+      "od": 9,
+      "ha": 8,
+      "dr": 11,
+      "pa": 10,
+      "is": 9,
+      "id": 1,
+      "rb": 9,
+      "sb": 4,
+      "st": 1,
+      "ft": 2,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:26.351Z"
+    }
+  ]
+}

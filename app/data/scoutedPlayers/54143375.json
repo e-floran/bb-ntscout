@@ -1,0 +1,31 @@
+{
+  "id": 54143375,
+  "firstName": "Harald",
+  "lastName": "Stastny",
+  "countryId": 27,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 29449,
+      "tce": 38,
+      "tci": 54,
+      "tc": 92,
+      "gs": 7,
+      "js": 5,
+      "jr": 7,
+      "od": 9,
+      "ha": 6,
+      "dr": 7,
+      "pa": 4,
+      "is": 12,
+      "id": 16,
+      "rb": 11,
+      "sb": 15,
+      "st": 4,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:28.018Z"
+    }
+  ]
+}

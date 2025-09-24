@@ -1,0 +1,31 @@
+{
+  "id": 53998629,
+  "firstName": "Julian",
+  "lastName": "Wicklmayr",
+  "countryId": 4,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12926,
+      "tce": 59,
+      "tci": 33,
+      "tc": 92,
+      "gs": 8,
+      "js": 14,
+      "jr": 9,
+      "od": 6,
+      "ha": 9,
+      "dr": 13,
+      "pa": 8,
+      "is": 7,
+      "id": 7,
+      "rb": 10,
+      "sb": 9,
+      "st": 1,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:24.637Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54469238,
+  "firstName": "Taniel",
+  "lastName": "Toomla",
+  "countryId": 41,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10477,
+      "tce": 44,
+      "tci": 35,
+      "tc": 79,
+      "gs": 9,
+      "js": 10,
+      "jr": 7,
+      "od": 5,
+      "ha": 6,
+      "dr": 9,
+      "pa": 7,
+      "is": 6,
+      "id": 9,
+      "rb": 10,
+      "sb": 10,
+      "st": 5,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:27.460Z"
+    }
+  ]
+}

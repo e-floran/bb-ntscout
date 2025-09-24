@@ -1,0 +1,31 @@
+{
+  "id": 50475675,
+  "firstName": "Anacleto",
+  "lastName": "Abascal",
+  "countryId": 21,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 199791,
+      "tce": 105,
+      "tci": 36,
+      "tc": 141,
+      "gs": 9,
+      "js": 22,
+      "jr": 14,
+      "od": 20,
+      "ha": 20,
+      "dr": 21,
+      "pa": 8,
+      "is": 14,
+      "id": 9,
+      "rb": 8,
+      "sb": 5,
+      "st": 7,
+      "ft": 17,
+      "ex": 14,
+      "scoutedAt": "2025-09-24T15:14:40.437Z"
+    }
+  ]
+}

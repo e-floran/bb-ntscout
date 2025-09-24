@@ -1,0 +1,31 @@
+{
+  "id": 50827484,
+  "firstName": "Zhao",
+  "lastName": "Siyao",
+  "countryId": 45,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 221446,
+      "tce": 108,
+      "tci": 50,
+      "tc": 158,
+      "gs": 8,
+      "js": 22,
+      "jr": 15,
+      "od": 16,
+      "ha": 22,
+      "dr": 22,
+      "pa": 11,
+      "is": 21,
+      "id": 11,
+      "rb": 9,
+      "sb": 9,
+      "st": 5,
+      "ft": 26,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:39.321Z"
+    }
+  ]
+}

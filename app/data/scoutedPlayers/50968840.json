@@ -1,0 +1,31 @@
+{
+  "id": 50968840,
+  "firstName": "Pablo Ariel",
+  "lastName": "Veron",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 93640,
+      "tce": 60,
+      "tci": 61,
+      "tc": 121,
+      "gs": 9,
+      "js": 9,
+      "jr": 7,
+      "od": 14,
+      "ha": 11,
+      "dr": 8,
+      "pa": 11,
+      "is": 8,
+      "id": 18,
+      "rb": 15,
+      "sb": 20,
+      "st": 7,
+      "ft": 16,
+      "ex": 11,
+      "scoutedAt": "2025-09-24T15:14:40.437Z"
+    }
+  ]
+}

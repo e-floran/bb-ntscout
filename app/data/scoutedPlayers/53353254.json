@@ -1,0 +1,31 @@
+{
+  "id": 53353254,
+  "firstName": "Eric",
+  "lastName": "Melassi",
+  "countryId": 2,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 21073,
+      "tce": 66,
+      "tci": 47,
+      "tc": 113,
+      "gs": 6,
+      "js": 10,
+      "jr": 10,
+      "od": 12,
+      "ha": 10,
+      "dr": 14,
+      "pa": 10,
+      "is": 12,
+      "id": 13,
+      "rb": 11,
+      "sb": 11,
+      "st": 3,
+      "ft": 9,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:42.165Z"
+    }
+  ]
+}

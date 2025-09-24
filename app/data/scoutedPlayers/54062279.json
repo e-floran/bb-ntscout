@@ -1,0 +1,31 @@
+{
+  "id": 54062279,
+  "firstName": "Fabien",
+  "lastName": "Demoulin",
+  "countryId": 11,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10706,
+      "tce": 40,
+      "tci": 41,
+      "tc": 81,
+      "gs": 7,
+      "js": 10,
+      "jr": 3,
+      "od": 3,
+      "ha": 7,
+      "dr": 10,
+      "pa": 7,
+      "is": 7,
+      "id": 12,
+      "rb": 12,
+      "sb": 10,
+      "st": 5,
+      "ft": 5,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:24.638Z"
+    }
+  ]
+}

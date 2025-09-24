@@ -1,0 +1,31 @@
+{
+  "id": 50475441,
+  "firstName": "Michael",
+  "lastName": "Oppelt",
+  "countryId": 21,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 146063,
+      "tce": 78,
+      "tci": 64,
+      "tc": 142,
+      "gs": 8,
+      "js": 14,
+      "jr": 6,
+      "od": 12,
+      "ha": 16,
+      "dr": 19,
+      "pa": 11,
+      "is": 12,
+      "id": 19,
+      "rb": 13,
+      "sb": 20,
+      "st": 7,
+      "ft": 24,
+      "ex": 13,
+      "scoutedAt": "2025-09-24T15:14:39.883Z"
+    }
+  ]
+}

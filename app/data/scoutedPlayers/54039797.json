@@ -1,0 +1,31 @@
+{
+  "id": 54039797,
+  "firstName": "Jörg",
+  "lastName": "Steffl",
+  "countryId": 8,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10943,
+      "tce": 46,
+      "tci": 39,
+      "tc": 85,
+      "gs": 9,
+      "js": 7,
+      "jr": 8,
+      "od": 9,
+      "ha": 6,
+      "dr": 7,
+      "pa": 9,
+      "is": 8,
+      "id": 12,
+      "rb": 10,
+      "sb": 9,
+      "st": 6,
+      "ft": 14,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:27.463Z"
+    }
+  ]
+}

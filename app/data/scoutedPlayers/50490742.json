@@ -1,0 +1,31 @@
+{
+  "id": 50490742,
+  "firstName": "Vahid",
+  "lastName": "Lemešić",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 218452,
+      "tce": 107,
+      "tci": 49,
+      "tc": 156,
+      "gs": 9,
+      "js": 20,
+      "jr": 14,
+      "od": 21,
+      "ha": 19,
+      "dr": 19,
+      "pa": 14,
+      "is": 19,
+      "id": 14,
+      "rb": 8,
+      "sb": 8,
+      "st": 5,
+      "ft": 9,
+      "ex": 16,
+      "scoutedAt": "2025-09-24T15:14:37.638Z"
+    }
+  ]
+}

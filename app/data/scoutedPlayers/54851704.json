@@ -1,0 +1,31 @@
+{
+  "id": 54851704,
+  "firstName": "Eric",
+  "lastName": "Roduit",
+  "countryId": 28,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2531,
+      "tce": 27,
+      "tci": 26,
+      "tc": 53,
+      "gs": 9,
+      "js": 1,
+      "jr": 6,
+      "od": 5,
+      "ha": 4,
+      "dr": 7,
+      "pa": 4,
+      "is": 5,
+      "id": 7,
+      "rb": 12,
+      "sb": 2,
+      "st": 2,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:34.234Z"
+    }
+  ]
+}

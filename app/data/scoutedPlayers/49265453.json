@@ -1,0 +1,31 @@
+{
+  "id": 49265453,
+  "firstName": "Norm",
+  "lastName": "Marmolade",
+  "countryId": 17,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 119903,
+      "tce": 88,
+      "tci": 52,
+      "tc": 140,
+      "gs": 8,
+      "js": 16,
+      "jr": 12,
+      "od": 16,
+      "ha": 17,
+      "dr": 17,
+      "pa": 10,
+      "is": 16,
+      "id": 15,
+      "rb": 13,
+      "sb": 8,
+      "st": 9,
+      "ft": 27,
+      "ex": 16,
+      "scoutedAt": "2025-09-24T15:14:36.520Z"
+    }
+  ]
+}

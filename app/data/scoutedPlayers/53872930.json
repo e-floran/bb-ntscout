@@ -1,0 +1,31 @@
+{
+  "id": 53872930,
+  "firstName": "Dingdong",
+  "lastName": "Ysmael",
+  "countryId": 57,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 18993,
+      "tce": 72,
+      "tci": 28,
+      "tc": 100,
+      "gs": 8,
+      "js": 11,
+      "jr": 10,
+      "od": 12,
+      "ha": 13,
+      "dr": 14,
+      "pa": 12,
+      "is": 10,
+      "id": 6,
+      "rb": 7,
+      "sb": 5,
+      "st": 8,
+      "ft": 9,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:43.862Z"
+    }
+  ]
+}

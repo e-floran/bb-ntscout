@@ -1,0 +1,31 @@
+{
+  "id": 54802977,
+  "firstName": "Reniel",
+  "lastName": "Taruc",
+  "countryId": 57,
+  "potential": 5,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10361,
+      "tce": 50,
+      "tci": 22,
+      "tc": 72,
+      "gs": 8,
+      "js": 9,
+      "jr": 10,
+      "od": 9,
+      "ha": 6,
+      "dr": 6,
+      "pa": 10,
+      "is": 9,
+      "id": 2,
+      "rb": 9,
+      "sb": 2,
+      "st": 1,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:26.350Z"
+    }
+  ]
+}

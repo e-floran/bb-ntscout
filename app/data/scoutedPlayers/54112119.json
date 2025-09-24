@@ -1,0 +1,31 @@
+{
+  "id": 54112119,
+  "firstName": "Domingos",
+  "lastName": "de Carvalho",
+  "countryId": 18,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 28709,
+      "tce": 80,
+      "tci": 30,
+      "tc": 110,
+      "gs": 9,
+      "js": 15,
+      "jr": 10,
+      "od": 15,
+      "ha": 14,
+      "dr": 15,
+      "pa": 11,
+      "is": 9,
+      "id": 7,
+      "rb": 7,
+      "sb": 7,
+      "st": 5,
+      "ft": 9,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:24.637Z"
+    }
+  ]
+}

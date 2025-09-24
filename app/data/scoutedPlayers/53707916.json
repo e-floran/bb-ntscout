@@ -1,0 +1,31 @@
+{
+  "id": 53707916,
+  "firstName": "Bati",
+  "lastName": "Çolak",
+  "countryId": 6,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 37552,
+      "tce": 33,
+      "tci": 52,
+      "tc": 85,
+      "gs": 9,
+      "js": 8,
+      "jr": 4,
+      "od": 4,
+      "ha": 5,
+      "dr": 9,
+      "pa": 3,
+      "is": 13,
+      "id": 14,
+      "rb": 16,
+      "sb": 9,
+      "st": 6,
+      "ft": 9,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:28.019Z"
+    }
+  ]
+}

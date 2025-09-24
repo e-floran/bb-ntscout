@@ -1,0 +1,31 @@
+{
+  "id": 53120402,
+  "firstName": "Morris",
+  "lastName": "Aston",
+  "countryId": 14,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 50090,
+      "tce": 89,
+      "tci": 27,
+      "tc": 116,
+      "gs": 7,
+      "js": 16,
+      "jr": 6,
+      "od": 17,
+      "ha": 18,
+      "dr": 20,
+      "pa": 12,
+      "is": 9,
+      "id": 5,
+      "rb": 7,
+      "sb": 6,
+      "st": 8,
+      "ft": 8,
+      "ex": 5,
+      "scoutedAt": "2025-09-24T15:14:41.609Z"
+    }
+  ]
+}

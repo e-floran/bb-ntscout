@@ -1,0 +1,31 @@
+{
+  "id": 49984778,
+  "firstName": "Fulvio",
+  "lastName": "Cárdenas",
+  "countryId": 74,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 143703,
+      "tce": 98,
+      "tci": 35,
+      "tc": 133,
+      "gs": 9,
+      "js": 17,
+      "jr": 9,
+      "od": 19,
+      "ha": 19,
+      "dr": 20,
+      "pa": 14,
+      "is": 13,
+      "id": 12,
+      "rb": 7,
+      "sb": 3,
+      "st": 3,
+      "ft": 19,
+      "ex": 14,
+      "scoutedAt": "2025-09-24T15:14:38.760Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 49308631,
+  "firstName": "Dmytro",
+  "lastName": "Sabo",
+  "countryId": 33,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 153717,
+      "tce": 101,
+      "tci": 34,
+      "tc": 135,
+      "gs": 9,
+      "js": 22,
+      "jr": 13,
+      "od": 18,
+      "ha": 18,
+      "dr": 22,
+      "pa": 8,
+      "is": 14,
+      "id": 8,
+      "rb": 7,
+      "sb": 5,
+      "st": 2,
+      "ft": 21,
+      "ex": 13,
+      "scoutedAt": "2025-09-24T15:14:39.321Z"
+    }
+  ]
+}

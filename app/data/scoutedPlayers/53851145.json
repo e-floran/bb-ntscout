@@ -1,0 +1,31 @@
+{
+  "id": 53851145,
+  "firstName": "Jan",
+  "lastName": "Kasemets",
+  "countryId": 41,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 43556,
+      "tce": 50,
+      "tci": 58,
+      "tc": 108,
+      "gs": 9,
+      "js": 3,
+      "jr": 6,
+      "od": 5,
+      "ha": 11,
+      "dr": 10,
+      "pa": 15,
+      "is": 6,
+      "id": 17,
+      "rb": 13,
+      "sb": 22,
+      "st": 4,
+      "ft": 13,
+      "ex": 5,
+      "scoutedAt": "2025-09-24T15:14:28.572Z"
+    }
+  ]
+}

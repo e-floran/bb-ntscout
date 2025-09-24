@@ -1,0 +1,31 @@
+{
+  "id": 54236848,
+  "firstName": "Hovsep",
+  "lastName": "Hovanessyan",
+  "countryId": 87,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12335,
+      "tce": 47,
+      "tci": 39,
+      "tc": 86,
+      "gs": 8,
+      "js": 9,
+      "jr": 3,
+      "od": 7,
+      "ha": 9,
+      "dr": 10,
+      "pa": 9,
+      "is": 10,
+      "id": 11,
+      "rb": 11,
+      "sb": 7,
+      "st": 7,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:28.574Z"
+    }
+  ]
+}

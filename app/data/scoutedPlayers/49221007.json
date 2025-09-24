@@ -1,0 +1,31 @@
+{
+  "id": 49221007,
+  "firstName": "Jean",
+  "lastName": "Bory",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 57744,
+      "tce": 85,
+      "tci": 36,
+      "tc": 121,
+      "gs": 7,
+      "js": 18,
+      "jr": 9,
+      "od": 9,
+      "ha": 18,
+      "dr": 21,
+      "pa": 10,
+      "is": 14,
+      "id": 8,
+      "rb": 4,
+      "sb": 10,
+      "st": 7,
+      "ft": 15,
+      "ex": 18,
+      "scoutedAt": "2025-09-24T15:14:35.961Z"
+    }
+  ]
+}

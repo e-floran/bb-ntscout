@@ -1,0 +1,31 @@
+{
+  "id": 54355348,
+  "firstName": "Sisto",
+  "lastName": "Avanzini Barbero",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 6358,
+      "tce": 53,
+      "tci": 28,
+      "tc": 81,
+      "gs": 8,
+      "js": 10,
+      "jr": 8,
+      "od": 9,
+      "ha": 6,
+      "dr": 10,
+      "pa": 10,
+      "is": 7,
+      "id": 4,
+      "rb": 9,
+      "sb": 8,
+      "st": 5,
+      "ft": 7,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:31.370Z"
+    }
+  ]
+}

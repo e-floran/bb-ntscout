@@ -1,0 +1,31 @@
+{
+  "id": 53832619,
+  "firstName": "Roman",
+  "lastName": "Pfeiffer",
+  "countryId": 27,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10336,
+      "tce": 58,
+      "tci": 20,
+      "tc": 78,
+      "gs": 9,
+      "js": 8,
+      "jr": 8,
+      "od": 10,
+      "ha": 11,
+      "dr": 9,
+      "pa": 12,
+      "is": 4,
+      "id": 4,
+      "rb": 7,
+      "sb": 5,
+      "st": 8,
+      "ft": 7,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:29.124Z"
+    }
+  ]
+}

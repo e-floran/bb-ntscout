@@ -1,0 +1,31 @@
+{
+  "id": 54347490,
+  "firstName": "Anto",
+  "lastName": "Pavičić",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 7341,
+      "tce": 61,
+      "tci": 18,
+      "tc": 79,
+      "gs": 8,
+      "js": 11,
+      "jr": 10,
+      "od": 12,
+      "ha": 8,
+      "dr": 11,
+      "pa": 9,
+      "is": 7,
+      "id": 6,
+      "rb": 3,
+      "sb": 2,
+      "st": 4,
+      "ft": 4,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:30.821Z"
+    }
+  ]
+}

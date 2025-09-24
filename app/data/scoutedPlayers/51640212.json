@@ -1,0 +1,31 @@
+{
+  "id": 51640212,
+  "firstName": "Fernando",
+  "lastName": "Carnicero",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 91439,
+      "tce": 101,
+      "tci": 22,
+      "tc": 123,
+      "gs": 8,
+      "js": 21,
+      "jr": 12,
+      "od": 19,
+      "ha": 19,
+      "dr": 20,
+      "pa": 10,
+      "is": 10,
+      "id": 6,
+      "rb": 3,
+      "sb": 3,
+      "st": 3,
+      "ft": 4,
+      "ex": 9,
+      "scoutedAt": "2025-09-24T15:14:40.438Z"
+    }
+  ]
+}

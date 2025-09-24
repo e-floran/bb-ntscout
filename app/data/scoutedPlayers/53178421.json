@@ -1,0 +1,31 @@
+{
+  "id": 53178421,
+  "firstName": "Veselin",
+  "lastName": "Bozhev",
+  "countryId": 36,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 46237,
+      "tce": 55,
+      "tci": 54,
+      "tc": 109,
+      "gs": 7,
+      "js": 13,
+      "jr": 4,
+      "od": 5,
+      "ha": 13,
+      "dr": 15,
+      "pa": 5,
+      "is": 16,
+      "id": 15,
+      "rb": 11,
+      "sb": 12,
+      "st": 2,
+      "ft": 3,
+      "ex": 6,
+      "scoutedAt": "2025-09-24T15:14:43.307Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54459181,
+  "firstName": "Zoran",
+  "lastName": "Stojaković",
+  "countryId": 35,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5173,
+      "tce": 49,
+      "tci": 16,
+      "tc": 65,
+      "gs": 5,
+      "js": 9,
+      "jr": 7,
+      "od": 10,
+      "ha": 5,
+      "dr": 10,
+      "pa": 8,
+      "is": 5,
+      "id": 8,
+      "rb": 1,
+      "sb": 2,
+      "st": 6,
+      "ft": 7,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:34.234Z"
+    }
+  ]
+}

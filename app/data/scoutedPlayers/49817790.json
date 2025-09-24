@@ -1,0 +1,31 @@
+{
+  "id": 49817790,
+  "firstName": "Léo",
+  "lastName": "Pagès",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 227209,
+      "tce": 104,
+      "tci": 58,
+      "tc": 162,
+      "gs": 8,
+      "js": 18,
+      "jr": 13,
+      "od": 20,
+      "ha": 20,
+      "dr": 20,
+      "pa": 13,
+      "is": 19,
+      "id": 19,
+      "rb": 10,
+      "sb": 10,
+      "st": 8,
+      "ft": 23,
+      "ex": 16,
+      "scoutedAt": "2025-09-24T15:14:40.437Z"
+    }
+  ]
+}

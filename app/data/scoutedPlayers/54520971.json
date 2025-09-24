@@ -1,0 +1,31 @@
+{
+  "id": 54520971,
+  "firstName": "Jonas",
+  "lastName": "Utterflod",
+  "countryId": 69,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 15021,
+      "tce": 30,
+      "tci": 45,
+      "tc": 75,
+      "gs": 9,
+      "js": 6,
+      "jr": 8,
+      "od": 5,
+      "ha": 4,
+      "dr": 5,
+      "pa": 2,
+      "is": 10,
+      "id": 14,
+      "rb": 14,
+      "sb": 7,
+      "st": 1,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:25.195Z"
+    }
+  ]
+}

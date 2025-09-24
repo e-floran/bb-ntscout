@@ -1,0 +1,31 @@
+{
+  "id": 53926914,
+  "firstName": "Nurgali",
+  "lastName": "Matayev",
+  "countryId": 83,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 9796,
+      "tce": 67,
+      "tci": 22,
+      "tc": 89,
+      "gs": 9,
+      "js": 13,
+      "jr": 12,
+      "od": 9,
+      "ha": 13,
+      "dr": 13,
+      "pa": 7,
+      "is": 6,
+      "id": 5,
+      "rb": 5,
+      "sb": 6,
+      "st": 4,
+      "ft": 6,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:33.662Z"
+    }
+  ]
+}

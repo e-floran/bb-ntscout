@@ -1,0 +1,31 @@
+{
+  "id": 50386586,
+  "firstName": "Piero",
+  "lastName": "Larocca",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 217813,
+      "tce": 104,
+      "tci": 55,
+      "tc": 159,
+      "gs": 8,
+      "js": 18,
+      "jr": 14,
+      "od": 21,
+      "ha": 19,
+      "dr": 20,
+      "pa": 12,
+      "is": 21,
+      "id": 17,
+      "rb": 8,
+      "sb": 9,
+      "st": 2,
+      "ft": 21,
+      "ex": 14,
+      "scoutedAt": "2025-09-24T15:14:38.759Z"
+    }
+  ]
+}
