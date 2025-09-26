@@ -1,15 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from "fs";
-import path from "path";
 import axios from "axios";
 import { PlayerWeek, GameShapeRange } from "../app/types/types";
 import { updateLastUpdateTimestamp } from "@/app/utils/updateLastUpdate";
-
-interface PlayerData {
-  id: string;
-  nationalTeamId: string;
-  weeks: PlayerWeek[];
-}
+import { createClient } from "@supabase/supabase-js";
 
 class BBWeeklyGameShapeDMIUpdater {
   private baseURL = "http://bbapi.buzzerbeater.com";
@@ -20,11 +14,24 @@ class BBWeeklyGameShapeDMIUpdater {
   private password = "";
   private processedPlayers = 0;
   private totalPlayers = 0;
+  private supabase: any;
 
   constructor() {
     // Get credentials from environment variables for automation
     this.username = process.env.BB_USERNAME || "";
     this.password = process.env.BB_PASSWORD || "";
+
+    // Initialize Supabase client
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error(
+        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+      );
+    }
+
+    this.supabase = createClient(supabaseUrl, supabaseKey);
 
     if (!this.username || !this.password) {
       throw new Error(
@@ -179,49 +186,63 @@ class BBWeeklyGameShapeDMIUpdater {
     return { id: currentWeekId, weekStart: currentWeekStart };
   }
 
-  private getPlayerFiles(): string[] {
-    const playersDir = path.join(process.cwd(), "app", "data", "players");
+  private async getPlayers(): Promise<string[]> {
+    const { data, error } = await this.supabase
+      .from("players")
+      .select("id")
+      .order("id");
 
-    if (!fs.existsSync(playersDir)) {
-      throw new Error(`Players directory not found: ${playersDir}`);
+    if (error) {
+      throw new Error(
+        `Failed to fetch players from database: ${error.message}`
+      );
     }
 
-    return fs
-      .readdirSync(playersDir)
-      .filter((file) => file.endsWith(".json") && file !== "example.json")
-      .sort();
+    return data.map((player: any) => player.id.toString());
   }
 
-  private loadPlayerData(playerId: string): PlayerData | null {
-    const filePath = path.join(
-      process.cwd(),
-      "app",
-      "data",
-      "players",
-      `${playerId}.json`
-    );
+  private async checkPlayerWeekExists(
+    playerId: string,
+    weekId: number,
+    season: number
+  ): Promise<boolean> {
+    const { data, error } = await this.supabase
+      .from("player_weeks")
+      .select("id")
+      .eq("player_id", parseInt(playerId))
+      .eq("week_number", weekId)
+      .eq("season", season)
+      .single();
 
-    if (fs.existsSync(filePath)) {
-      try {
-        return JSON.parse(fs.readFileSync(filePath, "utf8"));
-      } catch (error) {
-        console.error(`Error reading player file ${playerId}:`, error);
-        return null;
-      }
+    if (error && error.code !== "PGRST116") {
+      // PGRST116 is "not found" error
+      console.error(
+        `Error checking week data for player ${playerId}:`,
+        error.message
+      );
+      return false;
     }
-    return null;
+
+    return !!data;
   }
 
-  private savePlayerData(playerData: PlayerData): void {
-    const filePath = path.join(
-      process.cwd(),
-      "app",
-      "data",
-      "players",
-      `${playerData.id}.json`
-    );
+  private async savePlayerWeek(
+    playerId: string,
+    week: PlayerWeek
+  ): Promise<void> {
+    const { error } = await this.supabase.from("player_weeks").upsert({
+      player_id: parseInt(playerId),
+      week_number: week.id,
+      season: week.season,
+      gameshape: week.gameShape,
+      dmi: week.dmi,
+    });
 
-    fs.writeFileSync(filePath, JSON.stringify(playerData, null, 2));
+    if (error) {
+      throw new Error(
+        `Failed to save week data for player ${playerId}: ${error.message}`
+      );
+    }
   }
 
   async run(): Promise<void> {
@@ -247,44 +268,33 @@ class BBWeeklyGameShapeDMIUpdater {
         })\n`
       );
 
-      // Get all player files
-      const playerFiles = this.getPlayerFiles();
-      this.totalPlayers = playerFiles.length;
-      console.log(`Found ${this.totalPlayers} player files to process\n`);
+      // Get all players from database
+      const playerIds = await this.getPlayers();
+      this.totalPlayers = playerIds.length;
+      console.log(`Found ${this.totalPlayers} players to process\n`);
 
       if (this.totalPlayers === 0) {
-        console.log(
-          "No player files found. Make sure you're running this from the project root."
-        );
+        console.log("No players found in database.");
         return;
       }
 
-      // Process each player file
-      for (let i = 0; i < playerFiles.length; i++) {
-        const filename = playerFiles[i];
-        const playerId = filename.replace(".json", "");
+      // Process each player
+      for (let i = 0; i < playerIds.length; i++) {
+        const playerId = playerIds[i];
 
         try {
           console.log(
             `Processing player ${i + 1}/${this.totalPlayers}: ${playerId}`
           );
 
-          // Load existing player data
-          const playerData = this.loadPlayerData(playerId);
-          if (!playerData) {
-            console.log(
-              `  ⚠️  Warning: Could not load player data for ${playerId}, skipping...`
-            );
-            continue;
-          }
-
           // Check if this week's data already exists
-          const existingWeek = playerData.weeks.find(
-            (week) =>
-              week.season === this.currentSeason && week.id === weekInfo.id
+          const weekExists = await this.checkPlayerWeekExists(
+            playerId,
+            weekInfo.id,
+            this.currentSeason
           );
 
-          if (existingWeek) {
+          if (weekExists) {
             console.log(
               `  ℹ️  Week ${weekInfo.id} data already exists for player ${playerId}, skipping...`
             );
@@ -309,7 +319,7 @@ class BBWeeklyGameShapeDMIUpdater {
             continue;
           }
 
-          // Add new week data
+          // Create new week data
           const newWeek: PlayerWeek = {
             season: this.currentSeason,
             id: weekInfo.id,
@@ -318,8 +328,7 @@ class BBWeeklyGameShapeDMIUpdater {
             dmi: parsedData.dmi,
           };
 
-          playerData.weeks.push(newWeek);
-          this.savePlayerData(playerData);
+          await this.savePlayerWeek(playerId, newWeek);
 
           console.log(
             `  ✅ Added week ${weekInfo.id} data: GS=${
