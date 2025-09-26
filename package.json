@@ -14,7 +14,9 @@
     "fetch-players": "tsx scripts/fetch-players-bbapi.ts",
     "monday-manual": "tsx scripts/manual/mondayScript.ts",
     "friday-manual": "tsx scripts/manual/fridayScript.ts",
-    "tl-manual": "tsx scripts/manual/fetch-players-bbapi.ts"
+    "tl-manual": "tsx scripts/manual/fetch-players-bbapi.ts",
+    "migrate-db": "tsx scripts/migrate-to-supabase-new.ts",
+    "fix-gameshape": "tsx scripts/fix-gameshape.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -22,6 +24,7 @@
     "@heroicons/react": "^2.2.0",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "@supabase/supabase-js": "^2.39.3",
     "axios": "^1.11.0",
     "next": "15.4.4",
     "react": "19.1.0",
