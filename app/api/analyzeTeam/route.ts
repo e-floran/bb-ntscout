@@ -6,17 +6,28 @@ import { baseApiUrl } from "@/app/utils/api/apiUtils";
 import { users } from "@/app/utils/users";
 import xml2js from "xml2js";
 import axios from "axios";
-import { enrichPlayersWithHistory } from "@/app/utils/playerHistoryUtils";
 import {
   userCredentials,
   cleanupExpiredCredentials,
 } from "@/app/utils/userCredentials";
 import { User } from "@/app/types/mainTypes";
+import { createClient } from "@supabase/supabase-js";
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
-const TEAM_DATA_DIR = path.join(process.cwd(), "app/data/teams");
 const SEASON = 69;
+
+// Initialize Supabase client
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error(
+    "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+  );
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Session management class for handling BBAPI timeouts
 class BBAPISessionManager {
@@ -336,10 +347,6 @@ export async function GET(req: NextRequest) {
 
   // --- Default flow: analyze mainTeamId's next opponent for 1 season ---
   const mainTeamId = user.mainTeamId;
-  const jsonPath = path.join(TEAM_DATA_DIR, `${mainTeamId}.json`);
-  if (!fs.existsSync(TEAM_DATA_DIR)) {
-    fs.mkdirSync(TEAM_DATA_DIR, { recursive: true });
-  }
 
   // Fetch team schedule for this season
   const teamScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${mainTeamId}&season=${SEASON}`;
@@ -388,16 +395,8 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // If file does not exist, create as per example.json format
-  if (!fs.existsSync(jsonPath)) {
-    const jsonTeam = {
-      id: Number(mainTeamId),
-      players: Array.from(playerSet),
-      isJunior: Number(mainTeamId) > 1000,
-      continent: null,
-    };
-    fs.writeFileSync(jsonPath, JSON.stringify(jsonTeam, null, 2));
-  }
+  // Ensure team exists in database
+  await ensureTeamExists(Number(mainTeamId), Array.from(playerSet));
 
   // Find next future match
   const now = new Date();
@@ -791,9 +790,9 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
       : 0;
   });
 
-  // Convert unique players to array and enrich with history
+  // Convert unique players to array and enrich with history from database
   const playersArray = Array.from(uniquePlayers.values());
-  const playersWithHistory = enrichPlayersWithHistory(playersArray);
+  const playersWithHistory = await enrichPlayersWithHistoryFromDB(playersArray);
 
   return {
     teamName,
@@ -808,4 +807,81 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
     recentGames: recentGames,
     gdpList,
   };
+}
+
+// Helper function to enrich players with history from database
+async function enrichPlayersWithHistoryFromDB(players: any[]): Promise<any[]> {
+  const enrichedPlayers = [];
+
+  for (const player of players) {
+    try {
+      // Get player weeks data from database
+      const { data: weeks, error } = await supabase
+        .from("player_weeks")
+        .select("week_number, season, gameshape, dmi")
+        .eq("player_id", parseInt(player.id))
+        .order("season", { ascending: false })
+        .order("week_number", { ascending: false });
+
+      if (error) {
+        console.error(`Error fetching weeks for player ${player.id}:`, error);
+        enrichedPlayers.push({ ...player, weeks: [] });
+        continue;
+      }
+
+      // Transform weeks data to match expected format
+      const transformedWeeks =
+        weeks?.map((week) => ({
+          season: week.season,
+          id: week.week_number,
+          gameShape: week.gameshape,
+          dmi: week.dmi,
+        })) || [];
+
+      enrichedPlayers.push({
+        ...player,
+        weeks: transformedWeeks,
+      });
+    } catch (error) {
+      console.error(`Error enriching player ${player.id}:`, error);
+      enrichedPlayers.push({ ...player, weeks: [] });
+    }
+  }
+
+  return enrichedPlayers;
+}
+
+// Helper function to ensure team and players exist in database
+async function ensureTeamExists(
+  teamId: number,
+  playerIds: number[]
+): Promise<void> {
+  try {
+    // Ensure team exists
+    const { error: teamError } = await supabase
+      .from("teams")
+      .upsert({ id: teamId, name: null });
+
+    if (teamError) {
+      console.error(`Error upserting team ${teamId}:`, teamError);
+      return;
+    }
+
+    // Ensure all players exist with proper team_id and country_id
+    for (const playerId of playerIds) {
+      const countryId = teamId < 1000 ? teamId : teamId - 100;
+
+      const { error: playerError } = await supabase.from("players").upsert({
+        id: playerId,
+        team_id: teamId,
+        country_id: countryId,
+      });
+
+      if (playerError) {
+        console.error(`Error upserting player ${playerId}:`, playerError);
+      }
+    }
+  } catch (error) {
+    console.error("Error ensuring team exists:", error);
+  }
 }
