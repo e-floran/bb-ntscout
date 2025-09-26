@@ -5,6 +5,7 @@ import axios from "axios";
 import { PlayerWeek, GameShapeRange } from "../app/types/types";
 import { updateLastUpdateTimestamp } from "@/app/utils/updateLastUpdate";
 import xml2js from "xml2js";
+import { createClient } from "@supabase/supabase-js";
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
@@ -46,6 +47,7 @@ class BBPostMondayPlayerChecker {
   private currentSeason = 69;
   private username = "";
   private password = "";
+  private supabase: any;
 
   private readonly MAIN_TEAMS = [11, 50, 1011];
   private readonly MAIN_TEAMS_DIR = path.join(
@@ -57,6 +59,18 @@ class BBPostMondayPlayerChecker {
     // Get credentials from environment variables for automation
     this.username = process.env.BB_USERNAME || "";
     this.password = process.env.BB_PASSWORD || "";
+
+    // Initialize Supabase client
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error(
+        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+      );
+    }
+
+    this.supabase = createClient(supabaseUrl, supabaseKey);
 
     if (!this.username || !this.password) {
       throw new Error(
@@ -313,47 +327,98 @@ class BBPostMondayPlayerChecker {
     return { id: currentWeekId, weekStart: currentWeekStart };
   }
 
-  private getTeamFiles(): string[] {
-    const teamsDir = path.join(process.cwd(), "app", "data", "teams");
-    return fs.readdirSync(teamsDir).filter((file) => file.endsWith(".json"));
+  private async getTeams(): Promise<TeamData[]> {
+    const { data, error } = await this.supabase.from("teams").select("id");
+
+    if (error) {
+      throw new Error(`Failed to fetch teams: ${error.message}`);
+    }
+
+    const teams: TeamData[] = [];
+    for (const team of data) {
+      const { data: players, error: playersError } = await this.supabase
+        .from("players")
+        .select("id")
+        .eq("team_id", team.id);
+
+      if (playersError) {
+        console.error(
+          `Failed to fetch players for team ${team.id}:`,
+          playersError.message
+        );
+        continue;
+      }
+
+      teams.push({
+        id: team.id.toString(),
+        players: players.map((p) => p.id.toString()),
+      });
+    }
+
+    return teams;
   }
 
-  private loadTeamData(filename: string): TeamData {
-    const filePath = path.join(process.cwd(), "app", "data", "teams", filename);
-    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  private async loadTeamData(teamId: string): Promise<TeamData> {
+    const { data: players, error } = await this.supabase
+      .from("players")
+      .select("id")
+      .eq("team_id", parseInt(teamId));
+
+    if (error) {
+      throw new Error(
+        `Failed to load team data for ${teamId}: ${error.message}`
+      );
+    }
+
     return {
-      id: path.basename(filename, ".json"),
-      players: data.players || [],
+      id: teamId,
+      players: players.map((p: any) => p.id.toString()),
     };
   }
 
-  private saveTeamData(teamData: TeamData): void {
-    const filePath = path.join(
-      process.cwd(),
-      "app",
-      "data",
-      "teams",
-      `${teamData.id}.json`
+  private async saveTeamData(teamData: TeamData): Promise<void> {
+    // Add new players to the team (they should already exist in players table from loadTeamData)
+    // No additional action needed since we're using the players table relationship
+    console.log(
+      `Team ${teamData.id} data is handled via players table relationship`
     );
-    const fullData = { id: teamData.id, players: teamData.players };
-    fs.writeFileSync(filePath, JSON.stringify(fullData, null, 2));
   }
 
-  private savePlayerData(playerData: PlayerData): void {
-    const filePath = path.join(
-      process.cwd(),
-      "app",
-      "data",
-      "players",
-      `${playerData.id}.json`
-    );
-    const dir = path.dirname(filePath);
+  private async savePlayerData(playerData: PlayerData): Promise<void> {
+    // Insert the new player
+    const { error: playerError } = await this.supabase.from("players").upsert({
+      id: parseInt(playerData.id),
+      team_id: parseInt(playerData.nationalTeamId),
+      country_id:
+        parseInt(playerData.nationalTeamId) < 1000
+          ? parseInt(playerData.nationalTeamId)
+          : parseInt(playerData.nationalTeamId) - 100,
+    });
 
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+    if (playerError) {
+      throw new Error(
+        `Failed to save player ${playerData.id}: ${playerError.message}`
+      );
     }
 
-    fs.writeFileSync(filePath, JSON.stringify(playerData, null, 2));
+    // Insert the player weeks
+    for (const week of playerData.weeks) {
+      const { error: weekError } = await this.supabase
+        .from("player_weeks")
+        .upsert({
+          player_id: parseInt(playerData.id),
+          week_number: week.id,
+          season: week.season,
+          gameshape: week.gameShape,
+          dmi: week.dmi,
+        });
+
+      if (weekError) {
+        throw new Error(
+          `Failed to save week data for player ${playerData.id}: ${weekError.message}`
+        );
+      }
+    }
   }
 
   private saveResumeData(teamId: string, processedTeams: string[]): void {
@@ -593,21 +658,19 @@ class BBPostMondayPlayerChecker {
     }
 
     try {
-      const teamFiles = this.getTeamFiles();
+      const teams = await this.getTeams();
       const weekInfo = this.getCurrentWeekInfo();
       let newPlayersFound = 0;
       let teamsChecked = 0;
 
-      console.log(`\nChecking ${teamFiles.length} teams for new players...`);
+      console.log(`\nChecking ${teams.length} teams for new players...`);
       console.log(
         `Current week: ${weekInfo.id}, starting ${
           weekInfo.weekStart.toISOString().split("T")[0]
         }`
       );
 
-      for (const teamFile of teamFiles) {
-        const teamData = this.loadTeamData(teamFile);
-
+      for (const teamData of teams) {
         // Skip if already processed
         if (processedTeams.has(teamData.id)) {
           console.log(`Skipping team ${teamData.id} (already processed)`);
@@ -657,8 +720,8 @@ class BBPostMondayPlayerChecker {
               continue;
             }
 
-            // Load the current team data file
-            const currentTeamData = this.loadTeamData(`${gameTeam.id}.json`);
+            // Load the current team data from database
+            const currentTeamData = await this.loadTeamData(gameTeam.id);
             const newPlayerIds = gameTeam.players.filter(
               (playerId) => !currentTeamData.players.includes(playerId)
             );
@@ -669,10 +732,6 @@ class BBPostMondayPlayerChecker {
                   gameTeam.id
                 }: ${newPlayerIds.join(", ")}`
               );
-
-              // Add new players to team file
-              currentTeamData.players.push(...newPlayerIds);
-              this.saveTeamData(currentTeamData);
 
               // Process each new player
               for (const newPlayerId of newPlayerIds) {
@@ -690,7 +749,7 @@ class BBPostMondayPlayerChecker {
                     continue;
                   }
 
-                  // Create new player file
+                  // Create new player record
                   const newWeek: PlayerWeek = {
                     season: this.currentSeason,
                     id: weekInfo.id,
@@ -705,11 +764,11 @@ class BBPostMondayPlayerChecker {
                     weeks: [newWeek],
                   };
 
-                  this.savePlayerData(playerData);
+                  await this.savePlayerData(playerData);
                   newPlayersFound++;
 
                   console.log(
-                    `    Created player file for ${newPlayerId} (GS: ${parsedData.gameShape}, DMI: ${parsedData.dmi})`
+                    `    Created player record for ${newPlayerId} (GS: ${parsedData.gameShape}, DMI: ${parsedData.dmi})`
                   );
                 } catch (error) {
                   console.error(

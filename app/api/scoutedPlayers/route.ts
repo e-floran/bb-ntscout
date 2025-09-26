@@ -1,16 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
-  loadAllScoutedPlayers,
-  loadTeamPlayers,
-  filterScoutedPlayersForTeam,
-  formatScoutedPlayersTableRows,
-} from "@/app/utils/scoutedPlayersUtils";
-import {
   userCredentials,
   cleanupExpiredCredentials,
 } from "@/app/utils/userCredentials";
 import { UserRoles } from "@/app/types/types";
 import { User } from "@/app/types/mainTypes";
+import { createClient } from "@supabase/supabase-js";
+
+// Initialize Supabase client
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error(
+    "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+  );
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Helper function to determine team category
 function getTeamCategory(teamId: string): "senior" | "junior" {
@@ -77,26 +84,72 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    // User is authorized - proceed with normal flow
-    // Load all scouted players
-    const allScoutedPlayers = loadAllScoutedPlayers();
+    // User is authorized - proceed with database queries
+    // Get team players (those who have played for this NT)
+    const { data: teamPlayers, error: teamError } = await supabase
+      .from("players")
+      .select("id")
+      .eq("team_id", parseInt(teamId));
 
-    // Load team players (those who have played for this NT)
-    const teamPlayers = loadTeamPlayers(teamId);
+    if (teamError) {
+      console.error("Error fetching team players:", teamError);
+      return NextResponse.json(
+        { error: "Failed to fetch team players" },
+        { status: 500 }
+      );
+    }
 
-    // Filter scouted players for this team
-    const filteredPlayers = filterScoutedPlayersForTeam(
-      allScoutedPlayers,
-      teamId,
-      teamPlayers
-    );
+    const teamPlayerIds = teamPlayers?.map((p) => p.id) || [];
+
+    // Get scouted players with their latest scouting data, filtered by team
+    const { data: scoutedPlayers, error: scoutedError } = await supabase
+      .from("players")
+      .select(
+        `
+        id,
+        first_name,
+        last_name,
+        country_id,
+        potential,
+        current_age,
+        scoutings!inner(
+          age,
+          salary,
+          gameshape,
+          jump_shot,
+          jump_range,
+          outside_defense,
+          handling,
+          driving,
+          passing,
+          inside_shot,
+          inside_defense,
+          rebound,
+          shot_blocking,
+          stamina,
+          free_throw,
+          experience,
+          created_at
+        )
+      `
+      )
+      .in("id", teamPlayerIds)
+      .order("created_at", { foreignTable: "scoutings", ascending: false });
+
+    if (scoutedError) {
+      console.error("Error fetching scouted players:", scoutedError);
+      return NextResponse.json(
+        { error: "Failed to fetch scouted players" },
+        { status: 500 }
+      );
+    }
 
     // Format for table display
-    const tableRows = formatScoutedPlayersTableRows(filteredPlayers);
+    const tableRows = formatScoutedPlayersForTable(scoutedPlayers || []);
 
     return NextResponse.json({
       players: tableRows,
-      count: filteredPlayers.length,
+      count: tableRows.length,
       teamId,
       isJuniorTeam: parseInt(teamId, 10) >= 1000,
     });
@@ -107,4 +160,47 @@ export async function GET(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+// Helper function to format scouted players data for table display
+function formatScoutedPlayersForTable(scoutedPlayers: any[]): any[] {
+  return scoutedPlayers
+    .map((player) => {
+      // Get the most recent scouting data (first in the array after ordering)
+      const latestScouting = Array.isArray(player.scoutings)
+        ? player.scoutings[0]
+        : player.scoutings;
+
+      if (!latestScouting) {
+        return null;
+      }
+
+      return {
+        id: player.id,
+        firstName: player.first_name,
+        lastName: player.last_name,
+        countryId: player.country_id,
+        potential: player.potential,
+        currentAge: player.current_age,
+        age: latestScouting.age,
+        salary: latestScouting.salary,
+        gameshape: latestScouting.gameshape,
+        // Skills
+        jumpShot: latestScouting.jump_shot,
+        jumpRange: latestScouting.jump_range,
+        outsideDefense: latestScouting.outside_defense,
+        handling: latestScouting.handling,
+        driving: latestScouting.driving,
+        passing: latestScouting.passing,
+        insideShot: latestScouting.inside_shot,
+        insideDefense: latestScouting.inside_defense,
+        rebound: latestScouting.rebound,
+        shotBlocking: latestScouting.shot_blocking,
+        stamina: latestScouting.stamina,
+        freeThrow: latestScouting.free_throw,
+        experience: latestScouting.experience,
+        scoutedAt: latestScouting.created_at,
+      };
+    })
+    .filter((player) => player !== null); // Remove any null entries
 }
