@@ -351,7 +351,7 @@ class BBPostMondayPlayerChecker {
 
       teams.push({
         id: team.id.toString(),
-        players: players.map((p) => p.id.toString()),
+        players: players.map((p: PlayerData) => p.id.toString()),
       });
     }
 
