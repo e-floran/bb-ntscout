@@ -13,21 +13,38 @@ import {
 import { User } from "@/app/types/mainTypes";
 import { createClient } from "@supabase/supabase-js";
 
+// Import getCurrentWeekId function for proper current week detection
+function getCurrentWeekId(): number {
+  // Season 69 started on July 11th, 2025 (Friday)
+  const seasonStartDate = new Date("2025-07-11");
+  const now = new Date();
+
+  // Calculate weeks since season start
+  const daysSinceStart = Math.floor(
+    (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+  );
+  const weeksSinceStart = Math.floor(daysSinceStart / 7);
+
+  // Current week ID (1-14)
+  return Math.min(weeksSinceStart + 1, 14);
+}
+
+// Function to get Supabase client (lazy initialization)
+function getSupabaseClient() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+    );
+  }
+  return createClient(supabaseUrl, supabaseKey);
+}
+
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
 const SEASON = 69;
-
-// Initialize Supabase client
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error(
-    "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
-  );
-}
-
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Session management class for handling BBAPI timeouts
 class BBAPISessionManager {
@@ -396,7 +413,8 @@ export async function GET(req: NextRequest) {
   }
 
   // Ensure team exists in database
-  await ensureTeamExists(Number(mainTeamId), Array.from(playerSet));
+  const supabase = getSupabaseClient();
+  await ensureTeamExists(supabase, Number(mainTeamId), Array.from(playerSet));
 
   // Find next future match
   const now = new Date();
@@ -792,7 +810,11 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
 
   // Convert unique players to array and enrich with history from database
   const playersArray = Array.from(uniquePlayers.values());
-  const playersWithHistory = await enrichPlayersWithHistoryFromDB(playersArray);
+  const supabase = getSupabaseClient();
+  const playersWithHistory = await enrichPlayersWithHistoryFromDB(
+    supabase,
+    playersArray
+  );
 
   return {
     teamName,
@@ -810,7 +832,10 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
 }
 
 // Helper function to enrich players with history from database
-async function enrichPlayersWithHistoryFromDB(players: any[]): Promise<any[]> {
+async function enrichPlayersWithHistoryFromDB(
+  supabase: any,
+  players: any[]
+): Promise<any[]> {
   const enrichedPlayers = [];
 
   for (const player of players) {
@@ -829,19 +854,81 @@ async function enrichPlayersWithHistoryFromDB(players: any[]): Promise<any[]> {
         continue;
       }
 
-      // Transform weeks data to match expected format
-      const transformedWeeks =
-        weeks?.map((week) => ({
+      // Transform weeks data to match PlayerHistoryCard expected format
+      const gameShapeHistory =
+        weeks?.map((week: any) => ({
           season: week.season,
-          id: week.week_number,
+          weekId: week.week_number,
           gameShape: week.gameshape,
           dmi: week.dmi,
         })) || [];
 
-      enrichedPlayers.push({
+      // Use the exact current week ID from the utility function
+      const actualCurrentWeekId = getCurrentWeekId();
+      const currentSeason = SEASON;
+
+      // Find the data for the actual current week
+      const currentWeekData = weeks?.find(
+        (week: any) =>
+          week.season === currentSeason &&
+          week.week_number === actualCurrentWeekId
+      );
+
+      // Find the previous week data for change calculations
+      const previousWeekData = weeks?.find(
+        (week: any) =>
+          week.season === currentSeason &&
+          week.week_number === actualCurrentWeekId - 1
+      );
+
+      // We have current data only if we have data for the exact current week
+      const hasCurrentData = currentWeekData != null;
+
+      const currentDMI = currentWeekData?.dmi || 0;
+      const currentGameShape = currentWeekData?.gameshape || 0;
+      const gameShapeChange =
+        hasCurrentData && previousWeekData
+          ? currentGameShape - previousWeekData.gameshape
+          : 0;
+      const dmiChange =
+        hasCurrentData && previousWeekData
+          ? currentDMI - previousWeekData.dmi
+          : 0;
+
+      // Find last GS=9 week for comparison
+      const lastGS9Week = weeks?.find((week: any) => week.gameshape === 9);
+      const dmiComparisonToLastGS9 =
+        lastGS9Week && hasCurrentData
+          ? {
+              percentage: (currentDMI / lastGS9Week.dmi) * 100,
+              lastGS9WeekId: lastGS9Week.week_number,
+              lastGS9DMI: lastGS9Week.dmi,
+            }
+          : null;
+
+      const enrichedPlayer = {
         ...player,
-        weeks: transformedWeeks,
-      });
+        // Original weeks format for compatibility
+        weeks:
+          weeks?.map((week: any) => ({
+            season: week.season,
+            id: week.week_number,
+            gameShape: week.gameshape,
+            dmi: week.dmi,
+          })) || [],
+        // PlayerHistoryCard expected format
+        gameShapeHistory,
+        isCurrentWeekDataAvailable: hasCurrentData,
+        currentDMI,
+        currentGameShape,
+        gameShapeChange,
+        dmiChange,
+        dmiComparisonToLastGS9,
+        currentWeek: currentWeekData?.week_number || 0,
+        currentSeason: currentWeekData?.season || 69,
+      };
+
+      enrichedPlayers.push(enrichedPlayer);
     } catch (error) {
       console.error(`Error enriching player ${player.id}:`, error);
       enrichedPlayers.push({ ...player, weeks: [] });
@@ -853,6 +940,7 @@ async function enrichPlayersWithHistoryFromDB(players: any[]): Promise<any[]> {
 
 // Helper function to ensure team and players exist in database
 async function ensureTeamExists(
+  supabase: any,
   teamId: number,
   playerIds: number[]
 ): Promise<void> {

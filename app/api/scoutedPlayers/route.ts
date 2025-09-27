@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
-import {
-  userCredentials,
-  cleanupExpiredCredentials,
-} from "@/app/utils/userCredentials";
+// Removed unused userCredentials imports
 import { UserRoles } from "@/app/types/types";
 import { User } from "@/app/types/mainTypes";
 import { createClient } from "@supabase/supabase-js";
 
-// Initialize Supabase client
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
+// Function to get Supabase client (lazy initialization)
+function getSupabaseClient() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error(
-    "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
-  );
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+    );
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
 }
-
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Helper function to determine team category
 function getTeamCategory(teamId: string): "senior" | "junior" {
@@ -58,20 +57,20 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Get session ID and retrieve user from credentials
-    const sessionId = request.cookies.get("session_id")?.value;
-    if (!sessionId) {
-      return NextResponse.json({ error: "No session found" }, { status: 401 });
+    // Get user authentication (matching analyzeTeam route)
+    const login = request.cookies.get("authenticated_user")?.value;
+
+    if (!login) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    // Clean up expired credentials and get user
-    cleanupExpiredCredentials();
-    const storedCredentials = userCredentials.get(sessionId);
-    if (!storedCredentials) {
-      return NextResponse.json({ error: "Invalid session" }, { status: 401 });
-    }
+    // Find user in users array (matching analyzeTeam route)
+    const { users } = await import("@/app/utils/users");
+    const user = users.find((u) => u.login === login && u.active);
 
-    const user = storedCredentials.user;
+    if (!user) {
+      return NextResponse.json({ error: "Session expired" }, { status: 401 });
+    }
 
     // Check if user can access scouted players for this team
     if (!canUserAccessScoutedPlayers(user, teamId)) {
@@ -86,24 +85,19 @@ export async function GET(request: NextRequest) {
     }
 
     // User is authorized - proceed with database queries
-    // Get team players (those who have played for this NT)
-    const { data: teamPlayers, error: teamError } = await supabase
-      .from("players")
-      .select("id")
-      .eq("team_id", parseInt(teamId));
+    const supabase = getSupabaseClient();
 
-    if (teamError) {
-      console.error("Error fetching team players:", teamError);
-      return NextResponse.json(
-        { error: "Failed to fetch team players" },
-        { status: 500 }
-      );
-    }
+    // Get eligible players: both those who played for this team AND those from same country
+    // Determine country_id from team_id (junior teams: teamId - 1000, senior teams: teamId)
+    const countryId =
+      parseInt(teamId) >= 1000 ? parseInt(teamId) - 1000 : parseInt(teamId);
+    const isJuniorTeam = parseInt(teamId) >= 1000;
+    console.log(`� Country ID: ${countryId}`);
 
-    const teamPlayerIds = teamPlayers?.map((p) => p.id) || [];
-
-    // Get scouted players with their latest scouting data, filtered by team
-    const { data: scoutedPlayers, error: scoutedError } = await supabase
+    // Get scouted players with their latest scouting data, filtered by country
+    // This includes both players who played for the team AND eligible players from same country
+    // Build the query with age filtering based on team category
+    let query = supabase
       .from("players")
       .select(
         `
@@ -113,6 +107,7 @@ export async function GET(request: NextRequest) {
         country_id,
         potential,
         current_age,
+        team_id,
         scoutings!inner(
           age,
           salary,
@@ -134,8 +129,25 @@ export async function GET(request: NextRequest) {
         )
       `
       )
-      .in("id", teamPlayerIds)
-      .order("created_at", { foreignTable: "scoutings", ascending: false });
+      .eq("country_id", countryId);
+
+    // Add age and salary filtering based on team category
+    if (isJuniorTeam) {
+      // Junior team: players aged 18-21 with salary > 10,000
+      query = query
+        .gte("current_age", 18)
+        .lte("current_age", 21)
+        .gte("scoutings.salary", 10000);
+    } else {
+      // Senior team: players aged 22+ with salary > 100,000
+      query = query.gte("current_age", 22).gte("scoutings.salary", 100000);
+    }
+
+    // Execute the query with ordering
+    const { data: scoutedPlayers, error: scoutedError } = await query.order(
+      "created_at",
+      { foreignTable: "scoutings", ascending: false }
+    );
 
     if (scoutedError) {
       console.error("Error fetching scouted players:", scoutedError);
@@ -165,7 +177,7 @@ export async function GET(request: NextRequest) {
 
 // Helper function to format scouted players data for table display
 function formatScoutedPlayersForTable(scoutedPlayers: any[]): any[] {
-  return scoutedPlayers
+  const formatted = scoutedPlayers
     .map((player) => {
       // Get the most recent scouting data (first in the array after ordering)
       const latestScouting = Array.isArray(player.scoutings)
@@ -176,32 +188,37 @@ function formatScoutedPlayersForTable(scoutedPlayers: any[]): any[] {
         return null;
       }
 
-      return {
-        id: player.id,
-        firstName: player.first_name,
-        lastName: player.last_name,
-        countryId: player.country_id,
-        potential: player.potential,
-        currentAge: player.current_age,
-        age: latestScouting.age,
-        salary: latestScouting.salary,
-        gameshape: latestScouting.gameshape,
-        // Skills
-        jumpShot: latestScouting.jump_shot,
-        jumpRange: latestScouting.jump_range,
-        outsideDefense: latestScouting.outside_defense,
-        handling: latestScouting.handling,
-        driving: latestScouting.driving,
-        passing: latestScouting.passing,
-        insideShot: latestScouting.inside_shot,
-        insideDefense: latestScouting.inside_defense,
-        rebound: latestScouting.rebound,
-        shotBlocking: latestScouting.shot_blocking,
-        stamina: latestScouting.stamina,
-        freeThrow: latestScouting.free_throw,
-        experience: latestScouting.experience,
-        scoutedAt: latestScouting.created_at,
-      };
+      // Format as array to match DataTable expectations
+      // Headers: ["Joueur", "Âge", "Salaire", "TC", "TCE", "TCI", "GS", "JS", "JR", "OD", "HA", "DR", "PA", "IS", "ID", "RB", "SB", "ST", "FT", "EX", "POT", "Scouté le", "NT"]
+      const formattedPlayer = [
+        `${player.first_name} ${player.last_name}`, // Joueur
+        latestScouting.age, // Âge
+        latestScouting.salary?.toLocaleString() || "N/A", // Salaire
+        "N/A", // TC (Total Contribution - calculate if needed)
+        "N/A", // TCE (Total Contribution External)
+        "N/A", // TCI (Total Contribution Internal)
+        latestScouting.gameshape, // GS
+        latestScouting.jump_shot, // JS
+        latestScouting.jump_range, // JR
+        latestScouting.outside_defense, // OD
+        latestScouting.handling, // HA
+        latestScouting.driving, // DR
+        latestScouting.passing, // PA
+        latestScouting.inside_shot, // IS
+        latestScouting.inside_defense, // ID
+        latestScouting.rebound, // RB
+        latestScouting.shot_blocking, // SB
+        latestScouting.stamina, // ST
+        latestScouting.free_throw, // FT
+        latestScouting.experience, // EX
+        player.potential, // POT
+        new Date(latestScouting.created_at).toLocaleDateString(), // Scouté le
+        player.team_id ? "Oui" : "Non", // NT (has played for any national team)
+      ];
+
+      return formattedPlayer;
     })
-    .filter((player) => player !== null); // Remove any null entries
+    .filter((player) => player !== null);
+
+  return formatted;
 }
