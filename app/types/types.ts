@@ -68,4 +68,5 @@ export enum UserRoles {
   User = "USER",
   Coach = "COACH",
   Staff = "STAFF",
+  Scout = "SCOUT",
 }
