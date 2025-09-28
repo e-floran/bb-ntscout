@@ -1,0 +1,31 @@
+{
+  "id": 54368937,
+  "firstName": "Umar",
+  "lastName": "El Hadden",
+  "countryId": 11,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 2959,
+      "tce": 39,
+      "tci": 21,
+      "tc": 60,
+      "gs": 5,
+      "js": 5,
+      "jr": 9,
+      "od": 6,
+      "ha": 7,
+      "dr": 10,
+      "pa": 2,
+      "is": 4,
+      "id": 8,
+      "rb": 7,
+      "sb": 2,
+      "st": 6,
+      "ft": 8,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:34.233Z"
+    }
+  ]
+}

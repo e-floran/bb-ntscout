@@ -1,0 +1,31 @@
+{
+  "id": 49049238,
+  "firstName": "Guo",
+  "lastName": "Cunan",
+  "countryId": 5,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 35,
+      "salary": 196136,
+      "tce": 89,
+      "tci": 55,
+      "tc": 144,
+      "gs": 9,
+      "js": 17,
+      "jr": 11,
+      "od": 15,
+      "ha": 18,
+      "dr": 18,
+      "pa": 10,
+      "is": 19,
+      "id": 17,
+      "rb": 12,
+      "sb": 7,
+      "st": 6,
+      "ft": 30,
+      "ex": 18,
+      "scoutedAt": "2025-09-24T15:14:37.076Z"
+    }
+  ]
+}

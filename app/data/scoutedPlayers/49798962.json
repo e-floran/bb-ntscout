@@ -1,0 +1,31 @@
+{
+  "id": 49798962,
+  "firstName": "Pasquale",
+  "lastName": "Pensa",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 200151,
+      "tce": 65,
+      "tci": 61,
+      "tc": 126,
+      "gs": 9,
+      "js": 14,
+      "jr": 6,
+      "od": 4,
+      "ha": 15,
+      "dr": 17,
+      "pa": 9,
+      "is": 18,
+      "id": 17,
+      "rb": 17,
+      "sb": 9,
+      "st": 9,
+      "ft": 25,
+      "ex": 15,
+      "scoutedAt": "2025-09-24T15:14:39.884Z"
+    }
+  ]
+}

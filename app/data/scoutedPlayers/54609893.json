@@ -1,0 +1,31 @@
+{
+  "id": 54609893,
+  "firstName": "Nikolay",
+  "lastName": "Ladnev",
+  "countryId": 2,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 10798,
+      "tce": 45,
+      "tci": 28,
+      "tc": 73,
+      "gs": 7,
+      "js": 10,
+      "jr": 8,
+      "od": 8,
+      "ha": 5,
+      "dr": 11,
+      "pa": 3,
+      "is": 6,
+      "id": 8,
+      "rb": 9,
+      "sb": 5,
+      "st": 7,
+      "ft": 5,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:25.752Z"
+    }
+  ]
+}

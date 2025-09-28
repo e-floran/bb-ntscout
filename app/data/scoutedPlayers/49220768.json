@@ -1,0 +1,31 @@
+{
+  "id": 49220768,
+  "firstName": "Raphaël",
+  "lastName": "Coupe",
+  "countryId": 11,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 34,
+      "salary": 226331,
+      "tce": 114,
+      "tci": 35,
+      "tc": 149,
+      "gs": 8,
+      "js": 22,
+      "jr": 16,
+      "od": 21,
+      "ha": 21,
+      "dr": 23,
+      "pa": 11,
+      "is": 16,
+      "id": 11,
+      "rb": 3,
+      "sb": 5,
+      "st": 7,
+      "ft": 22,
+      "ex": 19,
+      "scoutedAt": "2025-09-24T15:14:35.962Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 50765141,
+  "firstName": "Guido",
+  "lastName": "van Kallen",
+  "countryId": 16,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 31,
+      "salary": 151829,
+      "tce": 90,
+      "tci": 55,
+      "tc": 145,
+      "gs": 8,
+      "js": 17,
+      "jr": 11,
+      "od": 11,
+      "ha": 18,
+      "dr": 19,
+      "pa": 14,
+      "is": 17,
+      "id": 16,
+      "rb": 12,
+      "sb": 10,
+      "st": 5,
+      "ft": 12,
+      "ex": 13,
+      "scoutedAt": "2025-09-24T15:14:39.323Z"
+    }
+  ]
+}

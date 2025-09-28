@@ -1,0 +1,31 @@
+{
+  "id": 54326472,
+  "firstName": "Turan",
+  "lastName": "Ata",
+  "countryId": 6,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5988,
+      "tce": 36,
+      "tci": 30,
+      "tc": 66,
+      "gs": 4,
+      "js": 4,
+      "jr": 4,
+      "od": 6,
+      "ha": 6,
+      "dr": 7,
+      "pa": 9,
+      "is": 7,
+      "id": 9,
+      "rb": 9,
+      "sb": 5,
+      "st": 1,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:33.664Z"
+    }
+  ]
+}

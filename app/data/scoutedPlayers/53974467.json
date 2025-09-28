@@ -1,0 +1,31 @@
+{
+  "id": 53974467,
+  "firstName": "Stacy",
+  "lastName": "Louis",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4370,
+      "tce": 47,
+      "tci": 24,
+      "tc": 71,
+      "gs": 8,
+      "js": 8,
+      "jr": 8,
+      "od": 7,
+      "ha": 8,
+      "dr": 9,
+      "pa": 7,
+      "is": 6,
+      "id": 8,
+      "rb": 4,
+      "sb": 6,
+      "st": 3,
+      "ft": 11,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:33.663Z"
+    }
+  ]
+}

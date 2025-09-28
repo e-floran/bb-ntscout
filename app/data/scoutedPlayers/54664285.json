@@ -1,0 +1,31 @@
+{
+  "id": 54664285,
+  "firstName": "Massimo",
+  "lastName": "Schirinzi",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3395,
+      "tce": 45,
+      "tci": 16,
+      "tc": 61,
+      "gs": 8,
+      "js": 6,
+      "jr": 7,
+      "od": 7,
+      "ha": 9,
+      "dr": 8,
+      "pa": 8,
+      "is": 3,
+      "id": 1,
+      "rb": 6,
+      "sb": 6,
+      "st": 8,
+      "ft": 2,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:31.372Z"
+    }
+  ]
+}

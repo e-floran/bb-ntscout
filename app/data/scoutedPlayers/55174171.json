@@ -1,0 +1,31 @@
+{
+  "id": 55174171,
+  "firstName": "Soma",
+  "lastName": "Gergely",
+  "countryId": 29,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 3330,
+      "tce": 40,
+      "tci": 16,
+      "tc": 56,
+      "gs": 9,
+      "js": 8,
+      "jr": 7,
+      "od": 7,
+      "ha": 7,
+      "dr": 4,
+      "pa": 7,
+      "is": 1,
+      "id": 5,
+      "rb": 5,
+      "sb": 5,
+      "st": 7,
+      "ft": 1,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:30.267Z"
+    }
+  ]
+}

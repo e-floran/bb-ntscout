@@ -1,0 +1,31 @@
+{
+  "id": 54352816,
+  "firstName": "Dario",
+  "lastName": "Zabeo",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 3826,
+      "tce": 44,
+      "tci": 20,
+      "tc": 64,
+      "gs": 8,
+      "js": 6,
+      "jr": 6,
+      "od": 7,
+      "ha": 7,
+      "dr": 11,
+      "pa": 7,
+      "is": 5,
+      "id": 7,
+      "rb": 5,
+      "sb": 3,
+      "st": 6,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:31.924Z"
+    }
+  ]
+}

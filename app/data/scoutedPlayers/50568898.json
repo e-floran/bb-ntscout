@@ -1,0 +1,31 @@
+{
+  "id": 50568898,
+  "firstName": "Miltos",
+  "lastName": "Kakavoulis",
+  "countryId": 77,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 152267,
+      "tce": 102,
+      "tci": 39,
+      "tc": 141,
+      "gs": 8,
+      "js": 18,
+      "jr": 16,
+      "od": 19,
+      "ha": 18,
+      "dr": 18,
+      "pa": 13,
+      "is": 9,
+      "id": 12,
+      "rb": 8,
+      "sb": 10,
+      "st": 5,
+      "ft": 18,
+      "ex": 14,
+      "scoutedAt": "2025-09-24T15:14:37.636Z"
+    }
+  ]
+}

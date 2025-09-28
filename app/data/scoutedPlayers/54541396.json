@@ -1,0 +1,31 @@
+{
+  "id": 54541396,
+  "firstName": "Dung",
+  "lastName": "Nguyên",
+  "countryId": 92,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 4608,
+      "tce": 42,
+      "tci": 23,
+      "tc": 65,
+      "gs": 3,
+      "js": 7,
+      "jr": 2,
+      "od": 8,
+      "ha": 7,
+      "dr": 10,
+      "pa": 8,
+      "is": 4,
+      "id": 8,
+      "rb": 8,
+      "sb": 3,
+      "st": 8,
+      "ft": 10,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:30.267Z"
+    }
+  ]
+}

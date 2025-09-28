@@ -1,0 +1,31 @@
+{
+  "id": 53907204,
+  "firstName": "Hsiao",
+  "lastName": "Hee Chan",
+  "countryId": 70,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 15700,
+      "tce": 74,
+      "tci": 22,
+      "tc": 96,
+      "gs": 9,
+      "js": 17,
+      "jr": 8,
+      "od": 15,
+      "ha": 13,
+      "dr": 14,
+      "pa": 7,
+      "is": 6,
+      "id": 5,
+      "rb": 7,
+      "sb": 4,
+      "st": 5,
+      "ft": 11,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:28.571Z"
+    }
+  ]
+}

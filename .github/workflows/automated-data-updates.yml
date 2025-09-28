@@ -41,18 +41,8 @@ jobs:
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
-
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add app/data/players/*.json app/data/lastUpdate.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "🤖 Weekly GameShape & DMI update - $(date +'%Y-%m-%d')"
-            git push
-          fi
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
       - name: Trigger Netlify rebuild
         run: |
@@ -81,18 +71,8 @@ jobs:
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD }}
-
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add app/data/teams/*.json app/data/players/*.json app/data/lastUpdate.json
-          if git diff --staged --quiet; then
-            echo "No new players found"
-          else
-            git commit -m "🆕 New players check - $(date +'%Y-%m-%d')"
-            git push
-          fi
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
       - name: Trigger Netlify rebuild
         run: |
@@ -121,18 +101,8 @@ jobs:
         env:
           BB_USERNAME: ${{ secrets.BB_USERNAME }}
           BB_PASSWORD: ${{ secrets.BB_PASSWORD_2 }}
-
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add app/data/scoutedPlayers/*.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "🤖 Scouted players update - $(date +'%Y-%m-%d')"
-            git push
-          fi
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
       - name: Trigger Netlify rebuild
         run: |

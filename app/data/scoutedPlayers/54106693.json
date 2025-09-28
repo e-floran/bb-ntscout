@@ -1,0 +1,31 @@
+{
+  "id": 54106693,
+  "firstName": "Sytse",
+  "lastName": "Altona",
+  "countryId": 16,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 22604,
+      "tce": 45,
+      "tci": 44,
+      "tc": 89,
+      "gs": 9,
+      "js": 8,
+      "jr": 4,
+      "od": 10,
+      "ha": 8,
+      "dr": 9,
+      "pa": 6,
+      "is": 13,
+      "id": 14,
+      "rb": 10,
+      "sb": 7,
+      "st": 5,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:25.197Z"
+    }
+  ]
+}

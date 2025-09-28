@@ -1,0 +1,31 @@
+{
+  "id": 54697123,
+  "firstName": "Nikos",
+  "lastName": "Kalogeropoulos",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2440,
+      "tce": 28,
+      "tci": 28,
+      "tc": 56,
+      "gs": 8,
+      "js": 5,
+      "jr": 2,
+      "od": 7,
+      "ha": 6,
+      "dr": 4,
+      "pa": 4,
+      "is": 8,
+      "id": 9,
+      "rb": 5,
+      "sb": 6,
+      "st": 6,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:31.373Z"
+    }
+  ]
+}

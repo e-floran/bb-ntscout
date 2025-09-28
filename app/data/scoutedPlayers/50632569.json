@@ -1,0 +1,31 @@
+{
+  "id": 50632569,
+  "firstName": "Marciano",
+  "lastName": "Coristanco",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 30,
+      "salary": 136658,
+      "tce": 89,
+      "tci": 56,
+      "tc": 145,
+      "gs": 8,
+      "js": 16,
+      "jr": 9,
+      "od": 15,
+      "ha": 18,
+      "dr": 19,
+      "pa": 12,
+      "is": 18,
+      "id": 15,
+      "rb": 13,
+      "sb": 10,
+      "st": 2,
+      "ft": 22,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:38.759Z"
+    }
+  ]
+}

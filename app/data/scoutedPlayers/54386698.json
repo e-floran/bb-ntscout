@@ -1,0 +1,31 @@
+{
+  "id": 54386698,
+  "firstName": "Ioakeim",
+  "lastName": "Chanakis",
+  "countryId": 12,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 13464,
+      "tce": 63,
+      "tci": 26,
+      "tc": 89,
+      "gs": 6,
+      "js": 13,
+      "jr": 9,
+      "od": 10,
+      "ha": 9,
+      "dr": 13,
+      "pa": 9,
+      "is": 4,
+      "id": 9,
+      "rb": 7,
+      "sb": 6,
+      "st": 3,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:29.124Z"
+    }
+  ]
+}

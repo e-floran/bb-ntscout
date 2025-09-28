@@ -1,0 +1,31 @@
+{
+  "id": 54106639,
+  "firstName": "Atse",
+  "lastName": "Borgerink",
+  "countryId": 16,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10744,
+      "tce": 37,
+      "tci": 44,
+      "tc": 81,
+      "gs": 9,
+      "js": 2,
+      "jr": 3,
+      "od": 6,
+      "ha": 8,
+      "dr": 8,
+      "pa": 10,
+      "is": 3,
+      "id": 15,
+      "rb": 10,
+      "sb": 16,
+      "st": 5,
+      "ft": 4,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:29.123Z"
+    }
+  ]
+}

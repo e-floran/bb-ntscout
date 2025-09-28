@@ -1,0 +1,31 @@
+{
+  "id": 54423243,
+  "firstName": "Anton",
+  "lastName": "Bibichev",
+  "countryId": 19,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10667,
+      "tce": 57,
+      "tci": 14,
+      "tc": 71,
+      "gs": 8,
+      "js": 14,
+      "jr": 11,
+      "od": 10,
+      "ha": 9,
+      "dr": 8,
+      "pa": 5,
+      "is": 6,
+      "id": 2,
+      "rb": 3,
+      "sb": 3,
+      "st": 3,
+      "ft": 11,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:29.123Z"
+    }
+  ]
+}

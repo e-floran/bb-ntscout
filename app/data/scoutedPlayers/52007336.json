@@ -1,0 +1,31 @@
+{
+  "id": 52007336,
+  "firstName": "Sergio",
+  "lastName": "Gastón",
+  "countryId": 7,
+  "potential": 11,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 55322,
+      "tce": 80,
+      "tci": 40,
+      "tc": 120,
+      "gs": 6,
+      "js": 17,
+      "jr": 12,
+      "od": 10,
+      "ha": 15,
+      "dr": 16,
+      "pa": 10,
+      "is": 11,
+      "id": 10,
+      "rb": 10,
+      "sb": 9,
+      "st": 7,
+      "ft": 15,
+      "ex": 7,
+      "scoutedAt": "2025-09-24T15:14:38.757Z"
+    }
+  ]
+}

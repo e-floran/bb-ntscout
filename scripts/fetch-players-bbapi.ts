@@ -1,12 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import { createClient } from "@supabase/supabase-js";
 
-// Get __dirname equivalent for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// Initialize Supabase client
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error(
+    "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+  );
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // API endpoints
 const BASE_URL = "https://buzzerbeater.com/BBAPI/api/Players";
@@ -16,10 +21,6 @@ const TRANSFER_SEARCH_URL = `${BASE_URL}/transfer-search`;
 const TRANSFER_RESULTS_URL = `${BASE_URL}/transfer-results`;
 
 // Type definitions
-interface AuthRequest {
-  username: string;
-  password: string;
-}
 
 interface AuthResponse {
   jwtToken: string;
@@ -53,11 +54,6 @@ interface TransferSearchResponse {
   pages: number;
   numResults: number;
   timeStamp: string;
-}
-
-interface TransferResultsRequest {
-  searchId: string;
-  pageNum: number;
 }
 
 interface ApiPlayer {
@@ -289,57 +285,90 @@ function getWeekStart(dateStr: string): string {
   return date.toISOString().slice(0, 10); // YYYY-MM-DD
 }
 
-// Save player data to JSON file, preventing duplicate scouting entries for the same week
-function savePlayerData(player: ApiPlayer, searchIndex: number): void {
+// Save player data to database, preventing duplicate scouting entries for the same week
+async function savePlayerData(player: ApiPlayer): Promise<void> {
   try {
-    const dataDir = path.join(__dirname, "..", "app", "data", "scoutedPlayers");
-
-    // Create data directory if it doesn't exist
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-
-    const filename = `${player.playerId}.json`;
-    const filepath = path.join(dataDir, filename);
-
     // Transform the player data
     const transformedPlayer = transformPlayerData(player);
     const newScouting = transformedPlayer.scoutings[0];
     const newWeek = getWeekStart(newScouting.scoutedAt);
 
-    // If file already exists, merge the scouting data
-    if (fs.existsSync(filepath)) {
-      try {
-        const existingData: ScoutedPlayer = JSON.parse(
-          fs.readFileSync(filepath, "utf8")
-        );
-        if (existingData.scoutings) {
-          // Check if a scouting entry for the same week already exists
-          const weekExists = existingData.scoutings.some(
-            (s) => getWeekStart(s.scoutedAt) === newWeek
-          );
-          if (!weekExists) {
-            transformedPlayer.scoutings = [
-              ...existingData.scoutings,
-              newScouting,
-            ];
-          } else {
-            // Keep existing scoutings, do not add duplicate for the week
-            transformedPlayer.scoutings = [...existingData.scoutings];
-          }
-        }
-      } catch (error) {
-        console.warn(
-          `Warning: Could not merge existing data for player ${player.playerId}:`,
-          (error as Error).message
-        );
-      }
+    // Check if this player already exists in the database
+    const { data: existingPlayer, error: playerError } = await supabase
+      .from("players")
+      .select("id")
+      .eq("id", player.playerId)
+      .single();
+
+    // Upsert player data (this will update existing or create new)
+    const { error: upsertPlayerError } = await supabase.from("players").upsert({
+      id: player.playerId,
+      first_name: player.firstName,
+      last_name: player.lastName,
+      country_id: player.countryId,
+      potential: player.potential,
+      current_age: player.age,
+    });
+
+    if (upsertPlayerError) {
+      throw new Error(
+        `Failed to upsert player ${player.playerId}: ${upsertPlayerError.message}`
+      );
     }
 
-    fs.writeFileSync(filepath, JSON.stringify(transformedPlayer, null, 2));
-    console.log(
-      `Saved player ${player.playerId} (${player.firstName} ${player.lastName}) to ${filename}`
+    // Check if a scouting entry for the same week already exists
+    const { data: existingScoutings, error: scoutingCheckError } =
+      await supabase
+        .from("scoutings")
+        .select("id, created_at")
+        .eq("player_id", player.playerId);
+
+    if (scoutingCheckError) {
+      throw new Error(
+        `Failed to check existing scoutings for player ${player.playerId}: ${scoutingCheckError.message}`
+      );
+    }
+
+    const weekExists = existingScoutings?.some(
+      (s: any) => getWeekStart(s.created_at) === newWeek
     );
+
+    if (!weekExists) {
+      // Insert new scouting data
+      const { error: scoutingError } = await supabase.from("scoutings").insert({
+        player_id: player.playerId,
+        age: newScouting.age,
+        salary: newScouting.salary,
+        gameshape: newScouting.gs,
+        jump_shot: newScouting.js,
+        jump_range: newScouting.jr,
+        outside_defense: newScouting.od,
+        handling: newScouting.ha,
+        driving: newScouting.dr,
+        passing: newScouting.pa,
+        inside_shot: newScouting.is,
+        inside_defense: newScouting.id,
+        rebound: newScouting.rb,
+        shot_blocking: newScouting.sb,
+        stamina: newScouting.st,
+        free_throw: newScouting.ft,
+        experience: newScouting.ex,
+      });
+
+      if (scoutingError) {
+        throw new Error(
+          `Failed to save scouting data for player ${player.playerId}: ${scoutingError.message}`
+        );
+      }
+
+      console.log(
+        `Saved player ${player.playerId} (${player.firstName} ${player.lastName}) to database`
+      );
+    } else {
+      console.log(
+        `Scouting data for player ${player.playerId} (${player.firstName} ${player.lastName}) already exists for this week`
+      );
+    }
   } catch (error) {
     console.error(`❌ Error saving player data:`, error);
     throw error;
@@ -397,7 +426,7 @@ async function main(): Promise<void> {
 
             // Save each player
             for (const player of playersArray) {
-              savePlayerData(player, i);
+              await savePlayerData(player);
               totalPlayersProcessed++;
             }
           } else {
@@ -427,7 +456,7 @@ async function main(): Promise<void> {
 
     console.log(`\n=== Completed ===`);
     console.log(`Total players processed: ${totalPlayersProcessed}`);
-    console.log(`Player data saved to: app/data/scoutedPlayers/`);
+    console.log(`Player data saved to database`);
   } catch (error) {
     console.error("Script failed:", (error as Error).message);
     process.exit(1);

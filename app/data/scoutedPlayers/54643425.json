@@ -1,0 +1,31 @@
+{
+  "id": 54643425,
+  "firstName": "Alberto",
+  "lastName": "Mayorga",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 2727,
+      "tce": 32,
+      "tci": 24,
+      "tc": 56,
+      "gs": 7,
+      "js": 6,
+      "jr": 7,
+      "od": 3,
+      "ha": 5,
+      "dr": 7,
+      "pa": 4,
+      "is": 8,
+      "id": 5,
+      "rb": 5,
+      "sb": 6,
+      "st": 7,
+      "ft": 3,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:30.818Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52438752,
+  "firstName": "Yiorgos",
+  "lastName": "Kapetanidis",
+  "countryId": 12,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 147065,
+      "tce": 78,
+      "tci": 55,
+      "tc": 133,
+      "gs": 8,
+      "js": 18,
+      "jr": 9,
+      "od": 8,
+      "ha": 18,
+      "dr": 18,
+      "pa": 7,
+      "is": 24,
+      "id": 12,
+      "rb": 13,
+      "sb": 6,
+      "st": 9,
+      "ft": 8,
+      "ex": 9,
+      "scoutedAt": "2025-09-24T15:14:41.606Z"
+    }
+  ]
+}

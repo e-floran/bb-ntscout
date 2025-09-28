@@ -1,0 +1,31 @@
+{
+  "id": 54026486,
+  "firstName": "Antonio",
+  "lastName": "Pulido Martín",
+  "countryId": 7,
+  "potential": 6,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10205,
+      "tce": 54,
+      "tci": 28,
+      "tc": 82,
+      "gs": 8,
+      "js": 8,
+      "jr": 9,
+      "od": 11,
+      "ha": 10,
+      "dr": 11,
+      "pa": 5,
+      "is": 7,
+      "id": 9,
+      "rb": 10,
+      "sb": 2,
+      "st": 8,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:27.462Z"
+    }
+  ]
+}

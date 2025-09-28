@@ -1,0 +1,31 @@
+{
+  "id": 52592566,
+  "firstName": "Ignacio",
+  "lastName": "García de Assiaín",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 81822,
+      "tce": 103,
+      "tci": 29,
+      "tc": 132,
+      "gs": 8,
+      "js": 20,
+      "jr": 10,
+      "od": 18,
+      "ha": 23,
+      "dr": 23,
+      "pa": 9,
+      "is": 9,
+      "id": 4,
+      "rb": 9,
+      "sb": 7,
+      "st": 2,
+      "ft": 13,
+      "ex": 7,
+      "scoutedAt": "2025-09-24T15:14:42.745Z"
+    }
+  ]
+}

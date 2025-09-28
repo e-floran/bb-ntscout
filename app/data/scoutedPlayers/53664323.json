@@ -1,0 +1,31 @@
+{
+  "id": 53664323,
+  "firstName": "Tomás",
+  "lastName": "Álvarez",
+  "countryId": 1,
+  "potential": 9,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 12235,
+      "tce": 61,
+      "tci": 27,
+      "tc": 88,
+      "gs": 2,
+      "js": 15,
+      "jr": 5,
+      "od": 5,
+      "ha": 14,
+      "dr": 14,
+      "pa": 8,
+      "is": 9,
+      "id": 7,
+      "rb": 7,
+      "sb": 4,
+      "st": 3,
+      "ft": 5,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:25.194Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 53403523,
+  "firstName": "Nils",
+  "lastName": "Prieller",
+  "countryId": 8,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 22,
+      "salary": 185930,
+      "tce": 36,
+      "tci": 66,
+      "tc": 102,
+      "gs": 7,
+      "js": 8,
+      "jr": 8,
+      "od": 7,
+      "ha": 7,
+      "dr": 3,
+      "pa": 3,
+      "is": 19,
+      "id": 17,
+      "rb": 16,
+      "sb": 14,
+      "st": 4,
+      "ft": 10,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:43.308Z"
+    }
+  ]
+}

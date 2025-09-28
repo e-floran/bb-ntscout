@@ -1,0 +1,31 @@
+{
+  "id": 53906726,
+  "firstName": "Ji",
+  "lastName": "Shi Fu",
+  "countryId": 70,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 18823,
+      "tce": 81,
+      "tci": 22,
+      "tc": 103,
+      "gs": 9,
+      "js": 18,
+      "jr": 11,
+      "od": 14,
+      "ha": 15,
+      "dr": 16,
+      "pa": 7,
+      "is": 6,
+      "id": 6,
+      "rb": 3,
+      "sb": 7,
+      "st": 5,
+      "ft": 10,
+      "ex": 5,
+      "scoutedAt": "2025-09-24T15:14:28.571Z"
+    }
+  ]
+}

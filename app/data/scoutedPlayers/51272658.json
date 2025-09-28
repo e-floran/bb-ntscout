@@ -1,0 +1,31 @@
+{
+  "id": 51272658,
+  "firstName": "Isaac",
+  "lastName": "Eddy",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 28,
+      "salary": 183069,
+      "tce": 105,
+      "tci": 33,
+      "tc": 138,
+      "gs": 5,
+      "js": 16,
+      "jr": 16,
+      "od": 18,
+      "ha": 20,
+      "dr": 21,
+      "pa": 14,
+      "is": 13,
+      "id": 10,
+      "rb": 7,
+      "sb": 3,
+      "st": 5,
+      "ft": 13,
+      "ex": 10,
+      "scoutedAt": "2025-09-24T15:14:38.194Z"
+    }
+  ]
+}

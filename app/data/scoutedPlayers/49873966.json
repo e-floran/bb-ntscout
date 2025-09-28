@@ -1,0 +1,31 @@
+{
+  "id": 49873966,
+  "firstName": "Žilvinas",
+  "lastName": "Ciuplevicius",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 212224,
+      "tce": 95,
+      "tci": 60,
+      "tc": 155,
+      "gs": 8,
+      "js": 17,
+      "jr": 11,
+      "od": 20,
+      "ha": 17,
+      "dr": 18,
+      "pa": 12,
+      "is": 20,
+      "id": 18,
+      "rb": 10,
+      "sb": 12,
+      "st": 7,
+      "ft": 20,
+      "ex": 15,
+      "scoutedAt": "2025-09-24T15:14:39.884Z"
+    }
+  ]
+}

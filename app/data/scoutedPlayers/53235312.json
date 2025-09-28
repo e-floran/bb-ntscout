@@ -1,0 +1,31 @@
+{
+  "id": 53235312,
+  "firstName": "Ingemar",
+  "lastName": "Párničan",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 15027,
+      "tce": 73,
+      "tci": 34,
+      "tc": 107,
+      "gs": 6,
+      "js": 12,
+      "jr": 10,
+      "od": 7,
+      "ha": 18,
+      "dr": 19,
+      "pa": 7,
+      "is": 12,
+      "id": 7,
+      "rb": 8,
+      "sb": 7,
+      "st": 4,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:42.166Z"
+    }
+  ]
+}

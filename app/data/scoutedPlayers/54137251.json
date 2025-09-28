@@ -1,0 +1,31 @@
+{
+  "id": 54137251,
+  "firstName": "Franklin José",
+  "lastName": "Téllez",
+  "countryId": 22,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 19097,
+      "tce": 31,
+      "tci": 47,
+      "tc": 78,
+      "gs": 9,
+      "js": 5,
+      "jr": 4,
+      "od": 7,
+      "ha": 6,
+      "dr": 2,
+      "pa": 7,
+      "is": 9,
+      "id": 12,
+      "rb": 16,
+      "sb": 10,
+      "st": 6,
+      "ft": 12,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:26.350Z"
+    }
+  ]
+}

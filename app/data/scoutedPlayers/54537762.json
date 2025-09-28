@@ -1,0 +1,31 @@
+{
+  "id": 54537762,
+  "firstName": "Salilou",
+  "lastName": "Bunney",
+  "countryId": 98,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10724,
+      "tce": 38,
+      "tci": 38,
+      "tc": 76,
+      "gs": 9,
+      "js": 11,
+      "jr": 3,
+      "od": 4,
+      "ha": 4,
+      "dr": 9,
+      "pa": 7,
+      "is": 9,
+      "id": 9,
+      "rb": 10,
+      "sb": 10,
+      "st": 8,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:24.635Z"
+    }
+  ]
+}

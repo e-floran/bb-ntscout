@@ -1,0 +1,31 @@
+{
+  "id": 51269867,
+  "firstName": "Ron",
+  "lastName": "Oconnor",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 173593,
+      "tce": 102,
+      "tci": 29,
+      "tc": 131,
+      "gs": 9,
+      "js": 18,
+      "jr": 17,
+      "od": 19,
+      "ha": 17,
+      "dr": 18,
+      "pa": 13,
+      "is": 6,
+      "id": 8,
+      "rb": 8,
+      "sb": 7,
+      "st": 6,
+      "ft": 26,
+      "ex": 11,
+      "scoutedAt": "2025-09-24T15:14:40.439Z"
+    }
+  ]
+}

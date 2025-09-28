@@ -1,0 +1,31 @@
+{
+  "id": 52031415,
+  "firstName": "Rino",
+  "lastName": "Monaco Vito",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 79454,
+      "tce": 82,
+      "tci": 50,
+      "tc": 132,
+      "gs": 9,
+      "js": 19,
+      "jr": 11,
+      "od": 9,
+      "ha": 16,
+      "dr": 19,
+      "pa": 8,
+      "is": 14,
+      "id": 11,
+      "rb": 11,
+      "sb": 14,
+      "st": 5,
+      "ft": 12,
+      "ex": 8,
+      "scoutedAt": "2025-09-24T15:14:42.167Z"
+    }
+  ]
+}

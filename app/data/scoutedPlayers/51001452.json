@@ -1,0 +1,31 @@
+{
+  "id": 51001452,
+  "firstName": "Ventín",
+  "lastName": "Maior",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 29,
+      "salary": 119276,
+      "tce": 95,
+      "tci": 44,
+      "tc": 139,
+      "gs": 8,
+      "js": 18,
+      "jr": 11,
+      "od": 21,
+      "ha": 18,
+      "dr": 18,
+      "pa": 9,
+      "is": 21,
+      "id": 11,
+      "rb": 8,
+      "sb": 4,
+      "st": 4,
+      "ft": 26,
+      "ex": 12,
+      "scoutedAt": "2025-09-24T15:14:40.438Z"
+    }
+  ]
+}

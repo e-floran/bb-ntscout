@@ -1,0 +1,31 @@
+{
+  "id": 54665074,
+  "firstName": "Jody",
+  "lastName": "Rezzonico",
+  "countryId": 10,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 19,
+      "salary": 6486,
+      "tce": 47,
+      "tci": 22,
+      "tc": 69,
+      "gs": 8,
+      "js": 11,
+      "jr": 6,
+      "od": 5,
+      "ha": 8,
+      "dr": 8,
+      "pa": 9,
+      "is": 1,
+      "id": 7,
+      "rb": 10,
+      "sb": 4,
+      "st": 8,
+      "ft": 8,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:30.268Z"
+    }
+  ]
+}

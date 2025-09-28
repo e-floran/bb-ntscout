@@ -1,0 +1,31 @@
+{
+  "id": 55178840,
+  "firstName": "Borisas",
+  "lastName": "Supranaitis",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 18,
+      "salary": 3207,
+      "tce": 18,
+      "tci": 25,
+      "tc": 43,
+      "gs": 4,
+      "js": 1,
+      "jr": 1,
+      "od": 5,
+      "ha": 1,
+      "dr": 7,
+      "pa": 3,
+      "is": 7,
+      "id": 6,
+      "rb": 6,
+      "sb": 6,
+      "st": 3,
+      "ft": 6,
+      "ex": 1,
+      "scoutedAt": "2025-09-24T15:14:31.370Z"
+    }
+  ]
+}

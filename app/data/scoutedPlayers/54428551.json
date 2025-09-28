@@ -1,0 +1,31 @@
+{
+  "id": 54428551,
+  "firstName": "Aivaras",
+  "lastName": "Veberis",
+  "countryId": 20,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 5479,
+      "tce": 50,
+      "tci": 20,
+      "tc": 70,
+      "gs": 9,
+      "js": 9,
+      "jr": 5,
+      "od": 13,
+      "ha": 9,
+      "dr": 7,
+      "pa": 7,
+      "is": 9,
+      "id": 9,
+      "rb": 1,
+      "sb": 1,
+      "st": 2,
+      "ft": 10,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:31.926Z"
+    }
+  ]
+}

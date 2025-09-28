@@ -1,0 +1,31 @@
+{
+  "id": 53199112,
+  "firstName": "Emánuel",
+  "lastName": "Podmaniczky",
+  "countryId": 48,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 23,
+      "salary": 35555,
+      "tce": 84,
+      "tci": 31,
+      "tc": 115,
+      "gs": 9,
+      "js": 14,
+      "jr": 6,
+      "od": 17,
+      "ha": 19,
+      "dr": 19,
+      "pa": 9,
+      "is": 10,
+      "id": 7,
+      "rb": 8,
+      "sb": 6,
+      "st": 2,
+      "ft": 12,
+      "ex": 6,
+      "scoutedAt": "2025-09-24T15:14:42.164Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 54232596,
+  "firstName": "Thami",
+  "lastName": "Chirwa",
+  "countryId": 68,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 23142,
+      "tce": 58,
+      "tci": 44,
+      "tc": 102,
+      "gs": 8,
+      "js": 12,
+      "jr": 10,
+      "od": 7,
+      "ha": 8,
+      "dr": 13,
+      "pa": 8,
+      "is": 13,
+      "id": 13,
+      "rb": 7,
+      "sb": 11,
+      "st": 6,
+      "ft": 4,
+      "ex": 4,
+      "scoutedAt": "2025-09-24T15:14:26.351Z"
+    }
+  ]
+}

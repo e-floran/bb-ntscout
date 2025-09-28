@@ -1,0 +1,31 @@
+{
+  "id": 54212899,
+  "firstName": "Ctislav",
+  "lastName": "Zaťko",
+  "countryId": 67,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 5438,
+      "tce": 49,
+      "tci": 27,
+      "tc": 76,
+      "gs": 7,
+      "js": 6,
+      "jr": 9,
+      "od": 10,
+      "ha": 9,
+      "dr": 10,
+      "pa": 5,
+      "is": 7,
+      "id": 6,
+      "rb": 6,
+      "sb": 8,
+      "st": 7,
+      "ft": 13,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:30.267Z"
+    }
+  ]
+}

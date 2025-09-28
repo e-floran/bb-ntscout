@@ -1,0 +1,31 @@
+{
+  "id": 53679120,
+  "firstName": "Alejandro Manuel",
+  "lastName": "Calderer",
+  "countryId": 2,
+  "potential": 8,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 10623,
+      "tce": 37,
+      "tci": 37,
+      "tc": 74,
+      "gs": 9,
+      "js": 5,
+      "jr": 8,
+      "od": 4,
+      "ha": 5,
+      "dr": 9,
+      "pa": 6,
+      "is": 10,
+      "id": 11,
+      "rb": 9,
+      "sb": 7,
+      "st": 6,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:29.124Z"
+    }
+  ]
+}

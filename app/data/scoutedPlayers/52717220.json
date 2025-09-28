@@ -1,0 +1,31 @@
+{
+  "id": 52717220,
+  "firstName": "Ramón",
+  "lastName": "Victorica",
+  "countryId": 7,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 25,
+      "salary": 40487,
+      "tce": 81,
+      "tci": 25,
+      "tc": 106,
+      "gs": 6,
+      "js": 13,
+      "jr": 9,
+      "od": 13,
+      "ha": 17,
+      "dr": 17,
+      "pa": 12,
+      "is": 7,
+      "id": 7,
+      "rb": 6,
+      "sb": 5,
+      "st": 4,
+      "ft": 8,
+      "ex": 7,
+      "scoutedAt": "2025-09-24T15:14:42.744Z"
+    }
+  ]
+}

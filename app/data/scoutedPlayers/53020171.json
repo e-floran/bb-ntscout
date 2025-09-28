@@ -1,0 +1,31 @@
+{
+  "id": 53020171,
+  "firstName": "Kuba",
+  "lastName": "Piekutkowski",
+  "countryId": 4,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 24,
+      "salary": 22328,
+      "tce": 58,
+      "tci": 47,
+      "tc": 105,
+      "gs": 8,
+      "js": 7,
+      "jr": 9,
+      "od": 10,
+      "ha": 11,
+      "dr": 14,
+      "pa": 7,
+      "is": 12,
+      "id": 12,
+      "rb": 11,
+      "sb": 12,
+      "st": 7,
+      "ft": 10,
+      "ex": 5,
+      "scoutedAt": "2025-09-24T15:14:41.608Z"
+    }
+  ]
+}

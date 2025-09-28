@@ -1,0 +1,31 @@
+{
+  "id": 54423357,
+  "firstName": "Valentin",
+  "lastName": "Dovgalyuk",
+  "countryId": 19,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 20,
+      "salary": 10541,
+      "tce": 49,
+      "tci": 28,
+      "tc": 77,
+      "gs": 8,
+      "js": 11,
+      "jr": 8,
+      "od": 10,
+      "ha": 9,
+      "dr": 8,
+      "pa": 3,
+      "is": 7,
+      "id": 10,
+      "rb": 7,
+      "sb": 4,
+      "st": 7,
+      "ft": 6,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:25.195Z"
+    }
+  ]
+}

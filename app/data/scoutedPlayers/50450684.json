@@ -1,0 +1,31 @@
+{
+  "id": 50450684,
+  "firstName": "Diogo",
+  "lastName": "Quaresma",
+  "countryId": 18,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 32,
+      "salary": 111828,
+      "tce": 98,
+      "tci": 34,
+      "tc": 132,
+      "gs": 7,
+      "js": 17,
+      "jr": 14,
+      "od": 14,
+      "ha": 20,
+      "dr": 20,
+      "pa": 13,
+      "is": 11,
+      "id": 8,
+      "rb": 9,
+      "sb": 6,
+      "st": 5,
+      "ft": 14,
+      "ex": 13,
+      "scoutedAt": "2025-09-24T15:14:37.080Z"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": 52078073,
+  "firstName": "Dominiek",
+  "lastName": "Delobel",
+  "countryId": 13,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 26,
+      "salary": 146702,
+      "tce": 101,
+      "tci": 42,
+      "tc": 143,
+      "gs": 8,
+      "js": 20,
+      "jr": 15,
+      "od": 14,
+      "ha": 18,
+      "dr": 19,
+      "pa": 15,
+      "is": 17,
+      "id": 8,
+      "rb": 8,
+      "sb": 9,
+      "st": 6,
+      "ft": 23,
+      "ex": 7,
+      "scoutedAt": "2025-09-24T15:14:42.744Z"
+    }
+  ]
+}

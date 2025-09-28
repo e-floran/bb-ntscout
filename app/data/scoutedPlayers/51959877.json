@@ -1,0 +1,31 @@
+{
+  "id": 51959877,
+  "firstName": "Seymour",
+  "lastName": "Saucedo",
+  "countryId": 1,
+  "potential": 10,
+  "scoutings": [
+    {
+      "age": 27,
+      "salary": 90066,
+      "tce": 72,
+      "tci": 52,
+      "tc": 124,
+      "gs": 8,
+      "js": 15,
+      "jr": 4,
+      "od": 7,
+      "ha": 19,
+      "dr": 21,
+      "pa": 6,
+      "is": 16,
+      "id": 16,
+      "rb": 12,
+      "sb": 8,
+      "st": 2,
+      "ft": 11,
+      "ex": 8,
+      "scoutedAt": "2025-09-24T15:14:38.757Z"
+    }
+  ]
+}

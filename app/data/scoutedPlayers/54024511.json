@@ -1,0 +1,31 @@
+{
+  "id": 54024511,
+  "firstName": "Tomás",
+  "lastName": "Diáguez",
+  "countryId": 7,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 17883,
+      "tce": 71,
+      "tci": 43,
+      "tc": 114,
+      "gs": 8,
+      "js": 10,
+      "jr": 10,
+      "od": 13,
+      "ha": 13,
+      "dr": 15,
+      "pa": 10,
+      "is": 13,
+      "id": 11,
+      "rb": 10,
+      "sb": 9,
+      "st": 1,
+      "ft": 15,
+      "ex": 3,
+      "scoutedAt": "2025-09-24T15:14:26.907Z"
+    }
+  ]
+}

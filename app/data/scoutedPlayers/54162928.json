@@ -1,0 +1,31 @@
+{
+  "id": 54162928,
+  "firstName": "Sten",
+  "lastName": "Hinnosaar",
+  "countryId": 41,
+  "potential": 7,
+  "scoutings": [
+    {
+      "age": 21,
+      "salary": 30226,
+      "tce": 35,
+      "tci": 51,
+      "tc": 86,
+      "gs": 8,
+      "js": 8,
+      "jr": 4,
+      "od": 4,
+      "ha": 5,
+      "dr": 8,
+      "pa": 6,
+      "is": 11,
+      "id": 14,
+      "rb": 13,
+      "sb": 13,
+      "st": 6,
+      "ft": 3,
+      "ex": 2,
+      "scoutedAt": "2025-09-24T15:14:27.461Z"
+    }
+  ]
+}
