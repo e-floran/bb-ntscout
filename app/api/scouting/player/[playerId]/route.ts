@@ -1,13 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js";
 
-interface Scouting {
+// Function to get Supabase client
+function getSupabaseClient() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+    );
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
+}
+
+interface LatestScouting {
   age: number;
   salary: number;
-  tce: number;
-  tci: number;
-  tc: number;
   gs: number;
   js: number;
   jr: number;
@@ -25,51 +35,83 @@ interface Scouting {
   scoutedAt: string;
 }
 
-interface ScoutedPlayer {
-  id: number;
-  firstName: string;
-  lastName: string;
-  countryId: number;
-  potential: number;
-  scoutings: Scouting[];
-}
-
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ playerId: string }> }
 ) {
   try {
     const { playerId } = await params;
-    const dataDir = path.join(process.cwd(), "app", "data", "scoutedPlayers");
-    const filePath = path.join(dataDir, `${playerId}.json`);
+    const playerIdInt = parseInt(playerId);
 
-    if (fs.existsSync(filePath)) {
-      // Player file exists, read and return with latest scouting
-      const fileContent = fs.readFileSync(filePath, "utf8");
-      const playerData: ScoutedPlayer = JSON.parse(fileContent);
+    if (isNaN(playerIdInt)) {
+      return NextResponse.json({ error: "Invalid player ID" }, { status: 400 });
+    }
 
-      // Find the most recent scouting entry
-      let latestScouting = null;
-      if (playerData.scoutings && playerData.scoutings.length > 0) {
-        latestScouting = playerData.scoutings.reduce((latest, current) => {
-          return new Date(current.scoutedAt) > new Date(latest.scoutedAt)
-            ? current
-            : latest;
-        });
+    const supabase = getSupabaseClient();
+
+    // Get player data from database
+    const { data: playerData, error: playerError } = await supabase
+      .from("players")
+      .select("id, first_name, last_name, country_id, potential")
+      .eq("id", playerIdInt)
+      .single();
+
+    if (playerError && playerError.code !== "PGRST116") {
+      console.error("Error fetching player:", playerError);
+      return NextResponse.json({ error: "Database error" }, { status: 500 });
+    }
+
+    let latestScouting: LatestScouting | null = null;
+
+    if (playerData) {
+      // Player exists, get their latest scouting data
+      const { data: scoutingData, error: scoutingError } = await supabase
+        .from("scoutings")
+        .select("*")
+        .eq("player_id", playerIdInt)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single();
+
+      if (scoutingError && scoutingError.code !== "PGRST116") {
+        console.error("Error fetching scouting data:", scoutingError);
+        // Continue without scouting data rather than failing
+      }
+
+      if (scoutingData) {
+        latestScouting = {
+          age: scoutingData.age,
+          salary: scoutingData.salary,
+          gs: scoutingData.gameshape,
+          js: scoutingData.jump_shot,
+          jr: scoutingData.jump_range,
+          od: scoutingData.outside_defense,
+          ha: scoutingData.handling,
+          dr: scoutingData.driving,
+          pa: scoutingData.passing,
+          is: scoutingData.inside_shot,
+          id: scoutingData.inside_defense,
+          rb: scoutingData.rebound,
+          sb: scoutingData.shot_blocking,
+          st: scoutingData.stamina,
+          ft: scoutingData.free_throw,
+          ex: scoutingData.experience,
+          scoutedAt: scoutingData.created_at,
+        };
       }
 
       return NextResponse.json({
         id: playerData.id,
-        firstName: playerData.firstName,
-        lastName: playerData.lastName,
-        countryId: playerData.countryId,
-        potential: playerData.potential,
+        firstName: playerData.first_name || "",
+        lastName: playerData.last_name || "",
+        countryId: playerData.country_id || 0,
+        potential: playerData.potential || 0,
         latestScouting,
       });
     } else {
-      // Player file doesn't exist, return basic structure for new player
+      // Player doesn't exist in database, return basic structure for new player
       return NextResponse.json({
-        id: parseInt(playerId),
+        id: playerIdInt,
         firstName: "",
         lastName: "",
         countryId: 0,

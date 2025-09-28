@@ -1,6 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js";
+
+// Function to get Supabase client
+function getSupabaseClient() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+    );
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
+}
+
+interface PlayerData {
+  id: number;
+  firstName: string;
+  lastName: string;
+  countryId: number;
+  potential: number;
+}
 
 interface ScoutingData {
   age: number;
@@ -22,80 +43,6 @@ interface ScoutingData {
   scoutedAt: string;
 }
 
-interface PlayerData {
-  id: number;
-  firstName: string;
-  lastName: string;
-  countryId: number;
-  potential: number;
-}
-
-interface Scouting {
-  age: number;
-  salary: number;
-  tce: number;
-  tci: number;
-  tc: number;
-  gs: number;
-  js: number;
-  jr: number;
-  od: number;
-  ha: number;
-  dr: number;
-  pa: number;
-  is: number;
-  id: number;
-  rb: number;
-  sb: number;
-  st: number;
-  ft: number;
-  ex: number;
-  scoutedAt: string;
-}
-
-interface ScoutedPlayer {
-  id: number;
-  firstName: string;
-  lastName: string;
-  countryId: number;
-  potential: number;
-  scoutings: Scouting[];
-}
-
-// Helper function to calculate skill points like in the original script
-function calculateSkillPoints(scoutingData: ScoutingData) {
-  const guardSkillPoints =
-    scoutingData.js +
-    scoutingData.jr +
-    scoutingData.od +
-    scoutingData.ha +
-    scoutingData.dr;
-  const bigSkillPoints =
-    scoutingData.pa +
-    scoutingData.is +
-    scoutingData.id +
-    scoutingData.rb +
-    scoutingData.sb;
-  const totalSkillPoints =
-    guardSkillPoints + bigSkillPoints + scoutingData.st + scoutingData.ft;
-
-  return {
-    tce: guardSkillPoints,
-    tci: bigSkillPoints,
-    tc: totalSkillPoints,
-  };
-}
-
-// Helper: get week start date (Friday) for a given date
-function getWeekStart(dateStr: string): string {
-  const date = new Date(dateStr);
-  const day = date.getUTCDay();
-  const daysToFriday = day >= 5 ? day - 5 : day + 2;
-  date.setUTCDate(date.getUTCDate() - daysToFriday);
-  date.setUTCHours(0, 0, 0, 0);
-  return date.toISOString().slice(0, 10); // YYYY-MM-DD
-}
-
 export async function POST(request: NextRequest) {
   try {
     const {
@@ -108,89 +55,70 @@ export async function POST(request: NextRequest) {
       scoutingData: ScoutingData;
     } = await request.json();
 
-    const dataDir = path.join(process.cwd(), "app", "data", "scoutedPlayers");
-
-    // Create data directory if it doesn't exist
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+    if (!playerId || !playerData || !scoutingData) {
+      return NextResponse.json(
+        { error: "Missing required data" },
+        { status: 400 }
+      );
     }
 
-    const filePath = path.join(dataDir, `${playerId}.json`);
+    const supabase = getSupabaseClient();
 
-    // Calculate skill totals
-    const skillTotals = calculateSkillPoints(scoutingData);
+    // First, upsert the player data
+    const { error: playerError } = await supabase.from("players").upsert({
+      id: playerData.id,
+      first_name: playerData.firstName,
+      last_name: playerData.lastName,
+      country_id: playerData.countryId,
+      potential: playerData.potential,
+      current_age: scoutingData.age, // Update current age from scouting data
+      updated_at: new Date().toISOString(),
+    });
 
-    // Create new scouting entry
-    const newScouting: Scouting = {
+    if (playerError) {
+      console.error("Error upserting player:", playerError);
+      return NextResponse.json(
+        { error: "Failed to save player data" },
+        { status: 500 }
+      );
+    }
+
+    // Then, insert the scouting data
+    const { error: scoutingError } = await supabase.from("scoutings").insert({
+      player_id: playerData.id,
       age: scoutingData.age,
       salary: scoutingData.salary,
-      tce: skillTotals.tce,
-      tci: skillTotals.tci,
-      tc: skillTotals.tc,
-      gs: scoutingData.gs,
-      js: scoutingData.js,
-      jr: scoutingData.jr,
-      od: scoutingData.od,
-      ha: scoutingData.ha,
-      dr: scoutingData.dr,
-      pa: scoutingData.pa,
-      is: scoutingData.is,
-      id: scoutingData.id,
-      rb: scoutingData.rb,
-      sb: scoutingData.sb,
-      st: scoutingData.st,
-      ft: scoutingData.ft,
-      ex: scoutingData.ex,
-      scoutedAt: scoutingData.scoutedAt,
-    };
+      gameshape: scoutingData.gs,
+      jump_shot: scoutingData.js,
+      jump_range: scoutingData.jr,
+      outside_defense: scoutingData.od,
+      handling: scoutingData.ha,
+      driving: scoutingData.dr,
+      passing: scoutingData.pa,
+      inside_shot: scoutingData.is,
+      inside_defense: scoutingData.id,
+      rebound: scoutingData.rb,
+      shot_blocking: scoutingData.sb,
+      stamina: scoutingData.st,
+      free_throw: scoutingData.ft,
+      experience: scoutingData.ex,
+      created_at: scoutingData.scoutedAt,
+    });
 
-    let scoutedPlayer: ScoutedPlayer;
-
-    if (fs.existsSync(filePath)) {
-      // File exists, read and update
-      const existingData: ScoutedPlayer = JSON.parse(
-        fs.readFileSync(filePath, "utf8")
+    if (scoutingError) {
+      console.error("Error inserting scouting data:", scoutingError);
+      return NextResponse.json(
+        { error: "Failed to save scouting data" },
+        { status: 500 }
       );
-
-      // Check if a scouting entry for the same week already exists
-      const newWeek = getWeekStart(newScouting.scoutedAt);
-      const weekExists = existingData.scoutings.some(
-        (s) => getWeekStart(s.scoutedAt) === newWeek
-      );
-
-      if (weekExists) {
-        // Replace the existing entry for this week
-        scoutedPlayer = {
-          ...existingData,
-          scoutings: existingData.scoutings.map((s) =>
-            getWeekStart(s.scoutedAt) === newWeek ? newScouting : s
-          ),
-        };
-      } else {
-        // Add new scouting entry
-        scoutedPlayer = {
-          ...existingData,
-          scoutings: [...existingData.scoutings, newScouting],
-        };
-      }
-    } else {
-      // Create new player file
-      scoutedPlayer = {
-        id: playerId,
-        firstName: playerData.firstName || "",
-        lastName: playerData.lastName || "",
-        countryId: playerData.countryId || 0,
-        potential: playerData.potential || 0,
-        scoutings: [newScouting],
-      };
     }
 
-    // Write the file
-    fs.writeFileSync(filePath, JSON.stringify(scoutedPlayer, null, 2));
-
-    return NextResponse.json({ success: true });
+    return NextResponse.json({
+      success: true,
+      message: "Player and scouting data saved successfully",
+    });
   } catch (error) {
-    console.error("Error submitting scouting data:", error);
+    console.error("Error in scouting submit:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
