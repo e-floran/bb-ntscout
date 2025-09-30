@@ -38,6 +38,12 @@ interface NewPlayerData {
   potential: number;
 }
 
+interface BatchResult {
+  success: number;
+  failed: number;
+  errors: string[];
+}
+
 export default function ScoutingPage() {
   const [playerId, setPlayerId] = useState("");
   const [playerData, setPlayerData] = useState<PlayerData | null>(null);
@@ -68,6 +74,9 @@ export default function ScoutingPage() {
     ex: 0,
     scoutedAt: new Date().toISOString().slice(0, 16),
   });
+  const [showBatchForm, setShowBatchForm] = useState(false);
+  const [batchText, setBatchText] = useState("");
+  const [batchResult, setBatchResult] = useState<BatchResult | null>(null);
 
   const handlePlayerLookup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -184,6 +193,34 @@ export default function ScoutingPage() {
     }));
   };
 
+  const handleBatchSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!batchText.trim()) return;
+
+    try {
+      const response = await fetch("/api/scouting/batch", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          batchText: batchText.trim(),
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        setBatchResult(result);
+        setBatchText("");
+      } else {
+        alert("Erreur lors du traitement par groupe");
+      }
+    } catch (error) {
+      console.error("Error submitting batch:", error);
+      alert("Erreur lors de la soumission par groupe");
+    }
+  };
+
   return (
     <div className="main-container">
       <div
@@ -192,7 +229,7 @@ export default function ScoutingPage() {
       >
         <h2 className="form-title">Scouting Manuel</h2>
 
-        {!showScoutingForm ? (
+        {!showScoutingForm && !showBatchForm ? (
           <div
             style={{
               background: "#fff",
@@ -230,6 +267,127 @@ export default function ScoutingPage() {
                 Rechercher
               </button>
             </form>
+            <div style={{ marginTop: "1rem", textAlign: "center" }}>
+              <button
+                type="button"
+                onClick={() => setShowBatchForm(true)}
+                style={{
+                  padding: "0.75rem 2rem",
+                  background:
+                    "linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%)",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "8px",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                }}
+              >
+                Scouting par groupe
+              </button>
+            </div>
+          </div>
+        ) : showBatchForm ? (
+          <div className="analysis-section">
+            <h3 className="analysis-title">Scouting par groupe</h3>
+            <div
+              style={{
+                background: "#fff",
+                padding: "2rem",
+                borderRadius: "12px",
+                boxShadow: "0 4px 24px rgba(60, 84, 137, 0.1)",
+              }}
+            >
+              <form onSubmit={handleBatchSubmit}>
+                <div style={{ marginBottom: "1.5rem" }}>
+                  <label className="form-label">
+                    Coller les profils des joueurs (un par section) :
+                  </label>
+                  <textarea
+                    value={batchText}
+                    onChange={(e) => setBatchText(e.target.value)}
+                    className="form-input"
+                    style={{ minHeight: "300px", fontFamily: "monospace" }}
+                    placeholder="Coller ici les profils des joueurs depuis le jeu..."
+                    required
+                  />
+                </div>
+
+                {batchResult && (
+                  <div
+                    style={{
+                      marginBottom: "1.5rem",
+                      padding: "1rem",
+                      background:
+                        batchResult.failed > 0 ? "#fef3c7" : "#d1fae5",
+                      border: `1px solid ${
+                        batchResult.failed > 0 ? "#f59e0b" : "#10b981"
+                      }`,
+                      borderRadius: "8px",
+                    }}
+                  >
+                    <h4>Résultats du traitement :</h4>
+                    <p>
+                      ✅ Succès: {batchResult.success} joueur(s)
+                      {batchResult.failed > 0 && (
+                        <>
+                          <br />❌ Échecs: {batchResult.failed} joueur(s)
+                        </>
+                      )}
+                    </p>
+                    {batchResult.errors.length > 0 && (
+                      <div style={{ marginTop: "0.5rem" }}>
+                        <strong>Erreurs :</strong>
+                        <ul
+                          style={{ marginTop: "0.5rem", paddingLeft: "1rem" }}
+                        >
+                          {batchResult.errors.map((error, index) => (
+                            <li key={index} style={{ fontSize: "0.9rem" }}>
+                              {error}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  <button
+                    type="submit"
+                    className="form-submit"
+                    style={{ width: "auto", padding: "0.75rem 2rem" }}
+                  >
+                    Traiter par groupe
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowBatchForm(false);
+                      setBatchText("");
+                      setBatchResult(null);
+                    }}
+                    style={{
+                      padding: "0.75rem 2rem",
+                      background:
+                        "linear-gradient(90deg, #6b7280 0%, #9ca3af 100%)",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "8px",
+                      fontWeight: "600",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Annuler
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         ) : (
           <div className="analysis-section">
