@@ -35,7 +35,7 @@ export const users: User[] = [
   {
     login: "Smidge",
     mainTeamId: "11",
-    active: true,
+    active: false,
     role: UserRoles.User,
   },
   {
@@ -53,7 +53,7 @@ export const users: User[] = [
   {
     login: "chavarinho42",
     mainTeamId: "1011",
-    active: true,
+    active: false,
     role: UserRoles.Staff,
   },
   {
@@ -61,5 +61,11 @@ export const users: User[] = [
     mainTeamId: "11",
     active: true,
     role: UserRoles.Coach,
+  },
+  {
+    login: "AriesGod",
+    mainTeamId: "11",
+    active: true,
+    role: UserRoles.Staff,
   },
 ];

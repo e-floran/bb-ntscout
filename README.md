@@ -22,12 +22,13 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 - the user can then pick another team to analyze on this same index page.
 - several collapsable section display data in tables. Data is either fetched from the bbapi or retrieved from the json files stored in the data folder of this app.
 
+## Manual scouting
+
+- base workflow retrieve data with automated API calls. But users with sufficient rights can add players manually on the scouting page.
+
 ## Stored data
 
-- the app/data folder contains data on national teams and their players
-- the teams subfolder has a json file for each national team in the game. The name of the file being the ID of the team in the game (it can be used to query the bbapi). The players array lists the IDs of all the players that have played at least one game for this national team this season.
-- the players subfolder has a json file for each national teams player. Its weeks array list week object with keys to identify the week and important data : gameshape and dmi for this week. The name of each file is also the ID of the player that can be used to query the bbapi.
-- the scoutedPlayers subfolder has a json file for each player scouted from the transfer marker, with complete skillset at the time of the scouting.
+- the data is stored in a database? Tables schemas can be found in the app/utils/database/tables_create.sql file
 
 ## Scripts
 
