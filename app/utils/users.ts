@@ -68,4 +68,10 @@ export const users: User[] = [
     active: true,
     role: UserRoles.Staff,
   },
+  {
+    login: "Gouloute",
+    mainTeamId: "11",
+    active: true,
+    role: UserRoles.Scout,
+  },
 ];
