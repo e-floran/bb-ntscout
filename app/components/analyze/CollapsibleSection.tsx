@@ -2,7 +2,7 @@
 
 import React from "react";
 import { SkeletonTable } from "./SkeletonTable";
-import { SectionId } from "../page";
+import { SectionId } from "../../analyze/page";
 
 interface CollapsibleSectionProps {
   sectionId: SectionId;
