@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { CollapsibleSection } from "./CollapsibleSection";
 import { DataTable } from "./DataTable";
-import { SectionId } from "../page";
+import { SectionId } from "../../analyze/page";
 
 interface ScoutedPlayersSectionProps {
   teamId: string | null;
