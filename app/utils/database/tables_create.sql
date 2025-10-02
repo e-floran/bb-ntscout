@@ -55,8 +55,21 @@ CREATE TABLE scoutings (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
+-- Create users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    login VARCHAR(255) NOT NULL UNIQUE,
+    main_team_id INTEGER NOT NULL REFERENCES teams(id),
+    active BOOLEAN NOT NULL DEFAULT true,
+    role VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
 -- Create indexes
 CREATE INDEX idx_players_team_id ON players(team_id);
 CREATE INDEX idx_player_weeks_player_id ON player_weeks(player_id);
 CREATE INDEX idx_player_weeks_week_season ON player_weeks(week_number, season);
 CREATE INDEX idx_scoutings_player_id ON scoutings(player_id);
+CREATE INDEX idx_users_login ON users(login);
+CREATE INDEX idx_users_main_team_id ON users(main_team_id);

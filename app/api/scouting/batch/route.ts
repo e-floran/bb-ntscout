@@ -359,6 +359,13 @@ function parsePlayer(playerText: string): ParsedPlayer {
 
 export async function POST(request: NextRequest) {
   try {
+    // Get user authentication (matching scoutedPlayers route)
+    const login = request.cookies.get("authenticated_user")?.value;
+
+    if (!login) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+
     const { batchText } = await request.json();
 
     if (!batchText) {
@@ -393,6 +400,7 @@ export async function POST(request: NextRequest) {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              Cookie: request.headers.get("cookie") || "",
             },
             body: JSON.stringify({
               playerId: player.id,
