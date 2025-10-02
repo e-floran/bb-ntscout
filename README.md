@@ -17,10 +17,14 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 
 ## Basic app workflow
 
-- a user must login on the login page. the users variable, containing a list of authorized users, is checked before sending a login request to the bbapi.
-- on login, the user is redirected to the index, where data is fetched on its main national team next opponent.
-- the user can then pick another team to analyze on this same index page.
-- several collapsable section display data in tables. Data is either fetched from the bbapi or retrieved from the json files stored in the data folder of this app.
+- a user must login on the login page. the users table, containing a list of authorized users, is checked before sending a login request to the bbapi.
+- on login, the user is redirected to the index.
+
+## Analyze team
+
+- on the analyze page, data is fetched on the user main national team next opponent.
+- the user can then pick another team to analyze on this same page.
+- several collapsable section display data in tables. Data is either fetched from the bbapi or retrieved from the app database.
 
 ## Manual scouting
 
@@ -28,12 +32,12 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 
 ## Stored data
 
-- the data is stored in a database? Tables schemas can be found in the app/utils/database/tables_create.sql file
+- the data is stored in a database. Tables schemas can be found in the app/utils/database folder.
 
 ## Scripts
 
 - in the scripts folder, scripts have bben created to fetch data that must be fetched each week : gameshape and dmi
 - update-players-data.ts get all players from the games played by all national teams this season
 - checkNewPlayers.ts is intended to be used after national teams games on monday, to check all national teams last game and see if there are new players to add
-- fridayScript.ts add a new entry for each player in the app/data/players folder, in their weeks array.
-- fetch-players-bbapi.ts use another API of Buzzerbeater to get complete players profiles if they are on the transfer market at the time of the script.
+- fridayScript.ts add a new entry for each player in the player_weeks table.
+- fetch-players-bbapi.ts use another API of Buzzerbeater to get complete players profiles if they are on the transfer market at the time of the script and save it in the scoutings table.

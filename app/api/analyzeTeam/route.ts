@@ -838,6 +838,14 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
     playersArray
   );
 
+  // Calculate strategy likelihood based on player fitness and usage
+  const strategyLikelihood = calculateStrategyLikelihood(
+    playersWithHistory,
+    recentGames,
+    offenseStrategiesHumanized,
+    defenseStrategiesHumanized
+  );
+
   return {
     teamName,
     offenseStrategies: offenseStrategiesHumanized,
@@ -850,6 +858,106 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
     players: playersWithHistory,
     recentGames: recentGames,
     gdpList,
+    strategyLikelihood,
+  };
+}
+
+// Function to calculate strategy likelihood based on player fitness and usage patterns
+function calculateStrategyLikelihood(
+  playersWithHistory: any[],
+  recentGames: any[],
+  offenseStrategies: Record<string, number>,
+  defenseStrategies: Record<string, number>
+) {
+  // Create a map of strategy usage with player fitness weights
+  const offenseWeighted: Record<string, number> = {};
+  const defenseWeighted: Record<string, number> = {};
+
+  // Initialize with base counts
+  Object.entries(offenseStrategies).forEach(([strategy, count]) => {
+    offenseWeighted[strategy] = count;
+  });
+  Object.entries(defenseStrategies).forEach(([strategy, count]) => {
+    defenseWeighted[strategy] = count;
+  });
+
+  // Weight strategies by player fitness in recent games
+  recentGames.forEach((game) => {
+    const offStrategy = game.strategies?.offense || "";
+    const defStrategy = game.strategies?.defense || "";
+
+    if (game.playerMinutes) {
+      let totalFitnessWeight = 0;
+      let playersWithData = 0;
+
+      // Calculate average fitness of players who played in this game
+      Object.entries(game.playerMinutes).forEach(
+        ([playerId, playerData]: [string, any]) => {
+          const player = playersWithHistory.find((p) => p.id === playerId);
+          if (
+            player &&
+            player.isCurrentWeekDataAvailable &&
+            playerData.totalMinutes > 0
+          ) {
+            // Use percentage of last GS=9 as fitness score (more accurate than raw DMI/GS)
+            // If no GS=9 reference, fall back to current gameshape as percentage
+            let fitnessScore = 0;
+            if (player.dmiComparisonToLastGS9?.percentage) {
+              fitnessScore = player.dmiComparisonToLastGS9.percentage;
+            } else {
+              // Fallback: treat current gameshape as percentage (GS=9 = 100%)
+              fitnessScore = ((player.currentGameShape || 0) / 9) * 100;
+            }
+
+            // Weight by minutes played (more minutes = more influence)
+            const minutesWeight = Math.min(playerData.totalMinutes / 48, 1); // Cap at 48 minutes
+            totalFitnessWeight += fitnessScore * minutesWeight;
+            playersWithData++;
+          }
+        }
+      );
+
+      if (playersWithData > 0) {
+        const avgFitnessWeight = totalFitnessWeight / playersWithData;
+        // Bonus weight based on fitness (higher fitness = more likely to use this strategy again)
+        const fitnessMultiplier = 1 + avgFitnessWeight / 100; // Scale fitness to reasonable multiplier
+
+        if (offStrategy && offenseWeighted[offStrategy] !== undefined) {
+          offenseWeighted[offStrategy] += fitnessMultiplier;
+        }
+        if (defStrategy && defenseWeighted[defStrategy] !== undefined) {
+          defenseWeighted[defStrategy] += fitnessMultiplier;
+        }
+      }
+    }
+  });
+
+  // Sort strategies by weighted likelihood
+  const sortedOffense = Object.entries(offenseWeighted)
+    .sort(([, a], [, b]) => b - a)
+    .map(([strategy, weight]) => ({
+      strategy,
+      likelihood: Math.round(
+        (weight / Math.max(...Object.values(offenseWeighted))) * 100
+      ),
+      usage: offenseStrategies[strategy] || 0,
+      weightedScore: Math.round(weight * 10) / 10,
+    }));
+
+  const sortedDefense = Object.entries(defenseWeighted)
+    .sort(([, a], [, b]) => b - a)
+    .map(([strategy, weight]) => ({
+      strategy,
+      likelihood: Math.round(
+        (weight / Math.max(...Object.values(defenseWeighted))) * 100
+      ),
+      usage: defenseStrategies[strategy] || 0,
+      weightedScore: Math.round(weight * 10) / 10,
+    }));
+
+  return {
+    offense: sortedOffense,
+    defense: sortedDefense,
   };
 }
 

@@ -31,6 +31,7 @@ type AnalysisResult = any;
 export type SectionId =
   | "offense-strategies"
   | "defense-strategies"
+  | "strategy-likelihood"
   | "avg-ratings"
   | "avg-efficiency"
   | "player-stats"
@@ -76,6 +77,7 @@ export default function AnalyzePage() {
   >({
     "offense-strategies": true,
     "defense-strategies": true,
+    "strategy-likelihood": false, // Keep this one open by default as it's the new feature
     "avg-ratings": true,
     "avg-efficiency": true,
     "player-stats": true,
@@ -345,6 +347,93 @@ export default function AnalyzePage() {
                 sortConfig={sortConfig}
                 onSort={handleSort}
               />
+            </CollapsibleSection>
+
+            <CollapsibleSection
+              sectionId="strategy-likelihood"
+              title="Probabilité des stratégies (basée sur la forme des joueurs)"
+              isCollapsed={collapsedSections["strategy-likelihood"]}
+              showSkeletons={showSkeletons}
+              onToggle={toggleSection}
+            >
+              {filteredAnalysis?.seasonsData?.[0]?.strategyLikelihood ? (
+                <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
+                  <div style={{ minWidth: "300px", flex: 1 }}>
+                    <h4 style={{ marginBottom: "16px", color: "#374151" }}>
+                      Stratégies Offensives
+                    </h4>
+                    <DataTable
+                      headers={[
+                        "Stratégie",
+                        "Probabilité",
+                        "Utilisations",
+                        "Score",
+                      ]}
+                      rows={
+                        filteredAnalysis.seasonsData[0].strategyLikelihood.offense?.map(
+                          (item: any) => [
+                            item.strategy,
+                            `${item.likelihood}%`,
+                            item.usage.toString(),
+                            item.weightedScore.toString(),
+                          ]
+                        ) || []
+                      }
+                      tableId="strategy-likelihood-offense"
+                      sortConfig={sortConfig}
+                      onSort={handleSort}
+                    />
+                  </div>
+                  <div style={{ minWidth: "300px", flex: 1 }}>
+                    <h4 style={{ marginBottom: "16px", color: "#374151" }}>
+                      Stratégies Défensives
+                    </h4>
+                    <DataTable
+                      headers={[
+                        "Stratégie",
+                        "Probabilité",
+                        "Utilisations",
+                        "Score",
+                      ]}
+                      rows={
+                        filteredAnalysis.seasonsData[0].strategyLikelihood.defense?.map(
+                          (item: any) => [
+                            item.strategy,
+                            `${item.likelihood}%`,
+                            item.usage.toString(),
+                            item.weightedScore.toString(),
+                          ]
+                        ) || []
+                      }
+                      tableId="strategy-likelihood-defense"
+                      sortConfig={sortConfig}
+                      onSort={handleSort}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <p>
+                  Aucune donnée de probabilité disponible pour cette équipe.
+                </p>
+              )}
+              <div
+                style={{
+                  marginTop: "16px",
+                  padding: "12px",
+                  backgroundColor: "#f3f4f6",
+                  borderRadius: "6px",
+                  fontSize: "14px",
+                  color: "#6b7280",
+                }}
+              >
+                <strong>Explication:</strong> Cette section analyse la
+                probabilité d&apos;utilisation des stratégies basée sur:
+                <br />• Le pourcentage de forme par rapport au dernier GS=9 de
+                chaque joueur
+                <br />• Le temps de jeu de chaque joueur avec chaque stratégie
+                <br />• L&apos;historique d&apos;utilisation des stratégies
+                cette saison
+              </div>
             </CollapsibleSection>
 
             <CollapsibleSection
