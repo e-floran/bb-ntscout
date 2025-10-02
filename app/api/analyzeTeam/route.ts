@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
-import { users } from "@/app/utils/users";
 import xml2js from "xml2js";
 import axios from "axios";
 import {
@@ -308,9 +307,32 @@ export async function GET(req: NextRequest) {
   if (!login) {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
-  const user = users.find((u) => u.login === login && u.active);
-  if (!user) {
-    return NextResponse.json({ error: "Session expired" }, { status: 401 });
+
+  // Query user from database
+  let user;
+  try {
+    const supabase = getSupabaseClient();
+    const { data: users, error } = await supabase
+      .from("users")
+      .select("id, login, main_team_id, active, role")
+      .eq("login", login)
+      .eq("active", true)
+      .single();
+
+    if (error || !users) {
+      return NextResponse.json({ error: "Session expired" }, { status: 401 });
+    }
+
+    // Convert database format to expected format for compatibility
+    user = {
+      login: users.login,
+      mainTeamId: users.main_team_id.toString(), // Convert back to string for compatibility
+      active: users.active,
+      role: users.role,
+    };
+  } catch (dbError) {
+    console.error("Database error during user lookup:", dbError);
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 
   // Initialize session manager with existing cookie and session ID

@@ -64,12 +64,31 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    // Find user in users array (matching analyzeTeam route)
-    const { users } = await import("@/app/utils/users");
-    const user = users.find((u) => u.login === login && u.active);
+    // Query user from database (matching analyzeTeam route)
+    let user;
+    try {
+      const supabase = getSupabaseClient();
+      const { data: users, error } = await supabase
+        .from("users")
+        .select("id, login, main_team_id, active, role")
+        .eq("login", login)
+        .eq("active", true)
+        .single();
 
-    if (!user) {
-      return NextResponse.json({ error: "Session expired" }, { status: 401 });
+      if (error || !users) {
+        return NextResponse.json({ error: "Session expired" }, { status: 401 });
+      }
+
+      // Convert database format to expected format for compatibility
+      user = {
+        login: users.login,
+        mainTeamId: users.main_team_id.toString(), // Convert back to string for compatibility
+        active: users.active,
+        role: users.role,
+      };
+    } catch (dbError) {
+      console.error("Database error during user lookup:", dbError);
+      return NextResponse.json({ error: "Database error" }, { status: 500 });
     }
 
     // Check if user can access scouted players for this team

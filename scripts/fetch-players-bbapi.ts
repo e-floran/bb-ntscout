@@ -353,6 +353,7 @@ async function savePlayerData(player: ApiPlayer): Promise<void> {
         stamina: newScouting.st,
         free_throw: newScouting.ft,
         experience: newScouting.ex,
+        created_by: 0, // Set to 0 for automated scouting entries
       });
 
       if (scoutingError) {

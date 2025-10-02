@@ -45,6 +45,35 @@ interface ScoutingData {
 
 export async function POST(request: NextRequest) {
   try {
+    // Get user authentication (matching scoutedPlayers route)
+    const login = request.cookies.get("authenticated_user")?.value;
+
+    if (!login) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+
+    const supabase = getSupabaseClient();
+
+    // Query user from database to get user ID
+    let userId;
+    try {
+      const { data: users, error } = await supabase
+        .from("users")
+        .select("id, login, main_team_id, active, role")
+        .eq("login", login)
+        .eq("active", true)
+        .single();
+
+      if (error || !users) {
+        return NextResponse.json({ error: "Session expired" }, { status: 401 });
+      }
+
+      userId = users.id;
+    } catch (dbError) {
+      console.error("Database error during user lookup:", dbError);
+      return NextResponse.json({ error: "Database error" }, { status: 500 });
+    }
+
     const {
       playerId,
       playerData,
@@ -61,8 +90,6 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-
-    const supabase = getSupabaseClient();
 
     // First, upsert the player data
     const { error: playerError } = await supabase.from("players").upsert({
@@ -102,6 +129,7 @@ export async function POST(request: NextRequest) {
       stamina: scoutingData.st,
       free_throw: scoutingData.ft,
       experience: scoutingData.ex,
+      created_by: userId, // Add the user ID who created this scouting
       created_at: scoutingData.scoutedAt,
     });
 

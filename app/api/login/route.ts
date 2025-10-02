@@ -1,10 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
-import { users } from "@/app/utils/users";
+import { createClient } from "@supabase/supabase-js";
 import { baseApiUrl } from "@/app/utils/api/apiUtils";
 import {
   userCredentials,
   cleanupExpiredCredentials,
 } from "@/app/utils/userCredentials";
+
+// Function to get Supabase client
+function getSupabaseClient() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+    );
+  }
+  return createClient(supabaseUrl, supabaseKey);
+}
 
 // Utility to extract cookie pairs from Set-Cookie header(s)
 function extractCookiePairs(setCookieHeader: string): string {
@@ -18,12 +31,34 @@ function extractCookiePairs(setCookieHeader: string): string {
 export async function POST(req: NextRequest) {
   const { login, password } = await req.json();
 
-  const user = users.find((u) => u.login === login && u.active);
-  if (!user) {
-    return NextResponse.json(
-      { error: "User not found or not active" },
-      { status: 401 }
-    );
+  // Query user from database
+  let userForSession;
+  try {
+    const supabase = getSupabaseClient();
+    const { data: users, error } = await supabase
+      .from("users")
+      .select("id, login, main_team_id, active, role")
+      .eq("login", login)
+      .eq("active", true)
+      .single();
+
+    if (error || !users) {
+      return NextResponse.json(
+        { error: "User not found or not active" },
+        { status: 401 }
+      );
+    }
+
+    // Convert database format to expected format for compatibility
+    userForSession = {
+      login: users.login,
+      mainTeamId: users.main_team_id.toString(), // Convert back to string for session compatibility
+      active: users.active,
+      role: users.role,
+    };
+  } catch (dbError) {
+    console.error("Database error during login:", dbError);
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 
   // Clean up expired credentials periodically
@@ -54,7 +89,7 @@ export async function POST(req: NextRequest) {
       userCredentials.set(sessionId, {
         login,
         password,
-        user,
+        user: userForSession,
         timestamp: Date.now(),
       });
 
