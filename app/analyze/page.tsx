@@ -77,7 +77,7 @@ export default function AnalyzePage() {
   >({
     "offense-strategies": true,
     "defense-strategies": true,
-    "strategy-likelihood": false, // Keep this one open by default as it's the new feature
+    "strategy-likelihood": true,
     "avg-ratings": true,
     "avg-efficiency": true,
     "player-stats": true,

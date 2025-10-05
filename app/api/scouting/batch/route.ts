@@ -201,17 +201,29 @@ function parsePlayer(playerText: string): ParsedPlayer {
     .map((line) => line.trim());
 
   // Extract country from first line [Country] - handle multiple countries by taking the first one
-  const countryMatches = lines[0].match(/\[([^\]]+)\]/g);
-  if (!countryMatches) {
-    throw new Error("Pays non trouvé");
+  // Only look at the first few lines for country markers
+  let countryId = 0;
+
+  for (let i = 0; i < Math.min(3, lines.length); i++) {
+    const countryMatches = lines[i].match(/\[([^\]]+)\]/g);
+    if (countryMatches) {
+      for (const match of countryMatches) {
+        const countryMatch = match.match(/\[([^\]]+)\]/);
+        if (countryMatch) {
+          const potentialCountry = countryMatch[1];
+          if (COUNTRIES[potentialCountry]) {
+            countryId = COUNTRIES[potentialCountry];
+            break;
+          }
+        }
+      }
+      if (countryId > 0) break;
+    }
   }
 
-  const firstCountryMatch = countryMatches[0].match(/\[([^\]]+)\]/);
-  if (!firstCountryMatch) throw new Error("Pays non trouvé");
-
-  const countryName = firstCountryMatch[1];
-  const countryId = COUNTRIES[countryName];
-  if (!countryId) throw new Error(`Pays non reconnu: ${countryName}`);
+  if (!countryId) {
+    throw new Error("Pays non trouvé ou non reconnu");
+  }
 
   // Find player name and ID line
   let playerLine = "";
@@ -376,12 +388,25 @@ export async function POST(request: NextRequest) {
     }
 
     // Split players by country markers at the start of lines
+    // Create a regex pattern that matches known country names
+    const countryNames = Object.keys(COUNTRIES).join("|");
+    const countrySplitPattern = new RegExp(
+      `(?=\\n\\[(${countryNames})\\])`,
+      "g"
+    );
+
     const playerSections = batchText
-      .split(/(?=\n\[[^\]]+\])/g)
+      .split(countrySplitPattern)
       .map((section: string) => section.trim())
-      .filter(
-        (section: string) => section.length > 0 && section.startsWith("[")
-      );
+      .filter((section: string) => {
+        if (section.length === 0) return false;
+        // Check if section starts with a known country
+        const firstLineMatch = section.match(/^\[([^\]]+)\]/);
+        if (firstLineMatch) {
+          return COUNTRIES[firstLineMatch[1]] !== undefined;
+        }
+        return false;
+      });
 
     let success = 0;
     let failed = 0;
