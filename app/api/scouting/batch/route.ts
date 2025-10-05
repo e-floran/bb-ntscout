@@ -1,4 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+
+// Function to get Supabase client
+function getSupabaseClient() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+    );
+  }
+
+  return createClient(supabaseUrl, supabaseKey);
+}
 
 // Mapping tables
 const POTENTIAL_MAPPING: Record<string, number> = {
@@ -408,6 +423,29 @@ export async function POST(request: NextRequest) {
         return false;
       });
 
+    // Get user authentication
+    const supabase = getSupabaseClient();
+
+    // Query user from database to get user ID
+    let userId;
+    try {
+      const { data: users, error } = await supabase
+        .from("users")
+        .select("id, login, main_team_id, active, role")
+        .eq("login", login)
+        .eq("active", true)
+        .single();
+
+      if (error || !users) {
+        return NextResponse.json({ error: "Session expired" }, { status: 401 });
+      }
+
+      userId = users.id;
+    } catch (dbError) {
+      console.error("Database error during user lookup:", dbError);
+      return NextResponse.json({ error: "Database error" }, { status: 500 });
+    }
+
     let success = 0;
     let failed = 0;
     const errors: string[] = [];
@@ -416,50 +454,63 @@ export async function POST(request: NextRequest) {
       try {
         const player = parsePlayer(section);
 
-        // Submit each player using the existing scouting API logic
-        const response = await fetch(`/api/scouting/submit`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Cookie: request.headers.get("cookie") || "",
-          },
-          body: JSON.stringify({
-            playerId: player.id,
-            playerData: {
-              id: player.id,
-              firstName: player.firstName,
-              lastName: player.lastName,
-              countryId: player.countryId,
-              potential: player.potential,
-            },
-            scoutingData: {
+        // Submit each player directly to database instead of making HTTP request
+        try {
+          // First, upsert the player data
+          const { error: playerError } = await supabase.from("players").upsert({
+            id: player.id,
+            first_name: player.firstName,
+            last_name: player.lastName,
+            country_id: player.countryId,
+            potential: player.potential,
+            current_age: player.age,
+            updated_at: new Date().toISOString(),
+          });
+
+          if (playerError) {
+            throw new Error(
+              `Failed to save player data: ${playerError.message}`
+            );
+          }
+
+          // Then, insert the scouting data
+          const { error: scoutingError } = await supabase
+            .from("scoutings")
+            .insert({
+              player_id: player.id,
               age: player.age,
               salary: player.salary,
-              gs: player.stats.gs,
-              js: player.stats.js,
-              jr: player.stats.jr,
-              od: player.stats.od,
-              ha: player.stats.ha,
-              dr: player.stats.dr,
-              pa: player.stats.pa,
-              is: player.stats.is,
-              id: player.stats.id,
-              rb: player.stats.rb,
-              sb: player.stats.sb,
-              st: player.stats.st,
-              ft: player.stats.ft,
-              ex: player.stats.ex,
-              scoutedAt: new Date().toISOString().slice(0, 16),
-            },
-          }),
-        });
+              gameshape: player.stats.gs,
+              jump_shot: player.stats.js,
+              jump_range: player.stats.jr,
+              outside_defense: player.stats.od,
+              handling: player.stats.ha,
+              driving: player.stats.dr,
+              passing: player.stats.pa,
+              inside_shot: player.stats.is,
+              inside_defense: player.stats.id,
+              rebound: player.stats.rb,
+              shot_blocking: player.stats.sb,
+              stamina: player.stats.st,
+              free_throw: player.stats.ft,
+              experience: player.stats.ex,
+              created_by: userId,
+              created_at: new Date().toISOString().slice(0, 16) + ":00.000Z",
+            });
 
-        if (response.ok) {
+          if (scoutingError) {
+            throw new Error(
+              `Failed to save scouting data: ${scoutingError.message}`
+            );
+          }
+
           success++;
-        } else {
+        } catch (dbError) {
           failed++;
+          const errorMsg =
+            dbError instanceof Error ? dbError.message : "Database error";
           errors.push(
-            `Erreur serveur pour ${player.firstName} ${player.lastName} (${player.id})`
+            `Erreur DB pour ${player.firstName} ${player.lastName} (${player.id}): ${errorMsg}`
           );
         }
       } catch (error) {
