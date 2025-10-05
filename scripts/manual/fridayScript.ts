@@ -5,47 +5,112 @@ import axios from "axios";
 import * as readline from "readline";
 import { PlayerWeek, GameShapeRange } from "../../app/types/types";
 import { updateLastUpdateTimestamp } from "../../app/utils/updateLastUpdate";
+import { createClient } from "@supabase/supabase-js";
 
-interface PlayerData {
-  id: string;
-  nationalTeamId: string;
-  weeks: PlayerWeek[];
+// Load environment variables from .env file manually
+function loadEnvFile() {
+  try {
+    const envPath = path.join(process.cwd(), ".env.local");
+    const envFile = fs.readFileSync(envPath, "utf8");
+
+    envFile.split("\n").forEach((line) => {
+      const trimmedLine = line.trim();
+      if (trimmedLine && !trimmedLine.startsWith("#")) {
+        const [key, ...valueParts] = trimmedLine.split("=");
+        if (key && valueParts.length > 0) {
+          const value = valueParts.join("=").replace(/^["']|["']$/g, ""); // Remove quotes
+          process.env[key.trim()] = value.trim();
+        }
+      }
+    });
+    console.log("✅ Environment variables loaded from .env file");
+  } catch (error) {
+    console.log("⚠️  Could not load .env file:", error);
+  }
 }
+
+// Load environment variables
+loadEnvFile();
 
 class BBWeeklyGameShapeDMIUpdater {
   private baseURL = "http://bbapi.buzzerbeater.com";
   private sessionCookie = "";
   private queryCount = 0;
   private currentSeason = 69;
-  private rl: readline.Interface;
   private username = "";
   private password = "";
   private processedPlayers = 0;
   private totalPlayers = 0;
+  private supabase: any;
 
   constructor() {
-    this.rl = readline.createInterface({
+    // Initialize Supabase client from environment variables
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+    console.log("🔍 Initializing Supabase client...");
+    console.log("SUPABASE_URL:", supabaseUrl ? "✅ Set" : "❌ Missing");
+    console.log("SUPABASE_ANON_KEY:", supabaseKey ? "✅ Set" : "❌ Missing");
+
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error(
+        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+      );
+    }
+
+    this.supabase = createClient(supabaseUrl, supabaseKey);
+    console.log("✅ Supabase client initialized successfully");
+  }
+
+  private async promptForCredentials(): Promise<void> {
+    const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
     });
-  }
 
-  private async question(query: string): Promise<string> {
     return new Promise((resolve) => {
-      this.rl.question(query, resolve);
+      rl.question("Enter your Buzzerbeater username: ", (username) => {
+        this.username = username;
+
+        // Hide password input
+        process.stdout.write("Enter your Buzzerbeater password: ");
+        process.stdin.setRawMode(true);
+        process.stdin.resume();
+        process.stdin.setEncoding("utf8");
+
+        let password = "";
+        process.stdin.on("data", (char) => {
+          const charStr = char.toString();
+
+          if (charStr === "\u0003") {
+            // Ctrl+C
+            process.exit(1);
+          } else if (charStr === "\r" || charStr === "\n") {
+            // Enter
+            process.stdin.setRawMode(false);
+            process.stdin.pause();
+            process.stdout.write("\n");
+            this.password = password;
+            rl.close();
+            resolve();
+          } else if (charStr === "\u007f" || charStr === "\b") {
+            // Backspace
+            if (password.length > 0) {
+              password = password.slice(0, -1);
+              process.stdout.write("\b \b");
+            }
+          } else if (charStr >= " ") {
+            // Printable characters
+            password += charStr;
+            process.stdout.write("*");
+          }
+        });
+      });
     });
   }
 
   private async login(): Promise<boolean> {
     try {
-      // Only ask for credentials on first login
-      if (!this.username || !this.password) {
-        this.username = await this.question("Enter your BB username: ");
-        this.password = await this.question(
-          "Enter your BB read-only password: "
-        );
-      }
-
       console.log("Logging in...");
       const response = await axios.get(`${this.baseURL}/login.aspx`, {
         params: { login: this.username, code: this.password },
@@ -190,49 +255,107 @@ class BBWeeklyGameShapeDMIUpdater {
     return { id: currentWeekId, weekStart: currentWeekStart };
   }
 
-  private getPlayerFiles(): string[] {
-    const playersDir = path.join(process.cwd(), "app", "data", "players");
+  private async getPlayers(): Promise<string[]> {
+    console.log("🔍 Fetching all players from database...");
 
-    if (!fs.existsSync(playersDir)) {
-      throw new Error(`Players directory not found: ${playersDir}`);
+    // Get total count first
+    const { count, error: countError } = await this.supabase
+      .from("players")
+      .select("*", { count: "exact", head: true });
+
+    if (countError) {
+      console.error("Error getting player count:", countError);
+    } else {
+      console.log(`📊 Total players in database: ${count}`);
     }
 
-    return fs
-      .readdirSync(playersDir)
-      .filter((file) => file.endsWith(".json") && file !== "example.json")
-      .sort();
-  }
+    // Fetch all players with pagination to avoid limits
+    let allPlayers: any[] = [];
+    let from = 0;
+    const batchSize = 1000;
+    let hasMore = true;
 
-  private loadPlayerData(playerId: string): PlayerData | null {
-    const filePath = path.join(
-      process.cwd(),
-      "app",
-      "data",
-      "players",
-      `${playerId}.json`
-    );
+    while (hasMore) {
+      console.log(`📥 Fetching players ${from + 1} to ${from + batchSize}...`);
 
-    if (fs.existsSync(filePath)) {
-      try {
-        return JSON.parse(fs.readFileSync(filePath, "utf8"));
-      } catch (error) {
-        console.error(`Error reading player file ${playerId}:`, error);
-        return null;
+      const { data, error } = await this.supabase
+        .from("players")
+        .select("id")
+        .order("id")
+        .range(from, from + batchSize - 1);
+
+      if (error) {
+        throw new Error(
+          `Failed to fetch players from database: ${error.message}`
+        );
+      }
+
+      if (data && data.length > 0) {
+        allPlayers = allPlayers.concat(data);
+        from += batchSize;
+        hasMore = data.length === batchSize; // Continue if we got a full batch
+      } else {
+        hasMore = false;
       }
     }
-    return null;
+
+    console.log(`✅ Fetched ${allPlayers.length} total players from database`);
+    return allPlayers.map((player: any) => player.id.toString());
   }
 
-  private savePlayerData(playerData: PlayerData): void {
-    const filePath = path.join(
-      process.cwd(),
-      "app",
-      "data",
-      "players",
-      `${playerData.id}.json`
-    );
+  private async checkPlayerWeekExists(
+    playerId: string,
+    weekId: number,
+    season: number
+  ): Promise<boolean> {
+    const { data, error } = await this.supabase
+      .from("player_weeks")
+      .select("id")
+      .eq("player_id", parseInt(playerId))
+      .eq("week_number", weekId)
+      .eq("season", season)
+      .single();
 
-    fs.writeFileSync(filePath, JSON.stringify(playerData, null, 2));
+    if (error && error.code !== "PGRST116") {
+      // PGRST116 is "not found" error
+      console.error(
+        `Error checking week data for player ${playerId}:`,
+        error.message
+      );
+      return false;
+    }
+
+    return !!data;
+  }
+
+  private async savePlayerWeek(
+    playerId: string,
+    week: PlayerWeek
+  ): Promise<void> {
+    const weekData = {
+      player_id: parseInt(playerId),
+      week_number: week.id,
+      season: week.season,
+      gameshape: week.gameShape,
+      dmi: week.dmi,
+    };
+
+    console.log(`  🔍 Attempting to save week data:`, weekData);
+
+    const { error } = await this.supabase
+      .from("player_weeks")
+      .upsert(weekData, {
+        onConflict: "player_id,week_number,season",
+      });
+
+    if (error) {
+      console.error(`  ❌ Database error for player ${playerId}:`, error);
+      throw new Error(
+        `Failed to save week data for player ${playerId}: ${error.message} (Code: ${error.code})`
+      );
+    }
+
+    console.log(`  ✅ Successfully saved to database for player ${playerId}`);
   }
 
   async run(): Promise<void> {
@@ -244,6 +367,9 @@ class BBWeeklyGameShapeDMIUpdater {
       console.log(
         "Run this script every Friday to keep player data up to date\n"
       );
+
+      // Prompt for credentials
+      await this.promptForCredentials();
 
       // Login
       if (!(await this.login())) {
@@ -258,44 +384,33 @@ class BBWeeklyGameShapeDMIUpdater {
         })\n`
       );
 
-      // Get all player files
-      const playerFiles = this.getPlayerFiles();
-      this.totalPlayers = playerFiles.length;
-      console.log(`Found ${this.totalPlayers} player files to process\n`);
+      // Get all players from database
+      const playerIds = await this.getPlayers();
+      this.totalPlayers = playerIds.length;
+      console.log(`Found ${this.totalPlayers} players to process\n`);
 
       if (this.totalPlayers === 0) {
-        console.log(
-          "No player files found. Make sure you're running this from the project root."
-        );
+        console.log("No players found in database.");
         return;
       }
 
-      // Process each player file
-      for (let i = 0; i < playerFiles.length; i++) {
-        const filename = playerFiles[i];
-        const playerId = filename.replace(".json", "");
+      // Process each player
+      for (let i = 0; i < playerIds.length; i++) {
+        const playerId = playerIds[i];
 
         try {
           console.log(
             `Processing player ${i + 1}/${this.totalPlayers}: ${playerId}`
           );
 
-          // Load existing player data
-          const playerData = this.loadPlayerData(playerId);
-          if (!playerData) {
-            console.log(
-              `  ⚠️  Warning: Could not load player data for ${playerId}, skipping...`
-            );
-            continue;
-          }
-
           // Check if this week's data already exists
-          const existingWeek = playerData.weeks.find(
-            (week) =>
-              week.season === this.currentSeason && week.id === weekInfo.id
+          const weekExists = await this.checkPlayerWeekExists(
+            playerId,
+            weekInfo.id,
+            this.currentSeason
           );
 
-          if (existingWeek) {
+          if (weekExists) {
             console.log(
               `  ℹ️  Week ${weekInfo.id} data already exists for player ${playerId}, skipping...`
             );
@@ -320,7 +435,7 @@ class BBWeeklyGameShapeDMIUpdater {
             continue;
           }
 
-          // Add new week data
+          // Create new week data
           const newWeek: PlayerWeek = {
             season: this.currentSeason,
             id: weekInfo.id,
@@ -329,8 +444,7 @@ class BBWeeklyGameShapeDMIUpdater {
             dmi: parsedData.dmi,
           };
 
-          playerData.weeks.push(newWeek);
-          this.savePlayerData(playerData);
+          await this.savePlayerWeek(playerId, newWeek);
 
           console.log(
             `  ✅ Added week ${weekInfo.id} data: GS=${
@@ -360,13 +474,16 @@ class BBWeeklyGameShapeDMIUpdater {
     } catch (error) {
       console.error("\nFatal error:", error);
       console.log("Script terminated due to critical error.");
+      process.exit(1);
     } finally {
       await this.logout();
-      this.rl.close();
     }
   }
 }
 
 // Run the script
 const updater = new BBWeeklyGameShapeDMIUpdater();
-updater.run().catch(console.error);
+updater.run().catch((error) => {
+  console.error("Script failed:", error);
+  process.exit(1);
+});
