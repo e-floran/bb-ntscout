@@ -417,47 +417,42 @@ export async function POST(request: NextRequest) {
         const player = parsePlayer(section);
 
         // Submit each player using the existing scouting API logic
-        const response = await fetch(
-          `${
-            process.env.NEXTAUTH_URL || "http://localhost:3000"
-          }/api/scouting/submit`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Cookie: request.headers.get("cookie") || "",
+        const response = await fetch(`/api/scouting/submit`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Cookie: request.headers.get("cookie") || "",
+          },
+          body: JSON.stringify({
+            playerId: player.id,
+            playerData: {
+              id: player.id,
+              firstName: player.firstName,
+              lastName: player.lastName,
+              countryId: player.countryId,
+              potential: player.potential,
             },
-            body: JSON.stringify({
-              playerId: player.id,
-              playerData: {
-                id: player.id,
-                firstName: player.firstName,
-                lastName: player.lastName,
-                countryId: player.countryId,
-                potential: player.potential,
-              },
-              scoutingData: {
-                age: player.age,
-                salary: player.salary,
-                gs: player.stats.gs,
-                js: player.stats.js,
-                jr: player.stats.jr,
-                od: player.stats.od,
-                ha: player.stats.ha,
-                dr: player.stats.dr,
-                pa: player.stats.pa,
-                is: player.stats.is,
-                id: player.stats.id,
-                rb: player.stats.rb,
-                sb: player.stats.sb,
-                st: player.stats.st,
-                ft: player.stats.ft,
-                ex: player.stats.ex,
-                scoutedAt: new Date().toISOString().slice(0, 16),
-              },
-            }),
-          }
-        );
+            scoutingData: {
+              age: player.age,
+              salary: player.salary,
+              gs: player.stats.gs,
+              js: player.stats.js,
+              jr: player.stats.jr,
+              od: player.stats.od,
+              ha: player.stats.ha,
+              dr: player.stats.dr,
+              pa: player.stats.pa,
+              is: player.stats.is,
+              id: player.stats.id,
+              rb: player.stats.rb,
+              sb: player.stats.sb,
+              st: player.stats.st,
+              ft: player.stats.ft,
+              ex: player.stats.ex,
+              scoutedAt: new Date().toISOString().slice(0, 16),
+            },
+          }),
+        });
 
         if (response.ok) {
           success++;
