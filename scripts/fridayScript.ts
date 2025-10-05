@@ -25,6 +25,10 @@ class BBWeeklyGameShapeDMIUpdater {
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
+    console.log("🔍 Initializing Supabase client...");
+    console.log("SUPABASE_URL:", supabaseUrl ? "✅ Set" : "❌ Missing");
+    console.log("SUPABASE_ANON_KEY:", supabaseKey ? "✅ Set" : "❌ Missing");
+
     if (!supabaseUrl || !supabaseKey) {
       throw new Error(
         "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
@@ -32,7 +36,7 @@ class BBWeeklyGameShapeDMIUpdater {
     }
 
     this.supabase = createClient(supabaseUrl, supabaseKey);
-
+    console.log("✅ Supabase client initialized successfully");
     if (!this.username || !this.password) {
       throw new Error(
         "BB_USERNAME and BB_PASSWORD environment variables are required"
@@ -187,18 +191,51 @@ class BBWeeklyGameShapeDMIUpdater {
   }
 
   private async getPlayers(): Promise<string[]> {
-    const { data, error } = await this.supabase
-      .from("players")
-      .select("id")
-      .order("id");
+    console.log("🔍 Fetching all players from database...");
 
-    if (error) {
-      throw new Error(
-        `Failed to fetch players from database: ${error.message}`
-      );
+    // Get total count first
+    const { count, error: countError } = await this.supabase
+      .from("players")
+      .select("*", { count: "exact", head: true });
+
+    if (countError) {
+      console.error("Error getting player count:", countError);
+    } else {
+      console.log(`📊 Total players in database: ${count}`);
     }
 
-    return data.map((player: any) => player.id.toString());
+    // Fetch all players with pagination to avoid limits
+    let allPlayers: any[] = [];
+    let from = 0;
+    const batchSize = 1000;
+    let hasMore = true;
+
+    while (hasMore) {
+      console.log(`📥 Fetching players ${from + 1} to ${from + batchSize}...`);
+
+      const { data, error } = await this.supabase
+        .from("players")
+        .select("id")
+        .order("id")
+        .range(from, from + batchSize - 1);
+
+      if (error) {
+        throw new Error(
+          `Failed to fetch players from database: ${error.message}`
+        );
+      }
+
+      if (data && data.length > 0) {
+        allPlayers = allPlayers.concat(data);
+        from += batchSize;
+        hasMore = data.length === batchSize; // Continue if we got a full batch
+      } else {
+        hasMore = false;
+      }
+    }
+
+    console.log(`✅ Fetched ${allPlayers.length} total players from database`);
+    return allPlayers.map((player: any) => player.id.toString());
   }
 
   private async checkPlayerWeekExists(
@@ -230,19 +267,30 @@ class BBWeeklyGameShapeDMIUpdater {
     playerId: string,
     week: PlayerWeek
   ): Promise<void> {
-    const { error } = await this.supabase.from("player_weeks").upsert({
+    const weekData = {
       player_id: parseInt(playerId),
       week_number: week.id,
       season: week.season,
       gameshape: week.gameShape,
       dmi: week.dmi,
-    });
+    };
+
+    console.log(`  🔍 Attempting to save week data:`, weekData);
+
+    const { error } = await this.supabase
+      .from("player_weeks")
+      .upsert(weekData, {
+        onConflict: "player_id,week_number,season",
+      });
 
     if (error) {
+      console.error(`  ❌ Database error for player ${playerId}:`, error);
       throw new Error(
-        `Failed to save week data for player ${playerId}: ${error.message}`
+        `Failed to save week data for player ${playerId}: ${error.message} (Code: ${error.code})`
       );
     }
+
+    console.log(`  ✅ Successfully saved to database for player ${playerId}`);
   }
 
   async run(): Promise<void> {
