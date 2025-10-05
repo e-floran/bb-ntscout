@@ -363,17 +363,11 @@ export default function AnalyzePage() {
                       Stratégies Offensives
                     </h4>
                     <DataTable
-                      headers={[
-                        "Stratégie",
-                        "Probabilité",
-                        "Utilisations",
-                        "Score",
-                      ]}
+                      headers={["Stratégie", "Utilisations", "Score"]}
                       rows={
                         filteredAnalysis.seasonsData[0].strategyLikelihood.offense?.map(
                           (item: any) => [
                             item.strategy,
-                            `${item.likelihood}%`,
                             item.usage.toString(),
                             item.weightedScore.toString(),
                           ]
@@ -389,17 +383,11 @@ export default function AnalyzePage() {
                       Stratégies Défensives
                     </h4>
                     <DataTable
-                      headers={[
-                        "Stratégie",
-                        "Probabilité",
-                        "Utilisations",
-                        "Score",
-                      ]}
+                      headers={["Stratégie", "Utilisations", "Score"]}
                       rows={
                         filteredAnalysis.seasonsData[0].strategyLikelihood.defense?.map(
                           (item: any) => [
                             item.strategy,
-                            `${item.likelihood}%`,
                             item.usage.toString(),
                             item.weightedScore.toString(),
                           ]
