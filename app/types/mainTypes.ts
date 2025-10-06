@@ -11,6 +11,7 @@ export interface User {
   mainTeamId: string;
   active: boolean;
   role: UserRoles;
+  isNew?: boolean;
 }
 
 export interface Player {

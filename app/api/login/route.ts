@@ -5,6 +5,7 @@ import {
   userCredentials,
   cleanupExpiredCredentials,
 } from "@/app/utils/userCredentials";
+import { UserRoles } from "@/app/types/types";
 
 // Function to get Supabase client
 function getSupabaseClient() {
@@ -33,11 +34,12 @@ export async function POST(req: NextRequest) {
 
   // Query user from database
   let userForSession;
+  let redirectPath = "/"; // default redirect
   try {
     const supabase = getSupabaseClient();
     const { data: users, error } = await supabase
       .from("users")
-      .select("id, login, main_team_id, active, role")
+      .select("id, login, main_team_id, active, role, is_new")
       .eq("login", login)
       .eq("active", true)
       .single();
@@ -55,7 +57,42 @@ export async function POST(req: NextRequest) {
       mainTeamId: users.main_team_id.toString(), // Convert back to string for session compatibility
       active: users.active,
       role: users.role,
+      isNew: users.is_new,
     };
+
+    // Determine redirect path based on user type and is_new status
+    if (users.is_new) {
+      redirectPath = "/"; // new users go to index
+
+      // Update user to mark them as no longer new
+      const { error: updateError } = await supabase
+        .from("users")
+        .update({ is_new: false, updated_at: new Date().toISOString() })
+        .eq("id", users.id);
+
+      if (updateError) {
+        console.error("Error updating user is_new status:", updateError);
+        // Don't fail the login process for update error, just log it
+      }
+
+      // Update the session data to reflect the change
+      userForSession.isNew = false;
+    } else {
+      switch (users.role) {
+        case UserRoles.Scout:
+          redirectPath = "/scouting";
+          break;
+        case UserRoles.Admin:
+        case UserRoles.Coach:
+        case UserRoles.Staff:
+          redirectPath = "/analyze";
+          break;
+        case UserRoles.User:
+        default:
+          redirectPath = "/";
+          break;
+      }
+    }
   } catch (dbError) {
     console.error("Database error during login:", dbError);
     return NextResponse.json({ error: "Database error" }, { status: 500 });
@@ -93,7 +130,10 @@ export async function POST(req: NextRequest) {
         timestamp: Date.now(),
       });
 
-      const response = NextResponse.json({ success: true });
+      const response = NextResponse.json({
+        success: true,
+        redirectTo: redirectPath,
+      });
       response.cookies.set("bbapi_session", bbapiCookiePairs, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production", // only secure if prod

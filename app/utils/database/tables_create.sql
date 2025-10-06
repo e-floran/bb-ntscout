@@ -63,7 +63,8 @@ CREATE TABLE users (
     active BOOLEAN NOT NULL DEFAULT true,
     role VARCHAR(50) NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    is_new BOOLEAN NOT NULL DEFAULT true
 );
 
 -- Create indexes
