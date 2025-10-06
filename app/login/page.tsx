@@ -56,7 +56,8 @@ export default function LoginPage() {
         setError(data.error);
       } else {
         window.dispatchEvent(new Event("user-login"));
-        router.push("/");
+        // Use the redirectTo path from the API response, fallback to "/" if not provided
+        router.push(data.redirectTo || "/");
       }
     } catch (err) {
       setError("Erreur réseau, veuillez réessayer.");
