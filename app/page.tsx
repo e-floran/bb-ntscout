@@ -146,8 +146,8 @@ export default function IndexPage() {
                   👤 <strong>Scouting manuel</strong> : joueur par joueur
                 </li>
                 <li>
-                  📦 <strong>Scouting par groupe</strong> : collez directement
-                  les profils du jeu
+                  📦 <strong>Scouting par copié/collé</strong> : collez
+                  directement les profils du jeu
                 </li>
                 <li>
                   📊 <strong>Toutes les stats</strong> : âge, salaire, et les 16

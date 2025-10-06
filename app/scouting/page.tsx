@@ -213,11 +213,11 @@ export default function ScoutingPage() {
         setBatchResult(result);
         setBatchText("");
       } else {
-        alert("Erreur lors du traitement par groupe");
+        alert("Erreur lors du traitement par copié/collé");
       }
     } catch (error) {
       console.error("Error submitting batch:", error);
-      alert("Erreur lors de la soumission par groupe");
+      alert("Erreur lors de la soumission par copié/collé");
     }
   };
 
@@ -282,13 +282,13 @@ export default function ScoutingPage() {
                   cursor: "pointer",
                 }}
               >
-                Scouting par groupe
+                Scouting par copié/collé
               </button>
             </div>
           </div>
         ) : showBatchForm ? (
           <div className="analysis-section">
-            <h3 className="analysis-title">Scouting par groupe</h3>
+            <h3 className="analysis-title">Scouting par copié/collé</h3>
             <div
               style={{
                 background: "#fff",
@@ -300,7 +300,8 @@ export default function ScoutingPage() {
               <form onSubmit={handleBatchSubmit}>
                 <div style={{ marginBottom: "1.5rem" }}>
                   <label className="form-label">
-                    Coller les profils des joueurs (un par section) :
+                    Coller les profils des joueurs (sur Firefox uniquement pour
+                    l&apos;instant) :
                   </label>
                   <textarea
                     value={batchText}
@@ -363,7 +364,7 @@ export default function ScoutingPage() {
                     className="form-submit"
                     style={{ width: "auto", padding: "0.75rem 2rem" }}
                   >
-                    Traiter par groupe
+                    Traiter par copié/collé
                   </button>
                   <button
                     type="button"
