@@ -57,14 +57,13 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Get user authentication (matching analyzeTeam route)
+    // User authentication and role validation
     const login = request.cookies.get("authenticated_user")?.value;
-
     if (!login) {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    // Query user from database (matching analyzeTeam route)
+    // Query user from database and validate permissions
     let user;
     try {
       const supabase = getSupabaseClient();
@@ -79,10 +78,19 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: "Session expired" }, { status: 401 });
       }
 
+      // Role validation for analyze endpoints (scoutedPlayers is part of analyze functionality)
+      const allowedRoles = ["Admin", "Coach", "Staff"];
+      if (!allowedRoles.includes(users.role)) {
+        return NextResponse.json(
+          { error: "Insufficient permissions to access analysis features" },
+          { status: 403 }
+        );
+      }
+
       // Convert database format to expected format for compatibility
       user = {
         login: users.login,
-        mainTeamId: users.main_team_id.toString(), // Convert back to string for compatibility
+        mainTeamId: users.main_team_id.toString(),
         active: users.active,
         role: users.role,
       };

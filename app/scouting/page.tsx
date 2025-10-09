@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { LoadingState } from "@/app/components/common/LoadingState";
+import { RedirectingState } from "@/app/components/common/RedirectingState";
 
 interface ScoutingData {
   age: number;
@@ -77,6 +80,48 @@ export default function ScoutingPage() {
   const [showBatchForm, setShowBatchForm] = useState(false);
   const [batchText, setBatchText] = useState("");
   const [batchResult, setBatchResult] = useState<BatchResult | null>(null);
+  const router = useRouter();
+  const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
+
+  // Check user authorization on mount
+  useEffect(() => {
+    const checkAuthorization = async () => {
+      try {
+        const authenticatedUser = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("authenticated_user="))
+          ?.split("=")[1];
+
+        if (!authenticatedUser) {
+          router.push("/login");
+          return;
+        }
+
+        // Fetch user profile to check role
+        const response = await fetch("/api/user/profile");
+        if (response.ok) {
+          const userProfile = await response.json();
+
+          // Check if user has permission for scouting page (Admin, Coach, Staff, Scout)
+          const allowedRoles = ["Admin", "Coach", "Staff", "Scout"];
+          if (allowedRoles.includes(userProfile.role)) {
+            setIsAuthorized(true);
+          } else {
+            // User is authenticated but doesn't have permission, redirect to index
+            router.push("/");
+          }
+        } else {
+          // If profile fetch fails, redirect to login
+          router.push("/login");
+        }
+      } catch (error) {
+        console.error("Error checking authorization:", error);
+        router.push("/login");
+      }
+    };
+
+    checkAuthorization();
+  }, [router]);
 
   const handlePlayerLookup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -220,6 +265,19 @@ export default function ScoutingPage() {
       alert("Erreur lors de la soumission par copié/collé");
     }
   };
+
+  if (isAuthorized === null) {
+    return <LoadingState message="Vérification des autorisations..." />;
+  }
+
+  if (isAuthorized === false) {
+    return (
+      <RedirectingState
+        message="Accès refusé"
+        reason="Vous n'avez pas l'autorisation d'accéder à la page de scouting. Redirection vers l'accueil..."
+      />
+    );
+  }
 
   return (
     <div className="main-container">

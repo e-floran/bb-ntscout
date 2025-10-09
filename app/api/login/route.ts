@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
     // Convert database format to expected format for compatibility
     userForSession = {
       login: users.login,
-      mainTeamId: users.main_team_id.toString(), // Convert back to string for session compatibility
+      mainTeamId: users.main_team_id.toString(),
       active: users.active,
       role: users.role,
       isNew: users.is_new,
@@ -72,12 +72,12 @@ export async function POST(req: NextRequest) {
 
       if (updateError) {
         console.error("Error updating user is_new status:", updateError);
-        // Don't fail the login process for update error, just log it
       }
 
       // Update the session data to reflect the change
       userForSession.isNew = false;
     } else {
+      // Role-based redirects for experienced users
       switch (users.role) {
         case UserRoles.Scout:
           redirectPath = "/scouting";

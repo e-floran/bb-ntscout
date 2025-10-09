@@ -386,9 +386,8 @@ function parsePlayer(playerText: string): ParsedPlayer {
 
 export async function POST(request: NextRequest) {
   try {
-    // Get user authentication (matching scoutedPlayers route)
+    // User authentication and role validation
     const login = request.cookies.get("authenticated_user")?.value;
-
     if (!login) {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
@@ -423,10 +422,10 @@ export async function POST(request: NextRequest) {
         return false;
       });
 
-    // Get user authentication
+    // Get user authentication and validate permissions
     const supabase = getSupabaseClient();
 
-    // Query user from database to get user ID
+    // Query user from database to get user ID and validate permissions
     let userId;
     try {
       const { data: users, error } = await supabase
@@ -438,6 +437,15 @@ export async function POST(request: NextRequest) {
 
       if (error || !users) {
         return NextResponse.json({ error: "Session expired" }, { status: 401 });
+      }
+
+      // Role validation for scouting endpoints
+      const allowedRoles = ["Admin", "Coach", "Staff", "Scout"];
+      if (!allowedRoles.includes(users.role)) {
+        return NextResponse.json(
+          { error: "Insufficient permissions to access scouting features" },
+          { status: 403 }
+        );
       }
 
       userId = users.id;
