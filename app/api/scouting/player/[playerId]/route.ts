@@ -40,14 +40,41 @@ export async function GET(
   { params }: { params: Promise<{ playerId: string }> }
 ) {
   try {
+    // User authentication and role validation
+    const login = request.cookies.get("authenticated_user")?.value;
+    if (!login) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+
+    const supabase = getSupabaseClient();
+
+    // Validate user permissions
+    const { data: users, error: userError } = await supabase
+      .from("users")
+      .select("id, login, main_team_id, active, role")
+      .eq("login", login)
+      .eq("active", true)
+      .single();
+
+    if (userError || !users) {
+      return NextResponse.json({ error: "Session expired" }, { status: 401 });
+    }
+
+    // Role validation for scouting endpoints
+    const allowedRoles = ["Admin", "Coach", "Staff", "Scout"];
+    if (!allowedRoles.includes(users.role)) {
+      return NextResponse.json(
+        { error: "Insufficient permissions to access scouting features" },
+        { status: 403 }
+      );
+    }
+
     const { playerId } = await params;
     const playerIdInt = parseInt(playerId);
 
     if (isNaN(playerIdInt)) {
       return NextResponse.json({ error: "Invalid player ID" }, { status: 400 });
     }
-
-    const supabase = getSupabaseClient();
 
     // Get player data from database
     const { data: playerData, error: playerError } = await supabase

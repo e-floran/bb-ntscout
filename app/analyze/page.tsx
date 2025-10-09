@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { PlayerHistoryCard } from "@/app/components/analyze/PlayerHistoryCard";
 import { TeamAnalysisForm } from "@/app/components/analyze/TeamAnalysisForm";
 import { LoadingProgress } from "@/app/components/analyze/LoadingProgress";
@@ -19,6 +20,8 @@ import {
   gdpRows,
   multiSeasonPlayerRows,
 } from "@/app/utils/dataProcessing";
+import { LoadingState } from "@/app/components/common/LoadingState";
+import { RedirectingState } from "@/app/components/common/RedirectingState";
 
 interface LoadingStep {
   step: string;
@@ -133,6 +136,49 @@ export default function AnalyzePage() {
     }, steps.length * stepDuration + 300);
   };
 
+  const router = useRouter();
+  const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
+
+  // Check user authorization on mount
+  useEffect(() => {
+    const checkAuthorization = async () => {
+      try {
+        const authenticatedUser = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("authenticated_user="))
+          ?.split("=")[1];
+
+        if (!authenticatedUser) {
+          router.push("/login");
+          return;
+        }
+
+        // Fetch user profile to check role
+        const response = await fetch("/api/user/profile");
+        if (response.ok) {
+          const userProfile = await response.json();
+
+          // Check if user has permission for analyze page (Admin, Coach, Staff)
+          const allowedRoles = ["Admin", "Coach", "Staff"];
+          if (allowedRoles.includes(userProfile.role)) {
+            setIsAuthorized(true);
+          } else {
+            // User is authenticated but doesn't have permission, redirect to index
+            router.push("/");
+          }
+        } else {
+          // If profile fetch fails, redirect to login
+          router.push("/login");
+        }
+      } catch (error) {
+        console.error("Error checking authorization:", error);
+        router.push("/login");
+      }
+    };
+
+    checkAuthorization();
+  }, [router]);
+
   // Load main data on mount
   useEffect(() => {
     setLoading(true);
@@ -240,6 +286,19 @@ export default function AnalyzePage() {
         filteredAnalysis.prevSeason
       ? [filteredAnalysis.season, filteredAnalysis.prevSeason]
       : [];
+
+  if (isAuthorized === null) {
+    return <LoadingState message="Vérification des autorisations..." />;
+  }
+
+  if (isAuthorized === false) {
+    return (
+      <RedirectingState
+        message="Accès refusé"
+        reason="Vous n'avez pas l'autorisation d'accéder à la page d'analyse. Redirection vers l'accueil..."
+      />
+    );
+  }
 
   return (
     <div className="main-container" style={{ position: "relative" }}>

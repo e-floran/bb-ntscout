@@ -6,11 +6,33 @@ export const config = {
 };
 
 export function middleware(request: NextRequest) {
-  const isAuthenticated = request.cookies.get("authenticated_user");
-  if (!isAuthenticated) {
-    // Redirect unauthenticated users to /login
-    return NextResponse.redirect(new URL("/login", request.url));
+  const { pathname } = request.nextUrl;
+
+  // Skip middleware for static files, API routes, and Next.js internals
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/static") ||
+    pathname.includes(".") ||
+    pathname.startsWith("/api")
+  ) {
+    return NextResponse.next();
   }
-  // If authenticated, allow the request to proceed
+
+  // Public routes that don't require authentication
+  if (pathname === "/login") {
+    return NextResponse.next();
+  }
+
+  // All other pages require authentication
+  const authenticatedUser = request.cookies.get("authenticated_user")?.value;
+  const bbapiSession = request.cookies.get("bbapi_session")?.value;
+
+  if (!authenticatedUser || !bbapiSession) {
+    const loginUrl = new URL("/login", request.url);
+    loginUrl.searchParams.set("message", "session_expired");
+    return NextResponse.redirect(loginUrl);
+  }
+
+  // User is authenticated, let them through
   return NextResponse.next();
 }
