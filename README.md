@@ -15,24 +15,73 @@ Buzzerbeater is a basketball management game. This web app is used to fetch data
 - BBAPI has a short timeout and rate limit
 - the app/utils/api folder contains .txt files to document the BBAPI. bbapi_docs.txt is the API full documentation other .txt files are routes output examples.
 
+## Authentication & Authorization
+
+### User Roles
+
+The application implements a role-based access control system with the following roles:
+
+- **Admin**: Full access to all features and data
+- **Coach**: Access to analysis and scouting features for their team category
+- **Staff**: Limited access to analysis and scouting based on team category (senior/junior)
+- **Scout**: Access to scouting features and analysis for their team category
+- **User**: Basic access to index page only
+
+### Access Control
+
+- **Index page** (`/`): Available to all authenticated users
+- **Analyze page** (`/analyze`): Admin, Coach, Staff only
+- **Scouting page** (`/scouting`): Admin, Coach, Staff, Scout only
+
+### Team Category Restrictions
+
+Staff users can only access scouted players data for teams in the same category as their assigned team:
+
+- **Senior teams** (ID < 1000): Can access senior team scouting data
+- **Junior teams** (ID ≥ 1000): Can access junior team scouting data
+
+Admin and Coach roles have unrestricted access to all team categories.
+
+### Login Flow
+
+1. User credentials are validated against the database
+2. BBAPI authentication is performed
+3. User is redirected based on role and `is_new` status:
+   - New users → Index page (to read welcome information)
+   - Scouts → Scouting page
+   - Admin/Coach/Staff → Analyze page
+   - Users → Index page
+
+### Authorization Implementation
+
+- **Client-side**: Pages check user authorization and redirect unauthorized users
+- **Server-side**: All API routes validate user permissions from database
+- **Middleware**: Handles basic authentication and redirects unauthenticated users to login
+
 ## Basic app workflow
 
-- a user must login on the login page. the users table, containing a list of authorized users, is checked before sending a login request to the bbapi.
-- on login, the user is redirected to the index.
+- a user must login on the login page. the users table, containing a list of authorized users with their assigned roles, is checked before sending a login request to the bbapi.
+- on login, the user is redirected based on their role and whether they are a new user
+- unauthorized users are redirected away from restricted pages
 
 ## Analyze team
 
 - on the analyze page, data is fetched on the user main national team next opponent.
 - the user can then pick another team to analyze on this same page.
 - several collapsable section display data in tables. Data is either fetched from the bbapi or retrieved from the app database.
+- **Access**: Admin, Coach, Staff only
+- **Scouted players section**: Staff users see data filtered by team category
 
 ## Manual scouting
 
 - base workflow retrieve data with automated API calls. But users with sufficient rights can add players manually on the scouting page.
+- **Access**: Admin, Coach, Staff, Scout only
+- supports both individual player scouting and batch import via copy-paste
 
 ## Stored data
 
 - the data is stored in a database. Tables schemas can be found in the app/utils/database folder.
+- the `users` table includes role-based permissions and team assignments
 
 ## Scripts
 
