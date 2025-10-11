@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BB - NT scout",
+  title: "Buzzerbeater France",
   description: "A tool for national teams managers",
 };
 
