@@ -13,7 +13,7 @@ interface GameData {
   positionsEfficiencies: Record<Position, number>;
 }
 
-const SEASON = 69;
+const SEASON = 70;
 const TEAM_IDS = [11, 50, 1011];
 const BASE_API_URL = "http://bbapi.buzzerbeater.com"; // Fixed: use http instead of https
 const OUTPUT_DIR = path.join(process.cwd(), "app/data/mainTeams");

@@ -14,8 +14,8 @@ import { createClient } from "@supabase/supabase-js";
 
 // Import getCurrentWeekId function for proper current week detection
 function getCurrentWeekId(): number {
-  // Season 69 started on July 11th, 2025 (Friday)
-  const seasonStartDate = new Date("2025-07-11");
+  // Season 70 started on October 17th, 2025 (Friday)
+  const seasonStartDate = new Date("2025-10-17");
   const now = new Date();
 
   // Calculate weeks since season start
@@ -43,7 +43,7 @@ function getSupabaseClient() {
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
-const SEASON = 69;
+const SEASON = 70;
 
 // Session management class for handling BBAPI timeouts
 class BBAPISessionManager {
@@ -1064,7 +1064,7 @@ async function enrichPlayersWithHistoryFromDB(
         dmiChange,
         dmiComparisonToLastGS9,
         currentWeek: currentWeekData?.week_number || 0,
-        currentSeason: currentWeekData?.season || 69,
+        currentSeason: currentWeekData?.season || 70,
       };
 
       enrichedPlayers.push(enrichedPlayer);

@@ -19,8 +19,8 @@ interface PlayerData {
 
 // Function to get current week ID based on season start
 function getCurrentWeekId(): number {
-  // Season 69 started on July 11th, 2025 (Friday)
-  const seasonStartDate = new Date("2025-07-11");
+  // Season 70 started on October 17th, 2025 (Friday)
+  const seasonStartDate = new Date("2025-10-17");
   const now = new Date();
 
   // Calculate weeks since season start

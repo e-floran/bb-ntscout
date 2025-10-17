@@ -44,7 +44,7 @@ class BBPostMondayPlayerChecker {
   private baseURL = "http://bbapi.buzzerbeater.com";
   private sessionCookie = "";
   private queryCount = 0;
-  private currentSeason = 69;
+  private currentSeason = 70;
   private rl: readline.Interface;
   private username = "";
   private password = "";

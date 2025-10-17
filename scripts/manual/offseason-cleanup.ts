@@ -1,6 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { createClient } from "@supabase/supabase-js";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Load environment variables from .env file manually
 function loadEnvFile() {
@@ -134,24 +138,43 @@ async function offseasonCleanup() {
       }
 
       if (playersToAge && playersToAge.length > 0) {
-        // Update each player's age
-        const updates = playersToAge.map((player) => ({
-          id: player.id,
-          current_age: player.current_age + 1,
-          updated_at: new Date().toISOString(),
-        }));
+        console.log(`Found ${playersToAge.length} players to age`);
 
-        const { error: batchUpdateError } = await supabase
-          .from("players")
-          .upsert(updates);
+        // Update players individually to avoid upsert issues
+        let updatedCount = 0;
+        const batchSize = 100;
 
-        if (batchUpdateError) {
-          throw new Error(
-            `Failed to update player ages: ${batchUpdateError.message}`
+        for (let i = 0; i < playersToAge.length; i += batchSize) {
+          const batch = playersToAge.slice(i, i + batchSize);
+          console.log(`Processing batch ${Math.floor(i / batchSize) + 1}...`);
+
+          for (const player of batch) {
+            const { error: updateError } = await supabase
+              .from("players")
+              .update({
+                current_age: player.current_age + 1,
+                updated_at: new Date().toISOString(),
+              })
+              .eq("id", player.id);
+
+            if (updateError) {
+              console.error(
+                `Failed to update player ${player.id}:`,
+                updateError.message
+              );
+            } else {
+              updatedCount++;
+            }
+          }
+
+          console.log(
+            `Updated batch ${Math.floor(i / batchSize) + 1}: ${
+              batch.length
+            } players processed`
           );
         }
 
-        console.log(`Updated age for ${updates.length} players`);
+        console.log(`Updated age for ${updatedCount} players total`);
       }
     } else if (ageUpdateError) {
       throw new Error(
@@ -183,7 +206,7 @@ async function offseasonCleanup() {
 }
 
 // Run the script
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   offseasonCleanup()
     .then(() => {
       console.log("Script finished successfully");

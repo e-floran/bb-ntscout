@@ -16,7 +16,8 @@
     "friday-manual": "tsx scripts/manual/fridayScript.ts",
     "tl-manual": "tsx scripts/manual/fetch-players-bbapi.ts",
     "migrate-db": "tsx scripts/migrate-to-supabase-new.ts",
-    "fix-gameshape": "tsx scripts/fix-gameshape.ts"
+    "fix-gameshape": "tsx scripts/fix-gameshape.ts",
+    "offseason-cleanup": "tsx scripts/manual/offseason-cleanup.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
