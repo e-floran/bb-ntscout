@@ -358,8 +358,7 @@ export default function ScoutingPage() {
               <form onSubmit={handleBatchSubmit}>
                 <div style={{ marginBottom: "1.5rem" }}>
                   <label className="form-label">
-                    Coller les profils des joueurs (sur Firefox uniquement pour
-                    l&apos;instant) :
+                    Coller les profils des joueurs :
                   </label>
                   <textarea
                     value={batchText}

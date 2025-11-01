@@ -10,7 +10,12 @@ on:
     # Tuesday script - Tuesdays at 07:00 UTC (7:00 AM)
     - cron: "0 7 * * 2"
     # Fetch players - Fridays at 15:00 UTC
-    - cron: "0 15 * * 5"
+    - cron:
+        "0 15 * * 5"
+        # Fetch players - Saturdays at 15:00 UTC
+    - cron: "0 15 * * 6"
+    # Fetch players - Sundays at 15:00 UTC
+    - cron: "0 15 * * 0"
     # Fetch players - Mondays at 15:00 UTC
     - cron: "0 15 * * 1"
     # Fetch players - Wednesdays at 15:00 UTC

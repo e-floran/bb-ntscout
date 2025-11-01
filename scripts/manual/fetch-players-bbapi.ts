@@ -20,9 +20,9 @@ const question = (query: string): Promise<string> =>
   new Promise((resolve) => rl.question(query, resolve));
 
 // API endpoints
-const BASE_URL = "https://buzzerbeater.com/BBAPI/api/Players";
+const BASE_URL = "https://api.buzzerbeater.com/BBAPI/api/Players";
 const AUTHENTICATE_URL =
-  "https://buzzerbeater.com/BBAPI/Users/authenticate/web";
+  "https://api.buzzerbeater.com/BBAPI/Users/authenticate/web";
 const TRANSFER_SEARCH_URL = `${BASE_URL}/transfer-search`;
 const TRANSFER_RESULTS_URL = `${BASE_URL}/transfer-results`;
 
