@@ -401,26 +401,45 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Split players by country markers at the start of lines
-    // Create a regex pattern that matches known country names
     const countryNames = Object.keys(COUNTRIES).join("|");
-    const countrySplitPattern = new RegExp(
-      `(?=\\n\\[(${countryNames})\\])`,
-      "g"
+    const prefixPattern = 
+        `\\[?` +                 
+        `(${countryNames})` +    
+        `\\]?` +                 
+        `(?:` +                  
+            `\\s*` +        
+            `\\[?Utopia\\]?` + 
+        `)?`;
+
+    const delimiterRegex = new RegExp(`^${prefixPattern}`, 'm'); 
+
+    const countryExtractPattern = new RegExp(
+        `^${prefixPattern}` +
+        `((?!${delimiterRegex.source})[\\s\\S])*`,
+        "gm"
     );
 
-    const playerSections = batchText
-      .split(countrySplitPattern)
-      .map((section: string) => section.trim())
-      .filter((section: string) => {
-        if (section.length === 0) return false;
-        // Check if section starts with a known country
-        const firstLineMatch = section.match(/^\[([^\]]+)\]/);
-        if (firstLineMatch) {
-          return COUNTRIES[firstLineMatch[1]] !== undefined;
-        }
-        return false;
-      });
+    const rawPlayerSections = [...batchText.matchAll(countryExtractPattern)].map(match => match[0]);
+
+    const playerSections = rawPlayerSections
+        .map((section: string) => {
+            const match = section.match(new RegExp(`^${prefixPattern}`, 'm'));
+
+            if (match) {
+                const countryName = match[1];
+                const newPrefix = `[${countryName}]\n`;
+                return section.replace(match[0], newPrefix).trim();
+            }
+            return null;
+        })
+        .filter((section): section is string => section !== null)
+        .filter((section: string) => {
+            const firstLineMatch = section.match(/^\[([^\]]+)\]/);
+            if (firstLineMatch) {
+                return COUNTRIES[firstLineMatch[1]] !== undefined;
+            }
+            return false;
+        });
 
     // Get user authentication and validate permissions
     const supabase = getSupabaseClient();
