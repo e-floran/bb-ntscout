@@ -90,3 +90,14 @@ Admin and Coach roles have unrestricted access to all team categories.
 - checkNewPlayers.ts is intended to be used after national teams games on monday, to check all national teams last game and see if there are new players to add
 - fridayScript.ts add a new entry for each player in the player_weeks table.
 - fetch-players-bbapi.ts use another API of Buzzerbeater to get complete players profiles if they are on the transfer market at the time of the script and save it in the scoutings table.
+
+## French Players Database
+
+- on the players page, users with sufficient rights can browse and filter French players from the database
+- **Access**: Admin always has access. Coach, Scout, Staff only if their main_team_id is 11 (France senior) or 1011 (France U21)
+- filters include: name, age range, potential range
+- players are displayed in a full-width dashboard table with their latest scouting data
+- each player row displays the most recent scouting report directly in the table
+- users can create new scouting entries (existing scoutings are never updated - each submission creates a new entry)
+- only French players (country_id = 11) are displayed
+- only players with first_name and last_name not null are shown

@@ -6,17 +6,18 @@ CREATE TABLE teams (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Create players table (simplified with team_id)
+-- Create players table
 CREATE TABLE players (
   id INTEGER PRIMARY KEY,
   first_name TEXT,
   last_name TEXT,
   country_id INTEGER NOT NULL,
-    potential INTEGER,
-      current_age INTEGER,
+  potential INTEGER,
+  current_age INTEGER,
   team_id INTEGER REFERENCES teams(id),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  scout INTEGER,
 );
 
 -- Create player_weeks table
@@ -52,7 +53,8 @@ CREATE TABLE scoutings (
   stamina INTEGER, -- stamina
   free_throw INTEGER, -- free throw
   experience INTEGER, -- experience
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  created_by INTEGER,
 );
 
 -- Create users table

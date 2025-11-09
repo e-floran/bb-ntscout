@@ -8,6 +8,7 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
+import PeopleIcon from "@mui/icons-material/People";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -18,13 +19,15 @@ interface NavigationProps {
 
 interface UserProfile {
   role: string;
+  mainTeamId: number;
 }
 
 export function Navigation({ isOpen, onToggle }: NavigationProps) {
   const router = useRouter();
   const [userRole, setUserRole] = useState<string | null>(null);
+  const [userTeamId, setUserTeamId] = useState<number | null>(null);
 
-  // Fetch user profile to get role
+  // Fetch user profile to get role and team
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
@@ -32,6 +35,7 @@ export function Navigation({ isOpen, onToggle }: NavigationProps) {
         if (response.ok) {
           const userProfile: UserProfile = await response.json();
           setUserRole(userProfile.role);
+          setUserTeamId(userProfile.mainTeamId);
         }
       } catch (error) {
         console.error("Error fetching user profile:", error);
@@ -77,6 +81,13 @@ export function Navigation({ isOpen, onToggle }: NavigationProps) {
   // Check if user can access scouting page
   const canAccessScouting =
     userRole && ["Admin", "Coach", "Staff", "Scout"].includes(userRole);
+
+  // Check if user can access players page
+  // Admin always has access, others need to be part of French teams (11 or 1011)
+  const canAccessPlayers =
+    userRole &&
+    ["Admin", "Coach", "Scout", "Staff"].includes(userRole) &&
+    (userRole === "Admin" || userTeamId === 11 || userTeamId === 1011);
 
   return (
     <>
@@ -191,6 +202,28 @@ export function Navigation({ isOpen, onToggle }: NavigationProps) {
                     }}
                   >
                     <SearchIcon />
+                  </IconButton>
+                </Link>
+              </li>
+            )}
+
+            {/* Players button - only for Admin, Coach, Scout from French teams */}
+            {canAccessPlayers && (
+              <li>
+                <Link href="/players" onClick={onToggle}>
+                  <IconButton
+                    aria-label="Joueurs"
+                    sx={{
+                      color: "#1976d2",
+                      backgroundColor: "transparent",
+                      width: "50px",
+                      height: "50px",
+                      "&:hover": {
+                        backgroundColor: "rgba(25, 118, 210, 0.1)",
+                      },
+                    }}
+                  >
+                    <PeopleIcon />
                   </IconButton>
                 </Link>
               </li>

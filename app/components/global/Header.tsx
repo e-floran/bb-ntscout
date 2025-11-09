@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -16,7 +16,7 @@ export function Header() {
 
   return (
     <>
-      <svg
+      {/* <svg
         viewBox="0 0 100 100"
         height="100px"
         width="100px"
@@ -57,15 +57,16 @@ export function Header() {
           fill="none"
           stroke="#133a8a"
         />
-      </svg>
-
+      </svg> */}
+      <article style={{ height: "100px" }} />
       <header
         className="header-responsive"
         style={{
           maxWidth: "1800px",
           width: "100%",
-          margin: "0 auto 1.5rem auto",
+          // margin: "0 auto 1.5rem auto",
           color: "#133a8a",
+          backgroundColor: "#ffffff",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -74,11 +75,30 @@ export function Header() {
           borderBottomLeftRadius: "12px",
           borderBottomRightRadius: "12px",
           padding: "1.5rem 2.5rem",
-          minHeight: "64px",
+          minHeight: "90px",
           boxShadow: "0 4px 24px rgba(60, 84, 137, 0.1)",
+          position: "fixed",
+          top: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
         }}
       >
-        <h1
+        <img
+          src={"/bbf-logo.png"}
+          alt="Buzzerbeater France"
+          style={{
+            width: "100%",
+            maxWidth: "800px",
+            position: "absolute",
+            top: "0",
+            left: "50%",
+            transform: "translate(-50%, -20%)",
+            objectFit: "cover",
+            maxHeight: "200px",
+          }}
+        />
+        {/* <h1
           className="header-title"
           style={{
             fontSize: "2.5rem",
@@ -88,9 +108,9 @@ export function Header() {
           }}
         >
           Buzzerbeater France
-        </h1>
+        </h1> */}
 
-        <div
+        {/* <div
           style={{
             display: "flex",
             width: "300px",
@@ -101,7 +121,7 @@ export function Header() {
           <div style={{ flex: 1, backgroundColor: "#0055A4" }}></div>
           <div style={{ flex: 1, backgroundColor: "#FFFFFF" }}></div>
           <div style={{ flex: 1, backgroundColor: "#EF4135" }}></div>
-        </div>
+        </div> */}
 
         <style jsx>{`
           @media (max-width: 720px) {
