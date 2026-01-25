@@ -12,9 +12,6 @@ function getSupabaseClient() {
   const supabaseUrl = process.env.SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-  console.log("Supabase URL:", supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'MISSING');
-  console.log("Supabase Key exists:", !!supabaseKey);
-
   if (!supabaseUrl || !supabaseKey) {
     throw new Error(
       "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required",
@@ -54,38 +51,20 @@ export async function POST(req: NextRequest) {
   try {
     console.log("Querying database for user:", login);
     const supabase = getSupabaseClient();
-    
-    // Add timeout wrapper for database query
-    const queryPromise = supabase
+    const { data: users, error } = await supabase
       .from("users")
       .select("id, login, main_team_id, active, role, is_new")
       .eq("login", login)
       .eq("active", true)
       .single();
-    
-    const timeoutPromise = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error("Database query timeout after 5s")), 5000)
-    );
-    
-    const { data: users, error } = await Promise.race([queryPromise, timeoutPromise]) as any;
 
     console.log("Database query completed");
     console.log("Error:", error);
     console.log("User found:", !!users);
+    console.log("User data:", users);
 
-    if (error) {
-      console.error("Database query failed:", error);
-      // Return more specific error message
-      return NextResponse.json(
-        { 
-          error: "Database connection failed", 
-          details: "Unable to connect to database. Please try again later." 
-        },
-        { status: 503 }, // Service Unavailable
-      );
-    }
-    
-    if (!users) {
+    if (error || !users) {
+      console.error("Database query failed or user not found:", error);
       return NextResponse.json(
         { error: "User not found or not active" },
         { status: 401 },
@@ -136,13 +115,7 @@ export async function POST(req: NextRequest) {
     }
   } catch (dbError) {
     console.error("Database error during login:", dbError);
-    return NextResponse.json(
-      { 
-        error: "Database connection error", 
-        details: dbError instanceof Error ? dbError.message : "Unknown error" 
-      }, 
-      { status: 503 }
-    );
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 
   // Clean up expired credentials periodically
@@ -154,7 +127,20 @@ export async function POST(req: NextRequest) {
     )}&code=${encodeURIComponent(password)}`;
 
     console.log("Attempting BBAPI login for user:", login);
-    const res = await fetch(url, { method: "GET" });
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        Accept:
+          "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        Connection: "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+        "Cache-Control": "max-age=0",
+      },
+    });
     const setCookie = res.headers.get("set-cookie");
     const text = await res.text();
 
