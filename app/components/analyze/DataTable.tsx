@@ -25,6 +25,7 @@ const MOBILE_ABBREVIATIONS = {
   Position: "Pos",
 
   // Season header variations
+  "Saison 71": "S71",
   "Saison 70": "S70",
   "Saison 69": "S69",
   "Saison 68": "S68",
@@ -34,7 +35,6 @@ const MOBILE_ABBREVIATIONS = {
   "Saison 64": "S64",
   "Saison 63": "S63",
   "Saison 62": "S62",
-  "Saison 61": "S61",
 
   // Offensive strategies (all from StrategyFilters.tsx)
   "Toutes les attaques": "Toutes",
@@ -108,7 +108,7 @@ export function DataTable({
     // Normalize spaces and try matching (handles multiple spaces between words)
     const normalizedText = text.trim().replace(/\s+/g, " ");
     const matchingKey = Object.keys(MOBILE_ABBREVIATIONS).find(
-      (key) => key.toLowerCase() === normalizedText.toLowerCase()
+      (key) => key.toLowerCase() === normalizedText.toLowerCase(),
     );
 
     if (matchingKey) {

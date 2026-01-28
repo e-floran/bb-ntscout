@@ -14,13 +14,13 @@ import { createClient } from "@supabase/supabase-js";
 
 // Import getCurrentWeekId function for proper current week detection
 function getCurrentWeekId(): number {
-  // Season 70 started on October 17th, 2025 (Friday)
-  const seasonStartDate = new Date("2025-10-17");
+  // Season 71 started on October 17th, 2025 (Friday)
+  const seasonStartDate = new Date("2026-01-23");
   const now = new Date();
 
   // Calculate weeks since season start
   const daysSinceStart = Math.floor(
-    (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+    (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24),
   );
   const weeksSinceStart = Math.floor(daysSinceStart / 7);
 
@@ -35,7 +35,7 @@ function getSupabaseClient() {
 
   if (!supabaseUrl || !supabaseKey) {
     throw new Error(
-      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required",
     );
   }
   return createClient(supabaseUrl, supabaseKey);
@@ -43,7 +43,7 @@ function getSupabaseClient() {
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 
-const SEASON = 70;
+const SEASON = 71;
 
 // Session management class for handling BBAPI timeouts
 class BBAPISessionManager {
@@ -85,7 +85,7 @@ class BBAPISessionManager {
     // Only attempt login if we have credentials
     if (!this.hasCredentials) {
       console.log(
-        "No credentials available for re-authentication, continuing with existing session"
+        "No credentials available for re-authentication, continuing with existing session",
       );
       return false;
     }
@@ -149,7 +149,7 @@ class BBAPISessionManager {
         return true;
       } else {
         console.log(
-          "Re-authentication failed, continuing with existing session"
+          "Re-authentication failed, continuing with existing session",
         );
         this.queryCount = 0; // Reset count to avoid repeated attempts
       }
@@ -189,7 +189,7 @@ class BBAPISessionManager {
         } else {
           // No credentials available, return the error response to let the frontend handle it
           console.log(
-            "No credentials for re-authentication, returning session expired error"
+            "No credentials for re-authentication, returning session expired error",
           );
           const parser = new xml2js.Parser({ explicitArray: false });
           return parser.parseStringPromise(text);
@@ -281,7 +281,7 @@ function calculateMainTeamAverages(teamId: string) {
                 (efficiencyTotal[position] || 0) + value;
               efficiencyCount[position] = (efficiencyCount[position] || 0) + 1;
             }
-          }
+          },
         );
       }
     });
@@ -328,7 +328,7 @@ export async function GET(req: NextRequest) {
     if (!allowedRoles.includes(users.role)) {
       return NextResponse.json(
         { error: "Insufficient permissions to access analysis features" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
@@ -368,7 +368,7 @@ export async function GET(req: NextRequest) {
 
     // Analyze all seasons in parallel
     const seasonsData = await Promise.all(
-      seasons.map((season) => analyzeTeamForSeason(teamId, season))
+      seasons.map((season) => analyzeTeamForSeason(teamId, season)),
     );
 
     // Use the teamId and fetch team name from the most recent season
@@ -450,7 +450,7 @@ export async function GET(req: NextRequest) {
   // Find next future match
   const now = new Date();
   const futureMatches = matches.filter(
-    (m: any) => parseDate(m["$"].start) > now
+    (m: any) => parseDate(m["$"].start) > now,
   );
 
   if (futureMatches.length === 0) {
@@ -461,7 +461,7 @@ export async function GET(req: NextRequest) {
   const nextMatch = futureMatches.sort(
     (a: any, b: any) =>
       (parseDate(a["$"].start) as unknown as number) -
-      (parseDate(b["$"].start) as unknown as number)
+      (parseDate(b["$"].start) as unknown as number),
   )[0];
 
   let opponentTeam;
@@ -494,9 +494,8 @@ export async function GET(req: NextRequest) {
 // --- Analysis logic for one season of a team ---
 async function analyzeTeamForSeason(teamId: string, season: number) {
   const opponentScheduleUrl = `${baseApiUrl}schedule.aspx?teamid=${teamId}&season=${season}`;
-  const opponentScheduleXml = await sessionManager.fetchXml(
-    opponentScheduleUrl
-  );
+  const opponentScheduleXml =
+    await sessionManager.fetchXml(opponentScheduleUrl);
 
   let opponentMatches = [];
   if (opponentScheduleXml?.bbapi?.schedule?.match) {
@@ -802,18 +801,18 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
   effortDeltaList.sort(
     (a, b) =>
       (parseDate(a.date) as unknown as number) -
-      (parseDate(b.date) as unknown as number)
+      (parseDate(b.date) as unknown as number),
   );
 
   gdpList.sort(
-    (a, b) => (parseDate(a.date) as any) - (parseDate(b.date) as any)
+    (a, b) => (parseDate(a.date) as any) - (parseDate(b.date) as any),
   );
 
   // Sort recent games by date (most recent first) - analyze all games, no limit
   recentGames.sort(
     (a, b) =>
       (parseDate(b.date) as unknown as number) -
-      (parseDate(a.date) as unknown as number)
+      (parseDate(a.date) as unknown as number),
   );
 
   // Humanize keys for frontend display
@@ -844,7 +843,7 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
   const supabase = getSupabaseClient();
   const playersWithHistory = await enrichPlayersWithHistoryFromDB(
     supabase,
-    playersArray
+    playersArray,
   );
 
   // Calculate strategy likelihood based on player fitness and usage
@@ -852,7 +851,7 @@ async function analyzeTeamForSeason(teamId: string, season: number) {
     playersWithHistory,
     recentGames,
     offenseStrategiesHumanized,
-    defenseStrategiesHumanized
+    defenseStrategiesHumanized,
   );
 
   return {
@@ -876,7 +875,7 @@ function calculateStrategyLikelihood(
   playersWithHistory: any[],
   recentGames: any[],
   offenseStrategies: Record<string, number>,
-  defenseStrategies: Record<string, number>
+  defenseStrategies: Record<string, number>,
 ) {
   // Create a map of strategy usage with player fitness weights
   const offenseWeighted: Record<string, number> = {};
@@ -923,7 +922,7 @@ function calculateStrategyLikelihood(
             totalFitnessWeight += fitnessScore * minutesWeight;
             playersWithData++;
           }
-        }
+        },
       );
 
       if (playersWithData > 0) {
@@ -947,7 +946,7 @@ function calculateStrategyLikelihood(
     .map(([strategy, weight]) => ({
       strategy,
       likelihood: Math.round(
-        (weight / Math.max(...Object.values(offenseWeighted))) * 100
+        (weight / Math.max(...Object.values(offenseWeighted))) * 100,
       ),
       usage: offenseStrategies[strategy] || 0,
       weightedScore: Math.round(weight * 10) / 10,
@@ -958,7 +957,7 @@ function calculateStrategyLikelihood(
     .map(([strategy, weight]) => ({
       strategy,
       likelihood: Math.round(
-        (weight / Math.max(...Object.values(defenseWeighted))) * 100
+        (weight / Math.max(...Object.values(defenseWeighted))) * 100,
       ),
       usage: defenseStrategies[strategy] || 0,
       weightedScore: Math.round(weight * 10) / 10,
@@ -973,7 +972,7 @@ function calculateStrategyLikelihood(
 // Helper function to enrich players with history from database
 async function enrichPlayersWithHistoryFromDB(
   supabase: any,
-  players: any[]
+  players: any[],
 ): Promise<any[]> {
   const enrichedPlayers = [];
 
@@ -1010,14 +1009,14 @@ async function enrichPlayersWithHistoryFromDB(
       const currentWeekData = weeks?.find(
         (week: any) =>
           week.season === currentSeason &&
-          week.week_number === actualCurrentWeekId
+          week.week_number === actualCurrentWeekId,
       );
 
       // Find the previous week data for change calculations
       const previousWeekData = weeks?.find(
         (week: any) =>
           week.season === currentSeason &&
-          week.week_number === actualCurrentWeekId - 1
+          week.week_number === actualCurrentWeekId - 1,
       );
 
       // We have current data only if we have data for the exact current week
@@ -1064,7 +1063,7 @@ async function enrichPlayersWithHistoryFromDB(
         dmiChange,
         dmiComparisonToLastGS9,
         currentWeek: currentWeekData?.week_number || 0,
-        currentSeason: currentWeekData?.season || 70,
+        currentSeason: currentWeekData?.season || 71,
       };
 
       enrichedPlayers.push(enrichedPlayer);
@@ -1081,7 +1080,7 @@ async function enrichPlayersWithHistoryFromDB(
 async function ensureTeamExists(
   supabase: any,
   teamId: number,
-  playerIds: number[]
+  playerIds: number[],
 ): Promise<void> {
   try {
     // Ensure team exists
