@@ -8,7 +8,7 @@ function getSupabaseClient() {
 
   if (!supabaseUrl || !supabaseKey) {
     throw new Error(
-      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+      "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required",
     );
   }
   return createClient(supabaseUrl, supabaseKey);
@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
     // Return user profile data
     return NextResponse.json({
       login: users.login,
-      mainTeamId: users.main_team_id.toString(),
+      mainTeamId: users.main_team_id,
       active: users.active,
       role: users.role,
       isNew: users.is_new,
@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
     console.error("Error fetching user profile:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
