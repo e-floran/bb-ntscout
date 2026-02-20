@@ -38,7 +38,6 @@ export function PlayerHistoryCard({
     player.gameShapeHistory && player.gameShapeHistory.length > 0;
   const hasCurrentData = player.isCurrentWeekDataAvailable === true;
   const mostRecentData = hasHistory ? player.gameShapeHistory![0] : null;
-  console.log("player : ", player);
   return (
     <div
       style={{

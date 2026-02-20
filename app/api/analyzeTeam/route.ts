@@ -992,7 +992,6 @@ async function enrichPlayersWithHistoryFromDB(
         enrichedPlayers.push({ ...player, weeks: [] });
         continue;
       }
-      console.log("player : ", player.id, " weeks : ", weeks);
       // Transform weeks data to match PlayerHistoryCard expected format
       const gameShapeHistory =
         weeks?.map((week: any) => ({
