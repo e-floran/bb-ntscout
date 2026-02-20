@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { PlayerWithHistory } from "@/app/types/playerHistory";
+import { formatDate } from "@/app/utils/dataProcessing";
 
 interface PlayerHistoryCardProps {
   player: PlayerWithHistory;
@@ -37,7 +38,7 @@ export function PlayerHistoryCard({
     player.gameShapeHistory && player.gameShapeHistory.length > 0;
   const hasCurrentData = player.isCurrentWeekDataAvailable === true;
   const mostRecentData = hasHistory ? player.gameShapeHistory![0] : null;
-
+  console.log("player : ", player);
   return (
     <div
       style={{
@@ -151,7 +152,7 @@ export function PlayerHistoryCard({
                       fontSize: "13px",
                       fontWeight: "600",
                       color: getDMIComparisonColor(
-                        player.dmiComparisonToLastGS9.percentage
+                        player.dmiComparisonToLastGS9.percentage,
                       ),
                     }}
                   >
@@ -167,7 +168,7 @@ export function PlayerHistoryCard({
                     >
                       (S{player.dmiComparisonToLastGS9.lastGS9WeekId}:{" "}
                       {Math.round(
-                        player.dmiComparisonToLastGS9.lastGS9DMI / 1000
+                        player.dmiComparisonToLastGS9.lastGS9DMI / 1000,
                       )}
                       k)
                     </span>
@@ -248,7 +249,8 @@ export function PlayerHistoryCard({
                     marginBottom: "4px",
                   }}
                 >
-                  Dernières données disponibles (S{mostRecentData.weekId}):
+                  Dernières données disponibles (
+                  {formatDate(mostRecentData.date)}):
                 </div>
                 <div
                   style={{
@@ -325,7 +327,7 @@ export function PlayerHistoryCard({
                           marginBottom: "3px",
                         }}
                       >
-                        S{week.weekId}
+                        {formatDate(week.date)}
                       </div>
                       <div
                         style={{

@@ -36,7 +36,7 @@ class BBWeeklyGameShapeDMIUpdater {
   private baseURL = "http://bbapi.buzzerbeater.com";
   private sessionCookie = "";
   private queryCount = 0;
-  private currentSeason = 70;
+  private currentSeason = 71;
   private username = "";
   private password = "";
   private processedPlayers = 0;
@@ -54,7 +54,7 @@ class BBWeeklyGameShapeDMIUpdater {
 
     if (!supabaseUrl || !supabaseKey) {
       throw new Error(
-        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required",
       );
     }
 
@@ -186,7 +186,7 @@ class BBWeeklyGameShapeDMIUpdater {
   }
 
   private parsePlayerXML(
-    xmlData: string
+    xmlData: string,
   ): { gameShape: GameShapeRange; dmi: number } | null {
     try {
       // Try different XML parsing approaches based on existing scripts
@@ -235,13 +235,13 @@ class BBWeeklyGameShapeDMIUpdater {
   }
 
   private getCurrentWeekInfo(): { id: number; weekStart: Date } {
-    // Season 70 started on October 17th, 2025 (Friday)
-    const seasonStartDate = new Date("2025-10-17");
+    // Season 71 started on January 23rd, 2026 (Friday)
+    const seasonStartDate = new Date("2026-01-23");
     const now = new Date();
 
     // Calculate weeks since season start
     const daysSinceStart = Math.floor(
-      (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+      (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24),
     );
     const weeksSinceStart = Math.floor(daysSinceStart / 7);
 
@@ -286,7 +286,7 @@ class BBWeeklyGameShapeDMIUpdater {
 
       if (error) {
         throw new Error(
-          `Failed to fetch players from database: ${error.message}`
+          `Failed to fetch players from database: ${error.message}`,
         );
       }
 
@@ -306,7 +306,7 @@ class BBWeeklyGameShapeDMIUpdater {
   private async checkPlayerWeekExists(
     playerId: string,
     weekId: number,
-    season: number
+    season: number,
   ): Promise<boolean> {
     const { data, error } = await this.supabase
       .from("player_weeks")
@@ -320,7 +320,7 @@ class BBWeeklyGameShapeDMIUpdater {
       // PGRST116 is "not found" error
       console.error(
         `Error checking week data for player ${playerId}:`,
-        error.message
+        error.message,
       );
       return false;
     }
@@ -330,7 +330,7 @@ class BBWeeklyGameShapeDMIUpdater {
 
   private async savePlayerWeek(
     playerId: string,
-    week: PlayerWeek
+    week: PlayerWeek,
   ): Promise<void> {
     const weekData = {
       player_id: parseInt(playerId),
@@ -351,7 +351,7 @@ class BBWeeklyGameShapeDMIUpdater {
     if (error) {
       console.error(`  ❌ Database error for player ${playerId}:`, error);
       throw new Error(
-        `Failed to save week data for player ${playerId}: ${error.message} (Code: ${error.code})`
+        `Failed to save week data for player ${playerId}: ${error.message} (Code: ${error.code})`,
       );
     }
 
@@ -362,10 +362,10 @@ class BBWeeklyGameShapeDMIUpdater {
     try {
       console.log("=== BB Weekly GameShape & DMI Update Script ===");
       console.log(
-        "This script updates all player files with current week's gameshape and DMI data"
+        "This script updates all player files with current week's gameshape and DMI data",
       );
       console.log(
-        "Run this script every Friday to keep player data up to date\n"
+        "Run this script every Friday to keep player data up to date\n",
       );
 
       // Prompt for credentials
@@ -381,7 +381,7 @@ class BBWeeklyGameShapeDMIUpdater {
       console.log(
         `Current week: ${weekInfo.id} (starts: ${
           weekInfo.weekStart.toISOString().split("T")[0]
-        })\n`
+        })\n`,
       );
 
       // Get all players from database
@@ -400,19 +400,19 @@ class BBWeeklyGameShapeDMIUpdater {
 
         try {
           console.log(
-            `Processing player ${i + 1}/${this.totalPlayers}: ${playerId}`
+            `Processing player ${i + 1}/${this.totalPlayers}: ${playerId}`,
           );
 
           // Check if this week's data already exists
           const weekExists = await this.checkPlayerWeekExists(
             playerId,
             weekInfo.id,
-            this.currentSeason
+            this.currentSeason,
           );
 
           if (weekExists) {
             console.log(
-              `  ℹ️  Week ${weekInfo.id} data already exists for player ${playerId}, skipping...`
+              `  ℹ️  Week ${weekInfo.id} data already exists for player ${playerId}, skipping...`,
             );
             continue;
           }
@@ -423,7 +423,7 @@ class BBWeeklyGameShapeDMIUpdater {
 
           if (!parsedData) {
             console.log(
-              `  ❌ Warning: Could not parse BBAPI data for player ${playerId}, skipping...`
+              `  ❌ Warning: Could not parse BBAPI data for player ${playerId}, skipping...`,
             );
 
             // Save debug XML for first few failed parses
@@ -449,7 +449,7 @@ class BBWeeklyGameShapeDMIUpdater {
           console.log(
             `  ✅ Added week ${weekInfo.id} data: GS=${
               parsedData.gameShape
-            }, DMI=${parsedData.dmi.toLocaleString()}`
+            }, DMI=${parsedData.dmi.toLocaleString()}`,
           );
           this.processedPlayers++;
 
@@ -464,10 +464,10 @@ class BBWeeklyGameShapeDMIUpdater {
 
       console.log("\n=== Update Summary ===");
       console.log(
-        `Total players processed: ${this.processedPlayers}/${this.totalPlayers}`
+        `Total players processed: ${this.processedPlayers}/${this.totalPlayers}`,
       );
       console.log(
-        `Week ${weekInfo.id} gameshape and DMI data has been added to all updated players`
+        `Week ${weekInfo.id} gameshape and DMI data has been added to all updated players`,
       );
       console.log("Weekly update completed successfully! 🎉");
       updateLastUpdateTimestamp();

@@ -19,13 +19,13 @@ interface PlayerData {
 
 // Function to get current week ID based on season start
 function getCurrentWeekId(): number {
-  // Season 70 started on October 17th, 2025 (Friday)
-  const seasonStartDate = new Date("2025-10-17");
+  // Season 71 started on January 23rd, 2026 (Friday)
+  const seasonStartDate = new Date("2026-01-23");
   const now = new Date();
 
   // Calculate weeks since season start
   const daysSinceStart = Math.floor(
-    (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+    (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24),
   );
   const weeksSinceStart = Math.floor(daysSinceStart / 7);
 
@@ -38,7 +38,7 @@ export function getPlayerHistory(playerId: string): GameShapeHistory[] {
     const playerFile = path.join(
       process.cwd(),
       "app/data/players",
-      `${playerId}.json`
+      `${playerId}.json`,
     );
 
     if (!fs.existsSync(playerFile)) {
@@ -47,7 +47,7 @@ export function getPlayerHistory(playerId: string): GameShapeHistory[] {
     }
 
     const playerData: PlayerData = JSON.parse(
-      fs.readFileSync(playerFile, "utf8")
+      fs.readFileSync(playerFile, "utf8"),
     );
 
     // Convert your existing weekly data structure to GameShapeHistory
@@ -122,7 +122,7 @@ export function enrichPlayersWithHistory(players: any[]): PlayerWithHistory[] {
 
     // Check if we have current week data
     const currentWeekData = history.find(
-      (week) => week.weekId === currentWeekId
+      (week) => week.weekId === currentWeekId,
     );
     const hasCurrentWeekData = !!currentWeekData;
 

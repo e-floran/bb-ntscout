@@ -26,7 +26,7 @@ class BBPlayerDataUpdater {
   private baseURL = "http://bbapi.buzzerbeater.com";
   private sessionCookie = "";
   private queryCount = 0;
-  private currentSeason = 70;
+  private currentSeason = 71;
   private rl: readline.Interface;
   private username = "";
   private password = "";
@@ -50,7 +50,7 @@ class BBPlayerDataUpdater {
       if (!this.username || !this.password) {
         this.username = await this.question("Enter your BB username: ");
         this.password = await this.question(
-          "Enter your BB read-only password: "
+          "Enter your BB read-only password: ",
         );
       }
 
@@ -121,7 +121,7 @@ class BBPlayerDataUpdater {
   }
 
   private parsePlayerXML(
-    xmlData: string
+    xmlData: string,
   ): { gameShape: GameShapeRange; dmi: number } | null {
     try {
       console.log("Raw XML response length:", xmlData.length);
@@ -175,7 +175,7 @@ class BBPlayerDataUpdater {
       // If we still can't parse, let's see what tags are actually in the XML
       console.log(
         "Available XML tags:",
-        xmlData.match(/<[^>\/]+>/g)?.slice(0, 20)
+        xmlData.match(/<[^>\/]+>/g)?.slice(0, 20),
       );
 
       return null;
@@ -186,13 +186,13 @@ class BBPlayerDataUpdater {
   }
 
   private getCurrentWeekInfo(): { id: number; weekStart: Date } {
-    // Season 70 started on October 17th, 2025 (Friday)
-    const seasonStartDate = new Date("2025-10-17");
+    // Season 71 started on January 23rd, 2026 (Friday)
+    const seasonStartDate = new Date("2026-01-23");
     const now = new Date();
 
     // Calculate weeks since season start
     const daysSinceStart = Math.floor(
-      (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+      (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24),
     );
     const weeksSinceStart = Math.floor(daysSinceStart / 7);
 
@@ -226,7 +226,7 @@ class BBPlayerDataUpdater {
       "app",
       "data",
       "players",
-      `${playerId}.json`
+      `${playerId}.json`,
     );
 
     if (fs.existsSync(filePath)) {
@@ -241,7 +241,7 @@ class BBPlayerDataUpdater {
       "app",
       "data",
       "players",
-      `${playerData.id}.json`
+      `${playerData.id}.json`,
     );
     const dir = path.dirname(filePath);
 
@@ -281,7 +281,7 @@ class BBPlayerDataUpdater {
 
     if (resumeData) {
       const shouldResume = await this.question(
-        `Found previous session that stopped at team ${resumeData.teamId}, player index ${resumeData.playerIndex}. Resume? (y/n): `
+        `Found previous session that stopped at team ${resumeData.teamId}, player index ${resumeData.playerIndex}. Resume? (y/n): `,
       );
       if (shouldResume.toLowerCase() === "y") {
         startFromTeam = resumeData.teamId;
@@ -305,7 +305,7 @@ class BBPlayerDataUpdater {
       console.log(
         `Current week: ${weekInfo.id}, starting ${
           weekInfo.weekStart.toISOString().split("T")[0]
-        }`
+        }`,
       );
 
       let shouldStart = !startFromTeam;
@@ -323,7 +323,7 @@ class BBPlayerDataUpdater {
         }
 
         console.log(
-          `\nProcessing team: ${teamData.id} (${teamData.players.length} players)`
+          `\nProcessing team: ${teamData.id} (${teamData.players.length} players)`,
         );
 
         const startIndex =
@@ -346,7 +346,7 @@ class BBPlayerDataUpdater {
             console.log(
               `  Processing player ${i + 1}/${
                 teamData.players.length
-              }: ${playerId}`
+              }: ${playerId}`,
             );
 
             // Get player data from API
@@ -355,13 +355,13 @@ class BBPlayerDataUpdater {
 
             if (!parsedData) {
               console.log(
-                `    Warning: Could not parse data for player ${playerId}`
+                `    Warning: Could not parse data for player ${playerId}`,
               );
               // Let's save the raw XML to a debug file for the first failed player
               if (i === startIndex) {
                 fs.writeFileSync(`debug-player-${playerId}.xml`, playerXMLData);
                 console.log(
-                  `    Saved raw XML to debug-player-${playerId}.xml for inspection`
+                  `    Saved raw XML to debug-player-${playerId}.xml for inspection`,
                 );
               }
               continue;
@@ -381,7 +381,7 @@ class BBPlayerDataUpdater {
             // Check if this week's data already exists
             const existingWeek = playerData.weeks.find(
               (week) =>
-                week.season === this.currentSeason && week.id === weekInfo.id
+                week.season === this.currentSeason && week.id === weekInfo.id,
             );
 
             if (!existingWeek) {
@@ -397,11 +397,11 @@ class BBPlayerDataUpdater {
               playerData.weeks.push(newWeek);
               this.savePlayerData(playerData);
               console.log(
-                `    Added week ${weekInfo.id} data for player ${playerId} (GS: ${parsedData.gameShape}, DMI: ${parsedData.dmi})`
+                `    Added week ${weekInfo.id} data for player ${playerId} (GS: ${parsedData.gameShape}, DMI: ${parsedData.dmi})`,
               );
             } else {
               console.log(
-                `    Week ${weekInfo.id} data already exists for player ${playerId}`
+                `    Week ${weekInfo.id} data already exists for player ${playerId}`,
               );
             }
 
@@ -409,11 +409,11 @@ class BBPlayerDataUpdater {
             this.saveResumeData(teamData.id, i + 1);
           } catch (error) {
             console.error(
-              `\nError processing player ${playerId} from team ${teamData.id}:`
+              `\nError processing player ${playerId} from team ${teamData.id}:`,
             );
             console.error(error);
             console.log(
-              `\nScript stopped at team: ${teamData.id}, player index: ${i}`
+              `\nScript stopped at team: ${teamData.id}, player index: ${i}`,
             );
             console.log("You can resume later by running the script again.");
 

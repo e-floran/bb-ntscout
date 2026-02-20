@@ -44,7 +44,7 @@ class BBPostMondayPlayerChecker {
   private baseURL = "http://bbapi.buzzerbeater.com";
   private sessionCookie = "";
   private queryCount = 0;
-  private currentSeason = 70;
+  private currentSeason = 71;
   private username = "";
   private password = "";
   private supabase: any;
@@ -52,7 +52,7 @@ class BBPostMondayPlayerChecker {
   private readonly MAIN_TEAMS = [11, 50, 1011];
   private readonly MAIN_TEAMS_DIR = path.join(
     process.cwd(),
-    "app/data/mainTeams"
+    "app/data/mainTeams",
   );
 
   constructor() {
@@ -66,7 +66,7 @@ class BBPostMondayPlayerChecker {
 
     if (!supabaseUrl || !supabaseKey) {
       throw new Error(
-        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required"
+        "SUPABASE_URL and SUPABASE_ANON_KEY environment variables are required",
       );
     }
 
@@ -74,7 +74,7 @@ class BBPostMondayPlayerChecker {
 
     if (!this.username || !this.password) {
       throw new Error(
-        "BB_USERNAME and BB_PASSWORD environment variables are required"
+        "BB_USERNAME and BB_PASSWORD environment variables are required",
       );
     }
   }
@@ -237,7 +237,7 @@ class BBPostMondayPlayerChecker {
 
     // Extract home team section
     const homeTeamSection = xmlData.match(
-      /<homeTeam id='\d+'>(.*?)<\/homeTeam>/s
+      /<homeTeam id='\d+'>(.*?)<\/homeTeam>/s,
     );
     if (homeTeamSection) {
       const homePlayerMatches =
@@ -249,7 +249,7 @@ class BBPostMondayPlayerChecker {
 
     // Extract away team section
     const awayTeamSection = xmlData.match(
-      /<awayTeam id='\d+'>(.*?)<\/awayTeam>/s
+      /<awayTeam id='\d+'>(.*?)<\/awayTeam>/s,
     );
     if (awayTeamSection) {
       const awayPlayerMatches =
@@ -279,7 +279,7 @@ class BBPostMondayPlayerChecker {
   }
 
   private parsePlayerXML(
-    xmlData: string
+    xmlData: string,
   ): { gameShape: GameShapeRange; dmi: number } | null {
     try {
       let gameShapeMatch = xmlData.match(/<gameShape>(\d+)<\/gameShape>/i);
@@ -316,7 +316,7 @@ class BBPostMondayPlayerChecker {
     const now = new Date();
 
     const daysSinceStart = Math.floor(
-      (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24)
+      (now.getTime() - seasonStartDate.getTime()) / (1000 * 60 * 60 * 24),
     );
     const weeksSinceStart = Math.floor(daysSinceStart / 7);
     const currentWeekId = Math.min(weeksSinceStart + 1, 14);
@@ -344,7 +344,7 @@ class BBPostMondayPlayerChecker {
       if (playersError) {
         console.error(
           `Failed to fetch players for team ${team.id}:`,
-          playersError.message
+          playersError.message,
         );
         continue;
       }
@@ -366,7 +366,7 @@ class BBPostMondayPlayerChecker {
 
     if (error) {
       throw new Error(
-        `Failed to load team data for ${teamId}: ${error.message}`
+        `Failed to load team data for ${teamId}: ${error.message}`,
       );
     }
 
@@ -380,7 +380,7 @@ class BBPostMondayPlayerChecker {
     // Add new players to the team (they should already exist in players table from loadTeamData)
     // No additional action needed since we're using the players table relationship
     console.log(
-      `Team ${teamData.id} data is handled via players table relationship`
+      `Team ${teamData.id} data is handled via players table relationship`,
     );
   }
 
@@ -397,7 +397,7 @@ class BBPostMondayPlayerChecker {
 
     if (playerError) {
       throw new Error(
-        `Failed to save player ${playerData.id}: ${playerError.message}`
+        `Failed to save player ${playerData.id}: ${playerError.message}`,
       );
     }
 
@@ -415,7 +415,7 @@ class BBPostMondayPlayerChecker {
 
       if (weekError) {
         throw new Error(
-          `Failed to save week data for player ${playerData.id}: ${weekError.message}`
+          `Failed to save week data for player ${playerData.id}: ${weekError.message}`,
         );
       }
     }
@@ -445,7 +445,7 @@ class BBPostMondayPlayerChecker {
 
     // Sort by start date descending (most recent first)
     completedMatches.sort(
-      (a, b) => new Date(b.start).getTime() - new Date(a.start).getTime()
+      (a, b) => new Date(b.start).getTime() - new Date(a.start).getTime(),
     );
 
     // Find the most recent Monday game
@@ -498,13 +498,13 @@ class BBPostMondayPlayerChecker {
           {
             params: { teamid: teamId, season: this.currentSeason },
             headers: { Cookie: this.sessionCookie },
-          }
+          },
         );
         this.queryCount++;
 
         const parser = new xml2js.Parser({ explicitArray: false });
         const scheduleXml = await parser.parseStringPromise(
-          scheduleResponse.data
+          scheduleResponse.data,
         );
 
         let matches = [];
@@ -539,12 +539,12 @@ class BBPostMondayPlayerChecker {
               {
                 params: { matchid: matchId },
                 headers: { Cookie: this.sessionCookie },
-              }
+              },
             );
             this.queryCount++;
 
             const boxXml = await parser.parseStringPromise(
-              boxscoreResponse.data
+              boxscoreResponse.data,
             );
             const matchNode = boxXml?.bbapi?.match;
             let teamNode = null;
@@ -571,7 +571,7 @@ class BBPostMondayPlayerChecker {
             const teamRatings: Record<string, number> = {};
             if (teamNode.ratings) {
               for (const [category, value] of Object.entries(
-                teamNode.ratings
+                teamNode.ratings,
               )) {
                 const numValue = parseFloat(value as string);
                 if (!isNaN(numValue)) {
@@ -611,7 +611,7 @@ class BBPostMondayPlayerChecker {
           } catch (error) {
             console.warn(
               `Failed to fetch boxscore for match ${matchId}:`,
-              error
+              error,
             );
             continue;
           }
@@ -627,12 +627,12 @@ class BBPostMondayPlayerChecker {
           // Sort by game date (most recent first)
           updatedGames.sort(
             (a, b) =>
-              new Date(b.gameDate).getTime() - new Date(a.gameDate).getTime()
+              new Date(b.gameDate).getTime() - new Date(a.gameDate).getTime(),
           );
 
           fs.writeFileSync(teamFilePath, JSON.stringify(updatedGames, null, 2));
           console.log(
-            `  📝 Saved ${newGames.length} new games for team ${teamId}`
+            `  📝 Saved ${newGames.length} new games for team ${teamId}`,
           );
         } else {
           console.log(`  ℹ️  No new games found for team ${teamId}`);
@@ -667,7 +667,7 @@ class BBPostMondayPlayerChecker {
       console.log(
         `Current week: ${weekInfo.id}, starting ${
           weekInfo.weekStart.toISOString().split("T")[0]
-        }`
+        }`,
       );
 
       for (const teamData of teams) {
@@ -686,7 +686,7 @@ class BBPostMondayPlayerChecker {
 
           if (!lastMondayGame) {
             console.log(
-              `  No recent Monday games found for team ${teamData.id}`
+              `  No recent Monday games found for team ${teamData.id}`,
             );
             processedTeams.add(teamData.id);
             teamsChecked++;
@@ -694,7 +694,7 @@ class BBPostMondayPlayerChecker {
           }
 
           console.log(
-            `  Found last Monday game: ${lastMondayGame.id} on ${lastMondayGame.start}`
+            `  Found last Monday game: ${lastMondayGame.id} on ${lastMondayGame.start}`,
           );
 
           // Get boxscore data
@@ -715,7 +715,7 @@ class BBPostMondayPlayerChecker {
           for (const gameTeam of teamsToProcess) {
             if (processedTeams.has(gameTeam.id)) {
               console.log(
-                `  Team ${gameTeam.id} already processed (from another game)`
+                `  Team ${gameTeam.id} already processed (from another game)`,
               );
               continue;
             }
@@ -723,14 +723,14 @@ class BBPostMondayPlayerChecker {
             // Load the current team data from database
             const currentTeamData = await this.loadTeamData(gameTeam.id);
             const newPlayerIds = gameTeam.players.filter(
-              (playerId) => !currentTeamData.players.includes(playerId)
+              (playerId) => !currentTeamData.players.includes(playerId),
             );
 
             if (newPlayerIds.length > 0) {
               console.log(
                 `  Found ${newPlayerIds.length} new players for team ${
                   gameTeam.id
-                }: ${newPlayerIds.join(", ")}`
+                }: ${newPlayerIds.join(", ")}`,
               );
 
               // Process each new player
@@ -744,7 +744,7 @@ class BBPostMondayPlayerChecker {
 
                   if (!parsedData) {
                     console.log(
-                      `    Warning: Could not parse data for new player ${newPlayerId}`
+                      `    Warning: Could not parse data for new player ${newPlayerId}`,
                     );
                     continue;
                   }
@@ -768,12 +768,12 @@ class BBPostMondayPlayerChecker {
                   newPlayersFound++;
 
                   console.log(
-                    `    Created player record for ${newPlayerId} (GS: ${parsedData.gameShape}, DMI: ${parsedData.dmi})`
+                    `    Created player record for ${newPlayerId} (GS: ${parsedData.gameShape}, DMI: ${parsedData.dmi})`,
                   );
                 } catch (error) {
                   console.error(
                     `    Error processing new player ${newPlayerId}:`,
-                    error
+                    error,
                   );
                 }
               }

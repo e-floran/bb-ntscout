@@ -14,7 +14,7 @@ import { createClient } from "@supabase/supabase-js";
 
 // Import getCurrentWeekId function for proper current week detection
 function getCurrentWeekId(): number {
-  // Season 71 started on October 17th, 2025 (Friday)
+  // Season 71 started on January 23rd, 2026 (Friday)
   const seasonStartDate = new Date("2026-01-23");
   const now = new Date();
 
@@ -981,17 +981,18 @@ async function enrichPlayersWithHistoryFromDB(
       // Get player weeks data from database
       const { data: weeks, error } = await supabase
         .from("player_weeks")
-        .select("week_number, season, gameshape, dmi")
+        .select("week_number, season, gameshape, dmi, updated_at")
         .eq("player_id", parseInt(player.id))
-        .order("season", { ascending: false })
-        .order("week_number", { ascending: false });
+        // .order("season", { ascending: false })
+        // .order("week_number", { ascending: false })
+        .order("updated_at", { ascending: false });
 
       if (error) {
         console.error(`Error fetching weeks for player ${player.id}:`, error);
         enrichedPlayers.push({ ...player, weeks: [] });
         continue;
       }
-
+      console.log("player : ", player.id, " weeks : ", weeks);
       // Transform weeks data to match PlayerHistoryCard expected format
       const gameShapeHistory =
         weeks?.map((week: any) => ({
@@ -999,6 +1000,7 @@ async function enrichPlayersWithHistoryFromDB(
           weekId: week.week_number,
           gameShape: week.gameshape,
           dmi: week.dmi,
+          date: week.updated_at,
         })) || [];
 
       // Use the exact current week ID from the utility function

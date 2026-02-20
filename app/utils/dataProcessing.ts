@@ -28,15 +28,15 @@ export const NEUTRAL_OFFENSES = [
 export const EXTERIOR_OFFENSES = ["Motion", "Run And Gun", "Princeton"];
 
 export function stratRows(
-  strats: Record<string, number>[] = []
+  strats: Record<string, number>[] = [],
 ): [string, ...(number | "")[]][] {
   // Get all unique strategy names from all seasons
   const allKeys = Array.from(
     new Set(
       strats
         .map((obj) => Object.keys(obj || {}))
-        .reduce((a, b) => a.concat(b), [])
-    )
+        .reduce((a, b) => a.concat(b), []),
+    ),
   );
   return allKeys.map((strat) => [
     humanize(strat),
@@ -47,15 +47,15 @@ export function stratRows(
 export function avgRows(
   avgs: Record<string, number>[] = [],
   mainTeamAvg?: Record<string, number>,
-  mainTeamMax?: Record<string, number>
+  mainTeamMax?: Record<string, number>,
 ): [string, ...(string | "")[]][] {
   const allCats = Array.from(
     new Set(
       avgs
         .map((obj) => Object.keys(obj || {}))
         .reduce((a, b) => a.concat(b), [])
-        .filter((key) => !key.endsWith("_max"))
-    )
+        .filter((key) => !key.endsWith("_max")),
+    ),
   );
 
   return allCats.map((cat) => {
@@ -79,7 +79,7 @@ export function avgRows(
       const mainTeamMaxValue = mainTeamMax?.[cat];
       result.push(
         mainTeamAvgValue !== undefined ? mainTeamAvgValue.toFixed(2) : "",
-        mainTeamMaxValue !== undefined ? mainTeamMaxValue.toFixed(2) : ""
+        mainTeamMaxValue !== undefined ? mainTeamMaxValue.toFixed(2) : "",
       );
     }
 
@@ -99,7 +99,7 @@ export function avgRows(
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
 export function effRows(
   effs: Partial<Record<Position, number>>[] = [],
-  mainTeamEff?: Partial<Record<Position, number>>
+  mainTeamEff?: Partial<Record<Position, number>>,
 ): [string, ...(string | "")[]][] {
   return (["PG", "SG", "SF", "PF", "C"] as Position[]).map((pos) => {
     const result: (string | "")[] = [pos];
@@ -112,7 +112,7 @@ export function effRows(
       // After the first season (current season), add main team data
       if (index === 0) {
         result.push(
-          mainTeamEff?.[pos] !== undefined ? mainTeamEff[pos]!.toFixed(1) : ""
+          mainTeamEff?.[pos] !== undefined ? mainTeamEff[pos]!.toFixed(1) : "",
         );
       }
     });
@@ -128,7 +128,7 @@ type Effort = {
   opponent?: string;
 };
 export function effortRows(
-  effortList: Effort[] = []
+  effortList: Effort[] = [],
 ): [string, string, string | number, string][] {
   return effortList.map((e) => {
     // Format date from ISO to DD-MM-YYYY
@@ -155,7 +155,7 @@ type GdpEntry = {
   gdp: string;
 };
 export function gdpRows(
-  gdpList: GdpEntry[] = []
+  gdpList: GdpEntry[] = [],
 ): [string, string | string, string][] {
   return gdpList.map((g) => {
     // Format date from ISO to DD-MM-YYYY
@@ -251,8 +251,8 @@ export function multiSeasonPlayerRows(seasonsData: any[] = []) {
         s.fga && s.fga > 0
           ? ((s.fgm / s.fga) * 100).toFixed(1) + "%"
           : s.fgm !== undefined
-          ? "0.0%"
-          : "N/A";
+            ? "0.0%"
+            : "N/A";
 
       const fgDisplay =
         s.fgm !== undefined && s.fga !== undefined
@@ -264,8 +264,8 @@ export function multiSeasonPlayerRows(seasonsData: any[] = []) {
         s.tpa && s.tpa > 0
           ? ((s.tpm / s.tpa) * 100).toFixed(1) + "%"
           : s.tpm !== undefined
-          ? "0.0%"
-          : "N/A";
+            ? "0.0%"
+            : "N/A";
 
       const tpDisplay =
         s.tpm !== undefined && s.tpa !== undefined
@@ -291,4 +291,13 @@ export function multiSeasonPlayerRows(seasonsData: any[] = []) {
         avgTPA, // 15: Raw TPA for sorting (hidden)
       ];
     });
+}
+export function formatDate(dateStr: string): string {
+  if (!dateStr) return "";
+  const date = new Date(dateStr);
+  if (isNaN(date.getTime())) return dateStr; // Return original if invalid date
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}-${month}-${year}`;
 }

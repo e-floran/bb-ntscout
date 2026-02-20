@@ -13,7 +13,7 @@ interface GameData {
   positionsEfficiencies: Record<Position, number>;
 }
 
-const SEASON = 70;
+const SEASON = 71;
 const TEAM_IDS = [11, 50, 1011];
 const BASE_API_URL = "http://bbapi.buzzerbeater.com"; // Fixed: use http instead of https
 const OUTPUT_DIR = path.join(process.cwd(), "app/data/mainTeams");
@@ -106,8 +106,8 @@ async function performLogin(login: string, password: string): Promise<string> {
   // Actually, let me use the exact same pattern as fridayScript
   const loginResponse = await fetch(
     `${loginUrl}?login=${encodeURIComponent(login)}&code=${encodeURIComponent(
-      password
-    )}`
+      password,
+    )}`,
   );
 
   const responseText = await loginResponse.text();
@@ -140,7 +140,7 @@ async function fetchXmlWithReauth(url: string, cookies: string): Promise<any> {
     console.log(`Re-authenticating after ${queryCount} queries...`);
     currentCookies = await performLogin(
       userCredentials.login,
-      userCredentials.password
+      userCredentials.password,
     );
     cookies = currentCookies;
     queryCount = 0; // Reset counter after re-auth
@@ -157,7 +157,7 @@ async function fetchXmlWithReauth(url: string, cookies: string): Promise<any> {
       console.log("Session expired, re-authenticating...");
       currentCookies = await performLogin(
         userCredentials.login,
-        userCredentials.password
+        userCredentials.password,
       );
       queryCount = 0; // Reset counter
 
@@ -178,14 +178,14 @@ async function fetchXmlWithReauth(url: string, cookies: string): Promise<any> {
 
 async function gatherTeamData(
   teamId: number,
-  cookies: string
+  cookies: string,
 ): Promise<GameData[]> {
   console.log(`Gathering data for team ${teamId}...`);
 
   const scheduleUrl = `${BASE_API_URL}/schedule.aspx?teamid=${teamId}&season=${SEASON}`;
   const scheduleXml = await fetchXmlWithReauth(
     scheduleUrl,
-    currentCookies || cookies
+    currentCookies || cookies,
   );
 
   let matches = [];
