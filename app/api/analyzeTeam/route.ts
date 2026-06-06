@@ -11,12 +11,33 @@ import {
 } from "@/app/utils/userCredentials";
 import { User } from "@/app/types/mainTypes";
 import { createClient } from "@supabase/supabase-js";
-
+const season71StartDate = new Date("2026-01-23");
+const seasonLength = 98;
+const now = new Date();
+const getCurrentSeason = () => {
+  const diffFromSeason71Start = Math.floor(
+    (now.getTime() - season71StartDate.getTime()) / (1000 * 60 * 60 * 24),
+  );
+  return Math.floor(diffFromSeason71Start / seasonLength) + 71;
+};
+const SEASON = getCurrentSeason();
 // Import getCurrentWeekId function for proper current week detection
 function getCurrentWeekId(): number {
   // Season 71 started on January 23rd, 2026 (Friday)
-  const seasonStartDate = new Date("2026-01-23");
-  const now = new Date();
+  // const season71StartDate = new Date("2026-01-23");
+  // const seasonLength = 98;
+  // const now = new Date();
+  // const getCurrentSeason = () => {
+  //   const diffFromSeason71Start = Math.floor(
+  //     (now.getTime() - season71StartDate.getTime()) / (1000 * 60 * 60 * 24),
+  //   );
+  //   return Math.floor(diffFromSeason71Start / seasonLength) + 71;
+  // };
+  // const SEASON = getCurrentSeason();
+  const seasonStartDate = season71StartDate;
+  seasonStartDate.setDate(
+    seasonStartDate.getDate() + (SEASON - 71) * seasonLength,
+  );
 
   // Calculate weeks since season start
   const daysSinceStart = Math.floor(
@@ -42,8 +63,6 @@ function getSupabaseClient() {
 }
 
 type Position = "PG" | "SG" | "SF" | "PF" | "C";
-
-const SEASON = 71;
 
 // Session management class for handling BBAPI timeouts
 class BBAPISessionManager {
@@ -1064,7 +1083,7 @@ async function enrichPlayersWithHistoryFromDB(
         dmiChange,
         dmiComparisonToLastGS9,
         currentWeek: currentWeekData?.week_number || 0,
-        currentSeason: currentWeekData?.season || 71,
+        currentSeason: currentWeekData?.season || SEASON,
       };
 
       enrichedPlayers.push(enrichedPlayer);

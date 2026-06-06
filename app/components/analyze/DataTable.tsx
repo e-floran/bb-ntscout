@@ -25,6 +25,7 @@ const MOBILE_ABBREVIATIONS = {
   Position: "Pos",
 
   // Season header variations
+  "Saison 72": "S72",
   "Saison 71": "S71",
   "Saison 70": "S70",
   "Saison 69": "S69",
@@ -34,7 +35,6 @@ const MOBILE_ABBREVIATIONS = {
   "Saison 65": "S65",
   "Saison 64": "S64",
   "Saison 63": "S63",
-  "Saison 62": "S62",
 
   // Offensive strategies (all from StrategyFilters.tsx)
   "Toutes les attaques": "Toutes",
